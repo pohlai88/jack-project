@@ -58,7 +58,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 | Category     | Technology                                            |
 | ------------ | ----------------------------------------------------- |
-| Framework    | Next.js 15 (App Router, RSC, Turbopack)               |
+| Framework    | Next.js 16 (App Router, RSC, Turbopack)               |
 | Language     | TypeScript 5+ (strict)                                |
 | Styling      | Tailwind CSS v4 + shadcn/ui                           |
 | Database     | PostgreSQL 17 + pgvector + Drizzle ORM                |
@@ -66,7 +66,7 @@ Open [http://localhost:3000](http://localhost:3000).
 | AI           | OpenAI / Anthropic via Vercel AI SDK + RAG/embeddings |
 | File Storage | AWS S3 (production) / MinIO (local dev)               |
 | i18n         | next-intl (EN + ES)                                   |
-| Testing      | Jest + React Testing Library                          |
+| Testing      | Vitest + React Testing Library                        |
 | Linting      | ESLint 9 (flat config) + Prettier + Mega Linter       |
 | CI/CD        | GitHub Actions                                        |
 | Dev Env      | DevContainer or `env.config` + generated `.env.local` |
@@ -104,17 +104,34 @@ Feature boundaries are strict:
 
 ## 📜 Scripts
 
-| Command           | Description                   |
-| ----------------- | ----------------------------- |
-| `pnpm dev`        | Start development server      |
-| `pnpm build`      | Build for production          |
-| `pnpm lint`       | Run ESLint                    |
-| `pnpm type-check` | Run TypeScript check          |
-| `pnpm test`       | Run tests                     |
-| `pnpm storybook`  | Start Storybook (port 6006)   |
-| `pnpm db:push`    | Push schema to database (dev) |
-| `pnpm db:migrate` | Run pending migrations        |
-| `pnpm db:studio`  | Open Drizzle Studio           |
+| Command                    | Description                                               |
+| -------------------------- | --------------------------------------------------------- |
+| `pnpm env:sync`            | Generate `.env.local` from `env.config`                   |
+| `pnpm dev`                 | Start Next.js dev server on port 3000                     |
+| `pnpm build`               | Build for production                                      |
+| `pnpm start`               | Start the production server                               |
+| `pnpm format`              | Format files with Prettier                                |
+| `pnpm lint`                | Run ESLint                                                |
+| `pnpm lint:fix`            | Run ESLint with auto-fix                                  |
+| `pnpm lint:a11y`           | Run strict lint/a11y pass with warnings treated as errors |
+| `pnpm repo:guard`          | Validate repo hygiene and module-boundary rules           |
+| `pnpm type-check`          | Run TypeScript check                                      |
+| `pnpm doctrine:check`      | Validate doctrine/documentation authority rules           |
+| `pnpm test`                | Run Vitest once                                           |
+| `pnpm test:watch`          | Run Vitest in watch mode                                  |
+| `pnpm test:coverage`       | Run Vitest with coverage                                  |
+| `pnpm db:generate`         | Generate Drizzle migrations from schema changes           |
+| `pnpm db:migrate`          | Run pending Drizzle migrations                            |
+| `pnpm db:push`             | Alias to `db:migrate`; direct push is intentionally gated |
+| `pnpm db:push:unsafe`      | Force Drizzle push; local/dev use only                    |
+| `pnpm db:studio`           | Open Drizzle Studio                                       |
+| `pnpm db:seed`             | Seed demo data                                            |
+| `pnpm db:reset`            | Reset app data after confirmation                         |
+| `pnpm db:fresh`            | Reset and seed demo data                                  |
+| `pnpm embeddings:generate` | Generate AI embeddings                                    |
+| `pnpm embeddings:recreate` | Recreate AI embeddings                                    |
+| `pnpm storybook`           | Start Storybook on port 6006                              |
+| `pnpm build-storybook`     | Build static Storybook                                    |
 
 ---
 

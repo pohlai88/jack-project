@@ -25,14 +25,15 @@ Thank you for contributing! This document guides human developers after reading 
 
 ## Bootstrap
 
-This project **requires DevContainer** for local development. It provides PostgreSQL + pgvector, Node.js, pnpm, and all tooling pre-configured.
+Use the DevContainer when you want a fully isolated local stack. For normal host development, keep `env.config` current and run commands through the package scripts so they load the managed environment.
 
 ### Using VS Code / Cursor
 
 1. Open the project in your IDE
 2. Click "Reopen in Container" when prompted
 3. Wait for setup (~2 min first time)
-4. Run `pnpm dev`
+4. Run `pnpm env:sync`
+5. Run `pnpm dev`
 
 ### Using DevContainer CLI
 
@@ -155,9 +156,9 @@ Justify additions > 0 new runtime deps in PR. Prefer built-in Next.js / React fe
 Add tests for business logic (services, hooks). Snapshot or interaction tests for critical UI.
 
 ```sh
-pnpm run test          # Run all tests
-pnpm run test:watch    # Watch mode
-pnpm run test:coverage # Coverage report
+pnpm test          # Run all tests once
+pnpm test:watch    # Watch mode
+pnpm test:coverage # Coverage report
 ```
 
 ## Documentation
@@ -182,20 +183,33 @@ pnpm run test:coverage # Coverage report
 
 ## Scripts Reference
 
-| Script                | Description                       |
-| --------------------- | --------------------------------- |
-| `pnpm dev`            | Start development server          |
-| `pnpm build`          | Build for production              |
-| `pnpm start`          | Start production server           |
-| `pnpm lint`           | Run ESLint                        |
-| `pnpm lint:fix`       | Run ESLint with auto-fix          |
-| `pnpm format`         | Format code with Prettier         |
-| `pnpm type-check`     | TypeScript type checking          |
-| `pnpm test`           | Run tests                         |
-| `pnpm doctrine:check` | Validate doctrine authority rules |
-| `pnpm db:generate`    | Generate Drizzle migrations       |
-| `pnpm db:migrate`     | Run database migrations           |
-| `pnpm db:push`        | Push schema to database (dev)     |
-| `pnpm db:studio`      | Open Drizzle Studio GUI           |
+| Script                     | Description                                               |
+| -------------------------- | --------------------------------------------------------- |
+| `pnpm env:sync`            | Generate `.env.local` from `env.config`                   |
+| `pnpm dev`                 | Start Next.js dev server on port 3000                     |
+| `pnpm build`               | Build for production                                      |
+| `pnpm start`               | Start production server                                   |
+| `pnpm format`              | Format code with Prettier                                 |
+| `pnpm lint`                | Run ESLint                                                |
+| `pnpm lint:fix`            | Run ESLint with auto-fix                                  |
+| `pnpm lint:a11y`           | Run strict lint/a11y pass with warnings treated as errors |
+| `pnpm repo:guard`          | Validate repo hygiene and module-boundary rules           |
+| `pnpm type-check`          | Run TypeScript type checking                              |
+| `pnpm doctrine:check`      | Validate doctrine authority rules                         |
+| `pnpm test`                | Run Vitest once                                           |
+| `pnpm test:watch`          | Run Vitest in watch mode                                  |
+| `pnpm test:coverage`       | Run Vitest with coverage                                  |
+| `pnpm db:generate`         | Generate Drizzle migrations                               |
+| `pnpm db:migrate`          | Run database migrations                                   |
+| `pnpm db:push`             | Alias to `db:migrate`; direct push is intentionally gated |
+| `pnpm db:push:unsafe`      | Force Drizzle push; local/dev use only                    |
+| `pnpm db:studio`           | Open Drizzle Studio GUI                                   |
+| `pnpm db:seed`             | Seed demo data                                            |
+| `pnpm db:reset`            | Reset app data after confirmation                         |
+| `pnpm db:fresh`            | Reset and seed demo data                                  |
+| `pnpm embeddings:generate` | Generate AI embeddings                                    |
+| `pnpm embeddings:recreate` | Recreate AI embeddings                                    |
+| `pnpm storybook`           | Start Storybook on port 6006                              |
+| `pnpm build-storybook`     | Build static Storybook                                    |
 
 Happy building! 🚀

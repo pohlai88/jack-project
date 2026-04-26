@@ -3,16 +3,14 @@
 
 FROM mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm
 
-# Install pnpm globally
-RUN npm install -g pnpm@9
+# Install pnpm globally, aligned with package.json packageManager policy
+RUN npm install -g pnpm@10.28.1
 
-# Install additional tools including direnv
+# Install additional tools
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
         # PostgreSQL client for database operations
         postgresql-client \
-        # direnv for automatic environment loading
-        direnv \
         # Useful utilities
         jq \
         curl \
@@ -36,14 +34,8 @@ ENV PNPM_HOME="/home/node/.local/share/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
 # Create necessary directories for node user with proper permissions
-# This includes direnv data directory and pnpm home
-RUN mkdir -p /home/node/.local/share/direnv \
-    && mkdir -p /home/node/.local/share/pnpm \
+RUN mkdir -p /home/node/.local/share/pnpm \
     && chown -R node:node /home/node/.local
-
-# Configure direnv hook for bash and zsh
-RUN echo 'eval "$(direnv hook bash)"' >> /home/node/.bashrc \
-    && echo 'eval "$(direnv hook zsh)"' >> /home/node/.zshrc || true
 
 # Switch to non-root user
 USER node

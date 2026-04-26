@@ -30,11 +30,16 @@ pnpm dev
 # Build
 pnpm build
 
+# Quality
+pnpm lint
+pnpm type-check
+
 # Database
 pnpm db:generate  # Generate Drizzle migrations
 pnpm db:migrate   # Run migrations
-pnpm db:push     # Push schema
+pnpm db:push      # Alias to db:migrate
 pnpm db:seed     # Seed demo data
+pnpm db:reset    # Reset app data after confirmation
 
 # Tests
 pnpm test
