@@ -11,6 +11,10 @@ const CONTENT_DIR = path.join(process.cwd(), 'src/features/docs/content');
  * Returns null if the page doesn't exist.
  */
 export function getDocContent(locale: string, slug: string): DocContent | null {
+  return getDocContentInternal(locale, slug, locale);
+}
+
+function getDocContentInternal(requestedLocale: string, slug: string, locale: string): DocContent | null {
   // Try the exact path first
   const filePath = path.join(CONTENT_DIR, locale, `${slug}.md`);
 
@@ -27,7 +31,7 @@ export function getDocContent(locale: string, slug: string): DocContent | null {
   if (!resolvedPath) {
     // Fall back to English if locale content doesn't exist
     if (locale !== 'en') {
-      return getDocContent('en', slug);
+      return getDocContentInternal(requestedLocale, slug, 'en');
     }
     return null;
   }
@@ -39,6 +43,9 @@ export function getDocContent(locale: string, slug: string): DocContent | null {
     frontmatter: data as DocFrontmatter,
     content,
     slug,
+    requestedLocale,
+    resolvedLocale: locale,
+    isFallback: requestedLocale !== locale,
   };
 }
 

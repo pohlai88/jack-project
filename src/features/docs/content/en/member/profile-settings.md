@@ -1,8 +1,14 @@
 ---
 title: Profile & Settings
-description: Edit profile, avatar, connect GitHub/LinkedIn, timezone, pronouns, and personal email.
+description: >-
+  Edit profile, avatar, connect GitHub/LinkedIn, timezone, pronouns, and
+  personal email.
 section: member
 order: 3
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # Profile & Settings

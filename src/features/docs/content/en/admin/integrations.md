@@ -1,8 +1,14 @@
 ---
 title: Integrations
-description: GitHub, LinkedIn, Slack, Google Workspace, GitLab, webhooks — OAuth setup, sync, and data mapping.
+description: >-
+  GitHub, LinkedIn, Slack, Google Workspace, GitLab, webhooks — OAuth setup,
+  sync, and data mapping.
 section: admin
 order: 9
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # Integrations

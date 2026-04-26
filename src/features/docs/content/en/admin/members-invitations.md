@@ -1,8 +1,14 @@
 ---
 title: Members & Invitations
-description: Add and remove members, generate invite links with roles, manage member status, and invite expiration.
+description: >-
+  Add and remove members, generate invite links with roles, manage member
+  status, and invite expiration.
 section: admin
 order: 2
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # Members & Invitations

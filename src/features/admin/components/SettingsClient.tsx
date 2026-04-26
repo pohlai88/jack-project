@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { useMemo, useState, useTransition } from 'react';
 
+import { type ActivatedLocale, activatedLocaleOptions } from '@/i18n/locale-options';
 import {
   Button,
   Card,
@@ -823,15 +824,17 @@ export function SettingsClient({ tenantSlug, tenantName, tenantDescription, init
                       ...settings,
                       ui: {
                         ...ui,
-                        defaultLanguage: e.target.value as 'en' | 'es' | 'pt',
+                        defaultLanguage: e.target.value as ActivatedLocale,
                       },
                     })
                   }
                   className="mt-2 block w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                 >
-                  <option value="en">English</option>
-                  <option value="es">Español</option>
-                  <option value="pt">Português</option>
+                  {activatedLocaleOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
                 </select>
               </div>
               <div>

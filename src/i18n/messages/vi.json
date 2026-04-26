@@ -1,0 +1,941 @@
+{
+  "common": {
+    "addNotes": "Thêm ghi chú",
+    "hideNotes": "Ẩn ghi chú",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "delete": "Xóa",
+    "edit": "Chỉnh sửa",
+    "add": "Thêm",
+    "create": "Tạo",
+    "update": "Cập nhật",
+    "remove": "Xóa",
+    "confirm": "Xác nhận",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "previous": "Trước",
+    "submit": "Gửi",
+    "reset": "Đặt lại",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "loading": "Đang tải...",
+    "saving": "Đang lưu...",
+    "processing": "Đang xử lý...",
+    "success": "Thành công",
+    "error": "Lỗi",
+    "warning": "Cảnh báo",
+    "info": "Thông tin",
+    "unknown": "Không xác định",
+    "yes": "Có",
+    "no": "Không",
+    "all": "Tất cả",
+    "none": "Không có",
+    "view": "Xem",
+    "download": "Tải xuống",
+    "upload": "Tải lên",
+    "refresh": "Làm mới",
+    "retry": "Thử lại",
+    "skip": "Bỏ qua",
+    "continue": "Tiếp tục",
+    "finish": "Hoàn tất",
+    "done": "Xong",
+    "pending": "Đang chờ",
+    "completed": "Hoàn tất",
+    "failed": "Thất bại",
+    "active": "Hoạt động",
+    "inactive": "Không hoạt động",
+    "enabled": "Đã bật",
+    "disabled": "Đã tắt",
+    "required": "Bắt buộc",
+    "optional": "Tùy chọn",
+    "noResults": "Không tìm thấy kết quả",
+    "noData": "Không có dữ liệu",
+    "reports": "Báo cáo",
+    "changeLanguage": "Thay đổi ngôn ngữ"
+  },
+  "landing": {
+    "hero": {
+      "badge": "Nền tảng SaaS gốc AI",
+      "title": {
+        "one": "Nền tảng vận hành doanh nghiệp",
+        "two": "Afenda"
+      },
+      "description": "Khởi chạy sản phẩm SaaS đa tenant với xác thực, AI, tích hợp, quản lý đội nhóm và nền tảng sẵn sàng cho quản trị.",
+      "cta": {
+        "goToDashboard": "Đi tới bảng điều khiển",
+        "getStarted": "Bắt đầu",
+        "explore": "Khám phá tài liệu"
+      },
+      "socialProof": {
+        "enterpriseReady": "Sẵn sàng cho doanh nghiệp",
+        "aiNative": "Gốc AI",
+        "growthFocused": "Tập trung tăng trưởng",
+        "enterpriseDesc": "Được thiết kế cho các đội ngũ cần dữ liệu đáng tin cậy, quy trình rõ ràng và khả năng kiểm soát ở quy mô doanh nghiệp.",
+        "aiNativeDesc": "Tích hợp tư duy AI-native để hỗ trợ tự động hóa, phân tích và ra quyết định dựa trên ngữ cảnh vận hành thực tế.",
+        "growthDesc": "Giúp doanh nghiệp mở rộng mà không đánh đổi tính nhất quán, khả năng truy vết và chất lượng vận hành."
+      }
+    },
+    "features": {
+      "title": "Mọi thứ đội nhóm cần để mở rộng",
+      "description": "Nền tảng SaaS thực dụng cho người dùng, đội nhóm, quản trị viên, quy trình AI và tích hợp."
+    },
+    "pricing": {
+      "badge": "Gói đơn giản",
+      "title": "Bắt đầu gọn nhẹ, mở rộng có kiểm soát",
+      "description": "Dùng bản demo miễn phí, sau đó điều chỉnh nền tảng cho đội nhóm đang phát triển và triển khai doanh nghiệp.",
+      "mostPopular": "Phổ biến nhất",
+      "perMonth": "/tháng",
+      "plans": {
+        "free": {
+          "name": "Miễn phí",
+          "description": "Tối đa 10 người dùng. Bắt đầu với những gì cốt lõi nhất.",
+          "cta": "Bắt đầu",
+          "features": {
+            "1": "Tối đa 10 người dùng",
+            "2": "Trợ lý AI (giới hạn)",
+            "3": "Tích hợp GitHub",
+            "4": "Kho tri thức (chỉ đọc)",
+            "5": "Hỗ trợ cộng đồng"
+          }
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "Dành cho đội ngũ đang phát triển cần nhiều năng lực hơn.",
+          "cta": "Bắt đầu",
+          "features": {
+            "1": "Người dùng không giới hạn",
+            "2": "Vai trò & quyền tùy chỉnh",
+            "3": "Webhook & nhật ký kiểm toán",
+            "4": "Kho tri thức đầy đủ",
+            "5": "Hỗ trợ ưu tiên"
+          }
+        },
+        "enterprise": {
+          "name": "Doanh nghiệp",
+          "description": "Dành cho tổ chức có nhu cầu nâng cao.",
+          "cta": "Liên hệ",
+          "features": {
+            "1": "Bao gồm mọi thứ của Pro",
+            "2": "SSO (Auth0)",
+            "3": "Tích hợp tùy chỉnh",
+            "4": "Cam kết SLA",
+            "5": "Hỗ trợ chuyên trách"
+          }
+        }
+      }
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp",
+      "items": {
+        "try": {
+          "question": "Có thể dùng thử Afenda miễn phí không?",
+          "answer": "Có. Môi trường demo hoạt động đầy đủ và không yêu cầu thanh toán. Bạn có thể khám phá mọi tính năng với dữ liệu mẫu."
+        },
+        "startData": {
+          "question": "Tôi cần dữ liệu gì để bắt đầu?",
+          "answer": "Chỉ cần danh sách đội ngũ. Bạn có thể nhập CSV, mời thủ công hoặc dùng luồng nhập hàng loạt."
+        },
+        "existingTools": {
+          "question": "Nền tảng có hoạt động với công cụ hiện tại của chúng tôi không?",
+          "answer": "Nền tảng hỗ trợ GitHub sẵn có và có khung tích hợp linh hoạt cho webhook và bộ đồng bộ tùy chỉnh."
+        },
+        "assistant": {
+          "question": "Trợ lý AI hoạt động như thế nào?",
+          "answer": "AI sử dụng kho tri thức và dữ liệu người dùng để trả lời câu hỏi, tìm tài liệu và hỗ trợ theo ngữ cảnh. Hỗ trợ OpenAI và Anthropic."
+        },
+        "security": {
+          "question": "Dữ liệu của tôi có an toàn không?",
+          "answer": "Có. Nền tảng được thiết kế đa tenant với dữ liệu cô lập theo tenant, xác thực cấp doanh nghiệp và kiểm soát truy cập theo quyền."
+        },
+        "migration": {
+          "question": "Tôi có thể di chuyển dữ liệu hiện có không?",
+          "answer": "Có. Bạn có thể nhập dữ liệu đội ngũ từ CSV và bộ máy tích hợp có thể đồng bộ hệ thống bên ngoài theo lịch."
+        }
+      }
+    },
+    "nav": {
+      "features": "Tính năng",
+      "pricing": "Bảng giá",
+      "docs": "Tài liệu",
+      "language": "Ngôn ngữ",
+      "selectLanguage": "Chọn ngôn ngữ",
+      "theme": "Giao diện",
+      "toggleTheme": "Chuyển giao diện",
+      "toggleMenu": "Mở menu",
+      "themeOptions": {
+        "light": "Sáng",
+        "dark": "Tối",
+        "system": "Theo hệ thống"
+      },
+      "bookDemo": "Đặt lịch demo"
+    },
+    "howItWorks": {
+      "title": "Cách hoạt động",
+      "description": "Đưa đội ngũ của bạn vào guồng chỉ với ba bước đơn giản.",
+      "steps": {
+        "configure": {
+          "title": "Triển khai và cấu hình",
+          "description": "Triển khai mẫu, tạo tenant, cấu hình thương hiệu, vai trò và kết nối nhà cung cấp AI."
+        },
+        "invite": {
+          "title": "Mời người dùng",
+          "description": "Mời thành viên, phân quyền và để họ hoàn thiện hồ sơ cũng như kết nối tích hợp."
+        },
+        "launch": {
+          "title": "Ra mắt cùng AI",
+          "description": "Kết nối kho tri thức, bật trợ lý AI, cấu hình webhook và đưa hệ thống vào vận hành."
+        }
+      }
+    },
+    "featureTabs": {
+      "users": {
+        "label": "Cho người dùng",
+        "description": "Mọi thứ người dùng cần để bắt đầu và duy trì năng suất.",
+        "features": {
+          "profile": {
+            "title": "Hồ sơ",
+            "description": "Hồ sơ đầy đủ với avatar và tích hợp GitHub."
+          },
+          "assistant": {
+            "title": "Trợ lý AI",
+            "description": "Trò chuyện ngôn ngữ tự nhiên với OpenAI hoặc Anthropic."
+          },
+          "knowledgeBase": {
+            "title": "Kho tri thức",
+            "description": "Tìm kiếm và duyệt tài liệu, nội dung của tổ chức."
+          },
+          "directory": {
+            "title": "Danh bạ",
+            "description": "Tìm và kết nối với thành viên trong đội ngũ."
+          }
+        }
+      },
+      "team": {
+        "label": "Cho đội nhóm",
+        "description": "Công cụ cộng tác và hiển thị dành cho đội ngũ đang mở rộng.",
+        "features": {
+          "peopleDirectory": {
+            "title": "Danh bạ nhân sự",
+            "description": "Duyệt và tìm kiếm thành viên với bộ lọc."
+          },
+          "orgChart": {
+            "title": "Sơ đồ tổ chức",
+            "description": "Hiển thị cấu trúc đội ngũ và tuyến báo cáo."
+          },
+          "activityFeed": {
+            "title": "Bảng tin hoạt động",
+            "description": "Cập nhật thời gian thực về hoạt động của đội ngũ và nền tảng."
+          },
+          "webhooks": {
+            "title": "Webhook",
+            "description": "Đẩy sự kiện sang hệ thống bên ngoài ngay khi chúng xảy ra."
+          }
+        }
+      },
+      "admin": {
+        "label": "Quản trị",
+        "description": "Toàn quyền kiểm soát cho quản trị viên vận hành nền tảng.",
+        "features": {
+          "memberManagement": {
+            "title": "Quản lý thành viên",
+            "description": "Mời, quản lý và vô hiệu hóa thành viên."
+          },
+          "roles": {
+            "title": "Vai trò & quyền",
+            "description": "PBAC chi tiết với các gói vai trò tùy chỉnh."
+          },
+          "auditLogs": {
+            "title": "Nhật ký kiểm toán",
+            "description": "Dấu vết đầy đủ cho mọi hành động trên nền tảng."
+          },
+          "settings": {
+            "title": "Cài đặt",
+            "description": "Cấu hình tenant, thương hiệu và cờ tính năng."
+          }
+        }
+      },
+      "ai": {
+        "label": "AI & tích hợp",
+        "description": "Kết nối AI và hệ thống bên ngoài với nền tảng của bạn.",
+        "features": {
+          "chat": {
+            "title": "Trò chuyện AI",
+            "description": "Tìm kiếm hội thoại trên toàn bộ dữ liệu của bạn."
+          },
+          "vectorSearch": {
+            "title": "Tìm kiếm vector",
+            "description": "Tìm kiếm ngữ nghĩa dựa trên embedding pgvector."
+          },
+          "githubIntegration": {
+            "title": "Tích hợp GitHub",
+            "description": "Đồng bộ hồ sơ và hoạt động từ GitHub."
+          },
+          "integrationEngine": {
+            "title": "Bộ máy tích hợp",
+            "description": "Kết nối mọi hệ thống ngoài với khung đồng bộ."
+          }
+        }
+      }
+    },
+    "socialProofSection": {
+      "title": "Được các đội ngũ trên toàn thế giới tin dùng",
+      "description": "Xem cách các tổ chức sử dụng Afenda để tự động hóa và mở rộng quy trình vận hành.",
+      "roleAt": "{role} tại {company}",
+      "sponsorsTitle": "Đối tác & nhà tài trợ",
+      "sponsorLabel": "Đối tác {index}",
+      "comingSoon": "Sắp ra mắt",
+      "sponsorCta": "Bạn muốn đồng hành cùng Afenda?",
+      "sponsorCtaLink": "Liên hệ với chúng tôi",
+      "testimonials": {
+        "1": {
+          "role": "Phó chủ tịch Kỹ thuật",
+          "text": "Afenda đã thay đổi cách chúng tôi xây dựng và tự động hóa quy trình. Mọi thứ giờ minh bạch và dựa trên dữ liệu."
+        },
+        "2": {
+          "role": "Quản lý Vận hành Nhân sự",
+          "text": "Trợ lý AI và bộ máy tích hợp đã giúp đội ngũ tiết kiệm hàng tuần khởi tạo. Việc ra mắt SaaS chưa bao giờ nhanh đến vậy."
+        },
+        "3": {
+          "role": "Giám đốc Nhân tài",
+          "text": "Cuối cùng cũng có một nền tảng để quản lý tập trung vào tăng trưởng thay vì bảng tính. Tích hợp OKR rất mượt."
+        }
+      }
+    },
+    "footer": {
+      "blurb": "Bộ khởi tạo SaaS Next.js sẵn sàng sản xuất với đa tenant, AI và tích hợp.",
+      "sections": {
+        "product": "Sản phẩm",
+        "resources": "Tài nguyên",
+        "company": "Công ty"
+      },
+      "links": {
+        "features": "Tính năng",
+        "pricing": "Bảng giá",
+        "howItWorks": "Cách hoạt động",
+        "documentation": "Tài liệu",
+        "blog": "Blog (sắp ra mắt)",
+        "changelog": "Nhật ký thay đổi (sắp ra mắt)",
+        "about": "Giới thiệu (sắp ra mắt)",
+        "contact": "Liên hệ (sắp ra mắt)",
+        "privacy": "Quyền riêng tư (sắp ra mắt)",
+        "terms": "Điều khoản (sắp ra mắt)"
+      },
+      "builtWith": "Xây dựng bằng Next.js, Tailwind CSS và Drizzle ORM.",
+      "socialComingSoon": "{name} (sắp ra mắt)"
+    },
+    "heroPreview": {
+      "fasterOnboarding": "+42% tăng tốc onboarding",
+      "profileCard": {
+        "personName": "Jane Doe",
+        "personRole": "Lập trình viên cao cấp",
+        "badge": "+ Lãnh đạo"
+      },
+      "activityCard": {
+        "title": "Hoạt động nền tảng",
+        "teamVelocity": "Tốc độ đội ngũ",
+        "delivery": "Mức độ bàn giao"
+      },
+      "peopleFinder": {
+        "title": "Tìm người phù hợp"
+      },
+      "people": {
+        "ana": {
+          "role": "Kỹ sư cấp Staff"
+        },
+        "marco": {
+          "role": "Trưởng nhóm kỹ thuật"
+        }
+      },
+      "integrationsCount": "12 tích hợp",
+      "aiInsights": "Phân tích AI"
+    }
+  },
+  "auth": {
+    "signIn": "Đăng nhập",
+    "signOut": "Đăng xuất",
+    "signUp": "Đăng ký",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "forgotPassword": "Quên mật khẩu?",
+    "rememberMe": "Ghi nhớ tôi",
+    "continueWith": "Tiếp tục với {provider}",
+    "orContinueWith": "Hoặc tiếp tục với",
+    "signInWith": "Đăng nhập bằng {provider}",
+    "welcomeBack": "Chào mừng quay lại",
+    "createAccount": "Tạo tài khoản",
+    "alreadyHaveAccount": "Đã có tài khoản?",
+    "dontHaveAccount": "Chưa có tài khoản?"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "dashboard": "Bảng điều khiển",
+    "profile": "Hồ sơ",
+    "settings": "Cài đặt",
+    "admin": "Quản trị",
+    "members": "Thành viên nhóm",
+    "team": "Nhóm",
+    "assistant": "Trợ lý",
+    "overview": "Tổng quan",
+    "adminPanel": "Bảng quản trị",
+    "openAdminPanel": "Mở bảng quản trị",
+    "viewMy": "Chế độ của tôi",
+    "viewAdmin": "Chế độ quản trị",
+    "switchView": "Chuyển chế độ"
+  },
+  "profile": {
+    "title": "Hồ sơ",
+    "overview": "Tổng quan",
+    "aboutMe": "Về tôi",
+    "connectedAccounts": "Tài khoản đã kết nối",
+    "manageAccounts": "Quản lý",
+    "completionTitle": "Hoàn thiện hồ sơ",
+    "completionDescription": "Hoàn tất các bước này để tận dụng tối đa nền tảng",
+    "completeProfile": "Hoàn thiện hồ sơ",
+    "editProfile": "Chỉnh sửa hồ sơ",
+    "viewProfile": "Xem hồ sơ",
+    "backToDashboard": "Quay lại bảng điều khiển",
+    "settings": {
+      "pageTitle": "Cài đặt hồ sơ",
+      "pageDescription": "Chỉnh sửa thông tin cá nhân và tài khoản đã kết nối.",
+      "backToProfile": "Hồ sơ",
+      "currentPage": "Cài đặt",
+      "identityTitle": "Danh tính",
+      "identityDescription": "Quản lý thông tin định danh, hồ sơ liên hệ và các chi tiết hiển thị dùng trong tài khoản của bạn.",
+      "name": "Tên",
+      "email": "Email công việc",
+      "jobTitle": "Chức danh",
+      "identityHint": "Các trường này do quản trị viên quản lý. Hãy liên hệ họ để thay đổi.",
+      "personalInfoTitle": "Thông tin cá nhân",
+      "personalInfoDescription": "Cập nhật thông tin cá nhân. Các thông tin này hiển thị với đội nhóm của bạn.",
+      "pronouns": "Đại từ xưng hô",
+      "pronounsPlaceholder": "ví dụ: anh ấy, cô ấy, họ",
+      "location": "Vị trí",
+      "locationPlaceholder": "ví dụ: Thành phố Hồ Chí Minh, Việt Nam",
+      "timezone": "Múi giờ",
+      "timezonePlaceholder": "ví dụ: Asia/Ho_Chi_Minh",
+      "phoneNumber": "Số điện thoại",
+      "phoneNumberPlaceholder": "+54 11 1234-5678",
+      "personalEmail": "Email cá nhân",
+      "personalEmailHint": "Tùy chọn. Email phụ cho liên lạc ngoài công việc.",
+      "personalEmailPlaceholder": "personal@example.com",
+      "bio": "Tiểu sử",
+      "bioPlaceholder": "Giới thiệu bản thân với đội nhóm...",
+      "connectedAccountsTitle": "Tài khoản đã kết nối",
+      "connectedAccountsDescription": "Liên kết hồ sơ bên ngoài để bổ sung dữ liệu nền tảng.",
+      "githubUsername": "Tên người dùng GitHub",
+      "githubUsernameHint": "Tên người dùng GitHub của bạn (ví dụ: 'octocat'). Dùng để theo dõi đóng góp.",
+      "githubUsernamePlaceholder": "e.g., octocat",
+      "viewProfile": "Xem",
+      "linkedinUrl": "URL hồ sơ LinkedIn",
+      "linkedinUrlHint": "URL hồ sơ LinkedIn đầy đủ của bạn.",
+      "linkedinUrlPlaceholder": "https://linkedin.com/in/your-name",
+      "saved": "Cập nhật hồ sơ thành công!",
+      "saveError": "Cập nhật hồ sơ thất bại. Vui lòng thử lại.",
+      "saveChanges": "Lưu thay đổi",
+      "connectGitHub": "Kết nối GitHub",
+      "disconnectGitHub": "Ngắt kết nối",
+      "disconnectGitHubConfirm": "Bạn có chắc muốn ngắt kết nối tài khoản GitHub?",
+      "githubConnectedAs": "Đã kết nối với @{username}",
+      "githubNotConnected": "Chưa kết nối",
+      "connectGitHubHint": "Kết nối để tự động đồng bộ kho mã và đóng góp của bạn.",
+      "connectGitHubConnectedHint": "Tài khoản GitHub của bạn đã được liên kết.",
+      "orManualEntry": "hoặc nhập thủ công",
+      "connectLinkedIn": "Kết nối LinkedIn",
+      "disconnectLinkedIn": "Ngắt kết nối",
+      "disconnectLinkedInConfirm": "Bạn có chắc muốn ngắt kết nối tài khoản LinkedIn?",
+      "linkedinConnectedAs": "Đã kết nối với {name}",
+      "linkedinNotConnected": "Chưa kết nối",
+      "connectLinkedInHint": "Kết nối để xác minh danh tính LinkedIn và nhập ảnh hồ sơ.",
+      "connectLinkedInConnectedHint": "Tài khoản LinkedIn của bạn đã được liên kết và xác minh."
+    },
+    "addBio": "Thêm tiểu sử vào hồ sơ",
+    "uploadAvatar": "Tải ảnh hồ sơ lên",
+    "connectGitHub": "Kết nối tài khoản GitHub",
+    "inviteTeamMember": "Mời thành viên nhóm"
+  },
+  "admin": {
+    "title": "Quản trị",
+    "dashboard": "Bảng điều khiển",
+    "analytics": "Phân tích",
+    "orgAnalytics": "Phân tích tổ chức",
+    "orgAnalyticsDesc": "Chỉ số và thông tin chuyên sâu toàn tổ chức",
+    "settings": "Cài đặt",
+    "members": "Thành viên nhóm",
+    "invites": "Lời mời",
+    "organization": "Tổ chức",
+    "departments": "Phòng ban",
+    "system": "Hệ thống",
+    "rolesAndPermissions": "Vai trò & quyền",
+    "auditLogs": "Nhật ký kiểm toán",
+    "integrations": "Tích hợp",
+    "total": "Tổng",
+    "adminPanel": "Bảng quản trị",
+    "integrationsPage": {
+      "title": "Tích hợp",
+      "description": "Kết nối công cụ bên ngoài và xem dữ liệu đã đồng bộ.",
+      "connectedSection": "Đã kết nối",
+      "availableSection": "Có sẵn",
+      "comingSoonSection": "Sắp ra mắt",
+      "configure": "Cấu hình",
+      "learnMore": "Tìm hiểu thêm",
+      "lastSync": "Lần đồng bộ cuối: {date}",
+      "statusConnected": "Đã kết nối",
+      "statusNotConnected": "Chưa kết nối",
+      "statusComingSoon": "Sắp ra mắt",
+      "statusInDevelopment": "Đang phát triển",
+      "statusEnabled": "Đã bật",
+      "statusNotConfigured": "Chưa cấu hình",
+      "lastSyncNever": "Chưa bao giờ",
+      "webhooks": {
+        "name": "Webhook",
+        "description": "Gửi thông báo sự kiện tới dịch vụ bên ngoài như Slack, Zapier hoặc API tùy chỉnh."
+      },
+      "github": {
+        "name": "GitHub",
+        "description": "Kết nối GitHub để theo dõi kho mã và đồng bộ dữ liệu."
+      },
+      "gitlab": {
+        "name": "GitLab",
+        "description": "Kết nối GitLab để theo dõi kho mã và đồng bộ dữ liệu."
+      },
+      "linkedin": {
+        "name": "LinkedIn",
+        "description": "Liên kết tài khoản LinkedIn để xác minh danh tính và làm giàu hồ sơ."
+      }
+    },
+    "integrationsControl": {
+      "title": "Bảng điều phối tích hợp",
+      "description": "Chạy đồng bộ, giám sát lượt chạy và xử lý xung đột giữa các nhà cung cấp.",
+      "provider": "Nhà cung cấp",
+      "mode": "Chế độ",
+      "incremental": "Đồng bộ tăng dần",
+      "full": "Di chuyển toàn bộ",
+      "reconcile": "Đối soát",
+      "dryRun": "Chạy thử",
+      "entities": "Thực thể (phân tách bằng dấu phẩy)",
+      "fromDate": "Từ ngày",
+      "toDate": "Đến ngày",
+      "personEmails": "Email cá nhân",
+      "personEmailsPlaceholder": "alice@company.com, bob@company.com",
+      "run": "Chạy",
+      "runCompleted": "Chạy hoàn tất",
+      "runFailed": "Chạy thất bại",
+      "unknownError": "Lỗi không xác định",
+      "metrics": "Chỉ số (14 ngày)",
+      "runsTotal": "Tổng lượt chạy: {value}",
+      "runsCompleted": "Lượt chạy hoàn tất: {value}",
+      "runsFailed": "Lượt chạy thất bại: {value}",
+      "conflictsOpenCount": "Xung đột đang mở: {value}",
+      "avgRunTimeSeconds": "Thời gian chạy TB (giây): {value}",
+      "noMetrics": "Không có chỉ số.",
+      "readiness": "Mức sẵn sàng chuyển đổi",
+      "readinessReady": "Sẵn sàng chuyển đổi",
+      "readinessNotReady": "Chưa sẵn sàng chuyển đổi",
+      "recentRuns": "Lượt chạy gần đây",
+      "noRuns": "Chưa có lượt chạy.",
+      "openConflicts": "Xung đột đang mở",
+      "noConflicts": "Không có xung đột đang mở.",
+      "resolve": "Xử lý",
+      "fieldMappings": "Ánh xạ quyền sở hữu trường",
+      "mappingEntityPlaceholder": "Loại thực thể (ví dụ: record)",
+      "mappingFieldPlaceholder": "Đường dẫn trường (ví dụ: status)",
+      "ownershipRemote": "Nguồn từ xa có thẩm quyền",
+      "ownershipLocal": "Nguồn cục bộ có thẩm quyền",
+      "ownershipMerge": "Hợp nhất",
+      "ownershipAppendOnly": "Chỉ thêm mới",
+      "saveMapping": "Lưu ánh xạ",
+      "noMappings": "Chưa cấu hình ánh xạ."
+    },
+    "github": {
+      "title": "GitHub",
+      "description": "Kết nối GitHub để theo dõi kho mã và đồng bộ dữ liệu.",
+      "credentials": {
+        "title": "Thông tin xác thực OAuth App",
+        "description": "Nhập thông tin xác thực OAuth App của GitHub. Tạo tại github.com/settings/developers.",
+        "clientId": "Client ID",
+        "clientIdHint": "Client ID từ phần cài đặt OAuth App GitHub.",
+        "clientSecret": "Client Secret",
+        "clientSecretHint": "Client Secret từ phần cài đặt OAuth App GitHub.",
+        "testCredentials": "Xác thực thông tin",
+        "testSuccess": "Thông tin xác thực có vẻ hợp lệ",
+        "testFailed": "Xác thực thất bại",
+        "clientIdTooShort": "Client ID quá ngắn",
+        "clientSecretTooShort": "Client Secret quá ngắn",
+        "saveCredentials": "Lưu thông tin xác thực",
+        "saveFailed": "Lưu thông tin xác thực thất bại",
+        "envConfigured": "Phát hiện biến môi trường",
+        "envConfiguredDesc": "Thông tin xác thực OAuth của GitHub được cấu hình qua biến môi trường (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Giá trị nhập tại đây sẽ ghi đè biến môi trường cho tenant này.",
+        "githubDevSettings": "Cài đặt nhà phát triển GitHub"
+      },
+      "settings": {
+        "connectionStatus": "Trạng thái kết nối",
+        "connectedAs": "Đã kết nối với @{username}",
+        "notConnected": "Chưa kết nối GitHub. Nhấn Kết nối để bắt đầu luồng OAuth.",
+        "connect": "Kết nối GitHub",
+        "reconnect": "Kết nối lại",
+        "disconnect": "Ngắt kết nối",
+        "confirmDisconnect": "Bạn có chắc muốn ngắt kết nối GitHub? Thao tác này sẽ thu hồi access token đã lưu.",
+        "integrationSettings": "Cài đặt tích hợp",
+        "integrationSettingsDesc": "Cấu hình cách dữ liệu GitHub được đồng bộ vào nền tảng.",
+        "enableIntegration": "Bật tích hợp",
+        "enableIntegrationDesc": "Bật để đồng bộ dữ liệu từ GitHub.",
+        "organizationFilter": "Bộ lọc tổ chức",
+        "organizationFilterDesc": "Tùy chọn giới hạn đồng bộ với thành viên của một tổ chức GitHub cụ thể.",
+        "organizationFilterPlaceholder": "ví dụ: my-company",
+        "syncRepositories": "Đồng bộ kho mã",
+        "syncRepositoriesDesc": "Quét kho mã và thu thập thống kê ngôn ngữ.",
+        "syncContributions": "Đồng bộ đóng góp",
+        "syncContributionsDesc": "Theo dõi commit, pull request và code review theo từng người.",
+        "includeArchived": "Bao gồm kho đã lưu trữ",
+        "includeArchivedDesc": "Bao gồm kho đã lưu trữ khi quét.",
+        "includeForks": "Bao gồm kho fork",
+        "includeForksDesc": "Bao gồm kho fork khi quét.",
+        "lookbackDays": "Khoảng thời gian quét đóng góp (ngày)",
+        "lookbackDaysDesc": "Số ngày lùi lại để quét đóng góp (30-730).",
+        "saved": "Đã lưu cài đặt",
+        "saveError": "Lưu cài đặt thất bại",
+        "saveSettings": "Lưu cài đặt",
+        "disabledWarningTitle": "Tích hợp đã tắt",
+        "disabledWarningDesc": "GitHub đã kết nối nhưng đang tắt. Hãy bật để bắt đầu đồng bộ dữ liệu.",
+        "envConfigured": "Thông tin OAuth từ môi trường",
+        "envConfiguredDesc": "Thông tin OAuth của GitHub được tải từ biến môi trường (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Không cần cấu hình thêm."
+      }
+    },
+    "linkedin": {
+      "title": "LinkedIn",
+      "description": "Liên kết tài khoản LinkedIn để xác minh danh tính và làm giàu hồ sơ.",
+      "notConfiguredTitle": "Chưa cấu hình tích hợp",
+      "notConfiguredDesc": "Cấu hình thông tin OAuth LinkedIn để bật tích hợp này. Tạo ứng dụng tại linkedin.com/developers/apps.",
+      "credentials": {
+        "title": "Thông tin xác thực OAuth LinkedIn",
+        "description": "Nhập client ID và secret của OAuth App LinkedIn. Tạo ứng dụng tại LinkedIn Developer Portal.",
+        "clientId": "Client ID",
+        "clientIdHint": "Nằm trong cài đặt ứng dụng LinkedIn ở tab Auth.",
+        "clientIdTooShort": "Client ID quá ngắn",
+        "clientSecret": "Client Secret",
+        "clientSecretHint": "Client secret chính từ ứng dụng LinkedIn của bạn.",
+        "clientSecretTooShort": "Client secret quá ngắn",
+        "testCredentials": "Kiểm tra thông tin xác thực",
+        "testSuccess": "Định dạng hợp lệ",
+        "testFailed": "Xác thực thất bại",
+        "saveCredentials": "Lưu thông tin xác thực",
+        "saveFailed": "Lưu thông tin xác thực thất bại",
+        "envConfigured": "Phát hiện biến môi trường",
+        "envConfiguredDesc": "Thông tin xác thực LinkedIn được cung cấp qua biến môi trường. Bạn có thể ghi đè bằng giá trị riêng cho tenant bên dưới.",
+        "linkedinDevPortal": "LinkedIn Developer Portal"
+      },
+      "settings": {
+        "connectionStatus": "Trạng thái kết nối",
+        "connectedAs": "Đã kết nối với {name}",
+        "notConnected": "Chưa kết nối LinkedIn. Kết nối để xác minh tích hợp hoạt động.",
+        "connect": "Kết nối LinkedIn",
+        "reconnect": "Kết nối lại",
+        "disconnect": "Ngắt kết nối",
+        "confirmDisconnect": "Bạn có chắc muốn ngắt kết nối LinkedIn?",
+        "integrationSettings": "Cài đặt tích hợp",
+        "integrationSettingsDesc": "Cấu hình cách tích hợp LinkedIn hoạt động cho tổ chức của bạn.",
+        "enableIntegration": "Bật tích hợp LinkedIn",
+        "enableIntegrationDesc": "Cho phép thành viên kết nối tài khoản LinkedIn để làm giàu hồ sơ.",
+        "autoUpdateAvatar": "Tự động cập nhật ảnh đại diện",
+        "autoUpdateAvatarDesc": "Tự động cập nhật ảnh hồ sơ từ ảnh LinkedIn khi người dùng kết nối.",
+        "autoUpdateLocale": "Tự động cập nhật ngôn ngữ",
+        "autoUpdateLocaleDesc": "Tự động đặt ngôn ngữ người dùng từ hồ sơ LinkedIn khi họ kết nối.",
+        "saveSettings": "Lưu cài đặt",
+        "saved": "Đã lưu cài đặt",
+        "saveError": "Lưu cài đặt thất bại",
+        "envConfigured": "Phát hiện biến môi trường",
+        "envConfiguredDesc": "Thông tin xác thực LinkedIn được cung cấp qua biến môi trường.",
+        "disabledWarningTitle": "Tích hợp đã tắt",
+        "disabledWarningDesc": "Tích hợp LinkedIn hiện đang tắt. Bật để cho phép thành viên liên kết tài khoản LinkedIn."
+      }
+    },
+    "settingsTabs": {
+      "general": "Chung",
+      "features": "Tính năng",
+      "departments": "Phòng ban",
+      "aiProvider": "Nhà cung cấp AI",
+      "storage": "Lưu trữ",
+      "branding": "Thương hiệu"
+    },
+    "membersPage": {
+      "title": "Thành viên nhóm",
+      "description": "Quản lý thành viên nhóm và vai trò của họ",
+      "addMember": "Thêm thành viên",
+      "editMember": "Chỉnh sửa thành viên",
+      "inviteMember": "Mời thành viên",
+      "role": "Vai trò",
+      "department": "Phòng ban",
+      "status": "Trạng thái",
+      "lastActive": "Hoạt động gần đây",
+      "roles": {
+        "admin": "Quản trị",
+        "member": "Thành viên"
+      },
+      "statuses": {
+        "active": "Hoạt động",
+        "onboarding": "Đang onboarding",
+        "inactive": "Không hoạt động"
+      },
+      "confirmRemove": "Bạn có chắc muốn xóa thành viên này?",
+      "noMembers": "Không tìm thấy thành viên nhóm"
+    },
+    "invitesPage": {
+      "title": "Lời mời",
+      "description": "Quản lý các lời mời đang chờ trong tổ chức của bạn",
+      "createInvite": "Tạo lời mời",
+      "sendInvite": "Gửi lời mời",
+      "email": "Địa chỉ email",
+      "firstName": "Tên",
+      "lastName": "Họ",
+      "role": "Vai trò",
+      "message": "Lời nhắn chào mừng",
+      "messagePlaceholder": "Thêm lời nhắn cá nhân vào lời mời (tùy chọn)",
+      "expiration": "Hết hạn sau",
+      "expirationOptions": {
+        "1day": "1 ngày",
+        "3days": "3 ngày",
+        "7days": "7 ngày",
+        "14days": "14 ngày",
+        "30days": "30 ngày"
+      },
+      "status": {
+        "pending": "Đang chờ",
+        "accepted": "Đã chấp nhận",
+        "expired": "Đã hết hạn",
+        "revoked": "Đã thu hồi"
+      },
+      "actions": {
+        "copyLink": "Sao chép liên kết",
+        "linkCopied": "Đã sao chép liên kết lời mời!",
+        "extend": "Gia hạn",
+        "revoke": "Thu hồi"
+      },
+      "confirmRevoke": "Bạn có chắc muốn thu hồi lời mời này?",
+      "noInvites": "Không có lời mời đang chờ",
+      "inviteSuccess": "Đã gửi lời mời thành công"
+    },
+    "departmentsPageDescription": "Gán quản lý và thành viên cho từng phòng ban.",
+    "departmentsManageInSettings": "Quản lý trong Cài đặt",
+    "departmentsNoDepartments": "Chưa cấu hình phòng ban",
+    "departmentsNoDepartmentsHint": "Thêm phòng ban để tổ chức đội nhóm.",
+    "departmentsCreateInSettings": "Tạo trong Cài đặt",
+    "departmentsAddDepartment": "Thêm phòng ban",
+    "departmentsEdit": "Chỉnh sửa phòng ban",
+    "departmentsEditDepartment": "Chỉnh sửa phòng ban",
+    "departmentsDelete": "Xóa phòng ban",
+    "departmentsConfirmDelete": "Xóa phòng ban này? Không thể hoàn tác.",
+    "departmentsDeleteDisabledHint": "Hãy xóa tất cả thành viên trước",
+    "departmentsCreateDescription": "Tạo phòng ban mới để tổ chức đội nhóm. Bạn có thể gán quản lý và thành viên sau.",
+    "departmentsName": "Tên",
+    "departmentsNamePlaceholder": "ví dụ: Kỹ thuật",
+    "departmentsParent": "Phòng ban cha",
+    "departmentsNoParent": "Không có",
+    "departmentsMembers": "Thành viên",
+    "departmentsManagers": "Quản lý",
+    "departmentsAddManager": "Thêm quản lý",
+    "departmentsPrimary": "Chính",
+    "departmentsRemoveManager": "Xóa quản lý",
+    "departmentsNoManagers": "Chưa gán quản lý",
+    "departmentsAddMember": "Thêm thành viên",
+    "departmentsRemoveMember": "Xóa thành viên",
+    "departmentsNoMembers": "Chưa gán thành viên",
+    "departmentsNoPeople": "Không có người dùng trong tenant này"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "backToUserView": "Quay lại chế độ người dùng",
+    "general": {
+      "title": "Thông tin tổ chức",
+      "description": "Cấu hình tenant cơ bản",
+      "tenantSlug": "Slug tenant",
+      "displayName": "Tên hiển thị",
+      "descriptionLabel": "Mô tả"
+    },
+    "features": {
+      "title": "Cờ tính năng",
+      "description": "Bật hoặc tắt tính năng nền tảng",
+      "core": "Tính năng cốt lõi",
+      "ai": "Tính năng AI",
+      "integrations": "Tích hợp"
+    },
+    "departments": {
+      "title": "Phòng ban",
+      "description": "Xác định cơ cấu tổ chức",
+      "addDepartment": "Thêm phòng ban",
+      "noDepartments": "Chưa cấu hình phòng ban",
+      "noDepartmentsHint": "Thêm phòng ban để tổ chức thành viên nhóm của bạn"
+    },
+    "dangerZone": {
+      "title": "Vùng nguy hiểm",
+      "description": "Hành động không thể hoàn tác",
+      "resetSettings": "Đặt lại cài đặt",
+      "resetDescription": "Đặt lại tất cả cài đặt về mặc định. Không thể hoàn tác.",
+      "confirmReset": "Bạn có chắc muốn đặt lại tất cả cài đặt?"
+    },
+    "saved": "Đã lưu cài đặt thành công!",
+    "saveFailed": "Lưu cài đặt thất bại. Vui lòng thử lại."
+  },
+  "validation": {
+    "required": "Trường này là bắt buộc",
+    "invalidEmail": "Địa chỉ email không hợp lệ",
+    "minLength": "Phải có ít nhất {min} ký tự",
+    "maxLength": "Không được quá {max} ký tự",
+    "invalidUrl": "URL không hợp lệ",
+    "fileTooLarge": "Kích thước tệp vượt quá giới hạn {maxSize}MB",
+    "invalidFileType": "Loại tệp không được hỗ trợ",
+    "passwordMismatch": "Mật khẩu không khớp"
+  },
+  "errors": {
+    "generic": "Đã xảy ra lỗi",
+    "notFound": "Không tìm thấy",
+    "unauthorized": "Chưa xác thực",
+    "forbidden": "Truy cập bị từ chối",
+    "serverError": "Lỗi máy chủ",
+    "networkError": "Lỗi mạng",
+    "tryAgain": "Vui lòng thử lại"
+  },
+  "assistant": {
+    "title": "Trợ lý AI",
+    "placeholder": "Nhập tin nhắn...",
+    "send": "Gửi",
+    "thinking": "Đang suy nghĩ...",
+    "error": "Đã xảy ra lỗi.",
+    "welcome": "Xin chào! Tôi là trợ lý AI của bạn. Hôm nay tôi có thể giúp gì?",
+    "suggestedQuestions": "Câu hỏi gợi ý:",
+    "newConversation": "Cuộc trò chuyện mới",
+    "noConversations": "Chưa có cuộc trò chuyện",
+    "suggestions": {
+      "findPeople": "Tìm thành viên nhóm",
+      "analyzeGaps": "Phân tích dữ liệu",
+      "recommend": "Nhận đề xuất",
+      "explore": "Khám phá tính năng"
+    }
+  },
+  "genui": {
+    "loading": "Đang tải...",
+    "previewNotAvailable": "Không có bản xem trước",
+    "viewProfile": "Xem hồ sơ",
+    "sendMessage": "Gửi tin nhắn",
+    "viewDetails": "Xem chi tiết",
+    "showMore": "Hiển thị thêm {count}",
+    "showLess": "Thu gọn",
+    "comparison": "So sánh",
+    "attribute": "Thuộc tính"
+  },
+  "dashboard": {
+    "title": "Bảng điều khiển",
+    "welcome": "Chào mừng đến với {name}",
+    "platformDescription": "Nền tảng SaaS gốc AI của bạn",
+    "adminBadge": "QUẢN TRỊ",
+    "adminAccessMessage": "Bạn có quyền quản trị tenant này",
+    "openAdminPanel": "Mở bảng quản trị",
+    "profileCompletion": "Hoàn thiện hồ sơ",
+    "completeProfile": "Hoàn thiện hồ sơ để mở khóa toàn bộ tiềm năng",
+    "progress": "Tiến độ",
+    "completeProfileToUnlock": "Hoàn thiện hồ sơ để mở khóa tất cả tính năng",
+    "recentActivity": "Hoạt động gần đây",
+    "quickActions": "Thao tác nhanh",
+    "viewAll": "Xem tất cả",
+    "noActivity": "Không có hoạt động gần đây",
+    "aiConversations": "Cuộc trò chuyện AI",
+    "totalInteractions": "Tổng tương tác",
+    "viewAllActivity": "Xem tất cả hoạt động",
+    "teamMembers": "Thành viên nhóm",
+    "activePlatformMembers": "Thành viên nền tảng đang hoạt động",
+    "webhooksActive": "Webhook đang hoạt động",
+    "activeWebhookEndpoints": "Endpoint webhook đang hoạt động",
+    "inviteMember": "Mời thành viên",
+    "onboardNewTeamMember": "Onboard thành viên mới",
+    "viewMembers": "Xem thành viên",
+    "browseTeamMembers": "Duyệt thành viên nhóm",
+    "askAIAssistant": "Nhận trợ giúp từ trợ lý AI",
+    "commonTasks": "Tác vụ phổ biến để bắt đầu",
+    "yourLatestActions": "Hành động gần đây của bạn",
+    "manageSettings": "Quản lý cài đặt",
+    "configureYourTenant": "Cấu hình tenant của bạn",
+    "addBio": "Thêm tiểu sử vào hồ sơ",
+    "uploadAvatar": "Tải ảnh hồ sơ lên",
+    "connectGitHub": "Kết nối tài khoản GitHub",
+    "inviteTeamMember": "Mời thành viên nhóm"
+  },
+  "members": {
+    "title": "Thành viên nhóm",
+    "description": "Quản lý thành viên nhóm và vai trò của họ",
+    "addMember": "Thêm thành viên",
+    "editMember": "Chỉnh sửa thành viên",
+    "inviteMember": "Mời thành viên",
+    "searchPlaceholder": "Tìm kiếm thành viên...",
+    "namePlaceholder": "Nguyễn Văn A",
+    "noMembers": "Không tìm thấy thành viên nhóm"
+  },
+  "auditLogs": {
+    "title": "Nhật ký kiểm toán",
+    "description": "Xem tất cả hành động được thực hiện trong tổ chức của bạn",
+    "filters": {
+      "title": "Bộ lọc",
+      "clear": "Xóa",
+      "apply": "Áp dụng bộ lọc",
+      "dateRange": "Khoảng ngày",
+      "actor": "Người thực hiện",
+      "action": "Hành động",
+      "entityType": "Loại thực thể",
+      "entityId": "ID thực thể",
+      "search": "Tìm kiếm..."
+    },
+    "columns": {
+      "timestamp": "Thời gian",
+      "actor": "Người thực hiện",
+      "action": "Hành động",
+      "entity": "Thực thể"
+    },
+    "noResults": "Không tìm thấy sự kiện kiểm toán",
+    "export": "Xuất CSV",
+    "datePresets": {
+      "all": "Tất cả thời gian",
+      "today": "Hôm nay",
+      "week": "Last 7 Days",
+      "month": "Last 30 Days"
+    }
+  },
+  "docs": {
+    "title": "Tài liệu",
+    "backToApp": "Quay lại ứng dụng",
+    "nav": {
+      "gettingStarted": "Bắt đầu",
+      "welcome": "Chào mừng",
+      "firstLogin": "Đăng nhập lần đầu",
+      "navigation": "Điều hướng & Chế độ xem",
+      "profileSetup": "Cài đặt hồ sơ",
+      "memberGuide": "Hướng dẫn thành viên",
+      "overview": "Tổng quan",
+      "dashboard": "Bảng điều khiển",
+      "profileSettings": "Hồ sơ & Cài đặt",
+      "aiAssistant": "Trợ lý AI",
+      "adminGuide": "Hướng dẫn quản trị",
+      "membersInvitations": "Thành viên & Lời mời",
+      "rolesPermissions": "Vai trò & Quyền",
+      "settings": "Cài đặt",
+      "branding": "Thương hiệu & Tùy chỉnh",
+      "integrations": "Tích hợp",
+      "analyticsAudit": "Phân tích & Kiểm toán",
+      "faq": "Câu hỏi thường gặp"
+    },
+    "fallbackNotice": "Trang này hiển thị bằng tiếng Anh vì bản dịch cho ngôn ngữ được chọn chưa có sẵn.",
+    "search": {
+      "placeholder": "Tìm kiếm trong tài liệu...",
+      "hint": "Gõ để tìm kiếm trên tất cả các trang tài liệu",
+      "noResults": "Không tìm thấy kết quả",
+      "navigate": "Đi tới",
+      "open": "Mở",
+      "close": "Đóng"
+    },
+    "pagination": {
+      "previous": "Trước",
+      "next": "Tiếp theo"
+    },
+    "toc": {
+      "onThisPage": "Trong trang này"
+    }
+  }
+}

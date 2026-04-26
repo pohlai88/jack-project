@@ -1,8 +1,15 @@
 ---
 title: Configuración del perfil
-description: Cómo editar tu perfil en Afenda: nombre, cargo, bio, avatar, GitHub y LinkedIn, zona horaria, ubicación, email y pronombres.
+description: >-
+  Cómo editar tu perfil en Afenda: nombre, cargo, bio, avatar, GitHub y
+  LinkedIn, zona horaria, ubicación, email y pronombres.
 section: getting-started
 order: 4
+translation:
+  sourceLocale: en
+  sourcePath: getting-started/profile-setup.md
+  sourceHash: 9f767d74f08a6fdc70d04463a06584b6c21b74581cbb36099b47619a40da7e12
+  status: reviewed
 ---
 
 # Configuración del perfil

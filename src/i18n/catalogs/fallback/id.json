@@ -1,0 +1,941 @@
+{
+  "common": {
+    "addNotes": "Tambah catatan",
+    "hideNotes": "Sembunyikan catatan",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "delete": "Hapus",
+    "edit": "Sunting",
+    "add": "Tambah",
+    "create": "Buat",
+    "update": "Perbarui",
+    "remove": "Hapus",
+    "confirm": "Konfirmasi",
+    "close": "Tutup",
+    "back": "Kembali",
+    "next": "Berikutnya",
+    "previous": "Sebelumnya",
+    "submit": "Kirim",
+    "reset": "Atur ulang",
+    "search": "Cari",
+    "filter": "Filter",
+    "loading": "Memuat...",
+    "saving": "Menyimpan...",
+    "processing": "Memproses...",
+    "success": "Berhasil",
+    "error": "Kesalahan",
+    "warning": "Peringatan",
+    "info": "Info",
+    "unknown": "Tidak diketahui",
+    "yes": "Ya",
+    "no": "Tidak",
+    "all": "Semua",
+    "none": "Tidak ada",
+    "view": "Lihat",
+    "download": "Unduh",
+    "upload": "Unggah",
+    "refresh": "Segarkan",
+    "retry": "Coba lagi",
+    "skip": "Lewati",
+    "continue": "Lanjutkan",
+    "finish": "Selesai",
+    "done": "Selesai",
+    "pending": "Menunggu",
+    "completed": "Selesai",
+    "failed": "Gagal",
+    "active": "Aktif",
+    "inactive": "Tidak aktif",
+    "enabled": "Diaktifkan",
+    "disabled": "Dinonaktifkan",
+    "required": "Wajib",
+    "optional": "Opsional",
+    "noResults": "Tidak ditemukan hasil",
+    "noData": "Tidak ada data",
+    "reports": "Laporan",
+    "changeLanguage": "Change language"
+  },
+  "landing": {
+    "hero": {
+      "badge": "Platform SaaS native AI",
+      "title": {
+        "one": "Bangun dengan ",
+        "two": "Afenda"
+      },
+      "description": "Luncurkan produk SaaS multi-tenant dengan autentikasi, AI, integrasi, manajemen tim, dan fondasi siap tata kelola.",
+      "cta": {
+        "goToDashboard": "Buka dasbor",
+        "getStarted": "Mulai",
+        "explore": "Jelajahi dokumentasi"
+      },
+      "socialProof": {
+        "enterpriseReady": "Siap untuk perusahaan",
+        "aiNative": "Native AI",
+        "growthFocused": "Fokus pertumbuhan",
+        "enterpriseDesc": "Isolasi tenant, auditabilitas, dan akses berbasis peran sudah terintegrasi.",
+        "aiNativeDesc": "Hubungkan asisten, alur pengetahuan, dan data integrasi sejak hari pertama.",
+        "growthDesc": "Dirancang untuk tim yang perlu bergerak cepat tanpa kehilangan kendali."
+      }
+    },
+    "features": {
+      "title": "Segala yang tim Anda butuhkan untuk skala",
+      "description": "Fondasi SaaS praktis untuk pengguna, tim, administrator, alur kerja AI, dan integrasi."
+    },
+    "pricing": {
+      "badge": "Paket sederhana",
+      "title": "Mulai ringan, skala dengan kendali",
+      "description": "Gunakan demo gratis, lalu sesuaikan platform untuk tim yang berkembang dan deployment enterprise.",
+      "mostPopular": "Paling populer",
+      "perMonth": "/bulan",
+      "plans": {
+        "free": {
+          "name": "Free",
+          "description": "Up to 10 users. Get started with the essentials.",
+          "cta": "Get Started",
+          "features": {
+            "1": "Up to 10 users",
+            "2": "AI assistant (limited)",
+            "3": "GitHub integration",
+            "4": "Knowledge base (read)",
+            "5": "Community support"
+          }
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "For growing teams that need more power.",
+          "cta": "Get Started",
+          "features": {
+            "1": "Unlimited users",
+            "2": "Custom roles & permissions",
+            "3": "Webhooks & audit logs",
+            "4": "Full knowledge base",
+            "5": "Priority support"
+          }
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "For organizations with advanced needs.",
+          "cta": "Contact us",
+          "features": {
+            "1": "Everything in Pro",
+            "2": "SSO (Auth0)",
+            "3": "Custom integrations",
+            "4": "SLA guarantee",
+            "5": "Dedicated support"
+          }
+        }
+      }
+    },
+    "faq": {
+      "title": "Pertanyaan yang sering diajukan",
+      "items": {
+        "try": {
+          "question": "Is Afenda free to try?",
+          "answer": "Yes. The demo environment is fully functional with no payment required. Explore every feature with sample data."
+        },
+        "startData": {
+          "question": "What data do I need to get started?",
+          "answer": "Just your team roster. You can import CSV, invite members manually, or use the bulk import flow."
+        },
+        "existingTools": {
+          "question": "Does it work with our existing tools?",
+          "answer": "The platform includes GitHub out of the box and a flexible integration framework for webhooks and custom sync adapters."
+        },
+        "assistant": {
+          "question": "How does the AI assistant work?",
+          "answer": "The AI uses your knowledge base and user data to answer questions, search documents, and provide contextual help. It supports OpenAI and Anthropic models."
+        },
+        "security": {
+          "question": "Is my data secure?",
+          "answer": "Yes. The platform is multi-tenant by design, with isolated tenant data, enterprise authentication, and permission-based access control."
+        },
+        "migration": {
+          "question": "Can I migrate my existing data?",
+          "answer": "Yes. You can import team data from CSV, and the integration engine can sync external systems on a schedule."
+        }
+      }
+    },
+    "nav": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "docs": "Docs",
+      "language": "Language",
+      "selectLanguage": "Select language",
+      "theme": "Theme",
+      "toggleTheme": "Toggle theme",
+      "toggleMenu": "Toggle menu",
+      "themeOptions": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+      },
+      "bookDemo": "Book a Demo"
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "description": "Get your team up and running in three simple steps.",
+      "steps": {
+        "configure": {
+          "title": "Deploy & configure",
+          "description": "Deploy the template, create your tenant, configure branding, roles, and connect your AI provider."
+        },
+        "invite": {
+          "title": "Invite users",
+          "description": "Invite your team members, assign roles, and let them set up profiles and integrations."
+        },
+        "launch": {
+          "title": "Launch with AI",
+          "description": "Connect your knowledge base, enable the AI assistant, set up webhooks, and go live."
+        }
+      }
+    },
+    "featureTabs": {
+      "users": {
+        "label": "For Users",
+        "description": "Everything your users need to get started and stay productive.",
+        "features": {
+          "profile": {
+            "title": "Profile",
+            "description": "Complete user profiles with avatars and GitHub integration."
+          },
+          "assistant": {
+            "title": "AI Assistant",
+            "description": "Natural language chat powered by OpenAI or Anthropic."
+          },
+          "knowledgeBase": {
+            "title": "Knowledge Base",
+            "description": "Search and browse your organization's docs and content."
+          },
+          "directory": {
+            "title": "Directory",
+            "description": "Find and connect with team members."
+          }
+        }
+      },
+      "team": {
+        "label": "For Teams",
+        "description": "Collaboration and visibility tools for growing teams.",
+        "features": {
+          "peopleDirectory": {
+            "title": "People Directory",
+            "description": "Browse and search team members with filters."
+          },
+          "orgChart": {
+            "title": "Org Chart",
+            "description": "Visualize team structure and reporting relationships."
+          },
+          "activityFeed": {
+            "title": "Activity Feed",
+            "description": "Real-time updates on team and platform activity."
+          },
+          "webhooks": {
+            "title": "Webhooks",
+            "description": "Push events to external systems as things happen."
+          }
+        }
+      },
+      "admin": {
+        "label": "Administration",
+        "description": "Full control for admins managing the platform.",
+        "features": {
+          "memberManagement": {
+            "title": "Member Management",
+            "description": "Invite, manage, and deactivate team members."
+          },
+          "roles": {
+            "title": "Roles & Permissions",
+            "description": "Fine-grained PBAC with custom role bundles."
+          },
+          "auditLogs": {
+            "title": "Audit Logs",
+            "description": "Complete trail of all actions across the platform."
+          },
+          "settings": {
+            "title": "Settings",
+            "description": "Tenant-level config, branding, and feature flags."
+          }
+        }
+      },
+      "ai": {
+        "label": "AI & Integrations",
+        "description": "Connect AI and external systems to your platform.",
+        "features": {
+          "chat": {
+            "title": "AI Chat",
+            "description": "Conversational search across all your data."
+          },
+          "vectorSearch": {
+            "title": "Vector Search",
+            "description": "Semantic search powered by pgvector embeddings."
+          },
+          "githubIntegration": {
+            "title": "GitHub Integration",
+            "description": "Sync user profiles and activity from GitHub."
+          },
+          "integrationEngine": {
+            "title": "Integration Engine",
+            "description": "Connect any external system with the sync framework."
+          }
+        }
+      }
+    },
+    "socialProofSection": {
+      "title": "Trusted by teams worldwide",
+      "description": "See how organizations are using Afenda to automate and scale their workflows.",
+      "roleAt": "{role} at {company}",
+      "sponsorsTitle": "Our partners & sponsors",
+      "sponsorLabel": "Partner {index}",
+      "comingSoon": "Coming soon",
+      "sponsorCta": "Interested in sponsoring Afenda?",
+      "sponsorCtaLink": "Get in touch",
+      "testimonials": {
+        "1": {
+          "role": "VP of Engineering",
+          "text": "Afenda transformed how we build and automate our workflows. Everything is now transparent and data-driven."
+        },
+        "2": {
+          "role": "People Operations Manager",
+          "text": "The AI assistant and integration engine saved our team weeks of setup. Shipping our SaaS has never been faster."
+        },
+        "3": {
+          "role": "Director of Talent",
+          "text": "Finally, a platform where managers can focus on growth instead of spreadsheets. The OKR integration is seamless."
+        }
+      }
+    },
+    "footer": {
+      "blurb": "Production-ready Next.js SaaS boilerplate with multi-tenancy, AI, and integrations.",
+      "sections": {
+        "product": "Product",
+        "resources": "Resources",
+        "company": "Company"
+      },
+      "links": {
+        "features": "Features",
+        "pricing": "Pricing",
+        "howItWorks": "How It Works",
+        "documentation": "Documentation",
+        "blog": "Blog (coming soon)",
+        "changelog": "Changelog (coming soon)",
+        "about": "About (coming soon)",
+        "contact": "Contact (coming soon)",
+        "privacy": "Privacy (coming soon)",
+        "terms": "Terms (coming soon)"
+      },
+      "builtWith": "Built with Next.js, Tailwind CSS, and Drizzle ORM.",
+      "socialComingSoon": "{name} (coming soon)"
+    },
+    "heroPreview": {
+      "fasterOnboarding": "+42% faster onboarding",
+      "profileCard": {
+        "personName": "Jane Doe",
+        "personRole": "Senior Developer",
+        "badge": "+ Leadership"
+      },
+      "activityCard": {
+        "title": "Platform Activity",
+        "teamVelocity": "Team velocity",
+        "delivery": "Delivery"
+      },
+      "peopleFinder": {
+        "title": "People Finder"
+      },
+      "people": {
+        "ana": {
+          "role": "Staff Engineer"
+        },
+        "marco": {
+          "role": "Tech Lead"
+        }
+      },
+      "integrationsCount": "12 integrations",
+      "aiInsights": "AI insights"
+    }
+  },
+  "auth": {
+    "signIn": "Masuk",
+    "signOut": "Keluar",
+    "signUp": "Daftar",
+    "email": "Email",
+    "password": "Kata sandi",
+    "forgotPassword": "Lupa kata sandi?",
+    "rememberMe": "Ingat saya",
+    "continueWith": "Lanjutkan dengan {provider}",
+    "orContinueWith": "Atau lanjutkan dengan",
+    "signInWith": "Masuk dengan {provider}",
+    "welcomeBack": "Selamat datang kembali",
+    "createAccount": "Buat akun",
+    "alreadyHaveAccount": "Sudah punya akun?",
+    "dontHaveAccount": "Belum punya akun?"
+  },
+  "nav": {
+    "home": "Beranda",
+    "dashboard": "Dasbor",
+    "profile": "Profil",
+    "settings": "Pengaturan",
+    "admin": "Admin",
+    "members": "Anggota Tim",
+    "team": "Tim",
+    "assistant": "Asisten",
+    "overview": "Ikhtisar",
+    "adminPanel": "Panel Admin",
+    "openAdminPanel": "Buka Panel Admin",
+    "viewMy": "Tampilan Saya",
+    "viewAdmin": "Tampilan Admin",
+    "switchView": "Ganti tampilan"
+  },
+  "profile": {
+    "title": "Profil",
+    "overview": "Ikhtisar",
+    "aboutMe": "Tentang Saya",
+    "connectedAccounts": "Akun Terhubung",
+    "manageAccounts": "Kelola",
+    "completionTitle": "Kelengkapan Profil",
+    "completionDescription": "Selesaikan langkah ini untuk memaksimalkan penggunaan platform",
+    "completeProfile": "Lengkapi Profil",
+    "editProfile": "Sunting Profil",
+    "viewProfile": "Lihat Profil",
+    "backToDashboard": "Kembali ke Dasbor",
+    "settings": {
+      "pageTitle": "Pengaturan Profil",
+      "pageDescription": "Sunting informasi pribadi dan akun yang terhubung.",
+      "backToProfile": "Profil",
+      "currentPage": "Pengaturan",
+      "identityTitle": "Identitas",
+      "identityDescription": "Identitas dasar Anda yang dikelola oleh organisasi Anda.",
+      "name": "Nama",
+      "email": "Email kerja",
+      "jobTitle": "Jabatan",
+      "identityHint": "Kolom ini dikelola oleh admin Anda. Hubungi mereka jika perlu diubah.",
+      "personalInfoTitle": "Informasi Pribadi",
+      "personalInfoDescription": "Perbarui detail pribadi Anda. Informasi ini terlihat oleh tim Anda.",
+      "pronouns": "Kata ganti",
+      "pronounsPlaceholder": "mis., dia/laki-laki, dia/perempuan, mereka",
+      "location": "Lokasi",
+      "locationPlaceholder": "mis., Jakarta, Indonesia",
+      "timezone": "Zona waktu",
+      "timezonePlaceholder": "mis., Asia/Jakarta",
+      "phoneNumber": "Nomor telepon",
+      "phoneNumberPlaceholder": "+62 21 1234-5678",
+      "personalEmail": "Email pribadi",
+      "personalEmailHint": "Opsional. Email sekunder untuk komunikasi non-kerja.",
+      "personalEmailPlaceholder": "personal@example.com",
+      "bio": "Bio",
+      "bioPlaceholder": "Ceritakan tentang diri Anda kepada tim...",
+      "connectedAccountsTitle": "Akun Terhubung",
+      "connectedAccountsDescription": "Hubungkan profil eksternal untuk memperkaya data platform Anda.",
+      "githubUsername": "Nama pengguna GitHub",
+      "githubUsernameHint": "Nama pengguna GitHub Anda (mis., 'octocat'). Digunakan untuk melacak kontribusi.",
+      "githubUsernamePlaceholder": "mis., octocat",
+      "viewProfile": "Lihat",
+      "linkedinUrl": "URL Profil LinkedIn",
+      "linkedinUrlHint": "URL lengkap profil LinkedIn Anda.",
+      "linkedinUrlPlaceholder": "https://linkedin.com/in/nama-anda",
+      "saved": "Profil berhasil diperbarui!",
+      "saveError": "Gagal memperbarui profil. Silakan coba lagi.",
+      "saveChanges": "Simpan Perubahan",
+      "connectGitHub": "Hubungkan GitHub",
+      "disconnectGitHub": "Putuskan koneksi",
+      "disconnectGitHubConfirm": "Apakah Anda yakin ingin memutuskan koneksi akun GitHub?",
+      "githubConnectedAs": "Terhubung sebagai @{username}",
+      "githubNotConnected": "Belum terhubung",
+      "connectGitHubHint": "Hubungkan untuk menyinkronkan repositori dan kontribusi Anda secara otomatis.",
+      "connectGitHubConnectedHint": "Akun GitHub Anda telah terhubung.",
+      "orManualEntry": "atau masukkan secara manual",
+      "connectLinkedIn": "Hubungkan LinkedIn",
+      "disconnectLinkedIn": "Putuskan koneksi",
+      "disconnectLinkedInConfirm": "Apakah Anda yakin ingin memutuskan koneksi LinkedIn?",
+      "linkedinConnectedAs": "Terhubung sebagai {name}",
+      "linkedinNotConnected": "Belum terhubung",
+      "connectLinkedInHint": "Hubungkan untuk memverifikasi identitas LinkedIn Anda dan mengimpor foto profil.",
+      "connectLinkedInConnectedHint": "Akun LinkedIn Anda telah terhubung dan diverifikasi."
+    },
+    "addBio": "Tambahkan bio ke profil Anda",
+    "uploadAvatar": "Unggah foto profil",
+    "connectGitHub": "Hubungkan akun GitHub Anda",
+    "inviteTeamMember": "Undang anggota tim"
+  },
+  "admin": {
+    "title": "Admin",
+    "dashboard": "Dasbor",
+    "analytics": "Analitik",
+    "orgAnalytics": "Analitik Organisasi",
+    "orgAnalyticsDesc": "Metrik dan wawasan tingkat organisasi",
+    "settings": "Pengaturan",
+    "members": "Anggota Tim",
+    "invites": "Undangan",
+    "organization": "Organisasi",
+    "departments": "Departemen",
+    "system": "Sistem",
+    "rolesAndPermissions": "Peran & Izin",
+    "auditLogs": "Log Audit",
+    "integrations": "Integrasi",
+    "total": "Jumlah",
+    "adminPanel": "Panel Admin",
+    "integrationsPage": {
+      "title": "Integrasi",
+      "description": "Hubungkan alat eksternal dan lihat data yang disinkronkan.",
+      "connectedSection": "Terhubung",
+      "availableSection": "Tersedia",
+      "comingSoonSection": "Segera hadir",
+      "configure": "Konfigurasi",
+      "learnMore": "Pelajari lebih lanjut",
+      "lastSync": "Sinkron terakhir: {date}",
+      "statusConnected": "Terhubung",
+      "statusNotConnected": "Belum terhubung",
+      "statusComingSoon": "Segera hadir",
+      "statusInDevelopment": "Dalam pengembangan",
+      "statusEnabled": "Diaktifkan",
+      "statusNotConfigured": "Belum dikonfigurasi",
+      "lastSyncNever": "Tidak pernah",
+      "webhooks": {
+        "name": "Webhooks",
+        "description": "Kirim notifikasi event ke layanan eksternal seperti Slack, Zapier, atau API kustom Anda."
+      },
+      "github": {
+        "name": "GitHub",
+        "description": "Hubungkan GitHub untuk pelacakan repositori dan sinkronisasi data."
+      },
+      "gitlab": {
+        "name": "GitLab",
+        "description": "Hubungkan GitLab untuk pelacakan repositori dan sinkronisasi data."
+      },
+      "linkedin": {
+        "name": "LinkedIn",
+        "description": "Hubungkan akun LinkedIn untuk verifikasi identitas dan pengayaan profil."
+      }
+    },
+    "integrationsControl": {
+      "title": "Pusat kendali integrasi",
+      "description": "Jalankan sinkron, pantau run, dan selesaikan konflik antar provider.",
+      "provider": "Provider",
+      "mode": "Mode",
+      "incremental": "Sinkron Incremental",
+      "full": "Migrasi Penuh",
+      "reconcile": "Rekonsiliasi",
+      "dryRun": "Dry Run",
+      "entities": "Entitas (dipisah koma)",
+      "fromDate": "Dari Tanggal",
+      "toDate": "Sampai Tanggal",
+      "personEmails": "Email Orang",
+      "personEmailsPlaceholder": "alice@company.com, bob@company.com",
+      "run": "Jalankan",
+      "runCompleted": "Run selesai",
+      "runFailed": "Run gagal",
+      "unknownError": "Kesalahan tidak diketahui",
+      "metrics": "Metrik (14 hari)",
+      "runsTotal": "Total run: {value}",
+      "runsCompleted": "Run selesai: {value}",
+      "runsFailed": "Run gagal: {value}",
+      "conflictsOpenCount": "Konflik terbuka: {value}",
+      "avgRunTimeSeconds": "Rata-rata waktu (s): {value}",
+      "noMetrics": "Tidak ada metrik tersedia.",
+      "readiness": "Kesiapan Cutover",
+      "readinessReady": "Siap untuk cutover",
+      "readinessNotReady": "Belum siap untuk cutover",
+      "recentRuns": "Run Terbaru",
+      "noRuns": "Belum ada run.",
+      "openConflicts": "Konflik Terbuka",
+      "noConflicts": "Tidak ada konflik terbuka.",
+      "resolve": "Selesaikan",
+      "fieldMappings": "Pemetaan Kepemilikan Field",
+      "mappingEntityPlaceholder": "Tipe entitas (mis. record)",
+      "mappingFieldPlaceholder": "Path field (mis. status)",
+      "ownershipRemote": "Remote otoritatif",
+      "ownershipLocal": "Lokal otoritatif",
+      "ownershipMerge": "Gabungkan",
+      "ownershipAppendOnly": "Hanya tambah",
+      "saveMapping": "Simpan Pemetaan",
+      "noMappings": "Belum ada pemetaan dikonfigurasi."
+    },
+    "github": {
+      "title": "GitHub",
+      "description": "Hubungkan GitHub untuk pelacakan repositori dan sinkronisasi data.",
+      "credentials": {
+        "title": "Kredensial OAuth App",
+        "description": "Masukkan kredensial OAuth App GitHub Anda. Buat di github.com/settings/developers.",
+        "clientId": "Client ID",
+        "clientIdHint": "Client ID dari pengaturan OAuth App GitHub Anda.",
+        "clientSecret": "Client Secret",
+        "clientSecretHint": "Client Secret dari pengaturan OAuth App GitHub Anda.",
+        "testCredentials": "Validasi Kredensial",
+        "testSuccess": "Kredensial tampak valid",
+        "testFailed": "Validasi gagal",
+        "clientIdTooShort": "Client ID terlalu pendek",
+        "clientSecretTooShort": "Client Secret terlalu pendek",
+        "saveCredentials": "Simpan Kredensial",
+        "saveFailed": "Gagal menyimpan kredensial",
+        "envConfigured": "Variabel Lingkungan Terdeteksi",
+        "envConfiguredDesc": "Kredensial OAuth GitHub dikonfigurasi melalui variabel lingkungan (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Nilai yang dimasukkan di sini akan menimpa variabel lingkungan untuk tenant ini.",
+        "githubDevSettings": "Pengaturan Pengembang GitHub"
+      },
+      "settings": {
+        "connectionStatus": "Status Koneksi",
+        "connectedAs": "Terhubung sebagai @{username}",
+        "notConnected": "Belum terhubung ke GitHub. Klik Hubungkan untuk memulai alur OAuth.",
+        "connect": "Hubungkan GitHub",
+        "reconnect": "Sambungkan ulang",
+        "disconnect": "Putuskan koneksi",
+        "confirmDisconnect": "Apakah Anda yakin ingin memutuskan koneksi GitHub? Ini akan mencabut token akses yang tersimpan.",
+        "integrationSettings": "Pengaturan Integrasi",
+        "integrationSettingsDesc": "Konfigurasikan bagaimana data GitHub disinkronkan ke platform.",
+        "enableIntegration": "Aktifkan Integrasi",
+        "enableIntegrationDesc": "Nyalakan untuk mengaktifkan sinkronisasi data dari GitHub.",
+        "organizationFilter": "Filter Organisasi",
+        "organizationFilterDesc": "Opsional batasi sinkron ke anggota organisasi GitHub tertentu.",
+        "organizationFilterPlaceholder": "mis., my-company",
+        "syncRepositories": "Sinkron Repositori",
+        "syncRepositoriesDesc": "Pindai repositori dan kumpulkan statistik bahasa.",
+        "syncContributions": "Sinkron Kontribusi",
+        "syncContributionsDesc": "Lacak commit, pull request, dan review kode per orang.",
+        "includeArchived": "Sertakan Repositori Diarsipkan",
+        "includeArchivedDesc": "Sertakan repositori yang diarsipkan saat memindai.",
+        "includeForks": "Sertakan Repositori Fork",
+        "includeForksDesc": "Sertakan repositori fork saat memindai.",
+        "lookbackDays": "Jendela Kontribusi (hari)",
+        "lookbackDaysDesc": "Berapa hari ke belakang untuk memindai kontribusi (30-730).",
+        "saved": "Pengaturan disimpan",
+        "saveError": "Gagal menyimpan pengaturan",
+        "saveSettings": "Simpan Pengaturan",
+        "disabledWarningTitle": "Integrasi Dinonaktifkan",
+        "disabledWarningDesc": "GitHub terhubung tetapi dinonaktifkan. Aktifkan untuk mulai menyinkronkan data.",
+        "envConfigured": "Kredensial OAuth dari Lingkungan",
+        "envConfiguredDesc": "Kredensial OAuth GitHub dimuat dari variabel lingkungan (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Tidak perlu konfigurasi kredensial tambahan."
+      }
+    },
+    "linkedin": {
+      "title": "LinkedIn",
+      "description": "Hubungkan akun LinkedIn untuk verifikasi identitas dan pengayaan profil.",
+      "notConfiguredTitle": "Integrasi Belum Dikonfigurasi",
+      "notConfiguredDesc": "Konfigurasikan kredensial OAuth LinkedIn Anda untuk mengaktifkan integrasi ini. Buat aplikasi di linkedin.com/developers/apps.",
+      "credentials": {
+        "title": "Kredensial OAuth LinkedIn",
+        "description": "Masukkan Client ID dan secret dari OAuth App LinkedIn Anda. Buat aplikasi di LinkedIn Developer Portal.",
+        "clientId": "Client ID",
+        "clientIdHint": "Ditemukan di pengaturan aplikasi LinkedIn Anda pada tab Auth.",
+        "clientIdTooShort": "Client ID terlalu pendek",
+        "clientSecret": "Client Secret",
+        "clientSecretHint": "Client secret utama dari aplikasi LinkedIn Anda.",
+        "clientSecretTooShort": "Client secret terlalu pendek",
+        "testCredentials": "Uji Kredensial",
+        "testSuccess": "Format valid",
+        "testFailed": "Validasi gagal",
+        "saveCredentials": "Simpan Kredensial",
+        "saveFailed": "Gagal menyimpan kredensial",
+        "envConfigured": "Variabel Lingkungan Terdeteksi",
+        "envConfiguredDesc": "Kredensial LinkedIn disediakan melalui variabel lingkungan. Anda dapat menimpanya dengan nilai tenant-spesifik di bawah.",
+        "linkedinDevPortal": "Portal Pengembang LinkedIn"
+      },
+      "settings": {
+        "connectionStatus": "Status Koneksi",
+        "connectedAs": "Terhubung sebagai {name}",
+        "notConnected": "Belum terhubung ke LinkedIn. Hubungkan untuk memverifikasi integrasi.",
+        "connect": "Hubungkan LinkedIn",
+        "reconnect": "Sambungkan ulang",
+        "disconnect": "Putuskan koneksi",
+        "confirmDisconnect": "Apakah Anda yakin ingin memutuskan koneksi LinkedIn?",
+        "integrationSettings": "Pengaturan Integrasi",
+        "integrationSettingsDesc": "Konfigurasikan bagaimana integrasi LinkedIn berperilaku untuk organisasi Anda.",
+        "enableIntegration": "Aktifkan Integrasi LinkedIn",
+        "enableIntegrationDesc": "Izinkan anggota tim menghubungkan akun LinkedIn mereka untuk pengayaan profil.",
+        "autoUpdateAvatar": "Perbarui Avatar Otomatis",
+        "autoUpdateAvatarDesc": "Secara otomatis perbarui foto profil pengguna dari foto LinkedIn mereka saat terhubung.",
+        "autoUpdateLocale": "Perbarui Lokalisasi Otomatis",
+        "autoUpdateLocaleDesc": "Secara otomatis atur locale pengguna dari profil LinkedIn mereka saat terhubung.",
+        "saveSettings": "Simpan Pengaturan",
+        "saved": "Pengaturan disimpan",
+        "saveError": "Gagal menyimpan pengaturan",
+        "envConfigured": "Variabel Lingkungan Terdeteksi",
+        "envConfiguredDesc": "Kredensial LinkedIn disediakan melalui variabel lingkungan.",
+        "disabledWarningTitle": "Integrasi Dinonaktifkan",
+        "disabledWarningDesc": "Integrasi LinkedIn saat ini dinonaktifkan. Aktifkan untuk memungkinkan anggota tim menghubungkan akun LinkedIn mereka."
+      }
+    },
+    "settingsTabs": {
+      "general": "Umum",
+      "features": "Fitur",
+      "departments": "Departemen",
+      "aiProvider": "Penyedia AI",
+      "storage": "Penyimpanan",
+      "branding": "Branding"
+    },
+    "membersPage": {
+      "title": "Anggota Tim",
+      "description": "Kelola anggota tim dan peran mereka",
+      "addMember": "Tambah Anggota",
+      "editMember": "Sunting Anggota",
+      "inviteMember": "Undang Anggota",
+      "role": "Peran",
+      "department": "Departemen",
+      "status": "Status",
+      "lastActive": "Terakhir Aktif",
+      "roles": {
+        "admin": "Admin",
+        "member": "Anggota"
+      },
+      "statuses": {
+        "active": "Aktif",
+        "onboarding": "Onboarding",
+        "inactive": "Tidak aktif"
+      },
+      "confirmRemove": "Apakah Anda yakin ingin menghapus anggota ini?",
+      "noMembers": "Tidak ditemukan anggota tim"
+    },
+    "invitesPage": {
+      "title": "Undangan",
+      "description": "Kelola undangan yang tertunda ke organisasi Anda",
+      "createInvite": "Buat Undangan",
+      "sendInvite": "Kirim Undangan",
+      "email": "Alamat email",
+      "firstName": "Nama depan",
+      "lastName": "Nama belakang",
+      "role": "Peran",
+      "message": "Pesan sambutan",
+      "messagePlaceholder": "Tambahkan pesan pribadi ke undangan (opsional)",
+      "expiration": "Berlaku selama",
+      "expirationOptions": {
+        "1day": "1 Hari",
+        "3days": "3 Hari",
+        "7days": "7 Hari",
+        "14days": "14 Hari",
+        "30days": "30 Hari"
+      },
+      "status": {
+        "pending": "Menunggu",
+        "accepted": "Diterima",
+        "expired": "Kadaluarsa",
+        "revoked": "Dicabut"
+      },
+      "actions": {
+        "copyLink": "Salin tautan",
+        "linkCopied": "Tautan undangan disalin!",
+        "extend": "Perpanjang",
+        "revoke": "Cabut"
+      },
+      "confirmRevoke": "Apakah Anda yakin ingin mencabut undangan ini?",
+      "noInvites": "Tidak ada undangan tertunda",
+      "inviteSuccess": "Undangan berhasil dikirim"
+    },
+    "departmentsPageDescription": "Tetapkan manajer dan anggota untuk setiap departemen.",
+    "departmentsManageInSettings": "Kelola di Pengaturan",
+    "departmentsNoDepartments": "Belum ada departemen dikonfigurasi",
+    "departmentsNoDepartmentsHint": "Tambahkan departemen untuk mengatur tim Anda.",
+    "departmentsCreateInSettings": "Buat di Pengaturan",
+    "departmentsAddDepartment": "Tambah departemen",
+    "departmentsEdit": "Sunting departemen",
+    "departmentsEditDepartment": "Sunting departemen",
+    "departmentsDelete": "Hapus departemen",
+    "departmentsConfirmDelete": "Hapus departemen ini? Tindakan ini tidak dapat dibatalkan.",
+    "departmentsDeleteDisabledHint": "Hapus semua anggota terlebih dahulu",
+    "departmentsCreateDescription": "Buat departemen baru untuk mengatur tim Anda. Anda dapat menetapkan manajer dan anggota nanti.",
+    "departmentsName": "Nama",
+    "departmentsNamePlaceholder": "mis. Engineering",
+    "departmentsParent": "Departemen induk",
+    "departmentsNoParent": "Tidak ada",
+    "departmentsMembers": "Anggota",
+    "departmentsManagers": "Manajer",
+    "departmentsAddManager": "Tambah manajer",
+    "departmentsPrimary": "Utama",
+    "departmentsRemoveManager": "Hapus manajer",
+    "departmentsNoManagers": "Belum ada manajer ditetapkan",
+    "departmentsAddMember": "Tambah anggota",
+    "departmentsRemoveMember": "Hapus anggota",
+    "departmentsNoMembers": "Belum ada anggota ditetapkan",
+    "departmentsNoPeople": "Tidak ada orang di tenant ini"
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "backToUserView": "Kembali ke Tampilan Pengguna",
+    "general": {
+      "title": "Detail Organisasi",
+      "description": "Konfigurasi tenant dasar",
+      "tenantSlug": "Tenant Slug",
+      "displayName": "Nama Tampilan",
+      "descriptionLabel": "Deskripsi"
+    },
+    "features": {
+      "title": "Flag fitur",
+      "description": "Aktifkan atau nonaktifkan fitur platform",
+      "core": "Fitur Inti",
+      "ai": "Fitur AI",
+      "integrations": "Integrasi"
+    },
+    "departments": {
+      "title": "Departemen",
+      "description": "Tentukan struktur organisasi",
+      "addDepartment": "Tambah Departemen",
+      "noDepartments": "Belum ada departemen dikonfigurasi",
+      "noDepartmentsHint": "Tambahkan departemen untuk mengatur anggota tim Anda"
+    },
+    "dangerZone": {
+      "title": "Zona Berbahaya",
+      "description": "Tindakan yang tidak dapat dibatalkan",
+      "resetSettings": "Atur Ulang Pengaturan",
+      "resetDescription": "Atur ulang semua pengaturan ke nilai default. Tindakan ini tidak dapat dibatalkan.",
+      "confirmReset": "Apakah Anda yakin ingin mengatur ulang semua pengaturan?"
+    },
+    "saved": "Pengaturan berhasil disimpan!",
+    "saveFailed": "Gagal menyimpan pengaturan. Silakan coba lagi."
+  },
+  "validation": {
+    "required": "Kolom ini wajib diisi",
+    "invalidEmail": "Alamat email tidak valid",
+    "minLength": "Harus memiliki setidaknya {min} karakter",
+    "maxLength": "Harus paling banyak {max} karakter",
+    "invalidUrl": "URL tidak valid",
+    "fileTooLarge": "Ukuran file melebihi batas {maxSize}MB",
+    "invalidFileType": "Tipe file tidak didukung",
+    "passwordMismatch": "Kata sandi tidak cocok"
+  },
+  "errors": {
+    "generic": "Terjadi kesalahan",
+    "notFound": "Tidak ditemukan",
+    "unauthorized": "Tidak terotorisasi",
+    "forbidden": "Akses ditolak",
+    "serverError": "Kesalahan server",
+    "networkError": "Kesalahan jaringan",
+    "tryAgain": "Silakan coba lagi"
+  },
+  "assistant": {
+    "title": "Asisten AI",
+    "placeholder": "Ketik pesan Anda...",
+    "send": "Kirim",
+    "thinking": "Memikirkan...",
+    "error": "Terjadi kesalahan.",
+    "welcome": "Halo! Saya asisten AI Anda. Ada yang bisa saya bantu hari ini?",
+    "suggestedQuestions": "Pertanyaan yang disarankan:",
+    "newConversation": "Percakapan baru",
+    "noConversations": "Belum ada percakapan",
+    "suggestions": {
+      "findPeople": "Cari anggota tim",
+      "analyzeGaps": "Analisis data",
+      "recommend": "Dapatkan rekomendasi",
+      "explore": "Jelajahi fitur"
+    }
+  },
+  "genui": {
+    "loading": "Memuat...",
+    "previewNotAvailable": "Pratinjau tidak tersedia",
+    "viewProfile": "Lihat Profil",
+    "sendMessage": "Kirim Pesan",
+    "viewDetails": "Lihat Detail",
+    "showMore": "Tampilkan {count} lagi",
+    "showLess": "Tampilkan lebih sedikit",
+    "comparison": "Perbandingan",
+    "attribute": "Atribut"
+  },
+  "dashboard": {
+    "title": "Dasbor",
+    "welcome": "Selamat datang di {name}",
+    "platformDescription": "Platform SaaS native AI Anda",
+    "adminBadge": "ADMIN",
+    "adminAccessMessage": "Anda memiliki akses admin ke tenant ini",
+    "openAdminPanel": "Buka Panel Admin",
+    "profileCompletion": "Kelengkapan Profil",
+    "completeProfile": "Lengkapi profil Anda untuk membuka potensi penuh",
+    "progress": "Kemajuan",
+    "completeProfileToUnlock": "Lengkapi profil untuk membuka semua fitur",
+    "recentActivity": "Aktivitas Terbaru",
+    "quickActions": "Aksi Cepat",
+    "viewAll": "Lihat Semua",
+    "noActivity": "Tidak ada aktivitas terbaru",
+    "aiConversations": "Percakapan AI",
+    "totalInteractions": "Total interaksi",
+    "viewAllActivity": "Lihat Semua Aktivitas",
+    "teamMembers": "Anggota Tim",
+    "activePlatformMembers": "Anggota platform aktif",
+    "webhooksActive": "Webhooks aktif",
+    "activeWebhookEndpoints": "Endpoint webhook aktif",
+    "inviteMember": "Undang Anggota",
+    "onboardNewTeamMember": "Onboard anggota tim baru",
+    "viewMembers": "Lihat Anggota",
+    "browseTeamMembers": "Jelajahi anggota tim Anda",
+    "askAIAssistant": "Dapatkan bantuan dari asisten AI",
+    "commonTasks": "Tugas umum untuk memulai",
+    "yourLatestActions": "Aksi terbaru Anda",
+    "manageSettings": "Kelola pengaturan",
+    "configureYourTenant": "Konfigurasikan tenant Anda",
+    "addBio": "Tambahkan bio ke profil Anda",
+    "uploadAvatar": "Unggah foto profil",
+    "connectGitHub": "Hubungkan akun GitHub Anda",
+    "inviteTeamMember": "Undang anggota tim"
+  },
+  "members": {
+    "title": "Anggota Tim",
+    "description": "Kelola anggota tim dan peran mereka",
+    "addMember": "Tambah Anggota",
+    "editMember": "Sunting Anggota",
+    "inviteMember": "Undang Anggota",
+    "searchPlaceholder": "Cari anggota...",
+    "namePlaceholder": "John Doe",
+    "noMembers": "Tidak ditemukan anggota"
+  },
+  "auditLogs": {
+    "title": "Log Audit",
+    "description": "Lihat semua aksi yang dilakukan di organisasi Anda",
+    "filters": {
+      "title": "Filter",
+      "clear": "Bersihkan",
+      "apply": "Terapkan Filter",
+      "dateRange": "Rentang Tanggal",
+      "actor": "Pelaku",
+      "action": "Aksi",
+      "entityType": "Tipe Entitas",
+      "entityId": "ID Entitas",
+      "search": "Cari..."
+    },
+    "columns": {
+      "timestamp": "Waktu",
+      "actor": "Pelaku",
+      "action": "Aksi",
+      "entity": "Entitas"
+    },
+    "noResults": "Tidak ditemukan event audit",
+    "export": "Ekspor CSV",
+    "datePresets": {
+      "all": "Sepanjang Waktu",
+      "today": "Hari Ini",
+      "week": "7 Hari Terakhir",
+      "month": "30 Hari Terakhir"
+    }
+  },
+  "docs": {
+    "title": "Dokumentasi",
+    "backToApp": "Kembali ke Aplikasi",
+    "nav": {
+      "gettingStarted": "Memulai",
+      "welcome": "Selamat Datang",
+      "firstLogin": "Login Pertama",
+      "navigation": "Navigasi & Tampilan",
+      "profileSetup": "Pengaturan Profil",
+      "memberGuide": "Panduan Anggota",
+      "overview": "Ikhtisar",
+      "dashboard": "Dasbor",
+      "profileSettings": "Profil & Pengaturan",
+      "aiAssistant": "Asisten AI",
+      "adminGuide": "Panduan Admin",
+      "membersInvitations": "Anggota & Undangan",
+      "rolesPermissions": "Peran & Izin",
+      "settings": "Pengaturan",
+      "branding": "Branding & Kustomisasi",
+      "integrations": "Integrasi",
+      "analyticsAudit": "Analitik & Audit",
+      "faq": "FAQ"
+    },
+    "fallbackNotice": "Halaman ini ditampilkan dalam bahasa Inggris karena terjemahan untuk locale yang dipilih belum tersedia.",
+    "search": {
+      "placeholder": "Cari dokumentasi...",
+      "hint": "Ketik untuk mencari di semua halaman dokumentasi",
+      "noResults": "Tidak ditemukan hasil",
+      "navigate": "Navigasi",
+      "open": "Buka",
+      "close": "Tutup"
+    },
+    "pagination": {
+      "previous": "Sebelumnya",
+      "next": "Berikutnya"
+    },
+    "toc": {
+      "onThisPage": "Di halaman ini"
+    }
+  }
+}

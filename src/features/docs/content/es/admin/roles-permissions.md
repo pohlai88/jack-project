@@ -1,8 +1,15 @@
 ---
 title: Roles y permisos
-description: Roles del sistema (Member, Manager, Admin, 1:1er, Referente), roles personalizados, asignar permisos y el modelo PBAC.
+description: >-
+  Roles del sistema (Member, Manager, Admin, 1:1er, Referente), roles
+  personalizados, asignar permisos y el modelo PBAC.
 section: admin
 order: 7
+translation:
+  sourceLocale: en
+  sourcePath: admin/roles-permissions.md
+  sourceHash: 6bd6d316d924d149a97912105919ffb4ca108f5e996c7e1be8835f2a4702613f
+  status: reviewed
 ---
 
 # Roles y permisos

@@ -1,8 +1,14 @@
 ---
 title: First Login
-description: How to sign in to Afenda with Auth0 (SSO or email), choose a tenant, and get oriented on your first visit.
+description: >-
+  How to sign in to Afenda with Auth0 (SSO or email), choose a tenant, and get
+  oriented on your first visit.
 section: getting-started
 order: 2
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # First Login

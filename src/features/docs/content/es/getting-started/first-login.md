@@ -1,8 +1,15 @@
 ---
 title: Primer inicio de sesión
-description: Cómo iniciar sesión en Afenda con Auth0 (SSO o email), elegir un tenant y orientarte en tu primera visita.
+description: >-
+  Cómo iniciar sesión en Afenda con Auth0 (SSO o email), elegir un tenant y
+  orientarte en tu primera visita.
 section: getting-started
 order: 2
+translation:
+  sourceLocale: en
+  sourcePath: getting-started/first-login.md
+  sourceHash: eed28c5f4937e593abfaeb8c1f6f6e8b4709911439e43f786aa6121d70122a97
+  status: reviewed
 ---
 
 # Primer inicio de sesión

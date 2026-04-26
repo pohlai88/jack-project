@@ -1,8 +1,12 @@
 ---
 title: Dashboard
-description: Stats cards, quick actions, and activity summary for members.
+description: 'Stats cards, quick actions, and activity summary for members.'
 section: member
 order: 2
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # Dashboard

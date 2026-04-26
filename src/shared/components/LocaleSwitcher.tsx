@@ -1,6 +1,7 @@
 'use client';
 
 import { GlobeIcon } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
 import { useChangeLocale } from '@/i18n/client';
@@ -21,12 +22,13 @@ function useAfterHydration() {
 export function LocaleSwitcher() {
   const { locale, changeLocale, isPending } = useChangeLocale();
   const mounted = useAfterHydration();
+  const tCommon = useTranslations('common');
 
   if (!mounted) {
     return (
       <Button variant="ghost" size="icon" type="button" className="h-9 w-9">
         <GlobeIcon className="h-5 w-5" />
-        <span className="sr-only">Change language</span>
+        <span className="sr-only">{tCommon('changeLanguage')}</span>
       </Button>
     );
   }
@@ -36,7 +38,7 @@ export function LocaleSwitcher() {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" disabled={isPending}>
           <GlobeIcon className="h-5 w-5" />
-          <span className="sr-only">Change language</span>
+          <span className="sr-only">{tCommon('changeLanguage')}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

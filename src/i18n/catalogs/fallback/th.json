@@ -1,0 +1,941 @@
+{
+  "common": {
+    "addNotes": "เพิ่มบันทึก",
+    "hideNotes": "ซ่อนบันทึก",
+    "save": "บันทึก",
+    "cancel": "ยกเลิก",
+    "delete": "ลบ",
+    "edit": "แก้ไข",
+    "add": "เพิ่ม",
+    "create": "สร้าง",
+    "update": "อัปเดต",
+    "remove": "นำออก",
+    "confirm": "ยืนยัน",
+    "close": "ปิด",
+    "back": "กลับ",
+    "next": "ถัดไป",
+    "previous": "ก่อนหน้า",
+    "submit": "ส่ง",
+    "reset": "รีเซ็ต",
+    "search": "ค้นหา",
+    "filter": "กรอง",
+    "loading": "กำลังโหลด...",
+    "saving": "กำลังบันทึก...",
+    "processing": "กำลังประมวลผล...",
+    "success": "สำเร็จ",
+    "error": "ข้อผิดพลาด",
+    "warning": "คำเตือน",
+    "info": "ข้อมูล",
+    "unknown": "ไม่ทราบ",
+    "yes": "ใช่",
+    "no": "ไม่",
+    "all": "ทั้งหมด",
+    "none": "ไม่มี",
+    "view": "ดู",
+    "download": "ดาวน์โหลด",
+    "upload": "อัปโหลด",
+    "refresh": "รีเฟรช",
+    "retry": "ลองอีกครั้ง",
+    "skip": "ข้าม",
+    "continue": "ดำเนินการต่อ",
+    "finish": "เสร็จสิ้น",
+    "done": "เสร็จ",
+    "pending": "รอดำเนินการ",
+    "completed": "เสร็จสิ้น",
+    "failed": "ล้มเหลว",
+    "active": "ใช้งาน",
+    "inactive": "ไม่ใช้งาน",
+    "enabled": "เปิดใช้งาน",
+    "disabled": "ปิดใช้งาน",
+    "required": "จำเป็น",
+    "optional": "ไม่บังคับ",
+    "noResults": "ไม่พบผลลัพธ์",
+    "noData": "ไม่มีข้อมูล",
+    "reports": "รายงาน",
+    "changeLanguage": "Change language"
+  },
+  "landing": {
+    "hero": {
+      "badge": "แพลตฟอร์ม SaaS ที่เน้น AI",
+      "title": {
+        "one": "สร้างด้วย ",
+        "two": "Afenda"
+      },
+      "description": "เปิดตัวผลิตภัณฑ์ SaaS แบบ multi-tenant พร้อมการยืนยันตัวตน, AI, การเชื่อมต่อ, การจัดการทีม และพื้นฐานที่พร้อมสำหรับการกำกับดูแล",
+      "cta": {
+        "goToDashboard": "ไปที่แดชบอร์ด",
+        "getStarted": "เริ่มต้น",
+        "explore": "สำรวจเอกสาร"
+      },
+      "socialProof": {
+        "enterpriseReady": "พร้อมสำหรับองค์กร",
+        "aiNative": "AI แบบเนทีฟ",
+        "growthFocused": "มุ่งเน้นการเติบโต",
+        "enterpriseDesc": "การแยก tenant, การตรวจสอบได้ และการเข้าถึงตามบทบาทถูกสร้างไว้แล้ว",
+        "aiNativeDesc": "เชื่อมต่อผู้ช่วย, เวิร์กโฟลว์ความรู้ และข้อมูลการรวมตั้งแต่วันแรก",
+        "growthDesc": "ออกแบบมาสำหรับทีมที่ต้องการเคลื่อนไหวอย่างรวดเร็วโดยไม่สูญเสียการควบคุม"
+      }
+    },
+    "features": {
+      "title": "ทุกสิ่งที่ทีมต้องการเพื่อขยายตัว",
+      "description": "พื้นฐาน SaaS ที่ใช้งานได้จริงสำหรับผู้ใช้ ทีม ผู้ดูแล ระบบเวิร์กโฟลว์ AI และการเชื่อมต่อ"
+    },
+    "pricing": {
+      "badge": "แผนเรียบง่าย",
+      "title": "เริ่มเล็ก ขยายด้วยการควบคุม",
+      "description": "ใช้เดโมฟรี แล้วปรับแพลตฟอร์มให้เหมาะกับทีมที่เติบโตและการใช้งานระดับองค์กร",
+      "mostPopular": "เป็นที่นิยมที่สุด",
+      "perMonth": "/เดือน",
+      "plans": {
+        "free": {
+          "name": "Free",
+          "description": "Up to 10 users. Get started with the essentials.",
+          "cta": "Get Started",
+          "features": {
+            "1": "Up to 10 users",
+            "2": "AI assistant (limited)",
+            "3": "GitHub integration",
+            "4": "Knowledge base (read)",
+            "5": "Community support"
+          }
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "For growing teams that need more power.",
+          "cta": "Get Started",
+          "features": {
+            "1": "Unlimited users",
+            "2": "Custom roles & permissions",
+            "3": "Webhooks & audit logs",
+            "4": "Full knowledge base",
+            "5": "Priority support"
+          }
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "For organizations with advanced needs.",
+          "cta": "Contact us",
+          "features": {
+            "1": "Everything in Pro",
+            "2": "SSO (Auth0)",
+            "3": "Custom integrations",
+            "4": "SLA guarantee",
+            "5": "Dedicated support"
+          }
+        }
+      }
+    },
+    "faq": {
+      "title": "คำถามที่พบบ่อย",
+      "items": {
+        "try": {
+          "question": "Is Afenda free to try?",
+          "answer": "Yes. The demo environment is fully functional with no payment required. Explore every feature with sample data."
+        },
+        "startData": {
+          "question": "What data do I need to get started?",
+          "answer": "Just your team roster. You can import CSV, invite members manually, or use the bulk import flow."
+        },
+        "existingTools": {
+          "question": "Does it work with our existing tools?",
+          "answer": "The platform includes GitHub out of the box and a flexible integration framework for webhooks and custom sync adapters."
+        },
+        "assistant": {
+          "question": "How does the AI assistant work?",
+          "answer": "The AI uses your knowledge base and user data to answer questions, search documents, and provide contextual help. It supports OpenAI and Anthropic models."
+        },
+        "security": {
+          "question": "Is my data secure?",
+          "answer": "Yes. The platform is multi-tenant by design, with isolated tenant data, enterprise authentication, and permission-based access control."
+        },
+        "migration": {
+          "question": "Can I migrate my existing data?",
+          "answer": "Yes. You can import team data from CSV, and the integration engine can sync external systems on a schedule."
+        }
+      }
+    },
+    "nav": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "docs": "Docs",
+      "language": "Language",
+      "selectLanguage": "Select language",
+      "theme": "Theme",
+      "toggleTheme": "Toggle theme",
+      "toggleMenu": "Toggle menu",
+      "themeOptions": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+      },
+      "bookDemo": "Book a Demo"
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "description": "Get your team up and running in three simple steps.",
+      "steps": {
+        "configure": {
+          "title": "Deploy & configure",
+          "description": "Deploy the template, create your tenant, configure branding, roles, and connect your AI provider."
+        },
+        "invite": {
+          "title": "Invite users",
+          "description": "Invite your team members, assign roles, and let them set up profiles and integrations."
+        },
+        "launch": {
+          "title": "Launch with AI",
+          "description": "Connect your knowledge base, enable the AI assistant, set up webhooks, and go live."
+        }
+      }
+    },
+    "featureTabs": {
+      "users": {
+        "label": "For Users",
+        "description": "Everything your users need to get started and stay productive.",
+        "features": {
+          "profile": {
+            "title": "Profile",
+            "description": "Complete user profiles with avatars and GitHub integration."
+          },
+          "assistant": {
+            "title": "AI Assistant",
+            "description": "Natural language chat powered by OpenAI or Anthropic."
+          },
+          "knowledgeBase": {
+            "title": "Knowledge Base",
+            "description": "Search and browse your organization's docs and content."
+          },
+          "directory": {
+            "title": "Directory",
+            "description": "Find and connect with team members."
+          }
+        }
+      },
+      "team": {
+        "label": "For Teams",
+        "description": "Collaboration and visibility tools for growing teams.",
+        "features": {
+          "peopleDirectory": {
+            "title": "People Directory",
+            "description": "Browse and search team members with filters."
+          },
+          "orgChart": {
+            "title": "Org Chart",
+            "description": "Visualize team structure and reporting relationships."
+          },
+          "activityFeed": {
+            "title": "Activity Feed",
+            "description": "Real-time updates on team and platform activity."
+          },
+          "webhooks": {
+            "title": "Webhooks",
+            "description": "Push events to external systems as things happen."
+          }
+        }
+      },
+      "admin": {
+        "label": "Administration",
+        "description": "Full control for admins managing the platform.",
+        "features": {
+          "memberManagement": {
+            "title": "Member Management",
+            "description": "Invite, manage, and deactivate team members."
+          },
+          "roles": {
+            "title": "Roles & Permissions",
+            "description": "Fine-grained PBAC with custom role bundles."
+          },
+          "auditLogs": {
+            "title": "Audit Logs",
+            "description": "Complete trail of all actions across the platform."
+          },
+          "settings": {
+            "title": "Settings",
+            "description": "Tenant-level config, branding, and feature flags."
+          }
+        }
+      },
+      "ai": {
+        "label": "AI & Integrations",
+        "description": "Connect AI and external systems to your platform.",
+        "features": {
+          "chat": {
+            "title": "AI Chat",
+            "description": "Conversational search across all your data."
+          },
+          "vectorSearch": {
+            "title": "Vector Search",
+            "description": "Semantic search powered by pgvector embeddings."
+          },
+          "githubIntegration": {
+            "title": "GitHub Integration",
+            "description": "Sync user profiles and activity from GitHub."
+          },
+          "integrationEngine": {
+            "title": "Integration Engine",
+            "description": "Connect any external system with the sync framework."
+          }
+        }
+      }
+    },
+    "socialProofSection": {
+      "title": "Trusted by teams worldwide",
+      "description": "See how organizations are using Afenda to automate and scale their workflows.",
+      "roleAt": "{role} at {company}",
+      "sponsorsTitle": "Our partners & sponsors",
+      "sponsorLabel": "Partner {index}",
+      "comingSoon": "Coming soon",
+      "sponsorCta": "Interested in sponsoring Afenda?",
+      "sponsorCtaLink": "Get in touch",
+      "testimonials": {
+        "1": {
+          "role": "VP of Engineering",
+          "text": "Afenda transformed how we build and automate our workflows. Everything is now transparent and data-driven."
+        },
+        "2": {
+          "role": "People Operations Manager",
+          "text": "The AI assistant and integration engine saved our team weeks of setup. Shipping our SaaS has never been faster."
+        },
+        "3": {
+          "role": "Director of Talent",
+          "text": "Finally, a platform where managers can focus on growth instead of spreadsheets. The OKR integration is seamless."
+        }
+      }
+    },
+    "footer": {
+      "blurb": "Production-ready Next.js SaaS boilerplate with multi-tenancy, AI, and integrations.",
+      "sections": {
+        "product": "Product",
+        "resources": "Resources",
+        "company": "Company"
+      },
+      "links": {
+        "features": "Features",
+        "pricing": "Pricing",
+        "howItWorks": "How It Works",
+        "documentation": "Documentation",
+        "blog": "Blog (coming soon)",
+        "changelog": "Changelog (coming soon)",
+        "about": "About (coming soon)",
+        "contact": "Contact (coming soon)",
+        "privacy": "Privacy (coming soon)",
+        "terms": "Terms (coming soon)"
+      },
+      "builtWith": "Built with Next.js, Tailwind CSS, and Drizzle ORM.",
+      "socialComingSoon": "{name} (coming soon)"
+    },
+    "heroPreview": {
+      "fasterOnboarding": "+42% faster onboarding",
+      "profileCard": {
+        "personName": "Jane Doe",
+        "personRole": "Senior Developer",
+        "badge": "+ Leadership"
+      },
+      "activityCard": {
+        "title": "Platform Activity",
+        "teamVelocity": "Team velocity",
+        "delivery": "Delivery"
+      },
+      "peopleFinder": {
+        "title": "People Finder"
+      },
+      "people": {
+        "ana": {
+          "role": "Staff Engineer"
+        },
+        "marco": {
+          "role": "Tech Lead"
+        }
+      },
+      "integrationsCount": "12 integrations",
+      "aiInsights": "AI insights"
+    }
+  },
+  "auth": {
+    "signIn": "เข้าสู่ระบบ",
+    "signOut": "ออกจากระบบ",
+    "signUp": "สมัคร",
+    "email": "อีเมล",
+    "password": "รหัสผ่าน",
+    "forgotPassword": "ลืมรหัสผ่าน?",
+    "rememberMe": "จดจำฉัน",
+    "continueWith": "ดำเนินการต่อด้วย {provider}",
+    "orContinueWith": "หรือดำเนินการต่อด้วย",
+    "signInWith": "เข้าสู่ระบบด้วย {provider}",
+    "welcomeBack": "ยินดีต้อนรับกลับ",
+    "createAccount": "สร้างบัญชี",
+    "alreadyHaveAccount": "มีบัญชีอยู่แล้ว?",
+    "dontHaveAccount": "ยังไม่มีบัญชี?"
+  },
+  "nav": {
+    "home": "หน้าแรก",
+    "dashboard": "แดชบอร์ด",
+    "profile": "โปรไฟล์",
+    "settings": "การตั้งค่า",
+    "admin": "ผู้ดูแลระบบ",
+    "members": "สมาชิกทีม",
+    "team": "ทีม",
+    "assistant": "ผู้ช่วย",
+    "overview": "ภาพรวม",
+    "adminPanel": "แผงผู้ดูแล",
+    "openAdminPanel": "เปิดแผงผู้ดูแล",
+    "viewMy": "มุมมองของฉัน",
+    "viewAdmin": "มุมมองผู้ดูแล",
+    "switchView": "สลับมุมมอง"
+  },
+  "profile": {
+    "title": "โปรไฟล์",
+    "overview": "ภาพรวม",
+    "aboutMe": "เกี่ยวกับฉัน",
+    "connectedAccounts": "บัญชีที่เชื่อมต่อ",
+    "manageAccounts": "จัดการ",
+    "completionTitle": "ความสมบูรณ์ของโปรไฟล์",
+    "completionDescription": "ทำขั้นตอนเหล่านี้ให้เสร็จเพื่อใช้แพลตฟอร์มได้เต็มที่",
+    "completeProfile": "ทำโปรไฟล์ให้สมบูรณ์",
+    "editProfile": "แก้ไขโปรไฟล์",
+    "viewProfile": "ดูโปรไฟล์",
+    "backToDashboard": "กลับไปที่แดชบอร์ด",
+    "settings": {
+      "pageTitle": "การตั้งค่าโปรไฟล์",
+      "pageDescription": "แก้ไขข้อมูลส่วนตัวและบัญชีที่เชื่อมต่อ",
+      "backToProfile": "โปรไฟล์",
+      "currentPage": "การตั้งค่า",
+      "identityTitle": "ข้อมูลประจำตัว",
+      "identityDescription": "ข้อมูลประจำตัวพื้นฐานที่องค์กรของคุณจัดการ",
+      "name": "ชื่อ",
+      "email": "อีเมลที่ทำงาน",
+      "jobTitle": "ตำแหน่งงาน",
+      "identityHint": "ช่องเหล่านี้ถูกจัดการโดยผู้ดูแลระบบของคุณ หากต้องการเปลี่ยนแปลง โปรดติดต่อผู้ดูแล",
+      "personalInfoTitle": "ข้อมูลส่วนตัว",
+      "personalInfoDescription": "อัปเดตข้อมูลส่วนตัวของคุณ ข้อมูลเหล่านี้จะแสดงกับทีมของคุณ",
+      "pronouns": "สรรพนาม",
+      "pronounsPlaceholder": "เช่น เขา/ของเขา, เธอ/ของเธอ, พวกเขา/ของพวกเขา",
+      "location": "ที่ตั้ง",
+      "locationPlaceholder": "เช่น กรุงเทพมหานคร, ประเทศไทย",
+      "timezone": "โซนเวลา",
+      "timezonePlaceholder": "เช่น Asia/Bangkok",
+      "phoneNumber": "หมายเลขโทรศัพท์",
+      "phoneNumberPlaceholder": "+66 2 1234-5678",
+      "personalEmail": "อีเมลส่วนตัว",
+      "personalEmailHint": "ไม่บังคับ อีเมลสำรองสำหรับการติดต่อที่ไม่ใช่งาน",
+      "personalEmailPlaceholder": "personal@example.com",
+      "bio": "ประวัติย่อ",
+      "bioPlaceholder": "แนะนำตัวเองให้ทีมรู้จัก...",
+      "connectedAccountsTitle": "บัญชีที่เชื่อมต่อ",
+      "connectedAccountsDescription": "เชื่อมต่อโปรไฟล์ภายนอกเพื่อเสริมข้อมูลบนแพลตฟอร์ม",
+      "githubUsername": "ชื่อผู้ใช้ GitHub",
+      "githubUsernameHint": "ชื่อผู้ใช้ GitHub ของคุณ (เช่น 'octocat') ใช้เพื่อติดตามการมีส่วนร่วม",
+      "githubUsernamePlaceholder": "เช่น octocat",
+      "viewProfile": "ดู",
+      "linkedinUrl": "URL โปรไฟล์ LinkedIn",
+      "linkedinUrlHint": "URL โปรไฟล์ LinkedIn ของคุณแบบเต็ม",
+      "linkedinUrlPlaceholder": "https://linkedin.com/in/ชื่อของคุณ",
+      "saved": "อัปเดตโปรไฟล์เรียบร้อย!",
+      "saveError": "อัปเดตโปรไฟล์ล้มเหลว กรุณาลองอีกครั้ง",
+      "saveChanges": "บันทึกการเปลี่ยนแปลง",
+      "connectGitHub": "เชื่อมต่อ GitHub",
+      "disconnectGitHub": "ยกเลิกการเชื่อมต่อ",
+      "disconnectGitHubConfirm": "คุณแน่ใจหรือไม่ว่าต้องการยกเลิกการเชื่อมต่อบัญชี GitHub?",
+      "githubConnectedAs": "เชื่อมต่อเป็น @{username}",
+      "githubNotConnected": "ยังไม่ได้เชื่อมต่อ",
+      "connectGitHubHint": "เชื่อมต่อเพื่อซิงค์รีโพและการมีส่วนร่วมของคุณโดยอัตโนมัติ",
+      "connectGitHubConnectedHint": "บัญชี GitHub ของคุณถูกเชื่อมต่อแล้ว",
+      "orManualEntry": "หรือป้อนด้วยตนเอง",
+      "connectLinkedIn": "เชื่อมต่อ LinkedIn",
+      "disconnectLinkedIn": "ยกเลิกการเชื่อมต่อ",
+      "disconnectLinkedInConfirm": "คุณแน่ใจหรือไม่ว่าต้องการยกเลิกการเชื่อมต่อ LinkedIn?",
+      "linkedinConnectedAs": "เชื่อมต่อเป็น {name}",
+      "linkedinNotConnected": "ยังไม่ได้เชื่อมต่อ",
+      "connectLinkedInHint": "เชื่อมต่อเพื่อยืนยันตัวตน LinkedIn และนำรูปโปรไฟล์เข้ามา",
+      "connectLinkedInConnectedHint": "บัญชี LinkedIn ของคุณถูกเชื่อมต่อและยืนยันแล้ว"
+    },
+    "addBio": "เพิ่มประวัติย่อในโปรไฟล์",
+    "uploadAvatar": "อัปโหลดรูปโปรไฟล์",
+    "connectGitHub": "เชื่อมต่อบัญชี GitHub",
+    "inviteTeamMember": "เชิญสมาชิกทีม"
+  },
+  "admin": {
+    "title": "ผู้ดูแลระบบ",
+    "dashboard": "แดชบอร์ด",
+    "analytics": "การวิเคราะห์",
+    "orgAnalytics": "การวิเคราะห์องค์กร",
+    "orgAnalyticsDesc": "เมตริกและข้อมูลเชิงลึกระดับองค์กร",
+    "settings": "การตั้งค่า",
+    "members": "สมาชิกทีม",
+    "invites": "คำเชิญ",
+    "organization": "องค์กร",
+    "departments": "แผนก",
+    "system": "ระบบ",
+    "rolesAndPermissions": "บทบาท & สิทธิ์",
+    "auditLogs": "บันทึกการตรวจสอบ",
+    "integrations": "การเชื่อมต่อ",
+    "total": "รวม",
+    "adminPanel": "แผงผู้ดูแล",
+    "integrationsPage": {
+      "title": "การเชื่อมต่อ",
+      "description": "เชื่อมต่อเครื่องมือภายนอกและดูข้อมูลที่ซิงค์",
+      "connectedSection": "เชื่อมต่อแล้ว",
+      "availableSection": "ที่มี",
+      "comingSoonSection": "เร็วๆ นี้",
+      "configure": "กำหนดค่า",
+      "learnMore": "เรียนรู้เพิ่มเติม",
+      "lastSync": "ซิงค์ล่าสุด: {date}",
+      "statusConnected": "เชื่อมต่อแล้ว",
+      "statusNotConnected": "ยังไม่ได้เชื่อมต่อ",
+      "statusComingSoon": "เร็วๆ นี้",
+      "statusInDevelopment": "กำลังพัฒนา",
+      "statusEnabled": "เปิดใช้งาน",
+      "statusNotConfigured": "ยังไม่ได้กำหนดค่า",
+      "lastSyncNever": "ไม่เคย",
+      "webhooks": {
+        "name": "Webhooks",
+        "description": "ส่งการแจ้งเตือนเหตุการณ์ไปยังบริการภายนอก เช่น Slack, Zapier หรือ API ที่กำหนดเอง"
+      },
+      "github": {
+        "name": "GitHub",
+        "description": "เชื่อมต่อ GitHub เพื่อการติดตามรีโพและการซิงค์ข้อมูล"
+      },
+      "gitlab": {
+        "name": "GitLab",
+        "description": "เชื่อมต่อ GitLab เพื่อการติดตามรีโพและการซิงค์ข้อมูล"
+      },
+      "linkedin": {
+        "name": "LinkedIn",
+        "description": "เชื่อมต่อบัญชี LinkedIn เพื่อยืนยันตัวตนและเสริมโปรไฟล์"
+      }
+    },
+    "integrationsControl": {
+      "title": "แผงควบคุมการเชื่อมต่อ",
+      "description": "เรียกใช้งานซิงค์ ตรวจสอบการรัน และแก้ไขความขัดแย้งระหว่างผู้ให้บริการ",
+      "provider": "ผู้ให้บริการ",
+      "mode": "โหมด",
+      "incremental": "ซิงค์แบบเพิ่มทีละน้อย",
+      "full": "ย้ายข้อมูลทั้งหมด",
+      "reconcile": "ปรับให้ตรงกัน",
+      "dryRun": "การรันแบบทดสอบ (dry run)",
+      "entities": "เอนทิตี (คั่นด้วยคอมมา)",
+      "fromDate": "จากวันที่",
+      "toDate": "ถึงวันที่",
+      "personEmails": "อีเมลบุคคล",
+      "personEmailsPlaceholder": "alice@company.com, bob@company.com",
+      "run": "รัน",
+      "runCompleted": "รันเสร็จสิ้น",
+      "runFailed": "รันล้มเหลว",
+      "unknownError": "ข้อผิดพลาดไม่ทราบสาเหตุ",
+      "metrics": "เมตริก (14 วัน)",
+      "runsTotal": "จำนวนรันทั้งหมด: {value}",
+      "runsCompleted": "รันที่เสร็จสิ้น: {value}",
+      "runsFailed": "รันที่ล้มเหลว: {value}",
+      "conflictsOpenCount": "ความขัดแย้งที่เปิดอยู่: {value}",
+      "avgRunTimeSeconds": "เวลาเฉลี่ย (วินาที): {value}",
+      "noMetrics": "ไม่มีเมตริก",
+      "readiness": "ความพร้อมสำหรับการย้าย",
+      "readinessReady": "พร้อมสำหรับการย้าย",
+      "readinessNotReady": "ยังไม่พร้อมสำหรับการย้าย",
+      "recentRuns": "การรันล่าสุด",
+      "noRuns": "ยังไม่มีการรัน",
+      "openConflicts": "ความขัดแย้งที่เปิดอยู่",
+      "noConflicts": "ไม่มีความขัดแย้งที่เปิดอยู่",
+      "resolve": "แก้ไข",
+      "fieldMappings": "การแมปความเป็นเจ้าของฟิลด์",
+      "mappingEntityPlaceholder": "ประเภทเอนทิตี (เช่น record)",
+      "mappingFieldPlaceholder": "เส้นทางฟิลด์ (เช่น status)",
+      "ownershipRemote": "แหล่งข้อมูลระยะไกลเป็นผู้มีอำนาจ",
+      "ownershipLocal": "แหล่งข้อมูลท้องถิ่นเป็นผู้มีอำนาจ",
+      "ownershipMerge": "ผสาน",
+      "ownershipAppendOnly": "เพิ่มเท่านั้น",
+      "saveMapping": "บันทึกการแมป",
+      "noMappings": "ยังไม่ได้กำหนดการแมป"
+    },
+    "github": {
+      "title": "GitHub",
+      "description": "เชื่อมต่อ GitHub เพื่อการติดตามรีโพและการซิงค์ข้อมูล",
+      "credentials": {
+        "title": "ข้อมูลรับรอง OAuth App",
+        "description": "ป้อนข้อมูลรับรอง OAuth App ของ GitHub สร้างได้ที่ github.com/settings/developers",
+        "clientId": "Client ID",
+        "clientIdHint": "Client ID จากการตั้งค่า OAuth App ของ GitHub",
+        "clientSecret": "Client Secret",
+        "clientSecretHint": "Client Secret จากการตั้งค่า OAuth App ของ GitHub",
+        "testCredentials": "ตรวจสอบข้อมูลรับรอง",
+        "testSuccess": "ข้อมูลรับรองดูเหมือนถูกต้อง",
+        "testFailed": "การตรวจสอบล้มเหลว",
+        "clientIdTooShort": "Client ID สั้นเกินไป",
+        "clientSecretTooShort": "Client Secret สั้นเกินไป",
+        "saveCredentials": "บันทึกข้อมูลรับรอง",
+        "saveFailed": "บันทึกข้อมูลรับรองล้มเหลว",
+        "envConfigured": "ตรวจพบตัวแปรสภาพแวดล้อม",
+        "envConfiguredDesc": "ข้อมูลรับรอง OAuth ของ GitHub ถูกตั้งค่าผ่านตัวแปรสภาพแวดล้อม (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET) ค่าที่ป้อนที่นี่จะเขียนทับตัวแปรสภาพแวดล้อมสำหรับ tenant นี้",
+        "githubDevSettings": "การตั้งค่านักพัฒนา GitHub"
+      },
+      "settings": {
+        "connectionStatus": "สถานะการเชื่อมต่อ",
+        "connectedAs": "เชื่อมต่อเป็น @{username}",
+        "notConnected": "ยังไม่ได้เชื่อมต่อกับ GitHub คลิก เชื่อมต่อ เพื่อเริ่มกระบวนการ OAuth",
+        "connect": "เชื่อมต่อ GitHub",
+        "reconnect": "เชื่อมต่อใหม่",
+        "disconnect": "ยกเลิกการเชื่อมต่อ",
+        "confirmDisconnect": "คุณแน่ใจหรือไม่ว่าต้องการยกเลิกการเชื่อมต่อ GitHub? การดำเนินการนี้จะเพิกถอน access token ที่เก็บไว้",
+        "integrationSettings": "การตั้งค่าการเชื่อมต่อ",
+        "integrationSettingsDesc": "กำหนดวิธีการซิงค์ข้อมูลจาก GitHub เข้าสู่แพลตฟอร์ม",
+        "enableIntegration": "เปิดใช้งานการเชื่อมต่อ",
+        "enableIntegrationDesc": "เปิดเพื่อเริ่มซิงค์ข้อมูลจาก GitHub",
+        "organizationFilter": "ตัวกรององค์กร",
+        "organizationFilterDesc": "จำกัดการซิงค์ให้เฉพาะสมาชิกขององค์กร GitHub ที่ระบุ (ไม่บังคับ)",
+        "organizationFilterPlaceholder": "เช่น my-company",
+        "syncRepositories": "ซิงค์รีโพ",
+        "syncRepositoriesDesc": "สแกนรีโพและเก็บสถิติภาษา",
+        "syncContributions": "ซิงค์การมีส่วนร่วม",
+        "syncContributionsDesc": "ติดตาม commit, pull request และการรีวิวโค้ดต่อบุคคล",
+        "includeArchived": "รวมรีโพที่เก็บถาวร",
+        "includeArchivedDesc": "รวมรีโพที่เก็บถาวรเมื่อสแกน",
+        "includeForks": "รวมรีโพที่ fork",
+        "includeForksDesc": "รวมรีโพที่ fork เมื่อสแกน",
+        "lookbackDays": "ช่วงเวลาการสแกนการมีส่วนร่วม (วัน)",
+        "lookbackDaysDesc": "จำนวนวันที่ย้อนกลับไปเพื่อสแกนการมีส่วนร่วม (30-730)",
+        "saved": "บันทึกการตั้งค่าแล้ว",
+        "saveError": "บันทึกการตั้งค่าล้มเหลว",
+        "saveSettings": "บันทึกการตั้งค่า",
+        "disabledWarningTitle": "การเชื่อมต่อถูกปิดใช้งาน",
+        "disabledWarningDesc": "GitHub เชื่อมต่ออยู่แต่ถูกปิดใช้งาน เปิดใช้งานเพื่อเริ่มซิงค์ข้อมูล",
+        "envConfigured": "ข้อมูลรับรอง OAuth จากสภาพแวดล้อม",
+        "envConfiguredDesc": "ข้อมูลรับรอง OAuth ของ GitHub ถูกโหลดจากตัวแปรสภาพแวดล้อม (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET) ไม่จำเป็นต้องกำหนดค่าข้อมูลรับรองเพิ่มเติม"
+      }
+    },
+    "linkedin": {
+      "title": "LinkedIn",
+      "description": "เชื่อมต่อบัญชี LinkedIn เพื่อยืนยันตัวตนและเสริมโปรไฟล์",
+      "notConfiguredTitle": "ยังไม่ได้กำหนดค่าการเชื่อมต่อ",
+      "notConfiguredDesc": "กำหนดค่าข้อมูลรับรอง OAuth ของ LinkedIn เพื่อเปิดใช้งานการเชื่อมต่อนี้ สร้างแอปได้ที่ linkedin.com/developers/apps",
+      "credentials": {
+        "title": "ข้อมูลรับรอง OAuth ของ LinkedIn",
+        "description": "ป้อน Client ID และ secret ของ OAuth App LinkedIn ของคุณ สร้างแอปได้ที่ LinkedIn Developer Portal",
+        "clientId": "Client ID",
+        "clientIdHint": "พบได้ในการตั้งค่าแอป LinkedIn ภายใต้แท็บ Auth",
+        "clientIdTooShort": "Client ID สั้นเกินไป",
+        "clientSecret": "Client Secret",
+        "clientSecretHint": "Client secret หลักจากแอป LinkedIn ของคุณ",
+        "clientSecretTooShort": "Client secret สั้นเกินไป",
+        "testCredentials": "ทดสอบข้อมูลรับรอง",
+        "testSuccess": "รูปแบบถูกต้อง",
+        "testFailed": "การตรวจสอบล้มเหลว",
+        "saveCredentials": "บันทึกข้อมูลรับรอง",
+        "saveFailed": "บันทึกข้อมูลรับรองล้มเหลว",
+        "envConfigured": "ตรวจพบตัวแปรสภาพแวดล้อม",
+        "envConfiguredDesc": "ข้อมูลรับรอง LinkedIn ถูกจัดเตรียมผ่านตัวแปรสภาพแวดล้อม คุณสามารถเขียนทับด้วยค่าที่เฉพาะเจาะจงสำหรับ tenant ด้านล่าง",
+        "linkedinDevPortal": "พอร์ทัลนักพัฒนา LinkedIn"
+      },
+      "settings": {
+        "connectionStatus": "สถานะการเชื่อมต่อ",
+        "connectedAs": "เชื่อมต่อเป็น {name}",
+        "notConnected": "ยังไม่ได้เชื่อมต่อ LinkedIn คลิก เชื่อมต่อ เพื่อยืนยันว่าการเชื่อมต่อใช้งานได้",
+        "connect": "เชื่อมต่อ LinkedIn",
+        "reconnect": "เชื่อมต่อใหม่",
+        "disconnect": "ยกเลิกการเชื่อมต่อ",
+        "confirmDisconnect": "คุณแน่ใจหรือไม่ว่าต้องการยกเลิกการเชื่อมต่อ LinkedIn?",
+        "integrationSettings": "การตั้งค่าการเชื่อมต่อ",
+        "integrationSettingsDesc": "กำหนดวิธีการทำงานของการเชื่อมต่อ LinkedIn สำหรับองค์กรของคุณ",
+        "enableIntegration": "เปิดใช้งานการเชื่อมต่อ LinkedIn",
+        "enableIntegrationDesc": "อนุญาตให้สมาชิกเชื่อมต่อบัญชี LinkedIn เพื่อเสริมโปรไฟล์",
+        "autoUpdateAvatar": "อัปเดตรูปโปรไฟล์อัตโนมัติ",
+        "autoUpdateAvatarDesc": "อัปเดตรูปโปรไฟล์ของผู้ใช้จากรูป LinkedIn โดยอัตโนมัติเมื่อเชื่อมต่อ",
+        "autoUpdateLocale": "อัปเดตภาษาตามโปรไฟล์อัตโนมัติ",
+        "autoUpdateLocaleDesc": "ตั้งค่า locale ของผู้ใช้จากโปรไฟล์ LinkedIn โดยอัตโนมัติเมื่อเชื่อมต่อ",
+        "saveSettings": "บันทึกการตั้งค่า",
+        "saved": "บันทึกการตั้งค่าแล้ว",
+        "saveError": "บันทึกการตั้งค่าล้มเหลว",
+        "envConfigured": "ตรวจพบตัวแปรสภาพแวดล้อม",
+        "envConfiguredDesc": "ข้อมูลรับรอง LinkedIn ถูกจัดเตรียมผ่านตัวแปรสภาพแวดล้อม",
+        "disabledWarningTitle": "การเชื่อมต่อถูกปิดใช้งาน",
+        "disabledWarningDesc": "การเชื่อมต่อ LinkedIn ถูกปิดใช้งานในขณะนี้ เปิดใช้งานเพื่อให้สมาชิกเชื่อมต่อบัญชี LinkedIn ได้"
+      }
+    },
+    "settingsTabs": {
+      "general": "ทั่วไป",
+      "features": "ฟีเจอร์",
+      "departments": "แผนก",
+      "aiProvider": "ผู้ให้บริการ AI",
+      "storage": "ที่เก็บข้อมูล",
+      "branding": "แบรนด์"
+    },
+    "membersPage": {
+      "title": "สมาชิกทีม",
+      "description": "จัดการสมาชิกทีมและบทบาทของพวกเขา",
+      "addMember": "เพิ่มสมาชิก",
+      "editMember": "แก้ไขสมาชิก",
+      "inviteMember": "เชิญสมาชิก",
+      "role": "บทบาท",
+      "department": "แผนก",
+      "status": "สถานะ",
+      "lastActive": "ใช้งานครั้งล่าสุด",
+      "roles": {
+        "admin": "ผู้ดูแลระบบ",
+        "member": "สมาชิก"
+      },
+      "statuses": {
+        "active": "ใช้งาน",
+        "onboarding": "กำลังเริ่มต้น",
+        "inactive": "ไม่ใช้งาน"
+      },
+      "confirmRemove": "คุณแน่ใจหรือไม่ว่าต้องการลบสมาชิกนี้?",
+      "noMembers": "ไม่พบสมาชิกทีม"
+    },
+    "invitesPage": {
+      "title": "คำเชิญ",
+      "description": "จัดการคำเชิญที่รอดำเนินการในองค์กรของคุณ",
+      "createInvite": "สร้างคำเชิญ",
+      "sendInvite": "ส่งคำเชิญ",
+      "email": "ที่อยู่อีเมล",
+      "firstName": "ชื่อ",
+      "lastName": "นามสกุล",
+      "role": "บทบาท",
+      "message": "ข้อความต้อนรับ",
+      "messagePlaceholder": "เพิ่มข้อความส่วนตัวในคำเชิญ (ไม่บังคับ)",
+      "expiration": "หมดอายุภายใน",
+      "expirationOptions": {
+        "1day": "1 วัน",
+        "3days": "3 วัน",
+        "7days": "7 วัน",
+        "14days": "14 วัน",
+        "30days": "30 วัน"
+      },
+      "status": {
+        "pending": "รอดำเนินการ",
+        "accepted": "ยอมรับแล้ว",
+        "expired": "หมดอายุ",
+        "revoked": "ถูกเพิกถอน"
+      },
+      "actions": {
+        "copyLink": "คัดลอกลิงก์",
+        "linkCopied": "คัดลอกลิงก์คำเชิญแล้ว!",
+        "extend": "ขยายเวลา",
+        "revoke": "เพิกถอน"
+      },
+      "confirmRevoke": "คุณแน่ใจหรือไม่ว่าต้องการเพิกถอนคำเชิญนี้?",
+      "noInvites": "ไม่มีคำเชิญที่รอดำเนินการ",
+      "inviteSuccess": "ส่งคำเชิญเรียบร้อยแล้ว"
+    },
+    "departmentsPageDescription": "กำหนดผู้จัดการและสมาชิกให้แต่ละแผนก",
+    "departmentsManageInSettings": "จัดการในการตั้งค่า",
+    "departmentsNoDepartments": "ยังไม่ได้กำหนดค่าแผนก",
+    "departmentsNoDepartmentsHint": "เพิ่มแผนกเพื่อจัดระเบียบทีมของคุณ",
+    "departmentsCreateInSettings": "สร้างในการตั้งค่า",
+    "departmentsAddDepartment": "เพิ่มแผนก",
+    "departmentsEdit": "แก้ไขแผนก",
+    "departmentsEditDepartment": "แก้ไขแผนก",
+    "departmentsDelete": "ลบแผนก",
+    "departmentsConfirmDelete": "ลบแผนกนี้? การดำเนินการนี้ไม่สามารถย้อนกลับได้",
+    "departmentsDeleteDisabledHint": "โปรดลบสมาชิกทั้งหมดก่อน",
+    "departmentsCreateDescription": "สร้างแผนกใหม่เพื่อจัดระเบียบทีม คุณสามารถกำหนดผู้จัดการและสมาชิกภายหลัง",
+    "departmentsName": "ชื่อ",
+    "departmentsNamePlaceholder": "เช่น Engineering",
+    "departmentsParent": "แผนกต้นทาง",
+    "departmentsNoParent": "ไม่มี",
+    "departmentsMembers": "สมาชิก",
+    "departmentsManagers": "ผู้จัดการ",
+    "departmentsAddManager": "เพิ่มผู้จัดการ",
+    "departmentsPrimary": "หลัก",
+    "departmentsRemoveManager": "ลบผู้จัดการ",
+    "departmentsNoManagers": "ยังไม่ได้กำหนดผู้จัดการ",
+    "departmentsAddMember": "เพิ่มสมาชิก",
+    "departmentsRemoveMember": "ลบสมาชิก",
+    "departmentsNoMembers": "ยังไม่ได้กำหนดสมาชิก",
+    "departmentsNoPeople": "ไม่มีผู้ใช้งานใน tenant นี้"
+  },
+  "settings": {
+    "title": "การตั้งค่า",
+    "backToUserView": "กลับไปยังมุมมองผู้ใช้",
+    "general": {
+      "title": "รายละเอียดองค์กร",
+      "description": "การกำหนดค่า tenant พื้นฐาน",
+      "tenantSlug": "Tenant Slug",
+      "displayName": "ชื่อที่แสดง",
+      "descriptionLabel": "คำอธิบาย"
+    },
+    "features": {
+      "title": "ฟีเจอร์แฟลก",
+      "description": "เปิดหรือปิดฟีเจอร์ของแพลตฟอร์ม",
+      "core": "ฟีเจอร์หลัก",
+      "ai": "ฟีเจอร์ AI",
+      "integrations": "การเชื่อมต่อ"
+    },
+    "departments": {
+      "title": "แผนก",
+      "description": "กำหนดโครงสร้างองค์กร",
+      "addDepartment": "เพิ่มแผนก",
+      "noDepartments": "ยังไม่มีแผนกที่กำหนดค่า",
+      "noDepartmentsHint": "เพิ่มแผนกเพื่อจัดระเบียบสมาชิกทีมของคุณ"
+    },
+    "dangerZone": {
+      "title": "โซนอันตราย",
+      "description": "การกระทำที่ไม่สามารถย้อนกลับได้",
+      "resetSettings": "รีเซ็ตการตั้งค่า",
+      "resetDescription": "รีเซ็ตการตั้งค่าทั้งหมดเป็นค่าเริ่มต้น การดำเนินการนี้ไม่สามารถย้อนกลับได้",
+      "confirmReset": "คุณแน่ใจหรือไม่ว่าต้องการรีเซ็ตการตั้งค่าทั้งหมด?"
+    },
+    "saved": "บันทึกการตั้งค่าเรียบร้อย!",
+    "saveFailed": "บันทึกการตั้งค่าล้มเหลว กรุณาลองอีกครั้ง"
+  },
+  "validation": {
+    "required": "ช่องนี้จำเป็นต้องกรอก",
+    "invalidEmail": "ที่อยู่อีเมลไม่ถูกต้อง",
+    "minLength": "ต้องมีอย่างน้อย {min} ตัวอักษร",
+    "maxLength": "ต้องไม่เกิน {max} ตัวอักษร",
+    "invalidUrl": "URL ไม่ถูกต้อง",
+    "fileTooLarge": "ขนาดไฟล์เกินขีดจำกัด {maxSize}MB",
+    "invalidFileType": "ประเภทไฟล์ไม่รองรับ",
+    "passwordMismatch": "รหัสผ่านไม่ตรงกัน"
+  },
+  "errors": {
+    "generic": "เกิดข้อผิดพลาดบางอย่าง",
+    "notFound": "ไม่พบ",
+    "unauthorized": "ไม่ได้รับอนุญาต",
+    "forbidden": "การเข้าถึงถูกปฏิเสธ",
+    "serverError": "ข้อผิดพลาดของเซิร์ฟเวอร์",
+    "networkError": "ข้อผิดพลาดเครือข่าย",
+    "tryAgain": "กรุณาลองอีกครั้ง"
+  },
+  "assistant": {
+    "title": "ผู้ช่วย AI",
+    "placeholder": "พิมพ์ข้อความของคุณ...",
+    "send": "ส่ง",
+    "thinking": "กำลังคิด...",
+    "error": "เกิดข้อผิดพลาด",
+    "welcome": "สวัสดี! ฉันคือผู้ช่วย AI ของคุณ วันนี้ฉันช่วยอะไรได้บ้าง?",
+    "suggestedQuestions": "คำถามแนะนำ:",
+    "newConversation": "การสนทนาใหม่",
+    "noConversations": "ยังไม่มีการสนทนา",
+    "suggestions": {
+      "findPeople": "ค้นหาสมาชิกทีม",
+      "analyzeGaps": "วิเคราะห์ข้อมูล",
+      "recommend": "รับคำแนะนำ",
+      "explore": "สำรวจฟีเจอร์"
+    }
+  },
+  "genui": {
+    "loading": "กำลังโหลด...",
+    "previewNotAvailable": "ไม่สามารถแสดงตัวอย่างได้",
+    "viewProfile": "ดูโปรไฟล์",
+    "sendMessage": "ส่งข้อความ",
+    "viewDetails": "ดูรายละเอียด",
+    "showMore": "แสดงเพิ่มเติม {count}",
+    "showLess": "แสดงน้อยลง",
+    "comparison": "การเปรียบเทียบ",
+    "attribute": "คุณลักษณะ"
+  },
+  "dashboard": {
+    "title": "แดชบอร์ด",
+    "welcome": "ยินดีต้อนรับสู่ {name}",
+    "platformDescription": "แพลตฟอร์ม SaaS ที่เน้น AI ของคุณ",
+    "adminBadge": "ผู้ดูแล",
+    "adminAccessMessage": "คุณมีสิทธิ์ผู้ดูแลสำหรับ tenant นี้",
+    "openAdminPanel": "เปิดแผงผู้ดูแล",
+    "profileCompletion": "ความสมบูรณ์ของโปรไฟล์",
+    "completeProfile": "ทำโปรไฟล์ให้สมบูรณ์เพื่อปลดล็อกศักยภาพทั้งหมด",
+    "progress": "ความคืบหน้า",
+    "completeProfileToUnlock": "ทำโปรไฟล์ให้สมบูรณ์เพื่อปลดล็อกทุกฟีเจอร์",
+    "recentActivity": "กิจกรรมล่าสุด",
+    "quickActions": "การกระทำด่วน",
+    "viewAll": "ดูทั้งหมด",
+    "noActivity": "ไม่มีการกิจกรรมล่าสุด",
+    "aiConversations": "การสนทนา AI",
+    "totalInteractions": "การโต้ตอบทั้งหมด",
+    "viewAllActivity": "ดูกิจกรรมทั้งหมด",
+    "teamMembers": "สมาชิกทีม",
+    "activePlatformMembers": "สมาชิกแพลตฟอร์มที่ใช้งาน",
+    "webhooksActive": "Webhook ที่ใช้งาน",
+    "activeWebhookEndpoints": "Endpoint webhook ที่ใช้งาน",
+    "inviteMember": "เชิญสมาชิก",
+    "onboardNewTeamMember": "เริ่มต้นสมาชิกทีมใหม่",
+    "viewMembers": "ดูสมาชิก",
+    "browseTeamMembers": "เรียกดูสมาชิกทีมของคุณ",
+    "askAIAssistant": "ขอความช่วยเหลือจากผู้ช่วย AI",
+    "commonTasks": "งานทั่วไปสำหรับเริ่มต้น",
+    "yourLatestActions": "การกระทำล่าสุดของคุณ",
+    "manageSettings": "จัดการการตั้งค่า",
+    "configureYourTenant": "กำหนดค่า tenant ของคุณ",
+    "addBio": "เพิ่มประวัติย่อในโปรไฟล์",
+    "uploadAvatar": "อัปโหลดรูปโปรไฟล์",
+    "connectGitHub": "เชื่อมต่อบัญชี GitHub",
+    "inviteTeamMember": "เชิญสมาชิกทีม"
+  },
+  "members": {
+    "title": "สมาชิกทีม",
+    "description": "จัดการสมาชิกทีมและบทบาทของพวกเขา",
+    "addMember": "เพิ่มสมาชิก",
+    "editMember": "แก้ไขสมาชิก",
+    "inviteMember": "เชิญสมาชิก",
+    "searchPlaceholder": "ค้นหาสมาชิก...",
+    "namePlaceholder": "สมชาย ใจดี",
+    "noMembers": "ไม่พบสมาชิกทีม"
+  },
+  "auditLogs": {
+    "title": "บันทึกการตรวจสอบ",
+    "description": "ดูการกระทำทั้งหมดที่ดำเนินการในองค์กรของคุณ",
+    "filters": {
+      "title": "ตัวกรอง",
+      "clear": "ล้าง",
+      "apply": "ใช้ตัวกรอง",
+      "dateRange": "ช่วงวันที่",
+      "actor": "ผู้กระทำ",
+      "action": "การกระทำ",
+      "entityType": "ประเภทเอนทิตี",
+      "entityId": "ID เอนทิตี",
+      "search": "ค้นหา..."
+    },
+    "columns": {
+      "timestamp": "เวลา",
+      "actor": "ผู้กระทำ",
+      "action": "การกระทำ",
+      "entity": "เอนทิตี"
+    },
+    "noResults": "ไม่พบเหตุการณ์การตรวจสอบ",
+    "export": "ส่งออก CSV",
+    "datePresets": {
+      "all": "ตลอดเวลา",
+      "today": "วันนี้",
+      "week": "7 วันที่ผ่านมา",
+      "month": "30 วันที่ผ่านมา"
+    }
+  },
+  "docs": {
+    "title": "เอกสาร",
+    "backToApp": "กลับไปที่แอป",
+    "nav": {
+      "gettingStarted": "เริ่มต้น",
+      "welcome": "ยินดีต้อนรับ",
+      "firstLogin": "การเข้าสู่ระบบครั้งแรก",
+      "navigation": "การนำทาง & มุมมอง",
+      "profileSetup": "การตั้งค่าโปรไฟล์",
+      "memberGuide": "คู่มือสมาชิก",
+      "overview": "ภาพรวม",
+      "dashboard": "แดชบอร์ด",
+      "profileSettings": "โปรไฟล์ & การตั้งค่า",
+      "aiAssistant": "ผู้ช่วย AI",
+      "adminGuide": "คู่มือผู้ดูแล",
+      "membersInvitations": "สมาชิก & คำเชิญ",
+      "rolesPermissions": "บทบาท & สิทธิ์",
+      "settings": "การตั้งค่า",
+      "branding": "แบรนด์ & การปรับแต่ง",
+      "integrations": "การเชื่อมต่อ",
+      "analyticsAudit": "การวิเคราะห์ & การตรวจสอบ",
+      "faq": "คำถามที่พบบ่อย"
+    },
+    "fallbackNotice": "หน้านี้แสดงเป็นภาษาอังกฤษเนื่องจากการแปลสำหรับ locale ที่เลือกยังไม่พร้อมใช้งาน",
+    "search": {
+      "placeholder": "ค้นหาเอกสาร...",
+      "hint": "พิมพ์เพื่อค้นหาทั่วทั้งหน้าของเอกสาร",
+      "noResults": "ไม่พบผลลัพธ์",
+      "navigate": "ไปยัง",
+      "open": "เปิด",
+      "close": "ปิด"
+    },
+    "pagination": {
+      "previous": "ก่อนหน้า",
+      "next": "ถัดไป"
+    },
+    "toc": {
+      "onThisPage": "ในหน้านี้"
+    }
+  }
+}

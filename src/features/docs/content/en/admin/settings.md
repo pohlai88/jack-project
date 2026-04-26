@@ -1,8 +1,14 @@
 ---
 title: Settings
-description: Feature flags, branding (logo, colors), AI provider config, skill scales, skill categories, and storage settings.
+description: >-
+  Feature flags, branding (logo, colors), AI provider config, skill scales,
+  skill categories, and storage settings.
 section: admin
 order: 8
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # Settings

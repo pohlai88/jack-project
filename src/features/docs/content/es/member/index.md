@@ -1,8 +1,13 @@
 ---
 title: Guía del miembro
-description: Qué pueden hacer los miembros — dashboard, perfil, asistente de IA y más.
+description: 'Qué pueden hacer los miembros — dashboard, perfil, asistente de IA y más.'
 section: member
 order: 1
+translation:
+  sourceLocale: en
+  sourcePath: member/index.md
+  sourceHash: 6043f6a9b1d5267e2e9d1f0c0ce329a88c9fac21d2106b706084a90043d9a017
+  status: reviewed
 ---
 
 # Guía del miembro

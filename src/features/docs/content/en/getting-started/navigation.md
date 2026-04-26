@@ -1,8 +1,14 @@
 ---
 title: Navigation & Views
-description: Learn the four main views (My View, Manager, 1:1, Admin), sidebar navigation, global search, theme, and locale options.
+description: >-
+  Learn the four main views (My View, Manager, 1:1, Admin), sidebar navigation,
+  global search, theme, and locale options.
 section: getting-started
 order: 3
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # Navigation & Views

@@ -2,6 +2,8 @@
  * Tests for tenant-settings utilities
  */
 
+import { defaultLocale } from '@/i18n/config';
+
 import {
   applySettingsDefaults,
   DEFAULT_AI,
@@ -19,6 +21,7 @@ import {
   isValidWebhookUrl,
   mergeTenantSettings,
   parseTenantSettings,
+  sanitizeTenantSettingsForPersistence,
   type TenantSettingsInput,
 } from '../tenant-settings';
 
@@ -72,6 +75,19 @@ describe('tenant-settings', () => {
       expect(parseTenantSettings(null)).toEqual({});
       expect(parseTenantSettings(undefined)).toEqual({});
     });
+
+    it('should preserve supported default languages', () => {
+      expect(parseTenantSettings({ ui: { defaultLanguage: 'en' } }).ui?.defaultLanguage).toBe('en');
+      expect(parseTenantSettings({ ui: { defaultLanguage: 'es' } }).ui?.defaultLanguage).toBe('es');
+      expect(parseTenantSettings({ ui: { defaultLanguage: 'vi' } }).ui?.defaultLanguage).toBe('vi');
+      expect(parseTenantSettings({ ui: { defaultLanguage: 'ms' } }).ui?.defaultLanguage).toBe('ms');
+      expect(parseTenantSettings({ ui: { defaultLanguage: 'zh-CN' } }).ui?.defaultLanguage).toBe('zh-CN');
+    });
+
+    it('should normalize persisted unsupported default languages to the runtime default locale', () => {
+      const result = parseTenantSettings({ ui: { defaultLanguage: 'pt' } });
+      expect(result.ui?.defaultLanguage).toBe(defaultLocale);
+    });
   });
 
   describe('mergeTenantSettings', () => {
@@ -99,6 +115,19 @@ describe('tenant-settings', () => {
       const result = mergeTenantSettings(existing, {});
 
       expect(result.features?.knowledgeBase).toBe(true);
+    });
+  });
+
+  describe('sanitizeTenantSettingsForPersistence', () => {
+    it('should normalize unsupported default languages before save', () => {
+      const merged = mergeTenantSettings(
+        { ui: { defaultLanguage: 'en' } },
+        { ui: { defaultLanguage: 'pt' } as unknown as TenantSettingsInput['ui'] },
+      );
+
+      const result = sanitizeTenantSettingsForPersistence(merged);
+
+      expect(result.ui?.defaultLanguage).toBe(defaultLocale);
     });
   });
 

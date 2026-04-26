@@ -1,8 +1,15 @@
 ---
 title: Preguntas frecuentes
-description: Preguntas comunes sobre la plataforma — restablecer contraseña, roles, integraciones, funciones con IA, exportación de datos y cómo obtener ayuda.
+description: >-
+  Preguntas comunes sobre la plataforma — restablecer contraseña, roles,
+  integraciones, funciones con IA, exportación de datos y cómo obtener ayuda.
 section: faq
 order: 1
+translation:
+  sourceLocale: en
+  sourcePath: faq.md
+  sourceHash: 268521ed7392536d541c7e2ebf59412f8ccf62f724d5556c26ff6158c54651bf
+  status: reviewed
 ---
 
 # Preguntas frecuentes

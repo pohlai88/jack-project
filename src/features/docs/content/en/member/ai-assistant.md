@@ -1,8 +1,14 @@
 ---
 title: AI Assistant
-description: Chat with AI, search for people by skills, get recommendations, and use natural language queries.
+description: >-
+  Chat with AI, search for people by skills, get recommendations, and use
+  natural language queries.
 section: member
 order: 14
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # AI Assistant

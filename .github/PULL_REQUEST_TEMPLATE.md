@@ -18,12 +18,19 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - [ ] Test A
 - [ ] Test B
 
+## Translation / Crowdin
+
+- [ ] Developers changed only `src/i18n/catalogs/source/en.json` for message source changes
+- [ ] `src/i18n/messages/*.json` changes were produced by `pnpm i18n:compile`, not manual edits
+- [ ] Crowdin-generated catalog changes use the `i18n-platform-sync` label
+- [ ] `pnpm i18n:compile --check`, `pnpm i18n:validate`, `pnpm i18n:coverage`, and `pnpm i18n:fallback-check` pass for localization changes
+
 ## Checklist
 
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my code
 - [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation (update `architecture/docs/` when architecture, APIs, or patterns change; see [architecture/docs/README.md](../../architecture/docs/README.md))
+- [ ] I have made corresponding changes to doctrine, ADRs, or ATCs when architecture, APIs, or patterns change
 - [ ] My changes generate no new warnings
 - [ ] Any dependent changes have been merged and published in downstream modules
 - [ ] I have checked my code and corrected any misspellings

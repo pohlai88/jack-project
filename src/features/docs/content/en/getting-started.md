@@ -1,8 +1,14 @@
 ---
 title: Welcome to Afenda
-description: Overview of the platform — multi-tenant SaaS with AI assistance, RBAC, and integrations. Key concepts, user roles, and quick links to guides.
+description: >-
+  Overview of the platform — multi-tenant SaaS with AI assistance, RBAC, and
+  integrations. Key concepts, user roles, and quick links to guides.
 section: getting-started
 order: 1
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # Welcome to Afenda

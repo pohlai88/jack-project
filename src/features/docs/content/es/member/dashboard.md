@@ -1,8 +1,15 @@
 ---
 title: Dashboard
-description: Tarjetas de estadísticas, acciones rápidas y resumen de actividad para miembros.
+description: >-
+  Tarjetas de estadísticas, acciones rápidas y resumen de actividad para
+  miembros.
 section: member
 order: 2
+translation:
+  sourceLocale: en
+  sourcePath: member/dashboard.md
+  sourceHash: 5ebbb27001c018c4f86fc6cb20cb853b40f483ab3c389181078e91b64dfead33
+  status: reviewed
 ---
 
 # Dashboard

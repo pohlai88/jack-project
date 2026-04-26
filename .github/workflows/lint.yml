@@ -37,5 +37,26 @@ jobs:
       - name: Run repo guard
         run: pnpm repo:guard
 
+      - name: Run i18n check
+        run: pnpm i18n:check
+
+      - name: Run i18n inventory check
+        run: pnpm i18n:inventory:check
+
+      - name: Run i18n compile check
+        run: pnpm i18n:compile --check
+
+      - name: Run i18n coverage
+        run: pnpm i18n:coverage
+
+      - name: Run i18n fallback check
+        run: pnpm i18n:fallback-check
+
+      - name: Run docs check
+        run: pnpm docs:check
+
+      - name: Run i18n readiness report
+        run: pnpm i18n:readiness:report
+
       - name: Run lint
         run: pnpm lint

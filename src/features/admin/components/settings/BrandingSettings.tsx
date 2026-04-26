@@ -3,6 +3,7 @@
 import { AlertCircle, CheckCircle2, Layout, Moon, Palette, Sparkles, Sun, Type } from 'lucide-react';
 import { useState } from 'react';
 
+import { type ActivatedLocale, activatedLocaleOptions } from '@/i18n/locale-options';
 import {
   Button,
   Card,
@@ -887,12 +888,14 @@ export function BrandingSettings() {
                 <select
                   id="language"
                   value={ui.defaultLanguage}
-                  onChange={(e) => updateUi({ defaultLanguage: e.target.value as 'en' | 'es' | 'pt' })}
+                  onChange={(e) => updateUi({ defaultLanguage: e.target.value as ActivatedLocale })}
                   className="mt-2 block w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                 >
-                  <option value="en">English</option>
-                  <option value="es">Espanol</option>
-                  <option value="pt">Portugues</option>
+                  {activatedLocaleOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
                 </select>
               </div>
               <div>

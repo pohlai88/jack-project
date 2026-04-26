@@ -1,8 +1,15 @@
 ---
 title: Integraciones
-description: GitHub, LinkedIn, Slack, Google Workspace, GitLab, webhooks — configuración OAuth, sincronización y mapeo de datos.
+description: >-
+  GitHub, LinkedIn, Slack, Google Workspace, GitLab, webhooks — configuración
+  OAuth, sincronización y mapeo de datos.
 section: admin
 order: 9
+translation:
+  sourceLocale: en
+  sourcePath: admin/integrations.md
+  sourceHash: e50b39c703edeaff9121630802e73940333ae48d2d72cfee929c9c1c044a321a
+  status: reviewed
 ---
 
 # Integraciones

@@ -1,8 +1,15 @@
 ---
 title: Miembros e invitaciones
-description: Agregar y quitar miembros, generar links de invitación con roles, gestionar estado de miembros y vencimiento de invitaciones.
+description: >-
+  Agregar y quitar miembros, generar links de invitación con roles, gestionar
+  estado de miembros y vencimiento de invitaciones.
 section: admin
 order: 2
+translation:
+  sourceLocale: en
+  sourcePath: admin/members-invitations.md
+  sourceHash: 0c2546c2f089717e2452d60b3f7cdf05e23c4409cf42ea9301c279e8d0a75e48
+  status: reviewed
 ---
 
 # Miembros e invitaciones

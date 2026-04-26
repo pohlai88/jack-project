@@ -1,4 +1,9 @@
 import { z } from 'zod';
+import { defaultLocale, type Locale } from '@/i18n/config';
+import { resolveConfiguredLocale } from '@/i18n/locale-matching';
+import { activatedLocaleValues } from '@/i18n/locale-options';
+
+const defaultLanguageSchema = z.enum(activatedLocaleValues);
 
 // ============================================================================
 // Feature Flags Schema
@@ -76,7 +81,7 @@ export const uiSchema = z.object({
   /** Enable dark mode */
   darkModeEnabled: z.boolean().optional().default(true),
   /** Default language */
-  defaultLanguage: z.enum(['en', 'es', 'pt']).optional().default('en'),
+  defaultLanguage: defaultLanguageSchema.optional().default(defaultLocale),
   /** Date format preference */
   dateFormat: z.enum(['MM/DD/YYYY', 'DD/MM/YYYY', 'YYYY-MM-DD']).optional().default('YYYY-MM-DD'),
 });
@@ -364,6 +369,51 @@ export type TenantSettings = z.infer<typeof tenantSettingsSchema>;
  */
 export type TenantSettingsInput = z.input<typeof tenantSettingsSchema>;
 
+export function normalizeTenantDefaultLanguage(value: unknown): Locale | undefined {
+  if (typeof value !== 'string') {
+    return undefined;
+  }
+
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return undefined;
+  }
+
+  return resolveConfiguredLocale(trimmed, {
+    locales: activatedLocaleValues,
+    defaultLocale,
+  }) as Locale;
+}
+
+function normalizeTenantSettingsInput(data: unknown): unknown {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) {
+    return data;
+  }
+
+  const settings = data as Record<string, unknown>;
+  const ui = settings['ui'];
+  if (!ui || typeof ui !== 'object' || Array.isArray(ui)) {
+    return settings;
+  }
+
+  const uiRecord = ui as Record<string, unknown>;
+  if (!Object.prototype.hasOwnProperty.call(uiRecord, 'defaultLanguage')) {
+    return settings;
+  }
+
+  return {
+    ...settings,
+    ui: {
+      ...uiRecord,
+      defaultLanguage: normalizeTenantDefaultLanguage(uiRecord['defaultLanguage']) ?? defaultLocale,
+    },
+  };
+}
+
+export function sanitizeTenantSettingsForPersistence(settings: TenantSettings | TenantSettingsInput): TenantSettings {
+  return tenantSettingsSchema.parse(normalizeTenantSettingsInput(settings));
+}
+
 // ============================================================================
 // Default Settings Values
 // ============================================================================
@@ -387,7 +437,7 @@ export const DEFAULT_UI: NonNullable<TenantSettings['ui']> = {
   density: 'default',
   brandGradientEnabled: true,
   darkModeEnabled: true,
-  defaultLanguage: 'en',
+  defaultLanguage: defaultLocale,
   dateFormat: 'YYYY-MM-DD',
 };
 
@@ -459,7 +509,7 @@ export function parseTenantSettings(data: unknown): TenantSettings {
   try {
     // If data is a string (from text column), parse it as JSON first
     const parsed = typeof data === 'string' ? JSON.parse(data) : data;
-    return tenantSettingsSchema.parse(parsed ?? {});
+    return tenantSettingsSchema.parse(normalizeTenantSettingsInput(parsed ?? {}));
   } catch {
     // Return defaults on parse error
     return {};

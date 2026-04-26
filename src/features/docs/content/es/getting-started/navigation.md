@@ -1,8 +1,15 @@
 ---
 title: Navegación y vistas
-description: Las cuatro vistas principales (Mi vista, Manager, 1:1, Admin), navegación lateral, búsqueda global, tema e idioma.
+description: >-
+  Las cuatro vistas principales (Mi vista, Manager, 1:1, Admin), navegación
+  lateral, búsqueda global, tema e idioma.
 section: getting-started
 order: 3
+translation:
+  sourceLocale: en
+  sourcePath: getting-started/navigation.md
+  sourceHash: c63afa49f825a4fa256f0a47c91cade92104f641bc5a84c38c7283ca224bc11f
+  status: reviewed
 ---
 
 # Navegación y vistas

@@ -1,8 +1,15 @@
 ---
 title: Perfil y configuración
-description: Editar perfil, avatar, conectar GitHub/LinkedIn, zona horaria, pronombres y email personal.
+description: >-
+  Editar perfil, avatar, conectar GitHub/LinkedIn, zona horaria, pronombres y
+  email personal.
 section: member
 order: 3
+translation:
+  sourceLocale: en
+  sourcePath: member/profile-settings.md
+  sourceHash: 786bcada1271412bf3494d70911d964e0add1b17a564a6aa10f59600fdd515af
+  status: reviewed
 ---
 
 # Perfil y configuración

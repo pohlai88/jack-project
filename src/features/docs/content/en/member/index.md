@@ -1,8 +1,12 @@
 ---
 title: Member Guide Overview
-description: What members can do — dashboard, profile, AI assistant, and more.
+description: 'What members can do — dashboard, profile, AI assistant, and more.'
 section: member
 order: 1
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # Member Guide Overview

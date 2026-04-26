@@ -34,7 +34,8 @@ export const docSections: DocSection[] = [
       { slug: 'admin/members-invitations', titleKey: 'docs.nav.membersInvitations', order: 2 },
       { slug: 'admin/roles-permissions', titleKey: 'docs.nav.rolesPermissions', order: 3 },
       { slug: 'admin/settings', titleKey: 'docs.nav.settings', order: 4 },
-      { slug: 'admin/integrations', titleKey: 'docs.nav.integrations', order: 5 },
+      { slug: 'admin/branding', titleKey: 'docs.nav.branding', order: 5 },
+      { slug: 'admin/integrations', titleKey: 'docs.nav.integrations', order: 6 },
     ],
   },
   {

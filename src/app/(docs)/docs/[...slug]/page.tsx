@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 import {
   DocsBreadcrumb,
@@ -38,6 +38,7 @@ export default async function DocsPage({ params }: DocsPageProps) {
   const { slug: slugParts } = await params;
   const slug = slugParts.join('/');
   const locale = await getLocale();
+  const t = await getTranslations('docs');
 
   const doc = getDocContent(locale, slug);
   if (!doc) notFound();
@@ -49,6 +50,12 @@ export default async function DocsPage({ params }: DocsPageProps) {
       {/* Main content */}
       <article className="min-w-0 flex-1">
         <DocsBreadcrumb slug={slug} />
+
+        {doc.isFallback && (
+          <div className="mb-6 rounded-lg border border-amber-500/30 bg-amber-50/80 px-4 py-3 text-sm text-amber-950 dark:bg-amber-500/10 dark:text-amber-100">
+            {t('fallbackNotice')}
+          </div>
+        )}
 
         <div className="mb-8">
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{doc.frontmatter.title}</h1>

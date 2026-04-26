@@ -1,8 +1,14 @@
 ---
 title: Profile Setup
-description: How to edit your Afenda profile — name, title, bio, avatar, GitHub and LinkedIn, timezone, location, email, and pronouns.
+description: >-
+  How to edit your Afenda profile — name, title, bio, avatar, GitHub and
+  LinkedIn, timezone, location, email, and pronouns.
 section: getting-started
 order: 4
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # Profile Setup

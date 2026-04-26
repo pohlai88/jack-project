@@ -1,8 +1,16 @@
 ---
 title: Configuración
-description: Feature flags, branding (logo, colores), configuración del proveedor de IA, escalas de habilidades, categorías de habilidades y configuración de almacenamiento.
+description: >-
+  Feature flags, branding (logo, colores), configuración del proveedor de IA,
+  escalas de habilidades, categorías de habilidades y configuración de
+  almacenamiento.
 section: admin
 order: 8
+translation:
+  sourceLocale: en
+  sourcePath: admin/settings.md
+  sourceHash: 61c6c7922c850197f42b141463aa3b617f4b27d1aa3a3b166ff5c3adb4ed5f9c
+  status: reviewed
 ---
 
 # Configuración

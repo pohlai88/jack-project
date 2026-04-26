@@ -1,8 +1,14 @@
 ---
 title: Branding & Customization
-description: Customize your Afenda tenant with colors, typography, density, surface styles, and other visual settings.
+description: >-
+  Customize your Afenda tenant with colors, typography, density, surface styles,
+  and other visual settings.
 section: admin
 order: 2
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # Branding & Customization
@@ -243,7 +249,7 @@ This will revert all colors, fonts, density, and surface styles to Afenda defaul
 
 - **Explore other settings** → [Settings Overview](./settings)
 - **Add integrations** → [Integrations Guide](./integrations)
-- **Manage members and roles** → [Members & Invitations](./members)
+- **Manage members and roles** → [Members & Invitations](./members-invitations)
 - **Want more design guidance?** → Contact your Afenda designer or reach out to <support@example.com>
 
 Your brand matters. Take time to get the colors and typography perfect—it's one of the first things people see in Afenda every day.

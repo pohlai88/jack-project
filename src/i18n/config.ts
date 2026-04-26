@@ -1,15 +1,19 @@
-// Internationalization configuration
-// Using next-intl with cookie-based locale detection (not URL-based)
-// This preserves the existing tenant routing structure
+import { localeRegistry, defaultLocale as registryDefaultLocale } from './locale-registry';
 
-export const locales = ['en', 'es'] as const;
+// Internationalization configuration.
+// next-intl uses cookie-based locale detection rather than URL prefixes,
+// preserving the existing tenant routing structure.
+export const locales = ['en', 'es', 'vi', 'ms', 'zh-CN'] as const;
 export type Locale = (typeof locales)[number];
 
-export const defaultLocale: Locale = 'en';
+export const defaultLocale: Locale = registryDefaultLocale;
 
 export const localeNames: Record<Locale, string> = {
-  en: 'English',
-  es: 'Español',
+  en: localeRegistry.en.name,
+  es: localeRegistry.es.name,
+  vi: localeRegistry.vi.name,
+  ms: localeRegistry.ms.name,
+  'zh-CN': localeRegistry['zh-CN'].name,
 };
 
 // Cookie name for storing user's locale preference

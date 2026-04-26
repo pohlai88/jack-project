@@ -1,8 +1,12 @@
 ---
 title: Admin Guide Overview
-description: Admin responsibilities, dashboard, and admin permissions.
+description: 'Admin responsibilities, dashboard, and admin permissions.'
 section: admin
 order: 1
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # Admin Guide Overview

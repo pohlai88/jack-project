@@ -1,8 +1,14 @@
 ---
 title: Roles & Permissions
-description: System roles (Member, Manager, Admin, 1:1er, Referente), custom roles, assigning permissions, and the PBAC model.
+description: >-
+  System roles (Member, Manager, Admin, 1:1er, Referente), custom roles,
+  assigning permissions, and the PBAC model.
 section: admin
 order: 7
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # Roles & Permissions

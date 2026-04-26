@@ -2,7 +2,7 @@
 
 Thank you for contributing! This document guides human developers after reading the README.
 
-**Source of truth:** Current engineering authority lives in **`architecture/doctrine/`**, **`architecture/adr/`**, and **`architecture/atc/`**. `architecture/docs/` is deprecated reference material.
+**Engineering authority:** Current rules live in **`architecture/doctrine/`**, decisions live in **`architecture/adr/`**, and acceptance checks live in **`architecture/atc/`**. `architecture/docs/` is a deprecated tombstone, not an authority source.
 
 ## Table of Contents
 
@@ -166,9 +166,17 @@ pnpm test:coverage # Coverage report
 - **`architecture/doctrine/`** holds durable project rules and operating principles.
 - **`architecture/adr/`** records consequential architecture decisions.
 - **`architecture/atc/`** defines architecture test cases and acceptance checks.
-- **`architecture/docs/`** is deprecated reference material; extract useful content before relying on it.
+- **`architecture/docs/`** is a deprecated tombstone. Recover removed topics from git history only when needed, verify against current code, and promote repo-true content into doctrine, ADRs, or ATCs before relying on it.
 - When you change architecture, routing, components, APIs, permissions, or data model behavior, update doctrine, ADRs, or ATCs as appropriate.
 - Run `pnpm doctrine:check` after documentation authority changes.
+
+## Localization Workflow
+
+- `src/i18n/catalogs/source/en.json` is the only developer-authored message catalog.
+- `src/i18n/catalogs/generated/*.json` is Crowdin output and must not be edited manually.
+- `src/i18n/catalogs/fallback/*.json` contains protected bootstrap translations from the old manual JSON workflow.
+- `src/i18n/messages/*.json` is compiled runtime output only and must not be edited manually.
+- Crowdin sync PRs must use the `i18n-platform-sync` label and run `pnpm i18n:compile`, `pnpm i18n:validate`, `pnpm i18n:coverage`, and `pnpm i18n:fallback-check`.
 
 ## PR Checklist
 
@@ -183,33 +191,41 @@ pnpm test:coverage # Coverage report
 
 ## Scripts Reference
 
-| Script                     | Description                                               |
-| -------------------------- | --------------------------------------------------------- |
-| `pnpm env:sync`            | Generate `.env.local` from `env.config`                   |
-| `pnpm dev`                 | Start Next.js dev server on port 3000                     |
-| `pnpm build`               | Build for production                                      |
-| `pnpm start`               | Start production server                                   |
-| `pnpm format`              | Format code with Prettier                                 |
-| `pnpm lint`                | Run ESLint                                                |
-| `pnpm lint:fix`            | Run ESLint with auto-fix                                  |
-| `pnpm lint:a11y`           | Run strict lint/a11y pass with warnings treated as errors |
-| `pnpm repo:guard`          | Validate repo hygiene and module-boundary rules           |
-| `pnpm type-check`          | Run TypeScript type checking                              |
-| `pnpm doctrine:check`      | Validate doctrine authority rules                         |
-| `pnpm test`                | Run Vitest once                                           |
-| `pnpm test:watch`          | Run Vitest in watch mode                                  |
-| `pnpm test:coverage`       | Run Vitest with coverage                                  |
-| `pnpm db:generate`         | Generate Drizzle migrations                               |
-| `pnpm db:migrate`          | Run database migrations                                   |
-| `pnpm db:push`             | Alias to `db:migrate`; direct push is intentionally gated |
-| `pnpm db:push:unsafe`      | Force Drizzle push; local/dev use only                    |
-| `pnpm db:studio`           | Open Drizzle Studio GUI                                   |
-| `pnpm db:seed`             | Seed demo data                                            |
-| `pnpm db:reset`            | Reset app data after confirmation                         |
-| `pnpm db:fresh`            | Reset and seed demo data                                  |
-| `pnpm embeddings:generate` | Generate AI embeddings                                    |
-| `pnpm embeddings:recreate` | Recreate AI embeddings                                    |
-| `pnpm storybook`           | Start Storybook on port 6006                              |
-| `pnpm build-storybook`     | Build static Storybook                                    |
+| Script                       | Description                                                |
+| ---------------------------- | ---------------------------------------------------------- |
+| `pnpm env:sync`              | Generate `.env.local` from `env.config`                    |
+| `pnpm dev`                   | Start Next.js dev server on port 3000                      |
+| `pnpm build`                 | Build for production                                       |
+| `pnpm start`                 | Start production server                                    |
+| `pnpm format`                | Format code with Prettier                                  |
+| `pnpm lint`                  | Run ESLint                                                 |
+| `pnpm lint:fix`              | Run ESLint with auto-fix                                   |
+| `pnpm lint:a11y`             | Run strict lint/a11y pass with warnings treated as errors  |
+| `pnpm repo:guard`            | Validate repo hygiene and module-boundary rules            |
+| `pnpm type-check`            | Run TypeScript type checking                               |
+| `pnpm doctrine:check`        | Validate doctrine authority rules                          |
+| `pnpm i18n:extract`          | Validate the English source catalog                        |
+| `pnpm i18n:compile`          | Compile runtime `src/i18n/messages/*.json` output          |
+| `pnpm i18n:validate`         | Validate source, generated, fallback, and runtime catalogs |
+| `pnpm i18n:coverage`         | Report generated/fallback locale coverage                  |
+| `pnpm i18n:fallback-check`   | Validate protected fallback catalogs and locale fallbacks  |
+| `pnpm i18n:check`            | Backward-compatible alias for `i18n:validate`              |
+| `pnpm i18n:inventory:check`  | Backward-compatible catalog inventory validation           |
+| `pnpm i18n:readiness:report` | Generate warn-only locale readiness and coverage report    |
+| `pnpm test`                  | Run Vitest once                                            |
+| `pnpm test:watch`            | Run Vitest in watch mode                                   |
+| `pnpm test:coverage`         | Run Vitest with coverage                                   |
+| `pnpm db:generate`           | Generate Drizzle migrations                                |
+| `pnpm db:migrate`            | Run database migrations                                    |
+| `pnpm db:push`               | Alias to `db:migrate`; direct push is intentionally gated  |
+| `pnpm db:push:unsafe`        | Force Drizzle push; local/dev use only                     |
+| `pnpm db:studio`             | Open Drizzle Studio GUI                                    |
+| `pnpm db:seed`               | Seed demo data                                             |
+| `pnpm db:reset`              | Reset app data after confirmation                          |
+| `pnpm db:fresh`              | Reset and seed demo data                                   |
+| `pnpm embeddings:generate`   | Generate AI embeddings                                     |
+| `pnpm embeddings:recreate`   | Recreate AI embeddings                                     |
+| `pnpm storybook`             | Start Storybook on port 6006                               |
+| `pnpm build-storybook`       | Build static Storybook                                     |
 
 Happy building! 🚀

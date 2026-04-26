@@ -1,8 +1,14 @@
 ---
 title: Frequently Asked Questions
-description: Common questions about the platform — password reset, roles, integrations, AI features, data export, and how to get help.
+description: >-
+  Common questions about the platform — password reset, roles, integrations, AI
+  features, data export, and how to get help.
 section: faq
 order: 1
+fallbackAllowedLocales:
+  - vi
+  - ms
+  - zh-CN
 ---
 
 # Frequently Asked Questions

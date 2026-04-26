@@ -1,8 +1,15 @@
 ---
 title: Bienvenido a Afenda
-description: Visión general de la plataforma — SaaS multi-tenant con asistencia de IA, RBAC e integraciones. Conceptos clave, roles de usuario y enlaces a las guías.
+description: >-
+  Visión general de la plataforma — SaaS multi-tenant con asistencia de IA, RBAC
+  e integraciones. Conceptos clave, roles de usuario y enlaces a las guías.
 section: getting-started
 order: 1
+translation:
+  sourceLocale: en
+  sourcePath: getting-started.md
+  sourceHash: 6b2681f2f8b0f3b00d0157e9a1b7ed9f43e0be955732dc391bc19645eb1eae4e
+  status: reviewed
 ---
 
 # Bienvenido a Afenda

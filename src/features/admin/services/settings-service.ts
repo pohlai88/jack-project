@@ -6,6 +6,7 @@ import {
   getDefaultTenantSettings,
   mergeTenantSettings,
   parseTenantSettings,
+  sanitizeTenantSettingsForPersistence,
   type TenantSettings,
 } from '@/shared/lib/tenant-settings';
 import { clearTenantOpenAIClient } from '@/shared/services/embedding-service';
@@ -54,13 +55,14 @@ export async function updateTenantSettings(
 ): Promise<TenantSettings> {
   const current = await getTenantSettings(tenantSlug);
   const merged = mergeTenantSettings(current, updates);
+  const sanitized = sanitizeTenantSettingsForPersistence(merged);
 
   const tenant = await db.select({ id: tenants.id }).from(tenants).where(eq(tenants.slug, tenantSlug)).limit(1);
 
   await db
     .update(tenants)
     .set({
-      settings: JSON.stringify(merged),
+      settings: JSON.stringify(sanitized),
       updatedAt: new Date(),
     })
     .where(eq(tenants.slug, tenantSlug));
@@ -75,7 +77,7 @@ export async function updateTenantSettings(
     }
   }
 
-  return merged;
+  return sanitized;
 }
 
 export async function updateFeatureFlag(
