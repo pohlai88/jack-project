@@ -2,9 +2,13 @@ import matter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
 
+import { locales } from '@/i18n';
+
 import type { DocContent, DocFrontmatter } from '../types';
 
+const CANONICAL_DOC_LOCALE = 'en';
 const CONTENT_DIR = path.join(process.cwd(), 'src/features/docs/content');
+const SEARCHABLE_DOC_LOCALES = new Set<string>(locales);
 
 /**
  * Load a documentation page by locale and slug.
@@ -83,6 +87,25 @@ export function getAllDocSlugs(locale: string = 'en'): string[] {
  */
 export function getAllDocContents(locale: string = 'en'): DocContent[] {
   const slugs = getAllDocSlugs(locale);
+  const contents: DocContent[] = [];
+  for (const slug of slugs) {
+    const doc = getDocContent(locale, slug);
+    if (doc) contents.push(doc);
+  }
+  return contents;
+}
+
+/**
+ * Get docs for search using canonical English slugs.
+ * This preserves native docs where present and returns visible English fallback docs
+ * for active locales that do not have translated Markdown yet.
+ */
+export function getSearchableDocContents(locale: string = CANONICAL_DOC_LOCALE): DocContent[] {
+  if (!SEARCHABLE_DOC_LOCALES.has(locale)) {
+    return [];
+  }
+
+  const slugs = getAllDocSlugs(CANONICAL_DOC_LOCALE);
   const contents: DocContent[] = [];
   for (const slug of slugs) {
     const doc = getDocContent(locale, slug);

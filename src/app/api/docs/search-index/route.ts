@@ -8,7 +8,8 @@ export async function GET() {
   const index = buildSearchIndex(locale);
   return NextResponse.json(index, {
     headers: {
-      'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
+      'Cache-Control': 'private, no-store',
+      Vary: 'Cookie, Accept-Language',
     },
   });
 }

@@ -5,7 +5,7 @@
 
 import { CheckCircle2, Clock } from 'lucide-react';
 import Link from 'next/link';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 import { AdminPageHeader, getTenantSettings, IntegrationControlPlanePanel } from '@/features/admin';
 import { getIntegrationBrand } from '@/shared/components/icons/integration-brand';
@@ -34,6 +34,7 @@ export default async function IntegrationsPage({ params }: IntegrationsPageProps
 
   await requirePermission(tenant, 'admin:integrations');
 
+  const locale = await getLocale();
   const t = await getTranslations('admin');
 
   // Load tenant settings to determine connection status
@@ -158,7 +159,7 @@ export default async function IntegrationsPage({ params }: IntegrationsPageProps
                       <div className="flex items-center gap-2 text-xs text-muted-foreground">
                         <Clock className="h-3 w-3" />
                         {t('integrationsPage.lastSync', {
-                          date: new Date(integration.lastSyncAt).toLocaleDateString(),
+                          date: new Intl.DateTimeFormat(locale).format(new Date(integration.lastSyncAt)),
                         })}
                       </div>
                     )}

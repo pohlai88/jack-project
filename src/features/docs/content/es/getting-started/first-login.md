@@ -8,7 +8,7 @@ order: 2
 translation:
   sourceLocale: en
   sourcePath: getting-started/first-login.md
-  sourceHash: eed28c5f4937e593abfaeb8c1f6f6e8b4709911439e43f786aa6121d70122a97
+  sourceHash: 6ee7a4d16fdbb83bbd8ef983b625dcfb52a74cadc56759dad40ad75f47e1a21c
   status: reviewed
 ---
 

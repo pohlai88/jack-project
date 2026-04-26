@@ -5,10 +5,6 @@ description: >-
   oriented on your first visit.
 section: getting-started
 order: 2
-fallbackAllowedLocales:
-  - vi
-  - ms
-  - zh-CN
 ---
 
 # First Login

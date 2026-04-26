@@ -5,10 +5,6 @@ description: >-
   integrations. Key concepts, user roles, and quick links to guides.
 section: getting-started
 order: 1
-fallbackAllowedLocales:
-  - vi
-  - ms
-  - zh-CN
 ---
 
 # Welcome to Afenda

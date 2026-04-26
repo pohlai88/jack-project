@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
 
+import { TenantLocaleSync } from '@/i18n/tenant-locale-sync';
 import { ThemeCSSInjector } from '@/shared/components/providers/theme-css-injector';
 import { getCurrentUserPermissions } from '@/shared/lib/permissions';
 import { getTenantBySlug } from '@/shared/lib/tenant';
@@ -53,6 +54,7 @@ export default async function TenantLayout({ children, params }: TenantLayoutPro
         settings,
       }}
     >
+      <TenantLocaleSync tenantDefaultLocale={settings.ui?.defaultLanguage} />
       <ThemeCSSInjector />
       <TenantLayoutClient tenantSlug={tenant.slug} permissions={permissions}>
         {children}

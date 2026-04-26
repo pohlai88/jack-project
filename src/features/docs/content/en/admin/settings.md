@@ -5,10 +5,6 @@ description: >-
   skill categories, and storage settings.
 section: admin
 order: 8
-fallbackAllowedLocales:
-  - vi
-  - ms
-  - zh-CN
 ---
 
 # Settings

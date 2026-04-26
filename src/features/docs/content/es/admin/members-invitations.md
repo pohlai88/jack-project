@@ -8,7 +8,7 @@ order: 2
 translation:
   sourceLocale: en
   sourcePath: admin/members-invitations.md
-  sourceHash: 0c2546c2f089717e2452d60b3f7cdf05e23c4409cf42ea9301c279e8d0a75e48
+  sourceHash: e23b8e807ebca8e8f590e0c022a1bb1a1e94c0e142b775591c9fb57ec8469305
   status: reviewed
 ---
 

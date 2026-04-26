@@ -2,7 +2,8 @@
 
 import { useLocale } from 'next-intl';
 import { useCallback, useTransition } from 'react';
-import { type Locale, LOCALE_COOKIE_NAME } from './config';
+import { type Locale } from './config';
+import { buildLocalePreferenceCookies } from './locale-cookie';
 
 /**
  * Hook to get and set the current locale
@@ -15,7 +16,9 @@ export function useChangeLocale() {
   const changeLocale = useCallback((newLocale: Locale) => {
     startTransition(() => {
       // Set cookie
-      document.cookie = `${LOCALE_COOKIE_NAME}=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
+      for (const cookie of buildLocalePreferenceCookies(newLocale, 'user')) {
+        document.cookie = cookie;
+      }
       // Refresh the page to apply the new locale
       window.location.reload();
     });

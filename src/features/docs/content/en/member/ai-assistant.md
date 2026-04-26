@@ -5,10 +5,6 @@ description: >-
   natural language queries.
 section: member
 order: 14
-fallbackAllowedLocales:
-  - vi
-  - ms
-  - zh-CN
 ---
 
 # AI Assistant

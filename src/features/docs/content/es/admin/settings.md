@@ -9,7 +9,7 @@ order: 8
 translation:
   sourceLocale: en
   sourcePath: admin/settings.md
-  sourceHash: 61c6c7922c850197f42b141463aa3b617f4b27d1aa3a3b166ff5c3adb4ed5f9c
+  sourceHash: 9123c79045347ac2ad12805a11858bc83018d8a4af41fd0f9ff562409f52beb6
   status: reviewed
 ---
 

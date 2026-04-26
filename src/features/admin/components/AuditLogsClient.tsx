@@ -7,7 +7,7 @@
  */
 
 import { Calendar, ChevronDown, ChevronUp, Filter, X } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useCallback, useState } from 'react';
 
 import { Badge, Button, Input, Select, SelectItem } from '@/shared/components/ui';
@@ -44,8 +44,8 @@ function getDateRange(preset: DatePreset): { startDate?: Date; endDate?: Date } 
   }
 }
 
-function formatTimestamp(date: Date): string {
-  return new Intl.DateTimeFormat('en-US', {
+function formatTimestamp(date: Date, locale: string): string {
+  return new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
@@ -77,6 +77,7 @@ export function AuditLogsClient({
   availableEntityTypes,
   availableActors,
 }: AuditLogsClientProps) {
+  const locale = useLocale();
   const t = useTranslations('auditLogs');
   const [data, setData] = useState(initialData);
   const [isLoading, setIsLoading] = useState(false);
@@ -364,7 +365,7 @@ export function AuditLogsClient({
                           <ChevronDown className="h-4 w-4 text-muted-foreground" />
                         )}
                       </td>
-                      <td className="px-4 py-3 text-muted-foreground">{formatTimestamp(event.timestamp)}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{formatTimestamp(event.timestamp, locale)}</td>
                       <td className="px-4 py-3">
                         {event.actorName || event.actorEmail || <span className="text-muted-foreground">System</span>}
                       </td>

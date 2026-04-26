@@ -381,7 +381,12 @@
     "openAdminPanel": "Open Admin Panel",
     "viewMy": "My View",
     "viewAdmin": "Admin View",
-    "switchView": "Switch view"
+    "switchView": "Switch view",
+    "directory": "Directory",
+    "manager": "Manager",
+    "knowledgeBase": "Knowledge Base",
+    "myProfile": "My Profile",
+    "integrations": "Integrations"
   },
   "profile": {
     "title": "Profile",
@@ -452,7 +457,9 @@
     "addBio": "Add a bio to your profile",
     "uploadAvatar": "Upload a profile photo",
     "connectGitHub": "Connect your GitHub account",
-    "inviteTeamMember": "Invite a team member"
+    "inviteTeamMember": "Invite a team member",
+    "bio": "Bio",
+    "contact": "Contact"
   },
   "admin": {
     "title": "Admin",
@@ -502,6 +509,14 @@
       "linkedin": {
         "name": "LinkedIn",
         "description": "Link LinkedIn accounts for identity verification and profile enrichment."
+      },
+      "googleWorkspace": {
+        "name": "Google Workspace",
+        "description": "Connect Google Workspace for calendar and meeting workflows."
+      },
+      "slack": {
+        "name": "Slack",
+        "description": "Connect Slack for team notifications and workflow updates."
       }
     },
     "integrationsControl": {
@@ -599,7 +614,9 @@
         "disabledWarningTitle": "Integration Disabled",
         "disabledWarningDesc": "GitHub is connected but disabled. Enable it to start syncing data.",
         "envConfigured": "OAuth Credentials from Environment",
-        "envConfiguredDesc": "GitHub OAuth credentials are loaded from environment variables (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). No additional credential configuration needed."
+        "envConfiguredDesc": "GitHub OAuth credentials are loaded from environment variables (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). No additional credential configuration needed.",
+        "inferSkills": "Infer Skills",
+        "inferSkillsDesc": "Infer skills from repository languages and contribution data."
       }
     },
     "linkedin": {
@@ -740,7 +757,9 @@
     "departmentsAddMember": "Add member",
     "departmentsRemoveMember": "Remove member",
     "departmentsNoMembers": "No members assigned",
-    "departmentsNoPeople": "No people in this tenant"
+    "departmentsNoPeople": "No people in this tenant",
+    "departmentsDescription": "Description",
+    "departmentsDescriptionPlaceholder": "Optional description"
   },
   "settings": {
     "title": "Settings",
@@ -937,5 +956,19 @@
     "toc": {
       "onThisPage": "On this page"
     }
+  },
+  "rawEdit": {
+    "formatError": "Format failed",
+    "formatErrorDesc": "The editor content is not valid JSON.",
+    "copied": "Copied",
+    "copiedDesc": "JSON copied to clipboard.",
+    "copyError": "Copy failed",
+    "copyErrorDesc": "Unable to copy JSON to clipboard.",
+    "validJson": "Valid JSON",
+    "invalidJson": "Invalid JSON",
+    "unsavedChanges": "Unsaved changes",
+    "reset": "Reset",
+    "format": "Format",
+    "copy": "Copy"
   }
 }

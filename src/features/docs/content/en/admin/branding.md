@@ -5,10 +5,6 @@ description: >-
   and other visual settings.
 section: admin
 order: 2
-fallbackAllowedLocales:
-  - vi
-  - ms
-  - zh-CN
 ---
 
 # Branding & Customization

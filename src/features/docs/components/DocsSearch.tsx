@@ -61,9 +61,9 @@ export function DocsSearch({ open, onOpenChange }: DocsSearchProps) {
   }, [fuse, query]);
 
   const navigate = useCallback(
-    (slug: string) => {
+    (url: string) => {
       onOpenChange(false);
-      router.push(`/docs/${slug}`);
+      router.push(url);
     },
     [onOpenChange, router],
   );
@@ -76,7 +76,7 @@ export function DocsSearch({ open, onOpenChange }: DocsSearchProps) {
       e.preventDefault();
       setSelectedIdx((prev) => Math.max(prev - 1, 0));
     } else if (e.key === 'Enter' && results[selectedIdx]) {
-      navigate(results[selectedIdx].item.slug);
+      navigate(results[selectedIdx].item.url);
     }
   };
 
@@ -119,7 +119,7 @@ export function DocsSearch({ open, onOpenChange }: DocsSearchProps) {
               {results.map((result, idx) => (
                 <li key={result.item.slug} role="option" aria-selected={idx === selectedIdx}>
                   <button
-                    onClick={() => navigate(result.item.slug)}
+                    onClick={() => navigate(result.item.url)}
                     onMouseEnter={() => setSelectedIdx(idx)}
                     className={cn(
                       'flex w-full items-start gap-3 rounded-md px-3 py-2.5 text-left transition-colors',
@@ -131,6 +131,11 @@ export function DocsSearch({ open, onOpenChange }: DocsSearchProps) {
                       <p className="truncate text-sm font-medium text-foreground">{result.item.title}</p>
                       {result.item.description && (
                         <p className="mt-0.5 truncate text-xs text-muted-foreground">{result.item.description}</p>
+                      )}
+                      {result.item.isFallback && (
+                        <p className="mt-1 line-clamp-2 text-xs text-amber-700 dark:text-amber-300">
+                          {t('docs.fallbackNotice')}
+                        </p>
                       )}
                     </div>
                   </button>

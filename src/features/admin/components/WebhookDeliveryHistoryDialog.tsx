@@ -5,6 +5,7 @@
  */
 
 import { AlertCircle, CheckCircle2, Clock, Loader2, RefreshCw, XCircle } from 'lucide-react';
+import { useLocale } from 'next-intl';
 import { useEffect, useState, useTransition } from 'react';
 
 import {
@@ -35,6 +36,7 @@ export function WebhookDeliveryHistoryDialog({
   isOpen,
   onClose,
 }: WebhookDeliveryHistoryDialogProps) {
+  const locale = useLocale();
   const [isPending, startTransition] = useTransition();
   const [deliveries, setDeliveries] = useState<WebhookDeliveryOutput[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -98,7 +100,7 @@ export function WebhookDeliveryHistoryDialog({
   };
 
   const formatDate = (date: Date) => {
-    return new Intl.DateTimeFormat('en-US', {
+    return new Intl.DateTimeFormat(locale, {
       month: 'short',
       day: 'numeric',
       hour: '2-digit',

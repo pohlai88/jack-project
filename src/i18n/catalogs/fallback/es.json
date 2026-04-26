@@ -381,7 +381,12 @@
     "openAdminPanel": "Abrir Panel de Admin",
     "viewMy": "Mi Vista",
     "viewAdmin": "Vista Admin",
-    "switchView": "Cambiar vista"
+    "switchView": "Cambiar vista",
+    "directory": "Directorio",
+    "manager": "Gerente",
+    "knowledgeBase": "Base de conocimiento",
+    "myProfile": "Mi perfil",
+    "integrations": "Integraciones"
   },
   "profile": {
     "title": "Perfil",
@@ -452,7 +457,9 @@
     "addBio": "Añade una bio a tu perfil",
     "uploadAvatar": "Sube una foto de perfil",
     "connectGitHub": "Conecta tu cuenta de GitHub",
-    "inviteTeamMember": "Invitar a un miembro del equipo"
+    "inviteTeamMember": "Invitar a un miembro del equipo",
+    "bio": "Biografía",
+    "contact": "Contacto"
   },
   "admin": {
     "title": "Administración",
@@ -502,6 +509,14 @@
       "linkedin": {
         "name": "LinkedIn",
         "description": "Vinculá cuentas de LinkedIn para verificación de identidad y enriquecimiento de perfiles."
+      },
+      "googleWorkspace": {
+        "name": "Google Workspace",
+        "description": "Conecta Google Workspace para flujos de calendario y reuniones."
+      },
+      "slack": {
+        "name": "Slack",
+        "description": "Conecta Slack para notificaciones de equipo y actualizaciones de flujo de trabajo."
       }
     },
     "integrationsControl": {
@@ -512,7 +527,7 @@
       "incremental": "Sincronización incremental",
       "full": "Migración Completa",
       "reconcile": "Reconciliar",
-      "dryRun": "Dry Run",
+      "dryRun": "Simulación",
       "entities": "Entidades (separadas por coma)",
       "fromDate": "Desde Fecha",
       "toDate": "Hasta Fecha",
@@ -599,7 +614,9 @@
         "disabledWarningTitle": "Integración Deshabilitada",
         "disabledWarningDesc": "GitHub está conectado pero deshabilitado. Habilítalo para comenzar a sincronizar datos.",
         "envConfigured": "Credenciales OAuth desde Variables de Entorno",
-        "envConfiguredDesc": "Las credenciales OAuth de GitHub se cargan desde variables de entorno (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). No se necesita configuración adicional de credenciales."
+        "envConfiguredDesc": "Las credenciales OAuth de GitHub se cargan desde variables de entorno (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). No se necesita configuración adicional de credenciales.",
+        "inferSkills": "Inferir habilidades",
+        "inferSkillsDesc": "Inferir habilidades a partir de lenguajes de repositorio y datos de contribución."
       }
     },
     "linkedin": {
@@ -740,7 +757,9 @@
     "departmentsAddMember": "Agregar miembro",
     "departmentsRemoveMember": "Quitar miembro",
     "departmentsNoMembers": "Sin miembros asignados",
-    "departmentsNoPeople": "No hay personas en este tenant"
+    "departmentsNoPeople": "No hay personas en este tenant",
+    "departmentsDescription": "Descripción",
+    "departmentsDescriptionPlaceholder": "Descripción opcional"
   },
   "settings": {
     "title": "Configuración",
@@ -937,5 +956,19 @@
     "toc": {
       "onThisPage": "En esta página"
     }
+  },
+  "rawEdit": {
+    "formatError": "Error al formatear",
+    "formatErrorDesc": "El contenido del editor no es JSON válido.",
+    "copied": "Copiado",
+    "copiedDesc": "JSON copiado al portapapeles.",
+    "copyError": "Error al copiar",
+    "copyErrorDesc": "No se pudo copiar el JSON al portapapeles.",
+    "validJson": "JSON válido",
+    "invalidJson": "JSON no válido",
+    "unsavedChanges": "Cambios sin guardar",
+    "reset": "Restablecer",
+    "format": "Formatear",
+    "copy": "Copiar"
   }
 }

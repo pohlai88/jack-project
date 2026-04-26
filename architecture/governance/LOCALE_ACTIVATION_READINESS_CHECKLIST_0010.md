@@ -171,3 +171,28 @@ Evidence:
 - `zh-CN`: `active_fallback`
 - `id`: `inactive_draft`
 - `th`: `inactive_draft`
+
+## Documentation Improvement Readiness
+
+The i18n runtime and catalog ecosystem is ready for documentation improvement work, but the active rollout slice is not
+yet fully `active_ready`.
+
+Documentation improvement should focus on moving runtime-active fallback locales toward native docs coverage:
+
+- keep `en` as the canonical source documentation locale
+- use `es` as the reference native-docs locale for metadata and structure
+- add native docs for `vi`, `ms`, and `zh-CN` under `src/features/docs/content/<locale>/`
+- keep `id` and `th` inactive until a separate activation gate promotes them
+- retain `fallbackAllowedLocales` only where visible English fallback remains intentionally approved
+- update the readiness snapshot only after UI QA, owner assignment, and approval evidence are recorded
+
+Minimum verification for each documentation slice:
+
+```bash
+pnpm docs:hash
+pnpm docs:check
+pnpm i18n:readiness:report
+pnpm i18n:compile --check
+pnpm i18n:validate
+pnpm i18n:fallback-check
+```

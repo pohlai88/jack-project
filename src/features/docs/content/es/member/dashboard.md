@@ -8,7 +8,7 @@ order: 2
 translation:
   sourceLocale: en
   sourcePath: member/dashboard.md
-  sourceHash: 5ebbb27001c018c4f86fc6cb20cb853b40f483ab3c389181078e91b64dfead33
+  sourceHash: fe612192563f7cb90cc88ff67f8574ee9e50d4b7a62559a7c79408e21e5ff72e
   status: reviewed
 ---
 

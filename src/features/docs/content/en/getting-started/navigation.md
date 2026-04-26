@@ -5,10 +5,6 @@ description: >-
   global search, theme, and locale options.
 section: getting-started
 order: 3
-fallbackAllowedLocales:
-  - vi
-  - ms
-  - zh-CN
 ---
 
 # Navigation & Views

@@ -8,7 +8,7 @@ order: 3
 translation:
   sourceLocale: en
   sourcePath: getting-started/navigation.md
-  sourceHash: c63afa49f825a4fa256f0a47c91cade92104f641bc5a84c38c7283ca224bc11f
+  sourceHash: aa2f37d935b463d5e08de9088b0f69f78b395c9ad2cf21d573112c3f01b33464
   status: reviewed
 ---
 

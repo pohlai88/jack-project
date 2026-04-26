@@ -8,6 +8,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Check, Clock, Copy, Link2, Mail, RefreshCw, Trash2, XCircle } from 'lucide-react';
+import { useLocale } from 'next-intl';
 import { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -88,6 +89,7 @@ const STATUS_COLORS = {
 const DEFAULT_EXPIRES_IN_DAYS = 7;
 
 export function InvitesClient({ tenantSlug }: InvitesClientProps) {
+  const locale = useLocale();
   const [invites, setInvites] = useState<InviteWithDetails[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -206,7 +208,7 @@ export function InvitesClient({ tenantSlug }: InvitesClientProps) {
 
   // Format date
   const formatDate = (date: Date) => {
-    return new Intl.DateTimeFormat('en-US', {
+    return new Intl.DateTimeFormat(locale, {
       month: 'short',
       day: 'numeric',
       year: 'numeric',

@@ -40,9 +40,14 @@ export interface DocContent {
 
 export interface DocSearchItem {
   slug: string;
+  url: string;
   title: string;
   description: string;
   section: string;
+  sectionId: string;
+  requestedLocale: string;
+  resolvedLocale: string;
+  isFallback: boolean;
   content: string;
 }
 

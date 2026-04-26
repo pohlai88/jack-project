@@ -6,7 +6,7 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: admin/index.md
-  sourceHash: cf61d1c5d33f7bc6480a6e88862fcd8f6155cb2ad2773a9b0efb0285f66ce0ac
+  sourceHash: aaede5bb4288e92321874f98c507c2f1a574719b749ae94f1c772c13e83214a1
   status: reviewed
 ---
 

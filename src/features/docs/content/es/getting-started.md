@@ -8,7 +8,7 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: getting-started.md
-  sourceHash: 6b2681f2f8b0f3b00d0157e9a1b7ed9f43e0be955732dc391bc19645eb1eae4e
+  sourceHash: aac295dad4e653c2f3548b60be73410241a788ad99e512cb60c0a8a6591ca10f
   status: reviewed
 ---
 
@@ -68,6 +68,17 @@ Según tu rol, empezá por acá:
 - **Admin** → Guía Admin: miembros, roles, configuración e integraciones.
 
 Usá la **barra lateral de docs** o la **búsqueda** para ir a cualquier tema.
+
+---
+
+## Componentes interactivos
+
+La plataforma usa un sistema de diseño consistente. Esta es una vista previa en vivo de las variantes de botón disponibles:
+
+```preview
+component: ButtonVariants
+props: {}
+```
 
 ---
 

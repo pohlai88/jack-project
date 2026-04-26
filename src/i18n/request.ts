@@ -1,9 +1,7 @@
 import { cookies, headers } from 'next/headers';
 import { getRequestConfig } from 'next-intl/server';
-import { defaultLocale, type Locale, LOCALE_COOKIE_NAME, locales } from './config';
-import { resolveConfiguredLocale } from './locale-matching';
-
-const NO_LOCALE_MATCH = '__NO_LOCALE_MATCH__';
+import { defaultLocale, type Locale, LOCALE_COOKIE_NAME } from './config';
+import { resolveLocaleValue } from './locale-cookie';
 
 /**
  * Detect locale from various sources:
@@ -15,12 +13,9 @@ async function detectLocale(): Promise<Locale> {
   // 1. Check cookie first (user's explicit choice)
   const cookieStore = await cookies();
   const localeCookie = cookieStore.get(LOCALE_COOKIE_NAME);
-  const cookieLocale = resolveConfiguredLocale(localeCookie?.value, {
-    locales,
-    defaultLocale: NO_LOCALE_MATCH,
-  });
-  if (cookieLocale !== NO_LOCALE_MATCH) {
-    return cookieLocale as Locale;
+  const cookieLocale = resolveLocaleValue(localeCookie?.value);
+  if (cookieLocale) {
+    return cookieLocale;
   }
 
   // 2. Check Accept-Language header
@@ -40,12 +35,9 @@ async function detectLocale(): Promise<Locale> {
       .sort((a, b) => b.quality - a.quality);
 
     for (const { locale } of browserLocales) {
-      const resolvedLocale = resolveConfiguredLocale(locale, {
-        locales,
-        defaultLocale: NO_LOCALE_MATCH,
-      });
-      if (resolvedLocale !== NO_LOCALE_MATCH) {
-        return resolvedLocale as Locale;
+      const resolvedLocale = resolveLocaleValue(locale);
+      if (resolvedLocale) {
+        return resolvedLocale;
       }
     }
   }

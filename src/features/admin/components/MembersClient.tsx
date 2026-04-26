@@ -7,7 +7,7 @@
  */
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -50,6 +50,7 @@ const memberFormSchema = z.object({
 type MemberFormValues = z.infer<typeof memberFormSchema>;
 
 export function MembersClient({ tenantSlug, initialData, currentUserId }: MembersClientProps) {
+  const locale = useLocale();
   const t = useTranslations('members');
   const tCommon = useTranslations('common');
   const [data, setData] = useState(initialData);
@@ -211,7 +212,7 @@ export function MembersClient({ tenantSlug, initialData, currentUserId }: Member
   // Format date
   const formatDate = (date: Date | null) => {
     if (!date) return '—';
-    return new Intl.DateTimeFormat('en-US', {
+    return new Intl.DateTimeFormat(locale, {
       month: 'short',
       day: 'numeric',
       year: 'numeric',

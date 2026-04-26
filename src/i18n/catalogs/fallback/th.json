@@ -381,7 +381,12 @@
     "openAdminPanel": "เปิดแผงผู้ดูแล",
     "viewMy": "มุมมองของฉัน",
     "viewAdmin": "มุมมองผู้ดูแล",
-    "switchView": "สลับมุมมอง"
+    "switchView": "สลับมุมมอง",
+    "directory": "ไดเรกทอรี",
+    "manager": "ผู้จัดการ",
+    "knowledgeBase": "ฐานความรู้",
+    "myProfile": "โปรไฟล์ของฉัน",
+    "integrations": "การผสานรวม"
   },
   "profile": {
     "title": "โปรไฟล์",
@@ -452,7 +457,9 @@
     "addBio": "เพิ่มประวัติย่อในโปรไฟล์",
     "uploadAvatar": "อัปโหลดรูปโปรไฟล์",
     "connectGitHub": "เชื่อมต่อบัญชี GitHub",
-    "inviteTeamMember": "เชิญสมาชิกทีม"
+    "inviteTeamMember": "เชิญสมาชิกทีม",
+    "bio": "ประวัติย่อ",
+    "contact": "ติดต่อ"
   },
   "admin": {
     "title": "ผู้ดูแลระบบ",
@@ -502,6 +509,14 @@
       "linkedin": {
         "name": "LinkedIn",
         "description": "เชื่อมต่อบัญชี LinkedIn เพื่อยืนยันตัวตนและเสริมโปรไฟล์"
+      },
+      "googleWorkspace": {
+        "name": "Google Workspace",
+        "description": "เชื่อมต่อ Google Workspace สำหรับปฏิทินและเวิร์กโฟลว์การประชุม"
+      },
+      "slack": {
+        "name": "Slack",
+        "description": "เชื่อมต่อ Slack สำหรับการแจ้งเตือนทีมและการอัปเดตเวิร์กโฟลว์"
       }
     },
     "integrationsControl": {
@@ -599,7 +614,9 @@
         "disabledWarningTitle": "การเชื่อมต่อถูกปิดใช้งาน",
         "disabledWarningDesc": "GitHub เชื่อมต่ออยู่แต่ถูกปิดใช้งาน เปิดใช้งานเพื่อเริ่มซิงค์ข้อมูล",
         "envConfigured": "ข้อมูลรับรอง OAuth จากสภาพแวดล้อม",
-        "envConfiguredDesc": "ข้อมูลรับรอง OAuth ของ GitHub ถูกโหลดจากตัวแปรสภาพแวดล้อม (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET) ไม่จำเป็นต้องกำหนดค่าข้อมูลรับรองเพิ่มเติม"
+        "envConfiguredDesc": "ข้อมูลรับรอง OAuth ของ GitHub ถูกโหลดจากตัวแปรสภาพแวดล้อม (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET) ไม่จำเป็นต้องกำหนดค่าข้อมูลรับรองเพิ่มเติม",
+        "inferSkills": "อนุมานทักษะ",
+        "inferSkillsDesc": "อนุมานทักษะจากภาษาของรีโพสิทอรีและข้อมูลการมีส่วนร่วม"
       }
     },
     "linkedin": {
@@ -740,7 +757,9 @@
     "departmentsAddMember": "เพิ่มสมาชิก",
     "departmentsRemoveMember": "ลบสมาชิก",
     "departmentsNoMembers": "ยังไม่ได้กำหนดสมาชิก",
-    "departmentsNoPeople": "ไม่มีผู้ใช้งานใน tenant นี้"
+    "departmentsNoPeople": "ไม่มีผู้ใช้งานใน tenant นี้",
+    "departmentsDescription": "คำอธิบาย",
+    "departmentsDescriptionPlaceholder": "คำอธิบายเพิ่มเติม (ไม่บังคับ)"
   },
   "settings": {
     "title": "การตั้งค่า",
@@ -937,5 +956,19 @@
     "toc": {
       "onThisPage": "ในหน้านี้"
     }
+  },
+  "rawEdit": {
+    "formatError": "จัดรูปแบบไม่สำเร็จ",
+    "formatErrorDesc": "เนื้อหาในตัวแก้ไขไม่ใช่ JSON ที่ถูกต้อง",
+    "copied": "คัดลอกแล้ว",
+    "copiedDesc": "คัดลอก JSON ไปยังคลิปบอร์ดแล้ว",
+    "copyError": "คัดลอกไม่สำเร็จ",
+    "copyErrorDesc": "ไม่สามารถคัดลอก JSON ไปยังคลิปบอร์ดได้",
+    "validJson": "JSON ถูกต้อง",
+    "invalidJson": "JSON ไม่ถูกต้อง",
+    "unsavedChanges": "การเปลี่ยนแปลงที่ยังไม่ได้บันทึก",
+    "reset": "รีเซ็ต",
+    "format": "จัดรูปแบบ",
+    "copy": "คัดลอก"
   }
 }

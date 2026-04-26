@@ -39,7 +39,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang={locale} suppressHydrationWarning className={`${dmSans.variable} dark:scroll-smooth`}>
       <body className={`${dmSans.className} min-h-screen bg-background font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider locale={locale} messages={messages}>
             <AuthProvider>
               <main className="relative flex min-h-screen flex-col">{children}</main>
               <Toaster richColors closeButton position="bottom-right" />

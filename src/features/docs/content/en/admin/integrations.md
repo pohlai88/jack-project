@@ -5,10 +5,6 @@ description: >-
   sync, and data mapping.
 section: admin
 order: 9
-fallbackAllowedLocales:
-  - vi
-  - ms
-  - zh-CN
 ---
 
 # Integrations

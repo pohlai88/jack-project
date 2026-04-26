@@ -355,7 +355,7 @@
     "signIn": "Đăng nhập",
     "signOut": "Đăng xuất",
     "signUp": "Đăng ký",
-    "email": "Email",
+    "email": "Địa chỉ email",
     "password": "Mật khẩu",
     "forgotPassword": "Quên mật khẩu?",
     "rememberMe": "Ghi nhớ tôi",
@@ -381,7 +381,12 @@
     "openAdminPanel": "Mở bảng quản trị",
     "viewMy": "Chế độ của tôi",
     "viewAdmin": "Chế độ quản trị",
-    "switchView": "Chuyển chế độ"
+    "switchView": "Chuyển chế độ",
+    "directory": "Danh bạ",
+    "manager": "Quản lý",
+    "knowledgeBase": "Kho kiến thức",
+    "myProfile": "Hồ sơ của tôi",
+    "integrations": "Tích hợp"
   },
   "profile": {
     "title": "Hồ sơ",
@@ -452,7 +457,9 @@
     "addBio": "Thêm tiểu sử vào hồ sơ",
     "uploadAvatar": "Tải ảnh hồ sơ lên",
     "connectGitHub": "Kết nối tài khoản GitHub",
-    "inviteTeamMember": "Mời thành viên nhóm"
+    "inviteTeamMember": "Mời thành viên nhóm",
+    "bio": "Tiểu sử",
+    "contact": "Liên hệ"
   },
   "admin": {
     "title": "Quản trị",
@@ -502,6 +509,14 @@
       "linkedin": {
         "name": "LinkedIn",
         "description": "Liên kết tài khoản LinkedIn để xác minh danh tính và làm giàu hồ sơ."
+      },
+      "googleWorkspace": {
+        "name": "Google Workspace",
+        "description": "Kết nối Google Workspace cho lịch và quy trình họp."
+      },
+      "slack": {
+        "name": "Slack",
+        "description": "Kết nối Slack cho thông báo nhóm và cập nhật quy trình làm việc."
       }
     },
     "integrationsControl": {
@@ -599,7 +614,9 @@
         "disabledWarningTitle": "Tích hợp đã tắt",
         "disabledWarningDesc": "GitHub đã kết nối nhưng đang tắt. Hãy bật để bắt đầu đồng bộ dữ liệu.",
         "envConfigured": "Thông tin OAuth từ môi trường",
-        "envConfiguredDesc": "Thông tin OAuth của GitHub được tải từ biến môi trường (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Không cần cấu hình thêm."
+        "envConfiguredDesc": "Thông tin OAuth của GitHub được tải từ biến môi trường (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Không cần cấu hình thêm.",
+        "inferSkills": "Suy luận kỹ năng",
+        "inferSkillsDesc": "Suy luận kỹ năng từ ngôn ngữ kho lưu trữ và dữ liệu đóng góp."
       }
     },
     "linkedin": {
@@ -740,7 +757,9 @@
     "departmentsAddMember": "Thêm thành viên",
     "departmentsRemoveMember": "Xóa thành viên",
     "departmentsNoMembers": "Chưa gán thành viên",
-    "departmentsNoPeople": "Không có người dùng trong tenant này"
+    "departmentsNoPeople": "Không có người dùng trong tenant này",
+    "departmentsDescription": "Mô tả",
+    "departmentsDescriptionPlaceholder": "Mô tả tùy chọn"
   },
   "settings": {
     "title": "Cài đặt",
@@ -894,8 +913,8 @@
     "datePresets": {
       "all": "Tất cả thời gian",
       "today": "Hôm nay",
-      "week": "Last 7 Days",
-      "month": "Last 30 Days"
+      "week": "7 ngày qua",
+      "month": "30 ngày qua"
     }
   },
   "docs": {
@@ -937,5 +956,19 @@
     "toc": {
       "onThisPage": "Trong trang này"
     }
+  },
+  "rawEdit": {
+    "formatError": "Lỗi định dạng",
+    "formatErrorDesc": "Nội dung trình chỉnh sửa không phải JSON hợp lệ.",
+    "copied": "Đã sao chép",
+    "copiedDesc": "Đã sao chép JSON vào bảng nhớ tạm.",
+    "copyError": "Lỗi sao chép",
+    "copyErrorDesc": "Không thể sao chép JSON vào bảng nhớ tạm.",
+    "validJson": "JSON hợp lệ",
+    "invalidJson": "JSON không hợp lệ",
+    "unsavedChanges": "Thay đổi chưa lưu",
+    "reset": "Đặt lại",
+    "format": "Định dạng",
+    "copy": "Sao chép"
   }
 }

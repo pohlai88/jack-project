@@ -12,7 +12,7 @@ export function cn(...inputs: ClassValue[]) {
 /**
  * Format a date for display
  */
-export function formatDate(date: Date | string, options?: Intl.DateTimeFormatOptions): string {
+export function formatDate(date: Date | string, options?: Intl.DateTimeFormatOptions, locale = 'en'): string {
   let d: Date;
   if (typeof date === 'string') {
     const dateOnlyMatch = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
@@ -25,7 +25,7 @@ export function formatDate(date: Date | string, options?: Intl.DateTimeFormatOpt
   } else {
     d = date;
   }
-  return d.toLocaleDateString('en-US', {
+  return d.toLocaleDateString(locale, {
     timeZone: options?.timeZone ?? 'UTC',
     year: 'numeric',
     month: 'short',

@@ -8,7 +8,7 @@ order: 4
 translation:
   sourceLocale: en
   sourcePath: getting-started/profile-setup.md
-  sourceHash: 9f767d74f08a6fdc70d04463a06584b6c21b74581cbb36099b47619a40da7e12
+  sourceHash: b5a79d199f3588b454e833187493df504b47877ddba268c7f139b9a8c2636716
   status: reviewed
 ---
 

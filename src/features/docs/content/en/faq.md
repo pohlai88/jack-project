@@ -5,10 +5,6 @@ description: >-
   features, data export, and how to get help.
 section: faq
 order: 1
-fallbackAllowedLocales:
-  - vi
-  - ms
-  - zh-CN
 ---
 
 # Frequently Asked Questions

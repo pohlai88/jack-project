@@ -9,16 +9,16 @@
 
 import { MessageSquare, Users, Webhook } from 'lucide-react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { Card, CardContent } from '@/shared/components/ui/card';
 import { useCountUp } from '@/shared/hooks/use-count-up';
 import { cn } from '@/shared/lib/utils';
 
 /** Animated number that counts up when visible */
-function AnimatedValue({ target }: { target: number }) {
+function AnimatedValue({ target, locale }: { target: number; locale: string }) {
   const { ref, value } = useCountUp(target);
-  return <span ref={ref}>{value.toLocaleString()}</span>;
+  return <span ref={ref}>{value.toLocaleString(locale)}</span>;
 }
 
 interface StatsCardsProps {
@@ -34,6 +34,7 @@ export function StatsCards({
   conversationsCount = 0,
   webhooksCount = 0,
 }: StatsCardsProps) {
+  const locale = useLocale();
   const t = useTranslations('dashboard');
   const base = `/t/${tenantSlug}`;
 
@@ -88,7 +89,7 @@ export function StatsCards({
                 <div>
                   <p className="text-sm font-medium text-muted-foreground mb-1">{card.title}</p>
                   <p className="text-3xl font-bold tracking-tight">
-                    <AnimatedValue target={card.value} />
+                    <AnimatedValue target={card.value} locale={locale} />
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">{card.description}</p>
                 </div>

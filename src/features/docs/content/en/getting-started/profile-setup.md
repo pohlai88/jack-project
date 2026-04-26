@@ -5,10 +5,6 @@ description: >-
   LinkedIn, timezone, location, email, and pronouns.
 section: getting-started
 order: 4
-fallbackAllowedLocales:
-  - vi
-  - ms
-  - zh-CN
 ---
 
 # Profile Setup

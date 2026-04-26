@@ -381,7 +381,12 @@
     "openAdminPanel": "Buka Panel Pentadbir",
     "viewMy": "Pandangan Saya",
     "viewAdmin": "Pandangan Pentadbir",
-    "switchView": "Tukar pandangan"
+    "switchView": "Tukar pandangan",
+    "directory": "Direktori",
+    "manager": "Pengurus",
+    "knowledgeBase": "Pangkalan Pengetahuan",
+    "myProfile": "Profil Saya",
+    "integrations": "Integrasi"
   },
   "profile": {
     "title": "Profil",
@@ -419,7 +424,7 @@
       "personalEmail": "Emel peribadi",
       "personalEmailHint": "Pilihan. Emel sekunder untuk komunikasi bukan kerja.",
       "personalEmailPlaceholder": "personal@example.com",
-      "bio": "Bio",
+      "bio": "Biografi",
       "bioPlaceholder": "Ceritakan tentang diri anda kepada pasukan...",
       "connectedAccountsTitle": "Akaun Bersambung",
       "connectedAccountsDescription": "Pautkan profil luaran untuk memperkayakan data platform anda.",
@@ -452,7 +457,9 @@
     "addBio": "Tambah bio ke profil anda",
     "uploadAvatar": "Muat naik gambar profil",
     "connectGitHub": "Sambung akaun GitHub anda",
-    "inviteTeamMember": "Jemput ahli pasukan"
+    "inviteTeamMember": "Jemput ahli pasukan",
+    "bio": "Biografi",
+    "contact": "Hubungan"
   },
   "admin": {
     "title": "Pentadbir",
@@ -502,6 +509,14 @@
       "linkedin": {
         "name": "LinkedIn",
         "description": "Pautkan akaun LinkedIn untuk pengesahan identiti dan pengayaan profil."
+      },
+      "googleWorkspace": {
+        "name": "Google Workspace",
+        "description": "Sambungkan Google Workspace untuk aliran kerja kalendar dan mesyuarat."
+      },
+      "slack": {
+        "name": "Slack",
+        "description": "Sambungkan Slack untuk pemberitahuan pasukan dan kemas kini aliran kerja."
       }
     },
     "integrationsControl": {
@@ -512,7 +527,7 @@
       "incremental": "Penyegerakan Inkremental",
       "full": "Migrasi Penuh",
       "reconcile": "Rekonsiliasi",
-      "dryRun": "Dry Run",
+      "dryRun": "Simulasi",
       "entities": "Entiti (dipisah koma)",
       "fromDate": "Dari Tarikh",
       "toDate": "Hingga Tarikh",
@@ -599,7 +614,9 @@
         "disabledWarningTitle": "Integrasi Dinyahdayakan",
         "disabledWarningDesc": "GitHub bersambung tetapi dinyahdayakan. Dayakan untuk mula menyegerakkan data.",
         "envConfigured": "Kredensial OAuth dari Persekitaran",
-        "envConfiguredDesc": "Kredensial OAuth GitHub dimuat dari pembolehubah persekitaran (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Tiada konfigurasi kredensial tambahan diperlukan."
+        "envConfiguredDesc": "Kredensial OAuth GitHub dimuat dari pembolehubah persekitaran (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Tiada konfigurasi kredensial tambahan diperlukan.",
+        "inferSkills": "Infer kemahiran",
+        "inferSkillsDesc": "Infer kemahiran daripada bahasa repositori dan data sumbangan."
       }
     },
     "linkedin": {
@@ -740,7 +757,9 @@
     "departmentsAddMember": "Tambah ahli",
     "departmentsRemoveMember": "Alih keluar ahli",
     "departmentsNoMembers": "Tiada ahli ditetapkan",
-    "departmentsNoPeople": "Tiada orang dalam tenant ini"
+    "departmentsNoPeople": "Tiada orang dalam tenant ini",
+    "departmentsDescription": "Penerangan",
+    "departmentsDescriptionPlaceholder": "Penerangan pilihan"
   },
   "settings": {
     "title": "Tetapan",
@@ -937,5 +956,19 @@
     "toc": {
       "onThisPage": "Di halaman ini"
     }
+  },
+  "rawEdit": {
+    "formatError": "Format gagal",
+    "formatErrorDesc": "Kandungan editor bukan JSON yang sah.",
+    "copied": "Disalin",
+    "copiedDesc": "JSON disalin ke papan klip.",
+    "copyError": "Salin gagal",
+    "copyErrorDesc": "Tidak dapat menyalin JSON ke papan klip.",
+    "validJson": "JSON sah",
+    "invalidJson": "JSON tidak sah",
+    "unsavedChanges": "Perubahan belum disimpan",
+    "reset": "Tetapkan semula",
+    "format": "Formatkan",
+    "copy": "Salin"
   }
 }

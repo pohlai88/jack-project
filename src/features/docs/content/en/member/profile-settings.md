@@ -5,10 +5,6 @@ description: >-
   personal email.
 section: member
 order: 3
-fallbackAllowedLocales:
-  - vi
-  - ms
-  - zh-CN
 ---
 
 # Profile & Settings

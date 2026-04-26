@@ -5,10 +5,6 @@ description: >-
   status, and invite expiration.
 section: admin
 order: 2
-fallbackAllowedLocales:
-  - vi
-  - ms
-  - zh-CN
 ---
 
 # Members & Invitations

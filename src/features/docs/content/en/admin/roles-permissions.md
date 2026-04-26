@@ -5,10 +5,6 @@ description: >-
   assigning permissions, and the PBAC model.
 section: admin
 order: 7
-fallbackAllowedLocales:
-  - vi
-  - ms
-  - zh-CN
 ---
 
 # Roles & Permissions

@@ -8,7 +8,7 @@ order: 7
 translation:
   sourceLocale: en
   sourcePath: admin/roles-permissions.md
-  sourceHash: 6bd6d316d924d149a97912105919ffb4ca108f5e996c7e1be8835f2a4702613f
+  sourceHash: 82e558def93309a948272fa19cb4822e542075710f2b7314d5074b1b3eaf527b
   status: reviewed
 ---
 

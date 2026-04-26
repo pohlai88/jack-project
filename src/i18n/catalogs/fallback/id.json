@@ -381,7 +381,12 @@
     "openAdminPanel": "Buka Panel Admin",
     "viewMy": "Tampilan Saya",
     "viewAdmin": "Tampilan Admin",
-    "switchView": "Ganti tampilan"
+    "switchView": "Ganti tampilan",
+    "directory": "Direktori",
+    "manager": "Manajer",
+    "knowledgeBase": "Basis Pengetahuan",
+    "myProfile": "Profil Saya",
+    "integrations": "Integrasi"
   },
   "profile": {
     "title": "Profil",
@@ -452,7 +457,9 @@
     "addBio": "Tambahkan bio ke profil Anda",
     "uploadAvatar": "Unggah foto profil",
     "connectGitHub": "Hubungkan akun GitHub Anda",
-    "inviteTeamMember": "Undang anggota tim"
+    "inviteTeamMember": "Undang anggota tim",
+    "bio": "Bio",
+    "contact": "Kontak"
   },
   "admin": {
     "title": "Admin",
@@ -502,6 +509,14 @@
       "linkedin": {
         "name": "LinkedIn",
         "description": "Hubungkan akun LinkedIn untuk verifikasi identitas dan pengayaan profil."
+      },
+      "googleWorkspace": {
+        "name": "Google Workspace",
+        "description": "Hubungkan Google Workspace untuk alur kerja kalender dan rapat."
+      },
+      "slack": {
+        "name": "Slack",
+        "description": "Hubungkan Slack untuk notifikasi tim dan pembaruan alur kerja."
       }
     },
     "integrationsControl": {
@@ -599,7 +614,9 @@
         "disabledWarningTitle": "Integrasi Dinonaktifkan",
         "disabledWarningDesc": "GitHub terhubung tetapi dinonaktifkan. Aktifkan untuk mulai menyinkronkan data.",
         "envConfigured": "Kredensial OAuth dari Lingkungan",
-        "envConfiguredDesc": "Kredensial OAuth GitHub dimuat dari variabel lingkungan (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Tidak perlu konfigurasi kredensial tambahan."
+        "envConfiguredDesc": "Kredensial OAuth GitHub dimuat dari variabel lingkungan (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Tidak perlu konfigurasi kredensial tambahan.",
+        "inferSkills": "Inferensi keterampilan",
+        "inferSkillsDesc": "Inferensikan keterampilan dari bahasa repositori dan data kontribusi."
       }
     },
     "linkedin": {
@@ -740,7 +757,9 @@
     "departmentsAddMember": "Tambah anggota",
     "departmentsRemoveMember": "Hapus anggota",
     "departmentsNoMembers": "Belum ada anggota ditetapkan",
-    "departmentsNoPeople": "Tidak ada orang di tenant ini"
+    "departmentsNoPeople": "Tidak ada orang di tenant ini",
+    "departmentsDescription": "Deskripsi",
+    "departmentsDescriptionPlaceholder": "Deskripsi opsional"
   },
   "settings": {
     "title": "Pengaturan",
@@ -937,5 +956,19 @@
     "toc": {
       "onThisPage": "Di halaman ini"
     }
+  },
+  "rawEdit": {
+    "formatError": "Gagal memformat",
+    "formatErrorDesc": "Konten editor bukan JSON yang valid.",
+    "copied": "Disalin",
+    "copiedDesc": "JSON disalin ke papan klip.",
+    "copyError": "Gagal menyalin",
+    "copyErrorDesc": "Tidak dapat menyalin JSON ke papan klip.",
+    "validJson": "JSON valid",
+    "invalidJson": "JSON tidak valid",
+    "unsavedChanges": "Perubahan belum disimpan",
+    "reset": "Atur ulang",
+    "format": "Format",
+    "copy": "Salin"
   }
 }
