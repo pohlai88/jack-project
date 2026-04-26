@@ -97,10 +97,9 @@ export function handleApiError(error: unknown, requestId?: string): NextResponse
     logger.error({ error, requestId }, 'API Error');
 
     // Don't expose internal error details in production
-    const message =
-      process.env.NEXT_PUBLIC_STAGE === 'dev' || process.env.NODE_ENV === 'development'
-        ? error.message
-        : 'An unexpected error occurred';
+    const appStage = process.env['NEXT_PUBLIC_STAGE'];
+    const nodeEnv = process.env['NODE_ENV'];
+    const message = appStage === 'dev' || nodeEnv === 'development' ? error.message : 'An unexpected error occurred';
 
     return ApiErrors.internalError(message, requestId);
   }

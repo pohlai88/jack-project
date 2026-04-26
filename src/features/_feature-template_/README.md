@@ -2,7 +2,7 @@
 
 This directory serves as a template for creating new features in the application. It demonstrates the recommended structure and patterns for implementing features using Feature-Based Architecture.
 
-**Source of truth:** See [docs/PROJECT_STRUCTURE.md](../../../docs/PROJECT_STRUCTURE.md) for the full architecture and feature-module conventions.
+**Source of truth:** See [architecture/doctrine/0002-feature-public-api-boundaries.md](../../../architecture/doctrine/0002-feature-public-api-boundaries.md) for the current feature-module conventions. `architecture/docs/` is deprecated reference material.
 
 ## Structure
 
@@ -38,6 +38,7 @@ _feature-template/
    - Keep feature-specific code within the feature directory
    - Use the public API (index.ts) to expose functionality
    - Avoid direct imports from other features' internals
+   - Use relative imports for same-feature internals; do not import your own feature barrel from inside the feature
 
 2. **Components**
    - Keep components focused and reusable
@@ -58,6 +59,11 @@ _feature-template/
    - Define clear interfaces
    - Use TypeScript for type safety
    - Export types through index.ts
+
+6. **Public API Discipline**
+   - Root `index.ts` is the only external import target for the feature
+   - Export only symbols consumed by app routes or other features
+   - Do not turn the root barrel into a wildcard dump of internal folders
 
 ## Example
 

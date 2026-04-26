@@ -6,7 +6,7 @@
 
 import { redirect } from 'next/navigation';
 
-import { InvitesClient } from '@/features/admin/components/InvitesClient';
+import { InvitesClient } from '@/features/admin';
 import { auth } from '@/shared/lib/auth';
 import { requireTenantAdmin } from '@/shared/lib/rbac';
 import { getTenantBySlug } from '@/shared/lib/tenant';

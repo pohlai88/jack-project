@@ -10,11 +10,12 @@ import { Calendar, ChevronDown, ChevronUp, Filter, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useCallback, useState } from 'react';
 
-import { AdminPageHeader } from '@/features/admin';
-import type { AuditLogEntry, AuditLogFilters } from '@/features/admin/services/audit-logs-service';
-import { exportAuditEventsCSV, listAuditEvents } from '@/features/admin/services/audit-logs-service';
-import type { PaginatedResult } from '@/features/admin/types';
 import { Badge, Button, Input, Select, SelectItem } from '@/shared/components/ui';
+
+import { AdminPageHeader } from './AdminPageHeader';
+import type { AuditLogEntry, AuditLogFilters } from '../services/audit-logs-service';
+import { exportAuditEventsCSV, listAuditEvents } from '../services/audit-logs-service';
+import type { PaginatedResult } from '../types';
 
 interface AuditLogsClientProps {
   tenantSlug: string;

@@ -7,8 +7,7 @@ import { CheckCircle2, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 
-import { AdminPageHeader, IntegrationControlPlanePanel } from '@/features/admin';
-import { getTenantSettings } from '@/features/admin/services/settings-service';
+import { AdminPageHeader, getTenantSettings, IntegrationControlPlanePanel } from '@/features/admin';
 import { getIntegrationBrand } from '@/shared/components/icons/integration-brand';
 import { Badge, Button } from '@/shared/components/ui';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui/card';

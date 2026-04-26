@@ -2,46 +2,47 @@
  * Tests for permissions utilities
  */
 
+import { db } from '@/shared/db';
 import {
   type AuthResult,
   createMockSession,
   createMockTenant,
   createNullAuthResult,
   type MockTenant,
-} from '@/__tests__/mock-factories';
+} from '@tests/support/mock-factories';
 
 // Create typed mock functions
-const mockAuthFn = jest.fn<Promise<AuthResult>, []>();
-const mockGetTenantBySlugFn = jest.fn<Promise<MockTenant | undefined>, [string]>();
+const { mockAuthFn, mockGetTenantBySlugFn } = vi.hoisted(() => ({
+  mockAuthFn: vi.fn<() => Promise<AuthResult>>(),
+  mockGetTenantBySlugFn: vi.fn<(tenantSlug: string) => Promise<MockTenant | undefined>>(),
+}));
 
 // Mock dependencies before importing the module
-jest.mock('@/shared/db', () => ({
+vi.mock('@/shared/db', () => ({
   db: {
     query: {
-      tenantMemberships: { findFirst: jest.fn(), findMany: jest.fn() },
-      tenantMembershipRoles: { findMany: jest.fn() },
-      rolePermissions: { findMany: jest.fn() },
-      permissions: { findMany: jest.fn() },
-      roles: { findMany: jest.fn() },
+      tenantMemberships: { findFirst: vi.fn(), findMany: vi.fn() },
+      tenantMembershipRoles: { findMany: vi.fn() },
+      rolePermissions: { findMany: vi.fn() },
+      permissions: { findMany: vi.fn() },
+      roles: { findMany: vi.fn() },
     },
   },
 }));
 
-jest.mock('@/shared/lib/auth', () => ({
+vi.mock('@/shared/lib/auth', () => ({
   auth: mockAuthFn,
 }));
 
-jest.mock('@/shared/lib/tenant', () => ({
+vi.mock('@/shared/lib/tenant', () => ({
   getTenantBySlug: mockGetTenantBySlugFn,
 }));
 
-jest.mock('next/navigation', () => ({
-  redirect: jest.fn((url: string) => {
+vi.mock('next/navigation', () => ({
+  redirect: vi.fn((url: string) => {
     throw new Error(`REDIRECT:${url}`);
   }),
 }));
-
-import { db } from '@/shared/db';
 
 import {
   getAllTenantPermissionsForUser,
@@ -52,11 +53,11 @@ import {
   requirePermission,
 } from '../permissions';
 
-const mockDb = db as jest.Mocked<typeof db>;
+const mockDb = db as Mocked<typeof db>;
 
 describe('permissions', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('hasPermission', () => {
@@ -80,7 +81,7 @@ describe('permissions', () => {
     it('should return false when user has no membership', async () => {
       mockAuthFn.mockResolvedValue(createMockSession());
       mockGetTenantBySlugFn.mockResolvedValue(createMockTenant());
-      (mockDb.query.tenantMemberships.findFirst as jest.Mock).mockResolvedValue(null);
+      (mockDb.query.tenantMemberships.findFirst as Mock).mockResolvedValue(null);
 
       const result = await hasPermission('test-tenant', 'admin:settings');
 
@@ -90,8 +91,8 @@ describe('permissions', () => {
     it('should return false when user has no roles', async () => {
       mockAuthFn.mockResolvedValue(createMockSession());
       mockGetTenantBySlugFn.mockResolvedValue(createMockTenant());
-      (mockDb.query.tenantMemberships.findFirst as jest.Mock).mockResolvedValue({ id: 'membership-123' });
-      (mockDb.query.tenantMembershipRoles.findMany as jest.Mock).mockResolvedValue([]);
+      (mockDb.query.tenantMemberships.findFirst as Mock).mockResolvedValue({ id: 'membership-123' });
+      (mockDb.query.tenantMembershipRoles.findMany as Mock).mockResolvedValue([]);
 
       const result = await hasPermission('test-tenant', 'admin:settings');
 
@@ -101,10 +102,10 @@ describe('permissions', () => {
     it('should return true when user has the permission', async () => {
       mockAuthFn.mockResolvedValue(createMockSession());
       mockGetTenantBySlugFn.mockResolvedValue(createMockTenant());
-      (mockDb.query.tenantMemberships.findFirst as jest.Mock).mockResolvedValue({ id: 'membership-123' });
-      (mockDb.query.tenantMembershipRoles.findMany as jest.Mock).mockResolvedValue([{ roleId: 'role-123' }]);
-      (mockDb.query.rolePermissions.findMany as jest.Mock).mockResolvedValue([{ permissionId: 'perm-123' }]);
-      (mockDb.query.permissions.findMany as jest.Mock).mockResolvedValue([{ key: 'admin:settings' }]);
+      (mockDb.query.tenantMemberships.findFirst as Mock).mockResolvedValue({ id: 'membership-123' });
+      (mockDb.query.tenantMembershipRoles.findMany as Mock).mockResolvedValue([{ roleId: 'role-123' }]);
+      (mockDb.query.rolePermissions.findMany as Mock).mockResolvedValue([{ permissionId: 'perm-123' }]);
+      (mockDb.query.permissions.findMany as Mock).mockResolvedValue([{ key: 'admin:settings' }]);
 
       const result = await hasPermission('test-tenant', 'admin:settings');
 
@@ -114,10 +115,10 @@ describe('permissions', () => {
     it('should return false when user lacks the specific permission', async () => {
       mockAuthFn.mockResolvedValue(createMockSession());
       mockGetTenantBySlugFn.mockResolvedValue(createMockTenant());
-      (mockDb.query.tenantMemberships.findFirst as jest.Mock).mockResolvedValue({ id: 'membership-123' });
-      (mockDb.query.tenantMembershipRoles.findMany as jest.Mock).mockResolvedValue([{ roleId: 'role-123' }]);
-      (mockDb.query.rolePermissions.findMany as jest.Mock).mockResolvedValue([{ permissionId: 'perm-123' }]);
-      (mockDb.query.permissions.findMany as jest.Mock).mockResolvedValue([{ key: 'profile:read' }]);
+      (mockDb.query.tenantMemberships.findFirst as Mock).mockResolvedValue({ id: 'membership-123' });
+      (mockDb.query.tenantMembershipRoles.findMany as Mock).mockResolvedValue([{ roleId: 'role-123' }]);
+      (mockDb.query.rolePermissions.findMany as Mock).mockResolvedValue([{ permissionId: 'perm-123' }]);
+      (mockDb.query.permissions.findMany as Mock).mockResolvedValue([{ key: 'profile:read' }]);
 
       const result = await hasPermission('test-tenant', 'admin:settings');
 
@@ -127,9 +128,9 @@ describe('permissions', () => {
     it('should return false when role has no permissions', async () => {
       mockAuthFn.mockResolvedValue(createMockSession());
       mockGetTenantBySlugFn.mockResolvedValue(createMockTenant());
-      (mockDb.query.tenantMemberships.findFirst as jest.Mock).mockResolvedValue({ id: 'membership-123' });
-      (mockDb.query.tenantMembershipRoles.findMany as jest.Mock).mockResolvedValue([{ roleId: 'role-123' }]);
-      (mockDb.query.rolePermissions.findMany as jest.Mock).mockResolvedValue([]);
+      (mockDb.query.tenantMemberships.findFirst as Mock).mockResolvedValue({ id: 'membership-123' });
+      (mockDb.query.tenantMembershipRoles.findMany as Mock).mockResolvedValue([{ roleId: 'role-123' }]);
+      (mockDb.query.rolePermissions.findMany as Mock).mockResolvedValue([]);
 
       const result = await hasPermission('test-tenant', 'admin:settings');
 
@@ -153,7 +154,7 @@ describe('permissions', () => {
     it('should redirect to tenant with error when unauthorized', async () => {
       mockAuthFn.mockResolvedValue(createMockSession({ user: { email: 'test@example.com' } }));
       mockGetTenantBySlugFn.mockResolvedValue(createMockTenant());
-      (mockDb.query.tenantMemberships.findFirst as jest.Mock).mockResolvedValue(null);
+      (mockDb.query.tenantMemberships.findFirst as Mock).mockResolvedValue(null);
 
       await expect(requirePermission('test-tenant', 'admin:settings')).rejects.toThrow(
         'REDIRECT:/t/test-tenant?error=unauthorized',
@@ -163,10 +164,10 @@ describe('permissions', () => {
     it('should return user info when authorized', async () => {
       mockAuthFn.mockResolvedValue(createMockSession({ user: { email: 'test@example.com' } }));
       mockGetTenantBySlugFn.mockResolvedValue(createMockTenant());
-      (mockDb.query.tenantMemberships.findFirst as jest.Mock).mockResolvedValue({ id: 'membership-123' });
-      (mockDb.query.tenantMembershipRoles.findMany as jest.Mock).mockResolvedValue([{ roleId: 'role-123' }]);
-      (mockDb.query.rolePermissions.findMany as jest.Mock).mockResolvedValue([{ permissionId: 'perm-123' }]);
-      (mockDb.query.permissions.findMany as jest.Mock).mockResolvedValue([{ key: 'admin:settings' }]);
+      (mockDb.query.tenantMemberships.findFirst as Mock).mockResolvedValue({ id: 'membership-123' });
+      (mockDb.query.tenantMembershipRoles.findMany as Mock).mockResolvedValue([{ roleId: 'role-123' }]);
+      (mockDb.query.rolePermissions.findMany as Mock).mockResolvedValue([{ permissionId: 'perm-123' }]);
+      (mockDb.query.permissions.findMany as Mock).mockResolvedValue([{ key: 'admin:settings' }]);
 
       const result = await requirePermission('test-tenant', 'admin:settings');
 
@@ -195,7 +196,7 @@ describe('permissions', () => {
     it('should return empty array when no membership', async () => {
       mockAuthFn.mockResolvedValue(createMockSession());
       mockGetTenantBySlugFn.mockResolvedValue(createMockTenant());
-      (mockDb.query.tenantMemberships.findFirst as jest.Mock).mockResolvedValue(null);
+      (mockDb.query.tenantMemberships.findFirst as Mock).mockResolvedValue(null);
 
       const result = await getCurrentRoleIds('test-tenant');
 
@@ -205,8 +206,8 @@ describe('permissions', () => {
     it('should return role IDs', async () => {
       mockAuthFn.mockResolvedValue(createMockSession());
       mockGetTenantBySlugFn.mockResolvedValue(createMockTenant());
-      (mockDb.query.tenantMemberships.findFirst as jest.Mock).mockResolvedValue({ id: 'membership-123' });
-      (mockDb.query.tenantMembershipRoles.findMany as jest.Mock).mockResolvedValue([
+      (mockDb.query.tenantMemberships.findFirst as Mock).mockResolvedValue({ id: 'membership-123' });
+      (mockDb.query.tenantMembershipRoles.findMany as Mock).mockResolvedValue([
         { roleId: 'role-1' },
         { roleId: 'role-2' },
       ]);
@@ -229,9 +230,9 @@ describe('permissions', () => {
     it('should return roles', async () => {
       mockAuthFn.mockResolvedValue(createMockSession());
       mockGetTenantBySlugFn.mockResolvedValue(createMockTenant());
-      (mockDb.query.tenantMemberships.findFirst as jest.Mock).mockResolvedValue({ id: 'membership-123' });
-      (mockDb.query.tenantMembershipRoles.findMany as jest.Mock).mockResolvedValue([{ roleId: 'role-1' }]);
-      (mockDb.query.roles.findMany as jest.Mock).mockResolvedValue([{ id: 'role-1', name: 'Admin' }]);
+      (mockDb.query.tenantMemberships.findFirst as Mock).mockResolvedValue({ id: 'membership-123' });
+      (mockDb.query.tenantMembershipRoles.findMany as Mock).mockResolvedValue([{ roleId: 'role-1' }]);
+      (mockDb.query.roles.findMany as Mock).mockResolvedValue([{ id: 'role-1', name: 'Admin' }]);
 
       const result = await getCurrentRoles('test-tenant');
 
@@ -265,10 +266,10 @@ describe('permissions', () => {
     it('should fetch permissions from DB when not in session', async () => {
       mockAuthFn.mockResolvedValue(createMockSession({ user: { permissions: undefined } }));
       mockGetTenantBySlugFn.mockResolvedValue(createMockTenant());
-      (mockDb.query.tenantMemberships.findFirst as jest.Mock).mockResolvedValue({ id: 'membership-123' });
-      (mockDb.query.tenantMembershipRoles.findMany as jest.Mock).mockResolvedValue([{ roleId: 'role-1' }]);
-      (mockDb.query.rolePermissions.findMany as jest.Mock).mockResolvedValue([{ permissionId: 'perm-1' }]);
-      (mockDb.query.permissions.findMany as jest.Mock).mockResolvedValue([{ key: 'profile:read' }]);
+      (mockDb.query.tenantMemberships.findFirst as Mock).mockResolvedValue({ id: 'membership-123' });
+      (mockDb.query.tenantMembershipRoles.findMany as Mock).mockResolvedValue([{ roleId: 'role-1' }]);
+      (mockDb.query.rolePermissions.findMany as Mock).mockResolvedValue([{ permissionId: 'perm-1' }]);
+      (mockDb.query.permissions.findMany as Mock).mockResolvedValue([{ key: 'profile:read' }]);
 
       const result = await getCurrentUserPermissions('test-tenant');
 
@@ -278,7 +279,7 @@ describe('permissions', () => {
 
   describe('getAllTenantPermissionsForUser', () => {
     it('should return empty object when user has no memberships', async () => {
-      (mockDb.query.tenantMemberships.findMany as jest.Mock).mockResolvedValue([]);
+      (mockDb.query.tenantMemberships.findMany as Mock).mockResolvedValue([]);
 
       const result = await getAllTenantPermissionsForUser('user-123');
 
@@ -286,10 +287,10 @@ describe('permissions', () => {
     });
 
     it('should return empty arrays when roles have no permissions', async () => {
-      (mockDb.query.tenantMemberships.findMany as jest.Mock).mockResolvedValue([
+      (mockDb.query.tenantMemberships.findMany as Mock).mockResolvedValue([
         { id: 'membership-1', tenant: { id: 'tenant-1', slug: 'tenant-1' } },
       ]);
-      (mockDb.query.tenantMembershipRoles.findMany as jest.Mock).mockResolvedValue([]);
+      (mockDb.query.tenantMembershipRoles.findMany as Mock).mockResolvedValue([]);
 
       const result = await getAllTenantPermissionsForUser('user-123');
 
@@ -297,19 +298,19 @@ describe('permissions', () => {
     });
 
     it('should return permissions for all tenants', async () => {
-      (mockDb.query.tenantMemberships.findMany as jest.Mock).mockResolvedValue([
+      (mockDb.query.tenantMemberships.findMany as Mock).mockResolvedValue([
         { id: 'membership-1', tenant: { id: 'tenant-1', slug: 'tenant-a' } },
         { id: 'membership-2', tenant: { id: 'tenant-2', slug: 'tenant-b' } },
       ]);
-      (mockDb.query.tenantMembershipRoles.findMany as jest.Mock).mockResolvedValue([
+      (mockDb.query.tenantMembershipRoles.findMany as Mock).mockResolvedValue([
         { membershipId: 'membership-1', roleId: 'role-1' },
         { membershipId: 'membership-2', roleId: 'role-2' },
       ]);
-      (mockDb.query.rolePermissions.findMany as jest.Mock).mockResolvedValue([
+      (mockDb.query.rolePermissions.findMany as Mock).mockResolvedValue([
         { roleId: 'role-1', permissionId: 'perm-1' },
         { roleId: 'role-2', permissionId: 'perm-2' },
       ]);
-      (mockDb.query.permissions.findMany as jest.Mock).mockResolvedValue([
+      (mockDb.query.permissions.findMany as Mock).mockResolvedValue([
         { id: 'perm-1', key: 'admin:settings', tenantId: null },
         { id: 'perm-2', key: 'profile:read', tenantId: 'tenant-2' },
       ]);
@@ -321,18 +322,18 @@ describe('permissions', () => {
     });
 
     it('should handle user with multiple roles in same tenant', async () => {
-      (mockDb.query.tenantMemberships.findMany as jest.Mock).mockResolvedValue([
+      (mockDb.query.tenantMemberships.findMany as Mock).mockResolvedValue([
         { id: 'membership-1', tenant: { id: 'tenant-1', slug: 'test-tenant' } },
       ]);
-      (mockDb.query.tenantMembershipRoles.findMany as jest.Mock).mockResolvedValue([
+      (mockDb.query.tenantMembershipRoles.findMany as Mock).mockResolvedValue([
         { membershipId: 'membership-1', roleId: 'role-1' },
         { membershipId: 'membership-1', roleId: 'role-2' },
       ]);
-      (mockDb.query.rolePermissions.findMany as jest.Mock).mockResolvedValue([
+      (mockDb.query.rolePermissions.findMany as Mock).mockResolvedValue([
         { roleId: 'role-1', permissionId: 'perm-1' },
         { roleId: 'role-2', permissionId: 'perm-2' },
       ]);
-      (mockDb.query.permissions.findMany as jest.Mock).mockResolvedValue([
+      (mockDb.query.permissions.findMany as Mock).mockResolvedValue([
         { id: 'perm-1', key: 'profile:read', tenantId: null },
         { id: 'perm-2', key: 'admin:settings', tenantId: null },
       ]);
@@ -344,13 +345,13 @@ describe('permissions', () => {
     });
 
     it('should return empty array for memberships with no role permissions', async () => {
-      (mockDb.query.tenantMemberships.findMany as jest.Mock).mockResolvedValue([
+      (mockDb.query.tenantMemberships.findMany as Mock).mockResolvedValue([
         { id: 'membership-1', tenant: { id: 'tenant-1', slug: 'test-tenant' } },
       ]);
-      (mockDb.query.tenantMembershipRoles.findMany as jest.Mock).mockResolvedValue([
+      (mockDb.query.tenantMembershipRoles.findMany as Mock).mockResolvedValue([
         { membershipId: 'membership-1', roleId: 'role-1' },
       ]);
-      (mockDb.query.rolePermissions.findMany as jest.Mock).mockResolvedValue([]);
+      (mockDb.query.rolePermissions.findMany as Mock).mockResolvedValue([]);
 
       const result = await getAllTenantPermissionsForUser('user-123');
 

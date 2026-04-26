@@ -10,7 +10,7 @@ import { Toaster } from '@/shared/components/ui/sonner';
  * DM Sans — geometric, friendly, modern sans-serif.
  * Chosen over Inter (overused in AI-generated UIs) and Open Sans (less distinctive).
  * Same font for body and headings; differentiation via weight and letter-spacing.
- * See docs/DESIGN_SYSTEM.md Section 4: Typography.
+ * See architecture/docs/DESIGN_SYSTEM.md Section 4: Typography.
  */
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -20,7 +20,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Next.js SaaS AI Template | AI-Native Skills Management',
+  title: 'Afenda | AI-Native Skills Management',
   description: 'Production-ready Next.js SaaS boilerplate with multi-tenancy, AI assistant, and integrations',
 };
 

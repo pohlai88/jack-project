@@ -1,7 +1,7 @@
 import { and, eq } from 'drizzle-orm';
 import { redirect } from 'next/navigation';
 
-import { ProfileSettingsForm } from '@/features/profile/components/ProfileSettingsForm';
+import { ProfileSettingsForm } from '@/features/profile';
 import { Avatar, AvatarFallback, AvatarImage } from '@/shared/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/shared/components/ui/card';
 import { db } from '@/shared/db';

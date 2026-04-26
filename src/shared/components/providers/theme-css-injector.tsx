@@ -9,7 +9,7 @@ import { useTenantOptional } from '@/shared/providers/tenant-provider';
  * Bridges tenant branding settings to CSS custom properties at runtime.
  * Converts tenant hex colors into HSL values and injects them onto <html>.
  *
- * Design System Reference: docs/DESIGN_SYSTEM.md Section 10 (Tenant Branding)
+ * Design System Reference: architecture/docs/DESIGN_SYSTEM.md Section 10 (Tenant Branding)
  *
  * This component:
  * 1. Reads tenant UI settings from TenantProvider context

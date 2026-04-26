@@ -540,8 +540,11 @@ export function getDepartments(settings: TenantSettings | TenantSettingsInput): 
 export function isValidWebhookUrl(url: string): boolean {
   try {
     const parsed = new URL(url);
+    const appStage = process.env['NEXT_PUBLIC_STAGE'];
+    const isProduction = appStage === 'prod' || appStage === 'production' || process.env['NODE_ENV'] === 'production';
+
     // Only allow HTTPS in production
-    if (process.env.NODE_ENV === 'production') {
+    if (isProduction) {
       return parsed.protocol === 'https:';
     }
     return ['http:', 'https:'].includes(parsed.protocol);

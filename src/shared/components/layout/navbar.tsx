@@ -182,7 +182,7 @@ export function Navbar({ tenantSlug }: NavbarProps) {
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg brand-gradient">
                   <span className="text-lg font-bold text-white">S</span>
                 </div>
-                <span className="text-lg font-bold">Next.js SaaS AI Template</span>
+                <span className="text-lg font-bold">Afenda</span>
               </SheetTitle>
             </SheetHeader>
             <nav className="mt-6 flex flex-col gap-1">

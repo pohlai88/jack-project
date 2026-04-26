@@ -1,5 +1,5 @@
 /**
- * Auth.js Configuration - Next.js SaaS AI Template
+ * Auth.js Configuration - Afenda
  *
  * Centralized authentication configuration using Auth.js v5.
  * Supports Auth0 as primary provider with Drizzle adapter.

@@ -53,16 +53,16 @@ describe('utils', () => {
 
   describe('formatRelativeTime', () => {
     beforeEach(() => {
-      jest.useFakeTimers();
+      vi.useFakeTimers();
     });
 
     afterEach(() => {
-      jest.useRealTimers();
+      vi.useRealTimers();
     });
 
     it('should return "just now" for very recent times', () => {
       const now = new Date();
-      jest.setSystemTime(now);
+      vi.setSystemTime(now);
 
       const result = formatRelativeTime(now);
       expect(result).toBe('just now');
@@ -70,7 +70,7 @@ describe('utils', () => {
 
     it('should return minutes ago', () => {
       const now = new Date('2024-03-15T12:00:00Z');
-      jest.setSystemTime(now);
+      vi.setSystemTime(now);
 
       const fiveMinutesAgo = new Date('2024-03-15T11:55:00Z');
       expect(formatRelativeTime(fiveMinutesAgo)).toBe('5 minutes ago');
@@ -78,7 +78,7 @@ describe('utils', () => {
 
     it('should return singular form for 1 minute', () => {
       const now = new Date('2024-03-15T12:00:00Z');
-      jest.setSystemTime(now);
+      vi.setSystemTime(now);
 
       const oneMinuteAgo = new Date('2024-03-15T11:59:00Z');
       expect(formatRelativeTime(oneMinuteAgo)).toBe('1 minute ago');
@@ -86,7 +86,7 @@ describe('utils', () => {
 
     it('should return hours ago', () => {
       const now = new Date('2024-03-15T12:00:00Z');
-      jest.setSystemTime(now);
+      vi.setSystemTime(now);
 
       const twoHoursAgo = new Date('2024-03-15T10:00:00Z');
       expect(formatRelativeTime(twoHoursAgo)).toBe('2 hours ago');
@@ -94,7 +94,7 @@ describe('utils', () => {
 
     it('should return days ago', () => {
       const now = new Date('2024-03-15T12:00:00Z');
-      jest.setSystemTime(now);
+      vi.setSystemTime(now);
 
       const threeDaysAgo = new Date('2024-03-12T12:00:00Z');
       expect(formatRelativeTime(threeDaysAgo)).toBe('3 days ago');
@@ -102,7 +102,7 @@ describe('utils', () => {
 
     it('should return weeks ago', () => {
       const now = new Date('2024-03-15T12:00:00Z');
-      jest.setSystemTime(now);
+      vi.setSystemTime(now);
 
       const twoWeeksAgo = new Date('2024-03-01T12:00:00Z');
       expect(formatRelativeTime(twoWeeksAgo)).toBe('2 weeks ago');
@@ -110,7 +110,7 @@ describe('utils', () => {
 
     it('should return months ago', () => {
       const now = new Date('2024-03-15T12:00:00Z');
-      jest.setSystemTime(now);
+      vi.setSystemTime(now);
 
       const twoMonthsAgo = new Date('2024-01-15T12:00:00Z');
       expect(formatRelativeTime(twoMonthsAgo)).toBe('2 months ago');
@@ -118,7 +118,7 @@ describe('utils', () => {
 
     it('should return years ago', () => {
       const now = new Date('2024-03-15T12:00:00Z');
-      jest.setSystemTime(now);
+      vi.setSystemTime(now);
 
       const twoYearsAgo = new Date('2022-03-15T12:00:00Z');
       expect(formatRelativeTime(twoYearsAgo)).toBe('2 years ago');
@@ -126,7 +126,7 @@ describe('utils', () => {
 
     it('should handle string input', () => {
       const now = new Date('2024-03-15T12:00:00Z');
-      jest.setSystemTime(now);
+      vi.setSystemTime(now);
 
       expect(formatRelativeTime('2024-03-15T11:00:00Z')).toBe('1 hour ago');
     });
@@ -174,22 +174,22 @@ describe('utils', () => {
 
   describe('sleep', () => {
     beforeEach(() => {
-      jest.useFakeTimers();
+      vi.useFakeTimers();
     });
 
     afterEach(() => {
-      jest.useRealTimers();
+      vi.useRealTimers();
     });
 
     it('should resolve after specified time', async () => {
       const promise = sleep(1000);
 
-      jest.advanceTimersByTime(999);
-      expect(jest.getTimerCount()).toBe(1);
+      vi.advanceTimersByTime(999);
+      expect(vi.getTimerCount()).toBe(1);
 
-      jest.advanceTimersByTime(1);
+      vi.advanceTimersByTime(1);
       await promise;
-      expect(jest.getTimerCount()).toBe(0);
+      expect(vi.getTimerCount()).toBe(0);
     });
   });
 

@@ -9,7 +9,7 @@ import { XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
-import { acceptInvite, validateInviteToken } from '@/features/admin/services/invite-service';
+import { acceptInvite, validateInviteToken } from '@/features/admin';
 import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui';
 import { auth } from '@/shared/lib/auth';
 import { getTenantBySlug } from '@/shared/lib/tenant';

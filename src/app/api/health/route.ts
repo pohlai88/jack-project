@@ -1,6 +1,4 @@
-import { sql } from 'drizzle-orm';
 import { NextResponse } from 'next/server';
-import { db } from '@/shared/db';
 
 /**
  * Health Check Endpoint
@@ -15,18 +13,26 @@ export async function GET() {
   const checks: Record<string, { status: 'healthy' | 'unhealthy'; latency?: number; error?: string }> = {};
 
   // Database health check
-  try {
-    const dbStart = Date.now();
-    await db.execute(sql`SELECT 1`);
-    checks.database = {
-      status: 'healthy',
-      latency: Date.now() - dbStart,
-    };
-  } catch (error) {
+  if (!process.env.DATABASE_URL) {
     checks.database = {
       status: 'unhealthy',
-      error: error instanceof Error ? error.message : 'Unknown database error',
+      error: 'DATABASE_URL environment variable is not set',
     };
+  } else {
+    try {
+      const dbStart = Date.now();
+      const [{ db }, { sql }] = await Promise.all([import('@/shared/db'), import('drizzle-orm')]);
+      await db.execute(sql`SELECT 1`);
+      checks.database = {
+        status: 'healthy',
+        latency: Date.now() - dbStart,
+      };
+    } catch (error) {
+      checks.database = {
+        status: 'unhealthy',
+        error: error instanceof Error ? error.message : 'Unknown database error',
+      };
+    }
   }
 
   // Overall status

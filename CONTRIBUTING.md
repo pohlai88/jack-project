@@ -1,8 +1,8 @@
-# Contributing to Next.js SaaS AI Template
+# Contributing to Afenda
 
 Thank you for contributing! This document guides human developers after reading the README.
 
-**Source of truth:** Authoritative project knowledge lives in **`docs/`**. When you change architecture, patterns, or APIs, update the relevant doc there (see [docs/README.md](./docs/README.md) for the full index).
+**Source of truth:** Current engineering authority lives in **`architecture/doctrine/`**, **`architecture/adr/`**, and **`architecture/atc/`**. `architecture/docs/` is deprecated reference material.
 
 ## Table of Contents
 
@@ -49,23 +49,23 @@ devcontainer exec --workspace-folder . pnpm dev
 
 ### Environment Configuration
 
-The project uses **direnv** for environment management:
+The project uses a single maintained local source:
 
-| File                 | Purpose                    | Git          |
-| -------------------- | -------------------------- | ------------ |
-| `.envrc.example` | Dev template with defaults | ✅ Committed |
-| `.envrc`             | Your local environment     | ❌ Ignored   |
-| `.env.local`         | Additional overrides       | ❌ Ignored   |
+| File                 | Purpose                              | Git          |
+| -------------------- | ------------------------------------ | ------------ |
+| `env.config.example` | Local template and variable contract | ✅ Committed |
+| `env.config`         | Your maintained local env source     | ❌ Ignored   |
+| `.env.local`         | Generated Next.js runtime adapter    | ❌ Ignored   |
 
-The DevContainer automatically copies `.envrc.example` to `.envrc` on first setup. Create `.env.local` only to override specific values (e.g., API keys).
+Copy `env.config.example` to `env.config`, update values as needed, then run `pnpm env:sync`. The minimum scaffold variables are `DATABASE_URL` and `AUTH_SECRET`. Do not maintain `.env.local` manually; it is derived from `env.config`.
 
 ## Architecture & Routing
 
-Consult [docs/PROJECT_STRUCTURE.md](./docs/PROJECT_STRUCTURE.md). App Router layout lives under `src/app/`. Features expose components & logic under `src/features/<domain>`.
+Consult [architecture/doctrine/0002-feature-public-api-boundaries.md](./architecture/doctrine/0002-feature-public-api-boundaries.md). App Router layout lives under `src/app/`. Feature consumers import only from `@/features/<domain>`; same-feature internals stay relative.
 
 ## Feature Modules
 
-Encapsulate UI, hooks, services, and types. Export a minimal public surface (`index.ts`).
+Encapsulate UI, hooks, services, and types. Export only the externally consumed public surface through the feature root `index.ts`. Do not import another feature's internals or your own feature barrel from inside the feature.
 
 ## Server vs Client Components
 
@@ -162,9 +162,12 @@ pnpm run test:coverage # Coverage report
 
 ## Documentation
 
-- **`docs/`** is the single source of truth for architecture, patterns, APIs, and domain concepts.
-- When you change architecture, routing, components, APIs, or permissions, update the corresponding doc in `docs/` (see [docs/README.md](./docs/README.md)).
-- Do not duplicate doc content in CONTRIBUTING.md or README; link to the doc instead.
+- **`architecture/doctrine/`** holds durable project rules and operating principles.
+- **`architecture/adr/`** records consequential architecture decisions.
+- **`architecture/atc/`** defines architecture test cases and acceptance checks.
+- **`architecture/docs/`** is deprecated reference material; extract useful content before relying on it.
+- When you change architecture, routing, components, APIs, permissions, or data model behavior, update doctrine, ADRs, or ATCs as appropriate.
+- Run `pnpm doctrine:check` after documentation authority changes.
 
 ## PR Checklist
 
@@ -179,19 +182,20 @@ pnpm run test:coverage # Coverage report
 
 ## Scripts Reference
 
-| Script             | Description                   |
-| ------------------ | ----------------------------- |
-| `pnpm dev`         | Start development server      |
-| `pnpm build`       | Build for production          |
-| `pnpm start`       | Start production server       |
-| `pnpm lint`        | Run ESLint                    |
-| `pnpm lint:fix`    | Run ESLint with auto-fix      |
-| `pnpm format`      | Format code with Prettier     |
-| `pnpm type-check`  | TypeScript type checking      |
-| `pnpm test`        | Run tests                     |
-| `pnpm db:generate` | Generate Drizzle migrations   |
-| `pnpm db:migrate`  | Run database migrations       |
-| `pnpm db:push`     | Push schema to database (dev) |
-| `pnpm db:studio`   | Open Drizzle Studio GUI       |
+| Script                | Description                       |
+| --------------------- | --------------------------------- |
+| `pnpm dev`            | Start development server          |
+| `pnpm build`          | Build for production              |
+| `pnpm start`          | Start production server           |
+| `pnpm lint`           | Run ESLint                        |
+| `pnpm lint:fix`       | Run ESLint with auto-fix          |
+| `pnpm format`         | Format code with Prettier         |
+| `pnpm type-check`     | TypeScript type checking          |
+| `pnpm test`           | Run tests                         |
+| `pnpm doctrine:check` | Validate doctrine authority rules |
+| `pnpm db:generate`    | Generate Drizzle migrations       |
+| `pnpm db:migrate`     | Run database migrations           |
+| `pnpm db:push`        | Push schema to database (dev)     |
+| `pnpm db:studio`      | Open Drizzle Studio GUI           |
 
 Happy building! 🚀

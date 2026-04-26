@@ -2,39 +2,41 @@
  * Tests for getDashboardStats server action
  */
 
-import { type AuthResult, createMockSession, createNullAuthResult } from '@/__tests__/mock-factories';
+import { db as mockDb } from '@/shared/db';
+import { type AuthResult, createMockSession, createNullAuthResult } from '@tests/support/mock-factories';
 
-const mockAuthFn = jest.fn<Promise<AuthResult>, []>();
+const { mockAuthFn } = vi.hoisted(() => ({
+  mockAuthFn: vi.fn<() => Promise<AuthResult>>(),
+}));
 
-jest.mock('@/shared/db', () => ({
+vi.mock('@/shared/db', () => ({
   db: {
     query: {
-      auditEvents: { findMany: jest.fn() },
+      auditEvents: { findMany: vi.fn() },
     },
-    select: jest.fn().mockReturnThis(),
-    from: jest.fn().mockReturnThis(),
-    where: jest.fn().mockReturnThis(),
+    select: vi.fn().mockReturnThis(),
+    from: vi.fn().mockReturnThis(),
+    where: vi.fn().mockReturnThis(),
   },
 }));
 
-jest.mock('@/shared/lib/auth', () => ({
+vi.mock('@/shared/lib/auth', () => ({
   auth: mockAuthFn,
 }));
 
-jest.mock('@/shared/lib/logger', () => ({
+vi.mock('@/shared/lib/logger', () => ({
   logger: {
-    error: jest.fn(),
-    info: jest.fn(),
-    warn: jest.fn(),
+    error: vi.fn(),
+    info: vi.fn(),
+    warn: vi.fn(),
   },
 }));
 
-import { db as mockDb } from '@/shared/db';
 import { getDashboardStats } from '../get-dashboard-stats';
 
 describe('getDashboardStats', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should return error when user is not authenticated', async () => {
@@ -49,13 +51,13 @@ describe('getDashboardStats', () => {
   it('should return dashboard stats for authenticated user', async () => {
     mockAuthFn.mockResolvedValue(createMockSession());
 
-    (mockDb.select as jest.Mock).mockReturnValue({
-      from: jest.fn().mockReturnValue({
-        where: jest.fn().mockResolvedValue([{ count: 5 }]),
+    (mockDb.select as Mock).mockReturnValue({
+      from: vi.fn().mockReturnValue({
+        where: vi.fn().mockResolvedValue([{ count: 5 }]),
       }),
     });
 
-    (mockDb.query.auditEvents.findMany as jest.Mock).mockResolvedValue([
+    (mockDb.query.auditEvents.findMany as Mock).mockResolvedValue([
       {
         id: 'event-1',
         action: 'member.created',

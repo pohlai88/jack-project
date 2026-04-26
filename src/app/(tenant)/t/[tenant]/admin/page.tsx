@@ -3,7 +3,7 @@ import { desc, eq } from 'drizzle-orm';
 import { BarChart3, Clock, Mail, Users } from 'lucide-react';
 import Link from 'next/link';
 
-import { getAdminStats } from '@/features/admin/services/admin-stats-service';
+import { getAdminStats } from '@/features/admin';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui';
 import { db } from '@/shared/db';
 import { auditEvents, tenants } from '@/shared/db/schema';

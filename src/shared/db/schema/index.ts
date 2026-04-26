@@ -1,5 +1,5 @@
 /**
- * Database Schema - Next.js SaaS AI Template
+ * Database Schema - Afenda
  *
  * This is the central export for all database tables and types.
  * Import from this file for full schema access.

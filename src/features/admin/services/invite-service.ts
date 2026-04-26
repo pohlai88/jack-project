@@ -13,6 +13,7 @@ import { randomBytes } from 'crypto';
 import { db } from '@/shared/db';
 import * as schema from '@/shared/db/schema';
 import type { TenantRole } from '@/shared/db/schema/auth';
+import { env } from '@/shared/lib/env';
 import { logger } from '@/shared/lib/logger';
 import { requireTenantAdmin } from '@/shared/lib/rbac';
 
@@ -69,7 +70,7 @@ function generateToken(): string {
  * Build the invite URL
  */
 function buildInviteUrl(tenantSlug: string, token: string): string {
-  const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
+  const baseUrl = env.AUTH_URL || env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   return `${baseUrl}/t/${tenantSlug}/invite/${token}`;
 }
 

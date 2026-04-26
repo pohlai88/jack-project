@@ -5,13 +5,15 @@
 import { Plug } from 'lucide-react';
 import { redirect } from 'next/navigation';
 
-import { AdminPageHeader } from '@/features/admin';
-import { GitHubCredentialsForm } from '@/features/admin/components/GitHubCredentialsForm';
-import { GitHubSettingsPanel } from '@/features/admin/components/GitHubSettingsPanel';
-import { getGitHubTenantCredentials } from '@/features/admin/services/github-credentials-service';
-import { getGitHubConnectionInfo } from '@/features/admin/services/github-settings-service';
-import { getTenantSettings } from '@/features/admin/services/settings-service';
-import { getGitHubCredentials } from '@/features/github/lib/oauth';
+import {
+  AdminPageHeader,
+  getGitHubConnectionInfo,
+  getGitHubTenantCredentials,
+  getTenantSettings,
+  GitHubCredentialsForm,
+  GitHubSettingsPanel,
+} from '@/features/admin';
+import { getGitHubCredentials } from '@/features/github';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui/card';
 import { auth } from '@/shared/lib/auth';
 import { env } from '@/shared/lib/env';

@@ -1,10 +1,7 @@
 import { and, eq } from 'drizzle-orm';
 import { NextRequest, NextResponse } from 'next/server';
 
-import {
-  listIntegrationConflicts,
-  resolveIntegrationConflict,
-} from '@/features/integration-sync/services/control-plane-service';
+import { listIntegrationConflicts, resolveIntegrationConflict } from '@/features/integration-sync';
 import { db } from '@/shared/db';
 import * as schema from '@/shared/db/schema';
 import { auth } from '@/shared/lib/auth';

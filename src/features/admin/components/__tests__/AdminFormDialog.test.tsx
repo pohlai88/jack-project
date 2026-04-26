@@ -10,13 +10,13 @@ import { AdminFormDialog } from '../AdminFormDialog';
 describe('AdminFormDialog', () => {
   const defaultProps = {
     open: true,
-    onClose: jest.fn(),
+    onClose: vi.fn(),
     title: 'Test Dialog',
-    onSubmit: jest.fn((e: React.FormEvent) => e.preventDefault()),
+    onSubmit: vi.fn((e: React.FormEvent) => e.preventDefault()),
   };
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('rendering', () => {
@@ -110,7 +110,7 @@ describe('AdminFormDialog', () => {
   describe('interactions', () => {
     it('should call onClose when close button is clicked', async () => {
       const user = userEvent.setup();
-      const onClose = jest.fn();
+      const onClose = vi.fn();
 
       render(
         <AdminFormDialog {...defaultProps} onClose={onClose}>
@@ -124,7 +124,7 @@ describe('AdminFormDialog', () => {
 
     it('should call onClose when Cancel button is clicked', async () => {
       const user = userEvent.setup();
-      const onClose = jest.fn();
+      const onClose = vi.fn();
 
       render(
         <AdminFormDialog {...defaultProps} onClose={onClose}>
@@ -138,7 +138,7 @@ describe('AdminFormDialog', () => {
 
     it('should call onClose when backdrop is clicked', async () => {
       const user = userEvent.setup();
-      const onClose = jest.fn();
+      const onClose = vi.fn();
 
       render(
         <AdminFormDialog {...defaultProps} onClose={onClose}>
@@ -155,7 +155,7 @@ describe('AdminFormDialog', () => {
     });
 
     it('should call onSubmit when form is submitted', () => {
-      const onSubmit = jest.fn((e: React.FormEvent) => e.preventDefault());
+      const onSubmit = vi.fn((e: React.FormEvent) => e.preventDefault());
 
       render(
         <AdminFormDialog {...defaultProps} onSubmit={onSubmit}>
@@ -171,7 +171,7 @@ describe('AdminFormDialog', () => {
     });
 
     it('should call onClose when Escape key is pressed', () => {
-      const onClose = jest.fn();
+      const onClose = vi.fn();
 
       render(
         <AdminFormDialog {...defaultProps} onClose={onClose}>
@@ -184,7 +184,7 @@ describe('AdminFormDialog', () => {
     });
 
     it('should not call onClose when Escape is pressed and isSubmitting', () => {
-      const onClose = jest.fn();
+      const onClose = vi.fn();
 
       render(
         <AdminFormDialog {...defaultProps} onClose={onClose} isSubmitting>
@@ -223,7 +223,7 @@ describe('AdminFormDialog', () => {
 
     it('should not close on backdrop click when isSubmitting', async () => {
       const user = userEvent.setup();
-      const onClose = jest.fn();
+      const onClose = vi.fn();
 
       render(
         <AdminFormDialog {...defaultProps} onClose={onClose} isSubmitting>

@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
-import { DocsLayoutClient } from '@/features/docs/components/DocsLayoutClient';
+import { DocsLayoutClient } from '@/features/docs';
 
 export const metadata: Metadata = {
-  title: 'Documentation | Next.js SaaS AI Template',
-  description: 'Complete documentation for the Next.js SaaS AI Template — guides for members and administrators.',
+  title: 'Documentation | Afenda',
+  description: 'Complete documentation for the Afenda — guides for members and administrators.',
 };
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {

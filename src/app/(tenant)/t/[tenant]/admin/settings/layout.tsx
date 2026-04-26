@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
 
-import { SettingsProvider } from '@/features/admin/components/settings/SettingsProvider';
-import { getTenantWithSettings } from '@/features/admin/services/settings-service';
+import { getTenantWithSettings, SettingsProvider } from '@/features/admin';
 
 interface SettingsLayoutProps {
   children: ReactNode;

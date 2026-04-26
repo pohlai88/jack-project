@@ -4,7 +4,7 @@ import type { TenantRole } from '@/shared/db/schema/auth';
 import { auth } from '@/shared/lib/auth';
 
 /**
- * Proxy for Next.js SaaS AI Template application (formerly middleware)
+ * Proxy for Afenda application (formerly middleware)
  *
  * Responsibilities:
  * 1. Inject pathname header for server components

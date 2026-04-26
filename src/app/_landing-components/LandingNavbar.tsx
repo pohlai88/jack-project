@@ -6,7 +6,7 @@ import { useLocale } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useLayoutEffect, useState } from 'react';
 
-import { SignOutButton } from '@/features/auth/components/SignOutButton';
+import { SignOutButton } from '@/features/auth';
 import { AppLogo } from '@/shared/components/brand/Logo';
 import { Button } from '@/shared/components/ui';
 import { Avatar, AvatarFallback, AvatarImage } from '@/shared/components/ui/avatar';
@@ -35,8 +35,7 @@ export function LandingNavbar({ user, tenantSlugs = [] }: LandingNavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useLayoutEffect(() => {
-    // Required to prevent hydration mismatch with theme provider
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+    // Required to prevent hydration mismatch with theme provider.
     setMounted(true);
   }, []);
 

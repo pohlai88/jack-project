@@ -1,4 +1,4 @@
-jest.mock('@/shared/db', () => ({ db: { query: { tenants: { findFirst: jest.fn() } } } }));
+vi.mock('@/shared/db', () => ({ db: { query: { tenants: { findFirst: vi.fn() } } } }));
 
 /**
  * Tests for tenant utilities

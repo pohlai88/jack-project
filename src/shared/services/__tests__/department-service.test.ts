@@ -3,47 +3,47 @@
  */
 
 // Mock dependencies before importing
-jest.mock('@/features/admin/services/settings-service', () => ({
-  getTenantSettings: jest.fn(),
-  updateTenantSettings: jest.fn(),
+vi.mock('@/features/admin', () => ({
+  getTenantSettings: vi.fn(),
+  updateTenantSettings: vi.fn(),
 }));
 
-jest.mock('@/shared/db', () => ({
+vi.mock('@/shared/db', () => ({
   db: {
     query: {
-      tenants: { findFirst: jest.fn() },
-      persons: { findMany: jest.fn() },
-      departmentManagers: { findMany: jest.fn() },
+      tenants: { findFirst: vi.fn() },
+      persons: { findMany: vi.fn() },
+      departmentManagers: { findMany: vi.fn() },
     },
-    insert: jest.fn().mockReturnValue({
-      values: jest.fn().mockReturnValue({
-        onConflictDoNothing: jest.fn().mockResolvedValue(undefined),
-        returning: jest.fn().mockResolvedValue([{ id: 'new-id' }]),
+    insert: vi.fn().mockReturnValue({
+      values: vi.fn().mockReturnValue({
+        onConflictDoNothing: vi.fn().mockResolvedValue(undefined),
+        returning: vi.fn().mockResolvedValue([{ id: 'new-id' }]),
       }),
     }),
-    update: jest.fn().mockReturnValue({
-      set: jest.fn().mockReturnValue({
-        where: jest.fn().mockResolvedValue(undefined),
+    update: vi.fn().mockReturnValue({
+      set: vi.fn().mockReturnValue({
+        where: vi.fn().mockResolvedValue(undefined),
       }),
     }),
-    delete: jest.fn().mockReturnValue({
-      where: jest.fn().mockResolvedValue(undefined),
+    delete: vi.fn().mockReturnValue({
+      where: vi.fn().mockResolvedValue(undefined),
     }),
   },
 }));
 
-import { getTenantSettings, updateTenantSettings } from '@/features/admin/services/settings-service';
+import { getTenantSettings, updateTenantSettings } from '@/features/admin';
 import { db } from '@/shared/db';
 import { getDepartments, getDepartmentsWithDetails } from '../department-service';
 
-const mockGetTenantSettings = getTenantSettings as jest.MockedFunction<typeof getTenantSettings>;
+const mockGetTenantSettings = getTenantSettings as MockedFunction<typeof getTenantSettings>;
 // Suppress unused warning - kept for future tests
-void (updateTenantSettings as jest.MockedFunction<typeof updateTenantSettings>);
-const mockDb = db as jest.Mocked<typeof db>;
+void (updateTenantSettings as MockedFunction<typeof updateTenantSettings>);
+const mockDb = db as Mocked<typeof db>;
 
 describe('department-service', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('getDepartments', () => {
@@ -86,7 +86,7 @@ describe('department-service', () => {
 
   describe('getDepartmentsWithDetails', () => {
     it('should return error when tenant not found', async () => {
-      (mockDb.query.tenants.findFirst as jest.Mock).mockResolvedValue(null);
+      (mockDb.query.tenants.findFirst as Mock).mockResolvedValue(null);
 
       const result = await getDepartmentsWithDetails('non-existent');
 
@@ -107,9 +107,9 @@ describe('department-service', () => {
       ];
       const mockManagers = [{ departmentId: 'dept-1', managerId: 'person-1', isPrimary: true }];
 
-      (mockDb.query.tenants.findFirst as jest.Mock).mockResolvedValue(mockTenant);
-      (mockDb.query.persons.findMany as jest.Mock).mockResolvedValue(mockPersons);
-      (mockDb.query.departmentManagers.findMany as jest.Mock).mockResolvedValue(mockManagers);
+      (mockDb.query.tenants.findFirst as Mock).mockResolvedValue(mockTenant);
+      (mockDb.query.persons.findMany as Mock).mockResolvedValue(mockPersons);
+      (mockDb.query.departmentManagers.findMany as Mock).mockResolvedValue(mockManagers);
       mockGetTenantSettings.mockResolvedValue({
         departments: { list: mockDepartments },
       } as ReturnType<typeof getTenantSettings> extends Promise<infer T> ? T : never);
@@ -123,7 +123,7 @@ describe('department-service', () => {
     });
 
     it('should handle errors gracefully', async () => {
-      (mockDb.query.tenants.findFirst as jest.Mock).mockRejectedValue(new Error('DB error'));
+      (mockDb.query.tenants.findFirst as Mock).mockRejectedValue(new Error('DB error'));
 
       const result = await getDepartmentsWithDetails('test-tenant');
 

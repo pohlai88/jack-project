@@ -1,13 +1,13 @@
 import { Sparkles } from 'lucide-react';
 import { redirect } from 'next/navigation';
 
-import { LoginForm } from '@/features/auth/components/LoginForm';
+import { LoginForm } from '@/features/auth';
 import type { TenantRole } from '@/shared/db/schema/auth';
 import { auth } from '@/shared/lib/auth';
 
 export const metadata = {
-  title: 'Sign In | Next.js SaaS AI Template',
-  description: 'Sign in to your Next.js SaaS AI Template account',
+  title: 'Sign In | Afenda',
+  description: 'Sign in to your Afenda account',
 };
 
 // Force dynamic rendering to avoid static generation issues
@@ -50,7 +50,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-gradient-to-br from-primary to-secondary shadow-lg mb-4 animate-pulse">
             <Sparkles className="h-8 w-8 text-white" />
           </div>
-          <h1 className="text-3xl font-bold brand-gradient-text mb-2">Welcome to Next.js SaaS AI Template</h1>
+          <h1 className="text-3xl font-bold brand-gradient-text mb-2">Welcome to Afenda</h1>
           <p className="text-muted-foreground">Sign in to your workspace</p>
         </div>
         <LoginForm initialEmail={emailParam ?? ''} />

@@ -8,7 +8,7 @@ import {
   createMockManagerSession,
   createMockSession,
   createNullAuthResult,
-} from '@/__tests__/mock-factories';
+} from '@tests/support/mock-factories';
 
 // Note: hasRole, isTenantAdmin, isTenantManager, isTenantMember, requireAuth, requireRole,
 // requireTenantAdmin, requireTenantManager, requireTenantMember, getCurrentRole, getAllRoles,
@@ -16,13 +16,13 @@ import {
 // They should be tested in integration tests with proper mocking.
 
 // Mock auth and permissions for async function tests
-// These mocks use inline jest.fn() to avoid hoisting issues
-jest.mock('../auth', () => ({
-  auth: jest.fn(),
+// These mocks use inline vi.fn() to avoid hoisting issues
+vi.mock('../auth', () => ({
+  auth: vi.fn(),
 }));
 
-jest.mock('../permissions', () => ({
-  hasPermission: jest.fn(),
+vi.mock('../permissions', () => ({
+  hasPermission: vi.fn(),
 }));
 
 import { type Capability, RoleCapabilities, roleHasCapability } from '../rbac';
@@ -40,19 +40,19 @@ import {
   requireTenantManager,
   requireTenantMember,
 } from '../rbac';
-// eslint-disable-next-line import/order -- must import after jest.mock
+// eslint-disable-next-line import/order -- must import after Mock
 import { auth } from '../auth';
-// eslint-disable-next-line import/order -- must import after jest.mock
+// eslint-disable-next-line import/order -- must import after Mock
 import { hasPermission } from '../permissions';
 
 // Get typed references to the mocked functions
 // Using unknown intermediate cast because auth has complex overload types
-const mockAuthFn = auth as unknown as jest.MockedFunction<() => Promise<AuthResult>>;
-const mockHasPermissionFn = hasPermission as jest.MockedFunction<typeof hasPermission>;
+const mockAuthFn = auth as unknown as MockedFunction<() => Promise<AuthResult>>;
+const mockHasPermissionFn = hasPermission as MockedFunction<typeof hasPermission>;
 
 describe('rbac', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('RoleCapabilities', () => {

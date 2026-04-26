@@ -6,8 +6,13 @@
 .pnp.js
 .yarn/install-state.gz
 
+# generated artifacts and reports
+.artifacts/
+
 # testing
 /coverage
+test-results/
+playwright-report/
 
 # next.js
 /.next/
@@ -25,7 +30,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
+# local env / secrets (never commit real credentials)
+# env.config is the maintained local source; use env.config.example as template.
+env.config
+.env.local
 .env*.local
 .envrc
 .envrc.deploy.local
@@ -45,6 +53,10 @@ sst-env.d.ts
 # storybook
 /storybook-static
 debug-storybook.log
+
+# linters
+megalinter-reports/
+mega-linter.log
 
 # typescript
 *.tsbuildinfo

@@ -8,13 +8,12 @@
  * Or with confirmation skip: pnpm db:reset --force
  */
 
-import 'dotenv/config';
 import { sql } from 'drizzle-orm';
 import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
 import * as readline from 'readline';
 
-const DATABASE_URL = process.env.DATABASE_URL;
+const DATABASE_URL = process.env.DATABASE_URL_DIRECT ?? process.env.DATABASE_URL;
 if (!DATABASE_URL) {
   throw new Error('DATABASE_URL environment variable is not set');
 }
@@ -127,11 +126,11 @@ async function resetDatabase() {
 
   for (const table of TABLES_TO_CLEAN) {
     try {
-      // Check if table exists in saas_template schema
+      // Check if table exists in afenda schema
       const tableExists = await db.execute(sql`
         SELECT EXISTS (
           SELECT FROM information_schema.tables
-          WHERE table_schema = 'saas_template'
+          WHERE table_schema = 'afenda'
           AND table_name = ${table}
         ) as exists
       `);
@@ -140,7 +139,7 @@ async function resetDatabase() {
 
       if (exists) {
         // Delete all rows from the table (use schema-qualified name)
-        const result = await db.execute(sql`DELETE FROM "saas_template"."${table}"`);
+        const result = await db.execute(sql`DELETE FROM "afenda"."${table}"`);
         const rowCount = result.length > 0 ? Number(result[0]?.count || 0) : 0;
         if (rowCount > 0) {
           console.log(`  ✓ Cleaned ${table}: ${rowCount} rows deleted`);

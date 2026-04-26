@@ -8,16 +8,16 @@ import { useAsyncEffect, useAsyncEffectOnce } from '../use-async-effect';
 
 describe('use-async-effect', () => {
   beforeEach(() => {
-    jest.spyOn(console, 'error').mockImplementation(() => {});
+    vi.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   describe('useAsyncEffect', () => {
     it('should run async effect on mount', async () => {
-      const effect = jest.fn().mockResolvedValue(undefined);
+      const effect = vi.fn().mockResolvedValue(undefined);
 
       renderHook(() => useAsyncEffect(effect, []));
 
@@ -33,7 +33,7 @@ describe('use-async-effect', () => {
     it('should abort when dependencies change', async () => {
       let capturedSignal: AbortSignal | undefined;
       let callCount = 0;
-      const effect = jest.fn().mockImplementation((signal: AbortSignal) => {
+      const effect = vi.fn().mockImplementation((signal: AbortSignal) => {
         callCount++;
         if (callCount === 1) {
           capturedSignal = signal;
@@ -65,8 +65,8 @@ describe('use-async-effect', () => {
     });
 
     it('should call cleanup function on unmount', async () => {
-      const cleanup = jest.fn();
-      const effect = jest.fn().mockResolvedValue(cleanup);
+      const cleanup = vi.fn();
+      const effect = vi.fn().mockResolvedValue(cleanup);
 
       const { unmount } = renderHook(() => useAsyncEffect(effect, []));
 
@@ -81,7 +81,7 @@ describe('use-async-effect', () => {
 
     it('should handle errors gracefully', async () => {
       const error = new Error('Test error');
-      const effect = jest.fn().mockRejectedValue(error);
+      const effect = vi.fn().mockRejectedValue(error);
 
       renderHook(() => useAsyncEffect(effect, []));
 
@@ -93,7 +93,7 @@ describe('use-async-effect', () => {
     });
 
     it('should not log error when aborted', async () => {
-      const effect = jest.fn().mockImplementation((signal: AbortSignal) => {
+      const effect = vi.fn().mockImplementation((signal: AbortSignal) => {
         return new Promise((_, reject) => {
           signal.addEventListener('abort', () => {
             reject(new Error('Aborted'));
@@ -119,7 +119,7 @@ describe('use-async-effect', () => {
 
   describe('useAsyncEffectOnce', () => {
     it('should run async effect on mount', async () => {
-      const effect = jest.fn().mockResolvedValue(undefined);
+      const effect = vi.fn().mockResolvedValue(undefined);
 
       renderHook(() => useAsyncEffectOnce(effect, []));
 
@@ -131,7 +131,7 @@ describe('use-async-effect', () => {
     });
 
     it('should run again when dependencies change', async () => {
-      const effect = jest.fn().mockResolvedValue(undefined);
+      const effect = vi.fn().mockResolvedValue(undefined);
 
       const { rerender } = renderHook(({ dep }) => useAsyncEffectOnce(effect, [dep]), {
         initialProps: { dep: 1 },
@@ -154,7 +154,7 @@ describe('use-async-effect', () => {
 
     it('should handle errors gracefully', async () => {
       const error = new Error('Test error');
-      const effect = jest.fn().mockRejectedValue(error);
+      const effect = vi.fn().mockRejectedValue(error);
 
       renderHook(() => useAsyncEffectOnce(effect, []));
 
@@ -167,7 +167,7 @@ describe('use-async-effect', () => {
 
     it('should not log error after unmount', async () => {
       let resolveEffect: (() => void) | undefined;
-      const effect = jest.fn().mockImplementation(() => {
+      const effect = vi.fn().mockImplementation(() => {
         return new Promise<void>((resolve) => {
           resolveEffect = resolve;
         });

@@ -9,8 +9,8 @@
 
 import { NextResponse } from 'next/server';
 
-import { getGitHubTenantCredentials } from '@/features/admin/services/github-credentials-service';
-import { buildGitHubAuthorizationUrl, getGitHubCredentials, getGitHubRedirectUri } from '@/features/github/lib/oauth';
+import { getGitHubTenantCredentials } from '@/features/admin';
+import { buildGitHubAuthorizationUrl, getGitHubCredentials, getGitHubRedirectUri } from '@/features/github';
 import { auth } from '@/shared/lib/auth';
 
 /**

@@ -12,15 +12,6 @@ import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { AdminPageHeader } from '@/features/admin';
-import {
-  createRole,
-  deleteRole,
-  listPermissions,
-  listRoles,
-  updateRole,
-} from '@/features/admin/services/roles-service';
-import type { PermissionForTenant, RoleWithPermissions } from '@/features/admin/services/roles-service';
 import { Badge, Button, Checkbox, Input } from '@/shared/components/ui';
 import {
   Dialog,
@@ -32,6 +23,10 @@ import {
 } from '@/shared/components/ui/dialog';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/shared/components/ui/form';
 import { useToast } from '@/shared/components/ui/toast';
+
+import { AdminPageHeader } from './AdminPageHeader';
+import { createRole, deleteRole, listPermissions, listRoles, updateRole } from '../services/roles-service';
+import type { PermissionForTenant, RoleWithPermissions } from '../services/roles-service';
 
 const roleFormSchema = z.object({
   name: z.string().min(1, 'Name is required'),

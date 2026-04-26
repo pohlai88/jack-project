@@ -194,15 +194,14 @@ describe('tenant-settings', () => {
   });
 
   describe('isValidWebhookUrl', () => {
-    const originalEnv = process.env.NODE_ENV;
+    const originalStage = process.env.NEXT_PUBLIC_STAGE;
 
     afterEach(() => {
-      // Use Object.defineProperty to avoid TS error on read-only property
-      Object.defineProperty(process.env, 'NODE_ENV', {
-        value: originalEnv,
-        writable: true,
-        configurable: true,
-      });
+      if (originalStage === undefined) {
+        delete process.env.NEXT_PUBLIC_STAGE;
+      } else {
+        process.env.NEXT_PUBLIC_STAGE = originalStage;
+      }
     });
 
     it('should accept HTTPS URLs', () => {
@@ -210,20 +209,12 @@ describe('tenant-settings', () => {
     });
 
     it('should accept HTTP URLs in development', () => {
-      Object.defineProperty(process.env, 'NODE_ENV', {
-        value: 'development',
-        writable: true,
-        configurable: true,
-      });
+      process.env.NEXT_PUBLIC_STAGE = 'dev';
       expect(isValidWebhookUrl('http://localhost:3000/webhook')).toBe(true);
     });
 
     it('should reject HTTP URLs in production', () => {
-      Object.defineProperty(process.env, 'NODE_ENV', {
-        value: 'production',
-        writable: true,
-        configurable: true,
-      });
+      process.env.NEXT_PUBLIC_STAGE = 'production';
       expect(isValidWebhookUrl('http://example.com/webhook')).toBe(false);
     });
 

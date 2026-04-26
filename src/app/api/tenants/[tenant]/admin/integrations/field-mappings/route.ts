@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import {
-  listIntegrationFieldMappings,
-  upsertIntegrationFieldMapping,
-} from '@/features/integration-sync/services/control-plane-service';
+import { listIntegrationFieldMappings, upsertIntegrationFieldMapping } from '@/features/integration-sync';
 import { auth } from '@/shared/lib/auth';
 import { hasPermission } from '@/shared/lib/permissions';
 import { getTenantBySlug } from '@/shared/lib/tenant';

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { listIntegrationRuns } from '@/features/integration-sync/services/control-plane-service';
+import { listIntegrationRuns } from '@/features/integration-sync';
 import { auth } from '@/shared/lib/auth';
 import { hasPermission } from '@/shared/lib/permissions';
 import { getTenantBySlug } from '@/shared/lib/tenant';

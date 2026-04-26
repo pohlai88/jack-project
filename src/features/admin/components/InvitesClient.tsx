@@ -13,17 +13,6 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
-import { AdminFormDialog, AdminPageHeader } from '@/features/admin';
-import {
-  createInvite,
-  type CreateInviteInput,
-  type InviteWithDetails,
-  listInvites,
-  resendInvite,
-  revokeInvite,
-} from '@/features/admin/services/invite-service';
-import { getAvailableRoles } from '@/features/admin/services/members-service';
-import type { GetAvailableRolesResult, TenantRole } from '@/features/admin/types';
 import {
   Badge,
   Button,
@@ -46,6 +35,19 @@ import {
   SelectValue,
   Textarea,
 } from '@/shared/components/ui';
+
+import { AdminFormDialog } from './AdminFormDialog';
+import { AdminPageHeader } from './AdminPageHeader';
+import {
+  createInvite,
+  type CreateInviteInput,
+  type InviteWithDetails,
+  listInvites,
+  resendInvite,
+  revokeInvite,
+} from '../services/invite-service';
+import { getAvailableRoles } from '../services/members-service';
+import type { GetAvailableRolesResult, TenantRole } from '../types';
 
 const inviteFormSchema = z.object({
   email: z.string().min(1, 'Email is required').email('Please enter a valid email address'),
@@ -118,11 +120,9 @@ export function InvitesClient({ tenantSlug }: InvitesClientProps) {
     setIsLoading(false);
   }, [tenantSlug, showAllStatuses]);
 
-  /* eslint-disable react-hooks/set-state-in-effect -- Initial data fetch on mount; setState happens inside async callback */
   useEffect(() => {
     fetchInvites();
   }, [fetchInvites]);
-  /* eslint-enable react-hooks/set-state-in-effect */
 
   const openInviteDialog = () => {
     form.reset({

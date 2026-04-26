@@ -2,7 +2,7 @@
 
 /**
  * Form components — Official shadcn Form wrapper for react-hook-form
- * plus custom Next.js SaaS AI Template additions (FormFieldError, FormGlobalError).
+ * plus custom Afenda additions (FormFieldError, FormGlobalError).
  */
 
 import * as LabelPrimitive from '@radix-ui/react-label';
@@ -174,7 +174,7 @@ function useFormFieldSafe() {
 }
 
 // ============================================================================
-// Next.js SaaS AI Template custom additions (backward-compatible)
+// Afenda custom additions (backward-compatible)
 // ============================================================================
 
 export interface FormFieldErrorProps extends React.HTMLAttributes<HTMLParagraphElement> {

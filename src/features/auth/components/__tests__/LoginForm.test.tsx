@@ -5,13 +5,13 @@
 import { screen, waitFor } from '@testing-library/react';
 import { signIn } from 'next-auth/react';
 
-import { renderWithProviders, userEvent } from '@/__tests__/test-utils';
+import { renderWithProviders, userEvent } from '@tests/support/test-utils';
 
 import { LoginForm } from '../LoginForm';
 
 // Mock next-auth
-jest.mock('next-auth/react', () => ({
-  signIn: jest.fn(),
+vi.mock('next-auth/react', () => ({
+  signIn: vi.fn(),
   SessionProvider: ({ children }: { children: React.ReactNode }) => children,
 }));
 
@@ -19,8 +19,8 @@ jest.mock('next-auth/react', () => ({
 const mockLocation = {
   href: '',
   origin: 'http://localhost',
-  assign: jest.fn(),
-  replace: jest.fn(),
+  assign: vi.fn(),
+  replace: vi.fn(),
 };
 
 Object.defineProperty(window, 'location', {
@@ -30,7 +30,7 @@ Object.defineProperty(window, 'location', {
 
 describe('LoginForm', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     mockLocation.href = '';
   });
 
@@ -63,7 +63,7 @@ describe('LoginForm', () => {
   describe('Auth0 Login', () => {
     it('calls signIn with auth0 provider when clicked', async () => {
       const user = userEvent.setup();
-      (signIn as jest.Mock).mockResolvedValue({ ok: true });
+      (signIn as Mock).mockResolvedValue({ ok: true });
 
       renderWithProviders(<LoginForm />);
 
@@ -76,7 +76,7 @@ describe('LoginForm', () => {
     it('shows loading state while signing in', async () => {
       const user = userEvent.setup();
       // Create a promise that never resolves to keep loading state
-      (signIn as jest.Mock).mockImplementation(() => new Promise(() => {}));
+      (signIn as Mock).mockImplementation(() => new Promise(() => {}));
 
       renderWithProviders(<LoginForm />);
 
@@ -91,7 +91,7 @@ describe('LoginForm', () => {
 
     it('handles auth0 login error', async () => {
       const user = userEvent.setup();
-      (signIn as jest.Mock).mockRejectedValue(new Error('Auth0 error'));
+      (signIn as Mock).mockRejectedValue(new Error('Auth0 error'));
 
       renderWithProviders(<LoginForm />);
 
@@ -117,7 +117,7 @@ describe('LoginForm', () => {
 
     it('calls signIn with development provider on form submit', async () => {
       const user = userEvent.setup();
-      (signIn as jest.Mock).mockResolvedValue({ ok: true, url: '/select-tenant' });
+      (signIn as Mock).mockResolvedValue({ ok: true, url: '/select-tenant' });
 
       renderWithProviders(<LoginForm />);
 
@@ -136,7 +136,7 @@ describe('LoginForm', () => {
 
     it('redirects on successful development login', async () => {
       const user = userEvent.setup();
-      (signIn as jest.Mock).mockResolvedValue({ ok: true, url: '/select-tenant' });
+      (signIn as Mock).mockResolvedValue({ ok: true, url: '/select-tenant' });
 
       renderWithProviders(<LoginForm />);
 
@@ -153,7 +153,7 @@ describe('LoginForm', () => {
 
     it('displays error message on login failure', async () => {
       const user = userEvent.setup();
-      (signIn as jest.Mock).mockResolvedValue({ error: 'Invalid email' });
+      (signIn as Mock).mockResolvedValue({ error: 'Invalid email' });
 
       renderWithProviders(<LoginForm />);
 
@@ -170,7 +170,7 @@ describe('LoginForm', () => {
 
     it('shows loading state during form submission', async () => {
       const user = userEvent.setup();
-      (signIn as jest.Mock).mockImplementation(
+      (signIn as Mock).mockImplementation(
         () =>
           new Promise((resolve) => {
             setTimeout(() => resolve({ ok: true, url: '/select-tenant' }), 100);
@@ -209,7 +209,7 @@ describe('LoginForm', () => {
   describe('Error handling', () => {
     it('handles unexpected errors gracefully', async () => {
       const user = userEvent.setup();
-      (signIn as jest.Mock).mockRejectedValue(new Error('Network error'));
+      (signIn as Mock).mockRejectedValue(new Error('Network error'));
 
       renderWithProviders(<LoginForm />);
 
@@ -228,7 +228,7 @@ describe('LoginForm', () => {
       const user = userEvent.setup();
 
       // First attempt - fails
-      (signIn as jest.Mock).mockResolvedValueOnce({ error: 'First error' });
+      (signIn as Mock).mockResolvedValueOnce({ error: 'First error' });
       renderWithProviders(<LoginForm />);
 
       const emailInput = screen.getByLabelText(/email/i);
@@ -242,7 +242,7 @@ describe('LoginForm', () => {
       });
 
       // Second attempt - should clear error
-      (signIn as jest.Mock).mockResolvedValueOnce({ ok: true, url: '/select-tenant' });
+      (signIn as Mock).mockResolvedValueOnce({ ok: true, url: '/select-tenant' });
       await user.click(devButton);
 
       await waitFor(() => {

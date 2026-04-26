@@ -1,5 +1,5 @@
 -- =============================================================================
--- PostgreSQL initialization script for Next.js SaaS AI Template
+-- PostgreSQL initialization script for Afenda
 -- This script runs when the database container is first created
 -- =============================================================================
 
@@ -13,17 +13,17 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE EXTENSION IF NOT EXISTS pg_trgm;
 
 -- Create dedicated schemas
-CREATE SCHEMA IF NOT EXISTS saas_template;
+CREATE SCHEMA IF NOT EXISTS afenda;
 CREATE SCHEMA IF NOT EXISTS drizzle;
 
 -- Set default search_path for the app user
-ALTER ROLE saas_app SET search_path TO saas_template, public, drizzle;
+ALTER ROLE saas_app SET search_path TO afenda, public, drizzle;
 
 -- Grant privileges to saas_app user
-GRANT ALL PRIVILEGES ON DATABASE saas_template_dev TO saas_app;
+GRANT ALL PRIVILEGES ON DATABASE afenda_dev TO saas_app;
 
 -- Log initialization
 DO $$
 BEGIN
-    RAISE NOTICE 'Next.js SaaS AI Template database initialized with extensions: vector, uuid-ossp, pg_trgm';
+    RAISE NOTICE 'Afenda database initialized with extensions: vector, uuid-ossp, pg_trgm';
 END $$;

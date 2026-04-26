@@ -16,7 +16,7 @@ services:
     command: sleep infinity
     environment:
       # Database connection for development
-      DATABASE_URL: postgresql://saas_app:saas_app@db:5432/saas_template_dev
+      DATABASE_URL: postgresql://saas_app:saas_app@db:5432/afenda_dev
       # Node environment
       NODE_ENV: development
       # pnpm store location
@@ -27,7 +27,7 @@ services:
       S3_PUBLIC_ENDPOINT: http://localhost:9000
       S3_ACCESS_KEY: saas_app
       S3_SECRET_KEY: saas_app123
-      S3_BUCKET: saas-template-uploads
+      S3_BUCKET: afenda-uploads
       S3_REGION: us-east-1
     depends_on:
       db:
@@ -52,9 +52,9 @@ services:
     environment:
       POSTGRES_USER: saas_app
       POSTGRES_PASSWORD: saas_app
-      POSTGRES_DB: saas_template_dev
+      POSTGRES_DB: afenda_dev
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U saas_app -d saas_template_dev']
+      test: ['CMD-SHELL', 'pg_isready -U saas_app -d afenda_dev']
       interval: 5s
       timeout: 5s
       retries: 5
@@ -86,8 +86,8 @@ services:
 
 volumes:
   postgres-data:
-    name: saas-template-postgres-data
+    name: afenda-postgres-data
   pnpm-store:
-    name: saas-template-pnpm-store
+    name: afenda-pnpm-store
   minio-data:
-    name: saas-template-minio-data
+    name: afenda-minio-data

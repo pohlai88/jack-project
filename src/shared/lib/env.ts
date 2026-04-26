@@ -1,6 +1,20 @@
 import { createEnv } from '@t3-oss/env-nextjs';
 import { z } from 'zod';
 
+function formatEnvValidationError(issues: ReadonlyArray<{ path?: ReadonlyArray<unknown>; message?: string }>): string {
+  const details = issues.map((issue) => {
+    const key = issue.path?.length ? issue.path.map(String).join('.') : 'unknown';
+    return `- ${key}: ${issue.message ?? 'Invalid value'}`;
+  });
+
+  return [
+    'Invalid environment variables.',
+    ...details,
+    '',
+    'Create env.config from env.config.example in the repo root, then run `pnpm env:sync`.',
+  ].join('\n');
+}
+
 /**
  * Environment variables configuration with runtime validation.
  *
@@ -70,7 +84,7 @@ export const env = createEnv({
    */
   client: {
     NEXT_PUBLIC_APP_URL: z.url().default('http://localhost:3000'),
-    NEXT_PUBLIC_APP_NAME: z.string().default('Next.js SaaS AI Template'),
+    NEXT_PUBLIC_APP_NAME: z.string().default('Afenda'),
     NEXT_PUBLIC_SENTRY_DSN: z.url().optional(),
   },
 
@@ -122,6 +136,17 @@ export const env = createEnv({
    * Makes it easier to use optional variables with falsy defaults.
    */
   emptyStringAsUndefined: true,
+
+  onValidationError: (issues) => {
+    throw new Error(
+      formatEnvValidationError(
+        issues.map((issue) => ({
+          path: issue.path,
+          message: issue.message,
+        })),
+      ),
+    );
+  },
 });
 
 /**

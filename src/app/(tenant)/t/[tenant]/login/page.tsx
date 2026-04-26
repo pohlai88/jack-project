@@ -1,7 +1,7 @@
 import { Sparkles } from 'lucide-react';
 import { redirect } from 'next/navigation';
 
-import { TenantLoginForm } from '@/features/auth/components/TenantLoginForm';
+import { TenantLoginForm } from '@/features/auth';
 import type { TenantRole } from '@/shared/db/schema/auth';
 import { auth } from '@/shared/lib/auth';
 import { getTenantBySlug } from '@/shared/lib/tenant';
@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: TenantLoginPageProps) {
   const tenant = await getTenantBySlug(tenantSlug);
 
   return {
-    title: `Sign In | ${tenant?.name || tenantSlug} - Next.js SaaS AI Template`,
-    description: `Sign in to access ${tenant?.name || tenantSlug} on Next.js SaaS AI Template`,
+    title: `Sign In | ${tenant?.name || tenantSlug} - Afenda`,
+    description: `Sign in to access ${tenant?.name || tenantSlug} on Afenda`,
   };
 }
 

@@ -4,13 +4,13 @@
  * Server component that fetches initial data and renders the client.
  */
 
-import { AuditLogsClient } from '@/features/admin/components/AuditLogsClient';
 import {
+  AuditLogsClient,
   getAuditActors,
   getDistinctActions,
   getDistinctEntityTypes,
   listAuditEvents,
-} from '@/features/admin/services/audit-logs-service';
+} from '@/features/admin';
 
 interface AuditLogsPageProps {
   params: Promise<{ tenant: string }>;

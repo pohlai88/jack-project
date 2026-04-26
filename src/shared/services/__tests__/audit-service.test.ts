@@ -8,27 +8,29 @@ interface MockHeaders {
 }
 
 // Create typed mock function
-const mockHeadersFn = jest.fn<Promise<MockHeaders>, []>();
+const { mockHeadersFn } = vi.hoisted(() => ({
+  mockHeadersFn: vi.fn<() => Promise<MockHeaders>>(),
+}));
 
 // Mock dependencies before importing the module
-jest.mock('next/headers', () => ({
+vi.mock('next/headers', () => ({
   headers: mockHeadersFn,
 }));
 
-jest.mock('uuid', () => ({
-  v4: jest.fn(() => 'mock-uuid-123'),
+vi.mock('uuid', () => ({
+  v4: vi.fn(() => 'mock-uuid-123'),
 }));
 
-jest.mock('@/shared/db', () => ({
+vi.mock('@/shared/db', () => ({
   db: {
-    insert: jest.fn().mockReturnThis(),
+    insert: vi.fn().mockReturnThis(),
   },
 }));
 
-jest.mock('@/shared/lib/logger', () => ({
+vi.mock('@/shared/lib/logger', () => ({
   logger: {
-    info: jest.fn(),
-    error: jest.fn(),
+    info: vi.fn(),
+    error: vi.fn(),
   },
 }));
 
@@ -36,17 +38,17 @@ import { db } from '@/shared/db';
 
 import { AuditActions, getCorrelationIds, logAuditEvent } from '../audit-service';
 
-const mockDb = db as jest.Mocked<typeof db>;
+const mockDb = db as Mocked<typeof db>;
 
 describe('audit-service', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('getCorrelationIds', () => {
     it('should return IDs from headers if present', async () => {
       const mockHeadersList: MockHeaders = {
-        get: jest.fn((name: string) => {
+        get: vi.fn((name: string) => {
           if (name === 'x-request-id') return 'req-from-header';
           if (name === 'x-trace-id') return 'trace-from-header';
           return null;
@@ -64,7 +66,7 @@ describe('audit-service', () => {
 
     it('should generate UUIDs when headers are missing', async () => {
       const mockHeadersList: MockHeaders = {
-        get: jest.fn(() => null),
+        get: vi.fn(() => null),
       };
       mockHeadersFn.mockResolvedValue(mockHeadersList);
 
@@ -80,7 +82,7 @@ describe('audit-service', () => {
   describe('logAuditEvent', () => {
     it('should insert audit event and return ID', async () => {
       const mockHeadersList: MockHeaders = {
-        get: jest.fn((name: string) => {
+        get: vi.fn((name: string) => {
           if (name === 'x-forwarded-for') return '192.168.1.1';
           if (name === 'user-agent') return 'Mozilla/5.0';
           return null;
@@ -88,10 +90,10 @@ describe('audit-service', () => {
       };
       mockHeadersFn.mockResolvedValue(mockHeadersList);
 
-      const mockValues = jest.fn().mockReturnThis();
-      const mockReturning = jest.fn().mockResolvedValue([{ id: 'audit-123' }]);
+      const mockValues = vi.fn().mockReturnThis();
+      const mockReturning = vi.fn().mockResolvedValue([{ id: 'audit-123' }]);
 
-      (mockDb.insert as jest.Mock).mockReturnValue({
+      (mockDb.insert as Mock).mockReturnValue({
         values: mockValues.mockReturnValue({
           returning: mockReturning,
         }),
@@ -112,14 +114,14 @@ describe('audit-service', () => {
 
     it('should include AI context when provided', async () => {
       const mockHeadersList: MockHeaders = {
-        get: jest.fn(() => null),
+        get: vi.fn(() => null),
       };
       mockHeadersFn.mockResolvedValue(mockHeadersList);
 
-      const mockValues = jest.fn().mockReturnThis();
-      const mockReturning = jest.fn().mockResolvedValue([{ id: 'audit-123' }]);
+      const mockValues = vi.fn().mockReturnThis();
+      const mockReturning = vi.fn().mockResolvedValue([{ id: 'audit-123' }]);
 
-      (mockDb.insert as jest.Mock).mockReturnValue({
+      (mockDb.insert as Mock).mockReturnValue({
         values: mockValues.mockReturnValue({
           returning: mockReturning,
         }),

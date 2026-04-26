@@ -5,8 +5,7 @@
  */
 
 import { redirect } from 'next/navigation';
-import { MembersClient } from '@/features/admin/components/MembersClient';
-import { listMembers } from '@/features/admin/services/members-service';
+import { listMembers, MembersClient } from '@/features/admin';
 import { auth } from '@/shared/lib/auth';
 
 interface MembersPageProps {

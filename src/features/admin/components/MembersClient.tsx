@@ -13,8 +13,12 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
-import { AdminDataTable, AdminFormDialog, AdminPageHeader } from '@/features/admin';
-import type { Column } from '@/features/admin/components/AdminDataTable';
+import { Input } from '@/shared/components/ui';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/shared/components/ui/form';
+
+import { AdminDataTable, type Column } from './AdminDataTable';
+import { AdminFormDialog } from './AdminFormDialog';
+import { AdminPageHeader } from './AdminPageHeader';
 import {
   getAvailableRoles,
   getMemberRoleIds,
@@ -22,10 +26,8 @@ import {
   listMembers,
   removeMember,
   updateMember,
-} from '@/features/admin/services/members-service';
-import type { GetAvailableRolesResult, MemberWithDetails, PaginatedResult, TenantRole } from '@/features/admin/types';
-import { Input } from '@/shared/components/ui';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/shared/components/ui/form';
+} from '../services/members-service';
+import type { GetAvailableRolesResult, MemberWithDetails, PaginatedResult, TenantRole } from '../types';
 
 interface MembersClientProps {
   tenantSlug: string;
@@ -122,7 +124,6 @@ export function MembersClient({ tenantSlug, initialData, currentUserId }: Member
 
   useEffect(() => {
     if (!dialogOpen) return;
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- async fetchRoles callback
     fetchRoles();
     if (editing) {
       getAvailableRoles(tenantSlug).then((res) => {

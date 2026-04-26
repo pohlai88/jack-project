@@ -1,13 +1,13 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * Next.js SaaS AI Template Tailwind Configuration (minimal)
+ * Afenda Tailwind Configuration (minimal)
  *
  * Theme and design tokens live in src/app/globals.css (@theme block).
  * Tailwind v4 is CSS-first; this file is kept for tooling that expects it
  * (e.g. shadcn CLI). Content paths are optional — v4 auto-detects.
  *
- * See docs/DESIGN_SYSTEM.md and docs/COMPONENTS_AND_STYLING.md.
+ * See architecture/docs/DESIGN_SYSTEM.md and architecture/docs/COMPONENTS_AND_STYLING.md.
  */
 const config: Config = {
   content: [

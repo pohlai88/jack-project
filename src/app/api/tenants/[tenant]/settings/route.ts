@@ -1,11 +1,6 @@
 import { NextResponse } from 'next/server';
 
-import {
-  getTenantSettings,
-  resetTenantSettings,
-  updateTenantInfo,
-  updateTenantSettings,
-} from '@/features/admin/services/settings-service';
+import { getTenantSettings, resetTenantSettings, updateTenantInfo, updateTenantSettings } from '@/features/admin';
 import { logger } from '@/shared/lib/logger';
 import type { TenantSettings } from '@/shared/lib/tenant-settings';
 

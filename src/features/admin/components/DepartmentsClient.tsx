@@ -11,7 +11,6 @@ import { Building2, ChevronDown, ChevronRight, Loader2, Pencil, Plus, Trash2, Us
 import { useTranslations } from 'next-intl';
 import { useCallback, useEffect, useState } from 'react';
 
-import { listTenantPersonsForRelations } from '@/features/admin/services/members-service';
 import {
   Button,
   Card,
@@ -36,6 +35,8 @@ import {
 } from '@/shared/components/ui/dialog';
 import { cn } from '@/shared/lib/utils';
 import type { DepartmentWithMembers } from '@/shared/services/department-service';
+
+import { listTenantPersonsForRelations } from '../services/members-service';
 
 interface DepartmentManager {
   id: string;

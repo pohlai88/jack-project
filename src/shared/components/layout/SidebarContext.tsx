@@ -2,7 +2,7 @@
 
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
-const STORAGE_KEY = 'saas-template-sidebar-collapsed';
+const STORAGE_KEY = 'afenda-sidebar-collapsed';
 
 function getStoredCollapsed(): boolean {
   if (typeof window === 'undefined') return false;

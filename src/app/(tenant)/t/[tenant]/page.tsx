@@ -2,7 +2,7 @@ import { formatDistanceToNow } from 'date-fns';
 import { BarChart3, Clock, LayoutDashboard, Users } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
-import { getDashboardStats } from '@/features/dashboard/actions';
+import { getDashboardStats } from '@/features/dashboard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/shared/components/ui/card';
 import { PageHeader } from '@/shared/components/ui/page-header';
 import { auth } from '@/shared/lib/auth';

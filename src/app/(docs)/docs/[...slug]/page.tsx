@@ -2,12 +2,14 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale } from 'next-intl/server';
 
-import { DocsBreadcrumb } from '@/features/docs/components/DocsBreadcrumb';
-import { DocsContent } from '@/features/docs/components/DocsContent';
-import { DocsPagination } from '@/features/docs/components/DocsPagination';
-import { DocsTableOfContents } from '@/features/docs/components/DocsTableOfContents';
-import { getDocContent } from '@/features/docs/lib/docs-content';
-import { getPrevNextPages } from '@/features/docs/lib/docs-navigation';
+import {
+  DocsBreadcrumb,
+  DocsContent,
+  DocsPagination,
+  DocsTableOfContents,
+  getDocContent,
+  getPrevNextPages,
+} from '@/features/docs';
 
 interface DocsPageProps {
   params: Promise<{ slug: string[] }>;
@@ -19,14 +21,14 @@ export async function generateMetadata({ params }: DocsPageProps): Promise<Metad
   const locale = await getLocale();
   const doc = getDocContent(locale, slug);
 
-  if (!doc) return { title: 'Not Found | Next.js SaaS AI Template Docs' };
+  if (!doc) return { title: 'Not Found | Afenda Docs' };
 
   return {
-    title: `${doc.frontmatter.title} | Next.js SaaS AI Template Docs`,
-    description: doc.frontmatter.description ?? `Next.js SaaS AI Template documentation — ${doc.frontmatter.title}`,
+    title: `${doc.frontmatter.title} | Afenda Docs`,
+    description: doc.frontmatter.description ?? `Afenda documentation — ${doc.frontmatter.title}`,
     openGraph: {
-      title: `${doc.frontmatter.title} | Next.js SaaS AI Template Docs`,
-      description: doc.frontmatter.description ?? `Next.js SaaS AI Template documentation — ${doc.frontmatter.title}`,
+      title: `${doc.frontmatter.title} | Afenda Docs`,
+      description: doc.frontmatter.description ?? `Afenda documentation — ${doc.frontmatter.title}`,
       type: 'article',
     },
   };

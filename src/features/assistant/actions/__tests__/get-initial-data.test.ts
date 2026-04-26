@@ -2,9 +2,8 @@
  * Tests for Get Initial Data Action
  */
 
-import { type AuthResult, createMockSession, createNullAuthResult } from '@/__tests__/mock-factories';
-
-const mockAuthFn = jest.fn<Promise<AuthResult>, []>();
+import { db } from '@/shared/db';
+import { type AuthResult, createMockSession, createNullAuthResult } from '@tests/support/mock-factories';
 
 interface MockTenantResult {
   id: string;
@@ -12,42 +11,44 @@ interface MockTenantResult {
   name: string;
 }
 
-const mockGetTenantBySlugFn = jest.fn<Promise<MockTenantResult | null>, [string]>();
+const { mockAuthFn, mockGetTenantBySlugFn } = vi.hoisted(() => ({
+  mockAuthFn: vi.fn<() => Promise<AuthResult>>(),
+  mockGetTenantBySlugFn: vi.fn<(tenantSlug: string) => Promise<MockTenantResult | null>>(),
+}));
 
-jest.mock('@/shared/lib/auth', () => ({
+vi.mock('@/shared/lib/auth', () => ({
   auth: mockAuthFn,
 }));
 
-jest.mock('@/shared/lib/tenant', () => ({
+vi.mock('@/shared/lib/tenant', () => ({
   getTenantBySlug: mockGetTenantBySlugFn,
 }));
 
-jest.mock('@/shared/db', () => ({
+vi.mock('@/shared/db', () => ({
   db: {
     query: {
-      persons: { findFirst: jest.fn() },
+      persons: { findFirst: vi.fn() },
     },
   },
 }));
 
-jest.mock('@/shared/lib/logger', () => ({
-  logger: { error: jest.fn(), info: jest.fn(), warn: jest.fn() },
+vi.mock('@/shared/lib/logger', () => ({
+  logger: { error: vi.fn(), info: vi.fn(), warn: vi.fn() },
 }));
 
-import { db } from '@/shared/db';
 import { getInitialData } from '../get-initial-data';
 
-const mockDb = db as jest.Mocked<typeof db>;
+const mockDb = db as Mocked<typeof db>;
 
 describe('getInitialData', () => {
   const mockTenant = { id: 'tenant-123', slug: 'test-tenant', name: 'Test Tenant' };
   const mockPerson = { id: 'person-123', email: 'user@example.com', firstName: 'Test', lastName: 'User' };
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     mockAuthFn.mockResolvedValue(createMockSession({ user: { email: 'user@example.com', name: 'Test User' } }));
     mockGetTenantBySlugFn.mockResolvedValue(mockTenant);
-    (mockDb.query.persons.findFirst as jest.Mock).mockResolvedValue(mockPerson);
+    (mockDb.query.persons.findFirst as Mock).mockResolvedValue(mockPerson);
   });
 
   it('should throw error when not authenticated', async () => {

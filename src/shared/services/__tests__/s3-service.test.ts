@@ -6,27 +6,27 @@
  */
 
 // Mock AWS SDK before importing
-jest.mock('@aws-sdk/client-s3', () => ({
-  S3Client: jest.fn().mockImplementation(() => ({
-    send: jest.fn(),
-  })),
-  PutObjectCommand: jest.fn(),
-  GetObjectCommand: jest.fn(),
+vi.mock('@aws-sdk/client-s3', () => ({
+  S3Client: vi.fn(function S3Client() {
+    return { send: vi.fn() };
+  }),
+  PutObjectCommand: vi.fn(),
+  GetObjectCommand: vi.fn(),
 }));
 
-jest.mock('@aws-sdk/s3-request-presigner', () => ({
-  getSignedUrl: jest.fn().mockResolvedValue('https://example.com/signed-url'),
+vi.mock('@aws-sdk/s3-request-presigner', () => ({
+  getSignedUrl: vi.fn().mockResolvedValue('https://example.com/signed-url'),
 }));
 
-jest.mock('@/shared/db', () => ({
+vi.mock('@/shared/db', () => ({
   db: {
     query: {
-      tenants: { findFirst: jest.fn() },
+      tenants: { findFirst: vi.fn() },
     },
   },
 }));
 
-jest.mock('@/shared/lib/env', () => ({
+vi.mock('@/shared/lib/env', () => ({
   env: {
     AWS_REGION: 'us-east-1',
     AWS_ACCESS_KEY_ID: 'test-key',
@@ -39,11 +39,11 @@ import { db } from '@/shared/db';
 import { clearTenantS3Client } from '../s3-service';
 
 // Suppress unused warning - kept for future tests
-void (db as jest.Mocked<typeof db>);
+void (db as Mocked<typeof db>);
 
 describe('s3-service', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('clearTenantS3Client', () => {

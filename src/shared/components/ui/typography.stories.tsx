@@ -3,13 +3,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 /**
  * # Typography
  *
- * Type scale specimen for the Next.js SaaS AI Template design system.
+ * Type scale specimen for the Afenda design system.
  *
  * **Font**: DM Sans — geometric, friendly, modern
  * **Scale**: Major Third ratio (1.25)
  * **Heading style**: Semibold/bold with tighter letter-spacing
  *
- * See docs/DESIGN_SYSTEM.md Section 4: Typography
+ * See architecture/docs/DESIGN_SYSTEM.md Section 4: Typography
  */
 
 function TypeScaleSpecimen() {

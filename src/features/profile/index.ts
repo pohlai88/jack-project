@@ -1,7 +1,2 @@
-/**
- * Profile Feature
- *
- * Exports components, hooks, and types for the profile feature.
- */
-
-export * from './components/ProfileClient';
+export { ProfileSettingsForm } from './components/ProfileSettingsForm';
+export { getMyPerson } from './services/profile-update-service';

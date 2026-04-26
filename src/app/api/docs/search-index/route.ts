@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getLocale } from 'next-intl/server';
 
-import { buildSearchIndex } from '@/features/docs/lib/docs-search-index';
+import { buildSearchIndex } from '@/features/docs';
 
 export async function GET() {
   const locale = await getLocale();

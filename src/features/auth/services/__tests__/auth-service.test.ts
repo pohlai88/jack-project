@@ -2,13 +2,15 @@
  * Tests for Auth Service
  */
 
-import { type AuthResult, createMockSession, createNullAuthResult } from '@/__tests__/mock-factories';
+import { type AuthResult, createMockSession, createNullAuthResult } from '@tests/support/mock-factories';
 
 // Create typed mock function
-const mockAuthFn = jest.fn<Promise<AuthResult>, []>();
+const { mockAuthFn } = vi.hoisted(() => ({
+  mockAuthFn: vi.fn<() => Promise<AuthResult>>(),
+}));
 
 // Mock dependencies before importing
-jest.mock('@/shared/lib/auth', () => ({
+vi.mock('@/shared/lib/auth', () => ({
   auth: mockAuthFn,
 }));
 
@@ -16,7 +18,7 @@ import { getCurrentUser, getSession, isAuthenticated } from '../auth-service';
 
 describe('auth-service', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('getSession', () => {

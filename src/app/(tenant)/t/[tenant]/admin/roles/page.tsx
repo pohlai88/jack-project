@@ -4,8 +4,7 @@
  * Server component that fetches roles and permissions and renders the client.
  */
 
-import { RolesClient } from '@/features/admin/components/RolesClient';
-import { listPermissions, listRoles } from '@/features/admin/services/roles-service';
+import { listPermissions, listRoles, RolesClient } from '@/features/admin';
 import { requireTenantAdmin } from '@/shared/lib/rbac';
 import { getTenantBySlug } from '@/shared/lib/tenant';
 import { isFeatureEnabled, parseTenantSettings } from '@/shared/lib/tenant-settings';

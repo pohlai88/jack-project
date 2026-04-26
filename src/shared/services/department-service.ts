@@ -2,7 +2,7 @@
 
 import { and, eq, isNull, or, sql } from 'drizzle-orm';
 
-import { getTenantSettings, updateTenantSettings } from '@/features/admin/services/settings-service';
+import { getTenantSettings, updateTenantSettings } from '@/features/admin';
 import { db } from '@/shared/db';
 import * as schema from '@/shared/db/schema';
 import { type Department } from '@/shared/lib/tenant-settings';

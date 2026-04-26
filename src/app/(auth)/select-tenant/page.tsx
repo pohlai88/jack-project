@@ -8,7 +8,7 @@ import type { TenantRole } from '@/shared/db/schema/auth';
 import { auth } from '@/shared/lib/auth';
 
 export const metadata = {
-  title: 'Select Organization | Next.js SaaS AI Template',
+  title: 'Select Organization | Afenda',
   description: 'Choose an organization to access',
 };
 

@@ -1,12 +1,11 @@
 /**
- * Preview GitHub organization members and their mapping to Next.js SaaS AI Template persons.
+ * Preview GitHub organization members and their mapping to Afenda persons.
  * GET /api/tenants/[tenant]/admin/integrations/github/org-members?org=my-org
  */
 
 import { and, eq } from 'drizzle-orm';
 
-import { GitHubClient } from '@/features/github/lib/client';
-import { GITHUB_PROVIDER_ID } from '@/features/github/lib/constants';
+import { GITHUB_PROVIDER_ID, GitHubClient } from '@/features/github';
 import { db } from '@/shared/db';
 import * as schema from '@/shared/db/schema';
 import { auth } from '@/shared/lib/auth';

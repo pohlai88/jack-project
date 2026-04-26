@@ -32,7 +32,7 @@ import { useSettings } from './SettingsProvider';
  *
  * Includes a live preview panel showing the effect of current settings.
  *
- * See docs/DESIGN_SYSTEM.md Section 10: Tenant Branding
+ * See architecture/docs/DESIGN_SYSTEM.md Section 10: Tenant Branding
  */
 
 // --- Theme Presets ---

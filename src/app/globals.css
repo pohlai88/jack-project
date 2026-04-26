@@ -3,9 +3,9 @@
 @plugin "tailwindcss-animate";
 
 /* =====================================================================
-   SaaS AI Template Design System
+   Afenda Design System
    Philosophy: "Intentional Craft"
-   See docs/DESIGN_SYSTEM.md for full documentation of every decision.
+   See architecture/docs/DESIGN_SYSTEM.md for full documentation of every decision.
    ===================================================================== */
 
 @theme {

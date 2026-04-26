@@ -1,8 +1,6 @@
 import type { UIMessage } from 'ai';
 
-import { getConversation, getInitialData } from '@/features/assistant';
-
-import { AssistantClient } from './AssistantClient';
+import { AssistantPageContent, getConversation, getInitialData } from '@/features/assistant';
 
 interface AssistantPageProps {
   params: Promise<{ tenant: string }>;
@@ -19,7 +17,7 @@ export default async function AssistantPage({ params, searchParams }: AssistantP
 
   return (
     <div className="-mx-4 -my-6 h-[calc(100vh-4rem)]">
-      <AssistantClient
+      <AssistantPageContent
         initialData={initialData}
         conversationId={conversation?.id}
         initialMessages={(conversation?.messages as UIMessage[]) ?? undefined}

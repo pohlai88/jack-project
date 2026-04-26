@@ -1,6 +1,6 @@
 'use client';
 
-import type { SaveStatus } from '@/features/admin/components/settings';
+import type { SaveStatus } from '@/features/admin';
 
 interface SaveStatusBannerProps {
   status: SaveStatus;

@@ -623,7 +623,7 @@ export function SettingsClient({ tenantSlug, tenantName, tenantDescription, init
                   id="storage-bucket"
                   value={settings.storage?.bucket || ''}
                   onChange={(e) => handleStorageUpdate('bucket', e.target.value || undefined)}
-                  placeholder="saas-template-uploads"
+                  placeholder="afenda-uploads"
                 />
               </div>
               <div>

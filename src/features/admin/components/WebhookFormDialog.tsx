@@ -106,14 +106,12 @@ export function WebhookFormDialog({
     }
   };
 
-  /* eslint-disable react-hooks/set-state-in-effect -- Reset when parent-controlled `isOpen`/`editingEndpoint` props change; effect required for prop-driven state sync */
   useEffect(() => {
     if (isOpen) {
       form.reset(getDefaultValues(editingEndpoint));
       setServerError(null);
     }
   }, [isOpen, editingEndpoint, form]);
-  /* eslint-enable react-hooks/set-state-in-effect */
 
   // Group events by category
   const eventsByCategory = eventTypes.reduce(

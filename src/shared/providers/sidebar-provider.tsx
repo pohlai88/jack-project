@@ -6,7 +6,7 @@ import { createContext, type ReactNode, useCallback, useContext, useEffect, useR
 // Sidebar Context
 // ============================================================================
 
-const SIDEBAR_STORAGE_KEY = 'saas-template:sidebar:collapsed';
+const SIDEBAR_STORAGE_KEY = 'afenda:sidebar:collapsed';
 
 /**
  * Sidebar context type

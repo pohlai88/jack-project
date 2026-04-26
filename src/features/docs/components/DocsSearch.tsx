@@ -34,7 +34,6 @@ export function DocsSearch({ open, onOpenChange }: DocsSearchProps) {
     }
   }, [open, searchIndex.length]);
 
-  /* eslint-disable react-hooks/set-state-in-effect -- Reset search state when dialog open state changes */
   useEffect(() => {
     if (open) {
       setQuery('');
@@ -42,7 +41,6 @@ export function DocsSearch({ open, onOpenChange }: DocsSearchProps) {
       setTimeout(() => inputRef.current?.focus(), 100);
     }
   }, [open]);
-  /* eslint-enable react-hooks/set-state-in-effect */
 
   const fuse = useMemo(() => {
     return new Fuse(searchIndex, {

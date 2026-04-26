@@ -4,11 +4,14 @@
 
 import { Webhook } from 'lucide-react';
 
-import { AdminPageHeader } from '@/features/admin';
-import { WebhooksClient } from '@/features/admin/components/WebhooksClient';
-import { WebhooksSettingsPanel } from '@/features/admin/components/WebhooksSettingsPanel';
-import { getTenantSettings } from '@/features/admin/services/settings-service';
-import { getAvailableEventTypes, listWebhookEndpoints } from '@/features/admin/services/webhook-admin-service';
+import {
+  AdminPageHeader,
+  getAvailableEventTypes,
+  getTenantSettings,
+  listWebhookEndpoints,
+  WebhooksClient,
+  WebhooksSettingsPanel,
+} from '@/features/admin';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui/card';
 import { requirePermission } from '@/shared/lib/permissions';
 

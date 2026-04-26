@@ -2,8 +2,7 @@ import { Settings } from 'lucide-react';
 import { redirect } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 
-import { ProfileSettingsForm } from '@/features/profile/components/ProfileSettingsForm';
-import { getMyPerson } from '@/features/profile/services/profile-update-service';
+import { getMyPerson, ProfileSettingsForm } from '@/features/profile';
 import { PageHeader } from '@/shared/components/ui/page-header';
 import { auth } from '@/shared/lib/auth';
 

@@ -5,11 +5,11 @@
 import { act, renderHook } from '@testing-library/react';
 
 // Mock next/navigation
-const mockReplace = jest.fn();
-const mockPush = jest.fn();
+const mockReplace = vi.fn();
+const mockPush = vi.fn();
 let mockSearchParams = new URLSearchParams();
 
-jest.mock('next/navigation', () => ({
+vi.mock('next/navigation', () => ({
   useRouter: () => ({
     replace: mockReplace,
     push: mockPush,
@@ -22,7 +22,7 @@ import { useUrlDialog, useUrlId, useUrlParam, useUrlTab } from '../use-url-state
 
 describe('URL State Hooks', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     mockSearchParams = new URLSearchParams();
   });
 

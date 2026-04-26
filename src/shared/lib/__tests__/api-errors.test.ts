@@ -5,37 +5,40 @@
 import { z, ZodError } from 'zod';
 
 // Create a mock NextResponse class before importing the module
-class MockNextResponse {
-  private body: unknown;
-  public status: number;
+const { MockNextResponse } = vi.hoisted(() => {
+  class MockNextResponse {
+    body: unknown;
+    public status: number;
 
-  constructor(body: unknown, init?: { status?: number; headers?: HeadersInit }) {
-    this.body = body;
-    this.status = init?.status ?? 200;
-    // Headers are accepted but not stored as they're not used in tests
-    void init?.headers;
-  }
+    constructor(body: unknown, init?: { status?: number; headers?: HeadersInit }) {
+      this.body = body;
+      this.status = init?.status ?? 200;
+      // Headers are accepted but not stored as they're not used in tests
+      void init?.headers;
+    }
 
-  async json() {
-    return this.body;
-  }
+    async json() {
+      return this.body;
+    }
 
-  static json(data: unknown, init?: { status?: number; headers?: HeadersInit }) {
-    return new MockNextResponse(data, init);
+    static json(data: unknown, init?: { status?: number; headers?: HeadersInit }) {
+      return new MockNextResponse(data, init);
+    }
   }
-}
+  return { MockNextResponse };
+});
 
 // Mock next/server before importing the module
-jest.mock('next/server', () => ({
+vi.mock('next/server', () => ({
   NextResponse: MockNextResponse,
 }));
 
 // Mock the logger
-jest.mock('../logger', () => ({
+vi.mock('../logger', () => ({
   logger: {
-    error: jest.fn(),
-    info: jest.fn(),
-    debug: jest.fn(),
+    error: vi.fn(),
+    info: vi.fn(),
+    debug: vi.fn(),
   },
 }));
 
@@ -219,14 +222,14 @@ describe('api-errors', () => {
   });
 
   describe('handleApiError', () => {
-    const originalEnv = process.env.NODE_ENV;
+    const originalStage = process.env.NEXT_PUBLIC_STAGE;
 
     afterEach(() => {
-      Object.defineProperty(process.env, 'NODE_ENV', {
-        value: originalEnv,
-        writable: true,
-        configurable: true,
-      });
+      if (originalStage === undefined) {
+        delete process.env.NEXT_PUBLIC_STAGE;
+      } else {
+        process.env.NEXT_PUBLIC_STAGE = originalStage;
+      }
     });
 
     it('should handle ZodError', async () => {
@@ -246,11 +249,7 @@ describe('api-errors', () => {
     });
 
     it('should handle standard Error in development', async () => {
-      Object.defineProperty(process.env, 'NODE_ENV', {
-        value: 'development',
-        writable: true,
-        configurable: true,
-      });
+      process.env.NEXT_PUBLIC_STAGE = 'dev';
       const error = new Error('Something went wrong');
 
       const response = handleApiError(error);
@@ -261,11 +260,7 @@ describe('api-errors', () => {
     });
 
     it('should hide error details in production', async () => {
-      Object.defineProperty(process.env, 'NODE_ENV', {
-        value: 'production',
-        writable: true,
-        configurable: true,
-      });
+      process.env.NEXT_PUBLIC_STAGE = 'production';
       const error = new Error('Sensitive internal error');
 
       const response = handleApiError(error);
@@ -309,7 +304,7 @@ describe('api-errors', () => {
 
   describe('withApiHandler', () => {
     it('should call handler and return response', async () => {
-      const mockHandler = jest.fn().mockResolvedValue(MockNextResponse.json({ success: true }));
+      const mockHandler = vi.fn().mockResolvedValue(MockNextResponse.json({ success: true }));
 
       const wrappedHandler = withApiHandler(mockHandler);
       const response = await wrappedHandler();
@@ -320,7 +315,7 @@ describe('api-errors', () => {
 
     it('should pass requestId to handler', async () => {
       let receivedRequestId: string | undefined;
-      const mockHandler = jest.fn().mockImplementation((requestId: string) => {
+      const mockHandler = vi.fn().mockImplementation((requestId: string) => {
         receivedRequestId = requestId;
         return MockNextResponse.json({ success: true });
       });
@@ -333,7 +328,7 @@ describe('api-errors', () => {
     });
 
     it('should catch errors and return error response', async () => {
-      const mockHandler = jest.fn().mockRejectedValue(new Error('Handler failed'));
+      const mockHandler = vi.fn().mockRejectedValue(new Error('Handler failed'));
 
       const wrappedHandler = withApiHandler(mockHandler);
       const response = await wrappedHandler();

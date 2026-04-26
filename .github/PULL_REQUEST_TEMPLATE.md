@@ -23,7 +23,7 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my code
 - [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation (update `docs/` when architecture, APIs, or patterns change; see [docs/README.md](../../docs/README.md))
+- [ ] I have made corresponding changes to the documentation (update `architecture/docs/` when architecture, APIs, or patterns change; see [architecture/docs/README.md](../../architecture/docs/README.md))
 - [ ] My changes generate no new warnings
 - [ ] Any dependent changes have been merged and published in downstream modules
 - [ ] I have checked my code and corrected any misspellings

@@ -10,60 +10,62 @@ interface TenantAdminResult {
 }
 
 // Create typed mock function
-const mockRequireTenantAdminFn = jest.fn<Promise<TenantAdminResult | null>, [string]>();
+const { mockRequireTenantAdminFn } = vi.hoisted(() => ({
+  mockRequireTenantAdminFn: vi.fn<(tenantSlug: string) => Promise<TenantAdminResult | null>>(),
+}));
 
 // Mock dependencies before importing
-jest.mock('@/shared/db', () => ({
+vi.mock('@/shared/db', () => ({
   db: {
     query: {
-      tenants: { findFirst: jest.fn() },
-      tenantMemberships: { findFirst: jest.fn(), findMany: jest.fn() },
-      users: { findFirst: jest.fn() },
-      persons: { findFirst: jest.fn(), findMany: jest.fn() },
-      roles: { findMany: jest.fn() },
-      userRoles: { findMany: jest.fn() },
+      tenants: { findFirst: vi.fn() },
+      tenantMemberships: { findFirst: vi.fn(), findMany: vi.fn() },
+      users: { findFirst: vi.fn() },
+      persons: { findFirst: vi.fn(), findMany: vi.fn() },
+      roles: { findMany: vi.fn() },
+      userRoles: { findMany: vi.fn() },
     },
-    select: jest.fn().mockReturnValue({
-      from: jest.fn().mockReturnValue({
-        where: jest.fn().mockResolvedValue([{ total: 0 }]),
+    select: vi.fn().mockReturnValue({
+      from: vi.fn().mockReturnValue({
+        where: vi.fn().mockResolvedValue([{ total: 0 }]),
       }),
     }),
-    insert: jest.fn().mockReturnValue({
-      values: jest.fn().mockReturnValue({
-        returning: jest.fn().mockResolvedValue([{ id: 'new-id' }]),
+    insert: vi.fn().mockReturnValue({
+      values: vi.fn().mockReturnValue({
+        returning: vi.fn().mockResolvedValue([{ id: 'new-id' }]),
       }),
     }),
-    update: jest.fn().mockReturnValue({
-      set: jest.fn().mockReturnValue({
-        where: jest.fn().mockResolvedValue(undefined),
+    update: vi.fn().mockReturnValue({
+      set: vi.fn().mockReturnValue({
+        where: vi.fn().mockResolvedValue(undefined),
       }),
     }),
-    delete: jest.fn().mockReturnValue({
-      where: jest.fn().mockResolvedValue(undefined),
+    delete: vi.fn().mockReturnValue({
+      where: vi.fn().mockResolvedValue(undefined),
     }),
   },
 }));
 
-jest.mock('@/shared/lib/logger', () => ({
-  logger: { error: jest.fn(), info: jest.fn() },
+vi.mock('@/shared/lib/logger', () => ({
+  logger: { error: vi.fn(), info: vi.fn() },
 }));
 
-jest.mock('@/shared/lib/rbac', () => ({
+vi.mock('@/shared/lib/rbac', () => ({
   requireTenantAdmin: mockRequireTenantAdminFn,
 }));
 
-jest.mock('@/shared/lib/tenant', () => ({
-  getTenantBySlug: jest.fn(),
+vi.mock('@/shared/lib/tenant', () => ({
+  getTenantBySlug: vi.fn(),
 }));
 
-jest.mock('next/cache', () => ({
-  revalidatePath: jest.fn(),
+vi.mock('next/cache', () => ({
+  revalidatePath: vi.fn(),
 }));
 
 import { db } from '@/shared/db';
 import { listMembers } from '../members-service';
 
-const mockDb = db as jest.Mocked<typeof db>;
+const mockDb = db as Mocked<typeof db>;
 
 describe('members-service', () => {
   const mockAdminResult: TenantAdminResult = {
@@ -73,7 +75,7 @@ describe('members-service', () => {
   };
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     mockRequireTenantAdminFn.mockResolvedValue(mockAdminResult);
   });
 
@@ -88,7 +90,7 @@ describe('members-service', () => {
     });
 
     it('should return error when tenant not found', async () => {
-      (mockDb.query.tenants.findFirst as jest.Mock).mockResolvedValue(null);
+      (mockDb.query.tenants.findFirst as Mock).mockResolvedValue(null);
 
       const result = await listMembers('non-existent');
 
@@ -108,8 +110,8 @@ describe('members-service', () => {
         },
       ];
 
-      (mockDb.query.tenants.findFirst as jest.Mock).mockResolvedValue(mockTenant);
-      (mockDb.query.tenantMemberships.findMany as jest.Mock).mockResolvedValue(mockMemberships);
+      (mockDb.query.tenants.findFirst as Mock).mockResolvedValue(mockTenant);
+      (mockDb.query.tenantMemberships.findMany as Mock).mockResolvedValue(mockMemberships);
 
       const result = await listMembers('test-tenant', { page: 1, pageSize: 10 });
 
@@ -136,8 +138,8 @@ describe('members-service', () => {
         },
       ];
 
-      (mockDb.query.tenants.findFirst as jest.Mock).mockResolvedValue(mockTenant);
-      (mockDb.query.tenantMemberships.findMany as jest.Mock).mockResolvedValue(mockMemberships);
+      (mockDb.query.tenants.findFirst as Mock).mockResolvedValue(mockTenant);
+      (mockDb.query.tenantMemberships.findMany as Mock).mockResolvedValue(mockMemberships);
 
       const result = await listMembers('test-tenant', { search: 'john' });
 

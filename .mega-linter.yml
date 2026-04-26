@@ -1,8 +1,7 @@
-# MegaLinter configuration for Next.js SaaS AI Template
+# MegaLinter configuration for Afenda
 # More info at https://megalinter.io/latest/config-file/
 # All available variables: https://megalinter.io/latest/config-file/
 ---
-
 # ─── File Filters ─────────────────────────────────────────────────────────────
 
 # Ignore generated and third-party directories
@@ -13,7 +12,7 @@ FILTER_REGEX_EXCLUDE: >-
 # Template repositories have intentional structural duplication across features.
 # Raise threshold to avoid false positives for boilerplate-style code.
 
-COPYPASTE_JSCPD_ARGUMENTS: "--min-lines 20 --min-tokens 150 --threshold 5"
+COPYPASTE_JSCPD_ARGUMENTS: '--min-lines 20 --min-tokens 150 --threshold 5'
 
 # ─── CSS (stylelint) ──────────────────────────────────────────────────────────
 # Use the project's existing stylelint configuration
@@ -45,4 +44,3 @@ REPOSITORY_GRYPE_DISABLE_ERRORS: true
 # trivy: Multi-purpose security scanner.
 # Dockerfile HEALTHCHECK is present; disable hard errors for remaining advisories.
 REPOSITORY_TRIVY_DISABLE_ERRORS: true
-

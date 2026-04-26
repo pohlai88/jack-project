@@ -5,11 +5,11 @@
 import { act, renderHook } from '@testing-library/react';
 
 // Mock next-auth/react
-const mockSignIn = jest.fn();
-const mockSignOut = jest.fn();
-const mockUseSession = jest.fn();
+const mockSignIn = vi.fn();
+const mockSignOut = vi.fn();
+const mockUseSession = vi.fn();
 
-jest.mock('next-auth/react', () => ({
+vi.mock('next-auth/react', () => ({
   signIn: (...args: unknown[]) => mockSignIn(...args),
   signOut: (...args: unknown[]) => mockSignOut(...args),
   useSession: () => mockUseSession(),
@@ -19,7 +19,7 @@ import { useAuth } from '../use-auth';
 
 describe('useAuth', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('when session is loading', () => {

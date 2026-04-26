@@ -13,10 +13,14 @@
 import { and, eq } from 'drizzle-orm';
 import { NextResponse } from 'next/server';
 
-import { getGitHubTenantCredentials } from '@/features/admin/services/github-credentials-service';
-import { GitHubClient } from '@/features/github/lib/client';
-import { GITHUB_PROVIDER_ID } from '@/features/github/lib/constants';
-import { exchangeGitHubCodeForToken, getGitHubCredentials, getGitHubRedirectUri } from '@/features/github/lib/oauth';
+import { getGitHubTenantCredentials } from '@/features/admin';
+import {
+  exchangeGitHubCodeForToken,
+  getGitHubCredentials,
+  getGitHubRedirectUri,
+  GITHUB_PROVIDER_ID,
+  GitHubClient,
+} from '@/features/github';
 import { db } from '@/shared/db';
 import * as schema from '@/shared/db/schema';
 import { auth } from '@/shared/lib/auth';

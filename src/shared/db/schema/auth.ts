@@ -33,7 +33,7 @@ export const tenantRoleEnum = appSchema.enum('tenant_role', ['member', 'manager'
 /**
  * Users table - Auth.js user records
  *
- * Links to persons table via email for Next.js SaaS AI Template-specific data
+ * Links to persons table via email for Afenda-specific data
  */
 export const users = appSchema.table('users', {
   id: text('id')
