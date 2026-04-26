@@ -20,6 +20,19 @@ export default async function Home() {
   const session = await auth();
   const t = await getTranslations('landing');
   const user = session?.user;
+  const pricingPlans = LANDING_PRICING_PLANS.map((plan) => ({
+    ...plan,
+    name: t(`pricing.plans.${plan.id}.name`),
+    description: t(`pricing.plans.${plan.id}.description`),
+    features: [
+      t(`pricing.plans.${plan.id}.features.1`),
+      t(`pricing.plans.${plan.id}.features.2`),
+      t(`pricing.plans.${plan.id}.features.3`),
+      t(`pricing.plans.${plan.id}.features.4`),
+      t(`pricing.plans.${plan.id}.features.5`),
+    ],
+    cta: t(`pricing.plans.${plan.id}.cta`),
+  }));
 
   // Get user's tenant memberships
   const userRoles = user?.roles as Record<string, TenantRole> | undefined;
@@ -124,11 +137,9 @@ export default async function Home() {
         <RevealOnScroll>
           <div className="container mx-auto">
             <h2 id="how-heading" className="text-3xl font-bold text-center mb-4">
-              How it works
+              {t('howItWorks.title')}
             </h2>
-            <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-              Get your team up and running in three simple steps.
-            </p>
+            <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">{t('howItWorks.description')}</p>
             <HowItWorks />
           </div>
         </RevealOnScroll>
@@ -212,7 +223,7 @@ export default async function Home() {
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t('pricing.description')}</p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-20">
-              {LANDING_PRICING_PLANS.map((plan, index) => {
+              {pricingPlans.map((plan, index) => {
                 const planIcons = [User, Users, Crown, Building2];
                 const PlanIcon = planIcons[index] || User;
                 const planColors = [
@@ -291,7 +302,7 @@ export default async function Home() {
                                 ? 'bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl'
                                 : 'hover:scale-[1.02]'
                             }`}
-                            aria-label={`Go to dashboard for ${plan.name}`}
+                            aria-label={plan.cta}
                           >
                             {plan.cta}
                           </Button>
@@ -305,7 +316,7 @@ export default async function Home() {
                                 : 'hover:scale-[1.02]'
                             }`}
                             variant={plan.highlighted ? 'default' : 'outline'}
-                            aria-label={`${plan.cta} for ${plan.name}`}
+                            aria-label={plan.cta}
                           >
                             {plan.cta}
                           </Button>

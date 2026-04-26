@@ -16,13 +16,32 @@ import {
 import { aiProviders } from '@/shared/lib/tenant-settings';
 
 import { useSettings } from './SettingsProvider';
+import type { ConnectionTestResult } from '../../types/connection-test';
+
+function getAIConnectionMessage(result: ConnectionTestResult): string {
+  if (result.ok) {
+    return result.message;
+  }
+
+  if (result.code === 'INVALID_CREDENTIALS') {
+    return result.message || 'The AI provider rejected the provided credentials.';
+  }
+  if (result.code === 'NETWORK_ERROR') {
+    return result.message || 'The AI provider could not be reached. Please try again.';
+  }
+  if (result.code === 'UNSUPPORTED_PROVIDER') {
+    return result.message || 'This AI provider is not supported.';
+  }
+
+  return result.message || 'The AI connection test failed.';
+}
 
 export function AIProviderSettings() {
-  const { ai, settings, setSettings, isPending, handleSave } = useSettings();
+  const { ai, settings, setSettings, isPending, handleSave, tenantSlug } = useSettings();
 
   const [showApiKey, setShowApiKey] = useState(false);
   const [testing, setTesting] = useState(false);
-  const [testResult, setTestResult] = useState<'success' | 'error' | null>(null);
+  const [testResult, setTestResult] = useState<ConnectionTestResult | null>(null);
 
   const handleAIUpdate = (key: keyof NonNullable<typeof settings.ai>, value: unknown) => {
     const newAI = { ...ai, [key]: value };
@@ -34,13 +53,23 @@ export function AIProviderSettings() {
     setTesting(true);
     setTestResult(null);
     try {
-      if (!settings.ai?.provider || !settings.ai?.apiKey) {
-        setTestResult('error');
-      } else {
-        setTestResult('success');
-      }
+      const response = await fetch(`/api/tenants/${tenantSlug}/admin/settings/ai/test`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          provider: ai.provider,
+          apiKey: settings.ai?.apiKey,
+        }),
+      });
+
+      const result = (await response.json()) as ConnectionTestResult;
+      setTestResult(result);
     } catch {
-      setTestResult('error');
+      setTestResult({
+        ok: false,
+        message: 'Unable to run the AI connection test right now.',
+        code: 'UNKNOWN',
+      });
     } finally {
       setTesting(false);
     }
@@ -101,14 +130,14 @@ export function AIProviderSettings() {
               {testing && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
               Test Connection
             </Button>
-            {testResult === 'success' && (
+            {testResult?.ok && (
               <span className="flex items-center text-green-600 text-sm">
-                <CheckCircle className="h-4 w-4 mr-1" /> Connected
+                <CheckCircle className="h-4 w-4 mr-1" /> {getAIConnectionMessage(testResult)}
               </span>
             )}
-            {testResult === 'error' && (
+            {testResult && !testResult.ok && (
               <span className="flex items-center text-red-600 text-sm">
-                <XCircle className="h-4 w-4 mr-1" /> Connection failed
+                <XCircle className="h-4 w-4 mr-1" /> {getAIConnectionMessage(testResult)}
               </span>
             )}
           </div>

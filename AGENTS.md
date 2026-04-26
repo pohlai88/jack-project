@@ -9,7 +9,7 @@ Production-ready Next.js 16 SaaS starter with AI, Auth.js, Drizzle ORM, PostgreS
 - Current engineering doctrine lives in `architecture/doctrine/`.
 - Architecture decisions live in `architecture/adr/`.
 - Architecture test cases live in `architecture/atc/`.
-- `architecture/docs/` is deprecated reference material and must not be treated as authoritative without promotion into doctrine, ADRs, or ATCs.
+- `architecture/docs/` is a deprecated tombstone and must not be treated as authoritative without promotion into doctrine, ADRs, or ATCs.
 
 ## Tech Stack
 
@@ -71,3 +71,17 @@ pnpm doctrine:check
 - ESLint flat config
 - Prettier for formatting
 - Conventional commits
+
+## Codex Caveman
+
+- Caveman is available in this environment as a Codex response-style overlay plus helper skills.
+- Use `/caveman lite` for terse but normal sentence structure.
+- Use `/caveman` for full terse mode.
+- Use `/caveman ultra` for maximum compression.
+- Use `stop caveman` or `normal mode` to disable it.
+- Use `/caveman-help` to show the installed caveman quick reference.
+- Use `/caveman-commit` to generate terse Conventional Commit messages.
+- Use `/caveman-review` to generate one-line review comments with location, problem, and fix.
+- Use `/caveman:compress <file>` only for prose-heavy `.md` or `.txt` files when token reduction matters.
+- `caveman-compress` overwrites the target file and saves a backup as `<file>.original.md`.
+- `caveman-commit` and `caveman-review` generate text only; they do not run git, edit code, or change review state.

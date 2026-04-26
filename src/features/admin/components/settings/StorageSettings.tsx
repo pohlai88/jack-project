@@ -17,13 +17,32 @@ import {
 import { storageProviders } from '@/shared/lib/tenant-settings';
 
 import { useSettings } from './SettingsProvider';
+import type { ConnectionTestResult } from '../../types/connection-test';
+
+function getStorageConnectionMessage(result: ConnectionTestResult): string {
+  if (result.ok) {
+    return result.message;
+  }
+
+  if (result.code === 'INVALID_CREDENTIALS') {
+    return result.message || 'The storage credentials were rejected.';
+  }
+  if (result.code === 'BUCKET_NOT_FOUND') {
+    return result.message || 'The configured bucket could not be found.';
+  }
+  if (result.code === 'NETWORK_ERROR') {
+    return result.message || 'The storage service could not be reached. Please try again.';
+  }
+
+  return result.message || 'The storage connection test failed.';
+}
 
 export function StorageSettings() {
-  const { storage, settings, setSettings, isPending, handleSave } = useSettings();
+  const { storage, settings, setSettings, isPending, handleSave, tenantSlug } = useSettings();
 
   const [showSecretKey, setShowSecretKey] = useState(false);
   const [testing, setTesting] = useState(false);
-  const [testResult, setTestResult] = useState<'success' | 'error' | null>(null);
+  const [testResult, setTestResult] = useState<ConnectionTestResult | null>(null);
 
   const handleStorageUpdate = (key: keyof NonNullable<typeof settings.storage>, value: unknown) => {
     const newStorage = { ...storage, [key]: value };
@@ -35,18 +54,29 @@ export function StorageSettings() {
     setTesting(true);
     setTestResult(null);
     try {
-      if (
-        !settings.storage?.provider ||
-        !settings.storage?.accessKey ||
-        !settings.storage?.secretKey ||
-        !settings.storage?.bucket
-      ) {
-        setTestResult('error');
-      } else {
-        setTestResult('success');
-      }
+      const response = await fetch(`/api/tenants/${tenantSlug}/admin/settings/storage/test`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          provider: storage.provider,
+          endpoint: settings.storage?.endpoint,
+          publicEndpoint: settings.storage?.publicEndpoint,
+          accessKey: settings.storage?.accessKey,
+          secretKey: settings.storage?.secretKey,
+          bucket: settings.storage?.bucket,
+          region: storage.region,
+          forcePathStyle: storage.forcePathStyle,
+        }),
+      });
+
+      const result = (await response.json()) as ConnectionTestResult;
+      setTestResult(result);
     } catch {
-      setTestResult('error');
+      setTestResult({
+        ok: false,
+        message: 'Unable to run the storage connection test right now.',
+        code: 'UNKNOWN',
+      });
     } finally {
       setTesting(false);
     }
@@ -179,14 +209,14 @@ export function StorageSettings() {
               {testing && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
               Test Connection
             </Button>
-            {testResult === 'success' && (
+            {testResult?.ok && (
               <span className="flex items-center text-green-600 text-sm">
-                <CheckCircle className="h-4 w-4 mr-1" /> Connected
+                <CheckCircle className="h-4 w-4 mr-1" /> {getStorageConnectionMessage(testResult)}
               </span>
             )}
-            {testResult === 'error' && (
+            {testResult && !testResult.ok && (
               <span className="flex items-center text-red-600 text-sm">
-                <XCircle className="h-4 w-4 mr-1" /> Connection failed
+                <XCircle className="h-4 w-4 mr-1" /> {getStorageConnectionMessage(testResult)}
               </span>
             )}
           </div>

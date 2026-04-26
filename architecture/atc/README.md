@@ -17,3 +17,4 @@ ATCs should define enforceable expectations for repo structure, boundaries, and 
 | [ATC-0007](./ATC-0007-ui-component-design-system-rules.md)    | UI component and design system rules    |
 | [ATC-0008](./ATC-0008-test-ci-artifact-hygiene.md)            | Test, CI, and artifact hygiene          |
 | [ATC-0009](./ATC-0009-db-remediation-execution-gate.md)       | DB remediation execution gate           |
+| [ATC-0010](./ATC-0010-locale-activation-readiness.md)         | Locale activation readiness             |

@@ -13,6 +13,7 @@ import {
   User,
   Users,
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import { Card, CardContent } from '@/shared/components/ui';
@@ -34,110 +35,85 @@ const FEATURE_ICONS: Record<string, React.ComponentType<{ className?: string }>>
   shield: Shield,
 };
 
+const FEATURE_ICON_KEYS: Record<string, string> = {
+  profile: 'user',
+  assistant: 'message',
+  knowledgeBase: 'file-text',
+  directory: 'users',
+  peopleDirectory: 'search',
+  orgChart: 'git-branch',
+  activityFeed: 'trending',
+  webhooks: 'target',
+  memberManagement: 'users',
+  roles: 'shield',
+  auditLogs: 'file-text',
+  settings: 'target',
+  chat: 'message',
+  vectorSearch: 'search',
+  githubIntegration: 'git-branch',
+  integrationEngine: 'layers',
+};
+
 interface TabData {
   id: string;
-  label: string;
   color: string;
   activeColor: string;
-  description: string;
-  features: Array<{ title: string; description: string; iconKey: string }>;
+  featureKeys: string[];
 }
 
 const TABS: TabData[] = [
   {
     id: 'users',
-    label: 'For Users',
     color: 'hsl(155 70% 45%)',
     activeColor: 'bg-green-500/10 text-green-700 dark:text-green-400 border-green-500/30',
-    description: 'Everything your users need to get started and stay productive.',
-    features: [
-      { title: 'Profile', description: 'Complete user profiles with avatars and GitHub integration.', iconKey: 'user' },
-      {
-        title: 'AI Assistant',
-        description: 'Natural language chat powered by OpenAI or Anthropic.',
-        iconKey: 'message',
-      },
-      {
-        title: 'Knowledge Base',
-        description: "Search and browse your organization's docs and content.",
-        iconKey: 'file-text',
-      },
-      { title: 'Directory', description: 'Find and connect with team members.', iconKey: 'users' },
-    ],
+    featureKeys: ['profile', 'assistant', 'knowledgeBase', 'directory'],
   },
   {
     id: 'team',
-    label: 'For Teams',
     color: 'hsl(231 88% 66%)',
     activeColor: 'bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-500/30',
-    description: 'Collaboration and visibility tools for growing teams.',
-    features: [
-      { title: 'People Directory', description: 'Browse and search team members with filters.', iconKey: 'search' },
-      {
-        title: 'Org Chart',
-        description: 'Visualize team structure and reporting relationships.',
-        iconKey: 'git-branch',
-      },
-      { title: 'Activity Feed', description: 'Real-time updates on team and platform activity.', iconKey: 'trending' },
-      { title: 'Webhooks', description: 'Push events to external systems as things happen.', iconKey: 'target' },
-    ],
+    featureKeys: ['peopleDirectory', 'orgChart', 'activityFeed', 'webhooks'],
   },
   {
     id: 'admin',
-    label: 'Administration',
     color: 'hsl(270 74% 58%)',
     activeColor: 'bg-purple-500/10 text-purple-700 dark:text-purple-400 border-purple-500/30',
-    description: 'Full control for admins managing the platform.',
-    features: [
-      { title: 'Member Management', description: 'Invite, manage, and deactivate team members.', iconKey: 'users' },
-      { title: 'Roles & Permissions', description: 'Fine-grained PBAC with custom role bundles.', iconKey: 'shield' },
-      { title: 'Audit Logs', description: 'Complete trail of all actions across the platform.', iconKey: 'file-text' },
-      { title: 'Settings', description: 'Tenant-level config, branding, and feature flags.', iconKey: 'target' },
-    ],
+    featureKeys: ['memberManagement', 'roles', 'auditLogs', 'settings'],
   },
   {
     id: 'ai',
-    label: 'AI & Integrations',
     color: 'hsl(32 95% 52%)',
     activeColor: 'bg-orange-500/10 text-orange-700 dark:text-orange-400 border-orange-500/30',
-    description: 'Connect AI and external systems to your platform.',
-    features: [
-      { title: 'AI Chat', description: 'Conversational search across all your data.', iconKey: 'message' },
-      { title: 'Vector Search', description: 'Semantic search powered by pgvector embeddings.', iconKey: 'search' },
-      {
-        title: 'GitHub Integration',
-        description: 'Sync user profiles and activity from GitHub.',
-        iconKey: 'git-branch',
-      },
-      {
-        title: 'Integration Engine',
-        description: 'Connect any external system with the sync framework.',
-        iconKey: 'layers',
-      },
-    ],
+    featureKeys: ['chat', 'vectorSearch', 'githubIntegration', 'integrationEngine'],
   },
 ];
 
 export function FeatureTabShowcase() {
-  const [activeTab, setActiveTab] = useState('growth');
-  const tab = TABS.find((t) => t.id === activeTab) ?? TABS[0];
+  const t = useTranslations('landing.featureTabs');
+  const [activeTab, setActiveTab] = useState('users');
+  const tab = TABS.find((item) => item.id === activeTab) ?? TABS[0];
+  const tabFeatures = tab.featureKeys.map((key) => ({
+    title: t(`${tab.id}.features.${key}.title`),
+    description: t(`${tab.id}.features.${key}.description`),
+    iconKey: FEATURE_ICON_KEYS[key],
+  }));
 
   return (
     <div>
       {/* Tab Bar */}
       <div className="flex flex-wrap justify-center gap-2 mb-8">
-        {TABS.map((t) => (
+        {TABS.map((item) => (
           <button
-            key={t.id}
-            onClick={() => setActiveTab(t.id)}
+            key={item.id}
+            onClick={() => setActiveTab(item.id)}
             className={cn(
               'rounded-full px-5 py-2 text-sm font-medium border transition-all duration-200',
-              activeTab === t.id
-                ? t.activeColor
+              activeTab === item.id
+                ? item.activeColor
                 : 'border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/50',
             )}
           >
-            {t.label}
+            {t(`${item.id}.label`)}
           </button>
         ))}
       </div>
@@ -146,9 +122,9 @@ export function FeatureTabShowcase() {
       <div key={tab.id} className="grid md:grid-cols-2 gap-8 items-start entrance-fade">
         {/* Left: Description + Feature List */}
         <div>
-          <p className="text-lg text-muted-foreground mb-6">{tab.description}</p>
+          <p className="text-lg text-muted-foreground mb-6">{t(`${tab.id}.description`)}</p>
           <div className="space-y-3">
-            {tab.features.map((feature) => {
+            {tabFeatures.map((feature) => {
               const Icon = FEATURE_ICONS[feature.iconKey] ?? Sparkles;
               return (
                 <div key={feature.title} className="flex items-start gap-3 group">
@@ -170,10 +146,10 @@ export function FeatureTabShowcase() {
           <div className="h-2 w-full" style={{ background: tab.color }} />
           <CardContent className="p-6">
             <div className="flex items-center gap-2 mb-4">
-              <Badge className={cn('text-xs', tab.activeColor)}>{tab.label}</Badge>
+              <Badge className={cn('text-xs', tab.activeColor)}>{t(`${tab.id}.label`)}</Badge>
             </div>
             <div className="grid grid-cols-2 gap-3">
-              {tab.features.slice(0, 4).map((feature) => {
+              {tabFeatures.slice(0, 4).map((feature) => {
                 const Icon = FEATURE_ICONS[feature.iconKey] ?? Sparkles;
                 return (
                   <div key={feature.title} className="rounded-lg bg-muted/50 p-3 text-center">

@@ -10,5 +10,5 @@ Use `architecture/doctrine/` for durable engineering rules, `architecture/adr/` 
 
 ## Consequences
 
-- `architecture/docs/` remains useful reference material but is not authoritative by default.
+- `architecture/docs/` remains only as a deprecated tombstone; removed historical material can be recovered from git history when needed.
 - New governance rules should be documented in the authority model and enforced when practical.

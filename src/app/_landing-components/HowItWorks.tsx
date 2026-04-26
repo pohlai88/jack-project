@@ -1,30 +1,32 @@
 import { Rocket, Settings2, TrendingUp } from 'lucide-react';
-
-const STEPS = [
-  {
-    step: 1,
-    icon: Settings2,
-    title: 'Deploy & configure',
-    description: 'Deploy the template, create your tenant, configure branding, roles, and connect your AI provider.',
-  },
-  {
-    step: 2,
-    icon: Rocket,
-    title: 'Invite users',
-    description: 'Invite your team members, assign roles, and let them set up their profiles and connect integrations.',
-  },
-  {
-    step: 3,
-    icon: TrendingUp,
-    title: 'Launch with AI',
-    description: 'Connect your knowledge base, enable the AI assistant, set up webhooks, and go live.',
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export function HowItWorks() {
+  const t = useTranslations('landing.howItWorks');
+  const steps = [
+    {
+      step: 1,
+      icon: Settings2,
+      title: t('steps.configure.title'),
+      description: t('steps.configure.description'),
+    },
+    {
+      step: 2,
+      icon: Rocket,
+      title: t('steps.invite.title'),
+      description: t('steps.invite.description'),
+    },
+    {
+      step: 3,
+      icon: TrendingUp,
+      title: t('steps.launch.title'),
+      description: t('steps.launch.description'),
+    },
+  ];
+
   return (
     <div className="grid md:grid-cols-3 gap-8">
-      {STEPS.map((step) => {
+      {steps.map((step) => {
         const Icon = step.icon;
         return (
           <div key={step.step} className="relative text-center">

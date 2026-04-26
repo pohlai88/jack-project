@@ -1,6 +1,7 @@
 'use client';
 
 import { Award, Brain, Search, Sparkles, Target, TrendingUp } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 import { Badge } from '@/shared/components/ui/badge';
 import { cn } from '@/shared/lib/utils';
@@ -25,6 +26,22 @@ import { cn } from '@/shared/lib/utils';
  *   - Smooth ease-out/ease-in-out curves
  */
 export function HeroProductPreview() {
+  const t = useTranslations('landing.heroPreview');
+  const people = [
+    {
+      name: 'Ana García',
+      role: t('people.ana.role'),
+      match: 95,
+      avatarBg: 'linear-gradient(135deg, oklch(58% 0.17 155), oklch(55% 0.14 155))',
+    },
+    {
+      name: 'Marco Rivera',
+      role: t('people.marco.role'),
+      match: 88,
+      avatarBg: 'linear-gradient(135deg, oklch(55% 0.18 290), oklch(52% 0.14 290))',
+    },
+  ];
+
   return (
     <div className="relative w-full max-w-3xl mx-auto min-h-[550px] lg:min-h-[650px]" aria-hidden>
       {/* Dual-layer ambient glow with color gradient */}
@@ -70,7 +87,7 @@ export function HeroProductPreview() {
           }}
         >
           <TrendingUp className="h-4 w-4" aria-hidden />
-          <span>+42% faster onboarding</span>
+          <span>{t('fasterOnboarding')}</span>
         </div>
       </div>
 
@@ -105,8 +122,8 @@ export function HeroProductPreview() {
               JD
             </div>
             <div>
-              <p className="text-sm font-semibold text-foreground">Jane Doe</p>
-              <p className="text-xs text-muted-foreground">Senior Developer</p>
+              <p className="text-sm font-semibold text-foreground">{t('profileCard.personName')}</p>
+              <p className="text-xs text-muted-foreground">{t('profileCard.personRole')}</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-1.5 mb-3">
@@ -127,7 +144,7 @@ export function HeroProductPreview() {
             variant="outline"
             className="text-xs bg-amber-500/10 text-amber-700 border-amber-500/20 hover:bg-amber-500/20"
           >
-            + Leadership
+            {t('profileCard.badge')}
           </Badge>
         </div>
       </div>
@@ -160,12 +177,12 @@ export function HeroProductPreview() {
             >
               <Target className="h-4 w-4" style={{ color: 'oklch(58% 0.17 155)' }} />
             </div>
-            <p className="text-sm font-semibold text-foreground">Platform Activity</p>
+            <p className="text-sm font-semibold text-foreground">{t('activityCard.title')}</p>
           </div>
           <div className="space-y-3">
             <div>
               <div className="flex items-center justify-between text-xs mb-1.5">
-                <span className="text-muted-foreground font-medium">Team velocity</span>
+                <span className="text-muted-foreground font-medium">{t('activityCard.teamVelocity')}</span>
                 <span className="font-bold text-foreground">78%</span>
               </div>
               <div className="h-2 rounded-full bg-muted/60 overflow-hidden">
@@ -181,7 +198,7 @@ export function HeroProductPreview() {
             </div>
             <div>
               <div className="flex items-center justify-between text-xs mb-1.5">
-                <span className="text-muted-foreground font-medium">Delivery</span>
+                <span className="text-muted-foreground font-medium">{t('activityCard.delivery')}</span>
                 <span className="font-bold text-foreground">92%</span>
               </div>
               <div className="h-2 rounded-full bg-muted/60 overflow-hidden">
@@ -226,26 +243,11 @@ export function HeroProductPreview() {
             >
               <Search className="h-4 w-4" style={{ color: 'hsl(var(--primary))' }} />
             </div>
-            <span className="text-sm font-semibold text-foreground">People Finder</span>
+            <span className="text-sm font-semibold text-foreground">{t('peopleFinder.title')}</span>
             <Sparkles className="h-4 w-4 ml-auto text-amber-500 animate-pulse" aria-hidden />
           </div>
           <div className="space-y-2.5">
-            {[
-              {
-                name: 'Ana García',
-                role: 'Staff Engineer',
-                match: 95,
-                avatarColor: 'oklch(58% 0.17 155)',
-                avatarBg: 'linear-gradient(135deg, oklch(58% 0.17 155), oklch(55% 0.14 155))',
-              },
-              {
-                name: 'Marco Rivera',
-                role: 'Tech Lead',
-                match: 88,
-                avatarColor: 'oklch(55% 0.18 290)',
-                avatarBg: 'linear-gradient(135deg, oklch(55% 0.18 290), oklch(52% 0.14 290))',
-              },
-            ].map((person) => (
+            {people.map((person) => (
               <div
                 key={person.name}
                 className="flex items-center gap-3 rounded-xl p-3 transition-colors duration-300 hover:bg-muted/80"
@@ -294,7 +296,7 @@ export function HeroProductPreview() {
           }}
         >
           <Award className="h-4 w-4" aria-hidden />
-          <span>12 integrations</span>
+          <span>{t('integrationsCount')}</span>
         </div>
       </div>
 
@@ -314,7 +316,7 @@ export function HeroProductPreview() {
           }}
         >
           <Brain className="h-4 w-4" aria-hidden />
-          <span>AI insights</span>
+          <span>{t('aiInsights')}</span>
         </div>
       </div>
     </div>

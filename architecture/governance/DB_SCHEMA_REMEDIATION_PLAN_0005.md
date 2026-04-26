@@ -42,7 +42,7 @@ For a later approved DB remediation PR:
 
 1. Inspect live branch state without mutation.
 2. Create a safety branch or backup.
-3. Decide whether runtime should remain `afenda` or revert to `saas_template`.
+3. Apply ADR 0004: runtime remains `afenda`.
 4. If runtime remains `afenda`, create a forward-only corrective migration plan that creates or renames schema objects and moves data safely.
 5. Validate on an isolated branch.
 6. Apply only after explicit approval.

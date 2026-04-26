@@ -12,12 +12,17 @@ Governance records capture promotion reviews and validation evidence for the enf
 - [ATC-0009: DB Remediation Execution Gate](../atc/ATC-0009-db-remediation-execution-gate.md)
 - [Neon Branch Verification Plan 0007](./NEON_BRANCH_VERIFICATION_PLAN_0007.md)
 - [Neon Branch Verification Evidence 0007](./evidence/NEON_BRANCH_VERIFICATION_EVIDENCE_0007.md)
+- [Locale Coverage Expansion Plan 0008](./LOCALE_COVERAGE_EXPANSION_PLAN_0008.md)
+- [Tenant Language Settings Alignment Plan 0009](./TENANT_LANGUAGE_SETTINGS_ALIGNMENT_PLAN_0009.md)
+- [Locale Activation Readiness Checklist 0010](./LOCALE_ACTIVATION_READINESS_CHECKLIST_0010.md)
+- [ATC-0010: Locale Activation Readiness](../atc/ATC-0010-locale-activation-readiness.md)
+- [I18N Locale Activation Snapshot](./evidence/i18n/I18N_LOCALE_ACTIVATION_SNAPSHOT.md)
 
 ## Authority Boundary
 
 - Current doctrine lives in `architecture/doctrine/`.
 - Architecture decisions live in `architecture/adr/`.
 - Architecture test cases live in `architecture/atc/`.
-- `architecture/docs/` remains deprecated reference material.
+- `architecture/docs/` remains a deprecated tombstone.
 - `repo:guard` is the CI authority for promoted enforcement.
 - ESLint remains local feedback unless a rule is also enforced by `repo:guard`.

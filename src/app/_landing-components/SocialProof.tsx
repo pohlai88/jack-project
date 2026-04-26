@@ -9,6 +9,7 @@
 
 import { Star } from 'lucide-react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/shared/components/ui/avatar';
 import { Card } from '@/shared/components/ui/card';
@@ -16,10 +17,8 @@ import { Card } from '@/shared/components/ui/card';
 interface Testimonial {
   id: string;
   name: string;
-  role: string;
   company: string;
   image: string;
-  text: string;
   rating: number;
 }
 
@@ -27,28 +26,22 @@ const testimonials: Testimonial[] = [
   {
     id: '1',
     name: 'Sarah Chen',
-    role: 'VP of Engineering',
     company: 'TechCorp',
     image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
-    text: 'Afenda transformed how we build and automate our workflows. Everything is now transparent and data-driven.',
     rating: 5,
   },
   {
     id: '2',
     name: 'Marcus Johnson',
-    role: 'People Operations Manager',
     company: 'GrowthStudio',
     image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus',
-    text: 'The AI assistant and integration engine saved our team weeks of setup. Shipping our SaaS has never been faster.',
     rating: 5,
   },
   {
     id: '3',
     name: 'Elena Rodriguez',
-    role: 'Director of Talent',
     company: 'InnovateLabs',
     image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Elena',
-    text: 'Finally, a platform where managers can focus on growth instead of spreadsheets. The OKR integration is seamless.',
     rating: 5,
   },
 ];
@@ -57,21 +50,21 @@ const testimonials: Testimonial[] = [
  * Sponsor logos (placeholder grid for future integration)
  */
 const sponsors = [
-  { id: '1', name: 'Sponsor 1', placeholder: true },
-  { id: '2', name: 'Sponsor 2', placeholder: true },
-  { id: '3', name: 'Sponsor 3', placeholder: true },
-  { id: '4', name: 'Sponsor 4', placeholder: true },
+  { id: '1', placeholder: true },
+  { id: '2', placeholder: true },
+  { id: '3', placeholder: true },
+  { id: '4', placeholder: true },
 ];
 
 export function SocialProof() {
+  const t = useTranslations('landing.socialProofSection');
+
   return (
     <div className="space-y-16">
       {/* Testimonials */}
       <div>
-        <h2 className="text-3xl font-bold text-center mb-4">Trusted by teams worldwide</h2>
-        <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-          See how organizations are using Afenda to automate and scale their workflows.
-        </p>
+        <h2 className="text-3xl font-bold text-center mb-4">{t('title')}</h2>
+        <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">{t('description')}</p>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {testimonials.map((testimonial) => (
@@ -84,7 +77,9 @@ export function SocialProof() {
               </div>
 
               {/* Quote */}
-              <p className="text-foreground text-sm leading-relaxed mb-6 flex-1 italic">"{testimonial.text}"</p>
+              <p className="text-foreground text-sm leading-relaxed mb-6 flex-1 italic">
+                "{t(`testimonials.${testimonial.id}.text`)}"
+              </p>
 
               {/* Author */}
               <div className="flex items-center gap-3 pt-4 border-t border-border">
@@ -95,7 +90,7 @@ export function SocialProof() {
                 <div>
                   <p className="text-sm font-semibold text-foreground">{testimonial.name}</p>
                   <p className="text-xs text-muted-foreground">
-                    {testimonial.role} at {testimonial.company}
+                    {t('roleAt', { role: t(`testimonials.${testimonial.id}.role`), company: testimonial.company })}
                   </p>
                 </div>
               </div>
@@ -106,7 +101,7 @@ export function SocialProof() {
 
       {/* Sponsors Section */}
       <div>
-        <h3 className="text-2xl font-bold text-center mb-12">Our partners & sponsors</h3>
+        <h3 className="text-2xl font-bold text-center mb-12">{t('sponsorsTitle')}</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
           {sponsors.map((sponsor) => (
             <div
@@ -115,13 +110,15 @@ export function SocialProof() {
             >
               {sponsor.placeholder ? (
                 <div className="text-center">
-                  <p className="text-xs text-muted-foreground font-medium">{sponsor.name}</p>
-                  <p className="text-[10px] text-muted-foreground/60">Coming soon</p>
+                  <p className="text-xs text-muted-foreground font-medium">
+                    {t('sponsorLabel', { index: sponsor.id })}
+                  </p>
+                  <p className="text-[10px] text-muted-foreground/60">{t('comingSoon')}</p>
                 </div>
               ) : (
                 <Image
                   src={`/logos/${sponsor.id}.svg`}
-                  alt={sponsor.name}
+                  alt={t('sponsorLabel', { index: sponsor.id })}
                   width={48}
                   height={48}
                   className="h-12 w-12 object-contain"
@@ -131,9 +128,9 @@ export function SocialProof() {
           ))}
         </div>
         <p className="text-center text-sm text-muted-foreground mt-8">
-          Interested in sponsoring Afenda?{' '}
+          {t('sponsorCta')}{' '}
           <a href="mailto:sponsors@example.com" className="text-primary hover:underline font-medium">
-            Get in touch
+            {t('sponsorCtaLink')}
           </a>
         </p>
       </div>

@@ -75,18 +75,18 @@ pnpm build
 git diff --check
 ```
 
-## Active Followups
+## Followup Status
 
-The four active review findings are accepted as documented followups.
+The four review findings were accepted as documented followups at promotion time.
 
-They do not block governance promotion because current doctrine checks pass, `repo:guard` passes, fixture coverage is active, full validation passes, and PR 4 introduces no product/runtime change.
+They did not block governance promotion because doctrine checks passed, `repo:guard` passed, fixture coverage was active, full validation passed, and PR 4 introduced no product/runtime change.
 
-Followup candidates:
+Current status:
 
-- Live Neon still has `drizzle` and `saas_template`, while runtime schema points to `afenda`.
-- The baseline migration was rewritten from `saas_template` to `afenda`; existing databases where the baseline is already recorded will not replay it.
-- DevContainer post-create still references deleted `.envrc.example`.
-- DevContainer still installs `pnpm@9`, while package policy requires pnpm 10+.
+- DB schema mismatch remains gated behind the Neon target-identifier stop condition.
+- The baseline migration rewrite remains documented as a historical incident.
+- DevContainer `.envrc.example` drift was resolved in PR 5.
+- DevContainer pnpm major drift was resolved in PR 5.
 
 ## Next Review Triggers
 
@@ -101,7 +101,7 @@ Followup candidates:
 
 - New doctrine may need future observation after several feature PRs.
 - Feature root barrels may still grow too broad over time.
-- `architecture/docs/` remains committed and could attract stale edits.
+- `architecture/docs/` remains as a tombstone; broad deprecated docs should not be recreated.
 - `repo:guard` is filesystem/text-scan based, not AST-based.
 - Script command scanning intentionally ignores prose outside code spans and fenced command blocks.
 - DB checks do not validate live Neon state and must not run migrations.

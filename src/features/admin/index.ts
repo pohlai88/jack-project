@@ -22,6 +22,18 @@ export { SettingsProvider, useSettings } from './components/settings/SettingsPro
 export { StorageSettings } from './components/settings/StorageSettings';
 export { StorageSettingsPageContent } from './components/settings/StorageSettingsPageContent';
 export type { SaveStatus } from './components/settings/SettingsProvider';
+export {
+  consumeConnectionTestRateLimit,
+  resetConnectionTestRateLimitStore,
+  testAIConnection,
+  testStorageConnection,
+} from './services/connection-test-service';
+export type {
+  AIConnectionTestInput,
+  ConnectionTestCode,
+  ConnectionTestResult,
+  StorageConnectionTestInput,
+} from './types/connection-test';
 
 export async function getAdminStats(tenantSlug: string) {
   const { getAdminStats } = await import('./services/admin-stats-service');
