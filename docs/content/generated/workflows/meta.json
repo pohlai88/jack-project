@@ -1,0 +1,6 @@
+{
+  "generated": true,
+  "title": "Workflows",
+  "source": "docs inventory graph",
+  "generatedBy": "pnpm docs:generate"
+}

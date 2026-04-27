@@ -1,0 +1,12 @@
+{
+  "generated": true,
+  "title": "Generated Evidence",
+  "source": "docs inventory graph",
+  "generatedBy": "pnpm docs:generate",
+  "features": "Features",
+  "workflows": "Workflows",
+  "permissions": "Permissions",
+  "api": "Api",
+  "errors": "Errors",
+  "troubleshooting": "Troubleshooting"
+}

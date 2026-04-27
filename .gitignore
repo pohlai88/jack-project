@@ -17,6 +17,8 @@ playwright-report/
 # next.js
 /.next/
 /out/
+/.source/
+/public/_pagefind/
 
 # production
 /build
@@ -64,3 +66,5 @@ next-env.d.ts
 
 # git worktrees
 .worktrees/
+
+.vercel

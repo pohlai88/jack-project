@@ -1,4 +1,5 @@
 import './globals.css';
+import { RootProvider } from 'fumadocs-ui/provider/next';
 import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
@@ -40,10 +41,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={`${dmSans.className} min-h-screen bg-background font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <AuthProvider>
-              <main className="relative flex min-h-screen flex-col">{children}</main>
-              <Toaster richColors closeButton position="bottom-right" />
-            </AuthProvider>
+            <RootProvider>
+              <AuthProvider>
+                <main className="relative flex min-h-screen flex-col">{children}</main>
+                <Toaster richColors closeButton position="bottom-right" />
+              </AuthProvider>
+            </RootProvider>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

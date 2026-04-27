@@ -13,13 +13,16 @@ const featureDeepImportPattern = '@/features/*/*';
 const eslintIgnore = [
   '.git/',
   '.next/',
+  '.source/',
   '.artifacts/',
+  'archive/',
   'node_modules/',
   'dist/',
   'build/',
   'coverage/',
   'megalinter-reports/',
   'playwright-report/',
+  'public/_pagefind/',
   'test-results/',
   'mega-linter.log',
   'tools/',
@@ -171,7 +174,7 @@ const config = typescriptEslint.config(
 );
 
 function getDirectoriesToSort() {
-  const ignoredSortingDirectories = ['.git', '.next', '.vscode', 'node_modules'];
+  const ignoredSortingDirectories = ['.git', '.next', '.source', '.vscode', 'node_modules'];
   return fs
     .readdirSync(process.cwd())
     .filter((file) => fs.statSync(process.cwd() + '/' + file).isDirectory())

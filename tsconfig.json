@@ -23,7 +23,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@tests/*": ["./tests/*"]
+      "@tests/*": ["./tests/*"],
+      "fumadocs-mdx:collections/*": ["./.source/*"]
     },
     "incremental": true,
     "tsBuildInfoFile": ".artifacts/cache/typescript/tsconfig.tsbuildinfo",
@@ -34,6 +35,6 @@
       }
     ]
   },
-  "exclude": ["tools/**/*", "**/*.stories.tsx", "**/*.stories.ts"],
+  "exclude": ["archive/**/*", "tools/**/*", "**/*.stories.tsx", "**/*.stories.ts"],
   "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", ".next/dev/types/**/*.ts"]
 }

@@ -112,7 +112,9 @@ function walkDocs(dir, prefix = '') {
 }
 
 function loadDocsState(root) {
-  const docsRoot = join(root, 'src/features/docs/content');
+  const archivedDocsRoot = join(root, 'archive/legacy-docs/src/features/docs/content');
+  const legacyDocsRoot = join(root, 'src/features/docs/content');
+  const docsRoot = existsSync(archivedDocsRoot) ? archivedDocsRoot : legacyDocsRoot;
   const canonicalDocs = walkDocs(join(docsRoot, CANONICAL_LOCALE));
   const canonicalBySlug = new Map();
 

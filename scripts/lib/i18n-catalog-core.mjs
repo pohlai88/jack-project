@@ -13,7 +13,8 @@ export const I18N_PATHS = {
   generatedDir: 'src/i18n/catalogs/generated',
   messagesDir: 'src/i18n/messages',
   fallbackManifest: 'src/i18n/catalogs/fallback/MANIFEST.json',
-  docsContentDir: 'src/features/docs/content',
+  docsContentDir: 'archive/legacy-docs/src/features/docs/content',
+  legacyDocsContentDir: 'src/features/docs/content',
 };
 
 const CANONICAL_LOCALE = 'en';
@@ -813,7 +814,8 @@ export function checkI18nFallbacks({ root = process.cwd() } = {}) {
     }
   }
 
-  const docsRoot = join(root, I18N_PATHS.docsContentDir);
+  const archivedDocsRoot = join(root, I18N_PATHS.docsContentDir);
+  const docsRoot = existsSync(archivedDocsRoot) ? archivedDocsRoot : join(root, I18N_PATHS.legacyDocsContentDir);
   const canonicalDocs = walkMarkdownFiles(join(docsRoot, CANONICAL_LOCALE));
 
   for (const locale of model.activeLocales) {

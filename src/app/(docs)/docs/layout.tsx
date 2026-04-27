@@ -1,12 +1,18 @@
+import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import type { Metadata } from 'next';
 
-import { DocsLayoutClient } from '@/features/docs';
+import { baseOptions } from '@/docs/runtime/layout.shared';
+import { source } from '@/docs/runtime/source';
 
 export const metadata: Metadata = {
   title: 'Documentation | Afenda',
-  description: 'Complete documentation for the Afenda — guides for members and administrators.',
+  description: 'Afenda documentation evidence generated from governed product truth.',
 };
 
-export default function DocsLayout({ children }: { children: React.ReactNode }) {
-  return <DocsLayoutClient>{children}</DocsLayoutClient>;
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <DocsLayout tree={source.pageTree} {...baseOptions()}>
+      {children}
+    </DocsLayout>
+  );
 }
