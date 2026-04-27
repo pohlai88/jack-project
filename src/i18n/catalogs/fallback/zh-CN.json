@@ -43,8 +43,8 @@
     "pending": "待处理",
     "completed": "已完成",
     "failed": "失败",
-    "active": "活跃",
-    "inactive": "不活跃",
+    "active": "激活",
+    "inactive": "未激活",
     "enabled": "已启用",
     "disabled": "已禁用",
     "required": "必填",
@@ -56,12 +56,12 @@
   },
   "landing": {
     "hero": {
-      "badge": "AI 原生 SaaS 平台",
+      "badge": "以 AI 为核心的 SaaS 平台",
       "title": {
-        "one": "借助 ",
-        "two": "Afenda 构建"
+        "one": "与 ",
+        "two": "Afenda 一起构建"
       },
-      "description": "发布具备认证、AI、集成、团队管理与治理就绪基础的多租户 SaaS 产品。",
+      "description": "部署一个受治理的多租户 SaaS 平台，具备身份认证、AI 工作流、集成、团队管理以及面向企业的控制基础。",
       "cta": {
         "goToDashboard": "前往仪表盘",
         "getStarted": "开始使用",
@@ -70,10 +70,10 @@
       "socialProof": {
         "enterpriseReady": "企业级就绪",
         "aiNative": "AI 原生",
-        "growthFocused": "聚焦增长",
-        "enterpriseDesc": "内置租户隔离、可审计性与基于角色的访问控制。",
+        "growthFocused": "以增长为导向",
+        "enterpriseDesc": "内置租户隔离、可审计性和基于角色的访问控制。",
         "aiNativeDesc": "从第一天起连接助手、知识工作流和集成数据。",
-        "growthDesc": "为需要快速行动且保持控制的团队而设计。"
+        "growthDesc": "为需要快速行动且不失控的团队而设计。"
       }
     },
     "features": {
@@ -81,45 +81,45 @@
       "description": "为用户、团队、管理员、AI 工作流和集成提供实用的 SaaS 基础。"
     },
     "pricing": {
-      "badge": "简洁方案",
-      "title": "从精简开始，可控扩展",
-      "description": "先使用免费演示，然后为成长中的团队和企业部署定制平台。",
+      "badge": "简明方案",
+      "title": "从精简开始，受控扩展",
+      "description": "先免费使用演示，然后根据成长团队和企业部署调整平台。",
       "mostPopular": "最受欢迎",
       "perMonth": "/月",
       "plans": {
         "free": {
-          "name": "免费版",
-          "description": "最多 10 位用户，从核心能力开始。",
+          "name": "免费",
+          "description": "最多 10 名用户。使用基础功能开始。",
           "cta": "开始使用",
           "features": {
-            "1": "最多 10 位用户",
-            "2": "AI 助手（有限）",
+            "1": "最多 10 名用户",
+            "2": "AI 助手（受限）",
             "3": "GitHub 集成",
             "4": "知识库（只读）",
             "5": "社区支持"
           }
         },
         "pro": {
-          "name": "专业版",
-          "description": "适合需要更强能力的成长型团队。",
+          "name": "Pro",
+          "description": "适用于需要更多能力的成长团队。",
           "cta": "开始使用",
           "features": {
             "1": "无限用户",
             "2": "自定义角色与权限",
-            "3": "Webhook 与审计日志",
+            "3": "Webhook 和审计日志",
             "4": "完整知识库",
             "5": "优先支持"
           }
         },
         "enterprise": {
-          "name": "企业版",
+          "name": "Enterprise",
           "description": "适合有高级需求的组织。",
           "cta": "联系我们",
           "features": {
-            "1": "包含专业版全部内容",
-            "2": "SSO (Auth0)",
+            "1": "包含 Pro 的所有功能",
+            "2": "SSO（Auth0）",
             "3": "自定义集成",
-            "4": "SLA 保障",
+            "4": "SLA 保证",
             "5": "专属支持"
           }
         }
@@ -130,27 +130,27 @@
       "items": {
         "try": {
           "question": "Afenda 可以免费试用吗？",
-          "answer": "可以。演示环境功能完整，无需付费即可体验所有能力与示例数据。"
+          "answer": "可以。演示环境功能完整且无需付款。使用示例数据探索所有功能。"
         },
         "startData": {
-          "question": "开始使用需要准备哪些数据？",
-          "answer": "只需要团队名单。你可以导入 CSV、手动邀请成员，或使用批量导入流程。"
+          "question": "我需要哪些数据来开始？",
+          "answer": "只需团队成员名单。您可以导入 CSV、手动邀请成员或使用批量导入流程。"
         },
         "existingTools": {
           "question": "它能与我们现有的工具配合使用吗？",
-          "answer": "平台原生支持 GitHub，并提供灵活的集成框架，可连接 Webhook 和自定义同步适配器。"
+          "answer": "平台默认包含 GitHub，并提供灵活的集成框架以支持 Webhook 和自定义同步适配器。"
         },
         "assistant": {
-          "question": "AI 助手是如何工作的？",
-          "answer": "AI 会利用你的知识库和用户数据来回答问题、搜索文档并提供上下文帮助。支持 OpenAI 和 Anthropic 模型。"
+          "question": "AI 助手如何工作？",
+          "answer": "AI 使用您的知识库和用户数据来回答问题、检索文档并提供上下文帮助。支持 OpenAI 与 Anthropic 模型。"
         },
         "security": {
           "question": "我的数据安全吗？",
-          "answer": "安全。平台从设计上就是多租户架构，租户数据相互隔离，并配有企业级认证与基于权限的访问控制。"
+          "answer": "是的。平台采用多租户设计，具备租户数据隔离、企业级认证和基于权限的访问控制。"
         },
         "migration": {
           "question": "我可以迁移现有数据吗？",
-          "answer": "可以。你可以通过 CSV 导入团队数据，集成引擎也可以按计划同步外部系统。"
+          "answer": "可以。您可以从 CSV 导入团队数据，集成引擎可按计划同步外部系统。"
         }
       }
     },
@@ -162,36 +162,36 @@
       "selectLanguage": "选择语言",
       "theme": "主题",
       "toggleTheme": "切换主题",
-      "toggleMenu": "打开菜单",
+      "toggleMenu": "切换菜单",
       "themeOptions": {
         "light": "浅色",
         "dark": "深色",
-        "system": "跟随系统"
+        "system": "系统"
       },
       "bookDemo": "预约演示"
     },
     "howItWorks": {
-      "title": "如何运作",
-      "description": "只需三个简单步骤，即可让团队投入使用。",
+      "title": "工作原理",
+      "description": "三步让团队快速上线。",
       "steps": {
         "configure": {
-          "title": "部署并配置",
-          "description": "部署模板、创建租户、配置品牌与角色，并连接你的 AI 提供商。"
+          "title": "部署与配置",
+          "description": "部署模板，创建租户，配置品牌、角色并连接 AI 提供商。"
         },
         "invite": {
           "title": "邀请用户",
-          "description": "邀请团队成员、分配角色，并让他们完善个人资料与集成连接。"
+          "description": "邀请团队成员、分配角色，让他们设置个人资料与集成。"
         },
         "launch": {
-          "title": "借助 AI 上线",
-          "description": "连接知识库、启用 AI 助手、配置 Webhook，然后正式上线。"
+          "title": "启用 AI 上线",
+          "description": "连接知识库，启用 AI 助手，配置 Webhook 并上线。"
         }
       }
     },
     "featureTabs": {
       "users": {
         "label": "面向用户",
-        "description": "用户开始使用并保持高效所需的一切。",
+        "description": "用户开始并保持高效所需的一切。",
         "features": {
           "profile": {
             "title": "个人资料",
@@ -199,7 +199,7 @@
           },
           "assistant": {
             "title": "AI 助手",
-            "description": "由 OpenAI 或 Anthropic 驱动的自然语言对话。"
+            "description": "由 OpenAI 或 Anthropic 驱动的自然语言聊天。"
           },
           "knowledgeBase": {
             "title": "知识库",
@@ -207,35 +207,35 @@
           },
           "directory": {
             "title": "目录",
-            "description": "查找并联系团队成员。"
+            "description": "查找并连接团队成员。"
           }
         }
       },
       "team": {
         "label": "面向团队",
-        "description": "适用于成长型团队的协作与可视化工具。",
+        "description": "为成长团队提供协作与可视化工具。",
         "features": {
           "peopleDirectory": {
             "title": "人员目录",
-            "description": "使用筛选条件浏览和搜索团队成员。"
+            "description": "使用筛选器浏览并查找团队成员。"
           },
           "orgChart": {
             "title": "组织结构图",
             "description": "可视化团队结构与汇报关系。"
           },
           "activityFeed": {
-            "title": "活动动态",
-            "description": "实时查看团队和平台活动更新。"
+            "title": "活动流",
+            "description": "关于团队与平台活动的实时更新。"
           },
           "webhooks": {
             "title": "Webhook",
-            "description": "在事件发生时将其推送到外部系统。"
+            "description": "在事件发生时向外部系统推送通知。"
           }
         }
       },
       "admin": {
         "label": "管理",
-        "description": "为平台管理员提供完整控制能力。",
+        "description": "为管理平台的管理员提供全面控制。",
         "features": {
           "memberManagement": {
             "title": "成员管理",
@@ -243,67 +243,67 @@
           },
           "roles": {
             "title": "角色与权限",
-            "description": "支持自定义角色包的精细化 PBAC。"
+            "description": "细粒度 PBAC，支持自定义角色包。"
           },
           "auditLogs": {
             "title": "审计日志",
-            "description": "完整追踪平台中的所有操作。"
+            "description": "记录平台上的所有操作轨迹。"
           },
           "settings": {
             "title": "设置",
-            "description": "租户级配置、品牌样式与功能开关。"
+            "description": "租户级配置、品牌与功能开关。"
           }
         }
       },
       "ai": {
         "label": "AI 与集成",
-        "description": "将 AI 和外部系统连接到你的平台。",
+        "description": "将 AI 与外部系统连接到您的平台。",
         "features": {
           "chat": {
-            "title": "AI 对话",
-            "description": "基于全部数据进行会话式搜索。"
+            "title": "AI 聊天",
+            "description": "跨所有数据的对话式检索。"
           },
           "vectorSearch": {
-            "title": "向量搜索",
-            "description": "由 pgvector embedding 驱动的语义搜索。"
+            "title": "向量检索",
+            "description": "由 pgvector 嵌入驱动的语义搜索。"
           },
           "githubIntegration": {
             "title": "GitHub 集成",
-            "description": "从 GitHub 同步用户资料与活动。"
+            "description": "同步用户资料与来自 GitHub 的活动。"
           },
           "integrationEngine": {
             "title": "集成引擎",
-            "description": "通过同步框架连接任何外部系统。"
+            "description": "通过同步框架连接任意外部系统。"
           }
         }
       }
     },
     "socialProofSection": {
-      "title": "全球团队正在使用 Afenda",
-      "description": "看看各类组织如何使用 Afenda 自动化并扩展其工作流程。",
-      "roleAt": "{company}{role}",
-      "sponsorsTitle": "合作伙伴与赞助方",
+      "title": "全球团队的信赖之选",
+      "description": "查看组织如何使用 Afenda 自动化并扩展其工作流。",
+      "roleAt": "{role} 于 {company}",
+      "sponsorsTitle": "我们的合作伙伴与赞助商",
       "sponsorLabel": "合作伙伴 {index}",
-      "comingSoon": "即将推出",
-      "sponsorCta": "想要赞助 Afenda？",
+      "comingSoon": "敬请期待",
+      "sponsorCta": "有兴趣赞助 Afenda 吗？",
       "sponsorCtaLink": "联系我们",
       "testimonials": {
         "1": {
           "role": "工程副总裁",
-          "text": "Afenda 改变了我们构建与自动化工作流的方式。现在一切都更透明，也更以数据为基础。"
+          "text": "Afenda 改变了我们构建和自动化工作流的方式。一切现在都透明且以数据驱动。"
         },
         "2": {
-          "role": "人员运营经理",
-          "text": "AI 助手和集成引擎为团队节省了数周的搭建时间。发布我们的 SaaS 从未如此高效。"
+          "role": "人事运营经理",
+          "text": "AI 助手和集成引擎为我们的团队节省了数周的设置时间。我们的 SaaS 上线从未如此迅速。"
         },
         "3": {
           "role": "人才总监",
-          "text": "终于有一个平台让管理者能把注意力放在增长上，而不是表格上。OKR 集成非常顺滑。"
+          "text": "终于有了一个平台，让经理们可以专注于增长而不是电子表格。OKR 集成非常顺畅。"
         }
       }
     },
     "footer": {
-      "blurb": "面向生产环境的 Next.js SaaS 模板，内置多租户、AI 与集成能力。",
+      "blurb": "面向生产的 SaaS 平台基础，具备多租户、AI 工作流、集成与治理就绪的控制能力。",
       "sections": {
         "product": "产品",
         "resources": "资源",
@@ -312,20 +312,20 @@
       "links": {
         "features": "功能",
         "pricing": "定价",
-        "howItWorks": "如何运作",
+        "howItWorks": "工作原理",
         "documentation": "文档",
-        "blog": "博客（即将推出）",
-        "changelog": "更新日志（即将推出）",
-        "about": "关于我们（即将推出）",
-        "contact": "联系我们（即将推出）",
-        "privacy": "隐私（即将推出）",
-        "terms": "条款（即将推出）"
+        "blog": "博客（敬请期待）",
+        "changelog": "更新日志（敬请期待）",
+        "about": "关于（敬请期待）",
+        "contact": "联系（敬请期待）",
+        "privacy": "隐私（敬请期待）",
+        "terms": "条款（敬请期待）"
       },
-      "builtWith": "基于 Next.js、Tailwind CSS 和 Drizzle ORM 构建。",
-      "socialComingSoon": "{name}（即将推出）"
+      "builtWith": "基于 Next.js、Tailwind CSS 与 Drizzle ORM 构建。",
+      "socialComingSoon": "{name}（敬请期待）"
     },
     "heroPreview": {
-      "fasterOnboarding": "+42% 更快完成入职",
+      "fasterOnboarding": "入职速度提升 +42%",
       "profileCard": {
         "personName": "Jane Doe",
         "personRole": "高级开发工程师",
@@ -334,10 +334,10 @@
       "activityCard": {
         "title": "平台活动",
         "teamVelocity": "团队速度",
-        "delivery": "交付情况"
+        "delivery": "交付"
       },
       "peopleFinder": {
-        "title": "人才搜索"
+        "title": "人员查找"
       },
       "people": {
         "ana": {
@@ -372,7 +372,7 @@
     "dashboard": "仪表盘",
     "profile": "个人资料",
     "settings": "设置",
-    "admin": "管理后台",
+    "admin": "管理",
     "members": "团队成员",
     "team": "团队",
     "assistant": "助手",
@@ -385,7 +385,7 @@
     "directory": "目录",
     "manager": "经理",
     "knowledgeBase": "知识库",
-    "myProfile": "我的个人资料",
+    "myProfile": "我的资料",
     "integrations": "集成"
   },
   "profile": {
@@ -394,69 +394,69 @@
     "aboutMe": "关于我",
     "connectedAccounts": "已连接账户",
     "manageAccounts": "管理",
-    "completionTitle": "资料完整度",
-    "completionDescription": "完成这些步骤以充分利用平台功能",
+    "completionTitle": "资料完成度",
+    "completionDescription": "完成以下步骤以充分利用平台功能",
     "completeProfile": "完善资料",
     "editProfile": "编辑资料",
     "viewProfile": "查看资料",
     "backToDashboard": "返回仪表盘",
     "settings": {
       "pageTitle": "资料设置",
-      "pageDescription": "编辑个人信息和已连接的账户。",
+      "pageDescription": "编辑您的个人信息和已连接账户。",
       "backToProfile": "资料",
       "currentPage": "设置",
       "identityTitle": "身份信息",
-      "identityDescription": "由您的组织管理的基本身份信息。",
+      "identityDescription": "由您的组织管理的基础身份信息。",
       "name": "姓名",
       "email": "工作邮箱",
       "jobTitle": "职位",
-      "identityHint": "这些字段由管理员管理。如需更改请联系管理员。",
+      "identityHint": "这些字段由您的管理员管理。如需更改，请联系管理员。",
       "personalInfoTitle": "个人信息",
-      "personalInfoDescription": "更新您的个人信息。这些信息会显示给您的团队。",
+      "personalInfoDescription": "更新您的个人详细信息。这些信息对您的团队可见。",
       "pronouns": "代词",
-      "pronounsPlaceholder": "例如：他/他的、她/她的、他们/他们的",
-      "location": "位置",
-      "locationPlaceholder": "例如：上海市，中国",
+      "pronounsPlaceholder": "例如 he/him、she/her、they/them",
+      "location": "地点",
+      "locationPlaceholder": "例如 Buenos Aires, Argentina",
       "timezone": "时区",
-      "timezonePlaceholder": "例如：Asia/Shanghai",
+      "timezonePlaceholder": "例如 America/Argentina/Buenos_Aires",
       "phoneNumber": "电话号码",
-      "phoneNumberPlaceholder": "+86 21 1234-5678",
+      "phoneNumberPlaceholder": "+54 11 1234-5678",
       "personalEmail": "个人邮箱",
-      "personalEmailHint": "可选。用于非工作联系的备用邮箱。",
+      "personalEmailHint": "可选。用于非工作沟通的备用邮箱。",
       "personalEmailPlaceholder": "personal@example.com",
       "bio": "简介",
-      "bioPlaceholder": "向团队介绍你自己...",
-      "connectedAccountsTitle": "已连接的账户",
+      "bioPlaceholder": "向团队介绍一下您自己...",
+      "connectedAccountsTitle": "已连接账户",
       "connectedAccountsDescription": "连接外部资料以丰富平台数据。",
       "githubUsername": "GitHub 用户名",
-      "githubUsernameHint": "你的 GitHub 用户名（例如 'octocat'）。用于跟踪贡献。",
-      "githubUsernamePlaceholder": "例如：octocat",
+      "githubUsernameHint": "您的 GitHub 用户名（例如 “octocat”）。用于跟踪贡献。",
+      "githubUsernamePlaceholder": "例如 octocat",
       "viewProfile": "查看",
       "linkedinUrl": "LinkedIn 个人资料 URL",
-      "linkedinUrlHint": "你的完整 LinkedIn 个人资料 URL。",
-      "linkedinUrlPlaceholder": "https://linkedin.com/in/您的用户名",
+      "linkedinUrlHint": "您的完整 LinkedIn 个人资料 URL。",
+      "linkedinUrlPlaceholder": "https://linkedin.com/in/your-name",
       "saved": "资料更新成功！",
       "saveError": "更新资料失败。请重试。",
       "saveChanges": "保存更改",
       "connectGitHub": "连接 GitHub",
-      "disconnectGitHub": "断开连接",
-      "disconnectGitHubConfirm": "确定要断开 GitHub 连接吗？",
+      "disconnectGitHub": "断开 GitHub",
+      "disconnectGitHubConfirm": "确定要断开您的 GitHub 连接吗？",
       "githubConnectedAs": "已连接为 @{username}",
       "githubNotConnected": "未连接",
-      "connectGitHubHint": "连接以自动同步你的仓库和贡献记录。",
-      "connectGitHubConnectedHint": "你的 GitHub 账户已连接。",
+      "connectGitHubHint": "连接后可自动同步您的仓库和贡献。",
+      "connectGitHubConnectedHint": "您的 GitHub 已连接。",
       "orManualEntry": "或手动输入",
       "connectLinkedIn": "连接 LinkedIn",
-      "disconnectLinkedIn": "断开 LinkedIn 连接",
-      "disconnectLinkedInConfirm": "确定要断开 LinkedIn 连接吗？",
+      "disconnectLinkedIn": "断开 LinkedIn",
+      "disconnectLinkedInConfirm": "确定要断开 LinkedIn 吗？",
       "linkedinConnectedAs": "已连接为 {name}",
       "linkedinNotConnected": "未连接",
       "connectLinkedInHint": "连接以验证 LinkedIn 身份并导入头像。",
-      "connectLinkedInConnectedHint": "你的 LinkedIn 账户已连接并验证。"
+      "connectLinkedInConnectedHint": "您的 LinkedIn 已连接并通过验证。"
     },
-    "addBio": "在资料中添加简介",
+    "addBio": "为您的资料添加简介",
     "uploadAvatar": "上传头像",
-    "connectGitHub": "连接你的 GitHub 账户",
+    "connectGitHub": "连接您的 GitHub 帐户",
     "inviteTeamMember": "邀请团队成员",
     "bio": "简介",
     "contact": "联系方式"
@@ -466,14 +466,14 @@
     "dashboard": "仪表盘",
     "analytics": "分析",
     "orgAnalytics": "组织分析",
-    "orgAnalyticsDesc": "组织范围的指标与洞察",
+    "orgAnalyticsDesc": "跨组织的指标与洞察",
     "settings": "设置",
     "members": "团队成员",
     "invites": "邀请",
     "organization": "组织",
     "departments": "部门",
     "system": "系统",
-    "rolesAndPermissions": "角色与权限",
+    "rolesAndPermissions": "角色和权限",
     "auditLogs": "审计日志",
     "integrations": "集成",
     "total": "总计",
@@ -483,20 +483,20 @@
       "description": "连接外部工具并查看已同步的数据。",
       "connectedSection": "已连接",
       "availableSection": "可用",
-      "comingSoonSection": "即将推出",
+      "comingSoonSection": "敬请期待",
       "configure": "配置",
       "learnMore": "了解更多",
       "lastSync": "上次同步：{date}",
       "statusConnected": "已连接",
       "statusNotConnected": "未连接",
-      "statusComingSoon": "即将推出",
+      "statusComingSoon": "敬请期待",
       "statusInDevelopment": "开发中",
       "statusEnabled": "已启用",
       "statusNotConfigured": "未配置",
       "lastSyncNever": "从未",
       "webhooks": {
-        "name": "Webhooks",
-        "description": "将事件通知发送到外部服务，如 Slack、Zapier 或自定义 API。"
+        "name": "Webhook",
+        "description": "向 Slack、Zapier 或您的自定义 API 等外部服务发送事件通知。"
       },
       "github": {
         "name": "GitHub",
@@ -508,7 +508,7 @@
       },
       "linkedin": {
         "name": "LinkedIn",
-        "description": "连接 LinkedIn 账户以进行身份验证和资料丰富。"
+        "description": "连接 LinkedIn 以验证身份并丰富资料。"
       },
       "googleWorkspace": {
         "name": "Google Workspace",
@@ -516,18 +516,18 @@
       },
       "slack": {
         "name": "Slack",
-        "description": "连接 Slack 以接收团队通知和工作流更新。"
+        "description": "连接 Slack 以获取团队通知和工作流更新。"
       }
     },
     "integrationsControl": {
       "title": "集成控制面板",
-      "description": "运行同步、监控运行并解决不同提供商之间的冲突。",
-      "provider": "提供商",
+      "description": "运行同步、监控运行并在供应商之间解决冲突。",
+      "provider": "供应商",
       "mode": "模式",
       "incremental": "增量同步",
       "full": "完整迁移",
       "reconcile": "对账",
-      "dryRun": "试运行",
+      "dryRun": "演练运行",
       "entities": "实体（逗号分隔）",
       "fromDate": "起始日期",
       "toDate": "结束日期",
@@ -539,39 +539,39 @@
       "unknownError": "未知错误",
       "metrics": "指标（14 天）",
       "runsTotal": "运行总数：{value}",
-      "runsCompleted": "完成运行：{value}",
+      "runsCompleted": "已完成运行：{value}",
       "runsFailed": "失败运行：{value}",
       "conflictsOpenCount": "未解决冲突：{value}",
       "avgRunTimeSeconds": "平均运行时间（秒）：{value}",
-      "noMetrics": "暂无可用指标。",
+      "noMetrics": "暂无指标。",
       "readiness": "切换准备度",
       "readinessReady": "准备好切换",
       "readinessNotReady": "尚未准备好切换",
       "recentRuns": "最近运行",
-      "noRuns": "尚无运行记录。",
+      "noRuns": "尚无运行。",
       "openConflicts": "未解决冲突",
-      "noConflicts": "无未解决冲突。",
-      "resolve": "处理",
-      "fieldMappings": "字段归属映射",
-      "mappingEntityPlaceholder": "实体类型（例如：record）",
-      "mappingFieldPlaceholder": "字段路径（例如：status）",
-      "ownershipRemote": "远程为权威",
-      "ownershipLocal": "本地为权威",
+      "noConflicts": "暂无未解决冲突。",
+      "resolve": "解决",
+      "fieldMappings": "字段所有权映射",
+      "mappingEntityPlaceholder": "实体类型（例如 record）",
+      "mappingFieldPlaceholder": "字段路径（例如 status）",
+      "ownershipRemote": "远程权威",
+      "ownershipLocal": "本地权威",
       "ownershipMerge": "合并",
       "ownershipAppendOnly": "仅追加",
       "saveMapping": "保存映射",
-      "noMappings": "未配置映射。"
+      "noMappings": "尚未配置映射。"
     },
     "github": {
       "title": "GitHub",
       "description": "连接 GitHub 以跟踪仓库并同步数据。",
       "credentials": {
         "title": "OAuth 应用凭证",
-        "description": "输入你的 GitHub OAuth 应用凭证。在 github.com/settings/developers 创建。",
+        "description": "输入您的 GitHub OAuth 应用凭证。在 github.com/settings/developers 创建一个应用。",
         "clientId": "Client ID",
-        "clientIdHint": "来自 GitHub OAuth 应用设置的 Client ID。",
+        "clientIdHint": "来自您 GitHub OAuth 应用设置的 Client ID。",
         "clientSecret": "Client Secret",
-        "clientSecretHint": "来自 GitHub OAuth 应用设置的 Client Secret。",
+        "clientSecretHint": "来自您 GitHub OAuth 应用设置的 Client Secret。",
         "testCredentials": "验证凭证",
         "testSuccess": "凭证看起来有效",
         "testFailed": "验证失败",
@@ -586,33 +586,33 @@
       "settings": {
         "connectionStatus": "连接状态",
         "connectedAs": "已连接为 @{username}",
-        "notConnected": "未连接到 GitHub。点击连接以开始 OAuth 流程。",
+        "notConnected": "尚未连接到 GitHub。点击连接以开始 OAuth 流程。",
         "connect": "连接 GitHub",
         "reconnect": "重新连接",
         "disconnect": "断开连接",
-        "confirmDisconnect": "确定要断开 GitHub 吗？此操作将撤销已存储的访问令牌。",
+        "confirmDisconnect": "确定要断开 GitHub 吗？此操作将撤销存储的访问令牌。",
         "integrationSettings": "集成设置",
         "integrationSettingsDesc": "配置 GitHub 数据如何同步到平台。",
         "enableIntegration": "启用集成",
-        "enableIntegrationDesc": "开启以启用从 GitHub 的数据同步。",
+        "enableIntegrationDesc": "启用以开始从 GitHub 同步数据。",
         "organizationFilter": "组织筛选",
-        "organizationFilterDesc": "可选：限制同步到特定 GitHub 组织的成员。",
-        "organizationFilterPlaceholder": "例如：my-company",
+        "organizationFilterDesc": "可选地限制为特定 GitHub 组织的成员进行同步。",
+        "organizationFilterPlaceholder": "例如 my-company",
         "syncRepositories": "同步仓库",
-        "syncRepositoriesDesc": "扫描仓库并收集语言统计。",
+        "syncRepositoriesDesc": "扫描仓库并收集语言统计信息。",
         "syncContributions": "同步贡献",
         "syncContributionsDesc": "按人跟踪提交、拉取请求和代码审查。",
         "includeArchived": "包含已归档仓库",
         "includeArchivedDesc": "扫描时包含已归档仓库。",
         "includeForks": "包含 Fork 仓库",
-        "includeForksDesc": "扫描时包含 Fork 的仓库。",
+        "includeForksDesc": "扫描时包含 Fork 仓库。",
         "lookbackDays": "贡献回溯天数",
         "lookbackDaysDesc": "回溯多少天扫描贡献（30-730）。",
         "saved": "设置已保存",
         "saveError": "保存设置失败",
         "saveSettings": "保存设置",
         "disabledWarningTitle": "集成已禁用",
-        "disabledWarningDesc": "GitHub 已连接但被禁用。启用后开始同步数据。",
+        "disabledWarningDesc": "GitHub 已连接但被禁用。启用以开始同步数据。",
         "envConfigured": "来自环境的 OAuth 凭证",
         "envConfiguredDesc": "GitHub OAuth 凭证从环境变量加载（GITHUB_INTEGRATION_CLIENT_ID、GITHUB_INTEGRATION_CLIENT_SECRET）。无需额外凭证配置。",
         "inferSkills": "推断技能",
@@ -621,50 +621,50 @@
     },
     "linkedin": {
       "title": "LinkedIn",
-      "description": "连接 LinkedIn 账户以进行身份验证和资料丰富。",
+      "description": "连接 LinkedIn 以验证身份并丰富资料。",
       "notConfiguredTitle": "集成未配置",
       "notConfiguredDesc": "配置 LinkedIn OAuth 凭证以启用此集成。在 linkedin.com/developers/apps 创建应用。",
       "credentials": {
         "title": "LinkedIn OAuth 凭证",
-        "description": "输入你的 LinkedIn OAuth 应用的 Client ID 和 secret。在 LinkedIn 开发者门户创建应用。",
+        "description": "输入您的 LinkedIn OAuth 应用的 Client ID 与 Secret。在 LinkedIn 开发者门户创建应用。",
         "clientId": "Client ID",
         "clientIdHint": "在 LinkedIn 应用设置的 Auth 选项卡中可找到。",
         "clientIdTooShort": "Client ID 太短",
         "clientSecret": "Client Secret",
-        "clientSecretHint": "来自你的 LinkedIn 应用的主 Client Secret。",
+        "clientSecretHint": "来自您 LinkedIn 应用的主 Client Secret。",
         "clientSecretTooShort": "Client Secret 太短",
-        "testCredentials": "测试凭证",
+        "testCredentials": "测试凭据",
         "testSuccess": "格式有效",
         "testFailed": "验证失败",
         "saveCredentials": "保存凭证",
         "saveFailed": "保存凭证失败",
         "envConfigured": "检测到环境变量",
-        "envConfiguredDesc": "LinkedIn 凭证通过环境变量提供。你可以在下方为租户覆盖这些值。",
+        "envConfiguredDesc": "LinkedIn 凭证通过环境变量提供。您可以在下方用租户级值覆盖。",
         "linkedinDevPortal": "LinkedIn 开发者门户"
       },
       "settings": {
         "connectionStatus": "连接状态",
         "connectedAs": "已连接为 {name}",
-        "notConnected": "尚未连接 LinkedIn。请点击「连接」以验证集成是否可用。",
+        "notConnected": "尚未连接到 LinkedIn。连接以验证集成是否工作。",
         "connect": "连接 LinkedIn",
         "reconnect": "重新连接",
         "disconnect": "断开连接",
         "confirmDisconnect": "确定要断开 LinkedIn 吗？",
         "integrationSettings": "集成设置",
-        "integrationSettingsDesc": "配置 LinkedIn 集成在你组织中的行为。",
+        "integrationSettingsDesc": "配置 LinkedIn 集成在您组织中的行为。",
         "enableIntegration": "启用 LinkedIn 集成",
-        "enableIntegrationDesc": "允许团队成员连接他们的 LinkedIn 账户以丰富资料。",
+        "enableIntegrationDesc": "允许团队成员连接他们的 LinkedIn 帐户以丰富资料。",
         "autoUpdateAvatar": "自动更新头像",
-        "autoUpdateAvatarDesc": "用户连接时自动从 LinkedIn 照片更新头像。",
-        "autoUpdateLocale": "自动更新语言/区域",
-        "autoUpdateLocaleDesc": "用户连接时自动从 LinkedIn 资料设置其语言/区域。",
+        "autoUpdateAvatarDesc": "用户连接后自动从 LinkedIn 更新其个人资料照片。",
+        "autoUpdateLocale": "自动更新区域设置",
+        "autoUpdateLocaleDesc": "用户连接后自动从 LinkedIn 配置其区域设置。",
         "saveSettings": "保存设置",
         "saved": "设置已保存",
         "saveError": "保存设置失败",
         "envConfigured": "检测到环境变量",
         "envConfiguredDesc": "LinkedIn 凭证通过环境变量提供。",
         "disabledWarningTitle": "集成已禁用",
-        "disabledWarningDesc": "LinkedIn 集成当前被禁用。启用后允许团队成员连接 LinkedIn。"
+        "disabledWarningDesc": "LinkedIn 集成当前被禁用。启用以允许团队成员连接 LinkedIn。"
       }
     },
     "settingsTabs": {
@@ -684,7 +684,7 @@
       "role": "角色",
       "department": "部门",
       "status": "状态",
-      "lastActive": "最近活跃",
+      "lastActive": "上次活跃",
       "roles": {
         "admin": "管理员",
         "member": "成员"
@@ -699,7 +699,7 @@
     },
     "invitesPage": {
       "title": "邀请",
-      "description": "管理组织中待处理的邀请",
+      "description": "管理发往您组织的待处理邀请",
       "createInvite": "创建邀请",
       "sendInvite": "发送邀请",
       "email": "电子邮件地址",
@@ -707,8 +707,8 @@
       "lastName": "姓",
       "role": "角色",
       "message": "欢迎信息",
-      "messagePlaceholder": "在邀请中添加个人信息（可选）",
-      "expiration": "有效时长",
+      "messagePlaceholder": "在邀请中添加个性化信息（可选）",
+      "expiration": "过期时间",
       "expirationOptions": {
         "1day": "1 天",
         "3days": "3 天",
@@ -730,22 +730,22 @@
       },
       "confirmRevoke": "确定要撤销此邀请吗？",
       "noInvites": "暂无待处理邀请",
-      "inviteSuccess": "邀请发送成功"
+      "inviteSuccess": "邀请已成功发送"
     },
-    "departmentsPageDescription": "为每个部门分配经理和成员。",
+    "departmentsPageDescription": "为每个部门分配经理与成员",
     "departmentsManageInSettings": "在设置中管理",
-    "departmentsNoDepartments": "尚未配置部门",
-    "departmentsNoDepartmentsHint": "添加部门以组织你的团队。",
+    "departmentsNoDepartments": "尚未配置任何部门",
+    "departmentsNoDepartmentsHint": "添加部门以组织您的团队",
     "departmentsCreateInSettings": "在设置中创建",
     "departmentsAddDepartment": "添加部门",
     "departmentsEdit": "编辑部门",
     "departmentsEditDepartment": "编辑部门",
     "departmentsDelete": "删除部门",
-    "departmentsConfirmDelete": "删除此部门？此操作不可撤销。",
-    "departmentsDeleteDisabledHint": "请先移除所有成员",
-    "departmentsCreateDescription": "创建新部门以组织团队。稍后可分配经理和成员。",
+    "departmentsConfirmDelete": "删除此部门？此操作不可撤销",
+    "departmentsDeleteDisabledHint": "请先删除所有成员",
+    "departmentsCreateDescription": "创建新部门以组织您的团队，您可以稍后分配经理与成员。",
     "departmentsName": "名称",
-    "departmentsNamePlaceholder": "例如：工程",
+    "departmentsNamePlaceholder": "例如：Engineering",
     "departmentsParent": "上级部门",
     "departmentsNoParent": "无",
     "departmentsMembers": "成员",
@@ -757,17 +757,17 @@
     "departmentsAddMember": "添加成员",
     "departmentsRemoveMember": "移除成员",
     "departmentsNoMembers": "未分配成员",
-    "departmentsNoPeople": "此租户中无用户",
+    "departmentsNoPeople": "此租户中暂无人员",
     "departmentsDescription": "描述",
-    "departmentsDescriptionPlaceholder": "可选描述"
+    "departmentsDescriptionPlaceholder": "描述（可选）"
   },
   "settings": {
     "title": "设置",
     "backToUserView": "返回用户视图",
     "general": {
       "title": "组织详情",
-      "description": "租户基础配置",
-      "tenantSlug": "租户 Slug",
+      "description": "租户的基础配置",
+      "tenantSlug": "租户标识",
       "displayName": "显示名称",
       "descriptionLabel": "描述"
     },
@@ -782,74 +782,74 @@
       "title": "部门",
       "description": "定义组织结构",
       "addDepartment": "添加部门",
-      "noDepartments": "尚未配置部门",
-      "noDepartmentsHint": "添加部门以组织团队成员"
+      "noDepartments": "尚未配置任何部门",
+      "noDepartmentsHint": "添加部门来组织团队成员"
     },
     "dangerZone": {
       "title": "危险区",
       "description": "不可撤销的操作",
       "resetSettings": "重置设置",
-      "resetDescription": "将所有设置重置为默认值。此操作不可撤销。",
+      "resetDescription": "将所有设置重置为默认值，此操作不可撤销",
       "confirmReset": "确定要重置所有设置吗？"
     },
-    "saved": "设置保存成功！",
-    "saveFailed": "保存设置失败。请重试。"
+    "saved": "设置已保存！",
+    "saveFailed": "保存设置失败，请重试"
   },
   "validation": {
     "required": "此字段为必填项",
-    "invalidEmail": "无效的电子邮件地址",
+    "invalidEmail": "电子邮件地址无效",
     "minLength": "至少需要 {min} 个字符",
-    "maxLength": "最多允许 {max} 个字符",
-    "invalidUrl": "无效的 URL",
+    "maxLength": "最多 {max} 个字符",
+    "invalidUrl": "URL 无效",
     "fileTooLarge": "文件大小超过 {maxSize}MB 限制",
-    "invalidFileType": "不支持的文件类型",
+    "invalidFileType": "不支持此文件类型",
     "passwordMismatch": "密码不匹配"
   },
   "errors": {
-    "generic": "出现错误",
+    "generic": "发生错误",
     "notFound": "未找到",
     "unauthorized": "未授权",
-    "forbidden": "拒绝访问",
+    "forbidden": "访问被拒绝",
     "serverError": "服务器错误",
     "networkError": "网络错误",
     "tryAgain": "请重试"
   },
   "assistant": {
     "title": "AI 助手",
-    "placeholder": "输入你的消息...",
+    "placeholder": "输入您的消息...",
     "send": "发送",
     "thinking": "思考中...",
-    "error": "出现错误。",
-    "welcome": "你好！我是你的 AI 助手。今天我能帮你做什么？",
-    "suggestedQuestions": "建议问题：",
+    "error": "发生错误",
+    "welcome": "您好！我是您的 AI 助手，需要我帮忙吗？",
+    "suggestedQuestions": "推荐问题：",
     "newConversation": "新对话",
     "noConversations": "暂无对话",
     "suggestions": {
       "findPeople": "查找团队成员",
-      "analyzeGaps": "分析数据",
+      "analyzeGaps": "分析数据缺口",
       "recommend": "获取建议",
       "explore": "探索功能"
     }
   },
   "genui": {
     "loading": "加载中...",
-    "previewNotAvailable": "预览不可用",
+    "previewNotAvailable": "无法显示预览",
     "viewProfile": "查看资料",
     "sendMessage": "发送消息",
     "viewDetails": "查看详情",
-    "showMore": "再显示 {count} 项",
-    "showLess": "收起",
+    "showMore": "显示更多 {count}",
+    "showLess": "显示更少",
     "comparison": "比较",
     "attribute": "属性"
   },
   "dashboard": {
     "title": "仪表盘",
     "welcome": "欢迎来到 {name}",
-    "platformDescription": "你的 AI 原生 SaaS 平台",
+    "platformDescription": "您的 AI 原生 SaaS 平台",
     "adminBadge": "管理员",
-    "adminAccessMessage": "你对该租户拥有管理员权限",
+    "adminAccessMessage": "您对该租户拥有管理员权限",
     "openAdminPanel": "打开管理面板",
-    "profileCompletion": "资料完整度",
+    "profileCompletion": "资料完成度",
     "completeProfile": "完善资料以解锁全部功能",
     "progress": "进度",
     "completeProfileToUnlock": "完善资料以解锁所有功能",
@@ -858,24 +858,24 @@
     "viewAll": "查看全部",
     "noActivity": "暂无最近活动",
     "aiConversations": "AI 对话",
-    "totalInteractions": "总交互次数",
+    "totalInteractions": "总交互数",
     "viewAllActivity": "查看全部活动",
     "teamMembers": "团队成员",
     "activePlatformMembers": "活跃平台成员",
-    "webhooksActive": "Webhook 已启用",
-    "activeWebhookEndpoints": "活跃的 webhook 端点",
+    "webhooksActive": "Webhook 已激活",
+    "activeWebhookEndpoints": "活跃的 Webhook 端点",
     "inviteMember": "邀请成员",
-    "onboardNewTeamMember": "入职新成员",
+    "onboardNewTeamMember": "为新成员入职",
     "viewMembers": "查看成员",
-    "browseTeamMembers": "浏览你的团队成员",
-    "askAIAssistant": "向 AI 助手求助",
-    "commonTasks": "入门常见任务",
-    "yourLatestActions": "你的最近操作",
+    "browseTeamMembers": "浏览您的团队成员",
+    "askAIAssistant": "询问 AI 助手",
+    "commonTasks": "入门常用任务",
+    "yourLatestActions": "您的最近操作",
     "manageSettings": "管理设置",
-    "configureYourTenant": "配置你的租户",
-    "addBio": "在资料中添加简介",
+    "configureYourTenant": "配置您的租户",
+    "addBio": "为您的资料添加简介",
     "uploadAvatar": "上传头像",
-    "connectGitHub": "连接你的 GitHub 账户",
+    "connectGitHub": "连接您的 GitHub 帐户",
     "inviteTeamMember": "邀请团队成员"
   },
   "members": {
@@ -885,12 +885,12 @@
     "editMember": "编辑成员",
     "inviteMember": "邀请成员",
     "searchPlaceholder": "搜索成员...",
-    "namePlaceholder": "张三",
-    "noMembers": "未找到成员"
+    "namePlaceholder": "John Doe",
+    "noMembers": "未找到团队成员"
   },
   "auditLogs": {
     "title": "审计日志",
-    "description": "查看组织中执行的所有操作",
+    "description": "查看在您组织中执行的所有操作",
     "filters": {
       "title": "筛选",
       "clear": "清除",
@@ -911,7 +911,7 @@
     "noResults": "未找到审计事件",
     "export": "导出 CSV",
     "datePresets": {
-      "all": "所有时间",
+      "all": "全部时间",
       "today": "今天",
       "week": "过去 7 天",
       "month": "过去 30 天"
@@ -940,10 +940,10 @@
       "analyticsAudit": "分析与审计",
       "faq": "常见问题"
     },
-    "fallbackNotice": "当前所选语言暂无文档译文，本页暂以英文显示。",
+    "fallbackNotice": "由于所选区域的翻译尚不可用，本页以英文显示",
     "search": {
-      "placeholder": "在文档中搜索...",
-      "hint": "输入以搜索所有文档页面",
+      "placeholder": "搜索文档...",
+      "hint": "输入以在所有文档页面中搜索",
       "noResults": "未找到结果",
       "navigate": "导航",
       "open": "打开",
@@ -951,8 +951,8 @@
       "clear": "清除"
     },
     "pagination": {
-      "previous": "上页",
-      "next": "下页"
+      "previous": "上一步",
+      "next": "下一步"
     },
     "toc": {
       "onThisPage": "本页内容"
@@ -961,24 +961,36 @@
       "breadcrumb": "面包屑导航",
       "navigation": "文档导航",
       "pagination": "文档分页",
-      "toggleSidebar": "切换文档侧边栏"
+      "toggleSidebar": "切换文档侧栏"
+    },
+    "llm": {
+      "copyMarkdownUrl": "复制 Markdown URL",
+      "openMarkdown": "打开 Markdown",
+      "copied": "Markdown URL 已复制到剪贴板",
+      "copiedButton": "已复制",
+      "copyFailed": "无法复制到剪贴板",
+      "assistantHint": "Afenda AI 助手在租户工作区内运行（侧栏 → 助手），对已登录用户可用，启用时可访问组织上下文",
+      "assistantHintAria": "AI 助手的使用",
+      "assistantCta": "打开应用主页面",
+      "navLlmsIndex": "LLM 页面索引",
+      "navLlmsFull": "导出全部 LLM"
     },
     "preview": {
       "title": "实时预览",
-      "invalidBlock": "预览块无效。预期格式：<code>component: Name</code>",
-      "notRegistered": "组件 <code>{component}</code> 未注册用于预览。"
+      "invalidBlock": "预览块无效，期望格式：<code>component: Name</code>",
+      "notRegistered": "组件 <code>{component}</code> 尚未注册以供预览"
     }
   },
   "rawEdit": {
     "formatError": "格式化失败",
-    "formatErrorDesc": "编辑器内容不是有效的 JSON。",
+    "formatErrorDesc": "编辑器中的内容不是有效的 JSON",
     "copied": "已复制",
-    "copiedDesc": "JSON 已复制到剪贴板。",
+    "copiedDesc": "JSON 已复制到剪贴板",
     "copyError": "复制失败",
-    "copyErrorDesc": "无法将 JSON 复制到剪贴板。",
-    "validJson": "有效 JSON",
-    "invalidJson": "无效 JSON",
-    "unsavedChanges": "未保存的更改",
+    "copyErrorDesc": "无法将 JSON 复制到剪贴板",
+    "validJson": "JSON 有效",
+    "invalidJson": "JSON 无效",
+    "unsavedChanges": "存在未保存的更改",
     "reset": "重置",
     "format": "格式化",
     "copy": "复制"

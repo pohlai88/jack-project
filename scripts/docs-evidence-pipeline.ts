@@ -10,7 +10,8 @@ import { docsReleaseStates } from '../src/docs/evidence/manifest';
 import type { DocsManifest } from '../src/docs/evidence/manifest';
 
 const ROOT = process.cwd();
-const GENERATED_ROOT = join(ROOT, 'docs/content/generated');
+const ENGLISH_DOCS_ROOT = join(ROOT, 'docs/content/en');
+const GENERATED_ROOT = join(ENGLISH_DOCS_ROOT, 'generated');
 const SEARCH_SITE_ROOT = join(ROOT, '.artifacts/docs-search-site');
 const MANIFEST_PATTERNS = ['src/docs/docs.manifest.ts', 'src/features/*/docs.manifest.ts'];
 const APP_SURFACE_PATTERNS = ['src/app/**/page.tsx', 'src/app/**/route.ts'];
@@ -321,7 +322,7 @@ export function buildInventoryGraph(model: ValidationModel): DocsInventoryGraph 
 
 function titleCase(value: string): string {
   return value
-    .split(/[-:_/]+/)
+    .split(/[-:_/.]+/)
     .filter(Boolean)
     .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
     .join(' ');
@@ -331,42 +332,124 @@ function frontmatter(title: string, description: string): string {
   return `---\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(description)}\n---\n\n`;
 }
 
+const COMPONENT_IMPORTS = `import { Banner } from 'fumadocs-ui/components/banner';
+import { File, Files, Folder } from 'fumadocs-ui/components/files';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+`;
+
 function bulletList(items: string[]): string {
   if (items.length === 0) return '- None declared.\n';
   return items.map((item) => `- \`${item}\``).join('\n') + '\n';
 }
 
+function textList(items: string[]): string {
+  return items.length > 0 ? items.join(', ') : 'None declared';
+}
+
+function jsxString(value: string): string {
+  return JSON.stringify(value);
+}
+
+function jsxValue(value: unknown): string {
+  return JSON.stringify(value, null, 2);
+}
+
+function typeTable(rows: Record<string, { type: string; description: string; required?: boolean }>): string {
+  const table = Object.fromEntries(
+    Object.entries(rows).map(([name, row]) => [
+      name,
+      {
+        type: row.type,
+        description: row.description,
+        required: row.required ?? true,
+      },
+    ]),
+  );
+
+  return `<TypeTable type={${jsxValue(table)}} />`;
+}
+
+function filesTree(items: string[], folder: string): string {
+  if (items.length === 0) {
+    return `<Files>
+  <Folder name=${jsxString(folder)} defaultOpen>
+    <File name="None declared" />
+  </Folder>
+</Files>`;
+  }
+
+  return `<Files>
+  <Folder name=${jsxString(folder)} defaultOpen>
+${items.map((item) => `    <File name=${jsxString(item)} />`).join('\n')}
+  </Folder>
+</Files>`;
+}
+
+function generatedBanner(id: string, releaseState?: string): string {
+  const suffix = releaseState ? ` Release state: ${releaseState}.` : '';
+  return `<Banner id=${jsxString(id)} changeLayout={false}>
+  GENERATED EVIDENCE - This page is rendered from validated product truth.${suffix}
+</Banner>`;
+}
+
 function generatedMdx(title: string, description: string, body: string): string {
-  return `${frontmatter(title, description)}${GENERATED_HEADER}\n${body.trim()}\n`;
+  return `${frontmatter(title, description)}${COMPONENT_IMPORTS}\n${GENERATED_HEADER}\n${body.trim()}\n`;
 }
 
 function renderFeature(manifest: DocsManifest): RenderedFile {
   const body = `
-## Evidence Status
+${generatedBanner(`feature-${manifest.id}`, manifest.releaseState)}
 
-- Module: ${manifest.module}
-- Owner: ${manifest.owner}
-- Release state: ${manifest.releaseState}
-
-## Summary
+## Executive Summary
 
 ${manifest.summary}
 
-## Routes
+${typeTable({
+  Module: { type: manifest.module, description: 'Product module covered by this evidence page.' },
+  Owner: { type: manifest.owner, description: 'Accountable owner for the feature manifest.' },
+  'Release state': { type: manifest.releaseState, description: 'Release lifecycle state declared by product truth.' },
+  Routes: { type: `${manifest.routes.length} routes`, description: textList(manifest.routes) },
+  Permissions: { type: `${manifest.permissions.length} permissions`, description: textList(manifest.permissions) },
+})}
 
-${bulletList(manifest.routes)}
+<Tabs items={["Routes", "Permissions"]}>
+  <Tab>
 
-## Permissions
+${filesTree(manifest.routes, 'Routes')}
 
-${bulletList(manifest.permissions)}
+  </Tab>
+  <Tab>
+
+${filesTree(manifest.permissions, 'Permissions')}
+
+  </Tab>
+</Tabs>
 
 ## Workflows
 
-${manifest.workflows.map((item) => `- **${item.title}** (\`${item.id}\`): ${item.summary}`).join('\n') || '- None declared.'}
+${manifest.workflows.map((item) => `### ${item.title}\n\n- ID: \`${item.id}\`\n- Summary: ${item.summary}`).join('\n\n') || '- None declared.'}
 
 ## Public Actions
 
-${manifest.actions.map((item) => `- **${item.title}** (\`${item.id}\`): ${item.summary}`).join('\n') || '- None declared.'}
+${manifest.actions.map((item) => `### ${item.title}\n\n- ID: \`${item.id}\`\n- Summary: ${item.summary}`).join('\n\n') || '- None declared.'}
+
+## Operational Evidence
+
+<Steps>
+  <Step>Check the declared owner before changing behavior.</Step>
+  <Step>Confirm route, permission, and API references still exist in the product.</Step>
+  <Step>Run \`pnpm docs:ci\` after manifest or route changes.</Step>
+</Steps>
+
+## APIs
+
+${manifest.apis.map((item) => `- \`${item.method} ${item.route}\` - ${item.summary}`).join('\n') || '- None declared.'}
+
+## Errors
+
+${manifest.errors.map((item) => `- \`${item.code}\` - ${item.title}: ${item.mitigation}`).join('\n') || '- None declared.'}
 `;
 
   return {
@@ -412,7 +495,20 @@ function renderGroupedPages(graph: DocsInventoryGraph): RenderedFile[] {
       content: generatedMdx(
         titleCase(permission),
         `Permission evidence for ${permission}.`,
-        `## Permission\n\n\`${permission}\`\n\n## Covered Features\n\n${bulletList(features)}`,
+        `${generatedBanner(`permission-${permission.replace(/[^a-zA-Z0-9-]/g, '-')}`)}
+
+## Permission
+
+\`${permission}\`
+
+${typeTable({
+  Permission: { type: permission, description: 'Stable permission key discovered from guarded runtime code.' },
+  Coverage: { type: `${features.length} features`, description: textList(features) },
+})}
+
+## Covered Features
+
+${bulletList(features)}`,
       ),
     });
   }
@@ -423,7 +519,20 @@ function renderGroupedPages(graph: DocsInventoryGraph): RenderedFile[] {
       content: generatedMdx(
         workflow.title,
         workflow.summary,
-        `## Workflow ID\n\n\`${id}\`\n\n## Feature\n\n\`${workflow.feature}\`\n\n## Summary\n\n${workflow.summary}`,
+        `${generatedBanner(`workflow-${id}`)}
+
+## Workflow Evidence
+
+${typeTable({
+  Workflow: { type: id, description: 'Stable workflow ID declared by product truth.' },
+  Feature: { type: workflow.feature, description: 'Feature manifest that owns this workflow.' },
+})}
+
+<Steps>
+  <Step>${workflow.summary}</Step>
+  <Step>Confirm route and permission coverage before release-visible changes.</Step>
+  <Step>Regenerate evidence with \`pnpm docs:generate\`.</Step>
+</Steps>`,
       ),
     });
   }
@@ -434,7 +543,22 @@ function renderGroupedPages(graph: DocsInventoryGraph): RenderedFile[] {
       content: generatedMdx(
         titleCase(id),
         api.summary,
-        `## API ID\n\n\`${id}\`\n\n## Route\n\n\`${api.method} ${api.route}\`\n\n## Feature\n\n\`${api.feature}\`\n\n## Summary\n\n${api.summary}`,
+        `${generatedBanner(`api-${id}`)}
+
+## API Evidence
+
+${typeTable({
+  API: { type: id, description: 'Stable API evidence ID.' },
+  Method: { type: api.method, description: 'HTTP method declared in the feature manifest.' },
+  Route: { type: api.route, description: 'Next.js route covered by this API evidence.' },
+  Feature: { type: api.feature, description: 'Owning feature manifest.' },
+})}
+
+## Summary
+
+${api.summary}
+
+${filesTree([`${api.method} ${api.route}`], 'API Route')}`,
       ),
     });
   }
@@ -445,7 +569,18 @@ function renderGroupedPages(graph: DocsInventoryGraph): RenderedFile[] {
       content: generatedMdx(
         error.title,
         `Error evidence for ${code}.`,
-        `## Error Code\n\n\`${code}\`\n\n## Feature\n\n\`${error.feature}\`\n\n## Mitigation\n\n${error.mitigation}`,
+        `${generatedBanner(`error-${code.toLowerCase()}`)}
+
+## Error Evidence
+
+${typeTable({
+  Code: { type: code, description: 'Registered error code.' },
+  Feature: { type: error.feature, description: 'Feature manifest that owns the error.' },
+})}
+
+## Mitigation
+
+${error.mitigation}`,
       ),
     });
   }
@@ -456,7 +591,20 @@ function renderGroupedPages(graph: DocsInventoryGraph): RenderedFile[] {
       content: generatedMdx(
         item.title,
         item.symptom,
-        `## Troubleshooting ID\n\n\`${id}\`\n\n## Feature\n\n\`${item.feature}\`\n\n## Symptom\n\n${item.symptom}\n\n## Resolution\n\n${item.resolution}`,
+        `${generatedBanner(`troubleshooting-${id}`)}
+
+## Troubleshooting Evidence
+
+${typeTable({
+  Case: { type: id, description: 'Stable troubleshooting case ID.' },
+  Feature: { type: item.feature, description: 'Feature manifest that owns the case.' },
+})}
+
+<Steps>
+  <Step>Symptom: ${item.symptom}</Step>
+  <Step>Resolution: ${item.resolution}</Step>
+  <Step>Update the owning feature manifest if product behavior changes.</Step>
+</Steps>`,
       ),
     });
   }
@@ -582,7 +730,7 @@ function writeSearchSite(files: RenderedFile[]) {
   <head>
     <meta charset="utf-8">
     <title>${escapeHtml(title)}</title>
-    <meta name="pagefind:route" content="/docs/generated/${escapeHtml(rel.replace(/\.html$/, ''))}">
+    <meta name="pagefind:route" content="/en/docs/generated/${escapeHtml(rel.replace(/\.html$/, ''))}">
   </head>
   <body data-pagefind-body>
     <h1>${escapeHtml(title)}</h1>
@@ -597,9 +745,20 @@ function writeSearchSite(files: RenderedFile[]) {
 
 function checkSearchOutput(): string[] {
   const required = [join(ROOT, 'public/_pagefind/pagefind.js'), join(ROOT, 'public/_pagefind/pagefind-entry.json')];
-  return required
+  const errors = required
     .filter((file) => !existsSync(file))
     .map((file) => `${relative(ROOT, file)} is missing. Run pnpm docs:search.`);
+  const expectedPages = [
+    join(SEARCH_SITE_ROOT, 'features/admin.html'),
+    join(SEARCH_SITE_ROOT, 'permissions/admin-integrations.html'),
+    join(SEARCH_SITE_ROOT, 'troubleshooting/docs-generated-stale.html'),
+  ];
+  for (const page of expectedPages) {
+    if (!existsSync(page)) {
+      errors.push(`${relative(ROOT, page)} is missing from the docs search site mirror.`);
+    }
+  }
+  return errors;
 }
 
 async function buildCheckedGraph() {
@@ -609,6 +768,126 @@ async function buildCheckedGraph() {
     throw new Error(errors.join('\n'));
   }
   return buildInventoryGraph(model);
+}
+
+function stripLinkSuffix(href: string): string {
+  return href.split('#')[0]?.split('?')[0]?.trim() ?? '';
+}
+
+function isExternalHref(href: string): boolean {
+  return /^(?:https?:|mailto:|tel:|#)/.test(href);
+}
+
+function docsPathExists(href: string): boolean {
+  const clean = stripLinkSuffix(href).replace(/\/$/, '');
+  if (clean === '/docs' || clean === '') return existsSync(join(ENGLISH_DOCS_ROOT, 'index.mdx'));
+  if (!clean.startsWith('/docs/')) return true;
+
+  const slug = clean.replace(/^\/docs\//, '').replace(/\.mdx$/, '');
+  return existsSync(join(ENGLISH_DOCS_ROOT, `${slug}.mdx`)) || existsSync(join(ENGLISH_DOCS_ROOT, slug, 'index.mdx'));
+}
+
+function relativeDocsPathExists(file: string, href: string): boolean {
+  const clean = stripLinkSuffix(href);
+  if (clean === '' || isExternalHref(clean) || clean.startsWith('/')) return true;
+
+  const base = dirname(file);
+  const candidate = join(base, clean.replace(/\.mdx$/, ''));
+  return (
+    existsSync(candidate) ||
+    existsSync(`${candidate}.mdx`) ||
+    existsSync(join(candidate, 'index.mdx')) ||
+    existsSync(join(base, clean))
+  );
+}
+
+function extractLinks(content: string): string[] {
+  const links = new Set<string>();
+  const markdownLink = /\[[^\]]+\]\(([^)]+)\)/g;
+  const hrefAttribute = /\shref=["']([^"']+)["']/g;
+
+  for (const match of content.matchAll(markdownLink)) {
+    if (match[1]) links.add(match[1]);
+  }
+  for (const match of content.matchAll(hrefAttribute)) {
+    if (match[1]) links.add(match[1]);
+  }
+
+  return [...links];
+}
+
+function checkDocsLinks(): string[] {
+  const errors: string[] = [];
+  const files = fg.sync('docs/content/**/*.{md,mdx}', { cwd: ROOT, onlyFiles: true }).sort();
+
+  for (const relFile of files) {
+    const file = join(ROOT, relFile);
+    const content = readFileSync(file, 'utf8');
+    for (const href of extractLinks(content)) {
+      if (isExternalHref(href)) continue;
+      if (href.startsWith('/docs') && !docsPathExists(href)) {
+        errors.push(`${relFile}: internal docs link "${href}" does not resolve.`);
+      }
+      if (!href.startsWith('/') && !relativeDocsPathExists(file, href)) {
+        errors.push(`${relFile}: relative docs link "${href}" does not resolve.`);
+      }
+    }
+  }
+
+  return errors;
+}
+
+async function checkLLMExports(): Promise<string[]> {
+  const errors: string[] = [];
+  const requiredRoutes = [
+    'src/app/llms.txt/route.ts',
+    'src/app/llms-full.txt/route.ts',
+    'src/app/llms.mdx/[locale]/docs/[[...slug]]/route.ts',
+    'src/docs/runtime/get-llm-text.ts',
+  ];
+
+  for (const route of requiredRoutes) {
+    if (!existsSync(join(ROOT, route))) {
+      errors.push(`${route} is missing.`);
+    }
+  }
+
+  const sourceConfig = readFileSync(join(ROOT, 'source.config.ts'), 'utf8');
+  if (!sourceConfig.includes('includeProcessedMarkdown: true')) {
+    errors.push('source.config.ts must enable includeProcessedMarkdown for LLM exports.');
+  }
+  if (!sourceConfig.includes('extractLinkReferences: true')) {
+    errors.push('source.config.ts must enable extractLinkReferences for link-aware docs quality.');
+  }
+
+  const nextConfig = readFileSync(join(ROOT, 'next.config.mjs'), 'utf8');
+  if (
+    !nextConfig.includes("source: '/:locale/docs/:path*.mdx'") ||
+    !nextConfig.includes("destination: '/llms.mdx/:locale/docs/:path*'")
+  ) {
+    errors.push('next.config.mjs must rewrite /docs/<slug>.mdx to the LLM Markdown route.');
+  }
+
+  const llmText = readFileSync(join(ROOT, 'src/docs/runtime/get-llm-text.ts'), 'utf8');
+  if (!llmText.includes("getText('processed')")) {
+    errors.push('getLLMText must read processed Markdown from Fumadocs.');
+  }
+
+  const representative = join(ROOT, 'docs/content/en/generated/features/admin.mdx');
+  if (!existsSync(representative)) {
+    errors.push('docs/content/en/generated/features/admin.mdx is missing; run pnpm docs:generate.');
+  } else {
+    const content = readFileSync(representative, 'utf8');
+    if (!content.includes('title: "Administration"') || !content.includes('GENERATED FILE - DO NOT EDIT')) {
+      errors.push('representative generated docs page is not ready for LLM export.');
+    }
+  }
+
+  if (!existsSync(join(ROOT, '.source/server.ts'))) {
+    errors.push('.source/server.ts is missing; run pnpm docs:source before docs:llms.');
+  }
+
+  return errors;
 }
 
 async function run(command: string, check: boolean) {
@@ -665,6 +944,20 @@ async function run(command: string, check: boolean) {
     const errors = checkSearchOutput();
     if (errors.length > 0) throw new Error(errors.join('\n'));
     console.log('docs search output exists');
+    return;
+  }
+
+  if (command === 'links') {
+    const errors = checkDocsLinks();
+    if (errors.length > 0) throw new Error(errors.join('\n'));
+    console.log('docs links are valid');
+    return;
+  }
+
+  if (command === 'llms') {
+    const errors = await checkLLMExports();
+    if (errors.length > 0) throw new Error(errors.join('\n'));
+    console.log('docs LLM exports are valid');
     return;
   }
 

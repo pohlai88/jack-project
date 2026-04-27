@@ -1,9 +1,10 @@
 import matter from 'gray-matter';
 import { spawnSync } from 'node:child_process';
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
 import { hashMarkdown } from './docs-hash-utils.mjs';
+import { readConfiguredLocales } from './i18n-catalog-core.mjs';
 import { runI18nInventoryCheck } from './i18n-inventory-check-core.mjs';
 
 const CANONICAL_LOCALE = 'en';
@@ -11,30 +12,12 @@ const SNAPSHOT_PATH = 'architecture/governance/evidence/i18n/I18N_LOCALE_ACTIVAT
 const MARKDOWN_ARTIFACT_PATH = '.artifacts/i18n/I18N_LOCALE_ACTIVATION_REPORT.md';
 const JSON_ARTIFACT_PATH = '.artifacts/i18n/I18N_LOCALE_ACTIVATION_REPORT.json';
 
-function readConfiguredLocales(root) {
-  const config = readFileSync(join(root, 'src/i18n/config.ts'), 'utf8');
-  const match = config.match(/export const locales = \[([^\]]+)\] as const;/);
-  if (match) {
-    return match[1]
-      .split(',')
-      .map((part) => part.trim().replace(/^['"]|['"]$/g, ''))
-      .filter(Boolean);
+function readConfiguredLocalesStrict(root) {
+  const locales = readConfiguredLocales(root);
+  if (locales.length === 0) {
+    throw new Error('Unable to parse locales from src/i18n/config.ts');
   }
-
-  if (/export const locales = activeLocales;/.test(config)) {
-    const registry = readFileSync(join(root, 'src/i18n/locale-registry.ts'), 'utf8');
-    const activeLocalesMatch = registry.match(/export const activeLocales = \[([^\]]+)\] as const;/);
-    if (!activeLocalesMatch) {
-      throw new Error('Unable to parse activeLocales from src/i18n/locale-registry.ts');
-    }
-
-    return activeLocalesMatch[1]
-      .split(',')
-      .map((part) => part.trim().replace(/^['"]|['"]$/g, ''))
-      .filter(Boolean);
-  }
-
-  throw new Error('Unable to parse locales from src/i18n/config.ts');
+  return locales;
 }
 
 function readLocaleNames(root) {
@@ -75,78 +58,6 @@ function flattenMessageKeys(value, prefix = '', keys = [], values = []) {
   keys.push(prefix);
   values.push({ key: prefix, value });
   return { keys, values };
-}
-
-function walkDocs(dir, prefix = '') {
-  if (!existsSync(dir)) {
-    return [];
-  }
-
-  const docs = [];
-  for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    const fullPath = join(dir, entry.name);
-    const relPath = prefix ? `${prefix}/${entry.name}` : entry.name;
-
-    if (entry.isDirectory()) {
-      docs.push(...walkDocs(fullPath, relPath));
-      continue;
-    }
-
-    if (!entry.name.endsWith('.md')) {
-      continue;
-    }
-
-    const normalizedRelPath = relPath.replace(/\\/g, '/');
-    const slug = normalizedRelPath.endsWith('/index.md')
-      ? normalizedRelPath.slice(0, -'/index.md'.length)
-      : normalizedRelPath.slice(0, -'.md'.length);
-
-    docs.push({
-      fullPath,
-      relPath: normalizedRelPath,
-      slug,
-    });
-  }
-
-  return docs;
-}
-
-function loadDocsState(root) {
-  const archivedDocsRoot = join(root, 'archive/legacy-docs/src/features/docs/content');
-  const legacyDocsRoot = join(root, 'src/features/docs/content');
-  const docsRoot = existsSync(archivedDocsRoot) ? archivedDocsRoot : legacyDocsRoot;
-  const canonicalDocs = walkDocs(join(docsRoot, CANONICAL_LOCALE));
-  const canonicalBySlug = new Map();
-
-  for (const doc of canonicalDocs) {
-    const raw = readFileSync(doc.fullPath, 'utf8');
-    const parsed = matter(raw);
-    canonicalBySlug.set(doc.slug, {
-      relPath: doc.relPath,
-      fallbackAllowedLocales: Array.isArray(parsed.data.fallbackAllowedLocales)
-        ? parsed.data.fallbackAllowedLocales
-        : [],
-    });
-  }
-
-  const localeDirs = readdirSync(docsRoot, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => entry.name);
-
-  const localeDocs = new Map();
-  for (const locale of localeDirs) {
-    const docs = walkDocs(join(docsRoot, locale));
-    localeDocs.set(
-      locale,
-      new Set(
-        docs.map((doc) => {
-          return doc.slug;
-        }),
-      ),
-    );
-  }
-
-  return { canonicalBySlug, localeDocs };
 }
 
 function calculateCoverageEstimate({ locale, parsedByLocale, canonicalKeys, canonicalValueMap }) {
@@ -432,8 +343,7 @@ function loadSnapshot(root) {
       language_name: normalizeOptionalString(value.language_name),
       runtime_active: normalizeOptionalBoolean(value.runtime_active),
       messages_complete: normalizeOptionalBoolean(value.messages_complete),
-      docs_native: normalizeOptionalBoolean(value.docs_native),
-      fallback_approved: normalizeOptionalBoolean(value.fallback_approved),
+      docs_evidence_generated: normalizeOptionalBoolean(value.docs_evidence_generated),
       ui_qa_done: normalizeOptionalBoolean(value.ui_qa_done),
       business_owner: normalizeOptionalString(value.business_owner),
       translation_reviewer: normalizeOptionalString(value.translation_reviewer),
@@ -453,28 +363,18 @@ function loadSnapshot(root) {
   };
 }
 
-function getDocsStatus(locale, docsState) {
-  if (locale === CANONICAL_LOCALE) {
-    return { docsNative: true, fallbackApproved: false };
+function getDocsEvidenceStatus(root) {
+  const inventoryPath = join(root, 'docs/content/en/generated/docs-inventory.generated.json');
+  if (!existsSync(inventoryPath)) {
+    return false;
   }
 
-  const localeDocs = docsState.localeDocs.get(locale) ?? new Set();
-  const canonicalSlugs = [...docsState.canonicalBySlug.keys()];
-  const missingSlugs = canonicalSlugs.filter((slug) => !localeDocs.has(slug));
-  const docsNative = canonicalSlugs.length > 0 && missingSlugs.length === 0;
-
-  if (docsNative) {
-    return { docsNative: true, fallbackApproved: false };
+  try {
+    const inventory = JSON.parse(readFileSync(inventoryPath, 'utf8'));
+    return inventory?.generated === true && Array.isArray(inventory?.manifests);
+  } catch {
+    return false;
   }
-
-  const fallbackApproved =
-    missingSlugs.length > 0 &&
-    missingSlugs.every((slug) => {
-      const doc = docsState.canonicalBySlug.get(slug);
-      return doc?.fallbackAllowedLocales.includes(locale);
-    });
-
-  return { docsNative: false, fallbackApproved };
 }
 
 function compareSnapshotField(warnings, locale, field, systemValue, snapshotValue) {
@@ -511,7 +411,7 @@ function deriveVerdict({
   locale,
   runtimeActive,
   messagesComplete,
-  docsNative,
+  docsEvidenceGenerated,
   uiQaDone,
   ownersComplete,
   approvalDateFilled,
@@ -524,7 +424,7 @@ function deriveVerdict({
     return 'inactive_draft';
   }
 
-  if (messagesComplete && docsNative && uiQaDone && ownersComplete && approvalDateFilled) {
+  if (messagesComplete && docsEvidenceGenerated && uiQaDone && ownersComplete && approvalDateFilled) {
     return 'active_ready';
   }
 
@@ -557,13 +457,13 @@ function buildMarkdownReport({ mode, records, warnings, snapshot, translationKey
     '',
     '## Locale Summary',
     '',
-    '| Locale | Language | Runtime Active | Messages Complete | Coverage (estimate) | Docs Native | Fallback Approved | UI QA Done | Owners Complete | Approval Date | Verdict |',
-    '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |',
+    '| Locale | Language | Runtime Active | Messages Complete | Coverage (estimate) | Docs Evidence Generated | UI QA Done | Owners Complete | Approval Date | Verdict |',
+    '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |',
   ];
 
   for (const record of records) {
     lines.push(
-      `| ${record.locale} | ${record.languageName} | ${record.runtimeActive ? 'yes' : 'no'} | ${record.messagesComplete ? 'yes' : 'no'} | ${record.coverage.percent}% (${record.coverage.translatedKeys}/${record.coverage.totalKeys}) | ${record.docsNative ? 'yes' : 'no'} | ${record.fallbackApproved ? 'yes' : 'no'} | ${record.uiQaDone ? 'yes' : 'no'} | ${record.ownersComplete ? 'yes' : 'no'} | ${record.approvalDate ?? 'pending'} | ${record.activationVerdict} |`,
+      `| ${record.locale} | ${record.languageName} | ${record.runtimeActive ? 'yes' : 'no'} | ${record.messagesComplete ? 'yes' : 'no'} | ${record.coverage.percent}% (${record.coverage.translatedKeys}/${record.coverage.totalKeys}) | ${record.docsEvidenceGenerated ? 'yes' : 'no'} | ${record.uiQaDone ? 'yes' : 'no'} | ${record.ownersComplete ? 'yes' : 'no'} | ${record.approvalDate ?? 'pending'} | ${record.activationVerdict} |`,
     );
   }
 
@@ -585,8 +485,7 @@ function buildMarkdownReport({ mode, records, warnings, snapshot, translationKey
     lines.push(
       `- Coverage estimate: ${record.coverage.percent}% (${record.coverage.translatedKeys}/${record.coverage.totalKeys})`,
     );
-    lines.push(`- Docs native: ${record.docsNative ? 'yes' : 'no'}`);
-    lines.push(`- Fallback approved: ${record.fallbackApproved ? 'yes' : 'no'}`);
+    lines.push(`- Docs evidence generated: ${record.docsEvidenceGenerated ? 'yes' : 'no'}`);
     lines.push(`- UI QA done: ${record.uiQaDone ? 'yes' : 'no'}`);
     lines.push(`- Business owner: ${record.businessOwner ?? 'pending'}`);
     lines.push(`- Translation reviewer: ${record.translationReviewer ?? 'pending'}`);
@@ -639,8 +538,7 @@ function buildJsonArtifact({
         total_keys: record.coverage.totalKeys,
         percent: record.coverage.percent,
       },
-      docs_native: record.docsNative,
-      fallback_approved: record.fallbackApproved,
+      docs_evidence_generated: record.docsEvidenceGenerated,
       ui_qa_done: record.uiQaDone,
       business_owner: record.businessOwner,
       translation_reviewer: record.translationReviewer,
@@ -653,10 +551,10 @@ function buildJsonArtifact({
 }
 
 export function evaluateI18nReadiness({ root = process.cwd(), mode = 'warn', gitBaseRef = null } = {}) {
-  const configuredLocales = readConfiguredLocales(root);
+  const configuredLocales = readConfiguredLocalesStrict(root);
   const localeNames = readLocaleNames(root);
-  const docsState = loadDocsState(root);
   const messageState = buildMessageStatus(root);
+  const docsEvidenceGenerated = getDocsEvidenceStatus(root);
   const snapshot = loadSnapshot(root);
   const warnings = [];
   const translationKeyLifecycle = analyzeTranslationKeyLifecycle({
@@ -679,9 +577,7 @@ export function evaluateI18nReadiness({ root = process.cwd(), mode = 'warn', git
       coverage: { translatedKeys: 0, totalKeys: messageState.canonicalKeys.length, percent: 0 },
     };
     const messagesComplete = messageStatus.fileExists && messageStatus.errors.length === 0;
-    const { docsNative, fallbackApproved: derivedFallbackApproved } = getDocsStatus(locale, docsState);
     const snapshotEntry = snapshot.locales[locale] ?? {};
-    const fallbackApproved = snapshotEntry.fallback_approved ?? derivedFallbackApproved;
     const businessOwner = snapshotEntry.business_owner ?? null;
     const translationReviewer = snapshotEntry.translation_reviewer ?? null;
     const technicalOwner = snapshotEntry.technical_owner ?? null;
@@ -694,7 +590,7 @@ export function evaluateI18nReadiness({ root = process.cwd(), mode = 'warn', git
       locale,
       runtimeActive,
       messagesComplete,
-      docsNative,
+      docsEvidenceGenerated,
       uiQaDone,
       ownersComplete,
       approvalDateFilled,
@@ -702,7 +598,13 @@ export function evaluateI18nReadiness({ root = process.cwd(), mode = 'warn', git
 
     compareSnapshotField(warnings, locale, 'runtime_active', runtimeActive, snapshotEntry.runtime_active);
     compareSnapshotField(warnings, locale, 'messages_complete', messagesComplete, snapshotEntry.messages_complete);
-    compareSnapshotField(warnings, locale, 'docs_native', docsNative, snapshotEntry.docs_native);
+    compareSnapshotField(
+      warnings,
+      locale,
+      'docs_evidence_generated',
+      docsEvidenceGenerated,
+      snapshotEntry.docs_evidence_generated,
+    );
     compareSnapshotVerdict(warnings, locale, snapshotEntry.activation_verdict, activationVerdict);
 
     const isActivationCandidate = runtimeActive && locale !== CANONICAL_LOCALE;
@@ -715,11 +617,11 @@ export function evaluateI18nReadiness({ root = process.cwd(), mode = 'warn', git
       });
     }
 
-    if (isActivationCandidate && !docsNative && !fallbackApproved) {
+    if (isActivationCandidate && !docsEvidenceGenerated) {
       warnings.push({
-        code: 'RG-I18N-001-FALLBACK-UNAPPROVED',
+        code: 'RG-I18N-001-DOCS-EVIDENCE-MISSING',
         locale,
-        message: `Runtime-active locale ${locale} lacks native docs coverage and does not have approved visible English fallback.`,
+        message: `Runtime-active locale ${locale} does not have generated documentation evidence.`,
       });
     }
 
@@ -760,8 +662,7 @@ export function evaluateI18nReadiness({ root = process.cwd(), mode = 'warn', git
       languageName,
       runtimeActive,
       messagesComplete,
-      docsNative,
-      fallbackApproved,
+      docsEvidenceGenerated,
       uiQaDone,
       businessOwner,
       translationReviewer,

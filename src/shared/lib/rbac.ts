@@ -6,7 +6,9 @@
  */
 
 import { redirect } from 'next/navigation';
+import { getLocale } from 'next-intl/server';
 
+import { localizeHref } from '@/i18n';
 import type { TenantRole } from '@/shared/db/schema/auth';
 
 import { auth } from './auth';
@@ -68,9 +70,10 @@ export interface AuthResult {
  */
 export async function requireAuth(): Promise<{ userId: string; email: string }> {
   const session = await auth();
+  const locale = await getLocale();
 
   if (!session?.user?.id || !session?.user?.email) {
-    redirect('/login');
+    redirect(localizeHref(locale, '/login'));
   }
 
   return {
@@ -85,11 +88,12 @@ export async function requireAuth(): Promise<{ userId: string; email: string }> 
  */
 export async function requireRole(tenantSlug: string, minRole: TenantRole): Promise<AuthResult> {
   const session = await auth();
+  const locale = await getLocale();
   if (!session?.user?.id || !session?.user?.email) {
-    redirect('/login');
+    redirect(localizeHref(locale, '/login'));
   }
   const allowed = await hasPermission(tenantSlug, minRoleToPermission(minRole));
-  if (!allowed) redirect(`/t/${tenantSlug}?error=unauthorized`);
+  if (!allowed) redirect(localizeHref(locale, `/t/${tenantSlug}?error=unauthorized`));
   const userRole = session.user.roles?.[tenantSlug] ?? minRole;
   return {
     userId: session.user.id,

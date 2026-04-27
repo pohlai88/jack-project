@@ -13,7 +13,7 @@ type ReadinessRecord = {
   activationVerdict: string;
   runtimeActive: boolean;
   messagesComplete: boolean;
-  docsNative: boolean;
+  docsEvidenceGenerated: boolean;
   ownersComplete: boolean;
   approvalDate: string | null;
   coverage: {
@@ -78,31 +78,10 @@ export const LOCALE_COOKIE_NAME = 'NEXT_LOCALE';
         mention: 'Connected as @{username}',
       },
     }),
-    'src/features/docs/content/en/guide.md': `---
-title: Guide
-description: Example
-section: general
-order: 1
-fallbackAllowedLocales:
-  - vi
----
-
-# Guide
-`,
-    'src/features/docs/content/es/guide.md': `---
-title: Guía
-description: Example
-section: general
-order: 1
-translation:
-  sourceLocale: en
-  sourcePath: guide.md
-  sourceHash: d41d8cd98f00b204e9800998ecf8427e00000000000000000000000000000000
-  status: reviewed
----
-
-# Guía
-`,
+    'docs/content/en/generated/docs-inventory.generated.json': toJson({
+      generated: true,
+      manifests: [{ id: 'docs' }],
+    }),
     'architecture/governance/evidence/i18n/I18N_LOCALE_ACTIVATION_SNAPSHOT.md': snapshotFrontmatter,
   };
 
@@ -142,8 +121,7 @@ locales:
     language_name: Español
     runtime_active: true
     messages_complete: true
-    docs_native: true
-    fallback_approved: false
+    docs_evidence_generated: true
     ui_qa_done: true
     business_owner: Docs
     translation_reviewer: Docs
@@ -154,8 +132,7 @@ locales:
     language_name: Tiếng Việt
     runtime_active: true
     messages_complete: true
-    docs_native: false
-    fallback_approved: true
+    docs_evidence_generated: false
     ui_qa_done: false
     business_owner: pending
     translation_reviewer: pending
@@ -166,8 +143,7 @@ locales:
     language_name: Bahasa Indonesia
     runtime_active: false
     messages_complete: true
-    docs_native: false
-    fallback_approved: false
+    docs_evidence_generated: false
     ui_qa_done: false
     business_owner: pending
     translation_reviewer: pending
@@ -200,8 +176,7 @@ locales:
     language_name: Tiếng Việt
     runtime_active: false
     messages_complete: false
-    docs_native: true
-    fallback_approved: true
+    docs_evidence_generated: false
     ui_qa_done: false
     business_owner: pending
     translation_reviewer: pending
@@ -218,12 +193,16 @@ locales:
 
     expect(vi?.runtimeActive).toBe(true);
     expect(vi?.messagesComplete).toBe(true);
-    expect(vi?.docsNative).toBe(false);
+    expect(vi?.docsEvidenceGenerated).toBe(true);
     expect(evaluation.warnings).toEqual(
       expect.arrayContaining([
         expect.objectContaining({ code: 'RG-I18N-001-SNAPSHOT-MISMATCH', locale: 'vi', field: 'runtime_active' }),
         expect.objectContaining({ code: 'RG-I18N-001-SNAPSHOT-MISMATCH', locale: 'vi', field: 'messages_complete' }),
-        expect.objectContaining({ code: 'RG-I18N-001-SNAPSHOT-MISMATCH', locale: 'vi', field: 'docs_native' }),
+        expect.objectContaining({
+          code: 'RG-I18N-001-SNAPSHOT-MISMATCH',
+          locale: 'vi',
+          field: 'docs_evidence_generated',
+        }),
       ]),
     );
   });
@@ -324,8 +303,7 @@ locales:
     language_name: Tiếng Việt
     runtime_active: true
     messages_complete: true
-    docs_native: false
-    fallback_approved: true
+    docs_evidence_generated: false
     ui_qa_done: false
     business_owner: TBD
     translation_reviewer: TBD
@@ -370,8 +348,7 @@ locales:
     language_name: Tiếng Việt
     runtime_active: true
     messages_complete: true
-    docs_native: false
-    fallback_approved: true
+    docs_evidence_generated: false
     ui_qa_done: false
     business_owner: TBD
     translation_reviewer: TBD
@@ -415,8 +392,7 @@ locales:
     language_name: Tiếng Việt
     runtime_active: true
     messages_complete: true
-    docs_native: false
-    fallback_approved: true
+    docs_evidence_generated: false
     ui_qa_done: false
     business_owner: TBD
     translation_reviewer: TBD
@@ -433,7 +409,7 @@ locales:
     runGit(root, ['config', 'user.name', 'Test Runner']);
     runGit(root, ['add', '.']);
     runGit(root, ['commit', '-m', 'baseline']);
-    runGit(root, ['checkout', '-b', 'feat/weblate']);
+    runGit(root, ['checkout', '-b', 'feat/i18n-platform']);
 
     writeFixtureFile(
       root,

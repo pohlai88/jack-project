@@ -1,9 +1,6 @@
 import { activeLocales, localeRegistry, defaultLocale as registryDefaultLocale } from './locale-registry';
 
-// Internationalization configuration.
-// next-intl uses cookie-based locale detection rather than URL prefixes,
-// preserving the existing tenant routing structure.
-// `activeLocales` is the single list of supported runtime UI locales.
+// `activeLocales` is the single list of runtime locales exposed by the app.
 export const locales = activeLocales;
 export type Locale = (typeof activeLocales)[number];
 
@@ -14,11 +11,13 @@ export const defaultTimeZone = 'UTC';
 
 export const localeNames: Record<Locale, string> = {
   en: localeRegistry.en.name,
-  es: localeRegistry.es.name,
+  'zh-CN': localeRegistry['zh-CN'].name,
   vi: localeRegistry.vi.name,
   ms: localeRegistry.ms.name,
-  'zh-CN': localeRegistry['zh-CN'].name,
+  es: localeRegistry.es.name,
+  id: localeRegistry.id.name,
+  th: localeRegistry.th.name,
 };
 
-// Cookie name for storing user's locale preference
+// Cookie name for storing user's locale preference.
 export const LOCALE_COOKIE_NAME = 'NEXT_LOCALE';

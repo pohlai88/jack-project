@@ -7,8 +7,8 @@
  */
 
 import { ArrowRight, Lightbulb, Sparkles, X } from 'lucide-react';
-import Link from 'next/link';
 import { useCallback, useState } from 'react';
+import { Link } from '@/i18n/navigation';
 
 import { Button } from '@/shared/components/ui/button';
 import { cn } from '@/shared/lib/utils';

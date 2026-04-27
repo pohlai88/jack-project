@@ -4,7 +4,7 @@ Date: 2026-04-26
 
 ## Status
 
-Planned only. This record defines locale expansion targets and rollout gates. It does not activate locales, add locale files, add docs folders, or change runtime behavior.
+Originally **governance-only** (no direct code changes). **Runtime is now authoritative:** the live locale set is `activeLocales` in [`src/i18n/locale-registry.ts`](../../src/i18n/locale-registry.ts) (currently `en`, `zh-CN`, `vi`, `ms`, `es`, `id`, `th`). The phases and gates below remain the **quality bar** for adding the next locale or tightening readiness; they are not a description of which locales are still “off” in production routing.
 
 ## Approved Target Locale Set
 
@@ -38,10 +38,9 @@ A locale is not allowed into `src/i18n/config.ts` unless all of the following ar
 - `pnpm i18n:compile --check` passes
 - `pnpm i18n:validate` passes
 - `pnpm i18n:fallback-check` passes
-- `pnpm docs:check` passes
-- docs fallback is visible in UI
+- `pnpm docs:ci` passes
+- generated docs evidence exists
 - generated Crowdin output or protected fallback provenance exists
-- translation metadata exists for localized docs
 - reviewer approval is recorded
 - for `zh-CN`, UI layout validation is completed
 
@@ -51,9 +50,10 @@ A locale must not be partially activated.
 
 Do not:
 
-- add a locale to `config.ts` without its required messages and docs state being ready
-- add locale messages without docs coverage unless fallback is explicitly allowed and visibly surfaced
+- add a locale to `config.ts` without its required messages and generated docs evidence being ready
+- add locale messages without generated docs evidence
 - manually edit generated Crowdin catalogs or compiled runtime message files
+- create locale-specific docs Markdown folders
 - expose a locale in UI selectors before the activation gate passes
 
 ## Mandarin Special Validation Note
@@ -72,22 +72,18 @@ Before activation, validate:
 - typography compatibility
 - truncation handling
 
-## Repo-Specific Blockers
+## Repo notes (keep current)
 
-The current codebase has blockers that must be resolved before locale activation:
-
-- `src/i18n/request.ts` currently strips region subtags, so `zh-CN` cannot resolve correctly until locale matching preserves configured regional locales
-- `src/shared/lib/tenant-settings.ts` and the current admin language selectors still hard-code `en | es | pt`, so settings schema and UI must be aligned before locale activation
-- exact configured locale identifiers must be used for future files and folders, including `src/i18n/messages/zh-CN.json` and `src/features/docs/content/zh-CN/`
+- **Regional tags**: configured identifiers use full tags where needed (e.g. `zh-CN`); cookie/path aliases (`ms-MY` → `ms`, `id-ID` → `id`) are handled in locale matching — do not “simplify” registry codes without updating fallbacks and compile output.
+- **Tenant admin UI**: default language must stay aligned with `activatedLocaleValues` / `activeLocales` (see [Tenant Language Settings Alignment Plan 0009](./TENANT_LANGUAGE_SETTINGS_ALIGNMENT_PLAN_0009.md)).
+- **Message paths**: compiled files must match registry codes exactly (e.g. `src/i18n/messages/zh-CN.json`).
 
 ## Validation Commands
 
 These commands validate repository readiness only. They do not activate any locale by themselves.
 
 ```bash
-pnpm docs:generate-nav
-pnpm docs:hash:write
-pnpm docs:check
+pnpm docs:ci
 pnpm i18n:compile --check
 pnpm i18n:validate
 pnpm i18n:coverage
@@ -101,15 +97,6 @@ pnpm build
 git diff --check
 ```
 
-## Execution Boundary
+## Execution boundary (original PR)
 
-This PR is governance-only.
-
-It must not:
-
-- add any new locale to `src/i18n/config.ts`
-- create new message files
-- create new docs locale folders
-- change runtime behavior
-
-Locale activation work will come later in separate execution PRs, starting with Phase 1 locales only after the documented gate passes.
+The first PR that introduced this document was governance-only. Subsequent work has updated `locale-registry.ts`, catalogs, and compiled `messages/*.json` under the same gates. Any **new** locale still requires a normal execution PR that satisfies the [Activation Gate](#activation-gate) and updates the [I18N Locale Activation Snapshot](./evidence/i18n/I18N_LOCALE_ACTIVATION_SNAPSHOT.md) plus `pnpm i18n:fallback-check --write-manifest` when fallbacks change.

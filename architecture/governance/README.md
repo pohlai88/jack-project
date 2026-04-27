@@ -17,6 +17,7 @@ Governance records capture promotion reviews and validation evidence for the enf
 - [Locale Activation Readiness Checklist 0010](./LOCALE_ACTIVATION_READINESS_CHECKLIST_0010.md)
 - [ATC-0010: Locale Activation Readiness](../atc/ATC-0010-locale-activation-readiness.md)
 - [I18N Locale Activation Snapshot](./evidence/i18n/I18N_LOCALE_ACTIVATION_SNAPSHOT.md)
+- [next-intl best-practice audit (Context7)](./evidence/i18n/NEXT_INTL_BEST_PRACTICE_AUDIT.md)
 
 ## Authority Boundary
 

@@ -1,7 +1,7 @@
 # Locale Activation Readiness Checklist 0010
 
 Date: 2026-04-27
-Status: Runtime activation evidence recorded for `vi`, `ms`, and `zh-CN`; `RG-I18N-001` now governs warn-only readiness reporting and snapshot review.
+Status: Runtime activation includes `en`, `zh-CN`, `vi`, `ms`, `es`, `id`, and `th` (see `src/i18n/locale-registry.ts`). `RG-I18N-001` governs warn-only readiness reporting and snapshot review.
 
 ## Summary
 
@@ -27,14 +27,12 @@ Record the following for each locale activation candidate:
 
 ## Required Assets Checklist
 
-Before adding any locale to `src/i18n/config.ts`, confirm all of the following:
+Before adding any locale to **`activeLocales`** in `src/i18n/locale-registry.ts` (and ensuring `src/i18n/config.ts` stays in sync via `locales = activeLocales` and `localeNames`), confirm all of the following:
 
 - `src/i18n/catalogs/generated/<locale>.json` exists, or a protected fallback catalog is explicitly approved
 - `src/i18n/messages/<locale>.json` is produced by `pnpm i18n:compile`
 - `src/i18n/catalogs/fallback/MANIFEST.json` contains the protected fallback hash when fallback is used
-- `src/features/docs/content/<locale>/` exists, or missing docs are explicitly fallback-allowed
-- all localized docs include translation metadata
-- fallback banner messages exist
+- generated docs evidence exists under `docs/content/generated`
 - language name exists in `localeNames`
 
 ## Full Validation Gate
@@ -42,9 +40,7 @@ Before adding any locale to `src/i18n/config.ts`, confirm all of the following:
 Run all of the following:
 
 ```bash
-pnpm docs:generate-nav
-pnpm docs:hash:write
-pnpm docs:check
+pnpm docs:ci
 pnpm i18n:compile --check
 pnpm i18n:validate
 pnpm i18n:coverage
@@ -62,11 +58,11 @@ git diff --check
 
 Do not:
 
-- add a locale to `config.ts` before messages and docs are ready
+- add a locale to `activeLocales` before messages and docs are ready
 - expose a locale in UI before checks pass
 - manually edit generated or compiled runtime message files
-- add messages without docs coverage or explicit fallback
-- add docs without translation metadata
+- add messages without generated docs evidence
+- add locale-specific docs folders
 
 ## Verdict Taxonomy
 
@@ -81,7 +77,7 @@ Locale activation verdicts must be derived algorithmically using the strict read
 
 ### `vi` — Vietnamese
 
-Status: `Derived verdict: active_fallback. Runtime activation is implemented with visible English docs fallback; governance ownership confirmation remains pending.`
+Status: `Derived verdict: active_fallback. Runtime activation is implemented with generated docs evidence; governance ownership confirmation remains pending.`
 
 Activation identity:
 
@@ -96,20 +92,17 @@ Activation identity:
 Required assets:
 
 - `src/i18n/messages/vi.json`: completed
-- `src/features/docs/content/vi/` or explicit fallback allowances: completed via canonical English `fallbackAllowedLocales`
-- translation metadata coverage: completed for existing localized docs; no Vietnamese docs added in this slice
-- fallback banner messages: completed
+- docs evidence: completed via generated Fumadocs evidence pipeline
 - `localeNames.vi`: completed
 
 Evidence:
 
-- `src/i18n/config.ts` now activates `vi`
-- `src/features/docs/content/en/**` explicitly allows visible Vietnamese fallback
-- landing, selector, and docs fallback copy are localized for `vi`
+- `src/i18n/locale-registry.ts` / `config.ts` expose `vi` in `activeLocales`
+- landing and selector copy are localized for `vi`
 
 ### `ms` — Malay
 
-Status: `Derived verdict: active_fallback. Runtime activation is implemented with visible English docs fallback; governance ownership confirmation remains pending.`
+Status: `Derived verdict: active_fallback. Runtime activation is implemented with generated docs evidence; governance ownership confirmation remains pending.`
 
 Activation identity:
 
@@ -124,20 +117,17 @@ Activation identity:
 Required assets:
 
 - `src/i18n/messages/ms.json`: completed
-- `src/features/docs/content/ms/` or explicit fallback allowances: completed via canonical English `fallbackAllowedLocales`
-- translation metadata coverage: completed for existing localized docs; no Malay docs added in this slice
-- fallback banner messages: completed
+- docs evidence: completed via generated Fumadocs evidence pipeline
 - `localeNames.ms`: completed
 
 Evidence:
 
-- `src/i18n/config.ts` now activates `ms`
-- `src/features/docs/content/en/**` explicitly allows visible Malay fallback
-- landing, selector, and docs fallback copy are localized for `ms`
+- `src/i18n/locale-registry.ts` / `config.ts` expose `ms` in `activeLocales`
+- landing and selector copy are localized for `ms`
 
 ### `zh-CN` — Simplified Chinese
 
-Status: `Derived verdict: active_fallback. Runtime activation is implemented with visible English docs fallback; visual validation remains the main follow-up risk surface.`
+Status: `Derived verdict: active_fallback. Runtime activation is implemented with generated docs evidence; visual validation remains the main follow-up risk surface.`
 
 Activation identity:
 
@@ -152,49 +142,37 @@ Activation identity:
 Required assets:
 
 - `src/i18n/messages/zh-CN.json`: completed
-- `src/features/docs/content/zh-CN/` or explicit fallback allowances: completed via canonical English `fallbackAllowedLocales`
-- translation metadata coverage: completed for existing localized docs; no Simplified Chinese docs added in this slice
-- fallback banner messages: completed
+- docs evidence: completed via generated Fumadocs evidence pipeline
 - `localeNames['zh-CN']`: completed
 
 Evidence:
 
-- `src/i18n/config.ts` now activates `zh-CN`
-- `src/features/docs/content/en/**` explicitly allows visible Simplified Chinese fallback
-- landing, selector, and docs fallback copy are localized for `zh-CN`
+- `src/i18n/locale-registry.ts` / `config.ts` expose `zh-CN` in `activeLocales`
+- landing and selector copy are localized for `zh-CN`
 
-## Current Derived Baseline
+## Current derived baseline
 
 - `en`: `canonical`
-- `es`: `active_fallback` until governance owners and approval are recorded in the reviewed snapshot
-- `vi`: `active_fallback`
-- `ms`: `active_fallback`
-- `zh-CN`: `active_fallback`
-- `id`: `inactive_draft`
-- `th`: `inactive_draft`
+- `es`, `vi`, `ms`, `zh-CN`, `id`, `th`: typically `active_fallback` until snapshot records `active_ready` (messages + docs evidence + UI QA + owners + approval per [ATC-0010](../atc/ATC-0010-locale-activation-readiness.md))
+
+Run `pnpm i18n:readiness:report` for the live derived verdicts table.
 
 ## Documentation Improvement Readiness
 
-The i18n runtime and catalog ecosystem is ready for documentation improvement work, but the active rollout slice is not
-yet fully `active_ready`.
+The i18n runtime and catalog ecosystem supports documentation improvement work; most locales remain `active_fallback` until governance fields in the snapshot are completed.
 
-Documentation improvement should focus on moving runtime-active fallback locales toward native docs coverage:
+Documentation improvement should focus on product-truth coverage in generated docs evidence:
 
-- keep `en` as the canonical source documentation locale
-- use `es` as the reference native-docs locale for metadata and structure
-- add native docs for `vi`, `ms`, and `zh-CN` under `src/features/docs/content/<locale>/`
-- keep `id` and `th` inactive until a separate activation gate promotes them
-- retain `fallbackAllowedLocales` only where visible English fallback remains intentionally approved
-- update the readiness snapshot only after UI QA, owner assignment, and approval evidence are recorded
+- keep runtime messages under the i18n pipeline
+- keep docs authority in feature manifests and generated evidence
+- do not add locale-specific docs Markdown folders (runtime i18n only)
+- update the readiness snapshot and `source_artifact_hash` after material governance or readiness changes (`pnpm i18n:readiness:report`, then copy **Markdown SHA-256** into the snapshot frontmatter)
 
 Minimum verification for each documentation slice:
 
 ```bash
-pnpm docs:generate-nav
-pnpm docs:hash:write
-pnpm docs:check
+pnpm docs:ci
 pnpm i18n:readiness:report
-pnpm i18n:compile --check
 pnpm i18n:validate
 pnpm i18n:fallback-check
 ```

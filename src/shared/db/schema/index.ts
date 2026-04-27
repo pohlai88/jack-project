@@ -19,6 +19,7 @@ export * from './tenants';
 export * from './persons';
 export * from './audit';
 export * from './assistant-conversations';
+export * from './docs-feedback';
 
 // Files (S3)
 export * from './files';
@@ -46,6 +47,7 @@ export * from './webhooks';
 export { personStatusEnum, personRelationTypeEnum, employmentTypeEnum } from './persons';
 export { fileObjectTypeEnum } from './files';
 export { tenantRoleEnum } from './auth';
+export { docsFeedbackOpinionEnum } from './docs-feedback';
 export { embeddingEntityTypeEnum } from './embeddings';
 export { webhookDeliveryStatusEnum } from './webhooks';
 export {

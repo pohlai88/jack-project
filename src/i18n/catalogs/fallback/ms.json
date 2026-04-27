@@ -19,7 +19,7 @@
     "reset": "Tetapkan semula",
     "search": "Cari",
     "filter": "Tapis",
-    "loading": "Memuat...",
+    "loading": "Memuatkan...",
     "saving": "Menyimpan...",
     "processing": "Memproses...",
     "success": "Berjaya",
@@ -40,8 +40,8 @@
     "continue": "Teruskan",
     "finish": "Selesai",
     "done": "Selesai",
-    "pending": "Tertunda",
-    "completed": "Lengkap",
+    "pending": "Dalam tunggu",
+    "completed": "Selesai",
     "failed": "Gagal",
     "active": "Aktif",
     "inactive": "Tidak aktif",
@@ -50,18 +50,18 @@
     "required": "Diperlukan",
     "optional": "Pilihan",
     "noResults": "Tiada keputusan ditemui",
-    "noData": "Tiada data tersedia",
+    "noData": "Tiada data",
     "reports": "Laporan",
     "changeLanguage": "Tukar bahasa"
   },
   "landing": {
     "hero": {
-      "badge": "Platform SaaS asli AI",
+      "badge": "Platform SaaS berasaskan AI",
       "title": {
         "one": "Bina dengan ",
         "two": "Afenda"
       },
-      "description": "Lancarkan produk SaaS berbilang tenant dengan pengesahan, AI, integrasi, pengurusan pasukan dan asas sedia tadbir urus.",
+      "description": "Lancarkan platform SaaS berbilang penyewa yang dikawal tadbir, dengan pengesahan identiti, aliran kerja AI, integrasi, pentadbiran pasukan, dan asas kawalan yang sesuai untuk perusahaan.",
       "cta": {
         "goToDashboard": "Pergi ke papan pemuka",
         "getStarted": "Mula",
@@ -69,10 +69,10 @@
       },
       "socialProof": {
         "enterpriseReady": "Sedia untuk perusahaan",
-        "aiNative": "Asli AI",
-        "growthFocused": "Fokus pertumbuhan",
-        "enterpriseDesc": "Pengasingan tenant, kebolehlaudit dan akses berasaskan peranan dibina masuk.",
-        "aiNativeDesc": "Sambungkan pembantu, aliran pengetahuan dan data integrasi sejak hari pertama.",
+        "aiNative": "Direka untuk AI",
+        "growthFocused": "Fokus kepada pertumbuhan",
+        "enterpriseDesc": "Pengasingan penyewa, kebolehlaksanaan audit dan kawalan akses berasaskan peranan dibina secara terbina dalam.",
+        "aiNativeDesc": "Sambungkan pembantu, aliran pengetahuan dan data integrasi dari hari pertama.",
         "growthDesc": "Direka untuk pasukan yang perlu bergerak pantas tanpa kehilangan kawalan."
       }
     },
@@ -82,26 +82,26 @@
     },
     "pricing": {
       "badge": "Pelan ringkas",
-      "title": "Mula ringan, skala dengan kawalan",
-      "description": "Gunakan demo percuma, kemudian sesuaikan platform untuk pasukan yang berkembang dan penyediaan perusahaan.",
+      "title": "Mula kecil, berkembang dengan kawalan",
+      "description": "Gunakan demo secara percuma, kemudian sesuaikan platform untuk pasukan yang berkembang dan pengedaran perusahaan.",
       "mostPopular": "Paling popular",
       "perMonth": "/bulan",
       "plans": {
         "free": {
           "name": "Percuma",
-          "description": "Sehingga 10 pengguna. Mulakan dengan keperluan asas.",
+          "description": "Sehingga 10 pengguna. Mula dengan ciri asas.",
           "cta": "Mula",
           "features": {
             "1": "Sehingga 10 pengguna",
             "2": "Pembantu AI (terhad)",
             "3": "Integrasi GitHub",
-            "4": "Pangkalan pengetahuan (baca sahaja)",
+            "4": "Pangkalan pengetahuan (baca)",
             "5": "Sokongan komuniti"
           }
         },
         "pro": {
           "name": "Pro",
-          "description": "Untuk pasukan yang berkembang dan memerlukan lebih kuasa.",
+          "description": "Untuk pasukan yang berkembang yang memerlukan lebih kuasa.",
           "cta": "Mula",
           "features": {
             "1": "Pengguna tanpa had",
@@ -112,11 +112,11 @@
           }
         },
         "enterprise": {
-          "name": "Perusahaan",
+          "name": "Enterprise",
           "description": "Untuk organisasi dengan keperluan lanjutan.",
           "cta": "Hubungi kami",
           "features": {
-            "1": "Semua yang ada dalam Pro",
+            "1": "Segala dalam Pro",
             "2": "SSO (Auth0)",
             "3": "Integrasi tersuai",
             "4": "Jaminan SLA",
@@ -129,69 +129,69 @@
       "title": "Soalan Lazim",
       "items": {
         "try": {
-          "question": "Adakah Afenda percuma untuk dicuba?",
-          "answer": "Ya. Persekitaran demo berfungsi sepenuhnya tanpa bayaran. Terokai semua ciri dengan data contoh."
+          "question": "Bolehkah Afenda dicuba secara percuma?",
+          "answer": "Ya. Persekitaran demo berfungsi sepenuhnya tanpa pembayaran diperlukan. Terokai setiap ciri dengan data contoh."
         },
         "startData": {
           "question": "Apakah data yang saya perlukan untuk bermula?",
-          "answer": "Hanya senarai pasukan anda. Anda boleh import CSV, jemput ahli secara manual, atau gunakan aliran import pukal."
+          "answer": "Hanya senarai ahli pasukan anda. Anda boleh mengimport CSV, menjemput ahli secara manual, atau menggunakan aliran import pukal."
         },
         "existingTools": {
-          "question": "Adakah ia serasi dengan alat sedia ada kami?",
-          "answer": "Platform ini menyertakan GitHub secara terbina dan rangka kerja integrasi fleksibel untuk webhook serta penyesuai penyegerakan tersuai."
+          "question": "Adakah ia berfungsi dengan alat sedia ada kami?",
+          "answer": "Platform termasuk GitHub secara lalai dan rangka kerja integrasi yang fleksibel untuk webhook dan adapter penyegerakan tersuai."
         },
         "assistant": {
-          "question": "Bagaimana pembantu AI berfungsi?",
-          "answer": "AI menggunakan pangkalan pengetahuan dan data pengguna anda untuk menjawab soalan, mencari dokumen dan memberi bantuan mengikut konteks. Ia menyokong OpenAI dan Anthropic."
+          "question": "Bagaimanakah pembantu AI berfungsi?",
+          "answer": "AI menggunakan pangkalan pengetahuan dan data pengguna anda untuk menjawab soalan, mencari dokumen dan memberikan bantuan kontekstual. Ia menyokong model OpenAI dan Anthropic."
         },
         "security": {
           "question": "Adakah data saya selamat?",
-          "answer": "Ya. Platform ini direka berbilang tenant dengan data terpencil mengikut tenant, pengesahan bertaraf perusahaan dan kawalan akses berasaskan kebenaran."
+          "answer": "Ya. Platform direka berbilang penyewa, dengan pengasingan data penyewa, pengesahan perusahaan dan kawalan akses berasaskan kebenaran."
         },
         "migration": {
-          "question": "Bolehkah saya memindahkan data sedia ada?",
-          "answer": "Ya. Anda boleh import data pasukan daripada CSV dan enjin integrasi boleh menyegerakkan sistem luaran mengikut jadual."
+          "question": "Bolehkah saya memigrasikan data sedia ada?",
+          "answer": "Ya. Anda boleh mengimport data pasukan dari CSV, dan enjin integrasi boleh menyegerakkan sistem luaran mengikut jadual."
         }
       }
     },
     "nav": {
       "features": "Ciri",
       "pricing": "Harga",
-      "docs": "Dokumentasi",
+      "docs": "Dokumen",
       "language": "Bahasa",
       "selectLanguage": "Pilih bahasa",
       "theme": "Tema",
       "toggleTheme": "Tukar tema",
-      "toggleMenu": "Buka menu",
+      "toggleMenu": "Tukar menu",
       "themeOptions": {
-        "light": "Cerah",
+        "light": "Terang",
         "dark": "Gelap",
         "system": "Sistem"
       },
-      "bookDemo": "Tempah demo"
+      "bookDemo": "Tempah Demo"
     },
     "howItWorks": {
-      "title": "Cara ia berfungsi",
-      "description": "Bawa pasukan anda aktif dalam tiga langkah ringkas.",
+      "title": "Bagaimana ia berfungsi",
+      "description": "Sediakan pasukan anda dalam tiga langkah mudah.",
       "steps": {
         "configure": {
-          "title": "Lancar & konfigurasikan",
-          "description": "Lancar templat, cipta tenant anda, konfigurasikan penjenamaan, peranan dan sambungkan pembekal AI."
+          "title": "Lancarkan & konfigurasikan",
+          "description": "Lancarkan templat, cipta penyewa anda, konfigurasikan penjenamaan, peranan, dan sambungkan pembekal AI anda."
         },
         "invite": {
           "title": "Jemput pengguna",
-          "description": "Jemput ahli pasukan, tetapkan peranan dan biarkan mereka melengkapkan profil serta sambungan integrasi."
+          "description": "Jemput ahli pasukan, tetapkan peranan, dan biarkan mereka sediakan profil dan integrasi."
         },
         "launch": {
-          "title": "Lancar dengan AI",
-          "description": "Sambungkan pangkalan pengetahuan, dayakan pembantu AI, sediakan webhook dan mula beroperasi."
+          "title": "Lancarkan dengan AI",
+          "description": "Sambungkan pangkalan pengetahuan, aktifkan pembantu AI, tetapkan webhook, dan pergi hidup."
         }
       }
     },
     "featureTabs": {
       "users": {
-        "label": "Untuk pengguna",
-        "description": "Segala yang diperlukan pengguna anda untuk bermula dan kekal produktif.",
+        "label": "Untuk Pengguna",
+        "description": "Semua yang pengguna anda perlukan untuk bermula dan kekal produktif.",
         "features": {
           "profile": {
             "title": "Profil",
@@ -199,11 +199,11 @@
           },
           "assistant": {
             "title": "Pembantu AI",
-            "description": "Sembang bahasa semula jadi yang dikuasakan oleh OpenAI atau Anthropic."
+            "description": "Sembang bahasa semula jadi dikuasakan oleh OpenAI atau Anthropic."
           },
           "knowledgeBase": {
-            "title": "Pangkalan pengetahuan",
-            "description": "Cari dan telusuri dokumen serta kandungan organisasi anda."
+            "title": "Pangkalan Pengetahuan",
+            "description": "Cari dan semak dokumen dan kandungan organisasi anda."
           },
           "directory": {
             "title": "Direktori",
@@ -212,24 +212,24 @@
         }
       },
       "team": {
-        "label": "Untuk pasukan",
-        "description": "Alat kolaborasi dan keterlihatan untuk pasukan yang sedang berkembang.",
+        "label": "Untuk Pasukan",
+        "description": "Alat kolaborasi dan keterlihatan untuk pasukan yang berkembang.",
         "features": {
           "peopleDirectory": {
-            "title": "Direktori ahli",
+            "title": "Direktori Orang",
             "description": "Semak dan cari ahli pasukan dengan penapis."
           },
           "orgChart": {
-            "title": "Carta organisasi",
-            "description": "Visualkan struktur pasukan dan hubungan pelaporan."
+            "title": "Carta Organisasi",
+            "description": "Visualisasikan struktur pasukan dan hubungan pelaporan."
           },
           "activityFeed": {
-            "title": "Suapan aktiviti",
-            "description": "Kemas kini masa nyata tentang aktiviti pasukan dan platform."
+            "title": "Suapan Aktiviti",
+            "description": "Kemas kini masa nyata mengenai aktiviti pasukan dan platform."
           },
           "webhooks": {
             "title": "Webhook",
-            "description": "Hantar acara ke sistem luaran apabila ia berlaku."
+            "description": "Hantar acara ke sistem luaran apabila sesuatu berlaku."
           }
         }
       },
@@ -238,25 +238,25 @@
         "description": "Kawalan penuh untuk pentadbir yang mengurus platform.",
         "features": {
           "memberManagement": {
-            "title": "Pengurusan ahli",
+            "title": "Pengurusan Ahli",
             "description": "Jemput, urus dan nyahaktifkan ahli pasukan."
           },
           "roles": {
-            "title": "Peranan & kebenaran",
-            "description": "PBAC terperinci dengan himpunan peranan tersuai."
+            "title": "Peranan & Kebenaran",
+            "description": "PBAC terperinci dengan bundel peranan tersuai."
           },
           "auditLogs": {
-            "title": "Log audit",
-            "description": "Jejak lengkap bagi setiap tindakan di seluruh platform."
+            "title": "Log Audit",
+            "description": "Jejak lengkap semua tindakan di seluruh platform."
           },
           "settings": {
             "title": "Tetapan",
-            "description": "Konfigurasi tenant, penjenamaan dan bendera ciri."
+            "description": "Konfigurasi peringkat penyewa, penjenamaan dan feature flags."
           }
         }
       },
       "ai": {
-        "label": "AI & integrasi",
+        "label": "AI & Integrasi",
         "description": "Sambungkan AI dan sistem luaran ke platform anda.",
         "features": {
           "chat": {
@@ -264,25 +264,25 @@
             "description": "Carian perbualan merentas semua data anda."
           },
           "vectorSearch": {
-            "title": "Carian vektor",
-            "description": "Carian semantik yang dikuasakan oleh embedding pgvector."
+            "title": "Carian Vektor",
+            "description": "Carian semantik dikuasakan oleh embedding pgvector."
           },
           "githubIntegration": {
             "title": "Integrasi GitHub",
             "description": "Segerakkan profil pengguna dan aktiviti dari GitHub."
           },
           "integrationEngine": {
-            "title": "Enjin integrasi",
-            "description": "Sambungkan mana-mana sistem luaran dengan rangka kerja penyegerakan."
+            "title": "Enjin Integrasi",
+            "description": "Sambungkan mana-mana sistem luaran dengan rangka penyegerakan."
           }
         }
       }
     },
     "socialProofSection": {
       "title": "Dipercayai oleh pasukan di seluruh dunia",
-      "description": "Lihat bagaimana organisasi menggunakan Afenda untuk mengautomasikan dan menskalakan aliran kerja mereka.",
+      "description": "Lihat bagaimana organisasi menggunakan Afenda untuk mengautomasi dan mengembangkan aliran kerja mereka.",
       "roleAt": "{role} di {company}",
-      "sponsorsTitle": "Rakan kongsi & penaja",
+      "sponsorsTitle": "Rakan kongsi & penaja kami",
       "sponsorLabel": "Rakan kongsi {index}",
       "comingSoon": "Akan datang",
       "sponsorCta": "Berminat menaja Afenda?",
@@ -290,20 +290,20 @@
       "testimonials": {
         "1": {
           "role": "Naib Presiden Kejuruteraan",
-          "text": "Afenda mengubah cara kami membina dan mengautomasikan aliran kerja. Kini semuanya telus dan dipacu data."
+          "text": "Afenda mengubah cara kami membina dan mengautomasi aliran kerja kami. Segala-galanya kini telus dan dipacu data."
         },
         "2": {
-          "role": "Pengurus Operasi People",
-          "text": "Pembantu AI dan enjin integrasi menjimatkan berminggu-minggu masa persediaan. Melancarkan SaaS kami tidak pernah sepantas ini."
+          "role": "Pengurus Operasi Sumber Manusia",
+          "text": "Pembantu AI dan enjin integrasi menjimatkan minggu-minggu masa penyediaan pasukan kami. Penghantaran SaaS kami tidak pernah lebih pantas."
         },
         "3": {
           "role": "Pengarah Bakat",
-          "text": "Akhirnya ada platform yang membolehkan pengurus fokus pada pertumbuhan, bukannya hamparan. Integrasi OKR sangat lancar."
+          "text": "Akhirnya, platform di mana pengurus boleh fokus pada pertumbuhan dan bukannya hamparan. Integrasi OKR lancar."
         }
       }
     },
     "footer": {
-      "blurb": "Boilerplate SaaS Next.js sedia pengeluaran dengan multi-tenant, AI dan integrasi.",
+      "blurb": "Asas platform SaaS sedia produksi dengan berbilang penyewa, aliran kerja AI, integrasi dan kawalan yang sesuai untuk tadbir urus.",
       "sections": {
         "product": "Produk",
         "resources": "Sumber",
@@ -312,16 +312,16 @@
       "links": {
         "features": "Ciri",
         "pricing": "Harga",
-        "howItWorks": "Cara ia berfungsi",
+        "howItWorks": "Bagaimana Ia Berfungsi",
         "documentation": "Dokumentasi",
         "blog": "Blog (akan datang)",
         "changelog": "Log perubahan (akan datang)",
-        "about": "Tentang kami (akan datang)",
-        "contact": "Hubungi kami (akan datang)",
+        "about": "Tentang (akan datang)",
+        "contact": "Hubungi (akan datang)",
         "privacy": "Privasi (akan datang)",
         "terms": "Terma (akan datang)"
       },
-      "builtWith": "Dibina dengan Next.js, Tailwind CSS dan Drizzle ORM.",
+      "builtWith": "Dibina dengan Next.js, Tailwind CSS, dan Drizzle ORM.",
       "socialComingSoon": "{name} (akan datang)"
     },
     "heroPreview": {
@@ -332,16 +332,16 @@
         "badge": "+ Kepimpinan"
       },
       "activityCard": {
-        "title": "Aktiviti platform",
-        "teamVelocity": "Kelajuan pasukan",
-        "delivery": "Penyampaian"
+        "title": "Aktiviti Platform",
+        "teamVelocity": "Halaju pasukan",
+        "delivery": "Penghantaran"
       },
       "peopleFinder": {
-        "title": "Pencari orang"
+        "title": "Pencari Orang"
       },
       "people": {
         "ana": {
-          "role": "Jurutera Staf"
+          "role": "Jurutera Kanan"
         },
         "marco": {
           "role": "Ketua Teknikal"
@@ -355,9 +355,9 @@
     "signIn": "Log Masuk",
     "signOut": "Log Keluar",
     "signUp": "Daftar",
-    "email": "Emel",
-    "password": "Kata laluan",
-    "forgotPassword": "Lupa kata laluan?",
+    "email": "E-mel",
+    "password": "Kata Laluan",
+    "forgotPassword": "Lupa Kata Laluan?",
     "rememberMe": "Ingat saya",
     "continueWith": "Teruskan dengan {provider}",
     "orContinueWith": "Atau teruskan dengan",
@@ -365,7 +365,7 @@
     "welcomeBack": "Selamat kembali",
     "createAccount": "Cipta akaun",
     "alreadyHaveAccount": "Sudah ada akaun?",
-    "dontHaveAccount": "Belum ada akaun?"
+    "dontHaveAccount": "Tiada akaun?"
   },
   "nav": {
     "home": "Laman Utama",
@@ -381,7 +381,7 @@
     "openAdminPanel": "Buka Panel Pentadbir",
     "viewMy": "Pandangan Saya",
     "viewAdmin": "Pandangan Pentadbir",
-    "switchView": "Tukar pandangan",
+    "switchView": "Tukar Pandangan",
     "directory": "Direktori",
     "manager": "Pengurus",
     "knowledgeBase": "Pangkalan Pengetahuan",
@@ -402,71 +402,71 @@
     "backToDashboard": "Kembali ke Papan Pemuka",
     "settings": {
       "pageTitle": "Tetapan Profil",
-      "pageDescription": "Sunting maklumat peribadi dan akaun yang bersambung.",
+      "pageDescription": "Sunting maklumat peribadi dan akaun bersambung anda.",
       "backToProfile": "Profil",
       "currentPage": "Tetapan",
       "identityTitle": "Identiti",
-      "identityDescription": "Identiti asas anda yang diurus oleh organisasi anda.",
+      "identityDescription": "Maklumat identiti asas yang diuruskan oleh organisasi anda.",
       "name": "Nama",
-      "email": "Emel kerja",
+      "email": "E-mel Kerja",
       "jobTitle": "Jawatan",
-      "identityHint": "Medan ini diurus oleh pentadbir anda. Hubungi mereka jika perlu diubah.",
+      "identityHint": "Medan ini diuruskan oleh pentadbir anda. Hubungi mereka untuk membuat perubahan.",
       "personalInfoTitle": "Maklumat Peribadi",
-      "personalInfoDescription": "Kemas kini butiran peribadi anda. Maklumat ini dilihat oleh pasukan anda.",
-      "pronouns": "Kata ganti",
+      "personalInfoDescription": "Kemas kini butiran peribadi anda. Maklumat ini boleh dilihat oleh pasukan anda.",
+      "pronouns": "Kata Ganti Nama",
       "pronounsPlaceholder": "cth., dia/lelaki, dia/perempuan, mereka",
       "location": "Lokasi",
-      "locationPlaceholder": "cth., Kuala Lumpur, Malaysia",
-      "timezone": "Zon masa",
-      "timezonePlaceholder": "cth., Asia/Kuala_Lumpur",
-      "phoneNumber": "Nombor telefon",
-      "phoneNumberPlaceholder": "+60 3 1234-5678",
-      "personalEmail": "Emel peribadi",
-      "personalEmailHint": "Pilihan. Emel sekunder untuk komunikasi bukan kerja.",
+      "locationPlaceholder": "cth., Buenos Aires, Argentina",
+      "timezone": "Zon Masa",
+      "timezonePlaceholder": "cth., America/Argentina/Buenos_Aires",
+      "phoneNumber": "Nombor Telefon",
+      "phoneNumberPlaceholder": "+54 11 1234-5678",
+      "personalEmail": "E-mel Peribadi",
+      "personalEmailHint": "Pilihan. E-mel kedua untuk komunikasi bukan kerja.",
       "personalEmailPlaceholder": "personal@example.com",
-      "bio": "Biografi",
-      "bioPlaceholder": "Ceritakan tentang diri anda kepada pasukan...",
+      "bio": "Bio",
+      "bioPlaceholder": "Beritahu pasukan anda tentang diri anda...",
       "connectedAccountsTitle": "Akaun Bersambung",
-      "connectedAccountsDescription": "Pautkan profil luaran untuk memperkayakan data platform anda.",
-      "githubUsername": "Nama pengguna GitHub",
-      "githubUsernameHint": "Nama pengguna GitHub anda (cth., 'octocat'). Digunakan untuk menjejaki sumbangan.",
-      "githubUsernamePlaceholder": "cth., octocat",
+      "connectedAccountsDescription": "Sambungkan profil luaran untuk memperkayakan data platform anda.",
+      "githubUsername": "Nama Pengguna GitHub",
+      "githubUsernameHint": "Nama pengguna GitHub anda (cth., 'octocat'). Digunakan untuk menjejak sumbangan.",
+      "githubUsernamePlaceholder": "cth. octocat",
       "viewProfile": "Lihat",
       "linkedinUrl": "URL Profil LinkedIn",
       "linkedinUrlHint": "URL penuh profil LinkedIn anda.",
-      "linkedinUrlPlaceholder": "https://linkedin.com/in/nama-anda",
+      "linkedinUrlPlaceholder": "https://linkedin.com/in/your-name",
       "saved": "Profil berjaya dikemas kini!",
       "saveError": "Gagal mengemas kini profil. Sila cuba lagi.",
       "saveChanges": "Simpan Perubahan",
       "connectGitHub": "Sambung GitHub",
-      "disconnectGitHub": "Putuskan sambungan",
-      "disconnectGitHubConfirm": "Adakah anda pasti mahu memutuskan sambungan akaun GitHub?",
-      "githubConnectedAs": "Bersambung sebagai @{username}",
-      "githubNotConnected": "Belum bersambung",
-      "connectGitHubHint": "Sambungkan untuk menyegerakkan repositori dan sumbangan anda secara automatik.",
+      "disconnectGitHub": "Putuskan Sambungan",
+      "disconnectGitHubConfirm": "Adakah anda pasti mahu memutuskan sambungan akaun GitHub anda?",
+      "githubConnectedAs": "Disambungkan sebagai @{username}",
+      "githubNotConnected": "Belum disambungkan",
+      "connectGitHubHint": "Sambung untuk menyegerakkan repositori dan sumbangan anda secara automatik.",
       "connectGitHubConnectedHint": "Akaun GitHub anda telah disambungkan.",
       "orManualEntry": "atau masukkan secara manual",
       "connectLinkedIn": "Sambung LinkedIn",
-      "disconnectLinkedIn": "Putuskan sambungan",
-      "disconnectLinkedInConfirm": "Adakah anda pasti mahu memutuskan sambungan LinkedIn?",
-      "linkedinConnectedAs": "Bersambung sebagai {name}",
-      "linkedinNotConnected": "Belum bersambung",
-      "connectLinkedInHint": "Sambungkan untuk mengesahkan identiti LinkedIn anda dan mengimport gambar profil.",
-      "connectLinkedInConnectedHint": "Akaun LinkedIn anda telah disambungkan dan disahkan."
+      "disconnectLinkedIn": "Putuskan Sambungan LinkedIn",
+      "disconnectLinkedInConfirm": "Adakah anda pasti mahu memutuskan sambungan akaun LinkedIn anda?",
+      "linkedinConnectedAs": "Disambungkan sebagai {name}",
+      "linkedinNotConnected": "Belum disambungkan",
+      "connectLinkedInHint": "Sambungkan untuk mengesahkan identiti LinkedIn dan import gambar profil anda.",
+      "connectLinkedInConnectedHint": "Akaun LinkedIn anda disambungkan dan disahkan."
     },
     "addBio": "Tambah bio ke profil anda",
     "uploadAvatar": "Muat naik gambar profil",
-    "connectGitHub": "Sambung akaun GitHub anda",
+    "connectGitHub": "Sambungkan akaun GitHub anda",
     "inviteTeamMember": "Jemput ahli pasukan",
-    "bio": "Biografi",
-    "contact": "Hubungan"
+    "bio": "Bio",
+    "contact": "Hubungi"
   },
   "admin": {
     "title": "Pentadbir",
     "dashboard": "Papan Pemuka",
     "analytics": "Analitik",
     "orgAnalytics": "Analitik Organisasi",
-    "orgAnalyticsDesc": "Metrik dan wawasan peringkat organisasi",
+    "orgAnalyticsDesc": "Metrik dan wawasan merentasi organisasi",
     "settings": "Tetapan",
     "members": "Ahli Pasukan",
     "invites": "Jemputan",
@@ -481,112 +481,112 @@
     "integrationsPage": {
       "title": "Integrasi",
       "description": "Sambungkan alat luaran dan lihat data yang disegerakkan.",
-      "connectedSection": "Bersambung",
+      "connectedSection": "Disambungkan",
       "availableSection": "Tersedia",
       "comingSoonSection": "Akan datang",
       "configure": "Konfigurasikan",
       "learnMore": "Ketahui lebih lanjut",
-      "lastSync": "Segerak terakhir: {date}",
-      "statusConnected": "Bersambung",
-      "statusNotConnected": "Belum bersambung",
+      "lastSync": "Penyegerakan terakhir: {date}",
+      "statusConnected": "Disambungkan",
+      "statusNotConnected": "Belum disambungkan",
       "statusComingSoon": "Akan datang",
-      "statusInDevelopment": "Dalam pembangunan",
+      "statusInDevelopment": "Sedang dibangunkan",
       "statusEnabled": "Diaktifkan",
-      "statusNotConfigured": "Belum dikonfigurasikan",
+      "statusNotConfigured": "Belum dikonfigurasi",
       "lastSyncNever": "Tidak pernah",
       "webhooks": {
-        "name": "Webhooks",
-        "description": "Hantar pemberitahuan acara ke perkhidmatan luaran seperti Slack, Zapier, atau API tersuai anda."
+        "name": "Webhook",
+        "description": "Hantar pemberitahuan acara ke perkhidmatan luaran seperti Slack, Zapier atau API tersuai anda."
       },
       "github": {
         "name": "GitHub",
-        "description": "Sambungkan GitHub untuk penjejakan repositori dan penyegerakan data."
+        "description": "Sambung GitHub untuk penjejakan repositori dan penyegerakan data."
       },
       "gitlab": {
         "name": "GitLab",
-        "description": "Sambungkan GitLab untuk penjejakan repositori dan penyegerakan data."
+        "description": "Sambung GitLab untuk penjejakan repositori dan penyegerakan data."
       },
       "linkedin": {
         "name": "LinkedIn",
-        "description": "Pautkan akaun LinkedIn untuk pengesahan identiti dan pengayaan profil."
+        "description": "Sambungkan LinkedIn untuk pengesahan identiti dan pengayaan profil."
       },
       "googleWorkspace": {
         "name": "Google Workspace",
-        "description": "Sambungkan Google Workspace untuk aliran kerja kalendar dan mesyuarat."
+        "description": "Sambung Google Workspace untuk aliran kerja kalendar dan mesyuarat."
       },
       "slack": {
         "name": "Slack",
-        "description": "Sambungkan Slack untuk pemberitahuan pasukan dan kemas kini aliran kerja."
+        "description": "Sambung Slack untuk pemberitahuan pasukan dan kemas kini aliran kerja."
       }
     },
     "integrationsControl": {
-      "title": "Pusat kawalan integrasi",
-      "description": "Jalankan penyegerakan, pantau pelaksanaan, dan selesaikan konflik antara pembekal.",
+      "title": "Ruang Kawalan Integrasi",
+      "description": "Jalankan penyegerakan, pantau larian, dan selesaikan konflik merentasi pembekal.",
       "provider": "Pembekal",
       "mode": "Mod",
-      "incremental": "Penyegerakan Inkremental",
-      "full": "Migrasi Penuh",
+      "incremental": "Penyegerakan beransur",
+      "full": "Migrasi penuh",
       "reconcile": "Rekonsiliasi",
-      "dryRun": "Simulasi",
-      "entities": "Entiti (dipisah koma)",
+      "dryRun": "Larian kering",
+      "entities": "Entiti (pisahkan dengan koma)",
       "fromDate": "Dari Tarikh",
       "toDate": "Hingga Tarikh",
-      "personEmails": "Emel Orang",
+      "personEmails": "E-mel individu",
       "personEmailsPlaceholder": "alice@company.com, bob@company.com",
       "run": "Jalankan",
-      "runCompleted": "Pelaksanaan selesai",
-      "runFailed": "Pelaksanaan gagal",
+      "runCompleted": "Larian selesai",
+      "runFailed": "Larian gagal",
       "unknownError": "Ralat tidak diketahui",
-      "metrics": "Metrik (14 hari)",
-      "runsTotal": "Jumlah pelaksanaan: {value}",
-      "runsCompleted": "Pelaksanaan selesai: {value}",
-      "runsFailed": "Pelaksanaan gagal: {value}",
+      "metrics": "Metrik (14h)",
+      "runsTotal": "Jumlah larian: {value}",
+      "runsCompleted": "Larian selesai: {value}",
+      "runsFailed": "Larian gagal: {value}",
       "conflictsOpenCount": "Konflik terbuka: {value}",
-      "avgRunTimeSeconds": "Purata masa (s): {value}",
+      "avgRunTimeSeconds": "Purata masa larian (s): {value}",
       "noMetrics": "Tiada metrik tersedia.",
       "readiness": "Kesiapsiagaan Cutover",
       "readinessReady": "Sedia untuk cutover",
       "readinessNotReady": "Belum sedia untuk cutover",
-      "recentRuns": "Pelaksanaan Terkini",
-      "noRuns": "Tiada pelaksanaan lagi.",
+      "recentRuns": "Larian Terkini",
+      "noRuns": "Tiada larian lagi.",
       "openConflicts": "Konflik Terbuka",
       "noConflicts": "Tiada konflik terbuka.",
       "resolve": "Selesaikan",
-      "fieldMappings": "Pemetaan pemilikan medan",
+      "fieldMappings": "Pemetaan Pemilikan Medan",
       "mappingEntityPlaceholder": "Jenis entiti (cth. record)",
       "mappingFieldPlaceholder": "Laluan medan (cth. status)",
-      "ownershipRemote": "Jauh berkuasa",
-      "ownershipLocal": "Lokal berkuasa",
+      "ownershipRemote": "Autoriti jauh",
+      "ownershipLocal": "Autoriti tempatan",
       "ownershipMerge": "Gabung",
-      "ownershipAppendOnly": "Hanya tambah",
+      "ownershipAppendOnly": "Tambah sahaja",
       "saveMapping": "Simpan Pemetaan",
       "noMappings": "Tiada pemetaan dikonfigurasikan."
     },
     "github": {
       "title": "GitHub",
-      "description": "Sambungkan GitHub untuk penjejakan repositori dan penyegerakan data.",
+      "description": "Sambung GitHub untuk penjejakan repositori dan penyegerakan data.",
       "credentials": {
-        "title": "Kredensial OAuth App",
-        "description": "Masukkan kredensial OAuth App GitHub anda. Cipta di github.com/settings/developers.",
+        "title": "Kelayakan Aplikasi OAuth",
+        "description": "Masukkan kelayakan Aplikasi OAuth GitHub anda. Cipta di github.com/settings/developers.",
         "clientId": "Client ID",
-        "clientIdHint": "Client ID dari tetapan OAuth App GitHub anda.",
+        "clientIdHint": "Client ID dari tetapan Aplikasi GitHub OAuth anda.",
         "clientSecret": "Client Secret",
-        "clientSecretHint": "Client Secret dari tetapan OAuth App GitHub anda.",
-        "testCredentials": "Sahkan Kredensial",
-        "testSuccess": "Kredensial kelihatan sah",
+        "clientSecretHint": "Client Secret dari tetapan Aplikasi GitHub OAuth anda.",
+        "testCredentials": "Sahkan Kelayakan",
+        "testSuccess": "Kelayakan kelihatan sah",
         "testFailed": "Pengesahan gagal",
         "clientIdTooShort": "Client ID terlalu pendek",
         "clientSecretTooShort": "Client Secret terlalu pendek",
-        "saveCredentials": "Simpan Kredensial",
-        "saveFailed": "Gagal menyimpan kredensial",
-        "envConfigured": "Pembolehubah Persekitaran Dikesan",
-        "envConfiguredDesc": "Kredensial OAuth GitHub dikonfigurasikan melalui pembolehubah persekitaran (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Nilai yang dimasukkan di sini akan menimpa pembolehubah persekitaran untuk tenant ini.",
+        "saveCredentials": "Simpan Kelayakan",
+        "saveFailed": "Gagal menyimpan kelayakan",
+        "envConfigured": "Pembolehubah persekitaran dikesan",
+        "envConfiguredDesc": "Kelayakan GitHub OAuth dikonfigurasikan melalui pembolehubah persekitaran (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Nilai yang dimasukkan di sini akan menulis ganti pembolehubah persekitaran untuk penyewa ini.",
         "githubDevSettings": "Tetapan Pembangun GitHub"
       },
       "settings": {
         "connectionStatus": "Status Sambungan",
-        "connectedAs": "Bersambung sebagai @{username}",
-        "notConnected": "Belum bersambung ke GitHub. Klik Sambung untuk memulakan aliran OAuth.",
+        "connectedAs": "Disambungkan sebagai @{username}",
+        "notConnected": "Belum disambungkan ke GitHub. Klik Sambung untuk memulakan aliran OAuth.",
         "connect": "Sambung GitHub",
         "reconnect": "Sambung semula",
         "disconnect": "Putuskan sambungan",
@@ -594,85 +594,85 @@
         "integrationSettings": "Tetapan Integrasi",
         "integrationSettingsDesc": "Konfigurasikan bagaimana data GitHub disegerakkan ke platform.",
         "enableIntegration": "Dayakan Integrasi",
-        "enableIntegrationDesc": "Hidupkan untuk membolehkan penyegerakan data dari GitHub.",
+        "enableIntegrationDesc": "Hidupkan untuk membolehkan penyegerakan data daripada GitHub.",
         "organizationFilter": "Penapis Organisasi",
         "organizationFilterDesc": "Pilihan untuk mengehadkan penyegerakan kepada ahli organisasi GitHub tertentu.",
-        "organizationFilterPlaceholder": "cth., my-company",
-        "syncRepositories": "Sinkron Repositori",
-        "syncRepositoriesDesc": "Imbas repositori dan kumpul statistik bahasa.",
-        "syncContributions": "Sinkron Sumbangan",
-        "syncContributionsDesc": "Jejaki commit, pull request, dan semakan kod setiap orang.",
-        "includeArchived": "Sertakan Repositori Diarkibkan",
+        "organizationFilterPlaceholder": "cth. my-company",
+        "syncRepositories": "Segerakkan Repositori",
+        "syncRepositoriesDesc": "Imbas repositori dan kumpulkan statistik bahasa.",
+        "syncContributions": "Segerakkan Sumbangan",
+        "syncContributionsDesc": "Jejak commit, pull request, dan ulasan kod mengikut individu.",
+        "includeArchived": "Sertakan Repo Diarkibkan",
         "includeArchivedDesc": "Sertakan repositori yang diarkibkan semasa mengimbas.",
-        "includeForks": "Sertakan Repositori Fork",
+        "includeForks": "Sertakan Repo Fork",
         "includeForksDesc": "Sertakan repositori fork semasa mengimbas.",
-        "lookbackDays": "Jangkaan Sumbangan (hari)",
+        "lookbackDays": "Tempoh Lihat Balik Sumbangan (hari)",
         "lookbackDaysDesc": "Berapa hari ke belakang untuk mengimbas sumbangan (30-730).",
         "saved": "Tetapan disimpan",
         "saveError": "Gagal menyimpan tetapan",
         "saveSettings": "Simpan Tetapan",
-        "disabledWarningTitle": "Integrasi Dinyahdayakan",
-        "disabledWarningDesc": "GitHub bersambung tetapi dinyahdayakan. Dayakan untuk mula menyegerakkan data.",
-        "envConfigured": "Kredensial OAuth dari Persekitaran",
-        "envConfiguredDesc": "Kredensial OAuth GitHub dimuat dari pembolehubah persekitaran (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Tiada konfigurasi kredensial tambahan diperlukan.",
-        "inferSkills": "Infer kemahiran",
+        "disabledWarningTitle": "Integrasi Dilumpuhkan",
+        "disabledWarningDesc": "GitHub disambungkan tetapi dilumpuhkan. Dayakan untuk mula menyegerakkan data.",
+        "envConfigured": "Kelayakan OAuth dari Persekitaran",
+        "envConfiguredDesc": "Kelayakan GitHub OAuth dimuat dari pembolehubah persekitaran (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Tiada konfigurasi tambahan diperlukan.",
+        "inferSkills": "Infer Kemahiran",
         "inferSkillsDesc": "Infer kemahiran daripada bahasa repositori dan data sumbangan."
       }
     },
     "linkedin": {
       "title": "LinkedIn",
-      "description": "Sambungkan akaun LinkedIn untuk pengesahan identiti dan pengayaan profil.",
-      "notConfiguredTitle": "Integrasi Belum Dikonfigurasikan",
-      "notConfiguredDesc": "Konfigurasikan kredensial OAuth LinkedIn anda untuk mendayakan integrasi ini. Cipta aplikasi di linkedin.com/developers/apps.",
+      "description": "Sambungkan LinkedIn untuk pengesahan identiti dan pengayaan profil.",
+      "notConfiguredTitle": "Integrasi Belum Dikonfigurasi",
+      "notConfiguredDesc": "Konfigurasikan kelayakan OAuth LinkedIn anda untuk mengaktifkan integrasi. Cipta aplikasi di linkedin.com/developers/apps.",
       "credentials": {
-        "title": "Kredensial OAuth LinkedIn",
-        "description": "Masukkan Client ID dan secret aplikasi OAuth LinkedIn anda. Cipta aplikasi di LinkedIn Developer Portal.",
+        "title": "Kelayakan OAuth LinkedIn",
+        "description": "Masukkan Client ID dan Secret Aplikasi LinkedIn OAuth anda. Cipta aplikasi di LinkedIn Developer Portal.",
         "clientId": "Client ID",
-        "clientIdHint": "Ditemui dalam tetapan aplikasi LinkedIn anda di tab Auth.",
+        "clientIdHint": "Ditemui dalam tetapan aplikasi LinkedIn anda di bawah tab Auth.",
         "clientIdTooShort": "Client ID terlalu pendek",
         "clientSecret": "Client Secret",
-        "clientSecretHint": "Client secret utama dari aplikasi LinkedIn anda.",
-        "clientSecretTooShort": "Client secret terlalu pendek",
-        "testCredentials": "Uji Kredensial",
+        "clientSecretHint": "Client Secret utama dari aplikasi LinkedIn anda.",
+        "clientSecretTooShort": "Client Secret terlalu pendek",
+        "testCredentials": "Uji Kelayakan",
         "testSuccess": "Format sah",
         "testFailed": "Pengesahan gagal",
-        "saveCredentials": "Simpan Kredensial",
-        "saveFailed": "Gagal menyimpan kredensial",
-        "envConfigured": "Pembolehubah Persekitaran Dikesan",
-        "envConfiguredDesc": "Kredensial LinkedIn disediakan melalui pembolehubah persekitaran. Anda boleh menimpanya dengan nilai khusus tenant di bawah.",
+        "saveCredentials": "Simpan Kelayakan",
+        "saveFailed": "Gagal menyimpan kelayakan",
+        "envConfigured": "Pembolehubah persekitaran dikesan",
+        "envConfiguredDesc": "Kelayakan LinkedIn disediakan melalui pembolehubah persekitaran. Anda boleh menulis ganti dengan nilai khusus penyewa di bawah.",
         "linkedinDevPortal": "Portal Pembangun LinkedIn"
       },
       "settings": {
         "connectionStatus": "Status Sambungan",
-        "connectedAs": "Bersambung sebagai {name}",
-        "notConnected": "Belum bersambung ke LinkedIn. Sambung untuk mengesahkan integrasi berfungsi.",
+        "connectedAs": "Disambungkan sebagai {name}",
+        "notConnected": "Belum disambungkan ke LinkedIn. Sambung untuk mengesahkan integrasi berfungsi.",
         "connect": "Sambung LinkedIn",
         "reconnect": "Sambung semula",
         "disconnect": "Putuskan sambungan",
         "confirmDisconnect": "Adakah anda pasti mahu memutuskan sambungan LinkedIn?",
         "integrationSettings": "Tetapan Integrasi",
-        "integrationSettingsDesc": "Konfigurasikan bagaimana integrasi LinkedIn berfungsi untuk organisasi anda.",
+        "integrationSettingsDesc": "Konfigurasikan cara integrasi LinkedIn berfungsi untuk organisasi anda.",
         "enableIntegration": "Dayakan Integrasi LinkedIn",
         "enableIntegrationDesc": "Benarkan ahli pasukan menyambungkan akaun LinkedIn mereka untuk pengayaan profil.",
-        "autoUpdateAvatar": "Kemas kini Avatar Automatik",
-        "autoUpdateAvatarDesc": "Kemas kini gambar profil pengguna secara automatik dari gambar LinkedIn mereka apabila disambungkan.",
-        "autoUpdateLocale": "Kemas kini Lokalisasi Automatik",
-        "autoUpdateLocaleDesc": "Tetapkan locale pengguna secara automatik dari profil LinkedIn mereka apabila disambungkan.",
+        "autoUpdateAvatar": "Kemas Kini Avatar Automatik",
+        "autoUpdateAvatarDesc": "Kemas kini gambar profil pengguna secara automatik daripada foto LinkedIn mereka apabila mereka menyambung.",
+        "autoUpdateLocale": "Kemas kini Lokasi Automatik",
+        "autoUpdateLocaleDesc": "Tetapkan locale pengguna dari profil LinkedIn secara automatik apabila disambung.",
         "saveSettings": "Simpan Tetapan",
         "saved": "Tetapan disimpan",
         "saveError": "Gagal menyimpan tetapan",
-        "envConfigured": "Pembolehubah Persekitaran Dikesan",
-        "envConfiguredDesc": "Kredensial LinkedIn disediakan melalui pembolehubah persekitaran.",
-        "disabledWarningTitle": "Integrasi Dinyahdayakan",
-        "disabledWarningDesc": "Integrasi LinkedIn kini dinyahdayakan. Dayakan untuk membenarkan ahli pasukan menyambungkan akaun LinkedIn mereka."
+        "envConfigured": "Pembolehubah persekitaran dikesan",
+        "envConfiguredDesc": "Kelayakan LinkedIn disediakan melalui pembolehubah persekitaran.",
+        "disabledWarningTitle": "Integrasi Dilumpuhkan",
+        "disabledWarningDesc": "Integrasi LinkedIn kini dilumpuhkan. Dayakan untuk membenarkan ahli pasukan menyambung akaun LinkedIn."
       }
     },
     "settingsTabs": {
       "general": "Am",
       "features": "Ciri",
       "departments": "Jabatan",
-      "aiProvider": "Pembekal AI",
-      "storage": "Storan",
+      "aiProvider": "Penyedia AI",
+      "storage": "Stor",
       "branding": "Penjenamaan"
     },
     "membersPage": {
@@ -684,31 +684,31 @@
       "role": "Peranan",
       "department": "Jabatan",
       "status": "Status",
-      "lastActive": "Terakhir Aktif",
+      "lastActive": "Aktif Terakhir",
       "roles": {
         "admin": "Pentadbir",
         "member": "Ahli"
       },
       "statuses": {
         "active": "Aktif",
-        "onboarding": "Dalam onboarding",
+        "onboarding": "Dalam Onboarding",
         "inactive": "Tidak aktif"
       },
-      "confirmRemove": "Adakah anda pasti mahu mengalih keluar ahli ini?",
+      "confirmRemove": "Adakah anda pasti mahu membuang ahli ini?",
       "noMembers": "Tiada ahli pasukan ditemui"
     },
     "invitesPage": {
       "title": "Jemputan",
-      "description": "Urus jemputan yang tertunda ke organisasi anda",
+      "description": "Urus jemputan yang belum selesai ke organisasi anda",
       "createInvite": "Cipta Jemputan",
       "sendInvite": "Hantar Jemputan",
-      "email": "Alamat emel",
-      "firstName": "Nama pertama",
-      "lastName": "Nama keluarga",
+      "email": "Alamat E-mel",
+      "firstName": "Nama Pertama",
+      "lastName": "Nama Akhir",
       "role": "Peranan",
-      "message": "Mesej sambutan",
+      "message": "Mesej Selamat Datang",
       "messagePlaceholder": "Tambah mesej peribadi pada jemputan (pilihan)",
-      "expiration": "Berlaku selama",
+      "expiration": "Tamat Tempoh Dalam",
       "expirationOptions": {
         "1day": "1 Hari",
         "3days": "3 Hari",
@@ -717,96 +717,96 @@
         "30days": "30 Hari"
       },
       "status": {
-        "pending": "Tertunda",
+        "pending": "Menunggu",
         "accepted": "Diterima",
-        "expired": "Tamat tempoh",
-        "revoked": "Dibatalkan"
+        "expired": "Tamat Tempoh",
+        "revoked": "Ditarik Balik"
       },
       "actions": {
-        "copyLink": "Salin pautan",
+        "copyLink": "Salin Pautan",
         "linkCopied": "Pautan jemputan disalin!",
         "extend": "Lanjutkan",
-        "revoke": "Batalkan"
+        "revoke": "Tarik Balik"
       },
-      "confirmRevoke": "Adakah anda pasti mahu membatalkan jemputan ini?",
-      "noInvites": "Tiada jemputan tertunda",
-      "inviteSuccess": "Jemputan berjaya dihantar"
+      "confirmRevoke": "Adakah anda pasti mahu menarik balik jemputan ini?",
+      "noInvites": "Tiada jemputan tertunggak",
+      "inviteSuccess": "Jemputan dihantar berjaya"
     },
-    "departmentsPageDescription": "Tetapkan pengurus dan ahli untuk setiap jabatan.",
-    "departmentsManageInSettings": "Urus di Tetapan",
-    "departmentsNoDepartments": "Tiada jabatan dikonfigurasikan",
-    "departmentsNoDepartmentsHint": "Tambah jabatan untuk mengatur pasukan anda.",
-    "departmentsCreateInSettings": "Cipta di Tetapan",
-    "departmentsAddDepartment": "Tambah jabatan",
-    "departmentsEdit": "Sunting jabatan",
-    "departmentsEditDepartment": "Sunting jabatan",
-    "departmentsDelete": "Padam jabatan",
-    "departmentsConfirmDelete": "Padam jabatan ini? Tindakan ini tidak boleh dibatalkan.",
-    "departmentsDeleteDisabledHint": "Alih keluar semua ahli terlebih dahulu",
-    "departmentsCreateDescription": "Cipta jabatan baru untuk mengatur pasukan anda. Anda boleh menetapkan pengurus dan ahli kemudian.",
+    "departmentsPageDescription": "Tetapkan pengurus dan ahli untuk setiap jabatan",
+    "departmentsManageInSettings": "Urus dalam Tetapan",
+    "departmentsNoDepartments": "Tiada jabatan dikonfigurasi",
+    "departmentsNoDepartmentsHint": "Tambah jabatan untuk mengatur pasukan anda",
+    "departmentsCreateInSettings": "Cipta dalam Tetapan",
+    "departmentsAddDepartment": "Tambah Jabatan",
+    "departmentsEdit": "Sunting Jabatan",
+    "departmentsEditDepartment": "Sunting Jabatan",
+    "departmentsDelete": "Padam Jabatan",
+    "departmentsConfirmDelete": "Padam jabatan ini? Tindakan ini tidak boleh dibatalkan",
+    "departmentsDeleteDisabledHint": "Padam semua ahli terlebih dahulu",
+    "departmentsCreateDescription": "Cipta jabatan baharu untuk mengatur pasukan anda. Anda boleh menetapkan pengurus dan ahli kemudian.",
     "departmentsName": "Nama",
-    "departmentsNamePlaceholder": "cth. Kejuruteraan",
+    "departmentsNamePlaceholder": "cth. Engineering",
     "departmentsParent": "Jabatan induk",
     "departmentsNoParent": "Tiada",
     "departmentsMembers": "Ahli",
     "departmentsManagers": "Pengurus",
-    "departmentsAddManager": "Tambah pengurus",
+    "departmentsAddManager": "Tambah Pengurus",
     "departmentsPrimary": "Utama",
-    "departmentsRemoveManager": "Alih keluar pengurus",
+    "departmentsRemoveManager": "Buang Pengurus",
     "departmentsNoManagers": "Tiada pengurus ditetapkan",
-    "departmentsAddMember": "Tambah ahli",
-    "departmentsRemoveMember": "Alih keluar ahli",
+    "departmentsAddMember": "Tambah Ahli",
+    "departmentsRemoveMember": "Buang Ahli",
     "departmentsNoMembers": "Tiada ahli ditetapkan",
     "departmentsNoPeople": "Tiada orang dalam tenant ini",
     "departmentsDescription": "Penerangan",
-    "departmentsDescriptionPlaceholder": "Penerangan pilihan"
+    "departmentsDescriptionPlaceholder": "Penerangan (pilihan)"
   },
   "settings": {
     "title": "Tetapan",
     "backToUserView": "Kembali ke Pandangan Pengguna",
     "general": {
       "title": "Butiran Organisasi",
-      "description": "Konfigurasi asas tenant",
+      "description": "Konfigurasi asas penyewa",
       "tenantSlug": "Tenant Slug",
       "displayName": "Nama Paparan",
       "descriptionLabel": "Penerangan"
     },
     "features": {
-      "title": "Bendera Ciri",
+      "title": "Feature flags",
       "description": "Dayakan atau nyahdayakan ciri platform",
-      "core": "Ciri Teras",
+      "core": "Ciri teras",
       "ai": "Ciri AI",
       "integrations": "Integrasi"
     },
     "departments": {
       "title": "Jabatan",
-      "description": "Tentukan struktur organisasi",
+      "description": "Takrifkan struktur organisasi",
       "addDepartment": "Tambah Jabatan",
-      "noDepartments": "Tiada jabatan dikonfigurasikan",
+      "noDepartments": "Tiada jabatan dikonfigurasi",
       "noDepartmentsHint": "Tambah jabatan untuk mengatur ahli pasukan anda"
     },
     "dangerZone": {
       "title": "Zon Bahaya",
       "description": "Tindakan yang tidak boleh dibatalkan",
-      "resetSettings": "Tetapkan Semula Tetapan",
-      "resetDescription": "Tetapkan semula semua tetapan kepada nilai lalai. Tindakan ini tidak boleh dibatalkan.",
+      "resetSettings": "Tetapkan semula tetapan",
+      "resetDescription": "Tetapkan semula semua tetapan kepada lalai. Tindakan ini tidak boleh dibatalkan",
       "confirmReset": "Adakah anda pasti mahu menetapkan semula semua tetapan?"
     },
-    "saved": "Tetapan berjaya disimpan!",
-    "saveFailed": "Gagal menyimpan tetapan. Sila cuba lagi."
+    "saved": "Tetapan disimpan!",
+    "saveFailed": "Gagal menyimpan tetapan. Sila cuba lagi"
   },
   "validation": {
     "required": "Medan ini diperlukan",
-    "invalidEmail": "Alamat emel tidak sah",
+    "invalidEmail": "Alamat e-mel tidak sah",
     "minLength": "Perlu sekurang-kurangnya {min} aksara",
-    "maxLength": "Mesti paling banyak {max} aksara",
+    "maxLength": "Maksimum {max} aksara",
     "invalidUrl": "URL tidak sah",
     "fileTooLarge": "Saiz fail melebihi had {maxSize}MB",
     "invalidFileType": "Jenis fail tidak disokong",
     "passwordMismatch": "Kata laluan tidak sepadan"
   },
   "errors": {
-    "generic": "Ada yang tidak kena",
+    "generic": "Ralat telah berlaku",
     "notFound": "Tidak ditemui",
     "unauthorized": "Tidak dibenarkan",
     "forbidden": "Akses ditolak",
@@ -818,26 +818,26 @@
     "title": "Pembantu AI",
     "placeholder": "Taip mesej anda...",
     "send": "Hantar",
-    "thinking": "Memproses...",
-    "error": "Ada yang tidak kena.",
-    "welcome": "Hai! Saya pembantu AI anda. Boleh saya bantu apa hari ini?",
-    "suggestedQuestions": "Soalan dicadangkan:",
+    "thinking": "Sedang berfikir...",
+    "error": "Ralat telah berlaku",
+    "welcome": "Hai! Saya pembantu AI anda. Boleh saya bantu?",
+    "suggestedQuestions": "Soalan yang dicadangkan:",
     "newConversation": "Perbualan baru",
-    "noConversations": "Tiada perbualan lagi",
+    "noConversations": "Tiada perbualan",
     "suggestions": {
       "findPeople": "Cari ahli pasukan",
-      "analyzeGaps": "Analisis data",
+      "analyzeGaps": "Analisis jurang data",
       "recommend": "Dapatkan cadangan",
       "explore": "Terokai ciri"
     }
   },
   "genui": {
-    "loading": "Memuat...",
+    "loading": "Memuatkan...",
     "previewNotAvailable": "Pratonton tidak tersedia",
     "viewProfile": "Lihat Profil",
     "sendMessage": "Hantar Mesej",
     "viewDetails": "Lihat Butiran",
-    "showMore": "Tunjukkan {count} lagi",
+    "showMore": "Tunjukkan lagi {count}",
     "showLess": "Tunjukkan kurang",
     "comparison": "Perbandingan",
     "attribute": "Atribut"
@@ -845,37 +845,37 @@
   "dashboard": {
     "title": "Papan Pemuka",
     "welcome": "Selamat datang ke {name}",
-    "platformDescription": "Platform SaaS asli AI anda",
-    "adminBadge": "PENTADBIR",
-    "adminAccessMessage": "Anda mempunyai akses pentadbir ke tenant ini",
+    "platformDescription": "Platform SaaS berasaskan AI anda",
+    "adminBadge": "Pentadbir",
+    "adminAccessMessage": "Anda mempunyai akses pentadbir untuk penyewa ini",
     "openAdminPanel": "Buka Panel Pentadbir",
     "profileCompletion": "Kelengkapan Profil",
     "completeProfile": "Lengkapkan profil anda untuk membuka potensi penuh",
     "progress": "Kemajuan",
-    "completeProfileToUnlock": "Lengkapkan profil untuk membuka semua ciri",
+    "completeProfileToUnlock": "Lengkapkan profil anda untuk membuka semua ciri",
     "recentActivity": "Aktiviti Terkini",
     "quickActions": "Tindakan Pantas",
     "viewAll": "Lihat Semua",
     "noActivity": "Tiada aktiviti terkini",
     "aiConversations": "Perbualan AI",
-    "totalInteractions": "Jumlah interaksi",
+    "totalInteractions": "Jumlah Interaksi",
     "viewAllActivity": "Lihat Semua Aktiviti",
     "teamMembers": "Ahli Pasukan",
     "activePlatformMembers": "Ahli platform aktif",
-    "webhooksActive": "Webhooks aktif",
-    "activeWebhookEndpoints": "Endpoint webhook aktif",
+    "webhooksActive": "Webhook aktif",
+    "activeWebhookEndpoints": "Titik akhir webhook aktif",
     "inviteMember": "Jemput Ahli",
-    "onboardNewTeamMember": "Onboard ahli pasukan baru",
+    "onboardNewTeamMember": "Onboard ahli pasukan baharu",
     "viewMembers": "Lihat Ahli",
     "browseTeamMembers": "Semak ahli pasukan anda",
-    "askAIAssistant": "Dapatkan bantuan dari pembantu AI",
+    "askAIAssistant": "Tanya Pembantu AI",
     "commonTasks": "Tugas biasa untuk bermula",
     "yourLatestActions": "Tindakan terkini anda",
-    "manageSettings": "Urus tetapan",
-    "configureYourTenant": "Konfigurasikan tenant anda",
+    "manageSettings": "Urus Tetapan",
+    "configureYourTenant": "Konfigurasikan penyewa anda",
     "addBio": "Tambah bio ke profil anda",
     "uploadAvatar": "Muat naik gambar profil",
-    "connectGitHub": "Sambung akaun GitHub anda",
+    "connectGitHub": "Sambungkan akaun GitHub anda",
     "inviteTeamMember": "Jemput ahli pasukan"
   },
   "members": {
@@ -886,7 +886,7 @@
     "inviteMember": "Jemput Ahli",
     "searchPlaceholder": "Cari ahli...",
     "namePlaceholder": "John Doe",
-    "noMembers": "Tiada ahli ditemui"
+    "noMembers": "Tiada ahli pasukan ditemui"
   },
   "auditLogs": {
     "title": "Log Audit",
@@ -894,7 +894,7 @@
     "filters": {
       "title": "Penapis",
       "clear": "Kosongkan",
-      "apply": "Guna Penapis",
+      "apply": "Guna penapis",
       "dateRange": "Julat Tarikh",
       "actor": "Pelaku",
       "action": "Tindakan",
@@ -903,7 +903,7 @@
       "search": "Cari..."
     },
     "columns": {
-      "timestamp": "Cap masa",
+      "timestamp": "Cap Masa",
       "actor": "Pelaku",
       "action": "Tindakan",
       "entity": "Entiti"
@@ -911,19 +911,19 @@
     "noResults": "Tiada acara audit ditemui",
     "export": "Eksport CSV",
     "datePresets": {
-      "all": "Sepanjang Masa",
-      "today": "Hari Ini",
+      "all": "Sepanjang masa",
+      "today": "Hari ini",
       "week": "7 Hari Terakhir",
       "month": "30 Hari Terakhir"
     }
   },
   "docs": {
-    "title": "Dokumentasi",
-    "backToApp": "Kembali ke Aplikasi",
+    "title": "Dokumen",
+    "backToApp": "Kembali ke aplikasi",
     "nav": {
       "gettingStarted": "Mula",
       "welcome": "Selamat Datang",
-      "firstLogin": "Log Masuk Pertama",
+      "firstLogin": "Log masuk pertama",
       "navigation": "Navigasi & Pandangan",
       "profileSetup": "Tetapan Profil",
       "memberGuide": "Panduan Ahli",
@@ -940,11 +940,11 @@
       "analyticsAudit": "Analitik & Audit",
       "faq": "Soalan Lazim"
     },
-    "fallbackNotice": "Halaman ini dipaparkan dalam Bahasa Inggeris kerana terjemahan untuk locale yang dipilih belum tersedia.",
+    "fallbackNotice": "Halaman ini dipaparkan dalam Bahasa Inggeris kerana terjemahan untuk locale yang dipilih belum tersedia",
     "search": {
-      "placeholder": "Cari dokumentasi...",
-      "hint": "Taip untuk mencari di semua halaman dokumentasi",
-      "noResults": "Tiada keputusan ditemui",
+      "placeholder": "Cari dokumen...",
+      "hint": "Taip untuk mencari merentas semua halaman dokumentasi",
+      "noResults": "Tiada hasil ditemui",
       "navigate": "Navigasi",
       "open": "Buka",
       "close": "Tutup",
@@ -955,32 +955,44 @@
       "next": "Seterusnya"
     },
     "toc": {
-      "onThisPage": "Di halaman ini"
+      "onThisPage": "Dalam halaman ini"
     },
     "a11y": {
       "breadcrumb": "Jejak navigasi",
       "navigation": "Navigasi dokumentasi",
-      "pagination": "Penomboran halaman dokumentasi",
-      "toggleSidebar": "Togol bar sisi dokumentasi"
+      "pagination": "Pembahagian halaman dokumentasi",
+      "toggleSidebar": "Tukar bar sisi dokumentasi"
+    },
+    "llm": {
+      "copyMarkdownUrl": "Salin URL Markdown",
+      "openMarkdown": "Buka Markdown",
+      "copied": "URL Markdown disalin ke papan klip",
+      "copiedButton": "Disalin",
+      "copyFailed": "Tidak dapat menyalin ke papan klip",
+      "assistantHint": "Pembantu Afenda AI berfungsi dalam workspace penyewa (bar sisi → Pembantu) untuk pengguna yang log masuk, mengakses konteks organisasi anda apabila diaktifkan",
+      "assistantHintAria": "Penggunaan pembantu AI",
+      "assistantCta": "Buka halaman utama aplikasi",
+      "navLlmsIndex": "Indeks halaman LLM",
+      "navLlmsFull": "Eksport semua LLM"
     },
     "preview": {
       "title": "Pratonton Langsung",
-      "invalidBlock": "Blok pratonton tidak sah. Format yang dijangka: <code>component: Name</code>",
-      "notRegistered": "Komponen <code>{component}</code> tidak didaftarkan untuk pratonton."
+      "invalidBlock": "Blok pratonton tidak sah. Format dijangka: <code>component: Name</code>",
+      "notRegistered": "Komponen <code>{component}</code> belum didaftarkan untuk pratonton"
     }
   },
   "rawEdit": {
     "formatError": "Format gagal",
-    "formatErrorDesc": "Kandungan editor bukan JSON yang sah.",
+    "formatErrorDesc": "Kandungan dalam editor bukan JSON yang sah",
     "copied": "Disalin",
-    "copiedDesc": "JSON disalin ke papan klip.",
-    "copyError": "Salin gagal",
+    "copiedDesc": "JSON telah disalin ke papan klip",
+    "copyError": "Gagal menyalin",
     "copyErrorDesc": "Tidak dapat menyalin JSON ke papan klip.",
     "validJson": "JSON sah",
     "invalidJson": "JSON tidak sah",
     "unsavedChanges": "Perubahan belum disimpan",
     "reset": "Tetapkan semula",
-    "format": "Formatkan",
+    "format": "Format",
     "copy": "Salin"
   }
 }

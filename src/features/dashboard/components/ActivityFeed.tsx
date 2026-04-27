@@ -8,8 +8,8 @@
 
 import { formatDistanceToNow } from 'date-fns';
 import { Activity, Bot, User, Zap } from 'lucide-react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 import { Button } from '@/shared/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui/card';

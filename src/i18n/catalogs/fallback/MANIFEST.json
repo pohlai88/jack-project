@@ -4,32 +4,32 @@
   "locales": {
     "es": {
       "path": "src/i18n/catalogs/fallback/es.json",
-      "sha256": "426f4ded4f9d3d8ca024a4c012ca4786aab6414782ebeb98db172e12dfaaabdd",
+      "sha256": "d141b63c2e3e91cd81c52f15c4a1df5d678453168f562ff5b79ed29963a23cf2",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "id": {
       "path": "src/i18n/catalogs/fallback/id.json",
-      "sha256": "514cd95aa0b8e8f0bbce2bc777a6414f2ba0d223dde7950ec5882cd166aef148",
+      "sha256": "9660713fedc0af775b0d0eb53e112bd38ecfb581fbe3d8db73d1fd0aa729c79d",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "ms": {
       "path": "src/i18n/catalogs/fallback/ms.json",
-      "sha256": "5187519a7e8712385220b22f5e9ed7eebbe2dd6e1bb5947fbb1aba8858ae2c8e",
+      "sha256": "4da56ba85f24c2cd4419e33667b71f9fbf2ade5fb94e306ff6a56d0a6213c171",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "th": {
       "path": "src/i18n/catalogs/fallback/th.json",
-      "sha256": "d900228ce739e9833246779e7beb4d8178cd4d478d394c891ff87c4c2f47d780",
+      "sha256": "5f5b345024dab21b40e75d56158f9af34019b477a3f1f2b92956060e00dc6faa",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "vi": {
       "path": "src/i18n/catalogs/fallback/vi.json",
-      "sha256": "9157e7fbfe484dcc340c36066cf82982bd624313a7d0b8cf1280b555417906c7",
+      "sha256": "be9b4ed6507126063d4f14e24b7fa82bb9eb69582e61b60e82028a6598dd568e",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "zh-CN": {
       "path": "src/i18n/catalogs/fallback/zh-CN.json",
-      "sha256": "c108844308661322383089cd180afa81d8657f3360a34e7cd86a3a46c88133b5",
+      "sha256": "4c552fa5ae2f0aa098099da04b695a9502636794128261cca1b31325e019cc84",
       "provenance": "migration from src/i18n/messages/*.json"
     }
   }

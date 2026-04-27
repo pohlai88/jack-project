@@ -4,6 +4,16 @@
 @plugin "@tailwindcss/typography";
 @plugin "tailwindcss-animate";
 
+@media print {
+  #nd-docs-layout {
+    --fd-sidebar-width: 0px !important;
+  }
+
+  #nd-sidebar {
+    display: none;
+  }
+}
+
 /* =====================================================================
    Afenda Design System
    Philosophy: "Intentional Craft"

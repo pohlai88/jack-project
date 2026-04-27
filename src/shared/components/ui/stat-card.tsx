@@ -8,8 +8,8 @@
  */
 
 import type { LucideIcon } from 'lucide-react';
-import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { Link } from '@/i18n/navigation';
 
 import { cn } from '@/shared/lib/utils';
 

@@ -1,7 +1,7 @@
 # Tenant Language Settings Alignment Plan 0009
 
 Date: 2026-04-26
-Status: Planned only
+Status: Partially executed — tenant `defaultLanguage` and admin selectors derive from `activatedLocaleValues` / `locale-registry` active set; this document remains for `pt` remediation and audit notes.
 
 ## Summary
 
@@ -13,24 +13,22 @@ The runtime locale authority remains [src/i18n/config.ts](../../src/i18n/config.
 
 Tenant/admin language settings must eventually derive selectable locales from the activated configured locale set, not from separate hard-coded enums or selector lists.
 
-## Current Drift
+## Resolved alignment (runtime)
 
-Current repo state is inconsistent:
+- **Runtime locales** are `activeLocales` from [src/i18n/locale-registry.ts](../../src/i18n/locale-registry.ts) (currently `en`, `zh-CN`, `vi`, `ms`, `es`, `id`, `th`; `inactiveLocales` is empty).
+- [src/shared/lib/tenant-settings.ts](../../src/shared/lib/tenant-settings.ts) uses `z.enum(activatedLocaleValues)` so tenant `defaultLanguage` cannot drift from the activated set.
+- Admin/branding language selectors should use the same activated list (e.g. `activatedLocaleOptions` from [src/i18n/locale-options.ts](../../src/i18n/locale-options.ts)), not ad hoc `en | es | pt` literals.
 
-- Runtime configured locales are `en` and `es`.
-- [src/shared/lib/tenant-settings.ts](../../src/shared/lib/tenant-settings.ts) still allows `en | es | pt` for `defaultLanguage`.
-- [src/features/admin/components/SettingsClient.tsx](../../src/features/admin/components/SettingsClient.tsx) hard-codes `en | es | pt` in the admin settings selector.
-- [src/features/admin/components/settings/BrandingSettings.tsx](../../src/features/admin/components/settings/BrandingSettings.tsx) hard-codes `en | es | pt` in the branding settings selector.
+## Remaining drift
 
-`pt` is treated as unsupported drift unless formal Portuguese activation is separately approved.
+- **Portuguese (`pt`)**: if any stored tenant rows still contain `pt`, migrate them to a supported locale or add `pt` through the full locale pipeline (registry + catalogs + compile + snapshot).
 
-## No Partial Activation
+## No partial activation (for _new_ locales)
 
-Tenant/admin language settings must follow the same no-partial-activation rule already established by [Locale Coverage Expansion Plan 0008](./LOCALE_COVERAGE_EXPANSION_PLAN_0008.md).
+When adding a **new** locale not yet in `activeLocales`:
 
-- Do not expose `vi`, `id`, `ms`, `th`, or `zh-CN` in tenant settings until each locale passes the activation gate.
-- Tenant/admin selectors must not diverge from the activated locale set.
-- Future locales must remain hidden in tenant/admin settings until activation is complete.
+- Follow the gates in [Locale Coverage Expansion Plan 0008](./LOCALE_COVERAGE_EXPANSION_PLAN_0008.md) and [Locale Activation Readiness Checklist 0010](./LOCALE_ACTIVATION_READINESS_CHECKLIST_0010.md).
+- Tenant/admin selectors must not diverge from the activated locale set once the locale is promoted.
 
 ## Future Implementation Path
 
@@ -40,7 +38,7 @@ A later execution PR must:
 - derive admin selector options from the same activated locale list
 - prevent persistence of tenant `defaultLanguage` values outside the configured locale set
 - define migration/remediation for existing unsupported saved values such as `pt`
-- preserve the governed activation model so future locales stay hidden until activation gates pass
+- preserve the governed activation model so **new** locales stay out of `activeLocales` until activation gates pass
 
 ## Governance Chain
 

@@ -35,5 +35,5 @@ Runtime compilation precedence is:
 - Developers edit only English source messages.
 - Manual non-English JSON maintenance is deprecated.
 - Runtime behavior stays on `next-intl`.
-- `id` and `th` remain inactive until activation governance explicitly promotes them.
+- Runtime locale membership is **config-driven** in `src/i18n/locale-registry.ts` (`activeLocales` / `inactiveLocales`). All locales in the approved target set may be active at once; governance snapshots (`I18N_LOCALE_ACTIVATION_SNAPSHOT.md`) record readiness and QA, not whether routing exposes a locale.
 - Crowdin sync PRs must compile runtime messages and pass validation before merge.

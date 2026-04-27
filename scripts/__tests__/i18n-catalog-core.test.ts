@@ -8,7 +8,13 @@ import { dirname, join } from 'node:path';
 // @ts-expect-error script core is ESM without generated declarations.
 import * as catalogCore from '../lib/i18n-catalog-core.mjs';
 
-const { compileI18nCatalogs, readLocaleModel, validateI18nCatalogs, writeFallbackManifest } = catalogCore;
+const {
+  alignLocaleCatalogToCanonicalShape,
+  compileI18nCatalogs,
+  readLocaleModel,
+  validateI18nCatalogs,
+  writeFallbackManifest,
+} = catalogCore;
 
 const tempRoots: string[] = [];
 
@@ -88,6 +94,18 @@ afterEach(() => {
 });
 
 describe('i18n catalog core', () => {
+  it('aligns locale catalog to canonical key order and drops extra keys', () => {
+    const canonical = { a: { x: '1', y: '2' }, b: '3' };
+    const input = { b: 'Tres', a: { y: 'dos', x: 'uno' }, z: 'extra' };
+    const out = alignLocaleCatalogToCanonicalShape(canonical, input);
+    expect(out).toEqual({ a: { x: 'uno', y: 'dos' }, b: 'Tres' });
+  });
+
+  it('aligns with English leaves where translation is empty', () => {
+    const canonical = { t: 'Hello' };
+    expect(alignLocaleCatalogToCanonicalShape(canonical, { t: '   ' })).toEqual({ t: 'Hello' });
+  });
+
   it('parses the locale registry contract', () => {
     const root = createFixture();
     const model = readLocaleModel({ root, requireRegistry: true });

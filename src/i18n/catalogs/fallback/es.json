@@ -29,7 +29,7 @@
     "unknown": "Desconocido",
     "yes": "Sí",
     "no": "No",
-    "all": "Todo",
+    "all": "Todos",
     "none": "Ninguno",
     "view": "Ver",
     "download": "Descargar",
@@ -61,52 +61,52 @@
         "one": "Construye con ",
         "two": "Afenda"
       },
-      "description": "Lanza un producto SaaS multi-tenant con autenticación, IA, integraciones, gestión de equipos y bases listas para gobernanza.",
+      "description": "Despliega una plataforma SaaS multiinquilino gobernada, con identidad, flujos de trabajo de IA, integraciones, administración de equipos y fundamentos de control listos para empresa.",
       "cta": {
         "goToDashboard": "Ir al panel",
         "getStarted": "Comenzar",
         "explore": "Explorar documentación"
       },
       "socialProof": {
-        "enterpriseReady": "Listo para empresa",
+        "enterpriseReady": "Listo para empresas",
         "aiNative": "Nativo de IA",
         "growthFocused": "Enfocado en crecimiento",
-        "enterpriseDesc": "Aislamiento por tenant, auditabilidad y acceso basado en roles incluidos.",
-        "aiNativeDesc": "Conecta asistentes, flujos de conocimiento y datos de integraciones desde el inicio.",
-        "growthDesc": "Diseñado para equipos que necesitan avanzar rápido sin perder control."
+        "enterpriseDesc": "Aislamiento de inquilinos, auditabilidad y acceso basado en roles integrados.",
+        "aiNativeDesc": "Conecta asistentes, flujos de conocimiento y datos de integraciones desde el primer día.",
+        "growthDesc": "Diseñado para equipos que necesitan moverse rápido sin perder control."
       }
     },
     "features": {
       "title": "Todo lo que tu equipo necesita para escalar",
-      "description": "Una base SaaS practica para usuarios, equipos, administradores, flujos de IA e integraciones."
+      "description": "Una base SaaS práctica para usuarios, equipos, administradores, flujos de trabajo de IA e integraciones."
     },
     "pricing": {
-      "badge": "Planes simples",
-      "title": "Empieza simple, escala con control",
+      "badge": "Planes sencillos",
+      "title": "Comienza ligero, escala con control",
       "description": "Usa la demo gratis y luego adapta la plataforma para equipos en crecimiento y despliegues empresariales.",
       "mostPopular": "Más popular",
       "perMonth": "/mes",
       "plans": {
         "free": {
           "name": "Gratis",
-          "description": "Hasta 10 usuarios. Empezá con lo esencial.",
-          "cta": "Empezar",
+          "description": "Hasta 10 usuarios. Comienza con lo esencial.",
+          "cta": "Comenzar",
           "features": {
             "1": "Hasta 10 usuarios",
-            "2": "Asistente AI (limitado)",
+            "2": "Asistente de IA (limitado)",
             "3": "Integración con GitHub",
-            "4": "Base de conocimiento (lectura)",
-            "5": "Soporte de comunidad"
+            "4": "Base de conocimiento (solo lectura)",
+            "5": "Soporte comunitario"
           }
         },
         "pro": {
           "name": "Pro",
           "description": "Para equipos en crecimiento que necesitan más potencia.",
-          "cta": "Empezar",
+          "cta": "Comenzar",
           "features": {
             "1": "Usuarios ilimitados",
             "2": "Roles y permisos personalizados",
-            "3": "Webhooks y logs de auditoría",
+            "3": "Webhooks y registros de auditoría",
             "4": "Base de conocimiento completa",
             "5": "Soporte prioritario"
           }
@@ -114,9 +114,9 @@
         "enterprise": {
           "name": "Enterprise",
           "description": "Para organizaciones con necesidades avanzadas.",
-          "cta": "Contactanos",
+          "cta": "Contáctanos",
           "features": {
-            "1": "Todo lo incluido en Pro",
+            "1": "Todo lo de Pro",
             "2": "SSO (Auth0)",
             "3": "Integraciones personalizadas",
             "4": "Garantía SLA",
@@ -130,84 +130,84 @@
       "items": {
         "try": {
           "question": "¿Afenda se puede probar gratis?",
-          "answer": "Sí. El entorno demo es totalmente funcional y no requiere pago. Podés explorar todas las funciones con datos de ejemplo."
+          "answer": "Sí. El entorno de demostración es totalmente funcional sin pago requerido. Explora todas las funciones con datos de ejemplo."
         },
         "startData": {
-          "question": "¿Qué datos necesito para empezar?",
-          "answer": "Solo tu roster del equipo. Podés importar CSV, invitar manualmente o usar el flujo de importación masiva."
+          "question": "¿Qué datos necesito para comenzar?",
+          "answer": "Solo la lista de tu equipo. Puedes importar CSV, invitar miembros manualmente o usar el flujo de importación masiva."
         },
         "existingTools": {
-          "question": "¿Funciona con nuestras herramientas actuales?",
-          "answer": "La plataforma incluye GitHub de fábrica y un framework flexible para webhooks y adaptadores de sincronización personalizados."
+          "question": "¿Funciona con nuestras herramientas existentes?",
+          "answer": "La plataforma incluye GitHub por defecto y un marco de integración flexible para webhooks y adaptadores de sincronización personalizados."
         },
         "assistant": {
-          "question": "¿Cómo funciona el asistente AI?",
-          "answer": "La AI usa tu base de conocimiento y los datos de usuarios para responder preguntas, buscar documentos y ofrecer ayuda contextual. Soporta OpenAI y Anthropic."
+          "question": "¿Cómo funciona el asistente de IA?",
+          "answer": "La IA usa tu base de conocimiento y datos de usuario para responder preguntas, buscar documentos y ofrecer ayuda contextual. Soporta modelos de OpenAI y Anthropic."
         },
         "security": {
           "question": "¿Mis datos están seguros?",
-          "answer": "Sí. La plataforma es multi-tenant por diseño, con datos aislados por tenant, autenticación empresarial y control de acceso basado en permisos."
+          "answer": "Sí. La plataforma está diseñada multiinquilino, con aislamiento de datos por inquilino, autenticación empresarial y control de acceso basado en permisos."
         },
         "migration": {
-          "question": "¿Puedo migrar mis datos actuales?",
-          "answer": "Sí. Podés importar datos del equipo desde CSV y el motor de integraciones puede sincronizar sistemas externos por agenda."
+          "question": "¿Puedo migrar mis datos existentes?",
+          "answer": "Sí. Puedes importar datos de equipo desde CSV y el motor de integraciones puede sincronizar sistemas externos según un calendario."
         }
       }
     },
     "nav": {
       "features": "Funciones",
       "pricing": "Precios",
-      "docs": "Documentación",
+      "docs": "Docs",
       "language": "Idioma",
       "selectLanguage": "Seleccionar idioma",
       "theme": "Tema",
       "toggleTheme": "Cambiar tema",
-      "toggleMenu": "Abrir menú",
+      "toggleMenu": "Alternar menú",
       "themeOptions": {
         "light": "Claro",
         "dark": "Oscuro",
         "system": "Sistema"
       },
-      "bookDemo": "Agendar demo"
+      "bookDemo": "Reservar demo"
     },
     "howItWorks": {
       "title": "Cómo funciona",
-      "description": "Poné a tu equipo en marcha en tres pasos simples.",
+      "description": "Pon a tu equipo en marcha en tres pasos sencillos.",
       "steps": {
         "configure": {
-          "title": "Desplegá y configurá",
-          "description": "Desplegá la plantilla, creá tu tenant, configurá branding, roles y conectá tu proveedor de AI."
+          "title": "Desplegar y configurar",
+          "description": "Despliega la plantilla, crea tu inquilino, configura la marca, roles y conecta tu proveedor de IA."
         },
         "invite": {
-          "title": "Invitá usuarios",
-          "description": "Invitá a tu equipo, asigná roles y dejá que completen sus perfiles y conecten integraciones."
+          "title": "Invitar usuarios",
+          "description": "Invita a los miembros del equipo, asigna roles y permite que configuren perfiles e integraciones."
         },
         "launch": {
-          "title": "Lanzá con AI",
-          "description": "Conectá tu base de conocimiento, activá el asistente AI, configurá webhooks y salí a producción."
+          "title": "Lanzar con IA",
+          "description": "Conecta tu base de conocimiento, habilita el asistente de IA, configura webhooks y lánzalo."
         }
       }
     },
     "featureTabs": {
       "users": {
         "label": "Para usuarios",
-        "description": "Todo lo que tus usuarios necesitan para empezar y mantenerse productivos.",
+        "description": "Todo lo que tus usuarios necesitan para comenzar y ser productivos.",
         "features": {
           "profile": {
             "title": "Perfil",
-            "description": "Perfiles completos con avatar e integración con GitHub."
+            "description": "Perfiles completos de usuario con avatar e integración con GitHub."
           },
           "assistant": {
-            "title": "Asistente AI",
-            "description": "Chat en lenguaje natural con OpenAI o Anthropic."
+            "title": "Asistente de IA",
+            "description": "Chat en lenguaje natural impulsado por OpenAI o Anthropic."
           },
           "knowledgeBase": {
             "title": "Base de conocimiento",
-            "description": "Buscá y navegá la documentación y el contenido de tu organización."
+            "description": "Buscar y navegar los documentos y contenidos de tu organización."
           },
           "directory": {
             "title": "Directorio",
-            "description": "Encontrá y conectate con miembros del equipo."
+            "description": "Encuentra y conéctate con miembros del equipo."
           }
         }
       },
@@ -217,93 +217,93 @@
         "features": {
           "peopleDirectory": {
             "title": "Directorio de personas",
-            "description": "Buscá miembros del equipo con filtros."
+            "description": "Navega y busca miembros del equipo con filtros."
           },
           "orgChart": {
             "title": "Organigrama",
-            "description": "Visualizá la estructura del equipo y las líneas de reporte."
+            "description": "Visualiza la estructura del equipo y relaciones de reporte."
           },
           "activityFeed": {
-            "title": "Actividad",
-            "description": "Actualizaciones en tiempo real de la actividad del equipo y la plataforma."
+            "title": "Feed de actividad",
+            "description": "Actualizaciones en tiempo real sobre la actividad del equipo y la plataforma."
           },
           "webhooks": {
             "title": "Webhooks",
-            "description": "Enviá eventos a sistemas externos a medida que ocurren."
+            "description": "Envía eventos a sistemas externos cuando ocurren cambios."
           }
         }
       },
       "admin": {
         "label": "Administración",
-        "description": "Control total para quienes administran la plataforma.",
+        "description": "Control total para administradores que gestionan la plataforma.",
         "features": {
           "memberManagement": {
             "title": "Gestión de miembros",
-            "description": "Invitá, administrá y desactivá miembros del equipo."
+            "description": "Invita, administra y desactiva miembros del equipo."
           },
           "roles": {
             "title": "Roles y permisos",
-            "description": "PBAC granular con paquetes de roles personalizados."
+            "description": "PBAC de granularidad fina con paquetes de roles personalizados."
           },
           "auditLogs": {
-            "title": "Logs de auditoría",
-            "description": "Trazabilidad completa de las acciones en la plataforma."
+            "title": "Registros de auditoría",
+            "description": "Rastro completo de todas las acciones en la plataforma."
           },
           "settings": {
             "title": "Configuración",
-            "description": "Config tenant, branding y feature flags."
+            "description": "Configuración a nivel de inquilino, marca y feature flags."
           }
         }
       },
       "ai": {
-        "label": "AI e integraciones",
-        "description": "Conectá AI y sistemas externos a tu plataforma.",
+        "label": "IA e integraciones",
+        "description": "Conecta IA y sistemas externos a tu plataforma.",
         "features": {
           "chat": {
-            "title": "Chat AI",
-            "description": "Búsqueda conversacional sobre todos tus datos."
+            "title": "Chat de IA",
+            "description": "Búsqueda conversacional a través de todos tus datos."
           },
           "vectorSearch": {
             "title": "Búsqueda vectorial",
-            "description": "Búsqueda semántica impulsada por embeddings de pgvector."
+            "description": "Búsqueda semántica impulsada por embeddings pgvector."
           },
           "githubIntegration": {
-            "title": "Integración GitHub",
-            "description": "Sincronizá perfiles y actividad desde GitHub."
+            "title": "Integración con GitHub",
+            "description": "Sincroniza perfiles de usuario y actividad desde GitHub."
           },
           "integrationEngine": {
             "title": "Motor de integraciones",
-            "description": "Conectá cualquier sistema externo con el framework de sincronización."
+            "description": "Conecta cualquier sistema externo con el marco de sincronización."
           }
         }
       }
     },
     "socialProofSection": {
-      "title": "Equipos de todo el mundo confían en Afenda",
-      "description": "Descubrí cómo las organizaciones usan Afenda para automatizar y escalar sus flujos de trabajo.",
+      "title": "Confiado por equipos en todo el mundo",
+      "description": "Ve cómo organizaciones usan Afenda para automatizar y escalar sus flujos de trabajo.",
       "roleAt": "{role} en {company}",
-      "sponsorsTitle": "Socios y sponsors",
-      "sponsorLabel": "Partner {index}",
+      "sponsorsTitle": "Nuestros socios y patrocinadores",
+      "sponsorLabel": "Socio {index}",
       "comingSoon": "Próximamente",
-      "sponsorCta": "¿Te interesa patrocinar Afenda?",
-      "sponsorCtaLink": "Contactanos",
+      "sponsorCta": "¿Interesado en patrocinar Afenda?",
+      "sponsorCtaLink": "Contáctanos",
       "testimonials": {
         "1": {
           "role": "VP de Ingeniería",
-          "text": "Afenda transformó la forma en que construimos y automatizamos nuestros flujos. Ahora todo es transparente y guiado por datos."
+          "text": "Afenda transformó cómo construimos y automatizamos nuestros flujos de trabajo. Todo ahora es transparente y basado en datos."
         },
         "2": {
-          "role": "Manager de People Operations",
-          "text": "El asistente AI y el motor de integraciones nos ahorraron semanas de puesta en marcha. Nunca fue tan rápido lanzar nuestro SaaS."
+          "role": "Gerente de Operaciones de Personas",
+          "text": "El asistente de IA y el motor de integraciones nos ahorraron semanas de configuración. Lanzar nuestro SaaS nunca fue tan rápido."
         },
         "3": {
-          "role": "Directora de Talento",
-          "text": "Por fin una plataforma donde los managers pueden enfocarse en crecimiento en lugar de planillas. La integración con OKR es impecable."
+          "role": "Director de Talento",
+          "text": "Finalmente, una plataforma donde los gerentes pueden enfocarse en el crecimiento en lugar de hojas de cálculo. La integración de OKR es fluida."
         }
       }
     },
     "footer": {
-      "blurb": "Boilerplate SaaS de Next.js listo para producción con multi-tenancy, AI e integraciones.",
+      "blurb": "Base de plataforma SaaS lista para producción con multiinquilino, flujos de trabajo de IA, integraciones y controles listos para gobernanza.",
       "sections": {
         "product": "Producto",
         "resources": "Recursos",
@@ -315,7 +315,7 @@
         "howItWorks": "Cómo funciona",
         "documentation": "Documentación",
         "blog": "Blog (próximamente)",
-        "changelog": "Changelog (próximamente)",
+        "changelog": "Registro de cambios (próximamente)",
         "about": "Acerca de (próximamente)",
         "contact": "Contacto (próximamente)",
         "privacy": "Privacidad (próximamente)",
@@ -341,19 +341,19 @@
       },
       "people": {
         "ana": {
-          "role": "Staff Engineer"
+          "role": "Ingeniera Senior"
         },
         "marco": {
-          "role": "Tech Lead"
+          "role": "Líder técnico"
         }
       },
       "integrationsCount": "12 integraciones",
-      "aiInsights": "Insights de AI"
+      "aiInsights": "Insights de IA"
     }
   },
   "auth": {
-    "signIn": "Iniciar Sesión",
-    "signOut": "Cerrar Sesión",
+    "signIn": "Iniciar sesión",
+    "signOut": "Cerrar sesión",
     "signUp": "Registrarse",
     "email": "Correo electrónico",
     "password": "Contraseña",
@@ -372,15 +372,15 @@
     "dashboard": "Panel",
     "profile": "Perfil",
     "settings": "Configuración",
-    "admin": "Administración",
-    "members": "Miembros del Equipo",
+    "admin": "Admin",
+    "members": "Miembros del equipo",
     "team": "Equipo",
     "assistant": "Asistente",
     "overview": "Resumen",
-    "adminPanel": "Panel de Admin",
-    "openAdminPanel": "Abrir Panel de Admin",
-    "viewMy": "Mi Vista",
-    "viewAdmin": "Vista Admin",
+    "adminPanel": "Panel de administración",
+    "openAdminPanel": "Abrir panel de administración",
+    "viewMy": "Mi vista",
+    "viewAdmin": "Vista de administrador",
     "switchView": "Cambiar vista",
     "directory": "Directorio",
     "manager": "Gerente",
@@ -391,106 +391,106 @@
   "profile": {
     "title": "Perfil",
     "overview": "Resumen",
-    "aboutMe": "Sobre Mí",
-    "connectedAccounts": "Cuentas Conectadas",
-    "manageAccounts": "Gestionar",
+    "aboutMe": "Sobre mí",
+    "connectedAccounts": "Cuentas conectadas",
+    "manageAccounts": "Administrar",
     "completionTitle": "Completitud del perfil",
     "completionDescription": "Completa estos pasos para aprovechar al máximo la plataforma",
-    "completeProfile": "Completar Perfil",
-    "editProfile": "Editar Perfil",
-    "viewProfile": "Ver Perfil",
-    "backToDashboard": "Volver al Panel",
+    "completeProfile": "Completar perfil",
+    "editProfile": "Editar perfil",
+    "viewProfile": "Ver perfil",
+    "backToDashboard": "Volver al panel",
     "settings": {
-      "pageTitle": "Configuración de Perfil",
-      "pageDescription": "Editá tu información personal y cuentas conectadas.",
+      "pageTitle": "Configuración de perfil",
+      "pageDescription": "Edita tu información personal y tus cuentas conectadas.",
       "backToProfile": "Perfil",
       "currentPage": "Configuración",
       "identityTitle": "Identidad",
       "identityDescription": "Tu identidad básica gestionada por tu organización.",
       "name": "Nombre",
-      "email": "Email Laboral",
-      "jobTitle": "Puesto",
-      "identityHint": "Estos campos son gestionados por tu administrador. Contactalo para hacer cambios.",
-      "personalInfoTitle": "Información Personal",
-      "personalInfoDescription": "Actualizá tus datos personales. Son visibles para tu equipo.",
+      "email": "Correo laboral",
+      "jobTitle": "Cargo",
+      "identityHint": "Estos campos son gestionados por tu administrador. Contacta con ellos para realizar cambios.",
+      "personalInfoTitle": "Información personal",
+      "personalInfoDescription": "Actualiza tus datos personales. Esta información es visible para tu equipo.",
       "pronouns": "Pronombres",
-      "pronounsPlaceholder": "ej., él, ella, elle",
+      "pronounsPlaceholder": "p. ej., he/him, she/her, they/them",
       "location": "Ubicación",
-      "locationPlaceholder": "ej., Buenos Aires, Argentina",
-      "timezone": "Zona Horaria",
-      "timezonePlaceholder": "ej., America/Argentina/Buenos_Aires",
-      "phoneNumber": "Número de Teléfono",
+      "locationPlaceholder": "p. ej., Buenos Aires, Argentina",
+      "timezone": "Zona horaria",
+      "timezonePlaceholder": "p. ej., America/Argentina/Buenos_Aires",
+      "phoneNumber": "Número de teléfono",
       "phoneNumberPlaceholder": "+54 11 1234-5678",
-      "personalEmail": "Email Personal",
-      "personalEmailHint": "Opcional. Un email secundario para comunicación no laboral.",
-      "personalEmailPlaceholder": "personal@ejemplo.com",
+      "personalEmail": "Correo personal",
+      "personalEmailHint": "Opcional. Un correo secundario para comunicación no laboral.",
+      "personalEmailPlaceholder": "personal@example.com",
       "bio": "Biografía",
-      "bioPlaceholder": "Contale a tu equipo sobre vos...",
-      "connectedAccountsTitle": "Cuentas Conectadas",
-      "connectedAccountsDescription": "Vinculá tus perfiles externos para enriquecer tus datos en la plataforma.",
-      "githubUsername": "Usuario de GitHub",
-      "githubUsernameHint": "Tu nombre de usuario de GitHub (ej., 'octocat'). Se usa para rastrear contribuciones.",
-      "githubUsernamePlaceholder": "ej., octocat",
+      "bioPlaceholder": "Cuéntale a tu equipo sobre ti...",
+      "connectedAccountsTitle": "Cuentas conectadas",
+      "connectedAccountsDescription": "Vincula perfiles externos para enriquecer los datos en la plataforma.",
+      "githubUsername": "Nombre de usuario de GitHub",
+      "githubUsernameHint": "Tu nombre de usuario de GitHub (p. ej., 'octocat'). Se usa para seguimiento de contribuciones.",
+      "githubUsernamePlaceholder": "p. ej. octocat",
       "viewProfile": "Ver",
-      "linkedinUrl": "URL de Perfil de LinkedIn",
-      "linkedinUrlHint": "Tu URL completa de perfil de LinkedIn.",
-      "linkedinUrlPlaceholder": "https://linkedin.com/in/tu-nombre",
-      "saved": "¡Perfil actualizado exitosamente!",
-      "saveError": "Error al actualizar el perfil. Intentá de nuevo.",
-      "saveChanges": "Guardar Cambios",
+      "linkedinUrl": "URL de LinkedIn",
+      "linkedinUrlHint": "La URL completa de tu perfil de LinkedIn.",
+      "linkedinUrlPlaceholder": "https://linkedin.com/in/your-name",
+      "saved": "¡Perfil actualizado con éxito!",
+      "saveError": "Error al actualizar el perfil. Por favor intenta de nuevo.",
+      "saveChanges": "Guardar cambios",
       "connectGitHub": "Conectar GitHub",
       "disconnectGitHub": "Desconectar",
-      "disconnectGitHubConfirm": "¿Estás seguro de que querés desconectar tu cuenta de GitHub?",
+      "disconnectGitHubConfirm": "¿Seguro que deseas desconectar tu cuenta de GitHub?",
       "githubConnectedAs": "Conectado como @{username}",
       "githubNotConnected": "No conectado",
-      "connectGitHubHint": "Conectá para sincronizar tus repositorios y contribuciones automáticamente.",
+      "connectGitHubHint": "Conecta para sincronizar tus repositorios y contribuciones automáticamente.",
       "connectGitHubConnectedHint": "Tu cuenta de GitHub está vinculada.",
-      "orManualEntry": "o ingresá manualmente",
+      "orManualEntry": "o ingresa manualmente",
       "connectLinkedIn": "Conectar LinkedIn",
-      "disconnectLinkedIn": "Desconectar",
-      "disconnectLinkedInConfirm": "¿Estás seguro de que querés desconectar tu cuenta de LinkedIn?",
+      "disconnectLinkedIn": "Desconectar LinkedIn",
+      "disconnectLinkedInConfirm": "¿Seguro que deseas desconectar LinkedIn?",
       "linkedinConnectedAs": "Conectado como {name}",
       "linkedinNotConnected": "No conectado",
-      "connectLinkedInHint": "Conectá para verificar tu identidad de LinkedIn e importar tu foto de perfil.",
+      "connectLinkedInHint": "Conecta para verificar tu identidad de LinkedIn e importar tu foto de perfil.",
       "connectLinkedInConnectedHint": "Tu cuenta de LinkedIn está vinculada y verificada."
     },
-    "addBio": "Añade una bio a tu perfil",
-    "uploadAvatar": "Sube una foto de perfil",
+    "addBio": "Agrega una biografía a tu perfil",
+    "uploadAvatar": "Subir foto de perfil",
     "connectGitHub": "Conecta tu cuenta de GitHub",
     "inviteTeamMember": "Invitar a un miembro del equipo",
     "bio": "Biografía",
     "contact": "Contacto"
   },
   "admin": {
-    "title": "Administración",
+    "title": "Admin",
     "dashboard": "Panel",
-    "analytics": "Analíticas",
-    "orgAnalytics": "Análisis de la Organización",
-    "orgAnalyticsDesc": "Métricas e información a nivel organizacional",
+    "analytics": "Analítica",
+    "orgAnalytics": "Analítica de la organización",
+    "orgAnalyticsDesc": "Métricas e insights a nivel organizacional",
     "settings": "Configuración",
-    "members": "Miembros del Equipo",
+    "members": "Miembros del equipo",
     "invites": "Invitaciones",
     "organization": "Organización",
     "departments": "Departamentos",
     "system": "Sistema",
-    "rolesAndPermissions": "Roles y Permisos",
-    "auditLogs": "Registros de Auditoría",
+    "rolesAndPermissions": "Roles y permisos",
+    "auditLogs": "Registros de auditoría",
     "integrations": "Integraciones",
     "total": "Total",
-    "adminPanel": "Panel de Admin",
+    "adminPanel": "Panel de administración",
     "integrationsPage": {
       "title": "Integraciones",
       "description": "Conecta herramientas externas y visualiza datos sincronizados.",
-      "connectedSection": "Conectadas",
-      "availableSection": "Disponibles",
+      "connectedSection": "Conectado",
+      "availableSection": "Disponible",
       "comingSoonSection": "Próximamente",
       "configure": "Configurar",
-      "learnMore": "Más Información",
+      "learnMore": "Más información",
       "lastSync": "Última sincronización: {date}",
       "statusConnected": "Conectado",
-      "statusNotConnected": "No Conectado",
+      "statusNotConnected": "No conectado",
       "statusComingSoon": "Próximamente",
-      "statusInDevelopment": "En Desarrollo",
+      "statusInDevelopment": "En desarrollo",
       "statusEnabled": "Habilitado",
       "statusNotConfigured": "No configurado",
       "lastSyncNever": "Nunca",
@@ -508,58 +508,58 @@
       },
       "linkedin": {
         "name": "LinkedIn",
-        "description": "Vinculá cuentas de LinkedIn para verificación de identidad y enriquecimiento de perfiles."
+        "description": "Vincula LinkedIn para verificación de identidad y enriquecimiento de perfiles."
       },
       "googleWorkspace": {
         "name": "Google Workspace",
-        "description": "Conecta Google Workspace para flujos de calendario y reuniones."
+        "description": "Conecta Google Workspace para calendarios y flujos de trabajo de reuniones."
       },
       "slack": {
         "name": "Slack",
-        "description": "Conecta Slack para notificaciones de equipo y actualizaciones de flujo de trabajo."
+        "description": "Conecta Slack para notificaciones de equipo y actualizaciones de flujos."
       }
     },
     "integrationsControl": {
-      "title": "Centro de control de integraciones",
-      "description": "Ejecutá sincronizaciones, monitoreá corridas y resolvé conflictos entre proveedores.",
+      "title": "Plano de control de integraciones",
+      "description": "Ejecuta sincronizaciones, supervisa ejecuciones y resuelve conflictos entre proveedores.",
       "provider": "Proveedor",
       "mode": "Modo",
       "incremental": "Sincronización incremental",
-      "full": "Migración Completa",
-      "reconcile": "Reconciliar",
-      "dryRun": "Simulación",
-      "entities": "Entidades (separadas por coma)",
-      "fromDate": "Desde Fecha",
-      "toDate": "Hasta Fecha",
-      "personEmails": "Emails de Personas",
+      "full": "Migración completa",
+      "reconcile": "Conciliar",
+      "dryRun": "Ejecución de prueba",
+      "entities": "Entidades (separadas por comas)",
+      "fromDate": "Desde fecha",
+      "toDate": "Hasta fecha",
+      "personEmails": "Correos de personas",
       "personEmailsPlaceholder": "alice@company.com, bob@company.com",
       "run": "Ejecutar",
-      "runCompleted": "Corrida completada",
-      "runFailed": "Corrida fallida",
+      "runCompleted": "Ejecución completada",
+      "runFailed": "Ejecución fallida",
       "unknownError": "Error desconocido",
       "metrics": "Métricas (14d)",
-      "runsTotal": "Corridas totales: {value}",
-      "runsCompleted": "Corridas completadas: {value}",
-      "runsFailed": "Corridas fallidas: {value}",
+      "runsTotal": "Ejecuciones totales: {value}",
+      "runsCompleted": "Ejecuciones completadas: {value}",
+      "runsFailed": "Ejecuciones fallidas: {value}",
       "conflictsOpenCount": "Conflictos abiertos: {value}",
-      "avgRunTimeSeconds": "Tiempo promedio (s): {value}",
+      "avgRunTimeSeconds": "Tiempo medio (s): {value}",
       "noMetrics": "No hay métricas disponibles.",
       "readiness": "Preparación para cutover",
       "readinessReady": "Listo para cutover",
       "readinessNotReady": "No listo para cutover",
-      "recentRuns": "Corridas Recientes",
-      "noRuns": "No hay corridas aún.",
-      "openConflicts": "Conflictos Abiertos",
+      "recentRuns": "Ejecuciones recientes",
+      "noRuns": "Aún no hay ejecuciones.",
+      "openConflicts": "Conflictos abiertos",
       "noConflicts": "No hay conflictos abiertos.",
       "resolve": "Resolver",
-      "fieldMappings": "Mapeos de propiedad por campo",
-      "mappingEntityPlaceholder": "Tipo de entidad (ej. registro)",
-      "mappingFieldPlaceholder": "Campo (ej. status)",
-      "ownershipRemote": "Remoto autoritativo",
-      "ownershipLocal": "Local autoritativo",
-      "ownershipMerge": "Combinar",
+      "fieldMappings": "Mapeos de propiedad de campo",
+      "mappingEntityPlaceholder": "Tipo de entidad (p. ej. record)",
+      "mappingFieldPlaceholder": "Ruta de campo (p. ej. status)",
+      "ownershipRemote": "Autoridad remota",
+      "ownershipLocal": "Autoridad local",
+      "ownershipMerge": "Fusionar",
       "ownershipAppendOnly": "Solo anexar",
-      "saveMapping": "Guardar Mapeo",
+      "saveMapping": "Guardar mapeo",
       "noMappings": "No hay mapeos configurados."
     },
     "github": {
@@ -567,185 +567,185 @@
       "description": "Conecta GitHub para seguimiento de repositorios y sincronización de datos.",
       "credentials": {
         "title": "Credenciales de OAuth App",
-        "description": "Ingresa las credenciales de tu OAuth App de GitHub. Crea una en github.com/settings/developers.",
+        "description": "Introduce las credenciales de tu OAuth App de GitHub. Crea una en github.com/settings/developers.",
         "clientId": "Client ID",
         "clientIdHint": "El Client ID de la configuración de tu OAuth App de GitHub.",
         "clientSecret": "Client Secret",
         "clientSecretHint": "El Client Secret de la configuración de tu OAuth App de GitHub.",
-        "testCredentials": "Validar Credenciales",
-        "testSuccess": "Las credenciales parecen válidas",
-        "testFailed": "La validación falló",
-        "clientIdTooShort": "El Client ID es demasiado corto",
-        "clientSecretTooShort": "El Client Secret es demasiado corto",
-        "saveCredentials": "Guardar Credenciales",
-        "saveFailed": "Error al guardar credenciales",
-        "envConfigured": "Variables de Entorno Detectadas",
-        "envConfiguredDesc": "Las credenciales OAuth de GitHub están configuradas mediante variables de entorno (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Los valores ingresados aquí reemplazarán las variables de entorno para este tenant.",
-        "githubDevSettings": "Configuración de Desarrollador de GitHub"
+        "testCredentials": "Validar credenciales",
+        "testSuccess": "Credenciales válidas",
+        "testFailed": "Validación fallida",
+        "clientIdTooShort": "Client ID demasiado corto",
+        "clientSecretTooShort": "Client Secret demasiado corto",
+        "saveCredentials": "Guardar credenciales",
+        "saveFailed": "No se pudieron guardar las credenciales",
+        "envConfigured": "Variables de entorno detectadas",
+        "envConfiguredDesc": "Las credenciales OAuth de GitHub se configuran mediante variables de entorno (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). Los valores introducidos aquí sobrescribirán las variables de entorno para este inquilino.",
+        "githubDevSettings": "Ajustes de desarrollador de GitHub"
       },
       "settings": {
-        "connectionStatus": "Estado de Conexión",
+        "connectionStatus": "Estado de conexión",
         "connectedAs": "Conectado como @{username}",
         "notConnected": "No conectado a GitHub. Haz clic en Conectar para iniciar el flujo OAuth.",
         "connect": "Conectar GitHub",
         "reconnect": "Reconectar",
         "disconnect": "Desconectar",
-        "confirmDisconnect": "¿Estás seguro de que deseas desconectar GitHub? Esto revocará el token de acceso almacenado.",
-        "integrationSettings": "Configuración de Integración",
+        "confirmDisconnect": "¿Seguro que deseas desconectar GitHub? Esto revocará el token de acceso almacenado.",
+        "integrationSettings": "Ajustes de integración",
         "integrationSettingsDesc": "Configura cómo se sincronizan los datos de GitHub en la plataforma.",
-        "enableIntegration": "Habilitar Integración",
-        "enableIntegrationDesc": "Activa para habilitar la sincronización de datos desde GitHub.",
-        "organizationFilter": "Filtro de Organización",
+        "enableIntegration": "Habilitar integración",
+        "enableIntegrationDesc": "Activa para comenzar a sincronizar datos desde GitHub.",
+        "organizationFilter": "Filtro de organización",
         "organizationFilterDesc": "Opcionalmente limita la sincronización a miembros de una organización de GitHub específica.",
-        "organizationFilterPlaceholder": "ej., mi-empresa",
-        "syncRepositories": "Sincronizar Repositorios",
-        "syncRepositoriesDesc": "Escanear repositorios y recopilar estadísticas de lenguajes.",
-        "syncContributions": "Sincronizar Contribuciones",
-        "syncContributionsDesc": "Rastrear commits, pull requests y revisiones de código por persona.",
-        "includeArchived": "Incluir Repos Archivados",
-        "includeArchivedDesc": "Incluir repositorios archivados al escanear.",
-        "includeForks": "Incluir Repos Forkeados",
-        "includeForksDesc": "Incluir repositorios forkeados al escanear.",
-        "lookbackDays": "Ventana de Contribuciones (días)",
-        "lookbackDaysDesc": "Cuántos días atrás escanear contribuciones (30-730).",
-        "saved": "Configuración guardada",
-        "saveError": "Error al guardar la configuración",
-        "saveSettings": "Guardar Configuración",
-        "disabledWarningTitle": "Integración Deshabilitada",
-        "disabledWarningDesc": "GitHub está conectado pero deshabilitado. Habilítalo para comenzar a sincronizar datos.",
-        "envConfigured": "Credenciales OAuth desde Variables de Entorno",
-        "envConfiguredDesc": "Las credenciales OAuth de GitHub se cargan desde variables de entorno (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). No se necesita configuración adicional de credenciales.",
+        "organizationFilterPlaceholder": "p. ej., my-company",
+        "syncRepositories": "Sincronizar repositorios",
+        "syncRepositoriesDesc": "Escanea repositorios y recopila estadísticas de lenguajes.",
+        "syncContributions": "Sincronizar contribuciones",
+        "syncContributionsDesc": "Rastrea commits, pull requests y revisiones por persona.",
+        "includeArchived": "Incluir repositorios archivados",
+        "includeArchivedDesc": "Incluye repositorios archivados al escanear.",
+        "includeForks": "Incluir forks",
+        "includeForksDesc": "Incluye repositorios fork al escanear.",
+        "lookbackDays": "Periodo de retroceso de contribuciones (días)",
+        "lookbackDaysDesc": "Cuántos días hacia atrás escanear contribuciones (30-730).",
+        "saved": "Ajustes guardados",
+        "saveError": "Error al guardar ajustes",
+        "saveSettings": "Guardar ajustes",
+        "disabledWarningTitle": "Integración deshabilitada",
+        "disabledWarningDesc": "GitHub está conectado pero deshabilitado. Actívalo para comenzar la sincronización.",
+        "envConfigured": "Credenciales OAuth desde entorno",
+        "envConfiguredDesc": "Las credenciales OAuth de GitHub se cargan desde variables de entorno (GITHUB_INTEGRATION_CLIENT_ID, GITHUB_INTEGRATION_CLIENT_SECRET). No se requiere configuración adicional.",
         "inferSkills": "Inferir habilidades",
-        "inferSkillsDesc": "Inferir habilidades a partir de lenguajes de repositorio y datos de contribución."
+        "inferSkillsDesc": "Inferir habilidades a partir de lenguajes de repositorios y datos de contribución."
       }
     },
     "linkedin": {
       "title": "LinkedIn",
-      "description": "Vinculá cuentas de LinkedIn para verificación de identidad y enriquecimiento de perfiles.",
-      "notConfiguredTitle": "Integración No Configurada",
-      "notConfiguredDesc": "Configurá tus credenciales OAuth de LinkedIn para habilitar esta integración. Creá una app en linkedin.com/developers/apps.",
+      "description": "Vincula LinkedIn para verificación de identidad y enriquecimiento de perfiles.",
+      "notConfiguredTitle": "Integración no configurada",
+      "notConfiguredDesc": "Configura tus credenciales OAuth de LinkedIn para habilitar esta integración. Crea una app en linkedin.com/developers/apps.",
       "credentials": {
         "title": "Credenciales OAuth de LinkedIn",
-        "description": "Ingresá el Client ID y Secret de tu aplicación OAuth de LinkedIn. Creá una app en el Portal de Desarrolladores de LinkedIn.",
+        "description": "Introduce el Client ID y Client Secret de tu app OAuth de LinkedIn. Crea una app en el Portal de Desarrolladores de LinkedIn.",
         "clientId": "Client ID",
-        "clientIdHint": "Se encuentra en la configuración de tu app de LinkedIn en la pestaña Auth.",
-        "clientIdTooShort": "El Client ID es muy corto",
+        "clientIdHint": "Se encuentra en la configuración de tu app de LinkedIn bajo la pestaña Auth.",
+        "clientIdTooShort": "Client ID demasiado corto",
         "clientSecret": "Client Secret",
-        "clientSecretHint": "El client secret principal de tu app de LinkedIn.",
-        "clientSecretTooShort": "El Client Secret es muy corto",
-        "testCredentials": "Probar Credenciales",
+        "clientSecretHint": "El Client Secret principal de tu app de LinkedIn.",
+        "clientSecretTooShort": "Client Secret demasiado corto",
+        "testCredentials": "Probar credenciales",
         "testSuccess": "Formato válido",
         "testFailed": "Validación fallida",
-        "saveCredentials": "Guardar Credenciales",
-        "saveFailed": "Error al guardar credenciales",
-        "envConfigured": "Variables de Entorno Detectadas",
-        "envConfiguredDesc": "Las credenciales de LinkedIn están proporcionadas via variables de entorno. Podés sobreescribirlas con valores específicos del tenant abajo.",
-        "linkedinDevPortal": "Portal de Desarrolladores de LinkedIn"
+        "saveCredentials": "Guardar credenciales",
+        "saveFailed": "No se pudieron guardar las credenciales",
+        "envConfigured": "Variables de entorno detectadas",
+        "envConfiguredDesc": "Las credenciales de LinkedIn se proporcionan mediante variables de entorno. Puedes sobrescribirlas con valores específicos del inquilino abajo.",
+        "linkedinDevPortal": "Portal de desarrolladores de LinkedIn"
       },
       "settings": {
-        "connectionStatus": "Estado de Conexión",
+        "connectionStatus": "Estado de conexión",
         "connectedAs": "Conectado como {name}",
-        "notConnected": "No conectado a LinkedIn. Conectá para verificar que la integración funcione.",
+        "notConnected": "No conectado a LinkedIn. Conecta para verificar que la integración funciona.",
         "connect": "Conectar LinkedIn",
         "reconnect": "Reconectar",
         "disconnect": "Desconectar",
-        "confirmDisconnect": "¿Estás seguro de que querés desconectar LinkedIn?",
-        "integrationSettings": "Configuración de Integración",
-        "integrationSettingsDesc": "Configurá cómo se comporta la integración de LinkedIn para tu organización.",
-        "enableIntegration": "Habilitar Integración de LinkedIn",
-        "enableIntegrationDesc": "Permitir que los miembros del equipo conecten sus cuentas de LinkedIn para enriquecimiento de perfiles.",
-        "autoUpdateAvatar": "Auto-actualizar Avatar",
-        "autoUpdateAvatarDesc": "Actualizar automáticamente la foto de perfil del usuario desde su foto de LinkedIn cuando se conecte.",
-        "autoUpdateLocale": "Auto-actualizar Idioma",
-        "autoUpdateLocaleDesc": "Configurar automáticamente el idioma del usuario desde su perfil de LinkedIn cuando se conecte.",
-        "saveSettings": "Guardar Configuración",
-        "saved": "Configuración guardada",
-        "saveError": "Error al guardar configuración",
-        "envConfigured": "Variables de Entorno Detectadas",
-        "envConfiguredDesc": "Las credenciales de LinkedIn están proporcionadas via variables de entorno.",
-        "disabledWarningTitle": "Integración Deshabilitada",
-        "disabledWarningDesc": "La integración de LinkedIn está conectada pero deshabilitada. Habilitala para permitir que los miembros del equipo vinculen sus cuentas de LinkedIn."
+        "confirmDisconnect": "¿Seguro que deseas desconectar LinkedIn?",
+        "integrationSettings": "Ajustes de integración",
+        "integrationSettingsDesc": "Configura cómo se comporta la integración de LinkedIn para tu organización.",
+        "enableIntegration": "Habilitar integración de LinkedIn",
+        "enableIntegrationDesc": "Permite a los miembros del equipo conectar sus cuentas de LinkedIn para enriquecer perfiles.",
+        "autoUpdateAvatar": "Actualizar avatar automáticamente",
+        "autoUpdateAvatarDesc": "Actualizar automáticamente la foto de perfil del usuario desde LinkedIn cuando se conecte.",
+        "autoUpdateLocale": "Actualizar configuración regional automáticamente",
+        "autoUpdateLocaleDesc": "Establecer automáticamente la configuración regional del usuario desde su perfil de LinkedIn al conectar.",
+        "saveSettings": "Guardar ajustes",
+        "saved": "Ajustes guardados",
+        "saveError": "Error al guardar ajustes",
+        "envConfigured": "Variables de entorno detectadas",
+        "envConfiguredDesc": "Las credenciales de LinkedIn se proporcionan mediante variables de entorno.",
+        "disabledWarningTitle": "Integración deshabilitada",
+        "disabledWarningDesc": "La integración de LinkedIn está deshabilitada actualmente. Actívala para permitir que los miembros conecten LinkedIn."
       }
     },
     "settingsTabs": {
       "general": "General",
-      "features": "Funcionalidades",
+      "features": "Funciones",
       "departments": "Departamentos",
       "aiProvider": "Proveedor de IA",
       "storage": "Almacenamiento",
       "branding": "Marca"
     },
     "membersPage": {
-      "title": "Miembros del Equipo",
-      "description": "Administra los miembros del equipo y sus roles",
-      "addMember": "Agregar Miembro",
-      "editMember": "Editar Miembro",
-      "inviteMember": "Invitar Miembro",
+      "title": "Miembros del equipo",
+      "description": "Gestiona miembros del equipo y sus roles",
+      "addMember": "Agregar miembro",
+      "editMember": "Editar miembro",
+      "inviteMember": "Invitar miembro",
       "role": "Rol",
       "department": "Departamento",
       "status": "Estado",
-      "lastActive": "Última Actividad",
+      "lastActive": "Última actividad",
       "roles": {
         "admin": "Administrador",
         "member": "Miembro"
       },
       "statuses": {
         "active": "Activo",
-        "onboarding": "En Incorporación",
+        "onboarding": "En incorporación",
         "inactive": "Inactivo"
       },
-      "confirmRemove": "¿Estás seguro de que deseas eliminar a este miembro?",
+      "confirmRemove": "¿Seguro que deseas eliminar a este miembro?",
       "noMembers": "No se encontraron miembros del equipo"
     },
     "invitesPage": {
       "title": "Invitaciones",
-      "description": "Administra las invitaciones pendientes de tu organización",
-      "createInvite": "Crear Invitación",
-      "sendInvite": "Enviar Invitación",
-      "email": "Correo Electrónico",
+      "description": "Gestiona las invitaciones pendientes a tu organización",
+      "createInvite": "Crear invitación",
+      "sendInvite": "Enviar invitación",
+      "email": "Dirección de correo",
       "firstName": "Nombre",
       "lastName": "Apellido",
       "role": "Rol",
-      "message": "Mensaje de Bienvenida",
+      "message": "Mensaje de bienvenida",
       "messagePlaceholder": "Agrega un mensaje personal a la invitación (opcional)",
-      "expiration": "Expira En",
+      "expiration": "Expira en",
       "expirationOptions": {
-        "1day": "1 Día",
-        "3days": "3 Días",
-        "7days": "7 Días",
-        "14days": "14 Días",
-        "30days": "30 Días"
+        "1day": "1 día",
+        "3days": "3 días",
+        "7days": "7 días",
+        "14days": "14 días",
+        "30days": "30 días"
       },
       "status": {
         "pending": "Pendiente",
         "accepted": "Aceptada",
-        "expired": "Expirada",
+        "expired": "Caducada",
         "revoked": "Revocada"
       },
       "actions": {
-        "copyLink": "Copiar Enlace",
+        "copyLink": "Copiar enlace",
         "linkCopied": "¡Enlace de invitación copiado!",
         "extend": "Extender",
         "revoke": "Revocar"
       },
-      "confirmRevoke": "¿Estás seguro de que deseas revocar esta invitación?",
+      "confirmRevoke": "¿Seguro que deseas revocar esta invitación?",
       "noInvites": "No hay invitaciones pendientes",
-      "inviteSuccess": "Invitación enviada exitosamente"
+      "inviteSuccess": "Invitación enviada con éxito"
     },
-    "departmentsPageDescription": "Asigna gerentes y miembros a cada departamento.",
-    "departmentsManageInSettings": "Administrar en Configuración",
+    "departmentsPageDescription": "Asigna gerentes y miembros a cada departamento",
+    "departmentsManageInSettings": "Gestionar en Configuración",
     "departmentsNoDepartments": "No hay departamentos configurados",
-    "departmentsNoDepartmentsHint": "Agrega un departamento para organizar tu equipo.",
+    "departmentsNoDepartmentsHint": "Agrega departamentos para organizar tu equipo",
     "departmentsCreateInSettings": "Crear en Configuración",
     "departmentsAddDepartment": "Agregar departamento",
     "departmentsEdit": "Editar departamento",
     "departmentsEditDepartment": "Editar departamento",
     "departmentsDelete": "Eliminar departamento",
-    "departmentsConfirmDelete": "¿Eliminar este departamento? Esta acción no se puede deshacer.",
-    "departmentsDeleteDisabledHint": "Quita primero todos los miembros",
-    "departmentsCreateDescription": "Crea un nuevo departamento para organizar tu equipo. Podrás asignar gerentes y miembros después.",
+    "departmentsConfirmDelete": "¿Eliminar este departamento? Esta acción no se puede deshacer",
+    "departmentsDeleteDisabledHint": "Elimina primero todos los miembros",
+    "departmentsCreateDescription": "Crea un nuevo departamento para organizar tu equipo. Puedes asignar gerentes y miembros más adelante.",
     "departmentsName": "Nombre",
-    "departmentsNamePlaceholder": "ej. Ingeniería",
+    "departmentsNamePlaceholder": "p. ej., Engineering",
     "departmentsParent": "Departamento padre",
     "departmentsNoParent": "Ninguno",
     "departmentsMembers": "Miembros",
@@ -753,60 +753,60 @@
     "departmentsAddManager": "Agregar gerente",
     "departmentsPrimary": "Principal",
     "departmentsRemoveManager": "Quitar gerente",
-    "departmentsNoManagers": "Sin gerentes asignados",
+    "departmentsNoManagers": "No hay gerentes asignados",
     "departmentsAddMember": "Agregar miembro",
     "departmentsRemoveMember": "Quitar miembro",
-    "departmentsNoMembers": "Sin miembros asignados",
-    "departmentsNoPeople": "No hay personas en este tenant",
+    "departmentsNoMembers": "No hay miembros asignados",
+    "departmentsNoPeople": "No hay personas en este inquilino",
     "departmentsDescription": "Descripción",
-    "departmentsDescriptionPlaceholder": "Descripción opcional"
+    "departmentsDescriptionPlaceholder": "Descripción (opcional)"
   },
   "settings": {
     "title": "Configuración",
-    "backToUserView": "Volver a la Vista de Usuario",
+    "backToUserView": "Volver a la vista de usuario",
     "general": {
-      "title": "Detalles de la Organización",
-      "description": "Configuración básica del tenant",
-      "tenantSlug": "Slug del Tenant",
-      "displayName": "Nombre para Mostrar",
+      "title": "Detalles de la organización",
+      "description": "Configuración básica del inquilino",
+      "tenantSlug": "Tenant Slug",
+      "displayName": "Nombre para mostrar",
       "descriptionLabel": "Descripción"
     },
     "features": {
-      "title": "Funcionalidades",
-      "description": "Habilitar o deshabilitar funcionalidades de la plataforma",
-      "core": "Funcionalidades Principales",
-      "ai": "Funcionalidades de IA",
+      "title": "Feature flags",
+      "description": "Habilita o deshabilita funciones de la plataforma",
+      "core": "Funciones principales",
+      "ai": "Funciones de IA",
       "integrations": "Integraciones"
     },
     "departments": {
       "title": "Departamentos",
-      "description": "Define la estructura organizacional",
-      "addDepartment": "Agregar Departamento",
+      "description": "Define la estructura organizativa",
+      "addDepartment": "Agregar departamento",
       "noDepartments": "No hay departamentos configurados",
-      "noDepartmentsHint": "Agrega departamentos para organizar a los miembros del equipo"
+      "noDepartmentsHint": "Agrega departamentos para organizar a los miembros de tu equipo"
     },
     "dangerZone": {
-      "title": "Zona de Peligro",
-      "description": "Acciones irreversibles",
-      "resetSettings": "Restablecer Configuración",
-      "resetDescription": "Restablecer toda la configuración a valores por defecto. Esta acción no se puede deshacer.",
-      "confirmReset": "¿Estás seguro de que quieres restablecer toda la configuración?"
+      "title": "Zona de peligro",
+      "description": "Acciones que no se pueden deshacer",
+      "resetSettings": "Restablecer configuración",
+      "resetDescription": "Restablece todas las configuraciones a los valores predeterminados. Esta acción no se puede deshacer",
+      "confirmReset": "¿Seguro que deseas restablecer todas las configuraciones?"
     },
-    "saved": "¡Configuración guardada exitosamente!",
-    "saveFailed": "Error al guardar la configuración. Por favor intenta de nuevo."
+    "saved": "¡Configuración guardada!",
+    "saveFailed": "Error al guardar la configuración. Por favor intenta de nuevo"
   },
   "validation": {
-    "required": "Este campo es requerido",
-    "invalidEmail": "Dirección de correo inválida",
+    "required": "Este campo es obligatorio",
+    "invalidEmail": "Dirección de correo no válida",
     "minLength": "Debe tener al menos {min} caracteres",
     "maxLength": "Debe tener como máximo {max} caracteres",
-    "invalidUrl": "URL inválida",
-    "fileTooLarge": "El tamaño del archivo excede el límite de {maxSize}MB",
-    "invalidFileType": "Tipo de archivo no soportado",
+    "invalidUrl": "URL no válida",
+    "fileTooLarge": "El tamaño del archivo supera el límite de {maxSize}MB",
+    "invalidFileType": "Tipo de archivo no compatible",
     "passwordMismatch": "Las contraseñas no coinciden"
   },
   "errors": {
-    "generic": "Algo salió mal",
+    "generic": "Ocurrió un error",
     "notFound": "No encontrado",
     "unauthorized": "No autorizado",
     "forbidden": "Acceso denegado",
@@ -815,29 +815,29 @@
     "tryAgain": "Por favor intenta de nuevo"
   },
   "assistant": {
-    "title": "Asistente IA",
+    "title": "Asistente de IA",
     "placeholder": "Escribe tu mensaje...",
     "send": "Enviar",
     "thinking": "Pensando...",
-    "error": "Algo salió mal.",
-    "welcome": "¡Hola! Soy tu asistente IA. ¿En qué puedo ayudarte hoy?",
+    "error": "Ocurrió un error",
+    "welcome": "¡Hola! Soy tu asistente de IA. ¿En qué puedo ayudarte?",
     "suggestedQuestions": "Preguntas sugeridas:",
     "newConversation": "Nueva conversación",
-    "noConversations": "Aún no hay conversaciones",
+    "noConversations": "No hay conversaciones",
     "suggestions": {
       "findPeople": "Buscar miembros del equipo",
-      "analyzeGaps": "Analizar datos",
+      "analyzeGaps": "Analizar brechas de datos",
       "recommend": "Obtener recomendaciones",
-      "explore": "Explorar funcionalidades"
+      "explore": "Explorar funciones"
     }
   },
   "genui": {
     "loading": "Cargando...",
     "previewNotAvailable": "Vista previa no disponible",
-    "viewProfile": "Ver Perfil",
-    "sendMessage": "Enviar Mensaje",
-    "viewDetails": "Ver Detalles",
-    "showMore": "Mostrar {count} más",
+    "viewProfile": "Ver perfil",
+    "sendMessage": "Enviar mensaje",
+    "viewDetails": "Ver detalles",
+    "showMore": "Mostrar más {count}",
     "showLess": "Mostrar menos",
     "comparison": "Comparación",
     "attribute": "Atributo"
@@ -846,64 +846,64 @@
     "title": "Panel",
     "welcome": "Bienvenido a {name}",
     "platformDescription": "Tu plataforma SaaS nativa de IA",
-    "adminBadge": "ADMIN",
-    "adminAccessMessage": "Tienes acceso de administrador a este tenant",
-    "openAdminPanel": "Abrir Panel de Admin",
+    "adminBadge": "Administrador",
+    "adminAccessMessage": "Tienes permisos de administrador para este inquilino",
+    "openAdminPanel": "Abrir panel de administración",
     "profileCompletion": "Completitud del perfil",
     "completeProfile": "Completa tu perfil para desbloquear todo el potencial",
     "progress": "Progreso",
     "completeProfileToUnlock": "Completa tu perfil para desbloquear todas las funciones",
     "recentActivity": "Actividad reciente",
     "quickActions": "Acciones rápidas",
-    "viewAll": "Ver Todo",
-    "noActivity": "Sin actividad reciente",
-    "aiConversations": "Conversaciones con IA",
-    "totalInteractions": "Total de interacciones",
+    "viewAll": "Ver todo",
+    "noActivity": "No hay actividad reciente",
+    "aiConversations": "Conversaciones de IA",
+    "totalInteractions": "Interacciones totales",
     "viewAllActivity": "Ver toda la actividad",
     "teamMembers": "Miembros del equipo",
     "activePlatformMembers": "Miembros activos en la plataforma",
     "webhooksActive": "Webhooks activos",
     "activeWebhookEndpoints": "Endpoints de webhook activos",
     "inviteMember": "Invitar miembro",
-    "onboardNewTeamMember": "Incorporar un nuevo miembro al equipo",
+    "onboardNewTeamMember": "Incorporar nuevo miembro",
     "viewMembers": "Ver miembros",
-    "browseTeamMembers": "Explorar los miembros de tu equipo",
-    "askAIAssistant": "Obtener ayuda del asistente IA",
+    "browseTeamMembers": "Explorar miembros de tu equipo",
+    "askAIAssistant": "Pedir ayuda al asistente de IA",
     "commonTasks": "Tareas comunes para comenzar",
     "yourLatestActions": "Tus últimas acciones",
     "manageSettings": "Gestionar configuración",
-    "configureYourTenant": "Configurar tu organización",
-    "addBio": "Añade una bio a tu perfil",
-    "uploadAvatar": "Sube una foto de perfil",
-    "connectGitHub": "Conecta tu cuenta de GitHub",
-    "inviteTeamMember": "Invitar a un miembro del equipo"
+    "configureYourTenant": "Configura tu inquilino",
+    "addBio": "Agregar biografía a tu perfil",
+    "uploadAvatar": "Subir foto de perfil",
+    "connectGitHub": "Conectar tu cuenta de GitHub",
+    "inviteTeamMember": "Invitar miembro del equipo"
   },
   "members": {
-    "title": "Miembros del Equipo",
-    "description": "Administrar miembros del equipo y sus roles",
-    "addMember": "Agregar Miembro",
-    "editMember": "Editar Miembro",
-    "inviteMember": "Invitar Miembro",
+    "title": "Miembros del equipo",
+    "description": "Gestiona miembros del equipo y sus roles",
+    "addMember": "Agregar miembro",
+    "editMember": "Editar miembro",
+    "inviteMember": "Invitar miembro",
     "searchPlaceholder": "Buscar miembros...",
-    "namePlaceholder": "Juan Pérez",
-    "noMembers": "No se encontraron miembros"
+    "namePlaceholder": "John Doe",
+    "noMembers": "No se encontraron miembros del equipo"
   },
   "auditLogs": {
-    "title": "Registros de Auditoría",
+    "title": "Registros de auditoría",
     "description": "Ver todas las acciones realizadas en tu organización",
     "filters": {
       "title": "Filtros",
-      "clear": "Limpiar",
-      "apply": "Aplicar Filtros",
-      "dateRange": "Rango de Fechas",
+      "clear": "Borrar",
+      "apply": "Aplicar filtros",
+      "dateRange": "Rango de fechas",
       "actor": "Actor",
       "action": "Acción",
-      "entityType": "Tipo de Entidad",
-      "entityId": "ID de Entidad",
+      "entityType": "Tipo de entidad",
+      "entityId": "ID de entidad",
       "search": "Buscar..."
     },
     "columns": {
-      "timestamp": "Fecha y Hora",
+      "timestamp": "Marca de tiempo",
       "actor": "Actor",
       "action": "Acción",
       "entity": "Entidad"
@@ -911,39 +911,39 @@
     "noResults": "No se encontraron eventos de auditoría",
     "export": "Exportar CSV",
     "datePresets": {
-      "all": "Todo el Tiempo",
+      "all": "Todo el tiempo",
       "today": "Hoy",
-      "week": "Últimos 7 Días",
-      "month": "Últimos 30 Días"
+      "week": "Últimos 7 días",
+      "month": "Últimos 30 días"
     }
   },
   "docs": {
     "title": "Documentación",
-    "backToApp": "Volver a la App",
+    "backToApp": "Volver a la app",
     "nav": {
-      "gettingStarted": "Primeros Pasos",
+      "gettingStarted": "Comenzar",
       "welcome": "Bienvenida",
-      "firstLogin": "Primer Inicio de Sesión",
-      "navigation": "Navegación y Vistas",
-      "profileSetup": "Configuración de Perfil",
-      "memberGuide": "Guía del Miembro",
-      "overview": "Descripción General",
-      "dashboard": "Panel de Control",
-      "profileSettings": "Perfil y Configuración",
-      "aiAssistant": "Asistente IA",
-      "adminGuide": "Guía del Administrador",
-      "membersInvitations": "Miembros e Invitaciones",
-      "rolesPermissions": "Roles y Permisos",
+      "firstLogin": "Primer inicio de sesión",
+      "navigation": "Navegación y vistas",
+      "profileSetup": "Configuración de perfil",
+      "memberGuide": "Guía para miembros",
+      "overview": "Resumen",
+      "dashboard": "Panel",
+      "profileSettings": "Perfil y configuración",
+      "aiAssistant": "Asistente de IA",
+      "adminGuide": "Guía de administrador",
+      "membersInvitations": "Miembros e invitaciones",
+      "rolesPermissions": "Roles y permisos",
       "settings": "Configuración",
       "branding": "Marca y personalización",
       "integrations": "Integraciones",
-      "analyticsAudit": "Analíticas y Auditoría",
-      "faq": "Preguntas Frecuentes"
+      "analyticsAudit": "Analítica y auditoría",
+      "faq": "Preguntas frecuentes"
     },
-    "fallbackNotice": "Esta página se muestra en inglés porque la traducción para el idioma seleccionado todavía no está disponible.",
+    "fallbackNotice": "Esta página se muestra en inglés porque la traducción para la localidad seleccionada aún no está disponible",
     "search": {
-      "placeholder": "Buscar en la documentación...",
-      "hint": "Escribí para buscar en todas las páginas de documentación",
+      "placeholder": "Buscar documentación...",
+      "hint": "Escribe para buscar en todas las páginas de documentación",
       "noResults": "No se encontraron resultados",
       "navigate": "Navegar",
       "open": "Abrir",
@@ -963,22 +963,34 @@
       "pagination": "Paginación de documentación",
       "toggleSidebar": "Alternar barra lateral de documentación"
     },
+    "llm": {
+      "copyMarkdownUrl": "Copiar URL Markdown",
+      "openMarkdown": "Abrir Markdown",
+      "copied": "URL Markdown copiada al portapapeles",
+      "copiedButton": "Copiado",
+      "copyFailed": "No se pudo copiar al portapapeles",
+      "assistantHint": "El asistente Afenda AI funciona dentro del espacio de trabajo del inquilino (barra lateral → Asistente) para usuarios autenticados y accede al contexto organizacional cuando está habilitado",
+      "assistantHintAria": "Uso del asistente de IA",
+      "assistantCta": "Abrir la página principal de la app",
+      "navLlmsIndex": "Índice de páginas LLM",
+      "navLlmsFull": "Exportar todos los LLM"
+    },
     "preview": {
       "title": "Vista previa en vivo",
-      "invalidBlock": "Bloque de vista previa no válido. Formato esperado: <code>component: Name</code>",
-      "notRegistered": "El componente <code>{component}</code> no está registrado para vista previa."
+      "invalidBlock": "Bloque de vista previa inválido. Se espera el formato: <code>component: Name</code>",
+      "notRegistered": "El componente <code>{component}</code> aún no está registrado para vista previa"
     }
   },
   "rawEdit": {
-    "formatError": "Error al formatear",
-    "formatErrorDesc": "El contenido del editor no es JSON válido.",
+    "formatError": "Error de formato",
+    "formatErrorDesc": "El contenido del editor no es un JSON válido",
     "copied": "Copiado",
-    "copiedDesc": "JSON copiado al portapapeles.",
+    "copiedDesc": "JSON copiado al portapapeles",
     "copyError": "Error al copiar",
-    "copyErrorDesc": "No se pudo copiar el JSON al portapapeles.",
+    "copyErrorDesc": "No se pudo copiar el JSON al portapapeles",
     "validJson": "JSON válido",
     "invalidJson": "JSON no válido",
-    "unsavedChanges": "Cambios sin guardar",
+    "unsavedChanges": "Hay cambios sin guardar",
     "reset": "Restablecer",
     "format": "Formatear",
     "copy": "Copiar"

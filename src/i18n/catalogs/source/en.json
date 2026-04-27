@@ -61,7 +61,7 @@
         "one": "Build with ",
         "two": "Afenda"
       },
-      "description": "Launch a multi-tenant SaaS product with authentication, AI, integrations, team management, and governance-ready foundations.",
+      "description": "Deploy a governed, multi-tenant SaaS platform with identity, AI workflows, integrations, team administration, and enterprise-ready control foundations.",
       "cta": {
         "goToDashboard": "Go to dashboard",
         "getStarted": "Get started",
@@ -303,7 +303,7 @@
       }
     },
     "footer": {
-      "blurb": "Production-ready Next.js SaaS boilerplate with multi-tenancy, AI, and integrations.",
+      "blurb": "Production-ready SaaS platform foundation with multi-tenancy, AI workflows, integrations, and governance-ready controls.",
       "sections": {
         "product": "Product",
         "resources": "Resources",
@@ -962,6 +962,18 @@
       "navigation": "Documentation navigation",
       "pagination": "Documentation pagination",
       "toggleSidebar": "Toggle documentation sidebar"
+    },
+    "llm": {
+      "copyMarkdownUrl": "Copy Markdown URL",
+      "openMarkdown": "Open Markdown",
+      "copied": "Markdown URL copied to clipboard",
+      "copiedButton": "Copied",
+      "copyFailed": "Unable to copy to clipboard",
+      "assistantHint": "The Afenda AI assistant runs inside a tenant workspace (sidebar → Assistant) for signed-in users, with access to your organization's context when enabled.",
+      "assistantHintAria": "AI assistant availability",
+      "assistantCta": "Open app home",
+      "navLlmsIndex": "LLM page index",
+      "navLlmsFull": "LLM full export"
     },
     "preview": {
       "title": "Live Preview",

@@ -7,7 +7,7 @@ The repository owns:
 - English source messages in `src/i18n/catalogs/source/en.json`
 - validation and compilation scripts
 - protected fallback/bootstrap catalogs
-- locale activation governance
+- locale activation governance (`activeLocales` in `src/i18n/locale-registry.ts`; script parsing contract in `src/i18n/README.md`)
 
 Crowdin owns:
 

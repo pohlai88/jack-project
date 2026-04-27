@@ -56,7 +56,7 @@ export function ChatInterface({
     messages: initialMessages,
     transport: new DefaultChatTransport({
       api: '/api/chat',
-      body: { tenantSlug, id: requestId },
+      body: { tenantSlug, conversationId: requestId },
     }),
   });
 

@@ -1,10 +1,10 @@
 'use client';
 
 import { ChevronLeft, ChevronRight, Pin, Settings } from 'lucide-react';
-import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 import { useCallback, useMemo, useRef, useState } from 'react';
+import { Link } from '@/i18n/navigation';
 
 import { Button } from '@/shared/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/shared/components/ui/sheet';

@@ -4,25 +4,26 @@ import { useLocale } from 'next-intl';
 import { useCallback, useTransition } from 'react';
 import { type Locale } from './config';
 import { buildLocalePreferenceCookies } from './locale-cookie';
+import { usePathname, useRouter } from './navigation';
 
-/**
- * Hook to get and set the current locale
- * Uses cookies for persistence (no URL change)
- */
 export function useChangeLocale() {
   const currentLocale = useLocale() as Locale;
+  const pathname = usePathname();
+  const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
-  const changeLocale = useCallback((newLocale: Locale) => {
-    startTransition(() => {
-      // Set cookie
-      for (const cookie of buildLocalePreferenceCookies(newLocale, 'user')) {
-        document.cookie = cookie;
-      }
-      // Refresh the page to apply the new locale
-      window.location.reload();
-    });
-  }, []);
+  const changeLocale = useCallback(
+    (newLocale: Locale) => {
+      startTransition(() => {
+        for (const cookie of buildLocalePreferenceCookies(newLocale, 'user')) {
+          document.cookie = cookie;
+        }
+        router.replace(pathname, { locale: newLocale });
+        router.refresh();
+      });
+    },
+    [pathname, router],
+  );
 
   return {
     locale: currentLocale,

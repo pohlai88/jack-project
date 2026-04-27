@@ -1,0 +1,10 @@
+{
+  "title": "Curated",
+  "icon": "Library",
+  "root": true,
+  "overview": "Overview",
+  "doctrine": "Doctrine",
+  "onboarding": "Onboarding",
+  "release-notes": "Release Notes",
+  "pages": ["overview", "doctrine", "onboarding", "release-notes"]
+}

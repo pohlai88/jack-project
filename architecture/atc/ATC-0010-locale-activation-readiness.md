@@ -8,8 +8,7 @@ For each locale, the readiness system must derive and report all of the followin
 
 - `runtime_active`
 - `messages_complete`
-- `docs_native`
-- `fallback_approved`
+- `docs_evidence_generated`
 - `ui_qa_done`
 - `business_owner`
 - `translation_reviewer`
@@ -19,10 +18,10 @@ For each locale, the readiness system must derive and report all of the followin
 
 The readiness system must follow these rules:
 
-- system truth comes from runtime config, message inventory, and docs structure
+- system truth comes from runtime config, message inventory, and generated docs evidence
 - governance truth comes from the committed locale activation snapshot
 - governance truth must never override system truth
-- visible English fallback is allowed only if declared and approved
+- docs are generated from product truth and are not manually translated per locale
 - locale activation must be config-driven; no hardcoded locale lists outside canonical i18n config are allowed unless explicitly documented and justified
 - translation tools may propose changes; repository validation and merge decide acceptance
 - activation verdicts must be derived algorithmically using the strict taxonomy:
@@ -41,7 +40,7 @@ This ATC is warn-only in the current slice.
 
 ## Non-Goals
 
-- This ATC does not change runtime locale activation.
-- This ATC does not add or remove docs folders.
+- This ATC does not **by itself** change `activeLocales` in `src/i18n/locale-registry.ts` (that remains a product/registry change); it measures and reports readiness once the registry is updated.
+- This ATC does not add locale-specific docs folders.
 - This ATC does not change message loading behavior.
 - This ATC does not promote readiness to a hard CI gate in this slice.

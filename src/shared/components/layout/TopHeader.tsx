@@ -1,10 +1,10 @@
 'use client';
 
 import { BookOpen, LogOut, Search, Settings, User } from 'lucide-react';
-import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 import { useSyncExternalStore } from 'react';
+import { Link } from '@/i18n/navigation';
 
 import { LocaleSwitcher } from '@/shared/components/LocaleSwitcher';
 import { useGlobalSearchOptional } from '@/shared/components/search/GlobalSearchProvider';

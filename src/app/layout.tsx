@@ -1,18 +1,8 @@
 import './globals.css';
-import { RootProvider } from 'fumadocs-ui/provider/next';
 import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
-import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages } from 'next-intl/server';
-import { AuthProvider, ThemeProvider } from '@/shared/components/providers';
-import { Toaster } from '@/shared/components/ui/sonner';
+import { docsFeedPath, docsFeedTitle } from '@/docs/runtime/rss-metadata';
 
-/**
- * DM Sans — geometric, friendly, modern sans-serif.
- * Chosen over Inter (overused in AI-generated UIs) and Open Sans (less distinctive).
- * Same font for body and headings; differentiation via weight and letter-spacing.
- * See architecture/docs/DESIGN_SYSTEM.md Section 4: Typography.
- */
 const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
@@ -23,32 +13,32 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: 'Afenda | AI-Native Skills Management',
   description: 'Production-ready Next.js SaaS boilerplate with multi-tenancy, AI assistant, and integrations',
+  alternates: {
+    types: {
+      'application/rss+xml': [
+        {
+          title: docsFeedTitle,
+          url: docsFeedPath,
+        },
+      ],
+    },
+  },
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  let locale = 'en';
-  let messages: Record<string, unknown> = {};
-  try {
-    locale = await getLocale();
-    messages = await getMessages();
-  } catch {
-    // Fallback for build-time routes that don't have request context.
-    messages = (await import('@/i18n/messages/en.json')).default as Record<string, unknown>;
-  }
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale?: string }>;
+}) {
+  const resolvedParams = await params;
+  const lang = resolvedParams.locale ?? 'en';
 
   return (
-    <html lang={locale} suppressHydrationWarning className={`${dmSans.variable} dark:scroll-smooth`}>
-      <body className={`${dmSans.className} min-h-screen bg-background font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <RootProvider>
-              <AuthProvider>
-                <main className="relative flex min-h-screen flex-col">{children}</main>
-                <Toaster richColors closeButton position="bottom-right" />
-              </AuthProvider>
-            </RootProvider>
-          </NextIntlClientProvider>
-        </ThemeProvider>
+    <html lang={lang} suppressHydrationWarning className={`${dmSans.variable} dark:scroll-smooth`}>
+      <body className={`${dmSans.className} flex min-h-screen flex-col bg-background font-sans antialiased`}>
+        <main className="relative flex min-h-screen flex-col">{children}</main>
       </body>
     </html>
   );

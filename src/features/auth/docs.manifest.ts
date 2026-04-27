@@ -7,7 +7,13 @@ export default defineDocsManifest({
   owner: 'identity-platform',
   releaseState: 'released',
   summary: 'Authentication, tenant selection, tenant login, and invite-token entry points.',
-  routes: ['/login', '/select-tenant', '/t/[tenant]/login', '/t/[tenant]/invite/[token]', '/api/auth/[...nextauth]'],
+  routes: [
+    '/[locale]/login',
+    '/[locale]/select-tenant',
+    '/[locale]/t/[tenant]/login',
+    '/[locale]/t/[tenant]/invite/[token]',
+    '/api/auth/[...nextauth]',
+  ],
   permissions: [],
   workflows: [
     {

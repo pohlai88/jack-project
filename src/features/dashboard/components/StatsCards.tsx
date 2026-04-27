@@ -8,8 +8,8 @@
  */
 
 import { MessageSquare, Users, Webhook } from 'lucide-react';
-import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 import { Card, CardContent } from '@/shared/components/ui/card';
 import { useCountUp } from '@/shared/hooks/use-count-up';

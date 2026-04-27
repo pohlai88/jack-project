@@ -1,6 +1,6 @@
 export { defaultLocale, defaultTimeZone, LOCALE_COOKIE_NAME, localeNames, locales, type Locale } from './config';
 export { mergeWithFallbackMessages } from './merge-messages';
-export { getPathname, Link, redirect, usePathname, useRouter } from './navigation';
+export { getPathname, Link, localizeHref, redirect, usePathname, useRouter } from './navigation';
 export { routing } from './routing';
 export {
   buildLocaleCookie,

@@ -8,8 +8,8 @@
  */
 
 import { FileText } from 'lucide-react';
-import Link from 'next/link';
 import * as React from 'react';
+import { Link } from '@/i18n/navigation';
 
 import { Badge } from '@/shared/components/ui/badge';
 import { Progress } from '@/shared/components/ui/progress';

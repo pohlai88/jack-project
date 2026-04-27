@@ -13,9 +13,14 @@ export const I18N_PATHS = {
   generatedDir: 'src/i18n/catalogs/generated',
   messagesDir: 'src/i18n/messages',
   fallbackManifest: 'src/i18n/catalogs/fallback/MANIFEST.json',
-  docsContentDir: 'archive/legacy-docs/src/features/docs/content',
-  legacyDocsContentDir: 'src/features/docs/content',
 };
+
+/**
+ * Locale registry parsing: `parseExportLiteral` regex-captures `export const <name> = (...) as const;` from
+ * `locale-registry.ts` and evaluates the captured literal via `vm.runInNewContext`. `readConfiguredLocales` reads
+ * `config.ts` and either parses an inline `locales = [...] as const` list or, when `locales = activeLocales`, re-parses
+ * the `activeLocales` tuple from the registry (bracket split). Human-facing contract: `src/i18n/README.md`.
+ */
 
 const CANONICAL_LOCALE = 'en';
 const PLATFORM_SYNC_ENV = new Set(['1', 'true', 'yes']);
@@ -102,6 +107,69 @@ function hasUsableCatalogValue(value) {
   return true;
 }
 
+/**
+ * Rebuilds a locale catalog to match the nested structure and key order of the canonical
+ * (en) source. Non-empty leaves from `input` are kept; otherwise the canonical value is used.
+ * Extra keys in `input` (not in canonical) are dropped. Used by `i18n:sync` to remove formatting drift.
+ *
+ * @param {unknown} canonical
+ * @param {unknown} input
+ */
+export function alignLocaleCatalogToCanonicalShape(canonical, input) {
+  if (canonical !== null && typeof canonical === 'object' && !Array.isArray(canonical)) {
+    const inObj = input && typeof input === 'object' && !Array.isArray(input) ? input : {};
+    return Object.fromEntries(
+      Object.keys(canonical).map((key) => [key, alignLocaleCatalogToCanonicalShape(canonical[key], inObj[key])]),
+    );
+  }
+
+  if (hasUsableCatalogValue(input) && (typeof input !== 'object' || input === null)) {
+    if (Array.isArray(input)) {
+      return canonical;
+    }
+    return input;
+  }
+
+  return canonical;
+}
+
+/**
+ * Stable-formats `en.json` and rewrites every locale file in `catalogs/fallback/`
+ * (except MANIFEST) so it matches the canonical key tree, ordering, and JSON style.
+ * Does not add new fallback files. Returns paths written.
+ */
+export function normalizeI18nSourceAndFallbackCatalogs({ root = process.cwd() } = {}) {
+  const errors = [];
+  const wrote = [];
+  const canonical = loadCanonicalCatalog({ root, errors });
+
+  if (!canonical) {
+    return { errors, wrote };
+  }
+
+  const enPath = sourceCatalogPath();
+  writeJson(root, enPath, canonical);
+  wrote.push(enPath);
+
+  for (const file of listJsonFiles(root, I18N_PATHS.fallbackDir)) {
+    if (file === I18N_PATHS.fallbackManifest) {
+      continue;
+    }
+    if (!existsSync(join(root, file))) {
+      continue;
+    }
+    const existing = readJson(root, file, errors);
+    if (!existing) {
+      continue;
+    }
+    const aligned = alignLocaleCatalogToCanonicalShape(canonical, existing);
+    writeJson(root, file, aligned);
+    wrote.push(file);
+  }
+
+  return { errors, wrote };
+}
+
 function buildCatalogFromCanonical(canonical, catalogs, path = '') {
   if (canonical !== null && typeof canonical === 'object' && !Array.isArray(canonical)) {
     return Object.fromEntries(
@@ -133,7 +201,7 @@ function parseExportLiteral(source, exportName) {
   });
 }
 
-function readConfiguredLocales(root) {
+export function readConfiguredLocales(root) {
   const configPath = join(root, I18N_PATHS.config);
   if (!existsSync(configPath)) {
     return [];
@@ -752,39 +820,6 @@ export function calculateI18nCoverage({ root = process.cwd() } = {}) {
   return { errors, records };
 }
 
-function walkMarkdownFiles(dir, prefix = '') {
-  if (!existsSync(dir)) {
-    return [];
-  }
-
-  const files = [];
-  for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    const fullPath = join(dir, entry.name);
-    const rel = prefix ? `${prefix}/${entry.name}` : entry.name;
-    if (entry.isDirectory()) {
-      files.push(...walkMarkdownFiles(fullPath, rel));
-    } else if (entry.isFile() && entry.name.endsWith('.md')) {
-      files.push({ fullPath, relPath: toPosixPath(rel) });
-    }
-  }
-  return files;
-}
-
-function docSlug(relPath) {
-  return relPath.endsWith('/index.md') ? relPath.slice(0, -'/index.md'.length) : relPath.slice(0, -'.md'.length);
-}
-
-function parseFallbackAllowedLocales(content) {
-  const match = content.match(/^fallbackAllowedLocales:\s*\n((?:\s+-\s+[^\n]+\n?)+)/m);
-  if (!match) {
-    return [];
-  }
-  return match[1]
-    .split(/\r?\n/)
-    .map((line) => line.match(/^\s+-\s+(.+?)\s*$/)?.[1])
-    .filter(Boolean);
-}
-
 export function checkI18nFallbacks({ root = process.cwd() } = {}) {
   const errors = [];
   const model = readLocaleModel({ root, requireRegistry: false });
@@ -811,32 +846,6 @@ export function checkI18nFallbacks({ root = process.cwd() } = {}) {
       errors.push(
         `Inactive locale ${inactiveLocale} must not have compiled runtime output at ${runtimeMessagePath(inactiveLocale)}.`,
       );
-    }
-  }
-
-  const archivedDocsRoot = join(root, I18N_PATHS.docsContentDir);
-  const docsRoot = existsSync(archivedDocsRoot) ? archivedDocsRoot : join(root, I18N_PATHS.legacyDocsContentDir);
-  const canonicalDocs = walkMarkdownFiles(join(docsRoot, CANONICAL_LOCALE));
-
-  for (const locale of model.activeLocales) {
-    if (locale === CANONICAL_LOCALE) {
-      continue;
-    }
-
-    const localeDocsDir = join(docsRoot, locale);
-    const localeSlugs = new Set(walkMarkdownFiles(localeDocsDir).map((doc) => docSlug(doc.relPath)));
-    for (const doc of canonicalDocs) {
-      const slug = docSlug(doc.relPath);
-      if (localeSlugs.has(slug)) {
-        continue;
-      }
-
-      const allowedLocales = parseFallbackAllowedLocales(readFileSync(doc.fullPath, 'utf8'));
-      if (!allowedLocales.includes(locale)) {
-        errors.push(
-          `Docs fallback for ${locale}/${doc.relPath} is missing and ${locale} is not listed in fallbackAllowedLocales.`,
-        );
-      }
     }
   }
 

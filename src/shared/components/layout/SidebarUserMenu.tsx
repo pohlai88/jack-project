@@ -1,9 +1,9 @@
 'use client';
 
 import { ArrowLeft, LogOut, User } from 'lucide-react';
-import Link from 'next/link';
 import { signOut } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/shared/components/ui/avatar';
 import { Button } from '@/shared/components/ui/button';

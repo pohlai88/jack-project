@@ -9,7 +9,7 @@
  */
 
 import { ExternalLink, UserCheck, UserX } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/shared/components/ui/avatar';
 import { Badge } from '@/shared/components/ui/badge';

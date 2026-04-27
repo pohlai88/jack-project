@@ -368,7 +368,13 @@ function checkLegacyJestUsage(context) {
       continue;
     }
 
-    const content = readFileSync(join(context.root, file), 'utf8');
+    const fullPath = join(context.root, file);
+    if (!existsSync(fullPath)) {
+      // `git ls-files --cached` can still list paths deleted on disk until the removal is staged.
+      continue;
+    }
+
+    const content = readFileSync(fullPath, 'utf8');
     if (legacyJestApi.test(content)) {
       addFinding(context, 'RG-TEST-001', 'legacy Jest API usage is forbidden', { file });
     }

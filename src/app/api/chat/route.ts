@@ -1,4 +1,3 @@
-import { openai } from '@ai-sdk/openai';
 import { convertToModelMessages, createIdGenerator, stepCountIs, streamText, type UIMessage } from 'ai';
 import { and, eq } from 'drizzle-orm';
 
@@ -9,6 +8,8 @@ import { logger } from '@/shared/lib/logger';
 import { AuditActions, logAuditEvent } from '@/shared/services/audit-service';
 
 export const maxDuration = 30;
+
+const CHAT_MODEL = 'openai/gpt-5.4';
 
 function deriveConversationTitle(messages: UIMessage[]): string {
   const first = messages.find((m) => m.role === 'user');
@@ -67,12 +68,12 @@ Current user: ${session.user.name || session.user.email}`;
       action: AuditActions.AI_CONVERSATION,
       entityType: 'ai_assistant',
       metadata: { messagePreview, messageCount: messages.length },
-      aiModelVersion: 'gpt-4o',
+      aiModelVersion: CHAT_MODEL,
     }).catch((err) => logger.error({ error: err }, 'Failed to log AI conversation'));
   }
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: CHAT_MODEL,
     system: systemPrompt,
     messages: modelMessages,
     stopWhen: stepCountIs(5),

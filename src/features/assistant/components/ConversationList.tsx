@@ -2,10 +2,10 @@
 
 import { formatDistanceToNow } from 'date-fns';
 import { MessageSquarePlus, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { useCallback, useEffect, useState } from 'react';
+import { Link } from '@/i18n/navigation';
 
 import { Button } from '@/shared/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/shared/components/ui/sheet';

@@ -37,9 +37,13 @@ type LoginFormValues = z.infer<typeof loginSchema>;
 interface LoginFormProps {
   /** Pre-fill email (e.g. from ?email= in URL) */
   initialEmail?: string;
+  /** When Auth0 is configured: show Universal Login sign-up (screen_hint=signup). */
+  showAuth0SignUp?: boolean;
+  /** Server-rendered label for sign-up (e.g. `getTranslations('auth')('createAccount')`). */
+  auth0SignUpLabel?: string;
 }
 
-export const LoginForm = ({ initialEmail = '' }: LoginFormProps) => {
+export const LoginForm = ({ initialEmail = '', showAuth0SignUp = false, auth0SignUpLabel }: LoginFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
 
@@ -94,6 +98,22 @@ export const LoginForm = ({ initialEmail = '' }: LoginFormProps) => {
     }
   };
 
+  const handleAuth0SignUp = async () => {
+    setIsLoading(true);
+    setServerError(null);
+    try {
+      await signIn('auth0', {
+        callbackUrl,
+        authorizationParams: { screen_hint: 'signup' },
+      });
+    } catch {
+      setServerError('Failed to initiate sign up');
+      setIsLoading(false);
+    }
+  };
+
+  const signUpCta = auth0SignUpLabel ?? 'Create an account';
+
   const emailError = errors.email?.message;
   const hasError = !!emailError || !!serverError;
 
@@ -119,6 +139,19 @@ export const LoginForm = ({ initialEmail = '' }: LoginFormProps) => {
           <Lock className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
           {isLoading ? 'Signing in...' : 'Continue with Auth0'}
         </Button>
+
+        {showAuth0SignUp ? (
+          <Button
+            type="button"
+            variant="outline"
+            className="w-full h-11"
+            onClick={handleAuth0SignUp}
+            disabled={isLoading}
+            aria-busy={isLoading}
+          >
+            {isLoading ? 'Signing in...' : signUpCta}
+          </Button>
+        ) : null}
 
         <div className="relative">
           <div className="absolute inset-0 flex items-center">

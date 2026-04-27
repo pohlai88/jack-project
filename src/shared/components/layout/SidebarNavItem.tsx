@@ -1,8 +1,8 @@
 'use client';
 
 import type { LucideIcon } from 'lucide-react';
-import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
+import { Link } from '@/i18n/navigation';
 
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/shared/components/ui/tooltip';
 import { cn } from '@/shared/lib/utils';

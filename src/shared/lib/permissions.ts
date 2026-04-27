@@ -8,7 +8,9 @@
 
 import { and, eq, inArray, isNull, or } from 'drizzle-orm';
 import { redirect } from 'next/navigation';
+import { getLocale } from 'next-intl/server';
 
+import { localizeHref } from '@/i18n';
 import { db } from '@/shared/db';
 import * as schema from '@/shared/db/schema';
 import type { Role } from '@/shared/db/schema/roles';
@@ -161,12 +163,13 @@ export async function requirePermission(
   permissionKey: string,
 ): Promise<{ userId: string; email: string }> {
   const session = await auth();
+  const locale = await getLocale();
   if (!session?.user?.id || !session?.user?.email) {
-    redirect('/login');
+    redirect(localizeHref(locale, '/login'));
   }
   const allowed = await hasPermission(tenantSlug, permissionKey);
   if (!allowed) {
-    redirect(`/t/${tenantSlug}?error=unauthorized`);
+    redirect(localizeHref(locale, `/t/${tenantSlug}?error=unauthorized`));
   }
   return { userId: session.user.id, email: session.user.email };
 }

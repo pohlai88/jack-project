@@ -47,6 +47,12 @@ describe('LoginForm', () => {
     expect(screen.getByRole('button', { name: /continue with auth0/i })).toBeInTheDocument();
   });
 
+  it('does not render Auth0 sign-up by default', () => {
+    renderWithProviders(<LoginForm />);
+
+    expect(screen.queryByRole('button', { name: /create an account/i })).not.toBeInTheDocument();
+  });
+
   it('renders development login form with email input', () => {
     renderWithProviders(<LoginForm />);
 
@@ -71,6 +77,20 @@ describe('LoginForm', () => {
       await user.click(auth0Button);
 
       expect(signIn).toHaveBeenCalledWith('auth0', { callbackUrl: '/select-tenant' });
+    });
+
+    it('calls signIn with signup screen_hint when sign-up enabled', async () => {
+      const user = userEvent.setup();
+      (signIn as Mock).mockResolvedValue({ ok: true });
+
+      renderWithProviders(<LoginForm showAuth0SignUp auth0SignUpLabel="Create an account" />);
+
+      await user.click(screen.getByRole('button', { name: /create an account/i }));
+
+      expect(signIn).toHaveBeenCalledWith('auth0', {
+        callbackUrl: '/select-tenant',
+        authorizationParams: { screen_hint: 'signup' },
+      });
     });
 
     it('shows loading state while signing in', async () => {
@@ -185,9 +205,9 @@ describe('LoginForm', () => {
       const devButton = screen.getByRole('button', { name: /development login/i });
       await user.click(devButton);
 
-      // Both buttons show "Signing in..." when loading
+      // Auth0 + dev login buttons show "Signing in..." when loading (optional third when sign-up enabled)
       const buttons = screen.getAllByRole('button', { name: /signing in/i });
-      expect(buttons).toHaveLength(2);
+      expect(buttons.length).toBeGreaterThanOrEqual(2);
       buttons.forEach((btn) => expect(btn).toBeDisabled());
     });
 

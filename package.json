@@ -16,6 +16,7 @@
     "i18n:compile": "node scripts/i18n-compile.mjs",
     "i18n:validate": "node scripts/i18n-validate.mjs",
     "i18n:coverage": "node scripts/i18n-coverage.mjs",
+    "i18n:sync": "node scripts/i18n-sync.mjs",
     "i18n:fallback-check": "node scripts/i18n-fallback-check.mjs",
     "i18n:platform:upload-source": "node scripts/i18n-platform-upload-source.mjs",
     "i18n:platform:download-translations": "node scripts/i18n-platform-download-translations.mjs",
@@ -26,9 +27,13 @@
     "docs:inventory": "tsx scripts/docs-evidence-pipeline.ts inventory",
     "docs:generate": "tsx scripts/docs-evidence-pipeline.ts generate",
     "docs:source": "fumadocs-mdx",
+    "docs:links": "tsx scripts/docs-evidence-pipeline.ts links",
+    "docs:llms": "pnpm docs:source && tsx scripts/docs-evidence-pipeline.ts llms",
+    "docs:pdf:setup": "node scripts/with-env-config.mjs puppeteer browsers install chrome",
+    "docs:pdf": "pnpm docs:source && node scripts/with-env-config.mjs tsx scripts/export-pdf.mts",
     "docs:search": "tsx scripts/docs-evidence-pipeline.ts search-site && pagefind --site .artifacts/docs-search-site --output-path public/_pagefind && tsx scripts/docs-evidence-pipeline.ts search-check",
     "docs:check": "tsx scripts/docs-evidence-pipeline.ts check",
-    "docs:ci": "pnpm docs:contract && pnpm docs:inventory -- --check && pnpm docs:generate -- --check && pnpm docs:check && pnpm type-check && pnpm test && pnpm build && pnpm docs:search",
+    "docs:ci": "pnpm docs:contract && pnpm docs:inventory -- --check && pnpm docs:generate -- --check && pnpm docs:source && pnpm docs:links && pnpm docs:llms && pnpm docs:check && pnpm type-check && pnpm test && pnpm build && pnpm docs:search",
     "prepare": "husky",
     "test": "node scripts/with-env-config.mjs vitest run --passWithNoTests",
     "test:watch": "node scripts/with-env-config.mjs vitest --passWithNoTests",
@@ -95,6 +100,7 @@
     "dompurify": "^3.4.1",
     "driver.js": "^1.4.0",
     "drizzle-orm": "^0.45.2",
+    "feed": "^5.2.1",
     "fumadocs-core": "^16.8.4",
     "fumadocs-mdx": "^14.3.1",
     "fumadocs-ui": "^16.8.4",
@@ -102,6 +108,7 @@
     "gray-matter": "^4.0.3",
     "lightningcss": "^1.32.0",
     "lucide-react": "^0.562.0",
+    "mermaid": "^11.14.0",
     "nanoid": "^5.1.9",
     "next": "^16.2.4",
     "next-auth": "5.0.0-beta.30",
@@ -168,6 +175,7 @@
     "pagefind": "^1.5.2",
     "postcss": "^8.5.10",
     "prettier": "^3.8.3",
+    "puppeteer": "^24.42.0",
     "storybook": "^10.3.5",
     "tailwindcss": "^4.2.4",
     "ts-morph": "^28.0.0",
@@ -179,6 +187,9 @@
     "wcag-contrast": "^3.0.0"
   },
   "packageManager": "pnpm@10.28.1+sha512.7d7dbbca9e99447b7c3bf7a73286afaaf6be99251eb9498baefa7d406892f67b879adb3a1d7e687fc4ccc1a388c7175fbaae567a26ab44d1067b54fcb0d6a316",
+  "puppeteer": {
+    "cacheDirectory": ".artifacts/puppeteer"
+  },
   "engines": {
     "node": ">=22.0.0",
     "pnpm": ">=10.0.0"

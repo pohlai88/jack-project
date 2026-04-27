@@ -7,3 +7,7 @@ preserve_hierarchy: true
 files:
   - source: '/src/i18n/catalogs/source/en.json'
     translation: '/src/i18n/catalogs/generated/%locale%.json'
+  - source: '/docs/content/en/**/*.mdx'
+    translation: '/docs/content/%locale%/**/%original_file_name%'
+  - source: '/docs/content/en/**/*.json'
+    translation: '/docs/content/%locale%/**/%original_file_name%'

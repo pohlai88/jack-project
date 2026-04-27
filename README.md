@@ -91,7 +91,7 @@ src/
 │   ├── components/ui/     # shadcn/ui components
 │   ├── db/                # Database (Drizzle + pgvector)
 │   └── lib/               # Utilities (auth, permissions, env)
-└── i18n/                  # i18n runtime config and localization catalogs
+└── i18n/                  # next-intl + catalogs; active locales in locale-registry.ts (see src/i18n/README.md)
 ```
 
 Feature boundaries are strict:

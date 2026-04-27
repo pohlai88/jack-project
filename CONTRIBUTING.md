@@ -172,6 +172,7 @@ pnpm test:coverage # Coverage report
 
 ## Localization Workflow
 
+- **Runtime locale list:** `src/i18n/locale-registry.ts` (`activeLocales` / `inactiveLocales`); `src/i18n/config.ts` mirrors `locales`. See `src/i18n/README.md` for catalog layers, compile precedence, **how Node scripts parse the registry (`parseExportLiteral` + `vm`)**, readiness snapshot hash sync, and CI commands.
 - `src/i18n/catalogs/source/en.json` is the only developer-authored message catalog.
 - `src/i18n/catalogs/generated/*.json` is Crowdin output and must not be edited manually.
 - `src/i18n/catalogs/fallback/*.json` contains protected bootstrap translations from the old manual JSON workflow.
@@ -188,6 +189,7 @@ pnpm test:coverage # Coverage report
 - [ ] Accessible UI changes
 - [ ] Docs updated if needed
 - [ ] Feature flag added if feature is incomplete
+- [ ] After large moves (e.g. App Router segments, `docs/content` layout), run `git add -u`, stage new paths (`git add <paths>` or `git add -A` when appropriate), and confirm `git status` is clean so the index matches disk before push
 
 ## Scripts Reference
 

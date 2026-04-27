@@ -9,9 +9,9 @@ export default defineDocsManifest({
   summary:
     'Tenant integration administration for GitHub settings, webhooks, metrics, sync readiness, conflicts, and runs.',
   routes: [
-    '/t/[tenant]/admin/integrations',
-    '/t/[tenant]/admin/integrations/github',
-    '/t/[tenant]/admin/integrations/webhooks',
+    '/[locale]/t/[tenant]/admin/integrations',
+    '/[locale]/t/[tenant]/admin/integrations/github',
+    '/[locale]/t/[tenant]/admin/integrations/webhooks',
     '/api/tenants/[tenant]/admin/integrations/conflicts',
     '/api/tenants/[tenant]/admin/integrations/field-mappings',
     '/api/tenants/[tenant]/admin/integrations/github/assign-usernames',

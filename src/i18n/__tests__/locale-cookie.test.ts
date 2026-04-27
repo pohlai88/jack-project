@@ -36,7 +36,7 @@ describe('locale-cookie', () => {
 
   it('resolves raw locale values', () => {
     expect(resolveLocaleValue('ms-MY')).toBe('ms');
-    expect(resolveLocaleValue('id-ID')).toBeNull();
+    expect(resolveLocaleValue('id-ID')).toBe('id');
   });
 
   it('resolves configured locale cookies including regional aliases', () => {
@@ -44,9 +44,9 @@ describe('locale-cookie', () => {
     expect(resolveLocaleCookie('NEXT_LOCALE=zh-cn')).toBe('zh-CN');
   });
 
-  it('rejects inactive or unsupported locale cookies', () => {
-    expect(hasValidLocaleCookie('NEXT_LOCALE=id')).toBe(false);
-    expect(hasValidLocaleCookie('NEXT_LOCALE=th')).toBe(false);
+  it('rejects unsupported locale cookies', () => {
+    expect(hasValidLocaleCookie('NEXT_LOCALE=id')).toBe(true);
+    expect(hasValidLocaleCookie('NEXT_LOCALE=th')).toBe(true);
     expect(hasValidLocaleCookie('NEXT_LOCALE=pt')).toBe(false);
   });
 

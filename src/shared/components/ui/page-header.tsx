@@ -9,8 +9,8 @@
 
 import { ChevronRight, Home } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { type ReactNode } from 'react';
+import { Link } from '@/i18n/navigation';
 
 import { Badge } from '@/shared/components/ui/badge';
 import { type CardAccent } from '@/shared/components/ui/card';

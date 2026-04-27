@@ -7,9 +7,9 @@
  */
 
 import { MessageSquare, Settings, UserPlus, Users } from 'lucide-react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useMemo } from 'react';
+import { Link } from '@/i18n/navigation';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui/card';
 import { cn } from '@/shared/lib/utils';

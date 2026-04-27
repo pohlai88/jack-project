@@ -1,12 +1,12 @@
 'use client';
 
 import { BookOpen, LogOut, Menu, User } from 'lucide-react';
-import Link from 'next/link';
 
 import { usePathname } from 'next/navigation';
 import { signOut, useSession } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 import { useMemo, useState } from 'react';
+import { Link } from '@/i18n/navigation';
 
 import { LocaleSwitcher } from '@/shared/components/LocaleSwitcher';
 import { Avatar, AvatarFallback, AvatarImage } from '@/shared/components/ui/avatar';

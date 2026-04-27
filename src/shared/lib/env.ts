@@ -43,6 +43,7 @@ export const env = createEnv({
     AUTH0_ISSUER: z.url().optional().describe('Auth0 issuer URL'),
 
     // AI / LLM
+    AI_GATEWAY_API_KEY: z.string().optional().describe('Vercel AI Gateway API key'),
     OPENAI_API_KEY: z.string().optional().describe('OpenAI API key'),
     ANTHROPIC_API_KEY: z.string().optional().describe('Anthropic API key'),
 
@@ -76,6 +77,16 @@ export const env = createEnv({
     // LinkedIn (OpenID Connect integration)
     LINKEDIN_CLIENT_ID: z.string().optional().describe('LinkedIn OAuth client ID'),
     LINKEDIN_CLIENT_SECRET: z.string().optional().describe('LinkedIn OAuth client secret'),
+
+    // Multi-tenant host (optional): apex/root label only, e.g. example.com or localhost (no scheme/port).
+    // When set, `{slug}.{TENANT_ROOT_DOMAIN}` is rewritten to /[locale]/t/[slug]/... in src/proxy.ts.
+    TENANT_ROOT_DOMAIN: z
+      .string()
+      .min(1)
+      .optional()
+      .describe(
+        'Root label for tenant subdomains (e.g. example.com or localhost; no scheme). Enables {slug}.{TENANT_ROOT_DOMAIN} rewrites in src/proxy.ts. Custom host onboarding can use @vercel/sdk projectsAddProjectDomain separately.',
+      ),
   },
 
   /**
@@ -101,6 +112,7 @@ export const env = createEnv({
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
     AUTH0_CLIENT_SECRET: process.env.AUTH0_CLIENT_SECRET,
     AUTH0_ISSUER: process.env.AUTH0_ISSUER,
+    AI_GATEWAY_API_KEY: process.env.AI_GATEWAY_API_KEY,
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
     ANTHROPIC_API_KEY: process.env.ANTHROPIC_API_KEY,
     AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID,
@@ -119,6 +131,7 @@ export const env = createEnv({
     GITHUB_INTEGRATION_CLIENT_SECRET: process.env.GITHUB_INTEGRATION_CLIENT_SECRET,
     LINKEDIN_CLIENT_ID: process.env.LINKEDIN_CLIENT_ID,
     LINKEDIN_CLIENT_SECRET: process.env.LINKEDIN_CLIENT_SECRET,
+    TENANT_ROOT_DOMAIN: process.env.TENANT_ROOT_DOMAIN,
     // Client
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
     NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME,

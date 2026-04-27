@@ -15,6 +15,13 @@
       "when": 1772957145761,
       "tag": "0001_silky_wolf_cub",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1777289482382,
+      "tag": "0002_public_edwin_jarvis",
+      "breakpoints": true
     }
   ]
 }

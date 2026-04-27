@@ -1,24 +1,117 @@
-import { NextResponse } from 'next/server';
+import { isMarkdownPreferred, rewritePath } from 'fumadocs-core/negotiation';
+import { NextRequest, NextResponse } from 'next/server';
+import createMiddleware from 'next-intl/middleware';
 
+import { defaultLocale, locales } from '@/i18n/config';
+import { resolveLocaleCookie } from '@/i18n/locale-cookie';
+import { localizeHref } from '@/i18n/navigation';
+import { routing } from '@/i18n/routing';
 import type { TenantRole } from '@/shared/db/schema/auth';
 import { auth } from '@/shared/lib/auth';
+import { env } from '@/shared/lib/env';
+import {
+  buildTenantHostRewritePathname,
+  parseTenantSubdomainSlugFromHost,
+  pickLocaleFromAcceptLanguage,
+} from '@/shared/lib/tenant-subdomain-host';
 
-/**
- * Proxy for Afenda application (formerly middleware)
- *
- * Responsibilities:
- * 1. Inject pathname header for server components
- * 2. Handle tenant route validation
- * 3. Auth protection via Auth.js
- * 4. RBAC protection for admin routes
- * 5. Allow tenant login pages without auth
- *
- * Note: In Next.js 16+, middleware is renamed to proxy.
- * See: https://nextjs.org/docs/messages/middleware-to-proxy
- */
+const handleI18nRouting = createMiddleware(routing);
+
+const { rewrite: rewriteDocsPathToLlmMdx } = rewritePath('/:locale/docs{/*path}', '/llms.mdx/:locale/docs{/*path}');
+
+function getLocaleFromPath(pathname: string): string {
+  for (const locale of routing.locales) {
+    if (pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)) {
+      return locale;
+    }
+  }
+
+  return routing.defaultLocale;
+}
+
+function stripLocalePrefix(pathname: string): string {
+  for (const locale of routing.locales) {
+    if (pathname === `/${locale}`) {
+      return '/';
+    }
+
+    if (pathname.startsWith(`/${locale}/`)) {
+      return pathname.slice(locale.length + 1) || '/';
+    }
+  }
+
+  return pathname;
+}
+
+/** Copy `Set-Cookie` from next-intl `next()` onto a `rewrite()` response (Edge-safe). */
+function appendSetCookieHeadersFrom(from: NextResponse, to: NextResponse) {
+  const getSetCookie = (from.headers as unknown as { getSetCookie?: () => string[] }).getSetCookie;
+  if (typeof getSetCookie === 'function') {
+    for (const cookie of getSetCookie.call(from.headers)) {
+      to.headers.append('Set-Cookie', cookie);
+    }
+    return;
+  }
+  from.headers.forEach((value, key) => {
+    if (key.toLowerCase() === 'set-cookie') {
+      to.headers.append(key, value);
+    }
+  });
+}
+
 export default auth((request) => {
-  const response = NextResponse.next();
-  const { pathname } = request.nextUrl;
+  const hostSlug = parseTenantSubdomainSlugFromHost(request.headers.get('host'), env.TENANT_ROOT_DOMAIN);
+  let requestForIntl: NextRequest = request;
+  let rewriteTarget: URL | null = null;
+
+  if (hostSlug) {
+    const cookieLocale = resolveLocaleCookie(request.headers.get('cookie') ?? undefined);
+    const resolvedLocale =
+      cookieLocale ?? pickLocaleFromAcceptLanguage(request.headers.get('accept-language'), locales, defaultLocale);
+    const pathname = request.nextUrl.pathname || '/';
+    const newPathname = buildTenantHostRewritePathname({
+      hostSlug,
+      pathname,
+      locales,
+      resolvedLocale,
+    });
+    if (newPathname !== pathname) {
+      rewriteTarget = new URL(newPathname, request.url);
+      requestForIntl = new NextRequest(rewriteTarget, { headers: request.headers });
+    }
+  }
+
+  let response = handleI18nRouting(requestForIntl);
+  const location = response.headers.get('location');
+  if (location) {
+    return response;
+  }
+
+  if (rewriteTarget && hostSlug) {
+    const rewriteRes = NextResponse.rewrite(rewriteTarget);
+    appendSetCookieHeadersFrom(response, rewriteRes);
+    response = rewriteRes;
+    response.headers.set('x-pathname', stripLocalePrefix(rewriteTarget.pathname));
+    response.headers.set('x-tenant-slug', hostSlug);
+  }
+
+  const pathnameForExtras = rewriteTarget?.pathname ?? request.nextUrl.pathname;
+
+  if (isMarkdownPreferred(request)) {
+    const rewrittenPath = rewriteDocsPathToLlmMdx(pathnameForExtras);
+    if (rewrittenPath) {
+      const rewriteResponse = NextResponse.rewrite(new URL(rewrittenPath, request.url));
+      response.headers.forEach((value, key) => {
+        if (key.toLowerCase() === 'set-cookie') {
+          rewriteResponse.headers.append(key, value);
+        }
+      });
+      return rewriteResponse;
+    }
+  }
+
+  const locale = getLocaleFromPath(pathnameForExtras);
+  const pathname = stripLocalePrefix(pathnameForExtras);
 
   // Inject pathname for server components to access current path
   response.headers.set('x-pathname', pathname);
@@ -43,7 +136,7 @@ export default auth((request) => {
       if (userRole !== 'admin') {
         // Redirect to tenant dashboard with error
         const url = request.nextUrl.clone();
-        url.pathname = `/t/${tenantSlug}`;
+        url.pathname = localizeHref(locale, `/t/${tenantSlug}`);
         url.searchParams.set('error', 'unauthorized');
         return NextResponse.redirect(url);
       }
@@ -63,8 +156,8 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
-     * - public folder
+     * - static assets with file extensions
      */
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+    '/((?!api|_next/static|_next/image|_vercel|favicon.ico|.*\\..*).*)',
   ],
 };

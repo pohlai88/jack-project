@@ -14,3 +14,4 @@ Each ADR should describe the decision, context, and consequences clearly enough 
 | [0004](./0004-db-schema-remediation-decision.md)                         | DB schema remediation decision                           |
 | [0005](./0005-continuous-localization-operating-model.md)                | Continuous localization operating model                  |
 | [0006](./0006-in-app-docs-git-nav-and-continuous-localization-future.md) | In-app docs: generated nav, git-first, TMS/CMS future    |
+| [0007](./0007-docs-page-feedback-authority.md)                           | Docs page feedback authority                             |

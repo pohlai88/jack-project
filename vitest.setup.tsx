@@ -11,6 +11,15 @@ vi.mock('next-intl', () => ({
   NextIntlClientProvider: ({ children }: { children: ReactNode }) => children,
 }));
 
+// Server helpers are not available in Vitest's jsdom context without this stub.
+vi.mock('next-intl/server', () => ({
+  getLocale: () => Promise.resolve('en'),
+  getRequestConfig: vi.fn(),
+  getTranslations: () => () => Promise.resolve((key: string) => key),
+  getMessages: () => Promise.resolve({}),
+  setRequestLocale: vi.fn(),
+}));
+
 // Mock next-themes
 vi.mock('next-themes', () => ({
   useTheme: () => ({ theme: 'light', setTheme: vi.fn() }),
@@ -31,6 +40,27 @@ vi.mock('next/navigation', () => ({
   useSearchParams: () => new URLSearchParams(),
   useParams: () => ({ tenant: 'test-tenant' }),
 }));
+
+// Mock locale-aware navigation (next-intl) — UI barrel pulls modules that import `next-intl/navigation`,
+// which does not resolve cleanly under Vitest without this stub.
+vi.mock('@/i18n/navigation', () => {
+  const Link = ({ children, href }: { children: ReactNode; href: string }) => <a href={href}>{children}</a>;
+  return {
+    Link,
+    redirect: vi.fn(),
+    usePathname: () => '/en/test',
+    useRouter: () => ({
+      push: vi.fn(),
+      replace: vi.fn(),
+      back: vi.fn(),
+      forward: vi.fn(),
+      refresh: vi.fn(),
+      prefetch: vi.fn(),
+    }),
+    getPathname: () => '/en/test',
+    localizeHref: (_locale: string, href: string) => href,
+  };
+});
 
 // Mock next/link
 vi.mock('next/link', () => {

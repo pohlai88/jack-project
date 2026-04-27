@@ -16,6 +16,7 @@ import Credentials from 'next-auth/providers/credentials';
 // Re-export Session type for use in tests and type utilities
 export type { Session };
 
+import { locales } from '@/i18n/config';
 import { db } from '@/shared/db';
 import * as schema from '@/shared/db/schema';
 import type { TenantRole } from '@/shared/db/schema/auth';
@@ -126,6 +127,20 @@ async function loadUserRoles(userId: string): Promise<Record<string, TenantRole>
   }
 }
 
+function stripLocalePrefix(pathname: string): string {
+  for (const locale of locales) {
+    if (pathname === `/${locale}`) {
+      return '/';
+    }
+
+    if (pathname.startsWith(`/${locale}/`)) {
+      return pathname.slice(locale.length + 1) || '/';
+    }
+  }
+
+  return pathname;
+}
+
 // ============================================================================
 // NEXT AUTH CONFIG
 // ============================================================================
@@ -191,7 +206,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
     async authorized({ auth, request }) {
       const isLoggedIn = !!auth?.user;
-      const { pathname } = request.nextUrl;
+      const pathname = stripLocalePrefix(request.nextUrl.pathname);
 
       // Public routes that don't require authentication
       const publicRoutes = ['/login', '/api/health', '/'];

@@ -1,7 +1,6 @@
 'use client';
 
 import { Globe, Menu, Moon, Sun, X } from 'lucide-react';
-import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useLayoutEffect, useState } from 'react';
@@ -9,6 +8,7 @@ import { useLayoutEffect, useState } from 'react';
 import { SignOutButton } from '@/features/auth';
 import { type Locale, localeNames, locales } from '@/i18n';
 import { useChangeLocale } from '@/i18n/client';
+import { Link } from '@/i18n/navigation';
 import { AppLogo } from '@/shared/components/brand/Logo';
 import { Button } from '@/shared/components/ui';
 import { Avatar, AvatarFallback, AvatarImage } from '@/shared/components/ui/avatar';

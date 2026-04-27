@@ -7,8 +7,8 @@
  */
 
 import { CheckCircle2, Circle, Sparkles } from 'lucide-react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui/card';
 import { Progress } from '@/shared/components/ui/progress';

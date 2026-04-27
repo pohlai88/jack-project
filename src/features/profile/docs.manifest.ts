@@ -7,7 +7,7 @@ export default defineDocsManifest({
   owner: 'member-platform',
   releaseState: 'released',
   summary: 'Member profile and profile settings surfaces.',
-  routes: ['/t/[tenant]/profile', '/t/[tenant]/profile/settings'],
+  routes: ['/[locale]/t/[tenant]/profile', '/[locale]/t/[tenant]/profile/settings'],
   permissions: [],
   workflows: [
     {

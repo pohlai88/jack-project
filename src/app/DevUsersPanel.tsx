@@ -1,8 +1,8 @@
 'use client';
 
 import { ChevronDown, ChevronUp, Code2 } from 'lucide-react';
-import Link from 'next/link';
 import { useState } from 'react';
+import { Link } from '@/i18n/navigation';
 
 const DEV_USERS = [
   {

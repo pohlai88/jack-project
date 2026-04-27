@@ -1,7 +1,7 @@
 'use client';
 
 import { Briefcase, Mail } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 
 import { Button } from '@/shared/components/ui/button';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/shared/components/ui/sheet';

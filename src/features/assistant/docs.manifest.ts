@@ -7,7 +7,12 @@ export default defineDocsManifest({
   owner: 'ai-platform',
   releaseState: 'released',
   summary: 'Tenant-aware AI assistant conversations and generated UI responses.',
-  routes: ['/t/[tenant]/assistant', '/api/assistant/conversations', '/api/assistant/conversations/[id]', '/api/chat'],
+  routes: [
+    '/[locale]/t/[tenant]/assistant',
+    '/api/assistant/conversations',
+    '/api/assistant/conversations/[id]',
+    '/api/chat',
+  ],
   permissions: [],
   workflows: [
     {

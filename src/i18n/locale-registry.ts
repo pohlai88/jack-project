@@ -1,7 +1,7 @@
 export const defaultLocale = 'en' as const;
 
-export const activeLocales = ['en', 'es', 'vi', 'ms', 'zh-CN'] as const;
-export const inactiveLocales = ['id', 'th'] as const;
+export const activeLocales = ['en', 'zh-CN', 'vi', 'ms', 'es', 'id', 'th'] as const;
+export const inactiveLocales = [] as const;
 
 export type ActiveLocale = (typeof activeLocales)[number];
 export type InactiveLocale = (typeof inactiveLocales)[number];
@@ -50,14 +50,14 @@ export const localeRegistry = {
   },
   id: {
     name: 'Bahasa Indonesia',
-    status: 'inactive',
+    status: 'active',
     crowdinLocale: 'id',
     fallbackChain: ['id', 'en'],
     protectedFallback: true,
   },
   th: {
     name: 'ไทย',
-    status: 'inactive',
+    status: 'active',
     crowdinLocale: 'th',
     fallbackChain: ['th', 'en'],
     protectedFallback: true,

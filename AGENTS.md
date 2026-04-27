@@ -52,6 +52,13 @@ pnpm repo:guard
 pnpm doctrine:check
 ```
 
+## Internationalization (i18n)
+
+- **Single source of truth:** `src/i18n/locale-registry.ts` (`activeLocales`, `inactiveLocales`, `localeAliases`). `src/i18n/config.ts` mirrors `locales` from the registry; do not maintain parallel locale lists in features.
+- **Operator reference:** catalog layers, compile order, CI commands, and **how Node scripts parse `locale-registry.ts` / `config.ts`** (including `parseExportLiteral` + `vm` for `as const` literals) live in `src/i18n/README.md`.
+- **Protected fallbacks & drift:** to normalize `en.json` + all fallback key order, refresh manifest hashes, compile `messages/`, and validate, run `pnpm i18n:sync`. If you only update hashes, `pnpm i18n:fallback-check --write-manifest` then `pnpm i18n:validate` still works.
+- **Readiness snapshot hash:** after material readiness changes, run `pnpm i18n:readiness:report` and sync `source_artifact_hash` in `architecture/governance/evidence/i18n/I18N_LOCALE_ACTIVATION_SNAPSHOT.md` with the printed Markdown SHA-256.
+
 ## Repo Hygiene Guardrails
 
 - `env.config` is the maintained local environment source; `.env.local` is generated from it.

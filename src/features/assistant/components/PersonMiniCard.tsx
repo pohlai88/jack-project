@@ -8,8 +8,8 @@
  */
 
 import { Building2, CheckCircle, Star, XCircle } from 'lucide-react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 import { Avatar, AvatarFallback } from '@/shared/components/ui/avatar';
 import { Badge } from '@/shared/components/ui/badge';

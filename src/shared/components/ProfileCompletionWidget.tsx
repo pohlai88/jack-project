@@ -1,8 +1,8 @@
 'use client';
 
 import { ArrowRight, CheckCircle, Github, Image, Mail, User } from 'lucide-react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 import { Button } from '@/shared/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/shared/components/ui/card';
