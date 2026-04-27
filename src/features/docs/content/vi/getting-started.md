@@ -8,7 +8,7 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: getting-started.md
-  sourceHash: aac295dad4e653c2f3548b60be73410241a788ad99e512cb60c0a8a6591ca10f
+  sourceHash: 3c0b66627c5bea0f3e7df5a05baa432cbb8e9773c0e3ccf03124ec7b898a40fe
   status: reviewed
 ---
 
@@ -62,8 +62,8 @@ Trải nghiệm của bạn phụ thuộc vào **vai trò** và quyền trong te
 
 Tùy vai trò, hãy bắt đầu tại đây:
 
-- **Mới dùng nền tảng?** → [Đăng nhập lần đầu](/docs/vi/getting-started/first-login) và [Điều hướng](/docs/vi/getting-started/navigation).
-- **Thiết lập hồ sơ** → [Thiết lập hồ sơ](/docs/vi/getting-started/profile-setup).
+- **Mới dùng nền tảng?** → [Đăng nhập lần đầu](/docs/getting-started/first-login) và [Điều hướng](/docs/getting-started/navigation).
+- **Thiết lập hồ sơ** → [Thiết lập hồ sơ](/docs/getting-started/profile-setup).
 - **Member** → Hướng dẫn Member: dashboard, cài đặt hồ sơ và trợ lý AI.
 - **Admin** → Hướng dẫn Admin: thành viên, vai trò, cài đặt và tích hợp.
 

@@ -947,7 +947,8 @@
       "noResults": "No se encontraron resultados",
       "navigate": "Navegar",
       "open": "Abrir",
-      "close": "Cerrar"
+      "close": "Cerrar",
+      "clear": "Borrar"
     },
     "pagination": {
       "previous": "Anterior",
@@ -955,6 +956,17 @@
     },
     "toc": {
       "onThisPage": "En esta página"
+    },
+    "a11y": {
+      "breadcrumb": "Ruta de navegación",
+      "navigation": "Navegación de documentación",
+      "pagination": "Paginación de documentación",
+      "toggleSidebar": "Alternar barra lateral de documentación"
+    },
+    "preview": {
+      "title": "Vista previa en vivo",
+      "invalidBlock": "Bloque de vista previa no válido. Formato esperado: <code>component: Name</code>",
+      "notRegistered": "El componente <code>{component}</code> no está registrado para vista previa."
     }
   },
   "rawEdit": {

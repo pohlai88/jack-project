@@ -7,7 +7,7 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: getting-started.md
-  sourceHash: aac295dad4e653c2f3548b60be73410241a788ad99e512cb60c0a8a6591ca10f
+  sourceHash: 3c0b66627c5bea0f3e7df5a05baa432cbb8e9773c0e3ccf03124ec7b898a40fe
   status: reviewed
 ---
 
@@ -21,7 +21,7 @@ Afenda 是一个内置 AI 助手、基于角色的访问控制和集成能力的
 
 ## 平台能做什么
 
-该 template 提供三个基础能力：
+该模板提供三个基础能力：
 
 - **多租户组织** — 每个 tenant（组织）都有自己的成员、角色、部门和设置。不同 tenant 之间的数据完全隔离。
 - **AI 驱动的辅助** — 应用内 AI assistant 可以回答问题、按语义搜索内容并提供建议。可按 tenant 配置。
@@ -33,13 +33,13 @@ Afenda 是一个内置 AI 助手、基于角色的访问控制和集成能力的
 
 ## 核心概念
 
-| 概念             | 含义                                                         |
-| ---------------- | ------------------------------------------------------------ |
-| **Tenant**       | 你的组织。每个 tenant 都有自己的成员、角色和配置。           |
-| **Person**       | tenant 内的成员 — 包含个人资料、部门和关系信息。             |
-| **Role**         | 定义权限：你能看到什么、能做什么（member、manager、admin）。 |
-| **AI Assistant** | 应用内对话式 AI，用于提问、搜索和获取指导。                  |
-| **Integrations** | 通过 webhooks 和同步引擎连接外部系统。                       |
+| 概念        | 含义                                                         |
+| ----------- | ------------------------------------------------------------ |
+| **Tenant**  | 你的组织。每个 tenant 都有自己的成员、角色和配置。           |
+| **Person**  | tenant 内的成员 — 包含个人资料、部门和关系信息。             |
+| **Role**    | 定义权限：你能看到什么、能做什么（member、manager、admin）。 |
+| **AI 助手** | 应用内对话式 AI，用于提问、搜索和获取指导。                  |
+| **集成**    | 通过 webhooks 和同步引擎连接外部系统。                       |
 
 理解这些概念有助于阅读 Member 和 Admin 指南。
 
@@ -61,8 +61,8 @@ Afenda 是一个内置 AI 助手、基于角色的访问控制和集成能力的
 
 根据你的角色，从这里开始：
 
-- **第一次使用平台？** → [首次登录](/docs/zh-CN/getting-started/first-login) 和 [导航](/docs/zh-CN/getting-started/navigation)。
-- **设置个人资料** → [个人资料设置](/docs/zh-CN/getting-started/profile-setup)。
+- **第一次使用平台？** → [首次登录](/docs/getting-started/first-login) 和 [导航](/docs/getting-started/navigation)。
+- **设置个人资料** → [个人资料设置](/docs/getting-started/profile-setup)。
 - **Member** → Member 指南：dashboard、个人资料设置和 AI assistant。
 - **Admin** → Admin 指南：成员、角色、设置和集成。
 
@@ -81,9 +81,9 @@ props: {}
 
 ---
 
-## 为什么使用这个 template？
+## 为什么使用这个模板？
 
-该 template 旨在作为 SaaS 的稳固基础：
+该模板旨在作为 SaaS 的稳固基础：
 
 - **从第一天开始支持多租户** — 正确的数据隔离、按 tenant 配置以及可扩展架构。
 - **AI-native** — AI assistant 基础设施已准备好支持你的领域用例。

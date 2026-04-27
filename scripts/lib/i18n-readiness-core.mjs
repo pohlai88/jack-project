@@ -14,14 +14,27 @@ const JSON_ARTIFACT_PATH = '.artifacts/i18n/I18N_LOCALE_ACTIVATION_REPORT.json';
 function readConfiguredLocales(root) {
   const config = readFileSync(join(root, 'src/i18n/config.ts'), 'utf8');
   const match = config.match(/export const locales = \[([^\]]+)\] as const;/);
-  if (!match) {
-    throw new Error('Unable to parse locales from src/i18n/config.ts');
+  if (match) {
+    return match[1]
+      .split(',')
+      .map((part) => part.trim().replace(/^['"]|['"]$/g, ''))
+      .filter(Boolean);
   }
 
-  return match[1]
-    .split(',')
-    .map((part) => part.trim().replace(/^['"]|['"]$/g, ''))
-    .filter(Boolean);
+  if (/export const locales = activeLocales;/.test(config)) {
+    const registry = readFileSync(join(root, 'src/i18n/locale-registry.ts'), 'utf8');
+    const activeLocalesMatch = registry.match(/export const activeLocales = \[([^\]]+)\] as const;/);
+    if (!activeLocalesMatch) {
+      throw new Error('Unable to parse activeLocales from src/i18n/locale-registry.ts');
+    }
+
+    return activeLocalesMatch[1]
+      .split(',')
+      .map((part) => part.trim().replace(/^['"]|['"]$/g, ''))
+      .filter(Boolean);
+  }
+
+  throw new Error('Unable to parse locales from src/i18n/config.ts');
 }
 
 function readLocaleNames(root) {

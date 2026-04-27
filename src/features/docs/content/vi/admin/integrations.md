@@ -8,7 +8,7 @@ order: 9
 translation:
   sourceLocale: en
   sourcePath: admin/integrations.md
-  sourceHash: e8edc889c34742728c4a5b07f82ca54c7f7713313210bf18613d2a5101b6192b
+  sourceHash: bf7697687d139f10500512f0bbdcfbc377297876a575ada2ce17e9d494693371
   status: reviewed
 ---
 
@@ -29,7 +29,7 @@ Afenda có thể kết nối với hệ thống bên ngoài để đồng bộ c
 
 Dùng **Admin** → **Integrations** để xem tích hợp nào đang bật.
 
-## Tích hợp GitHub (Active)
+## Tích hợp GitHub (đang hoạt động)
 
 GitHub là tích hợp chính đang hoạt động. Sau khi cấu hình:
 
@@ -40,7 +40,7 @@ GitHub là tích hợp chính đang hoạt động. Sau khi cấu hình:
 
 Mỗi lần đồng bộ, Afenda **tự động tạo evidence record** trên hồ sơ person cho biết repo đã quét, ngôn ngữ tìm thấy, kỹ năng suy luận và đóng góp.
 
-## Webhooks (Active — Outbound)
+## Webhooks (đang hoạt động — gửi đi)
 
 **Webhooks** gửi sự kiện từ Afenda đến hệ thống của bạn, ví dụ "person created", "assessment submitted":
 
@@ -59,7 +59,7 @@ Với tích hợp dùng **OAuth** như LinkedIn, Slack, Google Workspace, GitLab
 
 > **Mẹo:** Dùng OAuth app riêng cho từng môi trường (dev và prod), và xoay vòng secrets nếu bị lộ.
 
-## Tìm kiếm ngữ nghĩa và embeddings
+## Tìm kiếm ngữ nghĩa và embedding
 
 Đồng bộ tích hợp đóng góp vào **semantic search** (People Finder, AI Assistant):
 

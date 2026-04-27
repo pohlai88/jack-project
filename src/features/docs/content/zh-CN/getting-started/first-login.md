@@ -7,7 +7,7 @@ order: 2
 translation:
   sourceLocale: en
   sourcePath: getting-started/first-login.md
-  sourceHash: 6ee7a4d16fdbb83bbd8ef983b625dcfb52a74cadc56759dad40ad75f47e1a21c
+  sourceHash: 52813e8d99ceccb042bb59e82b166dd9d7811ea2dacafc8c599670b0d400bde9
   status: reviewed
 ---
 
@@ -64,7 +64,7 @@ Afenda 使用 **Auth0** 进行身份验证。你可以通过以下方式登录�
 - tenant 启用的 onboarding 提示或 tooltip。
 - 通知或任务，例如 “Complete your profile” 或 “Set your first OKR”。
 
-> **提示：** 花几分钟完成 [个人资料设置](/docs/zh-CN/getting-started/profile-setup)，确保姓名、职称和偏好正确。然后阅读 [导航与视图](/docs/zh-CN/getting-started/navigation)，了解各项功能的位置。
+> **提示：** 花几分钟完成 [个人资料设置](/docs/getting-started/profile-setup)，确保姓名、职称和偏好正确。然后阅读 [导航与视图](/docs/getting-started/navigation)，了解各项功能的位置。
 
 ---
 
@@ -74,7 +74,7 @@ Afenda 使用 **Auth0** 进行身份验证。你可以通过以下方式登录�
 2. **选择 view** — 使用 sidebar 或 view switcher 在 My View、Manager View、1:1 View 和 Admin View 之间切换（如果有权限）。每个 view 都有自己的菜单。
 3. **使用全局搜索** — 按 **Cmd+K**（Mac）或 **Ctrl+K**（Windows/Linux）搜索人员、docs 和 actions。
 4. **设置语言和主题** — 如果 tenant 支持，可用 locale switcher 设置语言，用 theme toggle 切换 light/dark mode。
-5. **收藏 docs** — 保留 [欢迎使用 Afenda](/docs/zh-CN/getting-started) 和按角色划分的指南，便于探索时查阅。
+5. **收藏 docs** — 保留 [欢迎使用 Afenda](/docs/getting-started) 和按角色划分的指南，便于探索时查阅。
 
 如果遇到登录问题，例如 tenant 错误、缺少 SSO 或账户锁定，请联系你的 **Afenda administrator** 或组织 IT 支持。
 

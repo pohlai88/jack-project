@@ -33,7 +33,7 @@ export function DocsSidebar({ onNavigate }: DocsSidebarProps) {
   };
 
   return (
-    <nav className="space-y-1" aria-label="Documentation navigation">
+    <nav className="space-y-1" aria-label={t('docs.a11y.navigation')}>
       {docSections.map((section) => {
         const Icon = section.icon;
         const isOpen = openSections[section.id] ?? true;
@@ -42,6 +42,7 @@ export function DocsSidebar({ onNavigate }: DocsSidebarProps) {
         return (
           <div key={section.id}>
             <button
+              type="button"
               onClick={() => toggleSection(section.id)}
               className={cn(
                 'flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm font-semibold transition-colors',

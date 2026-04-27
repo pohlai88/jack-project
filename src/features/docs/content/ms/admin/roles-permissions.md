@@ -1,5 +1,5 @@
 ---
-title: Roles & Permissions
+title: Peranan & kebenaran
 description: >-
   Role sistem (Member, Manager, Admin, 1:1er, Referente), custom roles,
   penetapan permissions dan model PBAC.
@@ -8,15 +8,15 @@ order: 7
 translation:
   sourceLocale: en
   sourcePath: admin/roles-permissions.md
-  sourceHash: 82e558def93309a948272fa19cb4822e542075710f2b7314d5074b1b3eaf527b
+  sourceHash: 0bb60719f481aebb47995e2a6ec9ca8221a294d4f201c60a0dbf36e9cc6c8f90
   status: reviewed
 ---
 
-# Roles & Permissions
+# Peranan & kebenaran
 
 Afenda menggunakan model **permission-based** (PBAC): akses ditentukan oleh **permissions**, bukan jawatan kerja. **Roles** ialah kumpulan permissions; seseorang boleh mempunyai **berbilang role** per tenant, dan permissions efektif ialah **gabungan** semua permissions daripada role tersebut.
 
-## Role sistem
+## Peranan sistem
 
 Role ini biasanya tersedia dalam setiap tenant:
 
@@ -30,7 +30,7 @@ Role ini biasanya tersedia dalam setiap tenant:
 
 **Manager** dan **1:1er** adalah **berasingan**: fasilitator 1:1 tidak perlu menjadi manager seseorang. Permissions menentukan apa yang boleh anda lakukan; hubungan person seperti manager dan one_to_one menentukan dengan siapa.
 
-## Custom roles
+## Peranan tersuai
 
 Jika tenant mempunyai **custom roles** diaktifkan (feature flag `allowCustomRoles`):
 
@@ -42,7 +42,7 @@ Jika tenant mempunyai **custom roles** diaktifkan (feature flag `allowCustomRole
 
 Apabila custom roles **dinyahaktifkan**, hanya role sistem wujud; butang "Create role" disembunyikan, tetapi anda masih boleh mengedit permissions role sedia ada.
 
-## Menetapkan permissions kepada role
+## Menetapkan kebenaran kepada peranan
 
 - Buka **Admin** → **Roles & Permissions** dan pilih **role** sistem atau custom.
 - Anda akan melihat senarai **permissions**, selalunya dikumpulkan mengikut kategori seperti profile, manager, one_on_one, admin.
@@ -51,7 +51,7 @@ Apabila custom roles **dinyahaktifkan**, hanya role sistem wujud; butang "Create
 
 > **Tip:** Berikan set permissions minimum yang diperlukan. Anda boleh tambah kemudian; elakkan memberi permissions admin kepada kumpulan luas.
 
-## Menetapkan role kepada members
+## Menetapkan peranan kepada ahli
 
 - Pergi ke **Admin** → **Members** dan buka seorang member.
 - **Roles** — Pilih satu atau lebih role. Permissions efektif member ialah gabungan semua role yang dipilih.

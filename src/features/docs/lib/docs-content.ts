@@ -2,7 +2,7 @@ import matter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
 
-import { locales } from '@/i18n';
+import { locales } from '@/i18n/config';
 
 import type { DocContent, DocFrontmatter } from '../types';
 

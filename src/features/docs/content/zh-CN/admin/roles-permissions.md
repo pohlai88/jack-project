@@ -1,5 +1,5 @@
 ---
-title: Roles & Permissions
+title: 角色与权限
 description: >-
   系统 roles（Member、Manager、Admin、1:1er、Referente）、custom roles、分配 permissions 和 PBAC 模型。
 section: admin
@@ -7,15 +7,15 @@ order: 7
 translation:
   sourceLocale: en
   sourcePath: admin/roles-permissions.md
-  sourceHash: 82e558def93309a948272fa19cb4822e542075710f2b7314d5074b1b3eaf527b
+  sourceHash: 0bb60719f481aebb47995e2a6ec9ca8221a294d4f201c60a0dbf36e9cc6c8f90
   status: reviewed
 ---
 
-# Roles & Permissions
+# 角色与权限
 
 Afenda 使用 **permission-based** 模型（PBAC）：访问由 **permissions** 决定，而不是由职位决定。**Roles** 是 permissions 的集合；一个人在每个 tenant 中可以有**多个 role**，有效 permissions 是所有 role permissions 的**并集**。
 
-## 系统 roles
+## 系统角色
 
 这些 role 通常在每个 tenant 中可用：
 
@@ -29,7 +29,7 @@ Afenda 使用 **permission-based** 模型（PBAC）：访问由 **permissions** 
 
 **Manager** 和 **1:1er** 是**独立的**：1:1 facilitator 不一定是对方 manager。Permissions 定义你能做什么；person relations（manager、one_to_one）定义你和谁相关。
 
-## Custom roles
+## 自定义角色
 
 如果 tenant 启用了 **custom roles**（feature flag `allowCustomRoles`）：
 
@@ -41,7 +41,7 @@ Afenda 使用 **permission-based** 模型（PBAC）：访问由 **permissions** 
 
 当 custom roles **disabled** 时，只存在系统 roles；"Create role" 按钮会隐藏，但你仍可编辑现有 roles 的 permissions。
 
-## 给 role 分配 permissions
+## 给角色分配权限
 
 - 打开 **Admin** → **Roles & Permissions**，并选择一个系统或 custom **role**。
 - 你会看到 **permissions** 列表，通常按 profile、manager、one_on_one、admin 等分类。
@@ -50,7 +50,7 @@ Afenda 使用 **permission-based** 模型（PBAC）：访问由 **permissions** 
 
 > **提示：** 优先授予该 role 所需的最小 permissions。之后可以随时增加；避免向大范围群体授予 admin permissions。
 
-## 给 members 分配 roles
+## 给成员分配角色
 
 - 进入 **Admin** → **Members** 并打开某个 member。
 - **Roles** — 选择一个或多个 role。member 的有效 permissions 是所有所选 roles 的并集。

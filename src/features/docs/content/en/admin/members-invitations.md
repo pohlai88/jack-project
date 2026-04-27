@@ -5,6 +5,7 @@ description: >-
   status, and invite expiration.
 section: admin
 order: 2
+navTitleKey: docs.nav.membersInvitations
 ---
 
 # Members & Invitations

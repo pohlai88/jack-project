@@ -7,15 +7,24 @@ import { cn } from '@/shared/lib/utils';
 
 import { DocsCallout } from './DocsCallout';
 import { DocsLivePreview } from './DocsLivePreview';
+import { createDocHeadingIdGenerator } from '../lib/docs-heading-ids';
 
 interface DocsContentProps {
   content: string;
   className?: string;
 }
 
+const CALLOUT_LABELS = {
+  danger: ['danger', 'peligro', 'nguy hiểm', 'bahaya', '危险', 'อันตราย'],
+  info: ['info', 'information', 'información', 'thông tin', 'maklumat', '信息', 'ข้อมูล'],
+  tip: ['tip', 'consejo', 'mẹo', 'petua', '提示', 'เคล็ดลับ'],
+  warning: ['warning', 'advertencia', 'cảnh báo', 'amaran', '警告', 'คำเตือน'],
+} satisfies Record<string, string[]>;
+
 export function DocsContent({ content, className }: DocsContentProps) {
   // Strip the first h1 heading — the title is already rendered from frontmatter by the page component
   const strippedContent = content.replace(/^\s*#\s+.+\n+/, '');
+  const getHeadingId = createDocHeadingIdGenerator();
 
   return (
     <div
@@ -63,7 +72,7 @@ export function DocsContent({ content, className }: DocsContentProps) {
         components={{
           // Custom heading IDs for TOC linking
           h2: ({ children, ...props }) => {
-            const id = generateId(children);
+            const id = getHeadingId(extractTextFromNode(children));
             return (
               <h2 id={id} {...props}>
                 {children}
@@ -71,7 +80,7 @@ export function DocsContent({ content, className }: DocsContentProps) {
             );
           },
           h3: ({ children, ...props }) => {
-            const id = generateId(children);
+            const id = getHeadingId(extractTextFromNode(children));
             return (
               <h3 id={id} {...props}>
                 {children}
@@ -89,10 +98,8 @@ export function DocsContent({ content, className }: DocsContentProps) {
           // Custom blockquote rendering for callouts
           blockquote: ({ children }) => {
             const text = extractText(children);
-            // Support > **Tip:** or > **Warning:** etc. syntax
-            const calloutMatch = text.match(/^\*\*(Tip|Warning|Info|Danger):\*\*\s*/i);
-            if (calloutMatch) {
-              const variant = calloutMatch[1].toLowerCase() as 'tip' | 'warning' | 'info' | 'danger';
+            const variant = getCalloutVariant(text);
+            if (variant) {
               return <DocsCallout variant={variant}>{children}</DocsCallout>;
             }
             return (
@@ -109,14 +116,23 @@ export function DocsContent({ content, className }: DocsContentProps) {
   );
 }
 
-function generateId(children: React.ReactNode): string {
-  const text = typeof children === 'string' ? children : extractTextFromNode(children);
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .trim();
+function getCalloutVariant(text: string): 'tip' | 'warning' | 'info' | 'danger' | null {
+  const label = text
+    .trim()
+    .match(/^\*{0,2}\s*([^:：*]+)[:：]\s*\*{0,2}/)?.[1]
+    ?.trim()
+    .toLocaleLowerCase();
+  if (!label) {
+    return null;
+  }
+
+  for (const [variant, labels] of Object.entries(CALLOUT_LABELS)) {
+    if (labels.includes(label)) {
+      return variant as 'tip' | 'warning' | 'info' | 'danger';
+    }
+  }
+
+  return null;
 }
 
 function extractTextFromNode(node: React.ReactNode): string {

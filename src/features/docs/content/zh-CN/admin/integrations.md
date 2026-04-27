@@ -1,5 +1,5 @@
 ---
-title: Integrations
+title: 集成
 description: >-
   GitHub、LinkedIn、Slack、Google Workspace、GitLab、webhooks — OAuth 设置、sync 和 data mapping。
 section: admin
@@ -7,15 +7,15 @@ order: 9
 translation:
   sourceLocale: en
   sourcePath: admin/integrations.md
-  sourceHash: e8edc889c34742728c4a5b07f82ca54c7f7713313210bf18613d2a5101b6192b
+  sourceHash: bf7697687d139f10500512f0bbdcfbc377297876a575ada2ce17e9d494693371
   status: reviewed
 ---
 
-# Integrations
+# 集成
 
 Afenda 可以连接外部系统，以同步人员、skills 或活动并丰富 profile。Admins 配置 **integrations**（OAuth、API keys、webhooks）和 **data mapping**，确保数据正确流入和流出。
 
-## 支持的 integrations（概览）
+## 支持的集成（概览）
 
 | Integration          | Status    | 典型用途                                                         |
 | -------------------- | --------- | ---------------------------------------------------------------- |
@@ -28,7 +28,7 @@ Afenda 可以连接外部系统，以同步人员、skills 或活动并丰富 pr
 
 使用 **Admin** → **Integrations** 查看哪些已启用。
 
-## GitHub Integration（Active）
+## GitHub 集成（已启用）
 
 GitHub 是主要的 active integration。配置后：
 
@@ -39,7 +39,7 @@ GitHub 是主要的 active integration。配置后：
 
 每次 sync 时，Afenda 会在 person profile 上**自动创建 evidence record**，显示扫描的 repos、发现的 languages、推断的 skills 和 contributions。
 
-## Webhooks（Active — Outbound）
+## Webhooks（已启用 — 出站）
 
 **Webhooks** 将 Afenda 事件发送到你的系统，例如 "person created"、"assessment submitted"：
 
@@ -47,7 +47,7 @@ GitHub 是主要的 active integration。配置后：
 2. **Add webhook** — URL、用于签名 payload 的可选 secret，以及要订阅的 **event types**。
 3. 保存。Afenda 会在每个选定事件发生时向你的 URL POST JSON payload。请实现 idempotency 并验证 signature。
 
-## 即将推出 integrations 的 OAuth 设置
+## 即将推出集成的 OAuth 设置
 
 对于使用 **OAuth** 的 integrations（LinkedIn、Slack、Google Workspace、GitLab）：
 
@@ -58,7 +58,7 @@ GitHub 是主要的 active integration。配置后：
 
 > **提示：** 每个环境（dev 与 prod）使用独立 OAuth app；如 secrets 暴露，请轮换。
 
-## Semantic Search 和 Embeddings
+## 语义搜索和嵌入
 
 Integration sync 会贡献到 **semantic search**（People Finder、AI Assistant）：
 

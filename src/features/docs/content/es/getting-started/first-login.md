@@ -8,7 +8,7 @@ order: 2
 translation:
   sourceLocale: en
   sourcePath: getting-started/first-login.md
-  sourceHash: 6ee7a4d16fdbb83bbd8ef983b625dcfb52a74cadc56759dad40ad75f47e1a21c
+  sourceHash: 52813e8d99ceccb042bb59e82b166dd9d7811ea2dacafc8c599670b0d400bde9
   status: reviewed
 ---
 
@@ -65,7 +65,7 @@ En el primer login puede que veas:
 - Sugerencias u tooltips de onboarding (si tu tenant los tiene habilitados).
 - Notificaciones o tareas (ej. "Completá tu perfil", "Definí tu primer OKR").
 
-> **Tip:** Dedicale unos minutos a [Configuración del perfil](/docs/es/getting-started/profile-setup) para que tu nombre, cargo y preferencias estén bien. Después explorá [Navegación y vistas](/docs/es/getting-started/navigation) para saber dónde está cada cosa.
+> **Tip:** Dedicale unos minutos a [Configuración del perfil](/docs/getting-started/profile-setup) para que tu nombre, cargo y preferencias estén bien. Después explorá [Navegación y vistas](/docs/getting-started/navigation) para saber dónde está cada cosa.
 
 ---
 
@@ -75,7 +75,7 @@ En el primer login puede que veas:
 2. **Elegí tu vista** — Usá la barra lateral o el selector de vista para pasar entre Mi vista, Vista Manager, Vista 1:1 y Vista Admin (si tenés acceso). Cada vista tiene su propio menú.
 3. **Usá la búsqueda global** — Pulsá **Cmd+K** (Mac) o **Ctrl+K** (Windows/Linux) para buscar entre personas, documentación y acciones.
 4. **Configurá idioma y tema** — Usá el selector de idioma para inglés/español y el interruptor de tema para modo claro/oscuro si tu tenant los soporta.
-5. **Guardá la documentación** — Tené a mano [Bienvenido a Afenda](/docs/es/getting-started) y las guías por rol para consultar mientras explorás.
+5. **Guardá la documentación** — Tené a mano [Bienvenido a Afenda](/docs/getting-started) y las guías por rol para consultar mientras explorás.
 
 Si tenés problemas con el login (tenant incorrecto, SSO faltante, cuenta bloqueada), contactá a tu **administrador de Afenda** o al soporte de IT de tu organización.
 

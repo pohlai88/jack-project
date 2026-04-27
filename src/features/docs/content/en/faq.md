@@ -5,6 +5,7 @@ description: >-
   features, data export, and how to get help.
 section: faq
 order: 1
+navTitleKey: docs.nav.faq
 ---
 
 # Frequently Asked Questions

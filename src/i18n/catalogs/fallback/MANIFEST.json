@@ -4,32 +4,32 @@
   "locales": {
     "es": {
       "path": "src/i18n/catalogs/fallback/es.json",
-      "sha256": "da4ee166c083afddc9e798ff9054268b33c6294c327e2b9170d923fe1cbd4667",
+      "sha256": "426f4ded4f9d3d8ca024a4c012ca4786aab6414782ebeb98db172e12dfaaabdd",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "id": {
       "path": "src/i18n/catalogs/fallback/id.json",
-      "sha256": "f9b0af411a81f2eda7ffa83335de5d757ce77c199cf1f446ddfaddf91a9ee064",
+      "sha256": "514cd95aa0b8e8f0bbce2bc777a6414f2ba0d223dde7950ec5882cd166aef148",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "ms": {
       "path": "src/i18n/catalogs/fallback/ms.json",
-      "sha256": "c28ead7ebc731b7accc6911fc98f7ffae793c6e5fee71813e2393cb50b470813",
+      "sha256": "5187519a7e8712385220b22f5e9ed7eebbe2dd6e1bb5947fbb1aba8858ae2c8e",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "th": {
       "path": "src/i18n/catalogs/fallback/th.json",
-      "sha256": "f43bebba8eb8054cbbbf649a5b180f92dc951b732a275ba511ab14a76bc3c761",
+      "sha256": "d900228ce739e9833246779e7beb4d8178cd4d478d394c891ff87c4c2f47d780",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "vi": {
       "path": "src/i18n/catalogs/fallback/vi.json",
-      "sha256": "06a3dc55347f9926ec231f762f6fe18a1f151433457cda2295106b526af5fb61",
+      "sha256": "9157e7fbfe484dcc340c36066cf82982bd624313a7d0b8cf1280b555417906c7",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "zh-CN": {
       "path": "src/i18n/catalogs/fallback/zh-CN.json",
-      "sha256": "d2fd4d1f4524a60529d3e43b5ed067a5e37c31a612af3b96c2a9c4f1eceb33df",
+      "sha256": "c108844308661322383089cd180afa81d8657f3360a34e7cd86a3a46c88133b5",
       "provenance": "migration from src/i18n/messages/*.json"
     }
   }

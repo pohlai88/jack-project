@@ -5,6 +5,7 @@ description: >-
   LinkedIn, timezone, location, email, and pronouns.
 section: getting-started
 order: 4
+navTitleKey: docs.nav.profileSetup
 ---
 
 # Profile Setup
@@ -98,4 +99,4 @@ Edit these in the same profile form, usually under “Contact” or “Identity�
 - **Timezone** and **location** are used for scheduling and display.
 - Revisit your profile whenever your role, focus, or preferences change so the platform stays accurate and useful for you and your team.
 
-For more on moving around the app, see [Navigation & Views](/docs/en/getting-started/navigation). For member-specific features (skills, OKRs, learning), use the **Member** section of the docs.
+For more on moving around the app, see [Navigation & Views](/docs/getting-started/navigation). For member-specific features (skills, OKRs, learning), use the **Member** section of the docs.

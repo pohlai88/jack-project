@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 import { cn } from '@/shared/lib/utils';
 
+import { createDocHeadingIdGenerator } from '../lib/docs-heading-ids';
 import type { DocHeading } from '../types';
 
 interface DocsTableOfContentsProps {
@@ -14,18 +15,14 @@ interface DocsTableOfContentsProps {
 function extractHeadings(markdown: string): DocHeading[] {
   const headings: DocHeading[] = [];
   const lines = markdown.split('\n');
+  const getHeadingId = createDocHeadingIdGenerator();
 
   for (const line of lines) {
     const match = line.match(/^(#{2,3})\s+(.+)$/);
     if (match) {
       const level = match[1].length;
       const text = match[2].replace(/\*\*/g, '').replace(/`/g, '').trim();
-      const id = text
-        .toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, '')
-        .replace(/\s+/g, '-')
-        .replace(/-+/g, '-')
-        .trim();
+      const id = getHeadingId(text);
       headings.push({ id, text, level });
     }
   }

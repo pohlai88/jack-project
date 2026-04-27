@@ -8,7 +8,7 @@ order: 3
 translation:
   sourceLocale: en
   sourcePath: member/profile-settings.md
-  sourceHash: 28e3fbdd313d05c93d27498fa2458f175fe7ad83aad2a24a2c966ad36d5b01ff
+  sourceHash: 9640fa3a74be50d80b7c0f5e77bb2a36efda88cddb06815ebd2ba1178b4faa5d
   status: reviewed
 ---
 

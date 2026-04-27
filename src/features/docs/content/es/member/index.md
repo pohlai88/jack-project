@@ -6,7 +6,7 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: member/index.md
-  sourceHash: 28fe952e9d0e113bac239137007c8ed703fb156064d8601c1d2f7c73ccf43579
+  sourceHash: 57afd346bd6713e5c8b5036f27e88e00b9127efa3c5f918ce0e5d6cc39896fc1
   status: reviewed
 ---
 
@@ -24,8 +24,8 @@ Como **miembro**, podés gestionar tu perfil, ver tu dashboard e interactuar con
 
 ## Enlaces rápidos
 
-- [Dashboard](/docs/es/member/dashboard) — Tu base: estadísticas y acciones rápidas
-- [Perfil y configuración](/docs/es/member/profile-settings) — Mantener tu perfil al día
-- [Asistente de IA](/docs/es/member/ai-assistant) — Obtener ayuda y buscar en lenguaje natural
+- [Dashboard](/docs/member/dashboard) — Tu base: estadísticas y acciones rápidas
+- [Perfil y configuración](/docs/member/profile-settings) — Mantener tu perfil al día
+- [Asistente de IA](/docs/member/ai-assistant) — Obtener ayuda y buscar en lenguaje natural
 
 > **Tip:** Guardá tu Dashboard y usá el Asistente de IA para respuestas rápidas y orientación.

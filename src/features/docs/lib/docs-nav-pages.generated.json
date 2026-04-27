@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "generated": true,
+  "description": "Generated from src/features/docs/content/en. Run pnpm docs:generate-nav after editing doc frontmatter.",
+  "pages": [
+    {
+      "section": "admin",
+      "slug": "admin",
+      "order": 1,
+      "titleKey": "docs.nav.overview"
+    },
+    {
+      "section": "admin",
+      "slug": "admin/members-invitations",
+      "order": 2,
+      "titleKey": "docs.nav.membersInvitations"
+    },
+    {
+      "section": "admin",
+      "slug": "admin/roles-permissions",
+      "order": 3,
+      "titleKey": "docs.nav.rolesPermissions"
+    },
+    {
+      "section": "admin",
+      "slug": "admin/settings",
+      "order": 4,
+      "titleKey": "docs.nav.settings"
+    },
+    {
+      "section": "admin",
+      "slug": "admin/branding",
+      "order": 5,
+      "titleKey": "docs.nav.branding"
+    },
+    {
+      "section": "admin",
+      "slug": "admin/integrations",
+      "order": 6,
+      "titleKey": "docs.nav.integrations"
+    },
+    {
+      "section": "faq",
+      "slug": "faq",
+      "order": 1,
+      "titleKey": "docs.nav.faq"
+    },
+    {
+      "section": "getting-started",
+      "slug": "getting-started",
+      "order": 1,
+      "titleKey": "docs.nav.welcome"
+    },
+    {
+      "section": "getting-started",
+      "slug": "getting-started/first-login",
+      "order": 2,
+      "titleKey": "docs.nav.firstLogin"
+    },
+    {
+      "section": "getting-started",
+      "slug": "getting-started/navigation",
+      "order": 3,
+      "titleKey": "docs.nav.navigation"
+    },
+    {
+      "section": "getting-started",
+      "slug": "getting-started/profile-setup",
+      "order": 4,
+      "titleKey": "docs.nav.profileSetup"
+    },
+    {
+      "section": "member",
+      "slug": "member",
+      "order": 1,
+      "titleKey": "docs.nav.overview"
+    },
+    {
+      "section": "member",
+      "slug": "member/dashboard",
+      "order": 2,
+      "titleKey": "docs.nav.dashboard"
+    },
+    {
+      "section": "member",
+      "slug": "member/profile-settings",
+      "order": 3,
+      "titleKey": "docs.nav.profileSettings"
+    },
+    {
+      "section": "member",
+      "slug": "member/ai-assistant",
+      "order": 4,
+      "titleKey": "docs.nav.aiAssistant"
+    }
+  ]
+}

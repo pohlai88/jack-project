@@ -947,7 +947,8 @@
       "noResults": "No results found",
       "navigate": "Navigate",
       "open": "Open",
-      "close": "Close"
+      "close": "Close",
+      "clear": "Clear"
     },
     "pagination": {
       "previous": "Previous",
@@ -955,6 +956,17 @@
     },
     "toc": {
       "onThisPage": "On this page"
+    },
+    "a11y": {
+      "breadcrumb": "Breadcrumb",
+      "navigation": "Documentation navigation",
+      "pagination": "Documentation pagination",
+      "toggleSidebar": "Toggle documentation sidebar"
+    },
+    "preview": {
+      "title": "Live Preview",
+      "invalidBlock": "Invalid preview block. Expected format: <code>component: Name</code>",
+      "notRegistered": "Component <code>{component}</code> is not registered for preview."
     }
   },
   "rawEdit": {

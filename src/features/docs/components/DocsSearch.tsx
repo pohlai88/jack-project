@@ -99,8 +99,13 @@ export function DocsSearch({ open, onOpenChange }: DocsSearchProps) {
             className="flex-1 bg-transparent px-3 py-3 text-sm outline-none placeholder:text-muted-foreground"
           />
           {query && (
-            <button onClick={() => setQuery('')} className="text-xs text-muted-foreground hover:text-foreground">
-              {t('common.cancel')}
+            <button
+              type="button"
+              onClick={() => setQuery('')}
+              aria-label={t('docs.search.clear')}
+              className="text-xs text-muted-foreground hover:text-foreground"
+            >
+              {t('docs.search.clear')}
             </button>
           )}
         </div>

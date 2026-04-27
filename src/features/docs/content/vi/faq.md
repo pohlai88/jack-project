@@ -8,13 +8,13 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: faq.md
-  sourceHash: 9fbc30698e5d595996822e2151dfd6be72952e7b945c9d128f398812532a383f
+  sourceHash: 7cf639cf207aa59b7d7c2e562f6749a3cbaaf13d2193c386f42b2c09d0ca6ae2
   status: reviewed
 ---
 
 # Câu hỏi thường gặp
 
-Câu trả lời cho các câu hỏi phổ biến. Với hướng dẫn theo vai trò, xem [Member](/docs/vi/member) và [Admin](/docs/vi/admin).
+Câu trả lời cho các câu hỏi phổ biến. Với hướng dẫn theo vai trò, xem [Member](/docs/member) và [Admin](/docs/admin).
 
 ## Làm sao đặt lại mật khẩu?
 
@@ -33,7 +33,7 @@ Nền tảng dùng **permissions**, không dùng chức danh công việc. **Rol
 
 ## Làm sao kết nối tích hợp?
 
-- **Cho tenant**: **Admins** cấu hình tích hợp trong **Admin** → **Integrations**: webhooks, OAuth apps, API keys và data mapping. Nếu tích hợp chưa có, admin có thể cần bật hoặc thêm credentials. Xem [Tích hợp](/docs/vi/admin/integrations) để biết chi tiết.
+- **Cho tenant**: **Admins** cấu hình tích hợp trong **Admin** → **Integrations**: webhooks, OAuth apps, API keys và data mapping. Nếu tích hợp chưa có, admin có thể cần bật hoặc thêm credentials. Xem [Tích hợp](/docs/admin/integrations) để biết chi tiết.
 
 ## Tính năng AI hoạt động thế nào?
 
@@ -57,4 +57,4 @@ Nếu không thấy tùy chọn xuất, vai trò của bạn có thể chưa có
 - **Admin của bạn**: Với quyền truy cập, vai trò, lời mời hoặc hành vi riêng theo tenant, hãy liên hệ **tenant admin** hoặc IT.
 - **Hỗ trợ**: Nếu tổ chức có kênh hỗ trợ, hãy dùng kênh đó cho lỗi, sự cố hoặc vấn đề tài khoản.
 
-> **Mẹo:** Đánh dấu [Docs](/docs/vi) và dùng sidebar để chuyển đến vai trò của bạn (Member, Admin) cho hướng dẫn từng bước.
+> **Mẹo:** Đánh dấu [Docs](/docs) và dùng sidebar để chuyển đến vai trò của bạn (Member, Admin) cho hướng dẫn từng bước.

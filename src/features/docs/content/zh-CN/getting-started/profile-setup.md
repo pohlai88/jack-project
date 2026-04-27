@@ -7,7 +7,7 @@ order: 4
 translation:
   sourceLocale: en
   sourcePath: getting-started/profile-setup.md
-  sourceHash: b5a79d199f3588b454e833187493df504b47877ddba268c7f139b9a8c2636716
+  sourceHash: 09152b87246cee8ab3b22b47770b257e363100bff503bad9f8bcb5ba8e85e194
   status: reviewed
 ---
 
@@ -102,4 +102,4 @@ profile 表单通常分为 **Basic info**、**Links**（GitHub、LinkedIn）、*
 - **Timezone** 和 **location** 用于排程和显示。
 - 当 role、关注领域或偏好变化时，请重新访问 profile，保持平台信息准确且对你和团队有用。
 
-关于应用内移动方式，请参阅 [导航与视图](/docs/zh-CN/getting-started/navigation)。关于 member 专属功能（skills、OKRs、learning），请使用 docs 的 **Member** 部分。
+关于应用内移动方式，请参阅 [导航与视图](/docs/getting-started/navigation)。关于 member 专属功能（skills、OKRs、learning），请使用 docs 的 **Member** 部分。

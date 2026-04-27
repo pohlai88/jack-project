@@ -8,7 +8,7 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: getting-started.md
-  sourceHash: aac295dad4e653c2f3548b60be73410241a788ad99e512cb60c0a8a6591ca10f
+  sourceHash: 3c0b66627c5bea0f3e7df5a05baa432cbb8e9773c0e3ccf03124ec7b898a40fe
   status: reviewed
 ---
 
@@ -62,8 +62,8 @@ Pengalaman anda bergantung pada **role** dan kebenaran dalam tenant. Role berbez
 
 Bergantung pada role anda, mula di sini:
 
-- **Baharu di platform?** → [Log masuk pertama](/docs/ms/getting-started/first-login) dan [Navigasi](/docs/ms/getting-started/navigation).
-- **Sediakan profil anda** → [Persediaan profil](/docs/ms/getting-started/profile-setup).
+- **Baharu di platform?** → [Log masuk pertama](/docs/getting-started/first-login) dan [Navigasi](/docs/getting-started/navigation).
+- **Sediakan profil anda** → [Persediaan profil](/docs/getting-started/profile-setup).
 - **Member** → Panduan Member: dashboard, tetapan profil dan AI assistant.
 - **Admin** → Panduan Admin: ahli, role, tetapan dan integrasi.
 

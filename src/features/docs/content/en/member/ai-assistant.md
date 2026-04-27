@@ -4,7 +4,8 @@ description: >-
   Chat with AI, search for people by skills, get recommendations, and use
   natural language queries.
 section: member
-order: 14
+order: 4
+navTitleKey: docs.nav.aiAssistant
 ---
 
 # AI Assistant

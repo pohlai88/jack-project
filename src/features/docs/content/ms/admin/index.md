@@ -6,7 +6,7 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: admin/index.md
-  sourceHash: aaede5bb4288e92321874f98c507c2f1a574719b749ae94f1c772c13e83214a1
+  sourceHash: e1bb454f189f18e6c36ce9e55834c897f228d94eae9953fcd6a02b62702ce510
   status: reviewed
 ---
 
@@ -23,7 +23,7 @@ translation:
 | **Settings**              | Feature flags, branding, konfigurasi AI provider, storage                 |
 | **Integrations**          | Konfigurasi Webhooks, sync sistem luar, OAuth dan data mapping            |
 
-## Admin Dashboard
+## Papan pemuka pentadbir
 
 **Admin Dashboard** ialah halaman permulaan apabila anda membuka bahagian Admin. Ia biasanya menunjukkan:
 
@@ -56,9 +56,9 @@ Hanya pengguna dengan sekurang-kurangnya satu permission admin seperti `admin:da
 
 ## Pautan pantas
 
-- [Members & Invitations](/docs/ms/admin/members-invitations)
-- [Roles & Permissions](/docs/ms/admin/roles-permissions)
-- [Settings](/docs/ms/admin/settings)
-- [Integrations](/docs/ms/admin/integrations)
+- [Ahli & jemputan](/docs/admin/members-invitations)
+- [Peranan & kebenaran](/docs/admin/roles-permissions)
+- [Tetapan](/docs/admin/settings)
+- [Integrasi](/docs/admin/integrations)
 
 > **Tip:** Mula dengan Members & Invitations dan Settings untuk memastikan tenant serta orang anda disediakan dengan betul.

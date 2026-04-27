@@ -1,5 +1,5 @@
 ---
-title: AI Assistant
+title: Trợ lý AI
 description: >-
   Trò chuyện với AI, tìm người theo kỹ năng, nhận đề xuất và dùng truy vấn ngôn
   ngữ tự nhiên.
@@ -8,15 +8,15 @@ order: 14
 translation:
   sourceLocale: en
   sourcePath: member/ai-assistant.md
-  sourceHash: cf03fabfc635f13554f898bcf9fd073f32d924f67cd3801f5689260345e1e4e1
+  sourceHash: 526b80a3fbdf01541617e77f77a5939736331a0243b0fb08a523eeb76f6844de
   status: reviewed
 ---
 
-# AI Assistant
+# Trợ lý AI
 
 **AI Assistant** là giao diện hội thoại của Afenda. Bạn có thể **chat** bằng ngôn ngữ tự nhiên để tìm người theo kỹ năng, nhận **đề xuất** và đặt câu hỏi về nền tảng mà không phải chuyển qua nhiều menu hoặc màn hình tìm kiếm.
 
-## Tìm AI Assistant ở đâu
+## Tìm Trợ lý AI ở đâu
 
 - **Dashboard** — Thường là hành động nhanh hoặc thẻ riêng.
 - **Điều hướng chính** — Tìm “AI Assistant,” “Assistant,” hoặc biểu tượng chat.
@@ -26,7 +26,7 @@ Mở bất cứ lúc nào khi bạn có câu hỏi hoặc muốn tìm người h
 
 ## Bạn có thể hỏi gì
 
-AI Assistant hiểu **ngôn ngữ tự nhiên**. Bạn có thể hỏi như:
+Trợ lý AI hiểu **ngôn ngữ tự nhiên**. Bạn có thể hỏi như:
 
 | Mục tiêu              | Ví dụ truy vấn                                                                    |
 | --------------------- | --------------------------------------------------------------------------------- |
@@ -42,7 +42,7 @@ Hãy đặt câu hỏi như nói với đồng nghiệp; trợ lý sẽ diễn g
 
 Một cách dùng phổ biến là **tìm người theo kỹ năng**:
 
-1. Mở **AI Assistant**.
+1. Mở **Trợ lý AI**.
 2. Hỏi bằng ngôn ngữ tự nhiên, ví dụ “Who has experience with machine learning?” hoặc “Find people who know TypeScript at level 4 or higher.”
 3. Trợ lý trả về **tên và thường có ngữ cảnh phù hợp**, ví dụ kỹ năng và cấp độ. Bạn có thể nhận liên kết đến hồ sơ hoặc People Finder.
 4. Nhấn vào để xem hồ sơ hoặc bắt đầu trao đổi.

@@ -4,7 +4,8 @@ description: >-
   GitHub, LinkedIn, Slack, Google Workspace, GitLab, webhooks — OAuth setup,
   sync, and data mapping.
 section: admin
-order: 9
+order: 6
+navTitleKey: docs.nav.integrations
 ---
 
 # Integrations

@@ -5,6 +5,7 @@ description: >-
   personal email.
 section: member
 order: 3
+navTitleKey: docs.nav.profileSettings
 ---
 
 # Profile & Settings

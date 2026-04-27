@@ -1,5 +1,5 @@
 ---
-title: Branding & penyesuaian
+title: Penjenamaan & penyesuaian
 description: >-
   Sesuaikan tenant Afenda dengan warna, typography, density, surface styles dan
   tetapan visual lain.
@@ -8,17 +8,17 @@ order: 2
 translation:
   sourceLocale: en
   sourcePath: admin/branding.md
-  sourceHash: 3050eecffc34bc19774d2477d2318be0966baa3fc37c526bffa9ca5818a753ed
+  sourceHash: 8aaf92670ab03db5a7a4acd107eb7d3e31dcaef30ee188c706bb3edc9fa45255
   status: reviewed
 ---
 
-# Branding & penyesuaian
+# Penjenamaan & penyesuaian
 
 Afenda sangat boleh disesuaikan untuk memadankan identiti visual dan pilihan reka bentuk organisasi. Panduan ini menerangkan tetapan branding yang tersedia kepada admin.
 
 ---
 
-## Tempat mencari tetapan Branding
+## Tempat mencari tetapan penjenamaan
 
 1. Log masuk sebagai **Admin** dan pergi ke **Admin View**
 2. Dalam sidebar, pilih **Settings**
@@ -29,13 +29,13 @@ Semua perubahan digunakan serta-merta kepada tenant untuk semua pengguna dan per
 
 ---
 
-## Elemen branding yang boleh disesuaikan
+## Elemen penjenamaan yang boleh disesuaikan
 
 ### Warna
 
 Sesuaikan tiga warna utama yang mentakrifkan jenama anda dalam Afenda:
 
-#### Primary Color
+#### Warna primer
 
 - **Apa itu:** Warna jenama utama untuk butang utama, pautan, aksen dan highlight.
 - **Default:** Biru terang (`#3B82F6`)
@@ -44,7 +44,7 @@ Sesuaikan tiga warna utama yang mentakrifkan jenama anda dalam Afenda:
   - Gunakan warna tepu dan mudah diingati; elakkan kelabu dan putih.
   - Uji dalam light dan dark mode untuk memastikan kebolehbacaan.
 
-#### Secondary Color
+#### Warna sekunder
 
 - **Apa itu:** Warna pelengkap untuk tindakan sekunder, badges dan elemen sokongan.
 - **Default:** Teal (`#10B981`)
@@ -52,7 +52,7 @@ Sesuaikan tiga warna utama yang mentakrifkan jenama anda dalam Afenda:
   - Sesuai sebagai aksen kontras, contohnya untuk progress atau tindakan positif.
   - Perlu berpadu dengan Primary Color.
 
-#### Accent Color
+#### Warna aksen
 
 - **Apa itu:** Warna cerah dan bertenaga untuk highlight, amaran dan penegasan.
 - **Default:** Amber hangat (`#F59E0B`)
@@ -77,11 +77,11 @@ Contrast ratio: 8.6:1 ✓ WCAG AAA (best readability)
 
 ---
 
-### Typography
+### Tipografi
 
 Sesuaikan cara teks muncul di seluruh platform.
 
-#### Font Family
+#### Keluarga fon
 
 Pilih daripada keluarga font profesional:
 
@@ -98,7 +98,7 @@ Pilih daripada keluarga font profesional:
 
 ---
 
-### Density
+### Kepadatan
 
 Kawal jumlah spacing (padding dan margin) dalam interface.
 
@@ -114,7 +114,7 @@ Kawal jumlah spacing (padding dan margin) dalam interface.
 
 ---
 
-### Surface Style
+### Gaya permukaan
 
 Kawal kedalaman visual dan elevation cards, panels dan containers.
 
@@ -130,7 +130,7 @@ Kawal kedalaman visual dan elevation cards, panels dan containers.
 
 ---
 
-### Neutral Warmth
+### Kehangatan neutral
 
 Laraskan undertone warna neutral seperti kelabu dan border.
 
@@ -160,7 +160,7 @@ Selain warna dan typography:
 
 ## Pratonton & ujian langsung
 
-Sebelum menyimpan, gunakan **preview panel** dalam tetapan Branding untuk:
+Sebelum menyimpan, gunakan **preview panel** dalam tetapan penjenamaan untuk:
 
 1. Melihat pilihan warna pada butang, cards dan elemen UI
 2. Bertukar antara light dan dark mode
@@ -181,7 +181,7 @@ Sebelum menyimpan, gunakan **preview panel** dalam tetapan Branding untuk:
 - Padankan warna dan font laman marketing jika boleh.
 - Gunakan branding konsisten merentas Afenda, email templates dan integrations.
 
-### Accessibility
+### Kebolehcapaian
 
 - Sentiasa kekalkan kontras baik (WCAG AA atau AAA).
 - Gunakan validator kontras terbina dalam Afenda semasa memilih warna.
@@ -193,13 +193,13 @@ Sebelum menyimpan, gunakan **preview panel** dalam tetapan Branding untuk:
 - System Font paling cepat dimuat; custom fonts boleh menambah 50–200ms pada masa muat halaman.
 - Perbezaan visual kecil untuk kebanyakan pengguna.
 
-### Dark Mode
+### Mod gelap
 
 - Uji semua pilihan warna dalam dark mode.
 - Glass surfaces mungkin perlu pelarasan supaya kekal terbaca dalam gelap.
 - Pastikan Primary Color cukup cerah pada latar gelap.
 
-### Mobile
+### Mudah alih
 
 - Density dan surface style memberi kesan besar pada usability mobile.
 - Uji pada telefon atau tablet sebenar, bukan hanya browser devtools.
@@ -207,7 +207,7 @@ Sebelum menyimpan, gunakan **preview panel** dalam tetapan Branding untuk:
 
 ---
 
-## Reset kepada default
+## Tetapkan semula kepada lalai
 
 Jika mahu bermula semula:
 
@@ -219,7 +219,7 @@ Ini mengembalikan semua warna, font, density dan surface style kepada default Af
 
 ---
 
-## Troubleshooting
+## Penyelesaian masalah
 
 **Warna tidak berubah selepas saya simpan:**
 

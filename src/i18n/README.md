@@ -50,12 +50,16 @@ The next documentation work should improve native docs coverage before changing 
   docs state, governance snapshot, and validation evidence.
 - Preserve `fallbackAllowedLocales` only where visible English fallback is intentionally approved for missing native docs.
 - Add translated docs under `src/features/docs/content/<locale>/` with source metadata matching the canonical English doc
-  hash from `pnpm docs:hash`.
+  hash from `pnpm docs:hash` (or run `pnpm docs:hash:write` to refresh every `translation.sourceHash` from English).
+- For **new or reordered** canonical English help pages, set `section`, `order`, and `navTitleKey` in frontmatter, then run
+  `pnpm docs:generate-nav` and commit `docs-nav-pages.generated.json`. `pnpm docs:check` enforces the manifest.
+  See [ADR-0006](../../architecture/adr/0006-in-app-docs-git-nav-and-continuous-localization-future.md).
 
 Before merging documentation improvements, run:
 
 ```bash
-pnpm docs:hash
+pnpm docs:generate-nav
+pnpm docs:hash:write
 pnpm docs:check
 pnpm i18n:readiness:report
 pnpm i18n:compile --check

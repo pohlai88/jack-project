@@ -947,7 +947,8 @@
       "noResults": "未找到结果",
       "navigate": "导航",
       "open": "打开",
-      "close": "关闭"
+      "close": "关闭",
+      "clear": "清除"
     },
     "pagination": {
       "previous": "上页",
@@ -955,6 +956,17 @@
     },
     "toc": {
       "onThisPage": "本页内容"
+    },
+    "a11y": {
+      "breadcrumb": "面包屑导航",
+      "navigation": "文档导航",
+      "pagination": "文档分页",
+      "toggleSidebar": "切换文档侧边栏"
+    },
+    "preview": {
+      "title": "实时预览",
+      "invalidBlock": "预览块无效。预期格式：<code>component: Name</code>",
+      "notRegistered": "组件 <code>{component}</code> 未注册用于预览。"
     }
   },
   "rawEdit": {

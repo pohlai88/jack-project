@@ -1,31 +1,31 @@
 ---
-title: AI Assistant
+title: AI 助手
 description: >-
-  与 AI chat、按技能查找人员、获取建议，并使用自然语言查询。
+  使用 AI 对话、按技能查找人员、获取建议，并用自然语言查询。
 section: member
 order: 14
 translation:
   sourceLocale: en
   sourcePath: member/ai-assistant.md
-  sourceHash: cf03fabfc635f13554f898bcf9fd073f32d924f67cd3801f5689260345e1e4e1
+  sourceHash: 526b80a3fbdf01541617e77f77a5939736331a0243b0fb08a523eeb76f6844de
   status: reviewed
 ---
 
-# AI Assistant
+# AI 助手
 
-**AI Assistant** 是 Afenda 的对话界面。你可以用自然语言 **chat**，按技能查找人员、获取**建议**，并询问平台相关问题，而不需要在多个菜单或搜索页面之间切换。
+**AI 助手** 是 Afenda 的对话界面。你可以用自然语言**对话**，按技能查找人员、获取**建议**，并询问平台相关问题，而不需要在多个菜单或搜索页面之间切换。
 
-## 在哪里找到 AI Assistant
+## 在哪里找到 AI 助手
 
-- **Dashboard** — 通常是快速操作或专属卡片。
-- **主导航** — 查找 “AI Assistant”、“Assistant” 或 chat 图标。
-- **浮动或侧边 panel** — 某些 layout 会提供常驻 chat 入口。
+- **仪表盘** — 通常是快速操作或专属卡片。
+- **主导航** — 查找 “AI 助手”、“助手” 或聊天图标。
+- **浮动或侧边面板** — 某些 layout 会提供常驻 chat 入口。
 
 只要有问题，或想快速找到某个人或信息，都可以打开它。
 
 ## 可以问什么
 
-AI Assistant 理解**自然语言**。你可以这样提问：
+AI 助手理解**自然语言**。你可以这样提问：
 
 | 目标         | 示例查询                                                                          |
 | ------------ | --------------------------------------------------------------------------------- |
@@ -35,22 +35,22 @@ AI Assistant 理解**自然语言**。你可以这样提问：
 | **平台帮助** | “How do I assess my skills?” “Where do I give feedback?”                          |
 | **建议**     | “Who can mentor me on system design?” “Suggest a training for API skills.”        |
 
-像向同事提问一样表达即可；assistant 会理解并使用 Afenda 数据（skills、people、learning、你的 profile）来回答。
+像向同事提问一样表达即可；助手会理解并使用 Afenda 数据（skills、people、learning、你的 profile）来回答。
 
 ## 按技能查找人员
 
 最常见的用途之一是**按 skill 查找人员**：
 
-1. 打开 **AI Assistant**。
+1. 打开 **AI 助手**。
 2. 用普通语言提问，例如 “Who has experience with machine learning?” 或 “Find people who know TypeScript at level 4 or higher.”
-3. assistant 返回**姓名和匹配上下文**，例如 skills、level。你可能会获得到 profile 或 People Finder 的链接。
+3. 助手返回**姓名和匹配上下文**，例如 skills、level。你可能会获得到 profile 或 People Finder 的链接。
 4. 点击进入 profile 或开始对话。
 
 这比在 People Finder 中输入关键词更快。
 
 ## 获取建议
 
-assistant 可以基于你的 profile、skills 和兴趣提供**个性化建议**：
+助手可以基于你的 profile、skills 和兴趣提供**个性化建议**：
 
 - **Learning** — “Based on your interests, try the Data fundamentals roadmap.”
 - **Skills** — “Consider assessing your Python skill; you haven’t updated it in a while.”
@@ -67,12 +67,12 @@ assistant 可以基于你的 profile、skills 和兴趣提供**个性化建议**
 - “I want to get better at system design — who can help?”
 - “What’s the process for upward assessment?”
 
-assistant 会将问题映射到 skills、people、docs 或 processes，并在可能时返回相关链接或步骤。
+助手会将问题映射到 skills、people、docs 或 processes，并在可能时返回相关链接或步骤。
 
 ## 限制和隐私
 
-- **Permissions** — assistant 只会返回你被允许查看的人员和数据。你不会看到私有或超出范围的信息。
-- **Accuracy** — 回答基于当前 Afenda 数据，例如已评估的 skills。如果看起来不对，请检查底层 profile 或询问 admin。
-- **Actions** — assistant 可以**显示**和**建议**；实际操作（例如提交 assessment、发送 recognition）需要在主应用中完成。
+- **权限** — 助手只会返回你被允许查看的人员和数据。你不会看到私有或超出范围的信息。
+- **准确性** — 回答基于当前 Afenda 数据，例如已评估的 skills。如果看起来不对，请检查底层 profile 或询问 admin。
+- **操作** — 助手可以**显示**和**建议**；实际操作（例如提交 assessment、发送 recognition）需要在主应用中完成。
 
-> **提示：** 对于“谁”、“什么”和“如何”类问题，可以先用 AI Assistant。它能节省时间，并指向平台中的正确位置。
+> **提示：** 对于“谁”、“什么”和“如何”类问题，可以先用 AI 助手。它能节省时间，并指向平台中的正确位置。

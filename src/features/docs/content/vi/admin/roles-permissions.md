@@ -8,7 +8,7 @@ order: 7
 translation:
   sourceLocale: en
   sourcePath: admin/roles-permissions.md
-  sourceHash: 82e558def93309a948272fa19cb4822e542075710f2b7314d5074b1b3eaf527b
+  sourceHash: 0bb60719f481aebb47995e2a6ec9ca8221a294d4f201c60a0dbf36e9cc6c8f90
   status: reviewed
 ---
 
@@ -42,7 +42,7 @@ Nếu tenant bật **custom roles** bằng feature flag `allowCustomRoles`:
 
 Khi custom roles **tắt**, chỉ có vai trò hệ thống; nút "Create role" bị ẩn, nhưng bạn vẫn có thể chỉnh permissions của vai trò hiện có.
 
-## Gán permissions cho vai trò
+## Gán quyền cho vai trò
 
 - Mở **Admin** → **Roles & Permissions** và chọn một **role** hệ thống hoặc tùy chỉnh.
 - Bạn sẽ thấy danh sách **permissions**, thường nhóm theo profile, manager, one_on_one, admin, v.v.
@@ -51,7 +51,7 @@ Khi custom roles **tắt**, chỉ có vai trò hệ thống; nút "Create role" 
 
 > **Mẹo:** Ưu tiên cấp tập quyền tối thiểu cần cho vai trò. Bạn luôn có thể thêm sau; tránh cấp quyền admin cho nhóm rộng.
 
-## Gán vai trò cho members
+## Gán vai trò cho thành viên
 
 - Vào **Admin** → **Members** và mở một member.
 - **Roles** — Chọn một hoặc nhiều vai trò. Quyền hiệu lực của member là hợp của tất cả vai trò đã chọn.

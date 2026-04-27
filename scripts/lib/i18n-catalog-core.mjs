@@ -140,14 +140,24 @@ function readConfiguredLocales(root) {
 
   const config = readFileSync(configPath, 'utf8');
   const match = config.match(/export const locales = \[([^\]]+)\] as const;/);
-  if (!match) {
-    return [];
+  if (match) {
+    return match[1]
+      .split(',')
+      .map((part) => part.trim().replace(/^['"]|['"]$/g, ''))
+      .filter(Boolean);
   }
 
-  return match[1]
-    .split(',')
-    .map((part) => part.trim().replace(/^['"]|['"]$/g, ''))
-    .filter(Boolean);
+  if (/export const locales = activeLocales;/.test(config)) {
+    const registryPath = join(root, I18N_PATHS.registry);
+    if (!existsSync(registryPath)) {
+      return [];
+    }
+
+    const activeLocales = parseExportLiteral(readFileSync(registryPath, 'utf8'), 'activeLocales');
+    return Array.isArray(activeLocales) ? activeLocales : [];
+  }
+
+  return [];
 }
 
 function readLocaleNamesFromConfig(root) {

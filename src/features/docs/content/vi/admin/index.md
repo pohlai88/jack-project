@@ -6,7 +6,7 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: admin/index.md
-  sourceHash: aaede5bb4288e92321874f98c507c2f1a574719b749ae94f1c772c13e83214a1
+  sourceHash: e1bb454f189f18e6c36ce9e55834c897f228d94eae9953fcd6a02b62702ce510
   status: reviewed
 ---
 
@@ -23,7 +23,7 @@ translation:
 | **Settings**              | Feature flags, branding (màu sắc, typography), cấu hình AI provider, storage        |
 | **Integrations**          | Cấu hình Webhooks, đồng bộ hệ thống ngoài, OAuth và data mapping                    |
 
-## Admin Dashboard
+## Bảng điều khiển quản trị
 
 **Admin Dashboard** là trang đầu tiên khi bạn mở phần Admin. Nó thường hiển thị:
 
@@ -56,9 +56,9 @@ Chỉ người dùng có ít nhất một quyền admin, ví dụ `admin:dashboa
 
 ## Liên kết nhanh
 
-- [Members & Invitations](/docs/vi/admin/members-invitations)
-- [Roles & Permissions](/docs/vi/admin/roles-permissions)
-- [Settings](/docs/vi/admin/settings)
-- [Integrations](/docs/vi/admin/integrations)
+- [Thành viên & lời mời](/docs/admin/members-invitations)
+- [Vai trò & quyền](/docs/admin/roles-permissions)
+- [Cài đặt](/docs/admin/settings)
+- [Tích hợp](/docs/admin/integrations)
 
 > **Mẹo:** Bắt đầu với Members & Invitations và Settings để bảo đảm tenant và con người được thiết lập đúng.

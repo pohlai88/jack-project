@@ -19,6 +19,8 @@ export interface DocFrontmatter {
   description?: string;
   section?: string;
   order?: number;
+  /** i18n message key for in-app docs sidebar; required on canonical `en` pages (see `pnpm docs:generate-nav`). */
+  navTitleKey?: string;
   hidden?: boolean;
   fallbackAllowedLocales?: string[];
   translation?: {

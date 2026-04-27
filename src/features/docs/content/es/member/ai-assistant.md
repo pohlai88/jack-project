@@ -8,7 +8,7 @@ order: 14
 translation:
   sourceLocale: en
   sourcePath: member/ai-assistant.md
-  sourceHash: cf03fabfc635f13554f898bcf9fd073f32d924f67cd3801f5689260345e1e4e1
+  sourceHash: 526b80a3fbdf01541617e77f77a5939736331a0243b0fb08a523eeb76f6844de
   status: reviewed
 ---
 

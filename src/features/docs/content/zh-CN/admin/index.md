@@ -6,7 +6,7 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: admin/index.md
-  sourceHash: aaede5bb4288e92321874f98c507c2f1a574719b749ae94f1c772c13e83214a1
+  sourceHash: e1bb454f189f18e6c36ce9e55834c897f228d94eae9953fcd6a02b62702ce510
   status: reviewed
 ---
 
@@ -16,19 +16,19 @@ translation:
 
 ## Admin 职责
 
-| 区域                      | Admin 做什么                                                           |
-| ------------------------- | ---------------------------------------------------------------------- |
-| **Members & Invitations** | 添加和移除成员，生成带 role 的邀请链接，管理成员状态                   |
-| **Roles & Permissions**   | 管理系统和自定义 role；分配 permissions；配置 PBAC                     |
-| **Settings**              | Feature flags、branding（颜色、typography）、AI provider 配置、storage |
-| **Integrations**          | 配置 Webhooks、外部系统 sync、OAuth 和 data mapping                    |
+| 区域                      | Admin 做什么                                         |
+| ------------------------- | ---------------------------------------------------- |
+| **Members & Invitations** | 添加和移除成员，生成带 role 的邀请链接，管理成员状态 |
+| **角色与权限**            | 管理系统和自定义角色；分配权限；配置 PBAC            |
+| **设置**                  | 功能开关、品牌（颜色、排版）、AI 提供商配置、存储    |
+| **集成**                  | 配置 Webhooks、外部系统同步、OAuth 和数据映射        |
 
-## Admin Dashboard
+## 管理员仪表盘
 
-**Admin Dashboard** 是打开 Admin 区域时的首页。它通常显示：
+**管理员仪表盘** 是打开 Admin 区域时的首页。它通常显示：
 
 - **Tenant overview** — 名称、成员数量、关键配置摘要
-- 到 Members、Settings 和其他 admin 区域的**快速链接**
+- 到成员、设置和其他管理员区域的**快速链接**
 - **近期活动或提醒** — 例如待处理邀请或需要关注的事项
 
 每次在 Admin 中工作时，可把它作为起点。
@@ -37,12 +37,12 @@ translation:
 
 访问 admin 功能基于 **permissions**（PBAC）。Admins 拥有如下权限：
 
-| Permission category     | 示例                                                             |
-| ----------------------- | ---------------------------------------------------------------- |
-| **Dashboard**           | `admin:dashboard` — 查看 admin 区域                              |
-| **Members & invites**   | `admin:members`, `admin:invites` — 管理成员和邀请                |
-| **System**              | `admin:roles` — Roles & permissions；`admin:settings` — Settings |
-| **Integrations & data** | Integrations 和 webhooks 配置                                    |
+| Permission category   | 示例                                                |
+| --------------------- | --------------------------------------------------- |
+| **仪表盘**            | `admin:dashboard` — 查看管理员区域                  |
+| **Members & invites** | `admin:members`, `admin:invites` — 管理成员和邀请   |
+| **系统**              | `admin:roles` — 角色与权限；`admin:settings` — 设置 |
+| **集成和数据**        | 集成和 webhooks 配置                                |
 
 你只会看到拥有对应 permission 的菜单项和页面。如果看不到某项，请让 senior admin 分配正确 role 或 permission。
 
@@ -50,15 +50,15 @@ translation:
 
 1. 登录并打开主导航。
 2. 进入 **Admin**（或 tenant 的等效标签）。
-3. 你会进入 Admin Dashboard。使用 sidebar 打开 Members、Settings 和其他区域。
+3. 你会进入管理员仪表盘。使用侧边栏打开成员、设置和其他区域。
 
 只有拥有至少一个 admin permission（例如 `admin:dashboard`）的用户才能看到 Admin 区域。
 
 ## 快速链接
 
-- [Members & Invitations](/docs/zh-CN/admin/members-invitations)
-- [Roles & Permissions](/docs/zh-CN/admin/roles-permissions)
-- [Settings](/docs/zh-CN/admin/settings)
-- [Integrations](/docs/zh-CN/admin/integrations)
+- [成员与邀请](/docs/admin/members-invitations)
+- [角色与权限](/docs/admin/roles-permissions)
+- [设置](/docs/admin/settings)
+- [集成](/docs/admin/integrations)
 
-> **提示：** 从 Members & Invitations 和 Settings 开始，确保 tenant 和人员设置正确。
+> **提示：** 从成员与邀请和设置开始，确保 tenant 和人员设置正确。

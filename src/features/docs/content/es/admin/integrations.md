@@ -8,7 +8,7 @@ order: 9
 translation:
   sourceLocale: en
   sourcePath: admin/integrations.md
-  sourceHash: e8edc889c34742728c4a5b07f82ca54c7f7713313210bf18613d2a5101b6192b
+  sourceHash: bf7697687d139f10500512f0bbdcfbc377297876a575ada2ce17e9d494693371
   status: reviewed
 ---
 

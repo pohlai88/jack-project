@@ -1,7 +1,12 @@
 import { cookies, headers } from 'next/headers';
+import { hasLocale } from 'next-intl';
 import { getRequestConfig } from 'next-intl/server';
-import { defaultLocale, type Locale, LOCALE_COOKIE_NAME } from './config';
+import { defaultLocale, defaultTimeZone, type Locale, LOCALE_COOKIE_NAME } from './config';
 import { resolveLocaleValue } from './locale-cookie';
+import { mergeWithFallbackMessages } from './merge-messages';
+import { routing } from './routing';
+
+const enMessagesPromise = import('./messages/en.json').then((m) => m.default);
 
 /**
  * Detect locale from various sources:
@@ -46,11 +51,36 @@ async function detectLocale(): Promise<Locale> {
   return defaultLocale;
 }
 
-export default getRequestConfig(async () => {
-  const locale = await detectLocale();
+const isDev = process.env.NODE_ENV === 'development';
+
+function logIntlError(error: unknown) {
+  if (isDev) {
+    console.error('[i18n]', error);
+  }
+}
+
+export default getRequestConfig(async ({ requestLocale, locale: explicitRequestLocale }) => {
+  const requested = await requestLocale;
+  const fromRouteOrExplicit =
+    (explicitRequestLocale && hasLocale(routing.locales, explicitRequestLocale) ? explicitRequestLocale : null) ??
+    (requested && hasLocale(routing.locales, requested) ? requested : null);
+
+  const fromDetection = await detectLocale();
+  const effectiveLocale: Locale = fromRouteOrExplicit
+    ? (fromRouteOrExplicit as Locale)
+    : hasLocale(routing.locales, fromDetection)
+      ? fromDetection
+      : defaultLocale;
+
+  const { default: activeMessages } = await import(`./messages/${effectiveLocale}.json`);
+  const baseMessages = await enMessagesPromise;
+  const messages =
+    effectiveLocale === defaultLocale ? activeMessages : mergeWithFallbackMessages(baseMessages, activeMessages);
 
   return {
-    locale,
-    messages: (await import(`./messages/${locale}.json`)).default,
+    locale: effectiveLocale,
+    messages,
+    timeZone: defaultTimeZone,
+    onError: logIntlError,
   };
 });

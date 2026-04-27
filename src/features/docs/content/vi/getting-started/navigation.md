@@ -8,7 +8,7 @@ order: 3
 translation:
   sourceLocale: en
   sourcePath: getting-started/navigation.md
-  sourceHash: aa2f37d935b463d5e08de9088b0f69f78b395c9ad2cf21d573112c3f01b33464
+  sourceHash: 1c56d63a27bfe0ca1cfda7c74d8925da76a898a9a847d10da06548552b005474
   status: reviewed
 ---
 
@@ -31,14 +31,14 @@ Những gì bạn thấy phụ thuộc vào **vai trò và quyền**. Bốn view
 
 Bạn chỉ thấy các view mình có quyền truy cập. Ví dụ, nếu chỉ là Member, bạn thấy **My View**. Nếu là Manager và 1:1 Facilitator, bạn thấy **My View**, **Manager View** và **1:1 View**.
 
-### Chuyển view
+### Chuyển chế độ xem
 
 - Dùng **sidebar**: các mục cấp cao thường tương ứng với các view này, ví dụ “My”, “Manager”, “1:1”, “Admin”.
 - Hoặc dùng **view switcher** trong header/sidebar để chọn view đang hoạt động. Sidebar sau đó hiển thị các mục của view đó.
 
 ---
 
-## Điều hướng sidebar
+## Điều hướng thanh bên
 
 **Sidebar** là cách chính để di chuyển giữa các phần.
 
@@ -67,7 +67,7 @@ Tìm kiếm toàn cục đặc biệt hữu ích khi đã quen ứng dụng; dù
 
 ---
 
-## Chuyển giao diện (Light / Dark)
+## Chuyển giao diện (sáng / tối)
 
 Nếu tenant cho phép, bạn có thể chuyển giữa giao diện **light** và **dark**.
 
@@ -86,7 +86,7 @@ Afenda có thể dùng nhiều ngôn ngữ, bao gồm **English**, **Español**,
 - Chọn ngôn ngữ bạn muốn. UI và tài liệu có sẵn sẽ chuyển sang locale đó.
 - Thiết lập này thường được ghi nhớ cho lần truy cập sau.
 
-> **Mẹo:** Tài liệu có thể có cùng locale. Khi đổi ngôn ngữ, hãy kiểm tra URL hoặc sidebar tài liệu có chuyển sang đúng ngôn ngữ không, ví dụ `/docs/vi/`.
+> **Mẹo:** Tài liệu có thể có bản dịch theo ngôn ngữ đã chọn. Khi đổi ngôn ngữ, nội dung tài liệu và thanh bên sẽ cập nhật, còn URL vẫn không có tiền tố ngôn ngữ, ví dụ `/docs/getting-started`.
 
 ---
 
@@ -97,4 +97,4 @@ Afenda có thể dùng nhiều ngôn ngữ, bao gồm **English**, **Español**,
 3. **Dùng Cmd+K hoặc Ctrl+K** để tìm và chuyển nhanh đến người, tài liệu hoặc hành động.
 4. **Đặt giao diện và ngôn ngữ** qua header hoặc settings để ứng dụng phù hợp với bạn.
 
-Bước tiếp theo, hãy hoàn tất [Thiết lập hồ sơ](/docs/vi/getting-started/profile-setup) để danh tính và tùy chọn của bạn được cấu hình đúng trên toàn nền tảng.
+Bước tiếp theo, hãy hoàn tất [Thiết lập hồ sơ](/docs/getting-started/profile-setup) để danh tính và tùy chọn của bạn được cấu hình đúng trên toàn nền tảng.

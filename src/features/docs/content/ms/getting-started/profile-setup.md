@@ -8,7 +8,7 @@ order: 4
 translation:
   sourceLocale: en
   sourcePath: getting-started/profile-setup.md
-  sourceHash: b5a79d199f3588b454e833187493df504b47877ddba268c7f139b9a8c2636716
+  sourceHash: 09152b87246cee8ab3b22b47770b257e363100bff503bad9f8bcb5ba8e85e194
   status: reviewed
 ---
 
@@ -103,4 +103,4 @@ Edit medan ini dalam borang profil yang sama, biasanya di bawah “Contact” at
 - **Timezone** dan **location** digunakan untuk jadual dan paparan.
 - Kemas kini profil apabila role, fokus atau keutamaan berubah supaya platform kekal tepat dan berguna.
 
-Untuk maklumat lanjut tentang bergerak dalam aplikasi, lihat [Navigasi & paparan](/docs/ms/getting-started/navigation). Untuk ciri khusus member seperti skills, OKRs dan learning, gunakan bahagian **Member** dalam docs.
+Untuk maklumat lanjut tentang bergerak dalam aplikasi, lihat [Navigasi & paparan](/docs/getting-started/navigation). Untuk ciri khusus member seperti skills, OKRs dan learning, gunakan bahagian **Member** dalam docs.

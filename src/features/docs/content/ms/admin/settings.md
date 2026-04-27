@@ -1,24 +1,24 @@
 ---
-title: Settings
+title: Tetapan
 description: >-
-  Feature flags, branding (logo, warna), konfigurasi AI provider, skala
-  kemahiran, kategori kemahiran dan tetapan storage.
+  Bendera ciri, penjenamaan (logo, warna), konfigurasi pembekal AI, skala
+  kemahiran, kategori kemahiran dan tetapan storan.
 section: admin
 order: 8
 translation:
   sourceLocale: en
   sourcePath: admin/settings.md
-  sourceHash: 9123c79045347ac2ad12805a11858bc83018d8a4af41fd0f9ff562409f52beb6
+  sourceHash: 927d9e3e42daa45b5606256f9e0874394ca525773f8480b0190a1f1ebff642df
   status: reviewed
 ---
 
-# Settings
+# Tetapan
 
-Admins mengkonfigurasi **tetapan seluruh tenant** dalam **Admin** → **Settings**: feature flags, branding, AI provider, skala kemahiran, kategori dan storage. Tetapan ini mempengaruhi rupa dan tingkah laku platform untuk semua orang dalam tenant.
+Admins mengkonfigurasi **tetapan seluruh tenant** dalam **Admin** → **Tetapan**: bendera ciri, penjenamaan, pembekal AI, skala kemahiran, kategori dan storan. Tetapan ini mempengaruhi rupa dan tingkah laku platform untuk semua orang dalam tenant.
 
-## Feature flags
+## Bendera ciri
 
-**Feature flags** menghidupkan atau mematikan ciri untuk tenant tanpa code deploy.
+**Bendera ciri** menghidupkan atau mematikan ciri untuk tenant tanpa code deploy.
 
 | Flag biasa                    | Apa yang dikawal                                                                      |
 | ----------------------------- | ------------------------------------------------------------------------------------- |
@@ -31,14 +31,14 @@ Admins mengkonfigurasi **tetapan seluruh tenant** dalam **Admin** → **Settings
 
 Tukar flags mengikut keperluan rollout atau compliance. Perubahan digunakan selepas simpan; pengguna mungkin perlu refresh.
 
-## Branding
+## Penjenamaan
 
 - **Logo** — Upload atau tetapkan logo tenant yang ditunjukkan dalam header dan login/shell. Format dan saiz disyorkan biasanya dinyatakan dalam UI.
-- **Colors** — Warna primary dan pilihan secondary untuk butang, pautan dan aksen. Gunakan warna jenama organisasi untuk rupa konsisten.
+- **Warna** — Warna primary dan pilihan secondary untuk butang, pautan dan aksen. Gunakan warna jenama organisasi untuk rupa konsisten.
 
 > **Tip:** Gunakan logo dan warna kontras tinggi supaya interface kekal accessible.
 
-## Konfigurasi AI Provider
+## Konfigurasi pembekal AI
 
 Jika tenant menggunakan **ciri AI** seperti People Finder, CV extraction atau AI assistant:
 
@@ -60,16 +60,16 @@ Tahap kemahiran biasanya ditakrifkan pada **scale** seperti 1–5. Dalam Setting
 - **Categories** mengumpulkan skills dalam katalog, contohnya "Technical", "Leadership". Anda boleh cipta, namakan semula, susun semula atau archive categories dalam Settings atau Skills Management.
 - Categories membantu menapis skills dalam UI admin dan member. Pastikan senarai ringkas.
 
-## Tetapan storage
+## Tetapan storan
 
 Bergantung pada deployment, Settings mungkin termasuk:
 
 - **File storage** — Tempat fail upload seperti CV, avatar, attachments disimpan, contohnya S3 atau local. Admins boleh menetapkan bucket, region atau paths.
 - **Limits** — Saiz fail maksimum, jenis dibenarkan atau retention. Konfigurasi mengikut polisi.
 
-## Langkah demi langkah: ubah branding dan feature flag
+## Langkah demi langkah: ubah penjenamaan dan bendera ciri
 
 1. Pergi ke **Admin** → **Settings**.
 2. **Branding** — Upload logo baharu dan tetapkan primary color. Simpan.
-3. **Feature flags** — Cari flag seperti "Recognitions" dan hidupkan atau matikan. Simpan.
+3. **Bendera ciri** — Cari flag seperti "Recognitions" dan hidupkan atau matikan. Simpan.
 4. Refresh aplikasi dan sahkan logo/warna serta keterlihatan ciri, contohnya menu Recognition muncul atau hilang.

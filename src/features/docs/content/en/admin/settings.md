@@ -4,7 +4,8 @@ description: >-
   Feature flags, branding (logo, colors), AI provider config, skill scales,
   skill categories, and storage settings.
 section: admin
-order: 8
+order: 4
+navTitleKey: docs.nav.settings
 ---
 
 # Settings

@@ -1,5 +1,5 @@
 ---
-title: Branding 和自定义
+title: 品牌与自定义
 description: >-
   使用颜色、typography、density、surface styles 和其他视觉设置自定义 Afenda tenant。
 section: admin
@@ -7,20 +7,20 @@ order: 2
 translation:
   sourceLocale: en
   sourcePath: admin/branding.md
-  sourceHash: 3050eecffc34bc19774d2477d2318be0966baa3fc37c526bffa9ca5818a753ed
+  sourceHash: 8aaf92670ab03db5a7a4acd107eb7d3e31dcaef30ee188c706bb3edc9fa45255
   status: reviewed
 ---
 
-# Branding 和自定义
+# 品牌与自定义
 
-Afenda 可高度自定义，以匹配组织的视觉身份和设计偏好。本指南介绍 admin 可用的 branding 设置。
+Afenda 可高度自定义，以匹配组织的视觉身份和设计偏好。本指南介绍 admin 可用的 品牌设置。
 
 ---
 
-## 在哪里找到 Branding 设置
+## 在哪里找到 品牌设置
 
 1. 以 **Admin** 身份登录并进入 **Admin View**
-2. 在 sidebar 中选择 **Settings**
+2. 在侧边栏中选择 **Settings**
 3. 点击 **Branding** tab 或类似入口
 4. 进行更改并 **Save**
 
@@ -28,13 +28,13 @@ Afenda 可高度自定义，以匹配组织的视觉身份和设计偏好。本�
 
 ---
 
-## 可自定义的 branding 元素
+## 可自定义的品牌元素
 
 ### 颜色
 
 自定义定义 Afenda 品牌的三种主要颜色：
 
-#### Primary Color
+#### 主色
 
 - **是什么：** 主品牌色，用于主按钮、链接、强调和高亮。
 - **默认：** 明亮蓝色 (`#3B82F6`)
@@ -43,7 +43,7 @@ Afenda 可高度自定义，以匹配组织的视觉身份和设计偏好。本�
   - 使用饱和、易记的颜色；避免灰色和白色。
   - 在 light 和 dark mode 中测试，确保可读。
 
-#### Secondary Color
+#### 辅助色
 
 - **是什么：** 用于次要操作、badges 和辅助元素的补充色。
 - **默认：** Teal (`#10B981`)
@@ -51,7 +51,7 @@ Afenda 可高度自定义，以匹配组织的视觉身份和设计偏好。本�
   - 适合作为对比强调，例如进度或正向操作。
   - 应与 Primary Color 协调。
 
-#### Accent Color
+#### 强调色
 
 - **是什么：** 明亮、有活力的颜色，用于高亮、警告和强调。
 - **默认：** 暖 amber (`#F59E0B`)
@@ -76,11 +76,11 @@ Contrast ratio: 8.6:1 ✓ WCAG AAA (best readability)
 
 ---
 
-### Typography
+### 排版
 
 自定义整个平台中的文字显示方式。
 
-#### Font Family
+#### 字体
 
 可从多个专业维护的字体族中选择：
 
@@ -97,7 +97,7 @@ Contrast ratio: 8.6:1 ✓ WCAG AAA (best readability)
 
 ---
 
-### Density
+### 密度
 
 控制界面中的 spacing（padding 和 margin）。
 
@@ -113,7 +113,7 @@ Contrast ratio: 8.6:1 ✓ WCAG AAA (best readability)
 
 ---
 
-### Surface Style
+### 表面样式
 
 控制 cards、panels 和 containers 的视觉深度与 elevation。
 
@@ -129,7 +129,7 @@ Contrast ratio: 8.6:1 ✓ WCAG AAA (best readability)
 
 ---
 
-### Neutral Warmth
+### 中性色温
 
 微调中性色（灰色和边框）的 undertone。
 
@@ -159,7 +159,7 @@ Contrast ratio: 8.6:1 ✓ WCAG AAA (best readability)
 
 ## 预览和实时测试
 
-保存前，使用 Branding 设置中的 **preview panel**：
+保存前，使用 品牌设置中的 **preview panel**：
 
 1. 查看颜色应用到 buttons、cards 和 UI elements 的效果
 2. 在 light 和 dark mode 间切换
@@ -180,7 +180,7 @@ Contrast ratio: 8.6:1 ✓ WCAG AAA (best readability)
 - 如果可能，匹配 marketing site 的颜色和字体。
 - 在 Afenda、email templates 和 integrations 中使用一致 branding。
 
-### Accessibility
+### 可访问性
 
 - 始终保持良好对比度（WCAG AA 或 AAA）。
 - 选色时使用 Afenda 内置对比验证器。
@@ -192,13 +192,13 @@ Contrast ratio: 8.6:1 ✓ WCAG AAA (best readability)
 - System Font 加载最快；custom fonts 可能增加 50–200ms 页面加载时间。
 - 对大多数用户而言，视觉差异很小。
 
-### Dark Mode
+### 深色模式
 
 - 在 dark mode 中测试所有颜色。
 - Glass surfaces 可能需要调整才能在深色背景中保持可读。
 - 确保 Primary Color 在深色背景上足够明亮。
 
-### Mobile
+### 移动端
 
 - Density 和 surface style 对 mobile usability 影响很大。
 - 在真实手机或 tablet 上测试，而不只是 browser devtools。
@@ -218,7 +218,7 @@ Contrast ratio: 8.6:1 ✓ WCAG AAA (best readability)
 
 ---
 
-## Troubleshooting
+## 故障排除
 
 **保存后颜色没有变化：**
 
@@ -247,8 +247,8 @@ Contrast ratio: 8.6:1 ✓ WCAG AAA (best readability)
 
 ## 下一步
 
-- **探索其他设置** → [Settings 概览](./settings)
-- **添加 integrations** → [Integrations 指南](./integrations)
+- **探索其他设置** → [设置概览](./settings)
+- **添加 integrations** → [集成指南](./integrations)
 - **管理成员和 roles** → [Members & Invitations](./members-invitations)
 - **需要更多设计指导？** → 联系你的 Afenda designer 或 <support@example.com>
 

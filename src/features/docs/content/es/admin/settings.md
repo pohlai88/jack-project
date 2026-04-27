@@ -1,7 +1,7 @@
 ---
 title: Configuración
 description: >-
-  Feature flags, branding (logo, colores), configuración del proveedor de IA,
+  Banderas de funcionalidad, marca (logo, colores), configuración del proveedor de IA,
   escalas de habilidades, categorías de habilidades y configuración de
   almacenamiento.
 section: admin
@@ -9,19 +9,19 @@ order: 8
 translation:
   sourceLocale: en
   sourcePath: admin/settings.md
-  sourceHash: 9123c79045347ac2ad12805a11858bc83018d8a4af41fd0f9ff562409f52beb6
+  sourceHash: 927d9e3e42daa45b5606256f9e0874394ca525773f8480b0190a1f1ebff642df
   status: reviewed
 ---
 
 # Configuración
 
-Los admins configuran **configuración a nivel de tenant** en **Admin** → **Configuración**: feature flags, branding, proveedor de IA, escalas de habilidades, categorías y almacenamiento. Esto afecta cómo se ve y se comporta la plataforma para todos en el tenant.
+Los admins configuran **configuración a nivel de tenant** en **Admin** → **Configuración**: banderas de funcionalidad, marca, proveedor de IA, escalas de habilidades, categorías y almacenamiento. Esto afecta cómo se ve y se comporta la plataforma para todos en el tenant.
 
-## Feature flags
+## Banderas de funcionalidad
 
-Los **feature flags** activan o desactivan funciones para el tenant sin un deploy de código.
+Las **banderas de funcionalidad** activan o desactivan funciones para el tenant sin un deploy de código.
 
-| Flags típicos                       | Qué controlan                                                                                                                    |
+| Banderas típicas                    | Qué controlan                                                                                                                    |
 | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | **allowCustomRoles**                | Cuando está activado: los admins pueden crear roles personalizados. Cuando está desactivado: solo existen los roles del sistema. |
 | **OKRs**                            | Habilitar u ocultar funciones de OKR (objetivos, check-ins) para el tenant.                                                      |
@@ -32,7 +32,7 @@ Los **feature flags** activan o desactivan funciones para el tenant sin un deplo
 
 Activá o desactivá flags según el lanzamiento o cumplimiento. Los cambios se aplican al guardar; los usuarios pueden necesitar refrescar.
 
-## Branding
+## Marca
 
 - **Logo** — Subí o definí el logo del tenant que se muestra en el encabezado y en login/shell. El formato y tamaño recomendados suelen indicarse en la UI.
 - **Colores** — Colores primarios (y opcionalmente secundarios) para botones, links y acentos. Usá los colores de marca de tu organización para una apariencia consistente.
@@ -68,9 +68,9 @@ Según tu despliegue, Configuración puede incluir:
 - **Almacenamiento de archivos** — Dónde se guardan los archivos subidos (p. ej. CVs, avatares, adjuntos) (p. ej. S3, local). Los admins pueden definir bucket, región o rutas.
 - **Límites** — Tamaño máximo de archivo, tipos permitidos o retención. Configurá según la política.
 
-## Paso a paso: cambiar branding y un feature flag
+## Paso a paso: cambiar la marca y una bandera de funcionalidad
 
 1. Andá a **Admin** → **Configuración**.
-2. **Branding** — Subí un nuevo logo y definí el color primario. Guardá.
+2. **Marca** — Subí un nuevo logo y definí el color primario. Guardá.
 3. **Feature flags** — Buscá el flag (p. ej. "Reconocimientos") y activalo o desactivalo. Guardá.
 4. Refrescá la app y confirmá el logo/colores y la visibilidad de la función (p. ej. el menú de Reconocimientos aparece o desaparece).

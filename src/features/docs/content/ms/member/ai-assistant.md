@@ -1,5 +1,5 @@
 ---
-title: AI Assistant
+title: Pembantu AI
 description: >-
   Chat dengan AI, cari orang mengikut kemahiran, dapatkan cadangan dan gunakan
   pertanyaan bahasa semula jadi.
@@ -8,15 +8,15 @@ order: 14
 translation:
   sourceLocale: en
   sourcePath: member/ai-assistant.md
-  sourceHash: cf03fabfc635f13554f898bcf9fd073f32d924f67cd3801f5689260345e1e4e1
+  sourceHash: 526b80a3fbdf01541617e77f77a5939736331a0243b0fb08a523eeb76f6844de
   status: reviewed
 ---
 
-# AI Assistant
+# Pembantu AI
 
 **AI Assistant** ialah antara muka perbualan Afenda. Anda boleh **chat** dalam bahasa semula jadi untuk mencari orang mengikut kemahiran, mendapatkan **cadangan** dan bertanya tentang platform tanpa bertukar antara banyak menu atau skrin carian.
 
-## Tempat mencari AI Assistant
+## Tempat mencari Pembantu AI
 
 - **Dashboard** — Selalunya tindakan pantas atau kad khusus.
 - **Navigasi utama** — Cari “AI Assistant,” “Assistant,” atau ikon chat.
@@ -26,7 +26,7 @@ Buka bila-bila masa anda ada soalan atau mahu mencari seseorang atau sesuatu den
 
 ## Apa yang boleh ditanya
 
-AI Assistant memahami **bahasa semula jadi**. Anda boleh bertanya seperti:
+Pembantu AI memahami **bahasa semula jadi**. Anda boleh bertanya seperti:
 
 | Matlamat             | Contoh pertanyaan                                                                 |
 | -------------------- | --------------------------------------------------------------------------------- |
@@ -42,7 +42,7 @@ Tanya seperti anda bertanya kepada rakan sekerja; assistant akan mentafsir dan m
 
 Salah satu kegunaan paling biasa ialah **mencari orang mengikut skill**:
 
-1. Buka **AI Assistant**.
+1. Buka **Pembantu AI**.
 2. Tanya dengan bahasa biasa, contohnya “Who has experience with machine learning?” atau “Find people who know TypeScript at level 4 or higher.”
 3. Assistant mengembalikan **nama dan selalunya konteks padanan**, contohnya skills atau level. Anda mungkin mendapat pautan ke profil atau People Finder.
 4. Klik untuk melihat profil atau memulakan perbualan.

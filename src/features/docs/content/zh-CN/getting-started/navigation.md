@@ -7,7 +7,7 @@ order: 3
 translation:
   sourceLocale: en
   sourcePath: getting-started/navigation.md
-  sourceHash: aa2f37d935b463d5e08de9088b0f69f78b395c9ad2cf21d573112c3f01b33464
+  sourceHash: 1c56d63a27bfe0ca1cfda7c74d8925da76a898a9a847d10da06548552b005474
   status: reviewed
 ---
 
@@ -30,14 +30,14 @@ Afenda 将产品组织为 **views** 和 **sidebar**。本页说明如何在应�
 
 你只会看到有权访问的 view。例如，如果你只是 Member，只会看到 **My View**。如果你是 Manager 也是 1:1 Facilitator，会看到 **My View**、**Manager View** 和 **1:1 View**。
 
-### 切换 view
+### 切换视图
 
 - 使用 **sidebar**：顶层区块通常对应这些 view，例如 “My”、“Manager”、“1:1”、“Admin”。
 - 或使用 header/sidebar 中的 **view switcher** 选择当前 view。sidebar 菜单随后显示该 view 的项目。
 
 ---
 
-## Sidebar 导航
+## 侧边栏导航
 
 **Sidebar** 是在各部分之间移动的主要方式。
 
@@ -66,7 +66,7 @@ Afenda 提供 **global search**，让你无需层层点击菜单即可跳转到�
 
 ---
 
-## 主题切换（Light / Dark）
+## 主题切换（浅色 / 深色）
 
 如果 tenant 允许，你可以在 **light** 和 **dark** 主题之间切换。
 
@@ -77,7 +77,7 @@ toggle 的位置可能因 layout 而不同；如果没有看到，请检查顶�
 
 ---
 
-## Locale switcher
+## 语言切换器
 
 Afenda 可使用多种语言，例如 **English**、**Español**、**Tiếng Việt**、**Bahasa Melayu** 和 **简体中文**。
 
@@ -85,7 +85,7 @@ Afenda 可使用多种语言，例如 **English**、**Español**、**Tiếng Vi�
 - 选择偏好的语言。UI 和可用文档会切换到对应 locale。
 - 该设置通常会在下次访问时保留。
 
-> **提示：** 文档也可能有相同 locale。切换语言后，请检查 docs URL 或 sidebar 是否更新为对应语言，例如 `/docs/zh-CN/`。
+> **提示：** 文档可能提供所选语言版本。切换语言后，文档内容和侧边栏应更新，而 URL 保持不带语言前缀，例如 `/docs/getting-started`。
 
 ---
 
@@ -96,4 +96,4 @@ Afenda 可使用多种语言，例如 **English**、**Español**、**Tiếng Vi�
 3. **使用 Cmd+K 或 Ctrl+K** 搜索并跳转到人员、docs 或 actions。
 4. 通过 header 或 settings **设置主题和语言**，让应用符合你的偏好。
 
-下一步，请完成 [个人资料设置](/docs/zh-CN/getting-started/profile-setup)，确保你的身份和偏好在整个平台中正确配置。
+下一步，请完成 [个人资料设置](/docs/getting-started/profile-setup)，确保你的身份和偏好在整个平台中正确配置。

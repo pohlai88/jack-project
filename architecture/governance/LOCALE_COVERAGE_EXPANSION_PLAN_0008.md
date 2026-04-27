@@ -85,7 +85,8 @@ The current codebase has blockers that must be resolved before locale activation
 These commands validate repository readiness only. They do not activate any locale by themselves.
 
 ```bash
-pnpm docs:hash
+pnpm docs:generate-nav
+pnpm docs:hash:write
 pnpm docs:check
 pnpm i18n:compile --check
 pnpm i18n:validate

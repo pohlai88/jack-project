@@ -5,6 +5,7 @@ description: >-
   integrations. Key concepts, user roles, and quick links to guides.
 section: getting-started
 order: 1
+navTitleKey: docs.nav.welcome
 ---
 
 # Welcome to Afenda
@@ -57,8 +58,8 @@ Your experience depends on your **role** (and permissions) in the tenant. Roles 
 
 Depending on your role, start here:
 
-- **New to the platform?** → [First Login](/docs/en/getting-started/first-login) and [Navigation](/docs/en/getting-started/navigation).
-- **Set up your profile** → [Profile Setup](/docs/en/getting-started/profile-setup).
+- **New to the platform?** → [First Login](/docs/getting-started/first-login) and [Navigation](/docs/getting-started/navigation).
+- **Set up your profile** → [Profile Setup](/docs/getting-started/profile-setup).
 - **Member** → Member guide: dashboard, profile settings, and AI assistant.
 - **Admin** → Admin guide: members, roles, settings, and integrations.
 

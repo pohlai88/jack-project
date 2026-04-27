@@ -19,7 +19,7 @@ export function DocsPagination({ prev, next }: DocsPaginationProps) {
   if (!prev && !next) return null;
 
   return (
-    <nav aria-label="Documentation pagination" className="mt-12 flex items-stretch gap-4 border-t border-border pt-6">
+    <nav aria-label={t('docs.a11y.pagination')} className="mt-12 flex items-stretch gap-4 border-t border-border pt-6">
       {prev ? (
         <Link
           href={`/docs/${prev.slug}`}

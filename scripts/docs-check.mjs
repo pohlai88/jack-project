@@ -6,7 +6,7 @@ import { hashMarkdown } from './lib/docs-hash-utils.mjs';
 
 const root = process.cwd();
 const docsRoot = join(root, 'src/features/docs/content');
-const docsNavPath = join(root, 'src/features/docs/lib/docs-navigation.ts');
+const docsNavGeneratedPath = join(root, 'src/features/docs/lib/docs-nav-pages.generated.json');
 const docsLoaderPath = join(root, 'src/features/docs/lib/docs-content.ts');
 const docsTypesPath = join(root, 'src/features/docs/types/index.ts');
 const errors = [];
@@ -15,14 +15,78 @@ const allowedTranslationStatuses = new Set(['generated', 'reviewed', 'needs-revi
 function readConfiguredLocales() {
   const config = readFileSync(join(root, 'src/i18n/config.ts'), 'utf8');
   const match = config.match(/export const locales = \[([^\]]+)\] as const;/);
-  if (!match) {
-    throw new Error('Unable to parse locales from src/i18n/config.ts');
+  if (match) {
+    return match[1]
+      .split(',')
+      .map((part) => part.trim().replace(/^['"]|['"]$/g, ''))
+      .filter(Boolean);
   }
 
-  return match[1]
-    .split(',')
-    .map((part) => part.trim().replace(/^['"]|['"]$/g, ''))
-    .filter(Boolean);
+  if (/export const locales = activeLocales;/.test(config)) {
+    const registry = readFileSync(join(root, 'src/i18n/locale-registry.ts'), 'utf8');
+    const activeLocalesMatch = registry.match(/export const activeLocales = \[([^\]]+)\] as const;/);
+    if (!activeLocalesMatch) {
+      throw new Error('Unable to parse activeLocales from src/i18n/locale-registry.ts');
+    }
+
+    return activeLocalesMatch[1]
+      .split(',')
+      .map((part) => part.trim().replace(/^['"]|['"]$/g, ''))
+      .filter(Boolean);
+  }
+
+  throw new Error('Unable to parse locales from src/i18n/config.ts');
+}
+
+function requireTranslationMetadata(doc, englishDoc, locale) {
+  const { relPath, parsed } = doc;
+  const label = `src/features/docs/content/${locale}/${relPath}`;
+  const translation = parsed.data.translation;
+
+  if (!translation || typeof translation !== 'object' || Array.isArray(translation)) {
+    errors.push(`${label} must define translation metadata.`);
+    return;
+  }
+
+  if (translation.sourceLocale !== 'en') {
+    errors.push(`${label} must set translation.sourceLocale to "en".`);
+  }
+
+  if (typeof translation.sourcePath !== 'string' || translation.sourcePath.trim() === '') {
+    errors.push(`${label} must define translation.sourcePath as a non-empty string.`);
+  } else if (translation.sourcePath !== englishDoc.relPath) {
+    errors.push(
+      `${label} translation.sourcePath "${translation.sourcePath}" does not match canonical English source "${englishDoc.relPath}".`,
+    );
+  }
+
+  if (typeof translation.sourceHash !== 'string' || !/^[a-f0-9]{64}$/i.test(translation.sourceHash)) {
+    errors.push(`${label} must define translation.sourceHash as a 64-character SHA-256 hex string.`);
+  } else if (translation.sourceHash !== englishDoc.sourceHash) {
+    errors.push(
+      `${label} translation.sourceHash "${translation.sourceHash}" does not match canonical English source hash "${englishDoc.sourceHash}".`,
+    );
+  }
+
+  if (!allowedTranslationStatuses.has(translation.status)) {
+    errors.push(
+      `${label} translation.status must be one of ${Array.from(allowedTranslationStatuses)
+        .map((status) => `"${status}"`)
+        .join(', ')}.`,
+    );
+  }
+}
+
+function compareBodyStructure({ locale, doc, englishDoc }) {
+  const label = `src/features/docs/content/${locale}/${doc.relPath}`;
+  const englishHeadings = englishDoc.parsed.content.match(/^#{1,6}\s+/gm)?.length ?? 0;
+  const localizedHeadings = doc.parsed.content.match(/^#{1,6}\s+/gm)?.length ?? 0;
+
+  if (localizedHeadings !== englishHeadings) {
+    errors.push(
+      `${label} has ${localizedHeadings} Markdown headings, but canonical English source "${englishDoc.relPath}" has ${englishHeadings}.`,
+    );
+  }
 }
 
 function walkDocs(dir, prefix = '') {
@@ -90,51 +154,25 @@ function requireFrontmatterFields(doc, locale) {
       errors.push(`${label} must define frontmatter.fallbackAllowedLocales as a string array when present.`);
     }
   }
-}
 
-function requireTranslationMetadata(doc, englishDoc) {
-  const { relPath, parsed } = doc;
-  const label = `src/features/docs/content/es/${relPath}`;
-  const translation = parsed.data.translation;
-
-  if (!translation || typeof translation !== 'object' || Array.isArray(translation)) {
-    errors.push(`${label} must define translation metadata.`);
-    return;
-  }
-
-  if (translation.sourceLocale !== 'en') {
-    errors.push(`${label} must set translation.sourceLocale to "en".`);
-  }
-
-  if (typeof translation.sourcePath !== 'string' || translation.sourcePath.trim() === '') {
-    errors.push(`${label} must define translation.sourcePath as a non-empty string.`);
-  } else if (translation.sourcePath !== englishDoc.relPath) {
-    errors.push(
-      `${label} translation.sourcePath "${translation.sourcePath}" does not match canonical English source "${englishDoc.relPath}".`,
-    );
-  }
-
-  if (typeof translation.sourceHash !== 'string' || !/^[a-f0-9]{64}$/i.test(translation.sourceHash)) {
-    errors.push(`${label} must define translation.sourceHash as a 64-character SHA-256 hex string.`);
-  } else if (translation.sourceHash !== englishDoc.sourceHash) {
-    errors.push(
-      `${label} translation.sourceHash "${translation.sourceHash}" does not match canonical English source hash "${englishDoc.sourceHash}".`,
-    );
-  }
-
-  if (!allowedTranslationStatuses.has(translation.status)) {
-    errors.push(
-      `${label} translation.status must be one of ${Array.from(allowedTranslationStatuses)
-        .map((status) => `"${status}"`)
-        .join(', ')}.`,
-    );
+  if (locale === 'en' && frontmatter.hidden !== true) {
+    if (typeof frontmatter.navTitleKey !== 'string' || frontmatter.navTitleKey.trim() === '') {
+      errors.push(
+        `${label} must define frontmatter.navTitleKey (i18n key for the docs sidebar, e.g. docs.nav.overview; run pnpm docs:generate-nav).`,
+      );
+    } else if (!String(frontmatter.navTitleKey).startsWith('docs.nav.')) {
+      errors.push(`${label} frontmatter navTitleKey must start with "docs.nav."`);
+    }
   }
 }
 
 function getNavSlugs() {
-  const source = readFileSync(docsNavPath, 'utf8');
-  const matches = [...source.matchAll(/slug:\s*'([^']+)'/g)];
-  return new Set(matches.map((match) => match[1]));
+  const raw = readFileSync(docsNavGeneratedPath, 'utf8');
+  const data = JSON.parse(raw);
+  if (!data || !Array.isArray(data.pages)) {
+    throw new Error('Invalid docs-nav-pages.generated.json: expected { pages: [...] }');
+  }
+  return new Set(data.pages.map((p) => p.slug));
 }
 
 function detectSilentFallback() {
@@ -215,7 +253,8 @@ for (const locale of locales) {
       continue;
     }
 
-    requireTranslationMetadata(doc, englishDoc);
+    requireTranslationMetadata(doc, englishDoc, locale);
+    compareBodyStructure({ locale, doc, englishDoc });
   }
 
   for (const [slug, englishDoc] of canonicalDocMap) {

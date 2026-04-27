@@ -947,7 +947,8 @@
       "noResults": "ไม่พบผลลัพธ์",
       "navigate": "ไปยัง",
       "open": "เปิด",
-      "close": "ปิด"
+      "close": "ปิด",
+      "clear": "ล้าง"
     },
     "pagination": {
       "previous": "ก่อนหน้า",
@@ -955,6 +956,17 @@
     },
     "toc": {
       "onThisPage": "ในหน้านี้"
+    },
+    "a11y": {
+      "breadcrumb": "เส้นทางนำทาง",
+      "navigation": "การนำทางเอกสาร",
+      "pagination": "การแบ่งหน้าเอกสาร",
+      "toggleSidebar": "สลับแถบด้านข้างเอกสาร"
+    },
+    "preview": {
+      "title": "ตัวอย่างแบบสด",
+      "invalidBlock": "บล็อกตัวอย่างไม่ถูกต้อง รูปแบบที่คาดไว้: <code>component: Name</code>",
+      "notRegistered": "คอมโพเนนต์ <code>{component}</code> ยังไม่ได้ลงทะเบียนสำหรับตัวอย่าง"
     }
   },
   "rawEdit": {

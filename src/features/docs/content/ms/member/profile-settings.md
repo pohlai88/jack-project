@@ -1,5 +1,5 @@
 ---
-title: Profile & Settings
+title: Profil & tetapan
 description: >-
   Edit profil, avatar, sambungkan GitHub/LinkedIn, timezone, pronouns dan email
   peribadi.
@@ -8,11 +8,11 @@ order: 3
 translation:
   sourceLocale: en
   sourcePath: member/profile-settings.md
-  sourceHash: 28e3fbdd313d05c93d27498fa2458f175fe7ad83aad2a24a2c966ad36d5b01ff
+  sourceHash: 9640fa3a74be50d80b7c0f5e77bb2a36efda88cddb06815ebd2ba1178b4faa5d
   status: reviewed
 ---
 
-# Profile & Settings
+# Profil & tetapan
 
 Profil anda ialah cara anda muncul di seluruh Afenda — dalam direktori, People Finder serta kepada manager dan rakan sekerja. Settings mengawal integrasi, timezone dan butiran hubungan.
 
@@ -52,7 +52,7 @@ Menyambungkan LinkedIn boleh memperkaya profil dengan pengalaman dan kemahiran.
 
 Putuskan sambungan daripada skrin integrasi yang sama jika tidak mahu memautkannya lagi.
 
-## Timezone
+## Zon masa
 
 Menetapkan timezone memastikan:
 
@@ -60,14 +60,14 @@ Menetapkan timezone memastikan:
 - Jadual 1:1 dan deadline tepat.
 
 1. Dalam **Settings**, buka **Preferences** atau **Profile**.
-2. Pilih **Timezone** daripada dropdown.
+2. Pilih **Zon masa** daripada dropdown.
 3. Simpan. Masa kalendar dan notifikasi akan menggunakan timezone ini.
 
-## Pronouns
+## Kata ganti nama
 
-Anda boleh menetapkan **pronouns** secara pilihan, contohnya she/her, he/him, they/them, supaya platform dan orang lain merujuk kepada anda dengan betul. Ini biasanya berada dalam **Profile** atau **Preferences** dan bersifat opsional.
+Anda boleh menetapkan **kata ganti nama** secara pilihan, contohnya she/her, he/him, they/them, supaya platform dan orang lain merujuk kepada anda dengan betul. Ini biasanya berada dalam **Profile** atau **Preferences** dan bersifat opsional.
 
-## Email peribadi
+## Emel peribadi
 
 Jika tenant membenarkan, anda boleh menambah **personal email** selain email kerja. Ia digunakan untuk pemulihan akaun atau notifikasi mengikut polisi organisasi. Semak **Settings → Account** atau **Profile** untuk medan ini.
 
@@ -81,9 +81,9 @@ Jika tenant membenarkan, anda boleh menambah **personal email** selain email ker
 | Avatar                   | Profile         | Pengecaman dalam UI dan feedback            |
 | GitHub                   | Integrations    | Konteks teknikal dan cadangan               |
 | LinkedIn                 | Integrations    | Konteks pengalaman dan kemahiran            |
-| Timezone                 | Preferences     | Masa betul untuk mesyuarat dan peringatan   |
-| Pronouns                 | Profile         | Rujukan yang betul dalam produk             |
-| Personal email           | Account/Profile | Pemulihan dan notifikasi pilihan            |
+| Zon masa                 | Preferences     | Masa betul untuk mesyuarat dan peringatan   |
+| Kata ganti nama          | Profile         | Rujukan yang betul dalam produk             |
+| Emel peribadi            | Account/Profile | Pemulihan dan notifikasi pilihan            |
 
 ## Keterlihatan carian
 

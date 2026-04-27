@@ -8,7 +8,7 @@ order: 2
 translation:
   sourceLocale: en
   sourcePath: getting-started/first-login.md
-  sourceHash: 6ee7a4d16fdbb83bbd8ef983b625dcfb52a74cadc56759dad40ad75f47e1a21c
+  sourceHash: 52813e8d99ceccb042bb59e82b166dd9d7811ea2dacafc8c599670b0d400bde9
   status: reviewed
 ---
 
@@ -65,7 +65,7 @@ Pada log masuk pertama, anda mungkin melihat:
 - Petunjuk onboarding atau tooltip jika tenant mengaktifkannya.
 - Notifikasi atau tugasan seperti “Complete your profile” atau “Set your first OKR”.
 
-> **Tip:** Luangkan beberapa minit pada [Persediaan profil](/docs/ms/getting-started/profile-setup) supaya nama, jawatan dan keutamaan anda tepat. Kemudian baca [Navigasi & paparan](/docs/ms/getting-started/navigation) untuk mengetahui lokasi setiap perkara.
+> **Tip:** Luangkan beberapa minit pada [Persediaan profil](/docs/getting-started/profile-setup) supaya nama, jawatan dan keutamaan anda tepat. Kemudian baca [Navigasi & paparan](/docs/getting-started/navigation) untuk mengetahui lokasi setiap perkara.
 
 ---
 
@@ -75,7 +75,7 @@ Pada log masuk pertama, anda mungkin melihat:
 2. **Pilih paparan** — Gunakan sidebar atau view switcher untuk bergerak antara My View, Manager View, 1:1 View dan Admin View jika anda ada akses. Setiap view mempunyai menu sendiri.
 3. **Gunakan carian global** — Tekan **Cmd+K** (Mac) atau **Ctrl+K** (Windows/Linux) untuk mencari orang, docs dan tindakan.
 4. **Tetapkan bahasa dan tema** — Gunakan locale switcher untuk bahasa dan theme toggle untuk light/dark mode jika tenant menyokong.
-5. **Bookmark docs** — Simpan [Selamat datang ke Afenda](/docs/ms/getting-started) dan panduan mengikut role untuk rujukan.
+5. **Bookmark docs** — Simpan [Selamat datang ke Afenda](/docs/getting-started) dan panduan mengikut role untuk rujukan.
 
 Jika anda menghadapi isu log masuk seperti tenant salah, SSO hilang atau akaun dikunci, hubungi **pentadbir Afenda** atau sokongan IT organisasi.
 

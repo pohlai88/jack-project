@@ -5,6 +5,7 @@ description: >-
   oriented on your first visit.
 section: getting-started
 order: 2
+navTitleKey: docs.nav.firstLogin
 ---
 
 # First Login
@@ -60,7 +61,7 @@ On first login you might see:
 - Onboarding hints or tooltips (if your tenant has enabled them).
 - Notifications or tasks (e.g. “Complete your profile”, “Set your first OKR”).
 
-> **Tip:** Spend a few minutes on [Profile Setup](/docs/en/getting-started/profile-setup) so your name, title, and preferences are correct. Then explore [Navigation & Views](/docs/en/getting-started/navigation) to learn where everything lives.
+> **Tip:** Spend a few minutes on [Profile Setup](/docs/getting-started/profile-setup) so your name, title, and preferences are correct. Then explore [Navigation & Views](/docs/getting-started/navigation) to learn where everything lives.
 
 ---
 
@@ -70,7 +71,7 @@ On first login you might see:
 2. **Pick your view** — Use the sidebar or view switcher to move between My View, Manager View, 1:1 View, and Admin View (if you have access). Each view has its own menu.
 3. **Use global search** — Press **Cmd+K** (Mac) or **Ctrl+K** (Windows/Linux) to search across people, docs, and actions.
 4. **Set language and theme** — Use the locale switcher for English/Spanish and the theme toggle for light/dark mode if your tenant supports them.
-5. **Bookmark the docs** — Keep the [Welcome to Afenda](/docs/en/getting-started) and role-specific guides handy for reference as you explore.
+5. **Bookmark the docs** — Keep the [Welcome to Afenda](/docs/getting-started) and role-specific guides handy for reference as you explore.
 
 If you run into login issues (wrong tenant, missing SSO, locked account), contact your **Afenda administrator** or your organization’s IT support.
 

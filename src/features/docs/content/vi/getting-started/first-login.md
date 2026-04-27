@@ -8,7 +8,7 @@ order: 2
 translation:
   sourceLocale: en
   sourcePath: getting-started/first-login.md
-  sourceHash: 6ee7a4d16fdbb83bbd8ef983b625dcfb52a74cadc56759dad40ad75f47e1a21c
+  sourceHash: 52813e8d99ceccb042bb59e82b166dd9d7811ea2dacafc8c599670b0d400bde9
   status: reviewed
 ---
 
@@ -65,7 +65,7 @@ Trong lần đăng nhập đầu tiên, bạn có thể thấy:
 - Gợi ý onboarding hoặc tooltip nếu tenant đã bật.
 - Thông báo hoặc tác vụ như “Complete your profile” hoặc “Set your first OKR”.
 
-> **Mẹo:** Dành vài phút cho [Thiết lập hồ sơ](/docs/vi/getting-started/profile-setup) để tên, chức danh và tùy chọn của bạn chính xác. Sau đó đọc [Điều hướng & chế độ xem](/docs/vi/getting-started/navigation) để biết mọi thứ nằm ở đâu.
+> **Mẹo:** Dành vài phút cho [Thiết lập hồ sơ](/docs/getting-started/profile-setup) để tên, chức danh và tùy chọn của bạn chính xác. Sau đó đọc [Điều hướng & chế độ xem](/docs/getting-started/navigation) để biết mọi thứ nằm ở đâu.
 
 ---
 
@@ -75,7 +75,7 @@ Trong lần đăng nhập đầu tiên, bạn có thể thấy:
 2. **Chọn chế độ xem** — Dùng sidebar hoặc view switcher để chuyển giữa My View, Manager View, 1:1 View và Admin View nếu bạn có quyền. Mỗi view có menu riêng.
 3. **Dùng tìm kiếm toàn cục** — Nhấn **Cmd+K** (Mac) hoặc **Ctrl+K** (Windows/Linux) để tìm người, tài liệu và hành động.
 4. **Đặt ngôn ngữ và giao diện** — Dùng locale switcher cho ngôn ngữ và theme toggle cho sáng/tối nếu tenant hỗ trợ.
-5. **Đánh dấu tài liệu** — Giữ [Chào mừng đến với Afenda](/docs/vi/getting-started) và các hướng dẫn theo vai trò để tham khảo khi khám phá.
+5. **Đánh dấu tài liệu** — Giữ [Chào mừng đến với Afenda](/docs/getting-started) và các hướng dẫn theo vai trò để tham khảo khi khám phá.
 
 Nếu gặp vấn đề đăng nhập như sai tenant, thiếu SSO hoặc tài khoản bị khóa, hãy liên hệ **quản trị viên Afenda** hoặc bộ phận IT của tổ chức.
 

@@ -4,7 +4,8 @@ description: >-
   System roles (Member, Manager, Admin, 1:1er, Referente), custom roles,
   assigning permissions, and the PBAC model.
 section: admin
-order: 7
+order: 3
+navTitleKey: docs.nav.rolesPermissions
 ---
 
 # Roles & Permissions

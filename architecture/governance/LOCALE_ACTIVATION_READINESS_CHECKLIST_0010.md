@@ -42,7 +42,8 @@ Before adding any locale to `src/i18n/config.ts`, confirm all of the following:
 Run all of the following:
 
 ```bash
-pnpm docs:hash
+pnpm docs:generate-nav
+pnpm docs:hash:write
 pnpm docs:check
 pnpm i18n:compile --check
 pnpm i18n:validate
@@ -189,7 +190,8 @@ Documentation improvement should focus on moving runtime-active fallback locales
 Minimum verification for each documentation slice:
 
 ```bash
-pnpm docs:hash
+pnpm docs:generate-nav
+pnpm docs:hash:write
 pnpm docs:check
 pnpm i18n:readiness:report
 pnpm i18n:compile --check

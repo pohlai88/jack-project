@@ -8,7 +8,7 @@ order: 3
 translation:
   sourceLocale: en
   sourcePath: getting-started/navigation.md
-  sourceHash: aa2f37d935b463d5e08de9088b0f69f78b395c9ad2cf21d573112c3f01b33464
+  sourceHash: 1c56d63a27bfe0ca1cfda7c74d8925da76a898a9a847d10da06548552b005474
   status: reviewed
 ---
 
@@ -86,7 +86,7 @@ Afenda se puede usar en varios idiomas (ej. **inglés** y **español**).
 - Elegí tu idioma preferido. La interfaz y, cuando esté disponible, la documentación pasan a ese idioma.
 - La preferencia suele recordarse para la próxima visita.
 
-> **Tip:** La documentación puede estar en los mismos idiomas; si cambiás de idioma, fijate si la URL o la barra lateral de docs se actualizan (ej. `/docs/en/` vs `/docs/es/`).
+> **Consejo:** La documentación puede estar disponible en el idioma seleccionado. Al cambiar de idioma, el contenido y la barra lateral deberían actualizarse, mientras la URL se mantiene sin prefijo de idioma, por ejemplo `/docs/getting-started`.
 
 ---
 
@@ -97,4 +97,4 @@ Afenda se puede usar en varios idiomas (ej. **inglés** y **español**).
 3. **Usá Cmd+K (o Ctrl+K)** para buscar y saltar a personas, documentación o acciones.
 4. **Configurá tema e idioma** desde el encabezado o la configuración para que la app se adapte a tus preferencias.
 
-Como siguiente paso, completá [Configuración del perfil](/docs/es/getting-started/profile-setup) para que tu identidad y preferencias queden bien configuradas en toda la plataforma.
+Como siguiente paso, completá [Configuración del perfil](/docs/getting-started/profile-setup) para que tu identidad y preferencias queden bien configuradas en toda la plataforma.

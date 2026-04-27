@@ -5,6 +5,7 @@ description: >-
   global search, theme, and locale options.
 section: getting-started
 order: 3
+navTitleKey: docs.nav.navigation
 ---
 
 # Navigation & Views
@@ -81,7 +82,7 @@ Afenda can be used in multiple languages (e.g. **English** and **Spanish**).
 - Select your preferred language. The UI and, where available, documentation will switch to that locale.
 - The setting is typically remembered for your next visit.
 
-> **Tip:** Documentation may be available in the same locales; if you switch language, check whether the docs URL or sidebar updates to the matching language (e.g. `/docs/en/` vs `/docs/es/`).
+> **Tip:** Documentation may be available in the selected locale. When you switch language, the docs content and sidebar should update while the URL stays locale-neutral, for example `/docs/getting-started`.
 
 ---
 
@@ -92,4 +93,4 @@ Afenda can be used in multiple languages (e.g. **English** and **Spanish**).
 3. **Use Cmd+K (or Ctrl+K)** to search and jump to people, docs, or actions.
 4. **Set theme and language** via the header or settings so the app fits your preferences.
 
-For the next step, complete [Profile Setup](/docs/en/getting-started/profile-setup) so your identity and preferences are set correctly across the platform.
+For the next step, complete [Profile Setup](/docs/getting-started/profile-setup) so your identity and preferences are set correctly across the platform.

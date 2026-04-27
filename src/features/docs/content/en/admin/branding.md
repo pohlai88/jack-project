@@ -4,7 +4,8 @@ description: >-
   Customize your Afenda tenant with colors, typography, density, surface styles,
   and other visual settings.
 section: admin
-order: 2
+order: 5
+navTitleKey: docs.nav.branding
 ---
 
 # Branding & Customization

@@ -17,7 +17,10 @@ export function DocsBreadcrumb({ slug }: DocsBreadcrumbProps) {
   if (crumbs.length <= 1) return null;
 
   return (
-    <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 text-sm text-muted-foreground">
+    <nav
+      aria-label={t('docs.a11y.breadcrumb')}
+      className="mb-6 flex items-center gap-1.5 text-sm text-muted-foreground"
+    >
       {crumbs.map((crumb, i) => {
         const isLast = i === crumbs.length - 1;
         return (

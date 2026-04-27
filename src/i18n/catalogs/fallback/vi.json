@@ -947,7 +947,8 @@
       "noResults": "Không tìm thấy kết quả",
       "navigate": "Đi tới",
       "open": "Mở",
-      "close": "Đóng"
+      "close": "Đóng",
+      "clear": "Xóa"
     },
     "pagination": {
       "previous": "Trước",
@@ -955,6 +956,17 @@
     },
     "toc": {
       "onThisPage": "Trong trang này"
+    },
+    "a11y": {
+      "breadcrumb": "Đường dẫn phân cấp",
+      "navigation": "Điều hướng tài liệu",
+      "pagination": "Phân trang tài liệu",
+      "toggleSidebar": "Bật/tắt thanh bên tài liệu"
+    },
+    "preview": {
+      "title": "Xem trước trực tiếp",
+      "invalidBlock": "Khối xem trước không hợp lệ. Định dạng mong đợi: <code>component: Name</code>",
+      "notRegistered": "Thành phần <code>{component}</code> chưa được đăng ký để xem trước."
     }
   },
   "rawEdit": {

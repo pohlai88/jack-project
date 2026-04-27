@@ -1,5 +1,5 @@
 ---
-title: Integrations
+title: Integrasi
 description: >-
   GitHub, LinkedIn, Slack, Google Workspace, GitLab, webhooks — setup OAuth,
   sync dan data mapping.
@@ -8,11 +8,11 @@ order: 9
 translation:
   sourceLocale: en
   sourcePath: admin/integrations.md
-  sourceHash: e8edc889c34742728c4a5b07f82ca54c7f7713313210bf18613d2a5101b6192b
+  sourceHash: bf7697687d139f10500512f0bbdcfbc377297876a575ada2ce17e9d494693371
   status: reviewed
 ---
 
-# Integrations
+# Integrasi
 
 Afenda boleh menyambung ke sistem luar supaya anda boleh menyegerakkan orang, skills atau aktiviti dan memperkaya profil. Admins mengkonfigurasi **integrations** (OAuth, API keys, webhooks) dan **data mapping** supaya data mengalir masuk dan keluar dengan betul.
 
@@ -29,7 +29,7 @@ Afenda boleh menyambung ke sistem luar supaya anda boleh menyegerakkan orang, sk
 
 Gunakan **Admin** → **Integrations** untuk melihat yang diaktifkan.
 
-## Integrasi GitHub (Active)
+## Integrasi GitHub (aktif)
 
 GitHub ialah integrasi aktif utama. Selepas dikonfigurasi:
 
@@ -40,7 +40,7 @@ GitHub ialah integrasi aktif utama. Selepas dikonfigurasi:
 
 Pada setiap sync, Afenda **mencipta evidence record secara automatik** pada profil person yang menunjukkan repo diimbas, bahasa ditemui, skills disimpulkan dan sumbangan.
 
-## Webhooks (Active — Outbound)
+## Webhooks (aktif — keluar)
 
 **Webhooks** menghantar event daripada Afenda ke sistem anda, contohnya "person created", "assessment submitted":
 
@@ -48,7 +48,7 @@ Pada setiap sync, Afenda **mencipta evidence record secara automatik** pada prof
 2. **Add webhook** — URL, secret pilihan untuk menandatangani payload dan **event types** untuk subscribe.
 3. Simpan. Afenda akan POST payload JSON ke URL anda pada setiap event terpilih. Laksanakan idempotency dan sahkan signature.
 
-## Setup OAuth untuk integrasi akan datang
+## Penyediaan OAuth untuk integrasi akan datang
 
 Untuk integrasi yang menggunakan **OAuth** seperti LinkedIn, Slack, Google Workspace, GitLab:
 
@@ -59,7 +59,7 @@ Untuk integrasi yang menggunakan **OAuth** seperti LinkedIn, Slack, Google Works
 
 > **Tip:** Gunakan OAuth app khusus bagi setiap environment (dev vs prod) dan putar secrets jika terdedah.
 
-## Semantic Search dan Embeddings
+## Carian semantik dan embeddings
 
 Sync integrasi menyumbang kepada **semantic search** (People Finder, AI Assistant):
 

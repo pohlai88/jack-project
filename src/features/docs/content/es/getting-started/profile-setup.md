@@ -8,7 +8,7 @@ order: 4
 translation:
   sourceLocale: en
   sourcePath: getting-started/profile-setup.md
-  sourceHash: b5a79d199f3588b454e833187493df504b47877ddba268c7f139b9a8c2636716
+  sourceHash: 09152b87246cee8ab3b22b47770b257e363100bff503bad9f8bcb5ba8e85e194
   status: reviewed
 ---
 
@@ -103,4 +103,4 @@ Editálos en el mismo formulario de perfil, normalmente en "Contacto" o "Identid
 - La **zona horaria** y la **ubicación** se usan para programación y visualización.
 - Revisá tu perfil cuando cambie tu rol, foco o preferencias para que la plataforma siga siendo precisa y útil para vos y tu equipo.
 
-Para más sobre cómo moverte por la app, ver [Navegación y vistas](/docs/es/getting-started/navigation). Para funciones específicas de miembro (habilidades, OKRs, aprendizaje), usá la sección **Miembro** de la documentación.
+Para más sobre cómo moverte por la app, ver [Navegación y vistas](/docs/getting-started/navigation). Para funciones específicas de miembro (habilidades, OKRs, aprendizaje), usá la sección **Miembro** de la documentación.

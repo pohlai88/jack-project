@@ -6,7 +6,7 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: admin/index.md
-  sourceHash: aaede5bb4288e92321874f98c507c2f1a574719b749ae94f1c772c13e83214a1
+  sourceHash: e1bb454f189f18e6c36ce9e55834c897f228d94eae9953fcd6a02b62702ce510
   status: reviewed
 ---
 

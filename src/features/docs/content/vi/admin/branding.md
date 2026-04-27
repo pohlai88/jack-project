@@ -1,5 +1,5 @@
 ---
-title: Branding & tùy chỉnh
+title: Thương hiệu & tùy chỉnh
 description: >-
   Tùy chỉnh tenant Afenda bằng màu sắc, typography, mật độ, kiểu bề mặt và các
   cài đặt hình ảnh khác.
@@ -8,17 +8,17 @@ order: 2
 translation:
   sourceLocale: en
   sourcePath: admin/branding.md
-  sourceHash: 3050eecffc34bc19774d2477d2318be0966baa3fc37c526bffa9ca5818a753ed
+  sourceHash: 8aaf92670ab03db5a7a4acd107eb7d3e31dcaef30ee188c706bb3edc9fa45255
   status: reviewed
 ---
 
-# Branding & tùy chỉnh
+# Thương hiệu & tùy chỉnh
 
 Afenda có khả năng tùy chỉnh cao để khớp nhận diện hình ảnh và sở thích thiết kế của tổ chức. Hướng dẫn này giới thiệu các cài đặt branding dành cho admin.
 
 ---
 
-## Tìm cài đặt Branding ở đâu
+## Tìm cài đặt thương hiệu ở đâu
 
 1. Đăng nhập với vai trò **Admin** và vào **Admin View**
 2. Trong sidebar, chọn **Settings**
@@ -29,13 +29,13 @@ Mọi thay đổi áp dụng ngay cho tenant trên tất cả người dùng và
 
 ---
 
-## Các thành phần branding có thể tùy chỉnh
+## Các thành phần thương hiệu có thể tùy chỉnh
 
 ### Màu sắc
 
 Tùy chỉnh ba màu chính định nghĩa thương hiệu của bạn trong Afenda:
 
-#### Primary Color
+#### Màu chính
 
 - **Là gì:** Màu thương hiệu chính dùng cho nút chính, liên kết, điểm nhấn và highlight.
 - **Mặc định:** Xanh dương rực (`#3B82F6`)
@@ -44,7 +44,7 @@ Tùy chỉnh ba màu chính định nghĩa thương hiệu của bạn trong Afe
   - Dùng màu bão hòa, dễ nhớ; tránh xám và trắng.
   - Kiểm tra cả light mode và dark mode để bảo đảm dễ đọc.
 
-#### Secondary Color
+#### Màu phụ
 
 - **Là gì:** Màu bổ trợ cho hành động phụ, badge và thành phần hỗ trợ.
 - **Mặc định:** Teal (`#10B981`)
@@ -52,7 +52,7 @@ Tùy chỉnh ba màu chính định nghĩa thương hiệu của bạn trong Afe
   - Phù hợp làm điểm nhấn tương phản, ví dụ tiến độ hoặc hành động tích cực.
   - Nên phối hợp tốt với Primary Color.
 
-#### Accent Color
+#### Màu nhấn
 
 - **Là gì:** Màu sáng, năng lượng cho highlight, cảnh báo và nhấn mạnh.
 - **Mặc định:** Amber ấm (`#F59E0B`)
@@ -77,11 +77,11 @@ Contrast ratio: 8.6:1 ✓ WCAG AAA (best readability)
 
 ---
 
-### Typography
+### Kiểu chữ
 
 Tùy chỉnh cách chữ hiển thị trên nền tảng.
 
-#### Font Family
+#### Họ phông chữ
 
 Chọn từ các họ font được duy trì chuyên nghiệp:
 
@@ -98,7 +98,7 @@ Chọn từ các họ font được duy trì chuyên nghiệp:
 
 ---
 
-### Density
+### Mật độ
 
 Kiểm soát lượng khoảng cách (padding và margin) trong giao diện.
 
@@ -114,7 +114,7 @@ Kiểm soát lượng khoảng cách (padding và margin) trong giao diện.
 
 ---
 
-### Surface Style
+### Kiểu bề mặt
 
 Kiểm soát chiều sâu thị giác và elevation của cards, panels, containers.
 
@@ -130,7 +130,7 @@ Kiểm soát chiều sâu thị giác và elevation của cards, panels, contain
 
 ---
 
-### Neutral Warmth
+### Độ ấm màu trung tính
 
 Tinh chỉnh sắc độ nền của màu trung tính (xám và viền).
 
@@ -160,7 +160,7 @@ Bên cạnh màu sắc và typography:
 
 ## Xem trước & kiểm thử trực tiếp
 
-Trước khi lưu, dùng **preview panel** trong cài đặt Branding để:
+Trước khi lưu, dùng **preview panel** trong cài đặt thương hiệu để:
 
 1. Xem màu đã chọn áp dụng lên nút, card và thành phần UI
 2. Chuyển giữa light và dark mode
@@ -174,14 +174,14 @@ Trước khi lưu, dùng **preview panel** trong cài đặt Branding để:
 
 ---
 
-## Best practices
+## Các thực hành tốt nhất
 
 ### Nhất quán
 
 - Khớp màu và font với website marketing nếu có thể.
 - Dùng branding nhất quán trên Afenda, email templates và integrations.
 
-### Accessibility
+### Khả năng tiếp cận
 
 - Luôn duy trì tương phản tốt (WCAG AA hoặc AAA).
 - Dùng trình kiểm tra tương phản tích hợp của Afenda khi chọn màu.
@@ -193,13 +193,13 @@ Trước khi lưu, dùng **preview panel** trong cài đặt Branding để:
 - System Font tải nhanh nhất; custom fonts có thể thêm 50–200ms vào thời gian tải trang.
 - Khác biệt thị giác là tối thiểu với đa số người dùng.
 
-### Dark Mode
+### Chế độ tối
 
 - Kiểm tra mọi màu trong dark mode.
 - Glass surfaces có thể cần điều chỉnh để vẫn dễ đọc trong nền tối.
 - Bảo đảm Primary Color đủ sáng trên nền tối.
 
-### Mobile
+### Di động
 
 - Density và surface style ảnh hưởng mạnh đến khả dụng trên mobile.
 - Kiểm tra trên điện thoại hoặc tablet thật, không chỉ browser devtools.
@@ -250,7 +250,7 @@ Thao tác này đưa mọi màu, font, density và surface style về mặc đ�
 
 - **Khám phá cài đặt khác** → [Tổng quan cài đặt](./settings)
 - **Thêm tích hợp** → [Hướng dẫn tích hợp](./integrations)
-- **Quản lý thành viên và vai trò** → [Members & Invitations](./members-invitations)
+- **Quản lý thành viên và vai trò** → [Thành viên & lời mời](./members-invitations)
 - **Cần thêm hướng dẫn thiết kế?** → Liên hệ designer Afenda hoặc <support@example.com>
 
 Thương hiệu của bạn quan trọng. Hãy dành thời gian chỉnh màu và typography thật chuẩn vì đó là một trong những điều đầu tiên mọi người thấy trong Afenda mỗi ngày.

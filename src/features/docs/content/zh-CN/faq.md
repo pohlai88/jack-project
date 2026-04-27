@@ -7,13 +7,13 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: faq.md
-  sourceHash: 9fbc30698e5d595996822e2151dfd6be72952e7b945c9d128f398812532a383f
+  sourceHash: 7cf639cf207aa59b7d7c2e562f6749a3cbaaf13d2193c386f42b2c09d0ca6ae2
   status: reviewed
 ---
 
 # 常见问题
 
-以下是常见问题的回答。按角色划分的指南请参阅 [Member](/docs/zh-CN/member) 和 [Admin](/docs/zh-CN/admin)。
+以下是常见问题的回答。按角色划分的指南请参阅 [成员](/docs/member) 和 [管理员](/docs/admin)。
 
 ## 如何重置密码？
 
@@ -30,23 +30,23 @@ translation:
 
 > **提示：** 授权始终基于 permission key，例如 `admin:dashboard`、`admin:members`。Role 名称只用于显示和分组。
 
-## 如何连接 integrations？
+## 如何连接集成？
 
-- **对于 tenant**：**Admins** 在 **Admin** → **Integrations** 中配置 integrations：webhooks、OAuth apps、API keys 和 data mapping。如果某个 integration 不可用，admin 可能需要启用它或添加 credentials。详情见 [Integrations](/docs/zh-CN/admin/integrations)。
+- **对于 tenant**：管理员在 **Admin** → **Integrations** 中配置集成：webhooks、OAuth apps、API keys 和 data mapping。如果某个 integration 不可用，admin 可能需要启用它或添加 credentials。详情见 [集成](/docs/admin/integrations)。
 
 ## AI 功能如何工作？
 
 平台可以将 AI 用于：
 
-- **AI Assistant** — chat 和建议（如果已启用）。使用 tenant 配置的 AI provider 和 model。
+- **AI 助手** — 对话和建议（如果已启用）。使用 tenant 配置的 AI 提供商和模型。
 - **Semantic search** — 使用 embeddings 进行基于语义匹配的 AI 搜索。
 
-Admins 在 **Admin** → **Settings** 中设置 **AI provider 和 model**。发送给 provider 的数据取决于具体功能。请查看 tenant 的隐私和数据处理政策。
+管理员在 **Admin** → **Settings** 中设置 **AI 提供商和模型**。发送给 provider 的数据取决于具体功能。请查看 tenant 的隐私和数据处理政策。
 
 ## 如何导出数据？
 
 - **你自己的数据**：在 **Profile** 或 **Settings** 中查看账户数据导出选项。
-- **Admins**：**Admin** → **Settings** 可能提供 analytics 或 audit logs 的导出。
+- **管理员**：**Admin** → **Settings** 可能提供 analytics 或 audit logs 的导出。
 
 如果没有看到导出选项，可能是你的 role 没有权限，或该功能未启用 — 请询问 admin。
 
@@ -56,4 +56,4 @@ Admins 在 **Admin** → **Settings** 中设置 **AI provider 和 model**。发�
 - **你的 admin**：关于访问、roles、invitations 或 tenant 特定行为，请联系 **tenant admin** 或 IT。
 - **Support**：如果组织有支持渠道，请用它处理 bug、故障或账户问题。
 
-> **提示：** 收藏 [Docs](/docs/zh-CN)，并使用 sidebar 跳转到你的角色（Member、Admin）获取分步指南。
+> **提示：** 收藏 [文档](/docs)，并使用 sidebar 跳转到你的角色（Member、Admin）获取分步指南。

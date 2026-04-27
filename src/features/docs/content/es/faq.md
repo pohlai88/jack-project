@@ -8,7 +8,7 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: faq.md
-  sourceHash: 9fbc30698e5d595996822e2151dfd6be72952e7b945c9d128f398812532a383f
+  sourceHash: 7cf639cf207aa59b7d7c2e562f6749a3cbaaf13d2193c386f42b2c09d0ca6ae2
   status: reviewed
 ---
 

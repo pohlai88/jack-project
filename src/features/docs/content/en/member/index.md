@@ -3,6 +3,7 @@ title: Member Guide Overview
 description: 'What members can do — dashboard, profile, AI assistant, and more.'
 section: member
 order: 1
+navTitleKey: docs.nav.overview
 ---
 
 # Member Guide Overview

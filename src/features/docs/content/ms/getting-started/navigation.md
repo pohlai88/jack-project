@@ -8,7 +8,7 @@ order: 3
 translation:
   sourceLocale: en
   sourcePath: getting-started/navigation.md
-  sourceHash: aa2f37d935b463d5e08de9088b0f69f78b395c9ad2cf21d573112c3f01b33464
+  sourceHash: 1c56d63a27bfe0ca1cfda7c74d8925da76a898a9a847d10da06548552b005474
   status: reviewed
 ---
 
@@ -31,14 +31,14 @@ Apa yang anda lihat bergantung pada **role dan permissions**. Empat view ialah:
 
 Anda hanya melihat view yang anda boleh akses. Contohnya, jika anda hanya Member, anda melihat **My View**. Jika anda Manager dan 1:1 Facilitator, anda melihat **My View**, **Manager View** dan **1:1 View**.
 
-### Menukar view
+### Menukar paparan
 
 - Gunakan **sidebar**: bahagian peringkat atas biasanya dipetakan kepada view ini, contohnya “My”, “Manager”, “1:1”, “Admin”.
 - Atau gunakan **view switcher** dalam header atau sidebar untuk memilih view aktif. Menu sidebar kemudian menunjukkan item untuk view itu.
 
 ---
 
-## Navigasi sidebar
+## Navigasi bar sisi
 
 **Sidebar** ialah cara utama bergerak antara bahagian.
 
@@ -67,7 +67,7 @@ Carian global sangat berguna selepas anda mengenali aplikasi; gunakan untuk memb
 
 ---
 
-## Theme toggle (Light / Dark)
+## Togol tema (cerah / gelap)
 
 Jika tenant membenarkan, anda boleh bertukar antara tema **light** dan **dark**.
 
@@ -78,7 +78,7 @@ Lokasi toggle boleh berbeza mengikut layout; semak top bar atau kawasan **Profil
 
 ---
 
-## Locale switcher
+## Penukar bahasa
 
 Afenda boleh digunakan dalam beberapa bahasa seperti **English**, **Español**, **Tiếng Việt**, **Bahasa Melayu** dan **简体中文**.
 
@@ -86,7 +86,7 @@ Afenda boleh digunakan dalam beberapa bahasa seperti **English**, **Español**, 
 - Pilih bahasa pilihan. UI dan dokumentasi yang tersedia akan bertukar kepada locale itu.
 - Tetapan ini biasanya diingati untuk lawatan seterusnya.
 
-> **Tip:** Dokumentasi mungkin tersedia dalam locale yang sama. Jika anda menukar bahasa, semak sama ada URL docs atau sidebar bertukar kepada bahasa sepadan, contohnya `/docs/ms/`.
+> **Petua:** Dokumentasi mungkin tersedia dalam bahasa yang dipilih. Apabila anda menukar bahasa, kandungan dokumentasi dan bar sisi sepatutnya dikemas kini, sementara URL kekal tanpa awalan bahasa, contohnya `/docs/getting-started`.
 
 ---
 
@@ -97,4 +97,4 @@ Afenda boleh digunakan dalam beberapa bahasa seperti **English**, **Español**, 
 3. **Gunakan Cmd+K atau Ctrl+K** untuk mencari dan melompat ke orang, docs atau tindakan.
 4. **Tetapkan tema dan bahasa** melalui header atau settings supaya aplikasi sesuai dengan keutamaan anda.
 
-Untuk langkah seterusnya, lengkapkan [Persediaan profil](/docs/ms/getting-started/profile-setup) supaya identiti dan keutamaan anda ditetapkan dengan betul di seluruh platform.
+Untuk langkah seterusnya, lengkapkan [Persediaan profil](/docs/getting-started/profile-setup) supaya identiti dan keutamaan anda ditetapkan dengan betul di seluruh platform.

@@ -8,7 +8,7 @@ order: 4
 translation:
   sourceLocale: en
   sourcePath: getting-started/profile-setup.md
-  sourceHash: b5a79d199f3588b454e833187493df504b47877ddba268c7f139b9a8c2636716
+  sourceHash: 09152b87246cee8ab3b22b47770b257e363100bff503bad9f8bcb5ba8e85e194
   status: reviewed
 ---
 
@@ -103,4 +103,4 @@ Chỉnh các trường này trong cùng biểu mẫu hồ sơ, thường dưới
 - **Timezone** và **location** được dùng cho lập lịch và hiển thị.
 - Hãy quay lại hồ sơ khi vai trò, trọng tâm hoặc tùy chọn thay đổi để nền tảng luôn chính xác và hữu ích cho bạn cùng đội nhóm.
 
-Để biết thêm về cách di chuyển trong ứng dụng, xem [Điều hướng & chế độ xem](/docs/vi/getting-started/navigation). Với tính năng dành riêng cho member như kỹ năng, OKRs và học tập, hãy dùng phần **Member** của tài liệu.
+Để biết thêm về cách di chuyển trong ứng dụng, xem [Điều hướng & chế độ xem](/docs/getting-started/navigation). Với tính năng dành riêng cho member như kỹ năng, OKRs và học tập, hãy dùng phần **Member** của tài liệu.

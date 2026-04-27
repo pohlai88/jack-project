@@ -8,7 +8,7 @@ order: 1
 translation:
   sourceLocale: en
   sourcePath: getting-started.md
-  sourceHash: aac295dad4e653c2f3548b60be73410241a788ad99e512cb60c0a8a6591ca10f
+  sourceHash: 3c0b66627c5bea0f3e7df5a05baa432cbb8e9773c0e3ccf03124ec7b898a40fe
   status: reviewed
 ---
 
@@ -62,8 +62,8 @@ Tu experiencia depende de tu **rol** (y permisos) en el tenant. Los roles son in
 
 Según tu rol, empezá por acá:
 
-- **¿Nuevo en la plataforma?** → [Primer inicio de sesión](/docs/es/getting-started/first-login) y [Navegación](/docs/es/getting-started/navigation).
-- **Configurar tu perfil** → [Configuración del perfil](/docs/es/getting-started/profile-setup).
+- **¿Nuevo en la plataforma?** → [Primer inicio de sesión](/docs/getting-started/first-login) y [Navegación](/docs/getting-started/navigation).
+- **Configurar tu perfil** → [Configuración del perfil](/docs/getting-started/profile-setup).
 - **Miembro** → Guía Miembro: dashboard, configuración del perfil y asistente de IA.
 - **Admin** → Guía Admin: miembros, roles, configuración e integraciones.
 

@@ -3,6 +3,7 @@ title: Dashboard
 description: 'Stats cards, quick actions, and activity summary for members.'
 section: member
 order: 2
+navTitleKey: docs.nav.dashboard
 ---
 
 # Dashboard

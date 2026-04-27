@@ -8,7 +8,7 @@ order: 2
 translation:
   sourceLocale: en
   sourcePath: admin/branding.md
-  sourceHash: 3050eecffc34bc19774d2477d2318be0966baa3fc37c526bffa9ca5818a753ed
+  sourceHash: 8aaf92670ab03db5a7a4acd107eb7d3e31dcaef30ee188c706bb3edc9fa45255
   status: reviewed
 ---
 

@@ -947,7 +947,8 @@
       "noResults": "Tidak ditemukan hasil",
       "navigate": "Navigasi",
       "open": "Buka",
-      "close": "Tutup"
+      "close": "Tutup",
+      "clear": "Hapus"
     },
     "pagination": {
       "previous": "Sebelumnya",
@@ -955,6 +956,17 @@
     },
     "toc": {
       "onThisPage": "Di halaman ini"
+    },
+    "a11y": {
+      "breadcrumb": "Breadcrumb",
+      "navigation": "Navigasi dokumentasi",
+      "pagination": "Paginasi dokumentasi",
+      "toggleSidebar": "Alihkan bilah sisi dokumentasi"
+    },
+    "preview": {
+      "title": "Pratinjau Langsung",
+      "invalidBlock": "Blok pratinjau tidak valid. Format yang diharapkan: <code>component: Name</code>",
+      "notRegistered": "Komponen <code>{component}</code> tidak terdaftar untuk pratinjau."
     }
   },
   "rawEdit": {

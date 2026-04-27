@@ -3,6 +3,7 @@ title: Admin Guide Overview
 description: 'Admin responsibilities, dashboard, and admin permissions.'
 section: admin
 order: 1
+navTitleKey: docs.nav.overview
 ---
 
 # Admin Guide Overview
