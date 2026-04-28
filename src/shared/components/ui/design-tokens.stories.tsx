@@ -6,7 +6,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * Visual reference for all design tokens in the Afenda design system.
  * These tokens are defined in `globals.css` (@theme block).
  *
- * See **architecture/docs/DESIGN_SYSTEM.md** for the full documentation of every token
+ * See architecture/doctrine/ for durable design-system authority.
  * and its rationale.
  *
  * ## Philosophy: "Intentional Craft"

@@ -78,7 +78,7 @@ export const LOCALE_COOKIE_NAME = 'NEXT_LOCALE';
         mention: 'Connected as @{username}',
       },
     }),
-    'docs/content/en/generated/docs-inventory.generated.json': toJson({
+    'content/i18n/docs/en/generated/docs-inventory.generated.json': toJson({
       generated: true,
       manifests: [{ id: 'docs' }],
     }),

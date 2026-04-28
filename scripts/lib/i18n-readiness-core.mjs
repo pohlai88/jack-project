@@ -364,7 +364,7 @@ function loadSnapshot(root) {
 }
 
 function getDocsEvidenceStatus(root) {
-  const inventoryPath = join(root, 'docs/content/en/generated/docs-inventory.generated.json');
+  const inventoryPath = join(root, 'content/i18n/docs/en/generated/docs-inventory.generated.json');
   if (!existsSync(inventoryPath)) {
     return false;
   }

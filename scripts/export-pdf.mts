@@ -5,7 +5,7 @@ import path from 'node:path';
 
 const host = process.env.PDF_HOST ?? 'http://localhost:3000';
 const outDir = process.env.PDF_OUT_DIR ?? path.join('.artifacts', 'docs-pdf');
-const docsDir = process.env.PDF_DOCS_DIR ?? path.join('docs', 'content');
+const docsDir = process.env.PDF_DOCS_DIR ?? path.join('content', 'i18n', 'docs');
 process.env.PUPPETEER_CACHE_DIR ??= path.resolve('.artifacts', 'puppeteer');
 
 function pdfNameForPage(page: { slugs: string[] }) {

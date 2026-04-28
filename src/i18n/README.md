@@ -102,9 +102,10 @@ Prefer readable **single-line** `activeLocales` / `inactiveLocales` tuples when 
 Documentation is generated from product truth and is not manually translated per locale.
 
 - Runtime i18n governs application UI messages only.
-- Fumadocs content lives under `docs/content`.
-- Generated authority lives under `docs/content/generated`.
-- Curated explanatory pages live under `docs/content/curated`.
+- Fumadocs content lives under `content/i18n/docs`.
+- Generated authority lives under `content/i18n/docs/generated`.
+- Curated explanatory pages live under `content/i18n/docs/curated`.
+- The docs runtime reads from `content/i18n/docs` via the source adapter.
 - Do not create locale-specific docs folders or restore the legacy docs feature.
 - Locale readiness checks use `docs_evidence_generated`, not per-locale docs coverage.
 

@@ -1,4 +1,5 @@
 import { createOpenAPI } from 'fumadocs-openapi/server';
+import { join } from 'node:path';
 
 /**
  * Server-only OpenAPI bundle for Fumadocs (`createOpenAPI`).
@@ -6,5 +7,5 @@ import { createOpenAPI } from 'fumadocs-openapi/server';
  * see https://www.fumadocs.dev/docs/integrations/openapi/server
  */
 export const openapi = createOpenAPI({
-  input: ['./openapi/afenda-public.json'],
+  input: [join(process.cwd(), 'src/docs/openapi/afenda-public.json')],
 });

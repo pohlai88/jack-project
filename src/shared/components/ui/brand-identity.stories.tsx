@@ -4,8 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * # Brand Identity
  *
  * Visual reference for Afenda's five signature elements.
- * See architecture/docs/DESIGN_SYSTEM.md Section 8: Visual Signature
- * and architecture/docs/BRAND_GUIDELINES.md for full brand documentation.
+ * See architecture/doctrine/ for durable design-system authority.
  *
  * ## The Five Signature Elements
  *

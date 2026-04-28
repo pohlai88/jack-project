@@ -10,7 +10,7 @@ import { docsReleaseStates } from '../src/docs/evidence/manifest';
 import type { DocsManifest } from '../src/docs/evidence/manifest';
 
 const ROOT = process.cwd();
-const ENGLISH_DOCS_ROOT = join(ROOT, 'docs/content/en');
+const ENGLISH_DOCS_ROOT = join(ROOT, 'content/i18n/docs/en');
 const GENERATED_ROOT = join(ENGLISH_DOCS_ROOT, 'generated');
 const SEARCH_SITE_ROOT = join(ROOT, '.artifacts/docs-search-site');
 const MANIFEST_PATTERNS = ['src/docs/docs.manifest.ts', 'src/features/*/docs.manifest.ts'];
@@ -772,9 +772,9 @@ async function buildCheckedGraph() {
 async function checkLLMExports(): Promise<string[]> {
   const errors: string[] = [];
   const requiredRoutes = [
-    'src/app/llms.txt/route.ts',
-    'src/app/llms-full.txt/route.ts',
-    'src/app/llms.mdx/[locale]/docs/[[...slug]]/route.ts',
+    'src/app/(docs-meta)/llms.txt/route.ts',
+    'src/app/(docs-meta)/llms-full.txt/route.ts',
+    'src/app/(docs-meta)/llms.mdx/[locale]/docs/[[...slug]]/route.ts',
     'src/docs/runtime/get-llm-text.ts',
   ];
 
@@ -817,9 +817,9 @@ async function checkLLMExports(): Promise<string[]> {
     errors.push('getLLMText must read processed Markdown from Fumadocs.');
   }
 
-  const representative = join(ROOT, 'docs/content/en/generated/features/admin.mdx');
+  const representative = join(ROOT, 'content/i18n/docs/en/generated/features/admin.mdx');
   if (!existsSync(representative)) {
-    errors.push('docs/content/en/generated/features/admin.mdx is missing; run pnpm docs:generate.');
+    errors.push('content/i18n/docs/en/generated/features/admin.mdx is missing; run pnpm docs:generate.');
   } else {
     const content = readFileSync(representative, 'utf8');
     if (!content.includes('title: "Administration"') || !content.includes('GENERATED FILE - DO NOT EDIT')) {

@@ -9,7 +9,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * Interactive cards transition from shadow-sm to shadow-md on hover.
  * This replaces the previous pattern of translateY + gradient glow.
  *
- * See architecture/docs/DESIGN_SYSTEM.md Section 6: Elevation and Depth
+ * See architecture/doctrine/ for durable design-system authority.
  */
 
 const SHADOW_SCALE = [

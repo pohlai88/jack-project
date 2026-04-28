@@ -54,6 +54,26 @@ Stream A is operator-owned production execution. In-repo scripts support environ
 4. Rotate credentials after cutover (database, `AUTH_SECRET`, tokens) per your security process.
 5. Deploy when pre-deploy verification passes: `pnpm deploy:vercel:production` (see [AGENTS.md](../../../AGENTS.md)).
 
+## Phase 1 operator status (Card 1 — evidence ledger)
+
+**Convention (Option A):** [OPEN_PRODUCTION_CONTROL_MATRIX.md](OPEN_PRODUCTION_CONTROL_MATRIX.md) stays the stable routing surface; **this section** records what was verified and when. It does not authorize Lane C DB work, locale changes, or Neon mutation.
+
+**Last updated:** 2026-04-28
+
+| Check | Status | Notes |
+| ----- | ------ | ----- |
+| Vercel Production env keys vs `env.config` + push plan | Pass (CLI) | `pnpm vercel:env:report`: 14 keys expected after merge, 14 present on Vercel, none missing or extra; required keys complete in local `.env.production` preview. |
+| DNS + registrar (`www`, `*.nexuscanon.com`) | Pending operator | Not verifiable from the repo; confirm at registrar and in Vercel → Domains. |
+| Vercel project domains (prefer `www` + wildcard; no bare apex on project) | Partial | Apex removal previously succeeded via operator/API (`vercel:domain:remove-apex`); re-verify in Vercel if domains drift. |
+| Auth0 / IdP vs `AUTH_URL` | Deferred | `AUTH0_*` optional keys unset locally; configure Auth0 Application URLs for `https://www.nexuscanon.com` when IdP is enabled. |
+| Secret rotation post-cutover | Pending operator | Per org security process after go-live. |
+| Production deployment + health | Pending operator | Confirm current Production deployment and build status in Vercel. |
+| Post-deploy smoke | Pending operator | Run the [Post-deploy verification](#post-deploy-verification-operator) checklist when live; add dates and pass/fail per line. |
+
+**Commands run (this evidence pass):** `pnpm vercel:env:report` (exit 0).
+
+**Blockers:** None for env key parity; DNS, live URL checks, and IdP remain operator-confirmed.
+
 ## Stream B — Repository (docs evidence pipeline)
 
 **Debt:** Every discovered app surface must appear in some feature `docs.manifest.ts` `routes` array (see `validateModel` in `scripts/docs-evidence-pipeline.ts`).
@@ -76,7 +96,7 @@ Stream A is operator-owned production execution. In-repo scripts support environ
 - `pnpm type-check`
 - `pnpm test`
 - `pnpm build`
-- Review generated `docs/content/en/generated/**` diff for intent
+- Review generated `content/i18n/docs/en/generated/**` diff for intent
 - Confirm `src/proxy.ts` unchanged for this slice
 
 ## Post-deploy verification (operator)

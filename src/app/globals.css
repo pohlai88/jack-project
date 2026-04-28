@@ -1,28 +1,18 @@
 @import 'tailwindcss';
-@import 'fumadocs-ui/css/neutral.css';
-@import 'fumadocs-ui/css/preset.css';
-@import 'fumadocs-openapi/css/preset.css';
-@import '@fumadocs/story/css/preset.css';
-/* Keep @tailwindcss/typography off the default `prose` class — Fumadocs preset ships its own prose fork for MDX. */
+/*
+ * Typography policy:
+ * keep @tailwindcss/typography on a custom class (`wysiwyg`)
+ * so Fumadocs docs can continue owning the default `prose` styling.
+ */
 @plugin "@tailwindcss/typography" {
   classname: wysiwyg;
 }
 @plugin "tailwindcss-animate";
 
-@media print {
-  #nd-docs-layout {
-    --fd-sidebar-width: 0px !important;
-  }
-
-  #nd-sidebar {
-    display: none;
-  }
-}
-
 /* =====================================================================
    Afenda Design System
    Philosophy: "Intentional Craft"
-   See architecture/docs/DESIGN_SYSTEM.md for full documentation of every decision.
+   See architecture/doctrine/ for durable design-system authority.
    ===================================================================== */
 
 @theme {
@@ -183,6 +173,8 @@
    See Section 3 of DESIGN_SYSTEM.md
    ===================================================================== */
 :root {
+  color-scheme: light;
+
   /* --- Neutral Surfaces --- */
   --background: 240 8% 96%;
   --foreground: 240 10% 16%;
@@ -283,6 +275,8 @@
    Depth comes from borders and shadows, not filled backgrounds.
    ===================================================================== */
 .dark {
+  color-scheme: dark;
+
   /* --- Neutral Surfaces --- */
   --background: 240 14% 10%;
   --foreground: 240 8% 93%;
@@ -389,21 +383,44 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   font-feature-settings:
     'liga' 1,
     'calt' 1;
 }
 
-/* Heading typography — tighter tracking for editorial premium feel */
-h1,
-h2,
-h3 {
+/*
+ * App shell boundary:
+ * use `.afenda-app` for app-only editorial polish so docs routes can keep
+ * Fumadocs as the sole authority for prose rhythm and heading treatment.
+ */
+.afenda-app {
+  min-height: 100dvh;
+}
+
+.afenda-app ::selection {
+  background: hsl(var(--primary) / 0.18);
+  color: hsl(var(--foreground));
+}
+
+.afenda-app :focus-visible {
+  outline: 2px solid hsl(var(--ring) / 0.55);
+  outline-offset: 2px;
+}
+
+/*
+ * App-only editorial typography.
+ * Keep these scoped so docs routes can let Fumadocs own heading rhythm.
+ */
+.afenda-app h1,
+.afenda-app h2,
+.afenda-app h3 {
   letter-spacing: -0.025em;
   font-weight: 600;
 }
-h4,
-h5,
-h6 {
+.afenda-app h4,
+.afenda-app h5,
+.afenda-app h6 {
   letter-spacing: -0.01em;
   font-weight: 600;
 }

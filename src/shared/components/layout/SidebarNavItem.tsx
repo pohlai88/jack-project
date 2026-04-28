@@ -42,7 +42,7 @@ export type NavIconTint =
  *   knowledge → sky (distinct from interest amber) → sky-500
  *   assistant → violet → violet-500
  *
- * See architecture/docs/DESIGN_SYSTEM.md §4 "Domain Colors"
+ * See architecture/doctrine/ for durable design-system authority.
  */
 const iconTintClasses: Record<NavIconTint, string> = {
   default: '',

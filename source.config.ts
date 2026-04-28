@@ -15,7 +15,7 @@ const docsFrontmatterSchema = frontmatterSchema.extend({
 });
 
 export const docs = defineDocs({
-  dir: 'docs/content',
+  dir: 'content/i18n/docs',
   docs: {
     schema: docsFrontmatterSchema,
     postprocess: {

@@ -1,5 +1,6 @@
 {
   "files.associations": {
     "env.config": "dotenv"
-  }
+  },
+  "css.lint.unknownAtRules": "ignore"
 }

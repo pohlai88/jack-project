@@ -969,6 +969,7 @@
       "copied": "Markdown URL copied to clipboard",
       "copiedButton": "Copied",
       "copyFailed": "Unable to copy to clipboard",
+      "assistantHintTitle": "Ask the assistant inside the app",
       "assistantHint": "The Afenda AI assistant runs inside a tenant workspace (sidebar → Assistant) for signed-in users, with access to your organization's context when enabled.",
       "assistantHintAria": "AI assistant availability",
       "assistantCta": "Open app home",

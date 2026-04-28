@@ -1,55 +1,58 @@
 import { defineI18nOpenAPI } from 'fumadocs-openapi/i18n';
 import { defineI18nUI } from 'fumadocs-ui/i18n';
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 
+import type { BaseLayoutProps } from '@/docs/ui/layouts/shared';
 import { localeNames } from '@/i18n/config';
+
 import { i18n } from './i18n';
 
-const baseI18nUI = defineI18nUI(i18n, {
-  en: {
-    displayName: localeNames.en,
-  },
-  'zh-CN': {
-    displayName: localeNames['zh-CN'],
-  },
-  vi: {
-    displayName: localeNames.vi,
-  },
-  ms: {
-    displayName: localeNames.ms,
-  },
-  es: {
-    displayName: localeNames.es,
-  },
-  id: {
-    displayName: localeNames.id,
-  },
-  th: {
-    displayName: localeNames.th,
-  },
-});
+const docsLocales = ['en', 'zh-CN', 'vi', 'ms', 'es', 'id', 'th'] as const;
+
+type DocsLocale = (typeof docsLocales)[number];
+
+const localeDisplayNames = Object.fromEntries(
+  docsLocales.map((locale) => [
+    locale,
+    {
+      displayName: localeNames[locale],
+    },
+  ]),
+) as Record<DocsLocale, { displayName: string }>;
+
+const openApiLocaleOverrides = Object.fromEntries(
+  docsLocales.map((locale) => [locale, {}]),
+) as Record<DocsLocale, Record<string, never>>;
+
+const docsNavTitles: Record<DocsLocale, string> = {
+  en: 'Afenda Docs',
+  'zh-CN': 'Afenda 文档',
+  vi: 'Tài liệu Afenda',
+  ms: 'Dokumentasi Afenda',
+  es: 'Documentación de Afenda',
+  id: 'Dokumentasi Afenda',
+  th: 'เอกสาร Afenda',
+};
+
+const baseI18nUI = defineI18nUI(i18n, localeDisplayNames);
 
 /**
- * Fumadocs UI shell + OpenAPI playground labels (`fumadocs-openapi` merges into the same provider config).
- * Locales omit overrides to use package defaults; add keys per locale when translating API UI.
+ * Fumadocs UI shell + OpenAPI playground labels.
  *
- * @see https://www.fumadocs.dev/docs/ui (default theme) — OpenAPI UI strings:
- *      https://www.fumadocs.dev/docs/integrations/openapi/api-page
+ * Locale overrides intentionally stay empty until API UI labels are translated.
  */
-export const i18nUI = defineI18nOpenAPI(baseI18nUI, {
-  en: {},
-  'zh-CN': {},
-  vi: {},
-  ms: {},
-  es: {},
-  id: {},
-  th: {},
-});
+export const i18nUI = defineI18nOpenAPI(
+  baseI18nUI,
+  openApiLocaleOverrides,
+);
 
 export function baseOptions(locale: string): BaseLayoutProps {
+  const docsLocale = docsLocales.includes(locale as DocsLocale)
+    ? (locale as DocsLocale)
+    : 'en';
+
   return {
     nav: {
-      title: locale === 'zh-CN' ? 'Afenda 文档' : 'Afenda Docs',
+      title: docsNavTitles[docsLocale],
     },
   };
 }

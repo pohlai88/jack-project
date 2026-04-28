@@ -8,65 +8,100 @@ import { logger } from '@/shared/lib/logger';
 import { assertDocsFeedbackOrigin, getDocsFeedbackRequestContext } from './docs-feedback-context';
 import { assertDocsFeedbackRateLimit } from './docs-feedback-rate-limit';
 import { recordDocsPageFeedbackEvent } from './docs-feedback-service';
-import { DocsFeedbackPublicError, getDocsFeedbackErrorMessage } from '../shared/docs-feedback.errors';
+import {
+  DocsFeedbackPublicError,
+  getDocsFeedbackErrorMessage,
+} from '../shared/docs-feedback.errors';
 import { parseSubmitDocsPageFeedbackInput } from '../shared/docs-feedback.schema';
-import type { DocsPageFeedbackActionResult } from '../shared/docs-feedback.types';
+import type {
+  DocsFeedbackErrorCode,
+  DocsPageFeedbackActionResult,
+  SubmitDocsPageFeedbackInput,
+} from '../shared/docs-feedback.types';
+
+const DOCS_FEEDBACK_SUCCESS_MESSAGE = 'Thanks for the feedback.';
+
+function rejectDocsFeedback(
+  code: DocsFeedbackErrorCode,
+  message = getDocsFeedbackErrorMessage(code),
+): DocsPageFeedbackActionResult {
+  return {
+    ok: false,
+    code,
+    message,
+  };
+}
 
 function mapDocsFeedbackActionError(error: unknown): DocsPageFeedbackActionResult {
   if (error instanceof z.ZodError) {
-    logger.warn({ issues: error.issues }, 'Rejected invalid docs page feedback');
-    return {
-      ok: false,
-      code: 'AFD-DOCS-FEEDBACK-VALIDATION',
-      message: getDocsFeedbackErrorMessage('AFD-DOCS-FEEDBACK-VALIDATION'),
-    };
+    logger.warn(
+      {
+        issueCount: error.issues.length,
+        issues: error.issues.map((issue) => ({
+          path: issue.path.join('.'),
+          code: issue.code,
+          message: issue.message,
+        })),
+      },
+      'Rejected invalid docs page feedback',
+    );
+
+    return rejectDocsFeedback('AFD-DOCS-FEEDBACK-VALIDATION');
   }
 
   if (error instanceof DocsFeedbackPublicError) {
     logger.warn({ code: error.code }, 'Rejected docs page feedback');
-    return {
-      ok: false,
-      code: error.code,
-      message: error.safeMessage,
-    };
+
+    return rejectDocsFeedback(error.code, error.safeMessage);
   }
 
   logger.error({ error }, 'Failed to record docs page feedback');
+
+  return rejectDocsFeedback('AFD-DOCS-FEEDBACK-STORAGE');
+}
+
+async function recordValidatedDocsPageFeedback(
+  payload: SubmitDocsPageFeedbackInput,
+): Promise<{ authenticated: boolean }> {
+  const headersList = await headers();
+
+  assertDocsFeedbackOrigin(headersList);
+
+  const context = await getDocsFeedbackRequestContext(headersList);
+
+  await assertDocsFeedbackRateLimit(context.rateLimitKeyHash);
+
+  await recordDocsPageFeedbackEvent({
+    ...payload,
+    userId: context.userId,
+    rateLimitKeyHash: context.rateLimitKeyHash,
+    userAgent: context.userAgent,
+  });
+
   return {
-    ok: false,
-    code: 'AFD-DOCS-FEEDBACK-STORAGE',
-    message: getDocsFeedbackErrorMessage('AFD-DOCS-FEEDBACK-STORAGE'),
+    authenticated: Boolean(context.userId),
   };
 }
 
-export async function submitDocsPageFeedbackAction(input: unknown): Promise<DocsPageFeedbackActionResult> {
+export async function submitDocsPageFeedbackAction(
+  input: unknown,
+): Promise<DocsPageFeedbackActionResult> {
   try {
-    const headersList = await headers();
-
-    assertDocsFeedbackOrigin(headersList);
     const payload = parseSubmitDocsPageFeedbackInput(input);
-    const context = await getDocsFeedbackRequestContext(headersList);
-
-    await assertDocsFeedbackRateLimit(context.rateLimitKeyHash);
-    await recordDocsPageFeedbackEvent({
-      ...payload,
-      userId: context.userId,
-      rateLimitKeyHash: context.rateLimitKeyHash,
-      userAgent: context.userAgent,
-    });
+    const result = await recordValidatedDocsPageFeedback(payload);
 
     logger.info(
       {
         pageUrl: payload.pageUrl,
         opinion: payload.opinion,
-        authenticated: Boolean(context.userId),
+        authenticated: result.authenticated,
       },
       'Recorded docs page feedback',
     );
 
     return {
       ok: true,
-      message: 'Thanks for the feedback.',
+      message: DOCS_FEEDBACK_SUCCESS_MESSAGE,
     };
   } catch (error) {
     return mapDocsFeedbackActionError(error);

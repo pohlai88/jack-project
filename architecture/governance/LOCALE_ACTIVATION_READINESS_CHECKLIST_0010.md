@@ -32,7 +32,7 @@ Before adding any locale to **`activeLocales`** in `src/i18n/locale-registry.ts`
 - `src/i18n/catalogs/generated/<locale>.json` exists, or a protected fallback catalog is explicitly approved
 - `src/i18n/messages/<locale>.json` is produced by `pnpm i18n:compile`
 - `src/i18n/catalogs/fallback/MANIFEST.json` contains the protected fallback hash when fallback is used
-- generated docs evidence exists under `docs/content/generated`
+- generated docs evidence exists under `content/i18n/docs/generated`
 - language name exists in `localeNames`
 
 ## Full Validation Gate

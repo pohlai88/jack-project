@@ -4,7 +4,7 @@
  * Context7 /fuma-nama/fumadocs recommends importing `source` in CLI only after registering
  * `fumadocs-mdx/node/loader` in ESM, or running under Bun — not via tsx (esbuild breaks `.source/server.ts`).
  *
- * This script avoids `fumadocs-mdx:collections/server` and builds routes from `docs/content/**`
+ * This script avoids `fumadocs-mdx:collections/server` and builds routes from `content/i18n/docs/**`
  * so `pnpm docs:links` works with `tsx` only.
  *
  * @see https://www.fumadocs.dev/docs/integrations/validate-links
@@ -19,11 +19,11 @@ import { pathToFileURL } from 'node:url';
 import { defaultLocale, locales } from '@/i18n/config';
 
 const ROOT = process.cwd();
-const DOCS_CONTENT_PREFIX = join('docs', 'content');
+const DOCS_CONTENT_PREFIX = join('content', 'i18n', 'docs');
 
 const localeSet = new Set(locales as readonly string[]);
 
-/** Path segments under `docs/content/<locale>/…` → slug for `/[locale]/docs/[[...slug]]`. */
+/** Path segments under `content/i18n/docs/<locale>/…` → slug for `/[locale]/docs/[[...slug]]`. */
 function relativePathToSlug(relativeUnderLocale: string): string[] {
   const normalized = relativeUnderLocale.replace(/\\/g, '/');
   if (normalized === 'index.mdx') return [];
@@ -55,12 +55,12 @@ export async function runDocsLinkValidation(): Promise<void> {
 
   for (const rel of relFiles) {
     const parts = rel.replace(/\\/g, '/').split('/');
-    if (parts.length < 4 || parts[0] !== 'docs' || parts[1] !== 'content') continue;
+    if (parts.length < 5 || parts[0] !== 'content' || parts[1] !== 'i18n' || parts[2] !== 'docs') continue;
 
-    const locale = parts[2];
+    const locale = parts[3];
     if (!localeSet.has(locale)) continue;
 
-    const underLocale = parts.slice(3).join('/');
+    const underLocale = parts.slice(4).join('/');
     const slug = relativePathToSlug(underLocale);
     const abs = join(ROOT, rel);
     const url = toPublicPath(locale, slug);
@@ -77,7 +77,7 @@ export async function runDocsLinkValidation(): Promise<void> {
     cwd: ROOT,
     preset: 'next',
     populate: {
-      '[locale]/(docs)/docs/[[...slug]]': populateEntries,
+      '[locale]/docs/[[...slug]]': populateEntries,
     },
   });
 

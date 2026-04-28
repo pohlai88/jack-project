@@ -13,8 +13,8 @@ This ADR described the former handcrafted Markdown docs system. That system has 
 Afenda documentation is now generated from governed product truth:
 
 - product manifests and registries are authoritative
-- generated MDX/JSON under `docs/content/generated` is the docs evidence surface
-- curated MDX under `docs/content/curated` may explain, but must not define product truth
+- generated MDX/JSON under `content/i18n/docs/generated` is the docs evidence surface
+- curated MDX under `content/i18n/docs/curated` may explain, but must not define product truth
 - Fumadocs renders `/docs`
 - Pagefind and Fumadocs search index generated evidence
 - i18n governs runtime UI messages only; docs are not manually translated per locale

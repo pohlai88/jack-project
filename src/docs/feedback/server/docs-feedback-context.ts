@@ -22,14 +22,35 @@ interface BuildRateLimitKeyOptions {
   nodeEnv?: string;
 }
 
+const MAX_USER_AGENT_LENGTH = 255;
+const CONTEXT_ERROR_CODE = 'AFD-DOCS-FEEDBACK-CONTEXT';
+const ORIGIN_ERROR_CODE = 'AFD-DOCS-FEEDBACK-ORIGIN';
+
+function throwOriginError(): never {
+  throw new DocsFeedbackPublicError(ORIGIN_ERROR_CODE);
+}
+
+function throwContextError(): never {
+  throw new DocsFeedbackPublicError(CONTEXT_ERROR_CODE);
+}
+
 function firstHeaderValue(value: string | null): string | null {
   const first = value?.split(',')[0]?.trim();
-  return first && first.length > 0 ? first : null;
+  return first ? first : null;
 }
 
 function normalizeHost(value: string | null): string | null {
   const host = firstHeaderValue(value)?.toLowerCase();
-  return host && host.length > 0 ? host : null;
+  return host || null;
+}
+
+function normalizeForwardedHost(value: string | null): string | null {
+  const first = firstHeaderValue(value);
+  if (!first) return null;
+
+  // RFC 7239 style: Forwarded: for=...;host=example.com;proto=https
+  const hostMatch = first.match(/(?:^|;)\s*host="?([^";]+)"?/i);
+  return (hostMatch?.[1] ?? first).toLowerCase();
 }
 
 function getOriginHost(origin: string): string | null {
@@ -40,80 +61,78 @@ function getOriginHost(origin: string): string | null {
   }
 }
 
-export function assertDocsFeedbackOrigin(headersList: DocsFeedbackHeaderReader): void {
-  const origin = headersList.get('origin');
-  if (!origin) {
-    throw new DocsFeedbackPublicError('AFD-DOCS-FEEDBACK-ORIGIN');
-  }
-
-  const originHost = getOriginHost(origin);
-  const allowedHosts = [
+function getAllowedRequestHosts(headersList: DocsFeedbackHeaderReader): string[] {
+  return [
+    normalizeForwardedHost(headersList.get('forwarded')),
     normalizeHost(headersList.get('x-forwarded-host')),
     normalizeHost(headersList.get('host')),
   ].filter((host): host is string => Boolean(host));
+}
+
+export function assertDocsFeedbackOrigin(headersList: DocsFeedbackHeaderReader): void {
+  const origin = headersList.get('origin');
+  if (!origin) throwOriginError();
+
+  const originHost = getOriginHost(origin);
+  const allowedHosts = getAllowedRequestHosts(headersList);
 
   if (!originHost || allowedHosts.length === 0 || !allowedHosts.includes(originHost)) {
-    throw new DocsFeedbackPublicError('AFD-DOCS-FEEDBACK-ORIGIN');
+    throwOriginError();
   }
 }
 
 export function getClientIpAddress(headersList: DocsFeedbackHeaderReader): string | null {
   return (
-    firstHeaderValue(headersList.get('x-forwarded-for')) ??
+    firstHeaderValue(headersList.get('cf-connecting-ip')) ??
     firstHeaderValue(headersList.get('x-real-ip')) ??
-    firstHeaderValue(headersList.get('cf-connecting-ip'))
+    firstHeaderValue(headersList.get('x-forwarded-for'))
   );
 }
 
 export function getUserAgentFamily(userAgent: string | null | undefined): string | null {
-  const normalized = userAgent?.toLowerCase() ?? '';
+  const normalized = userAgent?.toLowerCase().trim();
   if (!normalized) return null;
 
   if (/bot|crawler|spider|curl|wget|httpie|postman/.test(normalized)) return 'automation';
   if (/edg\//.test(normalized)) return 'edge';
   if (/firefox|fxios/.test(normalized)) return 'firefox';
-  if (/chrome|crios|chromium/.test(normalized) && !/opr\//.test(normalized)) return 'chrome';
-  if (/safari/.test(normalized) && !/chrome|crios|chromium/.test(normalized)) return 'safari';
+  if (/opr\//.test(normalized)) return 'opera';
+  if (/chrome|crios|chromium/.test(normalized)) return 'chrome';
+  if (/safari/.test(normalized)) return 'safari';
 
   return 'other';
 }
 
 export function normalizeUserAgent(userAgent: string | null): string | null {
   const trimmed = userAgent?.trim();
-  return trimmed && trimmed.length > 0 ? trimmed.slice(0, 255) : null;
+  return trimmed ? trimmed.slice(0, MAX_USER_AGENT_LENGTH) : null;
 }
 
 export function hashDocsFeedbackRateLimitKey(value: string, secret: string): string {
   return createHmac('sha256', secret).update(value).digest('hex');
 }
 
-export function buildDocsFeedbackRateLimitKeyHash(options: BuildRateLimitKeyOptions): string {
-  const secret = options.secret ?? process.env.AUTH_SECRET;
-  if (!secret) {
-    throw new DocsFeedbackPublicError('AFD-DOCS-FEEDBACK-CONTEXT');
-  }
-
+function getRateLimitIdentity(options: BuildRateLimitKeyOptions): string {
   const userId = options.userId?.trim();
-  if (userId) {
-    return hashDocsFeedbackRateLimitKey(`user:${userId}`, secret);
-  }
+  if (userId) return `user:${userId}`;
 
   const ipAddress = options.ipAddress?.trim();
   const userAgentFamily = getUserAgentFamily(options.userAgent);
 
-  if (ipAddress && userAgentFamily) {
-    return hashDocsFeedbackRateLimitKey(`anon:${ipAddress}:${userAgentFamily}`, secret);
-  }
+  if (ipAddress && userAgentFamily) return `anon:${ipAddress}:${userAgentFamily}`;
+  if (ipAddress) return `anon:${ipAddress}`;
 
-  if (ipAddress) {
-    return hashDocsFeedbackRateLimitKey(`anon:${ipAddress}`, secret);
-  }
+  const nodeEnv = options.nodeEnv ?? process.env.NODE_ENV;
+  if (nodeEnv === 'production') throwContextError();
 
-  if ((options.nodeEnv ?? process.env.NODE_ENV) === 'production') {
-    throw new DocsFeedbackPublicError('AFD-DOCS-FEEDBACK-CONTEXT');
-  }
+  return 'anon:local-dev';
+}
 
-  return hashDocsFeedbackRateLimitKey('anon:local-dev', secret);
+export function buildDocsFeedbackRateLimitKeyHash(options: BuildRateLimitKeyOptions): string {
+  const secret = options.secret ?? process.env.AUTH_SECRET;
+  if (!secret) throwContextError();
+
+  return hashDocsFeedbackRateLimitKey(getRateLimitIdentity(options), secret);
 }
 
 async function getOptionalUserId(): Promise<string | null> {
@@ -131,13 +150,15 @@ export async function getDocsFeedbackRequestContext(
   const userAgent = normalizeUserAgent(headersList.get('user-agent'));
   const userId = await getOptionalUserId();
 
+  const rateLimitKeyHash = buildDocsFeedbackRateLimitKeyHash({
+    userId,
+    ipAddress: getClientIpAddress(headersList),
+    userAgent,
+  });
+
   return {
     userId,
     userAgent,
-    rateLimitKeyHash: buildDocsFeedbackRateLimitKeyHash({
-      userId,
-      ipAddress: getClientIpAddress(headersList),
-      userAgent,
-    }),
+    rateLimitKeyHash,
   };
 }

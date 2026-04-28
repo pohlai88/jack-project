@@ -11,13 +11,36 @@ export interface RecordDocsPageFeedbackEventInput extends SubmitDocsPageFeedback
   userAgent: string | null;
 }
 
-export async function countRecentDocsPageFeedbackEvents(rateLimitKeyHash: string, since: Date): Promise<number> {
+function normalizeNullableText(value: string | null | undefined): string | null {
+  const trimmed = value?.trim();
+  return trimmed ? trimmed : null;
+}
+
+function normalizeRequiredText(value: string, field: string): string {
+  const trimmed = value.trim();
+
+  if (!trimmed) {
+    throw new Error(`[DocsFeedbackService] "${field}" must not be empty.`);
+  }
+
+  return trimmed;
+}
+
+export async function countRecentDocsPageFeedbackEvents(
+  rateLimitKeyHash: string,
+  since: Date,
+): Promise<number> {
+  const normalizedRateLimitKeyHash = normalizeRequiredText(
+    rateLimitKeyHash,
+    'rateLimitKeyHash',
+  );
+
   const [row] = await db
     .select({ total: count() })
     .from(schema.docsPageFeedbackEvents)
     .where(
       and(
-        eq(schema.docsPageFeedbackEvents.rateLimitKeyHash, rateLimitKeyHash),
+        eq(schema.docsPageFeedbackEvents.rateLimitKeyHash, normalizedRateLimitKeyHash),
         gte(schema.docsPageFeedbackEvents.createdAt, since),
       ),
     );
@@ -25,14 +48,16 @@ export async function countRecentDocsPageFeedbackEvents(rateLimitKeyHash: string
   return Number(row?.total ?? 0);
 }
 
-export async function recordDocsPageFeedbackEvent(input: RecordDocsPageFeedbackEventInput): Promise<void> {
+export async function recordDocsPageFeedbackEvent(
+  input: RecordDocsPageFeedbackEventInput,
+): Promise<void> {
   await db.insert(schema.docsPageFeedbackEvents).values({
-    pageUrl: input.pageUrl,
-    pageTitle: input.pageTitle,
+    pageUrl: normalizeRequiredText(input.pageUrl, 'pageUrl'),
+    pageTitle: normalizeRequiredText(input.pageTitle, 'pageTitle'),
     opinion: input.opinion,
-    message: input.message ?? null,
-    userId: input.userId,
-    rateLimitKeyHash: input.rateLimitKeyHash,
-    userAgent: input.userAgent,
+    message: normalizeNullableText(input.message),
+    userId: normalizeNullableText(input.userId),
+    rateLimitKeyHash: normalizeRequiredText(input.rateLimitKeyHash, 'rateLimitKeyHash'),
+    userAgent: normalizeNullableText(input.userAgent),
   });
 }

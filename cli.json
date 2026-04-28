@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/@fumadocs/cli/dist/schema/src.json",
+  "baseDir": "src",
+  "aliases": {
+    "uiDir": "./shared/components/ui",
+    "componentsDir": "./docs/components",
+    "blockDir": "./docs/components/blocks",
+    "cssDir": "./app/[locale]/docs",
+    "layoutDir": "./docs/ui/layouts",
+    "libDir": "./shared/lib"
+  },
+  "uiLibrary": "radix-ui",
+  "commands": {
+    "format": "prettier --write"
+  }
+}

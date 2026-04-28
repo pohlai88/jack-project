@@ -7,6 +7,7 @@ import { i18nUI } from '@/docs/runtime/layout.shared';
 import { routing } from '@/i18n/routing';
 import { AuthProvider, ThemeProvider } from '@/shared/components/providers';
 import { Toaster } from '@/shared/components/ui/sonner';
+import { AppShellBoundary } from './app-shell-boundary';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -34,7 +35,7 @@ export default async function LocaleLayout({
         {/* Fumadocs RootProvider wraps next-themes by default; disable so only the outer ThemeProvider runs (avoids duplicate script injection + React 19 warning). */}
         <RootProvider theme={{ enabled: false }} i18n={i18nUI.provider(locale)}>
           <AuthProvider>
-            {children}
+            <AppShellBoundary>{children}</AppShellBoundary>
             <Toaster richColors closeButton position="bottom-right" />
           </AuthProvider>
         </RootProvider>

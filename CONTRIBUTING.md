@@ -189,7 +189,7 @@ pnpm test:coverage # Coverage report
 - [ ] Accessible UI changes
 - [ ] Docs updated if needed
 - [ ] Feature flag added if feature is incomplete
-- [ ] After large moves (e.g. App Router segments, `docs/content` layout), run `git add -u`, stage new paths (`git add <paths>` or `git add -A` when appropriate), and confirm `git status` is clean so the index matches disk before push
+- [ ] After large moves (e.g. App Router segments, `content/i18n/docs` layout), run `git add -u`, stage new paths (`git add <paths>` or `git add -A` when appropriate), and confirm `git status` is clean so the index matches disk before push
 
 ## Scripts Reference
 

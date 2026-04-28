@@ -33,7 +33,7 @@ import { useSettings } from './SettingsProvider';
  *
  * Includes a live preview panel showing the effect of current settings.
  *
- * See architecture/docs/DESIGN_SYSTEM.md Section 10: Tenant Branding
+ * See architecture/doctrine/ for durable design-system authority.
  */
 
 // --- Theme Presets ---

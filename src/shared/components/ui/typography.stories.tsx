@@ -9,7 +9,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * **Scale**: Major Third ratio (1.25)
  * **Heading style**: Semibold/bold with tighter letter-spacing
  *
- * See architecture/docs/DESIGN_SYSTEM.md Section 4: Typography
+ * See architecture/doctrine/ for durable design-system authority.
  */
 
 function TypeScaleSpecimen() {
