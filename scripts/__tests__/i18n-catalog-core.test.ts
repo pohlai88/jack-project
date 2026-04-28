@@ -34,10 +34,10 @@ export const activeLocales = [${configLocales}] as const;
 export const inactiveLocales = ['id', 'th'] as const;
 export const localeAliases = { 'ms-MY': 'ms', 'id-ID': 'id' } as const;
 export const localeRegistry = {
-  en: { name: 'English', status: 'active', crowdinLocale: 'en', fallbackChain: ['en'], protectedFallback: false },
-  es: { name: 'Español', status: 'active', crowdinLocale: 'es', fallbackChain: ['es', 'en'], protectedFallback: true },
-  id: { name: 'Bahasa Indonesia', status: 'inactive', crowdinLocale: 'id', fallbackChain: ['id', 'en'], protectedFallback: true },
-  th: { name: 'ไทย', status: 'inactive', crowdinLocale: 'th', fallbackChain: ['th', 'en'], protectedFallback: true },
+  en: { name: 'English', status: 'active', catalogLocale: 'en', fallbackChain: ['en'], protectedFallback: false },
+  es: { name: 'Español', status: 'active', catalogLocale: 'es', fallbackChain: ['es', 'en'], protectedFallback: true },
+  id: { name: 'Bahasa Indonesia', status: 'inactive', catalogLocale: 'id', fallbackChain: ['id', 'en'], protectedFallback: true },
+  th: { name: 'ไทย', status: 'inactive', catalogLocale: 'th', fallbackChain: ['th', 'en'], protectedFallback: true },
 } as const;
 `;
 }
@@ -86,7 +86,6 @@ function createFixture() {
 }
 
 afterEach(() => {
-  delete process.env.I18N_PLATFORM_SYNC;
   delete process.env.I18N_ALLOW_GENERATED_UPDATE;
   for (const root of tempRoots.splice(0)) {
     rmSync(root, { recursive: true, force: true });
@@ -190,14 +189,14 @@ describe('i18n catalog core', () => {
     );
   });
 
-  it('guards generated catalog edits outside platform sync', () => {
+  it('guards generated catalog edits without automation flag', () => {
     const root = createFixture();
     const fallback = JSON.parse(readFileSync(join(root, 'src/i18n/catalogs/fallback/es.json'), 'utf8'));
     writeFixtureFile(root, 'src/i18n/catalogs/generated/es.json', toJson(fallback));
     execFileSync('git', ['init'], { cwd: root, stdio: 'pipe' });
 
     expect(validateI18nCatalogs({ root }).errors).toEqual(
-      expect.arrayContaining([expect.stringContaining('generated localization-platform output')]),
+      expect.arrayContaining([expect.stringContaining('reserved machine output')]),
     );
   });
 

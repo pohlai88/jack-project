@@ -31,7 +31,8 @@ export default async function LocaleLayout({
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
       <NextIntlClientProvider locale={locale} messages={messages}>
-        <RootProvider i18n={i18nUI.provider(locale)}>
+        {/* Fumadocs RootProvider wraps next-themes by default; disable so only the outer ThemeProvider runs (avoids duplicate script injection + React 19 warning). */}
+        <RootProvider theme={{ enabled: false }} i18n={i18nUI.provider(locale)}>
           <AuthProvider>
             {children}
             <Toaster richColors closeButton position="bottom-right" />

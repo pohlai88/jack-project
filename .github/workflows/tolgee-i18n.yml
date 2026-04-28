@@ -1,0 +1,41 @@
+# Optional Tolgee TMS pipeline: pull export → normalize → compile → validate.
+# Configure repository secret TOLGEE_API_KEY (project key or PAT). Forks / repos without the secret skip this job.
+
+name: Tolgee i18n
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Mondays 06:00 UTC — adjust or rely on workflow_dispatch only
+    - cron: '0 6 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  tolgee-ci:
+    name: Pull → normalize → compile validate
+    runs-on: ubuntu-latest
+    if: ${{ secrets.TOLGEE_API_KEY != '' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Tolgee CI pipeline
+        env:
+          TOLGEE_API_KEY: ${{ secrets.TOLGEE_API_KEY }}
+          I18N_ALLOW_GENERATED_UPDATE: '1'
+        run: pnpm i18n:tolgee:ci

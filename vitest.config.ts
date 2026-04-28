@@ -6,6 +6,7 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@tests': path.resolve(__dirname, './tests'),
+      '@scripts-lib/tolgee-normalize-core': path.resolve(__dirname, './scripts/lib/tolgee-normalize-core.mjs'),
     },
   },
   test: {

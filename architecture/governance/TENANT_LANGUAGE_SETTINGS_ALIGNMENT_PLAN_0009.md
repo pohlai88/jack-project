@@ -3,6 +3,8 @@
 Date: 2026-04-26
 Status: Partially executed — tenant `defaultLanguage` and admin selectors derive from `activatedLocaleValues` / `locale-registry` active set; this document remains for `pt` remediation and audit notes.
 
+See also: [Open production control matrix](../evidence/OPEN_PRODUCTION_CONTROL_MATRIX.md).
+
 ## Summary
 
 This governance record documents how tenant/admin language settings must align to the activated runtime locale model without prematurely exposing future locales in product settings.

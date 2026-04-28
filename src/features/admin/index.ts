@@ -15,6 +15,7 @@ export { WebhooksSettingsPanel } from './components/WebhooksSettingsPanel';
 export { AIProviderSettings } from './components/settings/AIProviderSettings';
 export { AIProviderSettingsPageContent } from './components/settings/AIProviderSettingsPageContent';
 export { BrandingSettings } from './components/settings/BrandingSettings';
+export { CustomDomainSettingsPageContent } from './components/settings/CustomDomainSettingsPageContent';
 export { BrandingSettingsPageContent } from './components/settings/BrandingSettingsPageContent';
 export { GeneralSettings } from './components/settings/GeneralSettings';
 export { GeneralSettingsPageContent } from './components/settings/GeneralSettingsPageContent';
@@ -104,6 +105,13 @@ export async function getTenantWithSettings(tenantSlug: string) {
   const { getTenantWithSettings } = await import('./services/settings-service');
   return getTenantWithSettings(tenantSlug);
 }
+
+export async function getCustomDomainAdminSnapshot(tenantSlug: string) {
+  const { getCustomDomainAdminSnapshot } = await import('./services/custom-domain-queries');
+  return getCustomDomainAdminSnapshot(tenantSlug);
+}
+
+export type { CustomDomainAdminSnapshot } from './services/custom-domain-queries';
 
 export async function resetTenantSettings(tenantSlug: string) {
   const { resetTenantSettings } = await import('./services/settings-service');

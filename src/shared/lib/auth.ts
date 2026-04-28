@@ -13,15 +13,16 @@ import NextAuth, { type NextAuthConfig, type Session } from 'next-auth';
 import Auth0 from 'next-auth/providers/auth0';
 import Credentials from 'next-auth/providers/credentials';
 
-// Re-export Session type for use in tests and type utilities
-export type { Session };
-
 import { locales } from '@/i18n/config';
 import { db } from '@/shared/db';
 import * as schema from '@/shared/db/schema';
 import type { TenantRole } from '@/shared/db/schema/auth';
+import { resolveSharedCookieDomain } from '@/shared/lib/auth-cookie-domain';
 import { env } from '@/shared/lib/env';
 import { getAllTenantPermissionsForUser } from '@/shared/lib/permissions';
+
+// Re-export Session type for use in tests and type utilities
+export type { Session };
 
 // ============================================================================
 // TYPE EXTENSIONS
@@ -145,7 +146,28 @@ function stripLocalePrefix(pathname: string): string {
 // NEXT AUTH CONFIG
 // ============================================================================
 
+const sharedAuthCookieDomain = resolveSharedCookieDomain(
+  env.AUTH_COOKIE_DOMAIN,
+  env.TENANT_ROOT_DOMAIN,
+  env.NEXT_PUBLIC_COOKIE_DOMAIN,
+  env.NEXT_PUBLIC_TENANT_ROOT_DOMAIN,
+);
+
+const authCookieOverrides: Pick<NextAuthConfig, 'cookies'> | null = sharedAuthCookieDomain
+  ? {
+      cookies: {
+        sessionToken: { options: { domain: sharedAuthCookieDomain } },
+        callbackUrl: { options: { domain: sharedAuthCookieDomain } },
+        csrfToken: { options: { domain: sharedAuthCookieDomain } },
+        pkceCodeVerifier: { options: { domain: sharedAuthCookieDomain } },
+        state: { options: { domain: sharedAuthCookieDomain } },
+        nonce: { options: { domain: sharedAuthCookieDomain } },
+      },
+    }
+  : null;
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  ...(authCookieOverrides ?? {}),
   adapter: DrizzleAdapter(db, {
     usersTable: schema.users,
     accountsTable: schema.accounts,
@@ -169,12 +191,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     error: '/login',
   },
   callbacks: {
-    async jwt({ token, user }) {
-      // Persist user id and permissions to the token on sign in (JWT strategy)
+    async jwt({ token, user, trigger }) {
       if (user?.id) {
         token.id = user.id;
-        token.roles = await loadUserRoles(user.id);
-        token.permissions = await getAllTenantPermissionsForUser(user.id);
+      }
+      const userId = typeof token.id === 'string' ? token.id : undefined;
+      if (userId && (user?.id || trigger === 'update')) {
+        token.roles = await loadUserRoles(userId);
+        token.permissions = await getAllTenantPermissionsForUser(userId);
       }
       return token;
     },

@@ -1,0 +1,16 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "tenant": {
+    "selectTitle": "Select organization",
+    "membersCount": "{count, plural, one {# member} other {# members}}"
+  },
+  "audit": {
+    "recordCreatedBy": "{actor} created this record at {timestamp}"
+  },
+  "formatting": {
+    "richLine": "Tap <accent>{product}</accent> for {action, select, upgrade {upgrade} other {details}}"
+  }
+}

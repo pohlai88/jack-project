@@ -4,6 +4,14 @@ description: "How to read Afenda's generated documentation evidence."
 icon: Library
 ---
 
+import { story } from '@/docs/stories/docs-story-preview-demo.story';
+
 Curated pages explain the documentation system. They do not define product truth.
 
 Authoritative product evidence lives under generated feature, workflow, permission, API, error, and troubleshooting pages.
+
+## Inline previews
+
+[Fumadocs Story](https://www.fumadocs.dev/docs/integrations/story/next) embeds live client components in MDX (this is separate from the Storybook dev server). The control panel below is a minimal wiring check—replace with real design-system stories as needed.
+
+<story.WithControl />

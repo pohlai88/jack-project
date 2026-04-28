@@ -1,5 +1,7 @@
 # Neon Branch Verification Evidence 0007
 
+See also: [Open production control matrix](OPEN_PRODUCTION_CONTROL_MATRIX.md).
+
 Date: 2026-04-26
 
 ## Status

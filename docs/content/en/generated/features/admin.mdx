@@ -7,7 +7,6 @@ import { Banner } from 'fumadocs-ui/components/banner';
 import { File, Files, Folder } from 'fumadocs-ui/components/files';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import { TypeTable } from 'fumadocs-ui/components/type-table';
 
 {/_
 GENERATED FILE - DO NOT EDIT
@@ -41,9 +40,9 @@ Tenant administration for audit logs, members, invites, roles, permissions, and 
       required: true,
     },
     Routes: {
-      type: '19 routes',
+      type: '21 routes',
       description:
-        '/[locale]/t/[tenant]/admin, /[locale]/t/[tenant]/admin/audit-logs, /[locale]/t/[tenant]/admin/invites, /[locale]/t/[tenant]/admin/members, /[locale]/t/[tenant]/admin/roles, /[locale]/t/[tenant]/admin/settings, /[locale]/t/[tenant]/admin/settings/ai-provider, /[locale]/t/[tenant]/admin/settings/branding, /[locale]/t/[tenant]/admin/settings/storage, /api/tenants/[tenant]/admin/settings/ai/test, /api/tenants/[tenant]/admin/settings/storage/test, /api/tenants/[tenant]/departments, /api/tenants/[tenant]/departments/[id], /api/tenants/[tenant]/departments/[id]/managers, /api/tenants/[tenant]/departments/[id]/members, /api/tenants/[tenant]/directory, /api/tenants/[tenant]/files/[fileId], /api/tenants/[tenant]/permissions, /api/tenants/[tenant]/settings',
+        '/[locale]/t/[tenant]/admin, /[locale]/t/[tenant]/admin/audit-logs, /[locale]/t/[tenant]/admin/invites, /[locale]/t/[tenant]/admin/members, /[locale]/t/[tenant]/admin/roles, /[locale]/t/[tenant]/admin/settings, /[locale]/t/[tenant]/admin/settings/ai-provider, /[locale]/t/[tenant]/admin/settings/branding, /[locale]/t/[tenant]/admin/settings/storage, /[locale]/t/[tenant]/admin/settings/domain, /api/internal/tenant-by-host, /api/tenants/[tenant]/admin/settings/ai/test, /api/tenants/[tenant]/admin/settings/storage/test, /api/tenants/[tenant]/departments, /api/tenants/[tenant]/departments/[id], /api/tenants/[tenant]/departments/[id]/managers, /api/tenants/[tenant]/departments/[id]/members, /api/tenants/[tenant]/directory, /api/tenants/[tenant]/files/[fileId], /api/tenants/[tenant]/permissions, /api/tenants/[tenant]/settings',
       required: true,
     },
     Permissions: {
@@ -68,6 +67,8 @@ Tenant administration for audit logs, members, invites, roles, permissions, and 
     <File name="/[locale]/t/[tenant]/admin/settings/ai-provider" />
     <File name="/[locale]/t/[tenant]/admin/settings/branding" />
     <File name="/[locale]/t/[tenant]/admin/settings/storage" />
+    <File name="/[locale]/t/[tenant]/admin/settings/domain" />
+    <File name="/api/internal/tenant-by-host" />
     <File name="/api/tenants/[tenant]/admin/settings/ai/test" />
     <File name="/api/tenants/[tenant]/admin/settings/storage/test" />
     <File name="/api/tenants/[tenant]/departments" />
@@ -105,7 +106,7 @@ Tenant administration for audit logs, members, invites, roles, permissions, and 
 ### Tenant settings management
 
 - ID: `admin.tenant-settings`
-- Summary: Administrators configure general, branding, AI provider, and storage settings.
+- Summary: Administrators configure general, branding, AI provider, storage, and optional custom domain verification.
 
 ## Public Actions
 
@@ -129,6 +130,7 @@ Tenant administration for audit logs, members, invites, roles, permissions, and 
 
 ## APIs
 
+- `GET /api/internal/tenant-by-host` - Internal: resolve verified custom domain hostname to tenant slug for Edge proxy (Bearer MIDDLEWARE_TENANT_LOOKUP_SECRET).
 - `POST /api/tenants/[tenant]/admin/settings/ai/test` - Validate tenant AI provider settings.
 - `POST /api/tenants/[tenant]/admin/settings/storage/test` - Validate tenant storage provider settings.
 

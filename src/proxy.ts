@@ -11,8 +11,8 @@ import { auth } from '@/shared/lib/auth';
 import { env } from '@/shared/lib/env';
 import {
   buildTenantHostRewritePathname,
-  parseTenantSubdomainSlugFromHost,
   pickLocaleFromAcceptLanguage,
+  resolveTenantSlugFromIncomingRequest,
 } from '@/shared/lib/tenant-subdomain-host';
 
 const handleI18nRouting = createMiddleware(routing);
@@ -59,8 +59,41 @@ function appendSetCookieHeadersFrom(from: NextResponse, to: NextResponse) {
   });
 }
 
-export default auth((request) => {
-  const hostSlug = parseTenantSubdomainSlugFromHost(request.headers.get('host'), env.TENANT_ROOT_DOMAIN);
+async function fetchTenantSlugForVerifiedCustomDomain(request: NextRequest, bareHost: string): Promise<string | null> {
+  try {
+    const url = new URL('/api/internal/tenant-by-host', request.url);
+    url.searchParams.set('host', bareHost);
+    const res = await fetch(url.toString(), {
+      headers: {
+        Authorization: `Bearer ${env.MIDDLEWARE_TENANT_LOOKUP_SECRET}`,
+      },
+      cache: 'no-store',
+    });
+    if (!res.ok) return null;
+    const data = (await res.json()) as { slug?: string | null };
+    return typeof data.slug === 'string' ? data.slug : null;
+  } catch {
+    return null;
+  }
+}
+
+export default auth(async (request) => {
+  const pathnameRaw = request.nextUrl.pathname || '/';
+  const incomingTenant = resolveTenantSlugFromIncomingRequest({
+    host: request.headers.get('host'),
+    pathname: pathnameRaw,
+    tenantRootDomain: env.TENANT_ROOT_DOMAIN,
+    locales,
+  });
+  let hostSlug = incomingTenant.source === 'subdomain' && incomingTenant.slug ? incomingTenant.slug : null;
+
+  if (!hostSlug && env.ENABLE_CUSTOM_DOMAIN_ROUTING && env.MIDDLEWARE_TENANT_LOOKUP_SECRET) {
+    const bare = request.headers.get('host')?.split(':')[0]?.toLowerCase();
+    if (bare && !bare.endsWith('.vercel.app')) {
+      hostSlug = await fetchTenantSlugForVerifiedCustomDomain(request, bare);
+    }
+  }
+
   let requestForIntl: NextRequest = request;
   let rewriteTarget: URL | null = null;
 
@@ -68,14 +101,13 @@ export default auth((request) => {
     const cookieLocale = resolveLocaleCookie(request.headers.get('cookie') ?? undefined);
     const resolvedLocale =
       cookieLocale ?? pickLocaleFromAcceptLanguage(request.headers.get('accept-language'), locales, defaultLocale);
-    const pathname = request.nextUrl.pathname || '/';
     const newPathname = buildTenantHostRewritePathname({
       hostSlug,
-      pathname,
+      pathname: pathnameRaw,
       locales,
       resolvedLocale,
     });
-    if (newPathname !== pathname) {
+    if (newPathname !== pathnameRaw) {
       rewriteTarget = new URL(newPathname, request.url);
       requestForIntl = new NextRequest(rewriteTarget, { headers: request.headers });
     }

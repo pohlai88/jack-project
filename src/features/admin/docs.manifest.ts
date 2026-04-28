@@ -17,6 +17,8 @@ export default defineDocsManifest({
     '/[locale]/t/[tenant]/admin/settings/ai-provider',
     '/[locale]/t/[tenant]/admin/settings/branding',
     '/[locale]/t/[tenant]/admin/settings/storage',
+    '/[locale]/t/[tenant]/admin/settings/domain',
+    '/api/internal/tenant-by-host',
     '/api/tenants/[tenant]/admin/settings/ai/test',
     '/api/tenants/[tenant]/admin/settings/storage/test',
     '/api/tenants/[tenant]/departments',
@@ -38,7 +40,8 @@ export default defineDocsManifest({
     {
       id: 'admin.tenant-settings',
       title: 'Tenant settings management',
-      summary: 'Administrators configure general, branding, AI provider, and storage settings.',
+      summary:
+        'Administrators configure general, branding, AI provider, storage, and optional custom domain verification.',
     },
   ],
   actions: [
@@ -54,6 +57,13 @@ export default defineDocsManifest({
     },
   ],
   apis: [
+    {
+      id: 'admin.internal.tenant-by-host',
+      method: 'GET',
+      route: '/api/internal/tenant-by-host',
+      summary:
+        'Internal: resolve verified custom domain hostname to tenant slug for Edge proxy (Bearer MIDDLEWARE_TENANT_LOOKUP_SECRET).',
+    },
     {
       id: 'admin.settings.ai.test',
       method: 'POST',

@@ -1,5 +1,5 @@
 import { parse, TYPE } from '@formatjs/icu-messageformat-parser';
-import { execFileSync, spawnSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -20,6 +20,10 @@ export const I18N_PATHS = {
  * `locale-registry.ts` and evaluates the captured literal via `vm.runInNewContext`. `readConfiguredLocales` reads
  * `config.ts` and either parses an inline `locales = [...] as const` list or, when `locales = activeLocales`, re-parses
  * the `activeLocales` tuple from the registry (bracket split). Human-facing contract: `src/i18n/README.md`.
+ *
+ * VM options intentionally omit `timeout`: the evaluated snippet is always read from this repo’s registry/config
+ * files (bounded size). A short timeout caused flaky `i18n-catalog-core` Vitest failures under parallel CPU load
+ * while evaluating the large `localeRegistry` object literal.
  */
 
 const CANONICAL_LOCALE = 'en';
@@ -196,9 +200,7 @@ function parseExportLiteral(source, exportName) {
     return null;
   }
 
-  return vm.runInNewContext(`(${match[1]})`, Object.create(null), {
-    timeout: 1000,
-  });
+  return vm.runInNewContext(`(${match[1]})`, Object.create(null));
 }
 
 export function readConfiguredLocales(root) {
@@ -269,7 +271,7 @@ function buildLegacyLocaleModel(root) {
     registry[locale] = {
       name: localeNames[locale] ?? locale,
       status: activeLocales.includes(locale) ? 'active' : 'inactive',
-      crowdinLocale: locale,
+      catalogLocale: locale,
       fallbackChain: locale === CANONICAL_LOCALE ? [CANONICAL_LOCALE] : [locale, CANONICAL_LOCALE],
       protectedFallback: locale !== CANONICAL_LOCALE,
     };
@@ -587,15 +589,12 @@ function getGitStatusForPath(root, path) {
   }
 }
 
-function platformSyncAllowed() {
-  return (
-    PLATFORM_SYNC_ENV.has(String(process.env.I18N_PLATFORM_SYNC ?? '').toLowerCase()) ||
-    PLATFORM_SYNC_ENV.has(String(process.env.I18N_ALLOW_GENERATED_UPDATE ?? '').toLowerCase())
-  );
+function generatedCatalogUpdateAllowed() {
+  return PLATFORM_SYNC_ENV.has(String(process.env.I18N_ALLOW_GENERATED_UPDATE ?? '').toLowerCase());
 }
 
 function validateGeneratedEditGuard({ root, errors }) {
-  if (platformSyncAllowed()) {
+  if (generatedCatalogUpdateAllowed()) {
     return;
   }
 
@@ -605,7 +604,7 @@ function validateGeneratedEditGuard({ root, errors }) {
     : changedPaths.filter((path) => path.endsWith('.json'));
   for (const file of changedGenerated) {
     errors.push(
-      `${toPosixPath(file)} is generated localization-platform output; set I18N_PLATFORM_SYNC=1 only for Crowdin sync jobs.`,
+      `${toPosixPath(file)} is reserved machine output under ${I18N_PATHS.generatedDir}; edit ${I18N_PATHS.fallbackDir} for human translations, or set I18N_ALLOW_GENERATED_UPDATE=1 when committing an automated export to generated catalogs.`,
     );
   }
 }
@@ -850,17 +849,6 @@ export function checkI18nFallbacks({ root = process.cwd() } = {}) {
   }
 
   return { errors, model };
-}
-
-export function runCrowdinCommand({ command, root = process.cwd(), extraArgs = [] }) {
-  const result = spawnSync('pnpm', ['exec', 'crowdin', command, ...extraArgs, '--no-progress'], {
-    cwd: root,
-    env: process.env,
-    shell: process.platform === 'win32',
-    stdio: 'inherit',
-  });
-
-  return result.status ?? 1;
 }
 
 export function buildFallbackManifest({

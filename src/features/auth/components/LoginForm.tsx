@@ -131,7 +131,7 @@ export const LoginForm = ({ initialEmail = '', showAuth0SignUp = false, auth0Sig
         {/* Auth0 Login Button */}
         <Button
           type="button"
-          className="w-full h-12 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-200 text-base font-semibold group"
+          className="w-full h-12 bg-linear-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-200 text-base font-semibold group"
           onClick={handleAuth0Login}
           disabled={isLoading}
           aria-busy={isLoading}

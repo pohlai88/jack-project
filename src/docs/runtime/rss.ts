@@ -11,6 +11,10 @@ function getBaseUrl() {
 }
 
 function getPageDate(page: ReturnType<typeof source.getPages>[number]) {
+  if (page.type !== 'docs') {
+    return defaultFeedDate;
+  }
+
   const lastModified = page.data.lastModified;
   if (lastModified instanceof Date && !Number.isNaN(lastModified.getTime())) {
     return lastModified;
@@ -49,8 +53,8 @@ export function getDocsRSS() {
 
     feed.addItem({
       id: pageUrl,
-      title: page.data.title,
-      description: page.data.description,
+      title: page.data.title ?? pageUrl,
+      description: page.data.description ?? '',
       link: pageUrl,
       date: getPageDate(page),
       author: [

@@ -1,4 +1,11 @@
-import { getEnvConfigPath, getNextEnvLocalPath, loadManagedEnvConfig } from './env-config.mjs';
+import {
+  collectTenantCookieEnvWarnings,
+  getEnvConfigPath,
+  getEnvProductionPath,
+  getNextEnvLocalPath,
+  loadManagedEnvConfig,
+} from './env-config.mjs';
+import { printLocalProductionReport } from './production-env-report.mjs';
 
 const envConfig = loadManagedEnvConfig();
 
@@ -7,4 +14,9 @@ if (!envConfig) {
   process.exit(1);
 }
 
-console.log(`Synced ${getNextEnvLocalPath()} from ${envConfig.path}`);
+for (const line of collectTenantCookieEnvWarnings(envConfig.values)) {
+  console.warn(`[env:sync] ${line}`);
+}
+
+console.log(`Synced ${getNextEnvLocalPath()} and ${getEnvProductionPath()} from ${envConfig.path}`);
+printLocalProductionReport(envConfig.values);

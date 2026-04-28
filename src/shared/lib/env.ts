@@ -38,6 +38,13 @@ export const env = createEnv({
     // Authentication (Auth.js / Auth0)
     AUTH_SECRET: z.string().min(32).describe('Secret for signing tokens (min 32 chars)'),
     AUTH_URL: z.url().optional().describe('Canonical URL of the app'),
+    AUTH_COOKIE_DOMAIN: z
+      .string()
+      .min(1)
+      .optional()
+      .describe(
+        'Optional Set-Cookie Domain for Auth.js (e.g. example.com). Wins over TENANT_ROOT_DOMAIN. For NEXT_LOCALE across subdomains, also set NEXT_PUBLIC_COOKIE_DOMAIN or NEXT_PUBLIC_TENANT_ROOT_DOMAIN (see env.config.example).',
+      ),
     AUTH0_CLIENT_ID: z.string().optional().describe('Auth0 client ID'),
     AUTH0_CLIENT_SECRET: z.string().optional().describe('Auth0 client secret'),
     AUTH0_ISSUER: z.url().optional().describe('Auth0 issuer URL'),
@@ -70,6 +77,27 @@ export const env = createEnv({
       .default('false')
       .transform((val) => val === 'true'),
 
+    /** When true, authenticated users with no tenant may create a first organization from select-tenant. */
+    ENABLE_SELF_SERVICE_TENANT_CREATE: z
+      .string()
+      .default('false')
+      .transform((val) => val === 'true'),
+
+    /** Admin UI + DNS TXT verification for mapping a verified apex hostname to a tenant. */
+    ENABLE_CUSTOM_DOMAIN: z
+      .string()
+      .default('false')
+      .transform((val) => val === 'true'),
+
+    /** When true, proxy resolves verified custom hostnames via internal lookup (requires MIDDLEWARE_TENANT_LOOKUP_SECRET). */
+    ENABLE_CUSTOM_DOMAIN_ROUTING: z
+      .string()
+      .default('false')
+      .transform((val) => val === 'true'),
+
+    /** Shared secret for GET /api/internal/tenant-by-host (Bearer); enables Host→tenant slug rewrite for verified custom domains. */
+    MIDDLEWARE_TENANT_LOOKUP_SECRET: z.string().min(32).optional(),
+
     // GitHub (OAuth App integration)
     GITHUB_INTEGRATION_CLIENT_ID: z.string().optional().describe('GitHub OAuth App client ID'),
     GITHUB_INTEGRATION_CLIENT_SECRET: z.string().optional().describe('GitHub OAuth App client secret'),
@@ -97,6 +125,10 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_URL: z.url().default('http://localhost:3000'),
     NEXT_PUBLIC_APP_NAME: z.string().default('Afenda'),
     NEXT_PUBLIC_SENTRY_DSN: z.url().optional(),
+    /** Explicit Set-Cookie Domain for client-visible config (e.g. next-intl NEXT_LOCALE). Same apex as Auth.js cookies when using subdomains. */
+    NEXT_PUBLIC_COOKIE_DOMAIN: z.string().min(1).optional(),
+    /** Mirror of TENANT_ROOT_DOMAIN for client bundles; use same value when TENANT_ROOT_DOMAIN is set. */
+    NEXT_PUBLIC_TENANT_ROOT_DOMAIN: z.string().min(1).optional(),
   },
 
   /**
@@ -109,6 +141,7 @@ export const env = createEnv({
     DATABASE_URL: process.env.DATABASE_URL,
     AUTH_SECRET: process.env.AUTH_SECRET,
     AUTH_URL: process.env.AUTH_URL,
+    AUTH_COOKIE_DOMAIN: process.env.AUTH_COOKIE_DOMAIN,
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
     AUTH0_CLIENT_SECRET: process.env.AUTH0_CLIENT_SECRET,
     AUTH0_ISSUER: process.env.AUTH0_ISSUER,
@@ -127,6 +160,10 @@ export const env = createEnv({
     S3_REGION: process.env.S3_REGION,
     SENTRY_DSN: process.env.SENTRY_DSN,
     ENABLE_AI_FEATURES: process.env.ENABLE_AI_FEATURES,
+    ENABLE_SELF_SERVICE_TENANT_CREATE: process.env.ENABLE_SELF_SERVICE_TENANT_CREATE,
+    ENABLE_CUSTOM_DOMAIN: process.env.ENABLE_CUSTOM_DOMAIN,
+    ENABLE_CUSTOM_DOMAIN_ROUTING: process.env.ENABLE_CUSTOM_DOMAIN_ROUTING,
+    MIDDLEWARE_TENANT_LOOKUP_SECRET: process.env.MIDDLEWARE_TENANT_LOOKUP_SECRET,
     GITHUB_INTEGRATION_CLIENT_ID: process.env.GITHUB_INTEGRATION_CLIENT_ID,
     GITHUB_INTEGRATION_CLIENT_SECRET: process.env.GITHUB_INTEGRATION_CLIENT_SECRET,
     LINKEDIN_CLIENT_ID: process.env.LINKEDIN_CLIENT_ID,
@@ -136,6 +173,8 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
     NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME,
     NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
+    NEXT_PUBLIC_COOKIE_DOMAIN: process.env.NEXT_PUBLIC_COOKIE_DOMAIN,
+    NEXT_PUBLIC_TENANT_ROOT_DOMAIN: process.env.NEXT_PUBLIC_TENANT_ROOT_DOMAIN,
   },
 
   /**

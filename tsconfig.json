@@ -24,6 +24,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@tests/*": ["./tests/*"],
+      "@scripts-lib/tolgee-normalize-core": ["./scripts/lib/tolgee-normalize-core.mjs"],
       "fumadocs-mdx:collections/*": ["./.source/*"]
     },
     "incremental": true,
@@ -36,5 +37,12 @@
     ]
   },
   "exclude": ["archive/**/*", "tools/**/*", "**/*.stories.tsx", "**/*.stories.ts"],
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", ".next/dev/types/**/*.ts"]
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/dev/types/**/*.ts",
+    "scripts/tolgee-normalize-core.d.ts"
+  ]
 }

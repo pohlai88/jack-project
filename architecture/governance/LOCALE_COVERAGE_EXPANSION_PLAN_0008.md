@@ -40,7 +40,7 @@ A locale is not allowed into `src/i18n/config.ts` unless all of the following ar
 - `pnpm i18n:fallback-check` passes
 - `pnpm docs:ci` passes
 - generated docs evidence exists
-- generated Crowdin output or protected fallback provenance exists
+- optional generated catalog output or protected fallback provenance exists
 - reviewer approval is recorded
 - for `zh-CN`, UI layout validation is completed
 
@@ -52,7 +52,7 @@ Do not:
 
 - add a locale to `config.ts` without its required messages and generated docs evidence being ready
 - add locale messages without generated docs evidence
-- manually edit generated Crowdin catalogs or compiled runtime message files
+- manually edit generated catalogs or compiled runtime message files
 - create locale-specific docs Markdown folders
 - expose a locale in UI selectors before the activation gate passes
 

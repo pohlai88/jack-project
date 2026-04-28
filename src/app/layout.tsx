@@ -10,7 +10,10 @@ const dmSans = DM_Sans({
   variable: '--font-sans',
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: 'Afenda | AI-Native Skills Management',
   description: 'Production-ready Next.js SaaS boilerplate with multi-tenancy, AI assistant, and integrations',
   alternates: {

@@ -6,8 +6,11 @@ export default defineDocsManifest({
   module: 'Identity',
   owner: 'identity-platform',
   releaseState: 'released',
-  summary: 'Authentication, tenant selection, tenant login, and invite-token entry points.',
+  summary:
+    'Authentication, tenant selection, optional self-service first organization, tenant login, and invite-token entry points.',
   routes: [
+    '/login',
+    '/select-tenant',
     '/[locale]/login',
     '/[locale]/select-tenant',
     '/[locale]/t/[tenant]/login',
@@ -26,12 +29,22 @@ export default defineDocsManifest({
       title: 'Invite acceptance',
       summary: 'Invited users enter a tenant through an invite token.',
     },
+    {
+      id: 'auth.self-service-org',
+      title: 'Self-service first organization',
+      summary: 'When enabled, users with no memberships can create a tenant and become admin.',
+    },
   ],
   actions: [
     {
       id: 'auth.select-tenant',
       title: 'Select tenant',
       summary: 'Choose an authorized tenant after successful authentication.',
+    },
+    {
+      id: 'auth.create-organization',
+      title: 'Create organization',
+      summary: 'Server action to create a tenant, roles, membership, and person when the feature flag is on.',
     },
   ],
   apis: [

@@ -7,7 +7,7 @@ export default defineDocsManifest({
   owner: 'product-platform',
   releaseState: 'released',
   summary: 'Landing and tenant dashboard surfaces for workspace entry, activity, stats, and quick actions.',
-  routes: ['/[locale]', '/[locale]/t/[tenant]', '/api/health'],
+  routes: ['/', '/[locale]', '/[locale]/t/[tenant]', '/api/health'],
   permissions: [],
   workflows: [
     {

@@ -29,4 +29,4 @@ Afenda documentation is now generated from governed product truth:
 ## References
 
 - [`src/i18n/README.md`](../../src/i18n/README.md) — runtime i18n operating model
-- [ADR-0005](./0005-continuous-localization-operating-model.md) — continuous localization for runtime messages
+- [ADR-0005](./0005-continuous-localization-operating-model.md) — Git-native runtime message catalogs (`source` / optional `generated` / `fallback` → compile → `messages/`)

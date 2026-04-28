@@ -23,7 +23,7 @@ The readiness system must follow these rules:
 - governance truth must never override system truth
 - docs are generated from product truth and are not manually translated per locale
 - locale activation must be config-driven; no hardcoded locale lists outside canonical i18n config are allowed unless explicitly documented and justified
-- translation tools may propose changes; repository validation and merge decide acceptance
+- contributors (or automation) may propose changes via Git; repository validation and merge decide acceptance
 - activation verdicts must be derived algorithmically using the strict taxonomy:
   - `canonical`
   - `active_ready`

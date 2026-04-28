@@ -53,7 +53,7 @@ export function DocsPageFeedback({ pageUrl, pageTitle }: DocsPageFeedbackProps) 
   }
 
   return (
-    <section className="not-prose mt-10 border-t border-border pt-6" aria-labelledby="docs-page-feedback-title">
+    <section className="not-wysiwyg mt-10 border-t border-border pt-6" aria-labelledby="docs-page-feedback-title">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>

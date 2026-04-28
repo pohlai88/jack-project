@@ -1,13 +1,12 @@
 ---
 title: 'Authentication and Tenant Access'
-description: 'Authentication, tenant selection, tenant login, and invite-token entry points.'
+description: 'Authentication, tenant selection, optional self-service first organization, tenant login, and invite-token entry points.'
 ---
 
 import { Banner } from 'fumadocs-ui/components/banner';
 import { File, Files, Folder } from 'fumadocs-ui/components/files';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import { TypeTable } from 'fumadocs-ui/components/type-table';
 
 {/_
 GENERATED FILE - DO NOT EDIT
@@ -21,7 +20,7 @@ _/}
 
 ## Executive Summary
 
-Authentication, tenant selection, tenant login, and invite-token entry points.
+Authentication, tenant selection, optional self-service first organization, tenant login, and invite-token entry points.
 
 <TypeTable
   type={{
@@ -41,9 +40,9 @@ Authentication, tenant selection, tenant login, and invite-token entry points.
       required: true,
     },
     Routes: {
-      type: '5 routes',
+      type: '7 routes',
       description:
-        '/[locale]/login, /[locale]/select-tenant, /[locale]/t/[tenant]/login, /[locale]/t/[tenant]/invite/[token], /api/auth/[...nextauth]',
+        '/login, /select-tenant, /[locale]/login, /[locale]/select-tenant, /[locale]/t/[tenant]/login, /[locale]/t/[tenant]/invite/[token], /api/auth/[...nextauth]',
       required: true,
     },
     Permissions: {
@@ -59,6 +58,8 @@ Authentication, tenant selection, tenant login, and invite-token entry points.
 
 <Files>
   <Folder name="Routes" defaultOpen>
+    <File name="/login" />
+    <File name="/select-tenant" />
     <File name="/[locale]/login" />
     <File name="/[locale]/select-tenant" />
     <File name="/[locale]/t/[tenant]/login" />
@@ -91,12 +92,22 @@ Authentication, tenant selection, tenant login, and invite-token entry points.
 - ID: `auth.invite-acceptance`
 - Summary: Invited users enter a tenant through an invite token.
 
+### Self-service first organization
+
+- ID: `auth.self-service-org`
+- Summary: When enabled, users with no memberships can create a tenant and become admin.
+
 ## Public Actions
 
 ### Select tenant
 
 - ID: `auth.select-tenant`
 - Summary: Choose an authorized tenant after successful authentication.
+
+### Create organization
+
+- ID: `auth.create-organization`
+- Summary: Server action to create a tenant, roles, membership, and person when the feature flag is on.
 
 ## Operational Evidence
 

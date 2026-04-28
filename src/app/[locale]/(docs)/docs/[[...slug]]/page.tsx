@@ -6,8 +6,10 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 
 import { DocsPageFeedback } from '@/docs/feedback/client/docs-page-feedback';
+import { getDocsOgImageUrlPath } from '@/docs/runtime/docs-og';
 import { DocsPageLlmActions } from '@/docs/runtime/docs-page-llm-actions';
 import { getDocsPageMarkdownAbsoluteUrl } from '@/docs/runtime/docs-site-url';
+import { DocsOpenAPIPage } from '@/docs/runtime/openapi-api-page';
 import { source } from '@/docs/runtime/source';
 import { getMDXComponents } from '@/mdx-components';
 
@@ -24,9 +26,18 @@ export async function generateMetadata(props: DocsPageProps): Promise<Metadata> 
   const page = source.getPage(params.slug, params.locale);
   if (!page) notFound();
 
+  const ogImagePath = getDocsOgImageUrlPath(page);
+
   return {
     title: page.data.title,
     description: page.data.description,
+    openGraph: {
+      images: [{ url: ogImagePath, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [ogImagePath],
+    },
   };
 }
 
@@ -44,16 +55,40 @@ export default async function Page(props: DocsPageProps) {
   const page = source.getPage(slug, locale);
   if (!page) notFound();
 
+  const markdownAbsoluteUrl = await getDocsPageMarkdownAbsoluteUrl(page.url);
+
+  if (page.type === 'openapi') {
+    return (
+      <DocsPage toc={page.data.toc} full>
+        <DocsTitle>{page.data.title}</DocsTitle>
+        {page.data.description ? <DocsDescription>{page.data.description}</DocsDescription> : null}
+        <DocsBody>
+          <DocsOpenAPIPage {...page.data.getAPIPageProps()} />
+        </DocsBody>
+        <DocsPageFeedback pageUrl={page.url} pageTitle={page.data.title ?? page.url} />
+      </DocsPage>
+    );
+  }
+
   const tDocs = await getTranslations('docs');
+  const tLlm = await getTranslations('docs.llm');
   const MDX = page.data.body;
   const showFallbackNotice = isFallbackPage(locale, page.absolutePath);
-  const markdownAbsoluteUrl = await getDocsPageMarkdownAbsoluteUrl(page.url);
 
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
-      <DocsPageLlmActions markdownAbsoluteUrl={markdownAbsoluteUrl} />
+      <DocsPageLlmActions
+        markdownAbsoluteUrl={markdownAbsoluteUrl}
+        copy={{
+          copyMarkdownUrl: tLlm('copyMarkdownUrl'),
+          openMarkdown: tLlm('openMarkdown'),
+          copied: tLlm('copied'),
+          copiedButton: tLlm('copiedButton'),
+          copyFailed: tLlm('copyFailed'),
+        }}
+      />
       <DocsBody>
         {showFallbackNotice ? (
           <Banner id="docs-locale-fallback" changeLayout={false}>

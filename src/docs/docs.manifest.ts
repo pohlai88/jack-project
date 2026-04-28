@@ -10,6 +10,7 @@ export default defineDocsManifest({
   routes: [
     '/[locale]/docs',
     '/[locale]/docs/[[...slug]]',
+    '/[locale]/og/docs/[...slug]',
     '/api/search',
     '/llms.txt',
     '/llms-full.txt',
@@ -69,6 +70,13 @@ export default defineDocsManifest({
       method: 'GET',
       route: '/rss.xml',
       summary: 'Expose an RSS feed for generated documentation evidence pages.',
+    },
+    {
+      id: 'docs.og.image',
+      method: 'GET',
+      route: '/[locale]/og/docs/[...slug]',
+      summary:
+        'Generate Open Graph images for documentation pages (next/og + Fumadocs UI template). Static path ends with image.png.',
     },
   ],
   errors: [

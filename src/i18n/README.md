@@ -1,19 +1,45 @@
 # Afenda i18n Operating Model
 
-Afenda uses `next-intl` at runtime and Crowdin for translation production.
+Afenda uses `next-intl` at runtime. **Runtime messages are Git-managed:** English source plus per-locale fallback catalogs (and optional generated catalogs) compiled to `messages/`. An optional **translation operations** platform (Tolgee) is under evaluation as **TMS only**—not a runtime message source; see [ADR-0010](../../architecture/adr/0010-tolgee-localization-operations-platform.md) and [Translation operations (Tolgee, proposed)](#translation-operations-tolgee-proposed) below.
+
+## Runtime locale authority (I18N-RUNTIME-001)
+
+**Normative doctrine:** [architecture/doctrine/0009-i18n-runtime-locale-authority.md](../../architecture/doctrine/0009-i18n-runtime-locale-authority.md). **ADR:** [architecture/adr/0009-runtime-locale-authority-app-router.md](../../architecture/adr/0009-runtime-locale-authority-app-router.md).
+
+For App Router pages under `src/app/[locale]/`, the **`[locale]` URL segment** is the sole **runtime** locale authority. `next-intl` resolves it (`requestLocale` / routing), validates it (`hasLocale`), binds it (`setRequestLocale` in the root locale layout), and distributes it (`NextIntlClientProvider`, `useLocale`, `getLocale`, `useTranslations`, `getTranslations`).
+
+| Layer                                                      | Role                                                                                                                                        |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`routing.ts`](./routing.ts)                               | Canonical locale list + default for `defineRouting`                                                                                         |
+| [`../proxy.ts`](../proxy.ts)                               | Entrypoint / redirect shaping (e.g. tenant host rewrites into a localized path); must not replace resolved locale inside `getRequestConfig` |
+| [`request.ts`](./request.ts)                               | `getRequestConfig`: validate + load messages; **no** cookie/header/tenant/profile locale override                                           |
+| [`../app/[locale]/layout.tsx`](../app/[locale]/layout.tsx) | `setRequestLocale`, `getMessages`, `NextIntlClientProvider`                                                                                 |
+| [`navigation.ts`](./navigation.ts)                         | Locale-aware links and redirects                                                                                                            |
+
+**Preference vs resolved:** Cookies, tenant defaults, profile fields, and `Accept-Language` may drive **redirects** or **first path** onto a locale URL. They must not silently change the rendered locale for a request whose path already includes a valid `[locale]` (see doctrine wording). Catalog fallback (missing keys) is a **copy** concern under [ADR-0005](../../architecture/adr/0005-continuous-localization-operating-model.md), not a second locale authority.
 
 ## Catalog Layers
 
 - `catalogs/source/en.json` is the only developer-authored message catalog.
-- `catalogs/generated/*.json` is localization-platform output from Crowdin.
-- `catalogs/fallback/*.json` contains protected bootstrap translations migrated from the previous manual JSON workflow.
+- `catalogs/generated/*.json` is optional machine-exported JSON merged before fallback during compile (directory may be empty).
+- `catalogs/fallback/*.json` contains protected bootstrap translations and normal Git-reviewed locale copy.
 - `messages/*.json` is compiled runtime output consumed by `next-intl`; it must never be edited manually.
+
+## Translation operations (Tolgee, proposed)
+
+[ADR-0010](../../architecture/adr/0010-tolgee-localization-operations-platform.md) (Proposed) may adopt Tolgee for **localization operations** (workflow, TM, MT, import/export). **Runtime locale authority** stays the `[locale]` URL segment + `next-intl` ([ADR-0009](../../architecture/adr/0009-runtime-locale-authority-app-router.md)); Tolgee does not replace Git catalogs or CI as the ship path for runtime strings.
+
+**Where to work next:** [TOLGEE_INTEGRATION.md](../../architecture/governance/evidence/i18n/TOLGEE_INTEGRATION.md) — spike closed; **normalize** Tolgee exports with **`pnpm i18n:tolgee:normalize`** and [`tolgee-locale-map.json`](./tolgee-locale-map.json) before promoting to `catalogs/generated`.
+
+For local spike exports, use **`src/i18n/catalogs/tolgee-staging/`** (gitignored). Do not commit unreviewed Tolgee JSON to `catalogs/fallback` or flat `catalogs/generated/<locale>.json` on `main` without review + **`I18N_ALLOW_GENERATED_UPDATE=1`**. Env: **`TOLGEE_API_KEY`** (never `NEXT_PUBLIC_TOLGEE_API_KEY`); optional **`TOLGEE_PROJECT_ID`** / **`TOLGEE_API_URL`** only when tooling requires them — Tolgee Cloud defaults apply ([evidence](../../architecture/governance/evidence/i18n/TOLGEE_INTEGRATION.md)).
+
+**Shape check:** `pnpm i18n:tolgee:spike-check` — canonical sample [`tolgee-spike-sample-canonical.json`](../../architecture/governance/evidence/i18n/tolgee-spike-sample-canonical.json). **CLI / pull / normalize / CI bundle:** [`tolgee.config.cjs`](../../tolgee.config.cjs), `pnpm i18n:tolgee:cli -- pull`, `pnpm i18n:tolgee:pull`, `pnpm i18n:tolgee:normalize`, **`pnpm i18n:tolgee:ci`** (matches optional workflow [`tolgee-i18n.yml`](../../.github/workflows/tolgee-i18n.yml)).
 
 After editing fallback JSON or when you need stable 2-space formatting and key order across catalogs, run **`pnpm i18n:sync`**. It reformats the English source, rewrites every `catalogs/fallback/*.json` to match the canonical key tree, updates the protected `MANIFEST.json` hashes, runs **`pnpm i18n:compile`**, and then **`pnpm i18n:validate`**.
 
 ## Flow
 
-Developer changes English source -> extraction and validation -> Crowdin source upload -> translator/MT/TM workflow -> generated locale PR -> compile runtime messages -> CI validation -> locale activation.
+Developer changes English source -> extraction and validation -> translators/loc engineers update `catalogs/fallback/*.json` in Git (optional `catalogs/generated` from automation) -> `pnpm i18n:compile` -> CI validation (`i18n:validate`, coverage, fallback manifest) -> locale activation in `locale-registry.ts` when ready.
 
 ## Locale Activation
 
@@ -24,10 +50,10 @@ Before activation, the locale must have:
 - source coverage against English keys
 - valid ICU syntax, placeholders, rich-text tags, and plural/select forms
 - approved fallback behavior
-- protected fallback hash or generated Crowdin output
+- protected fallback hash (or optional generated catalog provenance when present)
 - CI proof from `i18n:compile --check`, `i18n:validate`, `i18n:coverage`, and `i18n:fallback-check`
 
-`es`, `id`, and `th` use protected fallback catalogs merged with English; they are runtime-active so URLs, the locale switcher, and tenant defaults may use them even when copy is still maturing.
+Every non-English **active** locale uses a protected fallback catalog (merged with English at compile time) where configured; routing and the locale switcher follow `activeLocales` in the registry. Readiness and copy maturity still vary by locale—use the snapshot report below, not this README, for rollout verdicts.
 
 ## Current Runtime Baseline
 
@@ -93,6 +119,4 @@ pnpm i18n:fallback-check
 
 ## Superseded systems
 
-Crowdin is the only supported localization platform for runtime messages. Historical Weblate bootstrap artifacts under `tools/weblate/` have been removed from the repo.
-
-The migration from hand-maintained non-English `messages/*.json` into `catalogs/source`, `catalogs/fallback`, and compiled `messages/` is complete; do not restore locale-specific documentation trees or manual per-locale message JSON outside the catalog model described above.
+Weblate bootstrap artifacts were removed from the repo. The migration from hand-maintained non-English `messages/*.json` into `catalogs/source`, `catalogs/fallback`, and compiled `messages/` is complete; do not restore locale-specific documentation trees or manual per-locale message JSON outside the catalog model described above.

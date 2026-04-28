@@ -7,7 +7,6 @@ import { Banner } from 'fumadocs-ui/components/banner';
 import { File, Files, Folder } from 'fumadocs-ui/components/files';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import { TypeTable } from 'fumadocs-ui/components/type-table';
 
 {/_
 GENERATED FILE - DO NOT EDIT
@@ -41,9 +40,9 @@ Fumadocs-rendered evidence surface generated from governed product truth.
       required: true,
     },
     Routes: {
-      type: '7 routes',
+      type: '8 routes',
       description:
-        '/[locale]/docs, /[locale]/docs/[[...slug]], /api/search, /llms.txt, /llms-full.txt, /llms.mdx/[locale]/docs/[[...slug]], /rss.xml',
+        '/[locale]/docs, /[locale]/docs/[[...slug]], /[locale]/og/docs/[...slug], /api/search, /llms.txt, /llms-full.txt, /llms.mdx/[locale]/docs/[[...slug]], /rss.xml',
       required: true,
     },
     Permissions: {
@@ -61,6 +60,7 @@ Fumadocs-rendered evidence surface generated from governed product truth.
   <Folder name="Routes" defaultOpen>
     <File name="/[locale]/docs" />
     <File name="/[locale]/docs/[[...slug]]" />
+    <File name="/[locale]/og/docs/[...slug]" />
     <File name="/api/search" />
     <File name="/llms.txt" />
     <File name="/llms-full.txt" />
@@ -110,11 +110,12 @@ Fumadocs-rendered evidence surface generated from governed product truth.
 
 ## APIs
 
-- `GET /llms.txt` - Expose the Fumadocs page index for LLM-friendly discovery.
-- `GET /llms-full.txt` - Expose all documentation pages as clean Markdown for LLM consumption.
+- `GET /llms.txt` - Expose the Fumadocs page index for LLM-friendly discovery. Optional `locale` query selects the language tree (default `en`).
+- `GET /llms-full.txt` - Expose all documentation pages as clean Markdown for LLM consumption. Optional `locale` query selects the language tree (default `en`).
 - `GET /llms.mdx/[locale]/docs/[[...slug]]` - Expose one locale-aware documentation page as clean Markdown for LLM consumption.
 - `GET /api/search` - Expose locale-aware Fumadocs search results from the generated documentation source.
 - `GET /rss.xml` - Expose an RSS feed for generated documentation evidence pages.
+- `GET /[locale]/og/docs/[...slug]` - Generate Open Graph images for documentation pages (next/og + Fumadocs UI template). Static path ends with image.png.
 
 ## Errors
 

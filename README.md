@@ -30,7 +30,11 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-> **Local setup note:** Create `env.config` from `env.config.example`, then run `pnpm env:sync`. `env.config` is the file you maintain; `.env.local` is generated from it for Next.js.
+> **Local setup note:** Create `env.config` from `env.config.example`, then run `pnpm env:sync`. `env.config` is the file you maintain; **`.env.local`** (dev) and **`.env.production`** (production-shaped merge + Vercel key checklist) are generated — both gitignored.
+
+### Production (nexuscanon.com)
+
+Tenant workspaces use `{slug}.nexuscanon.com`; canonical app and Auth.js origin is `https://www.nexuscanon.com`. Sync vars with **`pnpm vercel:env:push-production`** from `env.config`, use **`pnpm vercel:env:report`** to compare local vs Vercel, and align DNS per **`architecture/governance/evidence/tenants/TENANT_SUBDOMAIN_VERCEL_DNS.md`** (see **`AGENTS.md`** for scripts).
 
 ---
 
@@ -47,7 +51,7 @@ Open [http://localhost:3000](http://localhost:3000).
 - 📋 **Audit logging** — all sensitive operations are tracked
 - 📁 **File uploads** — AWS S3 in production, MinIO for local dev
 - 📦 **`env.config` source + generated `.env.local`** — single-source local environment setup
-- 🌍 **i18n** — next-intl runtime with Crowdin-backed continuous localization
+- 🌍 **i18n** — next-intl runtime with Git-managed source/fallback catalogs
 - 📚 **Storybook** — component development and visual testing
 - ⚡ **GitHub Actions CI** — build, lint, type-check, tests, mega-linter
 - 🧩 **Feature template** — `_feature-template_` scaffold for adding new features
@@ -56,20 +60,20 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## 🛠️ Tech Stack
 
-| Category     | Technology                                             |
-| ------------ | ------------------------------------------------------ |
-| Framework    | Next.js 16 (App Router, RSC, Turbopack)                |
-| Language     | TypeScript 5+ (strict)                                 |
-| Styling      | Tailwind CSS v4 + shadcn/ui                            |
-| Database     | PostgreSQL 17 + pgvector + Drizzle ORM                 |
-| Auth         | Auth.js v5 + Auth0 (SSO) + database sessions           |
-| AI           | OpenAI / Anthropic via Vercel AI SDK + RAG/embeddings  |
-| File Storage | AWS S3 (production) / MinIO (local dev)                |
-| i18n         | next-intl + Crowdin source/generated/fallback catalogs |
-| Testing      | Vitest + React Testing Library                         |
-| Linting      | ESLint 9 (flat config) + Prettier + Mega Linter        |
-| CI/CD        | GitHub Actions                                         |
-| Dev Env      | DevContainer or `env.config` + generated `.env.local`  |
+| Category     | Technology                                                              |
+| ------------ | ----------------------------------------------------------------------- |
+| Framework    | Next.js 16 (App Router, RSC, Turbopack)                                 |
+| Language     | TypeScript 5+ (strict)                                                  |
+| Styling      | Tailwind CSS v4 + shadcn/ui                                             |
+| Database     | PostgreSQL 17 + pgvector + Drizzle ORM                                  |
+| Auth         | Auth.js v5 + Auth0 (SSO) + database sessions                            |
+| AI           | OpenAI / Anthropic via Vercel AI SDK + RAG/embeddings                   |
+| File Storage | AWS S3 (production) / MinIO (local dev)                                 |
+| i18n         | next-intl + Git-managed source / optional generated / fallback catalogs |
+| Testing      | Vitest + React Testing Library                                          |
+| Linting      | ESLint 9 (flat config) + Prettier + Mega Linter                         |
+| CI/CD        | GitHub Actions                                                          |
+| Dev Env      | DevContainer or `env.config` + generated `.env.local`                   |
 
 ---
 
@@ -104,42 +108,42 @@ Feature boundaries are strict:
 
 ## 📜 Scripts
 
-| Command                      | Description                                                |
-| ---------------------------- | ---------------------------------------------------------- |
-| `pnpm env:sync`              | Generate `.env.local` from `env.config`                    |
-| `pnpm dev`                   | Start Next.js dev server on port 3000                      |
-| `pnpm build`                 | Build for production                                       |
-| `pnpm start`                 | Start the production server                                |
-| `pnpm format`                | Format files with Prettier                                 |
-| `pnpm lint`                  | Run ESLint                                                 |
-| `pnpm lint:fix`              | Run ESLint with auto-fix                                   |
-| `pnpm lint:a11y`             | Run strict lint/a11y pass with warnings treated as errors  |
-| `pnpm repo:guard`            | Validate repo hygiene and module-boundary rules            |
-| `pnpm type-check`            | Run TypeScript check                                       |
-| `pnpm doctrine:check`        | Validate doctrine/documentation authority rules            |
-| `pnpm i18n:extract`          | Validate the English source catalog                        |
-| `pnpm i18n:compile`          | Compile runtime `src/i18n/messages/*.json` output          |
-| `pnpm i18n:validate`         | Validate source, generated, fallback, and runtime catalogs |
-| `pnpm i18n:coverage`         | Report generated/fallback locale coverage                  |
-| `pnpm i18n:fallback-check`   | Validate protected fallback catalogs and locale fallbacks  |
-| `pnpm i18n:check`            | Backward-compatible alias for `i18n:validate`              |
-| `pnpm i18n:inventory:check`  | Backward-compatible catalog inventory validation           |
-| `pnpm i18n:readiness:report` | Generate warn-only locale readiness and coverage report    |
-| `pnpm test`                  | Run Vitest once                                            |
-| `pnpm test:watch`            | Run Vitest in watch mode                                   |
-| `pnpm test:coverage`         | Run Vitest with coverage                                   |
-| `pnpm db:generate`           | Generate Drizzle migrations from schema changes            |
-| `pnpm db:migrate`            | Run pending Drizzle migrations                             |
-| `pnpm db:push`               | Alias to `db:migrate`; direct push is intentionally gated  |
-| `pnpm db:push:unsafe`        | Force Drizzle push; local/dev use only                     |
-| `pnpm db:studio`             | Open Drizzle Studio                                        |
-| `pnpm db:seed`               | Seed demo data                                             |
-| `pnpm db:reset`              | Reset app data after confirmation                          |
-| `pnpm db:fresh`              | Reset and seed demo data                                   |
-| `pnpm embeddings:generate`   | Generate AI embeddings                                     |
-| `pnpm embeddings:recreate`   | Recreate AI embeddings                                     |
-| `pnpm storybook`             | Start Storybook on port 6006                               |
-| `pnpm build-storybook`       | Build static Storybook                                     |
+| Command                      | Description                                                         |
+| ---------------------------- | ------------------------------------------------------------------- |
+| `pnpm env:sync`              | Generate `.env.local` from `env.config`                             |
+| `pnpm dev`                   | Start Next.js dev server on port 3000                               |
+| `pnpm build`                 | Build for production                                                |
+| `pnpm start`                 | Start the production server                                         |
+| `pnpm format`                | Format files with Prettier                                          |
+| `pnpm lint`                  | Run ESLint                                                          |
+| `pnpm lint:fix`              | Run ESLint with auto-fix                                            |
+| `pnpm lint:a11y`             | Run strict lint/a11y pass with warnings treated as errors           |
+| `pnpm repo:guard`            | Validate repo hygiene and module-boundary rules                     |
+| `pnpm type-check`            | Run TypeScript check                                                |
+| `pnpm doctrine:check`        | Validate doctrine/documentation authority rules                     |
+| `pnpm i18n:extract`          | Validate the English source catalog                                 |
+| `pnpm i18n:compile`          | Compile runtime `src/i18n/messages/*.json` output                   |
+| `pnpm i18n:validate`         | Validate source, optional generated, fallback, and runtime catalogs |
+| `pnpm i18n:coverage`         | Report optional generated vs fallback locale coverage               |
+| `pnpm i18n:fallback-check`   | Validate protected fallback catalogs and locale fallbacks           |
+| `pnpm i18n:check`            | Backward-compatible alias for `i18n:validate`                       |
+| `pnpm i18n:inventory:check`  | Backward-compatible catalog inventory validation                    |
+| `pnpm i18n:readiness:report` | Generate warn-only locale readiness and coverage report             |
+| `pnpm test`                  | Run Vitest once                                                     |
+| `pnpm test:watch`            | Run Vitest in watch mode                                            |
+| `pnpm test:coverage`         | Run Vitest with coverage                                            |
+| `pnpm db:generate`           | Generate Drizzle migrations from schema changes                     |
+| `pnpm db:migrate`            | Run pending Drizzle migrations                                      |
+| `pnpm db:push`               | Alias to `db:migrate`; direct push is intentionally gated           |
+| `pnpm db:push:unsafe`        | Force Drizzle push; local/dev use only                              |
+| `pnpm db:studio`             | Open Drizzle Studio                                                 |
+| `pnpm db:seed`               | Seed demo data                                                      |
+| `pnpm db:reset`              | Reset app data after confirmation                                   |
+| `pnpm db:fresh`              | Reset and seed demo data                                            |
+| `pnpm embeddings:generate`   | Generate AI embeddings                                              |
+| `pnpm embeddings:recreate`   | Recreate AI embeddings                                              |
+| `pnpm storybook`             | Start Storybook on port 6006                                        |
+| `pnpm build-storybook`       | Build static Storybook                                              |
 
 ---
 
@@ -152,7 +156,7 @@ Engineering authority now lives in the architecture doctrine system:
 - **Architecture test cases:** [architecture/atc/README.md](./architecture/atc/README.md)
 - **Deprecated docs tombstone:** [architecture/docs/README.md](./architecture/docs/README.md)
 - **Contributing:** [CONTRIBUTING.md](./CONTRIBUTING.md)
-- **Crowdin localization workflow:** [tools/crowdin/README.md](./tools/crowdin/README.md)
+- **i18n operating model:** [src/i18n/README.md](./src/i18n/README.md)
 
 ---
 

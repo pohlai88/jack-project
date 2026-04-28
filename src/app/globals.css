@@ -1,7 +1,12 @@
 @import 'tailwindcss';
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
-@plugin "@tailwindcss/typography";
+@import 'fumadocs-openapi/css/preset.css';
+@import '@fumadocs/story/css/preset.css';
+/* Keep @tailwindcss/typography off the default `prose` class — Fumadocs preset ships its own prose fork for MDX. */
+@plugin "@tailwindcss/typography" {
+  classname: wysiwyg;
+}
 @plugin "tailwindcss-animate";
 
 @media print {
@@ -462,9 +467,10 @@ h6 {
 }
 
 /* =====================================================================
-   Typography (prose) Dark Mode Fix
+   Typography: @tailwindcss/typography uses class `wysiwyg` (see @plugin above).
+   Fumadocs MDX keeps `prose` from fumadocs-ui preset — no conflict.
    ===================================================================== */
-.dark .prose {
+.dark .wysiwyg {
   --tw-prose-body: hsl(210 30% 85%);
   --tw-prose-headings: hsl(210 40% 98%);
   --tw-prose-lead: hsl(210 25% 75%);

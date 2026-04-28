@@ -12,53 +12,54 @@ export const localeAliases = {
   'id-ID': 'id',
 } as const;
 
+/** Per-locale BCP 47 tag used for catalog filenames (`*.json`) and tooling. */
 export const localeRegistry = {
   en: {
     name: 'English',
     status: 'active',
-    crowdinLocale: 'en',
+    catalogLocale: 'en',
     fallbackChain: ['en'],
     protectedFallback: false,
   },
   es: {
     name: 'Español',
     status: 'active',
-    crowdinLocale: 'es',
+    catalogLocale: 'es',
     fallbackChain: ['es', 'en'],
     protectedFallback: true,
   },
   vi: {
     name: 'Tiếng Việt',
     status: 'active',
-    crowdinLocale: 'vi',
+    catalogLocale: 'vi',
     fallbackChain: ['vi', 'en'],
     protectedFallback: true,
   },
   ms: {
     name: 'Bahasa Melayu',
     status: 'active',
-    crowdinLocale: 'ms',
+    catalogLocale: 'ms',
     fallbackChain: ['ms', 'en'],
     protectedFallback: true,
   },
   'zh-CN': {
     name: '简体中文',
     status: 'active',
-    crowdinLocale: 'zh-CN',
+    catalogLocale: 'zh-CN',
     fallbackChain: ['zh-CN', 'en'],
     protectedFallback: true,
   },
   id: {
     name: 'Bahasa Indonesia',
     status: 'active',
-    crowdinLocale: 'id',
+    catalogLocale: 'id',
     fallbackChain: ['id', 'en'],
     protectedFallback: true,
   },
   th: {
     name: 'ไทย',
     status: 'active',
-    crowdinLocale: 'th',
+    catalogLocale: 'th',
     fallbackChain: ['th', 'en'],
     protectedFallback: true,
   },

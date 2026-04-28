@@ -14,7 +14,7 @@ const ENGLISH_DOCS_ROOT = join(ROOT, 'docs/content/en');
 const GENERATED_ROOT = join(ENGLISH_DOCS_ROOT, 'generated');
 const SEARCH_SITE_ROOT = join(ROOT, '.artifacts/docs-search-site');
 const MANIFEST_PATTERNS = ['src/docs/docs.manifest.ts', 'src/features/*/docs.manifest.ts'];
-const APP_SURFACE_PATTERNS = ['src/app/**/page.tsx', 'src/app/**/route.ts'];
+const APP_SURFACE_PATTERNS = ['src/app/**/page.tsx', 'src/app/**/route.ts', 'src/app/**/route.tsx'];
 const GENERATED_HEADER = `{/*
 GENERATED FILE - DO NOT EDIT
 Source: docs inventory graph
@@ -123,7 +123,7 @@ function normalizeRoute(route: string): string {
 function routeFromAppFile(file: string): AppSurface {
   const normalized = toPosixPath(file);
   const kind = normalized.endsWith('/route.ts') ? 'api' : 'page';
-  const withoutRoot = normalized.replace(/^src\/app\//, '').replace(/(?:^|\/)(?:page\.tsx|route\.ts)$/, '');
+  const withoutRoot = normalized.replace(/^src\/app\//, '').replace(/(?:^|\/)(?:page\.tsx|route\.tsx|route\.ts)$/, '');
   const segments = withoutRoot
     .split('/')
     .filter((segment) => segment.length > 0)
@@ -336,7 +336,6 @@ const COMPONENT_IMPORTS = `import { Banner } from 'fumadocs-ui/components/banner
 import { File, Files, Folder } from 'fumadocs-ui/components/files';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import { TypeTable } from 'fumadocs-ui/components/type-table';
 `;
 
 function bulletList(items: string[]): string {
@@ -770,73 +769,6 @@ async function buildCheckedGraph() {
   return buildInventoryGraph(model);
 }
 
-function stripLinkSuffix(href: string): string {
-  return href.split('#')[0]?.split('?')[0]?.trim() ?? '';
-}
-
-function isExternalHref(href: string): boolean {
-  return /^(?:https?:|mailto:|tel:|#)/.test(href);
-}
-
-function docsPathExists(href: string): boolean {
-  const clean = stripLinkSuffix(href).replace(/\/$/, '');
-  if (clean === '/docs' || clean === '') return existsSync(join(ENGLISH_DOCS_ROOT, 'index.mdx'));
-  if (!clean.startsWith('/docs/')) return true;
-
-  const slug = clean.replace(/^\/docs\//, '').replace(/\.mdx$/, '');
-  return existsSync(join(ENGLISH_DOCS_ROOT, `${slug}.mdx`)) || existsSync(join(ENGLISH_DOCS_ROOT, slug, 'index.mdx'));
-}
-
-function relativeDocsPathExists(file: string, href: string): boolean {
-  const clean = stripLinkSuffix(href);
-  if (clean === '' || isExternalHref(clean) || clean.startsWith('/')) return true;
-
-  const base = dirname(file);
-  const candidate = join(base, clean.replace(/\.mdx$/, ''));
-  return (
-    existsSync(candidate) ||
-    existsSync(`${candidate}.mdx`) ||
-    existsSync(join(candidate, 'index.mdx')) ||
-    existsSync(join(base, clean))
-  );
-}
-
-function extractLinks(content: string): string[] {
-  const links = new Set<string>();
-  const markdownLink = /\[[^\]]+\]\(([^)]+)\)/g;
-  const hrefAttribute = /\shref=["']([^"']+)["']/g;
-
-  for (const match of content.matchAll(markdownLink)) {
-    if (match[1]) links.add(match[1]);
-  }
-  for (const match of content.matchAll(hrefAttribute)) {
-    if (match[1]) links.add(match[1]);
-  }
-
-  return [...links];
-}
-
-function checkDocsLinks(): string[] {
-  const errors: string[] = [];
-  const files = fg.sync('docs/content/**/*.{md,mdx}', { cwd: ROOT, onlyFiles: true }).sort();
-
-  for (const relFile of files) {
-    const file = join(ROOT, relFile);
-    const content = readFileSync(file, 'utf8');
-    for (const href of extractLinks(content)) {
-      if (isExternalHref(href)) continue;
-      if (href.startsWith('/docs') && !docsPathExists(href)) {
-        errors.push(`${relFile}: internal docs link "${href}" does not resolve.`);
-      }
-      if (!href.startsWith('/') && !relativeDocsPathExists(file, href)) {
-        errors.push(`${relFile}: relative docs link "${href}" does not resolve.`);
-      }
-    }
-  }
-
-  return errors;
-}
-
 async function checkLLMExports(): Promise<string[]> {
   const errors: string[] = [];
   const requiredRoutes = [
@@ -866,6 +798,18 @@ async function checkLLMExports(): Promise<string[]> {
     !nextConfig.includes("destination: '/llms.mdx/:locale/docs/:path*'")
   ) {
     errors.push('next.config.mjs must rewrite /docs/<slug>.mdx to the LLM Markdown route.');
+  }
+
+  const proxyPath = join(ROOT, 'src/proxy.ts');
+  if (existsSync(proxyPath)) {
+    const proxy = readFileSync(proxyPath, 'utf8');
+    if (!proxy.includes('isMarkdownPreferred') || !proxy.includes('rewritePath')) {
+      errors.push(
+        'src/proxy.ts must implement Fumadocs LLM Accept negotiation (isMarkdownPreferred + rewritePath). See https://www.fumadocs.dev/docs/integrations/llms',
+      );
+    }
+  } else {
+    errors.push('src/proxy.ts is missing; required for LLM-friendly docs (Accept: text/markdown rewrites).');
   }
 
   const llmText = readFileSync(join(ROOT, 'src/docs/runtime/get-llm-text.ts'), 'utf8');
@@ -948,8 +892,8 @@ async function run(command: string, check: boolean) {
   }
 
   if (command === 'links') {
-    const errors = checkDocsLinks();
-    if (errors.length > 0) throw new Error(errors.join('\n'));
+    const { runDocsLinkValidation } = await import('./docs-validate-links');
+    await runDocsLinkValidation();
     console.log('docs links are valid');
     return;
   }

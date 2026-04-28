@@ -1,6 +1,10 @@
 import { source } from './source';
 
 export async function getLLMText(page: (typeof source)['$inferPage']): Promise<string> {
+  if (page.type === 'openapi') {
+    return JSON.stringify(page.data.getSchema().bundled, null, 2) + '\n';
+  }
+
   const processed = await page.data.getText('processed');
   const description = page.data.description ? `\n\n> ${page.data.description}` : '';
 

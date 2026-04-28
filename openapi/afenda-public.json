@@ -1,0 +1,57 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Afenda public HTTP API",
+    "version": "1.0.0",
+    "description": "Machine-readable surface for routes documented alongside Afenda guides. Replace or extend this spec as you expose more APIs."
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Same origin as the web application"
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "tags": ["Platform"],
+        "operationId": "getHealth",
+        "summary": "Health check",
+        "description": "Returns application health and dependency status for load balancers, probes, and monitoring.",
+        "responses": {
+          "200": {
+            "description": "Service is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": ["healthy", "unhealthy"]
+                    },
+                    "timestamp": { "type": "string", "format": "date-time" },
+                    "checks": { "type": "object", "additionalProperties": true }
+                  },
+                  "required": ["status"]
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service is unhealthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

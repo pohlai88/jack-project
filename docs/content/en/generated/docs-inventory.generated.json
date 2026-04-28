@@ -2,7 +2,7 @@
   "generated": true,
   "version": 1,
   "doctrine": "Docs render what product truth declares. Manual prose may explain truth, but it may not define truth.",
-  "hash": "6ea3a54638691d07bbcfcfda4d4b27b4cf5a3902045a388ae466fce0078320f4",
+  "hash": "4872403ac9404399d639432d56378c821d25127b107eabf3527004ff202a7cf2",
   "generatedFrom": {
     "manifests": [
       "src/docs/docs.manifest.ts",
@@ -15,10 +15,12 @@
       "src/features/profile/docs.manifest.ts"
     ],
     "appSurfaces": [
+      "src/app/page.tsx",
       "src/app/[locale]/page.tsx",
       "src/app/[locale]/(docs)/docs/[[...slug]]/page.tsx",
       "src/app/[locale]/(docs)/docs/[[...slug]]/page.tsx",
       "src/app/[locale]/(auth)/login/page.tsx",
+      "src/app/[locale]/og/docs/[...slug]/route.tsx",
       "src/app/[locale]/(auth)/select-tenant/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/admin/page.tsx",
@@ -32,6 +34,7 @@
       "src/app/[locale]/(tenant)/t/[tenant]/admin/settings/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/admin/settings/ai-provider/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/admin/settings/branding/page.tsx",
+      "src/app/[locale]/(tenant)/t/[tenant]/admin/settings/domain/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/admin/settings/storage/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/assistant/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/invite/[token]/page.tsx",
@@ -46,6 +49,7 @@
       "src/app/api/integrations/github/callback/route.ts",
       "src/app/api/integrations/github/connect/route.ts",
       "src/app/api/integrations/github/user-connect/route.ts",
+      "src/app/api/internal/tenant-by-host/route.ts",
       "src/app/api/search/route.ts",
       "src/app/api/tenants/[tenant]/admin/integrations/conflicts/route.ts",
       "src/app/api/tenants/[tenant]/admin/integrations/field-mappings/route.ts",
@@ -67,7 +71,9 @@
       "src/app/llms-full.txt/route.ts",
       "src/app/llms.mdx/[locale]/docs/[[...slug]]/route.ts",
       "src/app/llms.txt/route.ts",
-      "src/app/rss.xml/route.ts"
+      "src/app/login/page.tsx",
+      "src/app/rss.xml/route.ts",
+      "src/app/select-tenant/page.tsx"
     ],
     "permissions": [
       "admin:dashboard",
@@ -97,6 +103,8 @@
         "/[locale]/t/[tenant]/admin/settings/ai-provider",
         "/[locale]/t/[tenant]/admin/settings/branding",
         "/[locale]/t/[tenant]/admin/settings/storage",
+        "/[locale]/t/[tenant]/admin/settings/domain",
+        "/api/internal/tenant-by-host",
         "/api/tenants/[tenant]/admin/settings/ai/test",
         "/api/tenants/[tenant]/admin/settings/storage/test",
         "/api/tenants/[tenant]/departments",
@@ -118,7 +126,7 @@
         {
           "id": "admin.tenant-settings",
           "title": "Tenant settings management",
-          "summary": "Administrators configure general, branding, AI provider, and storage settings."
+          "summary": "Administrators configure general, branding, AI provider, storage, and optional custom domain verification."
         }
       ],
       "actions": [
@@ -134,6 +142,12 @@
         }
       ],
       "apis": [
+        {
+          "id": "admin.internal.tenant-by-host",
+          "method": "GET",
+          "route": "/api/internal/tenant-by-host",
+          "summary": "Internal: resolve verified custom domain hostname to tenant slug for Edge proxy (Bearer MIDDLEWARE_TENANT_LOOKUP_SECRET)."
+        },
         {
           "id": "admin.settings.ai.test",
           "method": "POST",
@@ -227,8 +241,10 @@
       "module": "Identity",
       "owner": "identity-platform",
       "releaseState": "released",
-      "summary": "Authentication, tenant selection, tenant login, and invite-token entry points.",
+      "summary": "Authentication, tenant selection, optional self-service first organization, tenant login, and invite-token entry points.",
       "routes": [
+        "/login",
+        "/select-tenant",
         "/[locale]/login",
         "/[locale]/select-tenant",
         "/[locale]/t/[tenant]/login",
@@ -246,6 +262,11 @@
           "id": "auth.invite-acceptance",
           "title": "Invite acceptance",
           "summary": "Invited users enter a tenant through an invite token."
+        },
+        {
+          "id": "auth.self-service-org",
+          "title": "Self-service first organization",
+          "summary": "When enabled, users with no memberships can create a tenant and become admin."
         }
       ],
       "actions": [
@@ -253,6 +274,11 @@
           "id": "auth.select-tenant",
           "title": "Select tenant",
           "summary": "Choose an authorized tenant after successful authentication."
+        },
+        {
+          "id": "auth.create-organization",
+          "title": "Create organization",
+          "summary": "Server action to create a tenant, roles, membership, and person when the feature flag is on."
         }
       ],
       "apis": [
@@ -286,7 +312,7 @@
       "owner": "product-platform",
       "releaseState": "released",
       "summary": "Landing and tenant dashboard surfaces for workspace entry, activity, stats, and quick actions.",
-      "routes": ["/[locale]", "/[locale]/t/[tenant]", "/api/health"],
+      "routes": ["/", "/[locale]", "/[locale]/t/[tenant]", "/api/health"],
       "permissions": [],
       "workflows": [
         {
@@ -336,6 +362,7 @@
       "routes": [
         "/[locale]/docs",
         "/[locale]/docs/[[...slug]]",
+        "/[locale]/og/docs/[...slug]",
         "/api/search",
         "/llms.txt",
         "/llms-full.txt",
@@ -367,13 +394,13 @@
           "id": "docs.llms.index",
           "method": "GET",
           "route": "/llms.txt",
-          "summary": "Expose the Fumadocs page index for LLM-friendly discovery."
+          "summary": "Expose the Fumadocs page index for LLM-friendly discovery. Optional `locale` query selects the language tree (default `en`)."
         },
         {
           "id": "docs.llms.full",
           "method": "GET",
           "route": "/llms-full.txt",
-          "summary": "Expose all documentation pages as clean Markdown for LLM consumption."
+          "summary": "Expose all documentation pages as clean Markdown for LLM consumption. Optional `locale` query selects the language tree (default `en`)."
         },
         {
           "id": "docs.llms.page",
@@ -392,6 +419,12 @@
           "method": "GET",
           "route": "/rss.xml",
           "summary": "Expose an RSS feed for generated documentation evidence pages."
+        },
+        {
+          "id": "docs.og.image",
+          "method": "GET",
+          "route": "/[locale]/og/docs/[...slug]",
+          "summary": "Generate Open Graph images for documentation pages (next/og + Fumadocs UI template). Static path ends with image.png."
         }
       ],
       "errors": [
@@ -628,6 +661,8 @@
       "/[locale]/t/[tenant]/admin/settings/ai-provider": ["admin"],
       "/[locale]/t/[tenant]/admin/settings/branding": ["admin"],
       "/[locale]/t/[tenant]/admin/settings/storage": ["admin"],
+      "/[locale]/t/[tenant]/admin/settings/domain": ["admin"],
+      "/api/internal/tenant-by-host": ["admin"],
       "/api/tenants/[tenant]/admin/settings/ai/test": ["admin"],
       "/api/tenants/[tenant]/admin/settings/storage/test": ["admin"],
       "/api/tenants/[tenant]/departments": ["admin"],
@@ -642,16 +677,20 @@
       "/api/assistant/conversations": ["assistant"],
       "/api/assistant/conversations/[id]": ["assistant"],
       "/api/chat": ["assistant"],
+      "/login": ["auth"],
+      "/select-tenant": ["auth"],
       "/[locale]/login": ["auth"],
       "/[locale]/select-tenant": ["auth"],
       "/[locale]/t/[tenant]/login": ["auth"],
       "/[locale]/t/[tenant]/invite/[token]": ["auth"],
       "/api/auth/[...nextauth]": ["auth"],
+      "/": ["dashboard"],
       "/[locale]": ["dashboard"],
       "/[locale]/t/[tenant]": ["dashboard"],
       "/api/health": ["dashboard"],
       "/[locale]/docs": ["docs"],
       "/[locale]/docs/[[...slug]]": ["docs"],
+      "/[locale]/og/docs/[...slug]": ["docs"],
       "/api/search": ["docs"],
       "/llms.txt": ["docs"],
       "/llms-full.txt": ["docs"],

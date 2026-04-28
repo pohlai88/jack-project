@@ -1,0 +1,11 @@
+# Files excluded from Vercel deployment uploads (smaller archive; install/build unchanged).
+# Standard Next.js sources remain included.
+
+.analyze/
+.artifacts/
+coverage/
+megalinter-reports/
+playwright-report/
+storybook-static/
+.worktrees/
+archive/

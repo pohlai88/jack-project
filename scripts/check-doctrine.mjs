@@ -13,6 +13,7 @@ const requiredFiles = [
   'architecture/doctrine/0006-api-auth-tenant-boundaries.md',
   'architecture/doctrine/0007-ui-component-design-system-rules.md',
   'architecture/doctrine/0008-test-ci-artifact-hygiene.md',
+  'architecture/doctrine/0009-i18n-runtime-locale-authority.md',
   'architecture/adr/README.md',
   'architecture/adr/0001-adopt-doctrine-adr-atc.md',
   'architecture/adr/0002-strict-feature-public-apis-pragmatic-shared-subpaths.md',

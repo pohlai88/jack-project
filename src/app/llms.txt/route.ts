@@ -1,4 +1,4 @@
-import { llms } from 'fumadocs-core/source/llms';
+import { llms } from 'fumadocs-core/source';
 
 import { resolveLlmsExportLocale } from '@/docs/runtime/docs-llm-locale';
 import { consumeLlmsExportRateLimit, getLlmsExportClientIp } from '@/docs/runtime/llms-export-rate-limit';

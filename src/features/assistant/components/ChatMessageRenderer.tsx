@@ -160,7 +160,7 @@ export function ChatMessageRenderer({ content, className, isUserMessage, tenantS
       {segments.map((segment, index) => {
         if (segment.type === 'text' && segment.content) {
           return (
-            <div key={index} className="prose prose-sm dark:prose-invert max-w-none">
+            <div key={index} className="wysiwyg wysiwyg-sm dark:wysiwyg-invert max-w-none">
               <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
                 {segment.content}
               </ReactMarkdown>

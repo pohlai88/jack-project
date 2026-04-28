@@ -7,7 +7,6 @@ import { Banner } from 'fumadocs-ui/components/banner';
 import { File, Files, Folder } from 'fumadocs-ui/components/files';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import { TypeTable } from 'fumadocs-ui/components/type-table';
 
 {/_
 GENERATED FILE - DO NOT EDIT
@@ -41,8 +40,8 @@ Landing and tenant dashboard surfaces for workspace entry, activity, stats, and 
       required: true,
     },
     Routes: {
-      type: '3 routes',
-      description: '/[locale], /[locale]/t/[tenant], /api/health',
+      type: '4 routes',
+      description: '/, /[locale], /[locale]/t/[tenant], /api/health',
       required: true,
     },
     Permissions: {
@@ -58,6 +57,7 @@ Landing and tenant dashboard surfaces for workspace entry, activity, stats, and 
 
 <Files>
   <Folder name="Routes" defaultOpen>
+    <File name="/" />
     <File name="/[locale]" />
     <File name="/[locale]/t/[tenant]" />
     <File name="/api/health" />

@@ -20,6 +20,9 @@ export interface TenantWithSettings {
   settings: TenantSettings;
   createdAt: Date;
   updatedAt: Date;
+  /** Verified custom apex hostname for routing; null when unset. */
+  customDomainHostname: string | null;
+  customDomainVerifiedAt: Date | null;
 }
 
 export async function getTenantSettings(tenantSlug: string): Promise<TenantSettings> {
@@ -37,15 +40,30 @@ export async function getTenantSettings(tenantSlug: string): Promise<TenantSetti
 }
 
 export async function getTenantWithSettings(tenantSlug: string): Promise<TenantWithSettings | null> {
-  const tenant = await db.select().from(tenants).where(eq(tenants.slug, tenantSlug)).limit(1);
+  const tenant = await db
+    .select({
+      id: tenants.id,
+      slug: tenants.slug,
+      name: tenants.name,
+      description: tenants.description,
+      settings: tenants.settings,
+      createdAt: tenants.createdAt,
+      updatedAt: tenants.updatedAt,
+      customDomainHostname: tenants.customDomainHostname,
+      customDomainVerifiedAt: tenants.customDomainVerifiedAt,
+    })
+    .from(tenants)
+    .where(eq(tenants.slug, tenantSlug))
+    .limit(1);
 
   if (!tenant.length) {
     return null;
   }
 
+  const row = tenant[0];
   return {
-    ...tenant[0],
-    settings: parseTenantSettings(tenant[0].settings),
+    ...row,
+    settings: parseTenantSettings(row.settings),
   };
 }
 

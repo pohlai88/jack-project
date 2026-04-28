@@ -2,12 +2,14 @@ import { Building2, Sparkles } from 'lucide-react';
 import { redirect } from 'next/navigation';
 import { getLocale } from 'next-intl/server';
 
+import { CreateOrganizationForm } from '@/features/auth';
 import { localizeHref } from '@/i18n';
 import { Link } from '@/i18n/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui';
 
 import type { TenantRole } from '@/shared/db/schema/auth';
 import { auth } from '@/shared/lib/auth';
+import { env } from '@/shared/lib/env';
 
 export const metadata = {
   title: 'Select Organization | Afenda',
@@ -35,8 +37,33 @@ export default async function SelectTenantPage() {
   const userRoles = session.user.roles as Record<string, TenantRole> | undefined;
   const tenantSlugs = userRoles ? Object.keys(userRoles) : [];
 
-  // No memberships - show message
+  // No memberships - show message (optional self-service create)
   if (tenantSlugs.length === 0) {
+    if (env.ENABLE_SELF_SERVICE_TENANT_CREATE) {
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-amber-500/5 p-4">
+          <Card className="w-full max-w-md border shadow-lg bg-card">
+            <CardHeader className="text-center">
+              <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/10">
+                <Building2 className="h-7 w-7 text-amber-500" />
+              </div>
+              <CardTitle>Create your organization</CardTitle>
+              <CardDescription>
+                Signed in as <strong>{session.user.email}</strong>. You don&apos;t belong to any workspace yet—create
+                one to get started.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <CreateOrganizationForm />
+              <p className="text-xs text-muted-foreground text-center mt-4">
+                Prefer to join an existing team? Ask an admin for an invitation link.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      );
+    }
+
     return (
       <div className="min-h-screen flex items-center justify-center bg-amber-500/5 p-4">
         <div className="text-center max-w-md">

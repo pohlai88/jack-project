@@ -18,11 +18,11 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - [ ] Test A
 - [ ] Test B
 
-## Translation / Crowdin
+## Localization (Git-managed)
 
-- [ ] Developers changed only `src/i18n/catalogs/source/en.json` for message source changes
+- [ ] Developers changed only `src/i18n/catalogs/source/en.json` for English message source changes
+- [ ] Non-English updates target `src/i18n/catalogs/fallback/*.json` (or documented automation under `catalogs/generated` with `I18N_ALLOW_GENERATED_UPDATE=1`)
 - [ ] `src/i18n/messages/*.json` changes were produced by `pnpm i18n:compile`, not manual edits
-- [ ] Crowdin-generated catalog changes use the `i18n-platform-sync` label
 - [ ] `pnpm i18n:compile --check`, `pnpm i18n:validate`, `pnpm i18n:coverage`, and `pnpm i18n:fallback-check` pass for localization changes
 
 ## Checklist

@@ -1,3 +1,10 @@
+/**
+ * Runtime locale authority (I18N-RUNTIME-001, ADR-0009):
+ * - The active request locale comes from the `[locale]` route segment (via next-intl `requestLocale`),
+ *   optionally the same validated value passed as `locale` from the framework (adapter/testing only; not a preference channel).
+ * - Cookies, tenant defaults, headers, and profile preferences must not be read here to override an already resolved localized route.
+ * - Preference-based behavior belongs at redirect / entrypoint boundaries (e.g. proxy), not inside `getRequestConfig`.
+ */
 import { hasLocale } from 'next-intl';
 import { getRequestConfig } from 'next-intl/server';
 import { defaultLocale, defaultTimeZone, type Locale } from './config';

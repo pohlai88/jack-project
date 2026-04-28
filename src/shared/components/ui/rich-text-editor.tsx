@@ -71,7 +71,8 @@ export function RichTextEditor({
       editable: !disabled,
       editorProps: {
         attributes: {
-          class: 'prose prose-sm dark:prose-invert max-w-none min-h-[var(--min-height)] px-3 py-2 focus:outline-none',
+          class:
+            'wysiwyg wysiwyg-sm dark:wysiwyg-invert max-w-none min-h-[var(--min-height)] px-3 py-2 focus:outline-none',
           style: `--min-height: ${minHeight}px`,
         },
       },

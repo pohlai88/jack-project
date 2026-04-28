@@ -10,4 +10,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log('i18n inventory check passed for source, generated, and protected fallback catalogs');
+console.log('i18n inventory check passed for source, optional generated, and protected fallback catalogs');

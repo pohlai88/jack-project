@@ -31,6 +31,7 @@ const eslintIgnore = [
   'storybook-static/',
   '*.min.js',
   '*.config.js',
+  'tolgee.config.cjs',
   '*.d.ts',
   '.sst/',
   '.open-next/',

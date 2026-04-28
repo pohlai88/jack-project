@@ -1,9 +1,11 @@
-import { eq } from 'drizzle-orm';
+import { eq, or } from 'drizzle-orm';
 import { headers } from 'next/headers';
 import { cache } from 'react';
 
 import { db } from '@/shared/db';
 import { tenants } from '@/shared/db/schema';
+
+import { parseTenantSubdomainSlugFromHost } from '@/shared/lib/tenant-subdomain-host';
 
 /** Get the underlying cause message from a Drizzle or database error */
 function getCauseMessage(err: unknown): string {
@@ -22,11 +24,11 @@ function getCauseMessage(err: unknown): string {
  */
 export const getCurrentTenantSlug = cache(async (): Promise<string | null> => {
   const headersList = await headers();
-  const pathname = headersList.get('x-pathname') || headersList.get('x-invoke-path') || '';
+  const fromProxy = headersList.get('x-tenant-slug')?.trim();
+  if (fromProxy) return fromProxy;
 
-  // Match /t/{slug} pattern
-  const match = pathname.match(/^\/t\/([^/]+)/);
-  return match ? match[1] : null;
+  const pathname = headersList.get('x-pathname') || headersList.get('x-invoke-path') || '';
+  return extractTenantSlug(pathname);
 });
 
 /**
@@ -41,9 +43,7 @@ export const getCurrentTenant = cache(async () => {
   if (!slug) return null;
 
   try {
-    const tenant = await db.query.tenants.findFirst({
-      where: eq(tenants.slug, slug),
-    });
+    const tenant = await findTenantBySlugOrSubdomain(slug);
     return tenant;
   } catch (err) {
     const cause = getCauseMessage(err);
@@ -51,22 +51,44 @@ export const getCurrentTenant = cache(async () => {
   }
 });
 
+/** Resolved tenant row id for the current request, or null (no extra DB round-trip vs getCurrentTenant). */
+export const getCurrentTenantId = cache(async (): Promise<string | null> => {
+  const tenant = await getCurrentTenant();
+  return tenant?.id ?? null;
+});
+
+async function findTenantBySlugOrSubdomain(label: string) {
+  return db.query.tenants.findFirst({
+    where: or(eq(tenants.slug, label), eq(tenants.subdomain, label)),
+  });
+}
+
 /**
- * Get tenant by slug from the database.
+ * Get tenant by URL routing label (matches `tenants.slug` or optional `tenants.subdomain`).
  *
- * @param slug - Tenant slug
+ * @param slug - Path or host segment (not verified beyond DB match)
  * @returns Tenant object or null if not found
  */
 export async function getTenantBySlug(slug: string) {
   try {
-    const tenant = await db.query.tenants.findFirst({
-      where: eq(tenants.slug, slug),
-    });
-    return tenant;
+    return await findTenantBySlugOrSubdomain(slug);
   } catch (err) {
     const cause = getCauseMessage(err);
     throw new Error(`Tenant lookup failed for slug "${slug}": ${cause}`, { cause: err });
   }
+}
+
+/**
+ * Resolve tenant from `Host` when `tenantRootDomain` is configured (`{label}.{tenantRootDomain}`).
+ * Uses the same label rules as the edge proxy (see `parseTenantSubdomainSlugFromHost`).
+ */
+export async function getTenantByHost(
+  hostHeader: string | null | undefined,
+  tenantRootDomain: string | null | undefined,
+) {
+  const label = parseTenantSubdomainSlugFromHost(hostHeader, tenantRootDomain);
+  if (!label) return null;
+  return getTenantBySlug(label);
 }
 
 /**

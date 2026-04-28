@@ -36,6 +36,7 @@ yarn-error.log*
 # env.config is the maintained local source; use env.config.example as template.
 env.config
 .env.local
+.env.production
 .env*.local
 .envrc
 .envrc.deploy.local
@@ -66,5 +67,10 @@ next-env.d.ts
 
 # git worktrees
 .worktrees/
+
+# Tolgee spike: unreviewed TMS exports (ADR-0010); never commit raw output to main catalogs
+src/i18n/catalogs/tolgee-staging/
+
+.vercel
 
 .vercel

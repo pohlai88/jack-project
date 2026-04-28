@@ -11,7 +11,7 @@ It remains subordinate to Expansion Plan 0008. The entries below now capture imp
 
 The authoritative readiness contract is now [ATC-0010: Locale Activation Readiness](../atc/ATC-0010-locale-activation-readiness.md). Reviewed status evidence is captured in [I18N Locale Activation Snapshot](./evidence/i18n/I18N_LOCALE_ACTIVATION_SNAPSHOT.md). Generated reports under `.artifacts/i18n/` are non-committed artifacts only.
 
-Crowdin is the authoritative translation operating system. Translation tools may propose changes only through generated catalog pull requests; repository validation and merge decide acceptance.
+Git is the authoritative translation operating system. Human translations live in `src/i18n/catalogs/fallback/*.json` (optional machine exports in `catalogs/generated`); repository validation and merge decide acceptance.
 
 ## Activation Identity
 

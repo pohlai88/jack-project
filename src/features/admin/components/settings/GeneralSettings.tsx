@@ -2,6 +2,8 @@
 
 import { AlertTriangle } from 'lucide-react';
 
+import { Link } from '@/i18n/navigation';
+
 import {
   Button,
   Card,
@@ -58,6 +60,18 @@ export function GeneralSettings() {
           </div>
           <Button onClick={() => handleSave('info', { name, description })} disabled={isPending}>
             Save Changes
+          </Button>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Custom domain</CardTitle>
+          <CardDescription>Optional verified apex hostname for this organization</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Button variant="outline" asChild>
+            <Link href={`/t/${tenantSlug}/admin/settings/domain`}>Configure custom domain</Link>
           </Button>
         </CardContent>
       </Card>

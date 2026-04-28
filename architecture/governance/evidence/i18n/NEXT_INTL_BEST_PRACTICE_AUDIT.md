@@ -58,12 +58,12 @@ Sources below are **Context7-returned** pointers into the upstream next-intl doc
 
 ## 4. Aligned with Context7 / docs
 
-- **Plugin + `getRequestConfig` path:** [next.config.mjs](c:\JackProject\afenda-node\next.config.mjs) — `createNextIntlPlugin('./src/i18n/request.ts')` (matches §2a custom path pattern).
-- **Routing:** [src/i18n/routing.ts](c:\JackProject\afenda-node\src\i18n\routing.ts) — `defineRouting({ locales, defaultLocale })`; implicit **`localePrefix: 'always'`** per Context7 default (§2b).
-- **Middleware:** [src/proxy.ts](c:\JackProject\afenda-node\src\proxy.ts) — `createMiddleware(routing)` in `proxy.ts`; matcher aligned with documented exclusions (no `trpc` segment — acceptable if unused).
-- **Navigation:** [src/i18n/navigation.ts](c:\JackProject\afenda-node\src\i18n\navigation.ts) — `createNavigation(routing)` per §2c.
-- **Request config:** [src/i18n/request.ts](c:\JackProject\afenda-node\src\i18n\request.ts) — `requestLocale`, `hasLocale`, `defaultLocale` fallback; dynamic `messages` import; **merge default locale messages** over active locale (matches §2c recommended approach vs using `getMessageFallback` for missing keys).
-- **Layout:** [src/app/[locale]/layout.tsx](c:\JackProject\afenda-node\src\app[locale]\layout.tsx) — `hasLocale` → `notFound()`, `setRequestLocale(locale)` before `getMessages()`, `generateStaticParams`, `NextIntlClientProvider` with `locale` + `messages` (matches §2a flow).
+- **Plugin + `getRequestConfig` path:** [next.config.mjs](../../../../next.config.mjs) — `createNextIntlPlugin('./src/i18n/request.ts')` (matches §2a custom path pattern).
+- **Routing:** [src/i18n/routing.ts](../../../../src/i18n/routing.ts) — `defineRouting({ locales, defaultLocale })`; implicit **`localePrefix: 'always'`** per Context7 default (§2b).
+- **Middleware:** [src/proxy.ts](../../../../src/proxy.ts) — `createMiddleware(routing)` in `proxy.ts`; matcher aligned with documented exclusions (no `trpc` segment — acceptable if unused).
+- **Navigation:** [src/i18n/navigation.ts](../../../../src/i18n/navigation.ts) — `createNavigation(routing)` per §2c.
+- **Request config:** [src/i18n/request.ts](../../../../src/i18n/request.ts) — `requestLocale`, `hasLocale`, `defaultLocale` fallback; dynamic `messages` import; **merge default locale messages** over active locale (matches §2c recommended approach vs using `getMessageFallback` for missing keys).
+- **Layout:** [src/app/[locale]/layout.tsx](../../../../src/app/[locale]/layout.tsx) — `hasLocale` → `notFound()`, `setRequestLocale(locale)` before `getMessages()`, `generateStaticParams`, `NextIntlClientProvider` with `locale` + `messages` (matches §2a flow).
 - **Composition:** `auth()` wraps handler that invokes `handleI18nRouting` then mutates response — matches §2b “compose after i18n” pattern.
 
 ---
@@ -76,12 +76,12 @@ No blocking divergence from Context7’s core App Router + routing setup.
 
 ### P1 — Error handling (Context7 §2c)
 
-- Server `onError` in [src/i18n/request.ts](c:\JackProject\afenda-node\src\i18n\request.ts) only logs in **development**; docs illustrate production branching (e.g. missing vs other errors) and tracking.
+- Server `onError` in [src/i18n/request.ts](../../../../src/i18n/request.ts) only logs in **development**; docs illustrate production branching (e.g. missing vs other errors) and tracking.
 - **`onError` / `getMessageFallback` on client:** Context7 explicitly requires a **client** `NextIntlClientProvider` wrapper for these callbacks; otherwise Client Components rely on defaults.
 
 ### P2 — `setRequestLocale` coverage (Context7 §2a)
 
-- Docs: call in **every** layout and page that must be statically rendered. Repo: only root [src/app/[locale]/layout.tsx](c:\JackProject\afenda-node\src\app[locale]\layout.tsx). Revisit if you see per-segment static generation issues.
+- Docs: call in **every** layout and page that must be statically rendered. Repo: only root [src/app/[locale]/layout.tsx](../../../../src/app/[locale]/layout.tsx). Revisit if you see per-segment static generation issues.
 
 ### P2 — `NextIntlClientProvider` props (Context7 §2a blog)
 
@@ -89,7 +89,7 @@ No blocking divergence from Context7’s core App Router + routing setup.
 
 ### P2 — Runtime merge vs compile (unchanged)
 
-- Compile-time merge in [scripts/lib/i18n-catalog-core.mjs](c:\JackProject\afenda-node\scripts\lib\i18n-catalog-core.mjs) plus runtime merge in [src/i18n/merge-messages.ts](c:\JackProject\afenda-node\src\i18n\merge-messages.ts) remains **defense in depth**, consistent with §2c “merge default locale” guidance—not a doc violation.
+- Compile-time merge in [scripts/lib/i18n-catalog-core.mjs](../../../../scripts/lib/i18n-catalog-core.mjs) plus runtime merge in [src/i18n/merge-messages.ts](../../../../src/i18n/merge-messages.ts) remains **defense in depth**, consistent with §2c “merge default locale” guidance—not a doc violation.
 
 ### P2 — Message payload / CWV
 
@@ -99,15 +99,14 @@ No blocking divergence from Context7’s core App Router + routing setup.
 
 ## 6. Org-specific strengths (not in next-intl docs)
 
-- Canonical **en** source, Crowdin **generated**, **protected fallbacks**, compile → `messages/`, **`pnpm i18n:sync`**, ICU validation, registry-driven tooling ([src/i18n/README.md](c:\JackProject\afenda-node\src\i18n\README.md), [scripts/lib/i18n-catalog-core.mjs](c:\JackProject\afenda-node\scripts\lib\i18n-catalog-core.mjs)).
-
----
+- Canonical **en** source, optional **generated**, **protected fallbacks**, compile → `messages/`, **`pnpm i18n:sync`**, ICU validation, registry-driven tooling ([src/i18n/README.md](../../../../src/i18n/README.md), [scripts/lib/i18n-catalog-core.mjs](../../../../scripts/lib/i18n-catalog-core.mjs)).
+- **Runtime locale authority (I18N-RUNTIME-001):** [Doctrine 0009](../../../../architecture/doctrine/0009-i18n-runtime-locale-authority.md) and [ADR-0009](../../../../architecture/adr/0009-runtime-locale-authority-app-router.md) — the **`[locale]`** URL segment is the sole **runtime** authority for App Router pages; `next-intl` (`request.ts`, root `[locale]` layout, provider) carries it. Preference layers (cookies, tenant default, profile, headers) are redirect/entrypoint concerns only and must not silently override a resolved localized route inside `getRequestConfig`. Translation **supply** remains [ADR-0005](../../../../architecture/adr/0005-continuous-localization-operating-model.md), distinct from **rendering** authority.
 
 ## 7. Module layout (Context7 + repo conventions)
 
 Official next-intl examples often use a top-level `messages/` directory. This repository keeps **`src/i18n/`** as the single module boundary: `request.ts`, `routing.ts`, `navigation.ts`, `messages/*.json` (compiled), and `catalogs/{source,fallback,generated}/` together with the **Node compile/validate** scripts in `scripts/lib/i18n-catalog-core.mjs`. That layout matches Context7 guidance that `createNextIntlPlugin` can point at any `requestConfig` path and that messages may be colocated with code; the plugin option `srcPath` exists for monorepos but is unnecessary here.
 
-**No relocation** to root `messages/` was done: it would churn imports, `I18N_PATHS`, Crowdin paths, and CI without user-facing benefit. Further optimization should stay inside this module (for example selective client messages) rather than introducing parallel trees.
+**No relocation** to root `messages/` was done: it would churn imports, `I18N_PATHS`, catalog paths, and CI without user-facing benefit. Further optimization should stay inside this module (for example selective client messages) rather than introducing parallel trees.
 
 ---
 

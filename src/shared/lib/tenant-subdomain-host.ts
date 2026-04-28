@@ -1,12 +1,37 @@
 /**
  * Pure helpers: map tenant host (subdomain of ROOT_DOMAIN) → internal pathname.
  * Edge-safe — no DB imports (safe for `src/proxy.ts`).
+ *
+ * `tenantRootDomain` / `rootDomain` are normalized like cookie apex input: strip optional `https?://`, path, and port
+ * so misconfigured env still resolves consistently with `auth-cookie-domain` expectations.
  */
 
 /**
  * Extract tenant slug from `Host` when it is `{slug}.{rootDomain}`.
  * Returns null for apex, www, preview hosts, or when unset/mismatch.
  */
+export type TenantSlugResolutionSource = 'subdomain' | 'path' | null;
+
+/**
+ * Resolve the tenant **slug** from an incoming request without DB I/O.
+ * Used by `src/proxy.ts` and tests; `slug` from the path is still untrusted until verified with `getTenantBySlug` / PBAC on the server.
+ */
+export function resolveTenantSlugFromIncomingRequest(input: {
+  host: string | null | undefined;
+  pathname: string;
+  tenantRootDomain: string | null | undefined;
+  locales: readonly string[];
+}): { slug: string | null; source: TenantSlugResolutionSource } {
+  const fromHost = parseTenantSubdomainSlugFromHost(input.host, input.tenantRootDomain);
+  if (fromHost) return { slug: fromHost, source: 'subdomain' };
+
+  const { restPath } = stripLeadingLocaleSegment(input.pathname || '/', input.locales);
+  const pathMatch = restPath.match(/^\/t\/([^/]+)/);
+  if (pathMatch?.[1]) return { slug: pathMatch[1], source: 'path' };
+
+  return { slug: null, source: null };
+}
+
 export function parseTenantSubdomainSlugFromHost(
   hostHeader: string | null | undefined,
   rootDomain: string | null | undefined,
@@ -14,10 +39,13 @@ export function parseTenantSubdomainSlugFromHost(
   if (!hostHeader?.trim() || !rootDomain?.trim()) return null;
 
   const hostname = hostHeader.split(':')[0].toLowerCase();
+  // Match cookie-domain normalization: strip scheme before `:`, then path/port segments.
   const root = rootDomain
-    .split(':')[0]
+    .trim()
     .toLowerCase()
     .replace(/^https?:\/\//, '')
+    .split('/')[0]!
+    .split(':')[0]!
     .replace(/\/$/, '');
 
   if (!hostname || !root) return null;
