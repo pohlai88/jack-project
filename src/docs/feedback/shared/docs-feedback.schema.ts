@@ -42,8 +42,6 @@ export const submitDocsPageFeedbackSchema = z.object({
   message: optionalFeedbackMessageSchema,
 });
 
-export function parseSubmitDocsPageFeedbackInput(
-  input: unknown,
-): SubmitDocsPageFeedbackInput {
+export function parseSubmitDocsPageFeedbackInput(input: unknown): SubmitDocsPageFeedbackInput {
   return submitDocsPageFeedbackSchema.parse(input);
 }

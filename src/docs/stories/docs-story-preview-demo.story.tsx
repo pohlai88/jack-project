@@ -1,10 +1,7 @@
 import { defineStory } from '@/docs/runtime/story';
 
 import { DocsStoryFrame } from './docs-story-frame';
-import {
-  DocsStoryPreviewDemo,
-  type DocsStoryPreviewDemoProps,
-} from './docs-story-preview-demo';
+import { DocsStoryPreviewDemo, type DocsStoryPreviewDemoProps } from './docs-story-preview-demo';
 
 /**
  * Stable file path for ts-morph / fs read.

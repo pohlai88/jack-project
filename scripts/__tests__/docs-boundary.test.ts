@@ -47,10 +47,9 @@ describe('docs boundary assertions', () => {
     const appFiles = testFilesIn('src/app');
     for (const file of appFiles) {
       const content = readText(resolve(ROOT, file));
-      expect.soft(
-        content,
-        `${file} still contains legacy [docs] route-group path. Remove "(docs)/docs" structure.`,
-      ).not.toMatch(/\(docs\)\/docs/);
+      expect
+        .soft(content, `${file} still contains legacy [docs] route-group path. Remove "(docs)/docs" structure.`)
+        .not.toMatch(/\(docs\)\/docs/);
     }
   });
 
@@ -69,10 +68,7 @@ describe('docs boundary assertions', () => {
         continue;
       }
       const content = readText(resolve(ROOT, file));
-      expect.soft(
-        content,
-        `${file} still references legacy docs/content path.`,
-      ).not.toContain('docs/content');
+      expect.soft(content, `${file} still references legacy docs/content path.`).not.toContain('docs/content');
     }
   });
 
@@ -96,10 +92,9 @@ describe('docs boundary assertions', () => {
       if (!content.includes(CORPUS_PATH)) {
         continue;
       }
-      expect(
-        allowedReferences.has(file),
-        `${file} references ${CORPUS_PATH} outside approved boundary files.`,
-      ).toBe(true);
+      expect(allowedReferences.has(file), `${file} references ${CORPUS_PATH} outside approved boundary files.`).toBe(
+        true,
+      );
     }
   });
 

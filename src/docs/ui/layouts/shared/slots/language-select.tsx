@@ -23,19 +23,13 @@ export function LanguageSelect({
     <Popover>
       <PopoverTrigger
         aria-label={context.text.chooseLanguage}
-        className={cn(
-          buttonVariants({ variant }),
-          'gap-1.5 p-1.5 data-[state=open]:bg-fd-accent',
-          className,
-        )}
+        className={cn(buttonVariants({ variant }), 'gap-1.5 p-1.5 data-[state=open]:bg-fd-accent', className)}
         {...rest}
       >
         {children}
       </PopoverTrigger>
       <PopoverContent className="flex flex-col gap-0.5 p-1">
-        <p className="p-2 text-xs font-medium text-fd-muted-foreground">
-          {context.text.chooseLanguage}
-        </p>
+        <p className="p-2 text-xs font-medium text-fd-muted-foreground">{context.text.chooseLanguage}</p>
         {context.locales.map((item) => (
           <button
             key={item.locale}

@@ -19,9 +19,10 @@ const localeDisplayNames = Object.fromEntries(
   ]),
 ) as Record<DocsLocale, { displayName: string }>;
 
-const openApiLocaleOverrides = Object.fromEntries(
-  docsLocales.map((locale) => [locale, {}]),
-) as Record<DocsLocale, Record<string, never>>;
+const openApiLocaleOverrides = Object.fromEntries(docsLocales.map((locale) => [locale, {}])) as Record<
+  DocsLocale,
+  Record<string, never>
+>;
 
 const docsNavTitles: Record<DocsLocale, string> = {
   en: 'Afenda Docs',
@@ -40,15 +41,10 @@ const baseI18nUI = defineI18nUI(i18n, localeDisplayNames);
  *
  * Locale overrides intentionally stay empty until API UI labels are translated.
  */
-export const i18nUI = defineI18nOpenAPI(
-  baseI18nUI,
-  openApiLocaleOverrides,
-);
+export const i18nUI = defineI18nOpenAPI(baseI18nUI, openApiLocaleOverrides);
 
 export function baseOptions(locale: string): BaseLayoutProps {
-  const docsLocale = docsLocales.includes(locale as DocsLocale)
-    ? (locale as DocsLocale)
-    : 'en';
+  const docsLocale = docsLocales.includes(locale as DocsLocale) ? (locale as DocsLocale) : 'en';
 
   return {
     nav: {

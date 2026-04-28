@@ -60,15 +60,15 @@ Stream A is operator-owned production execution. In-repo scripts support environ
 
 **Last updated:** 2026-04-28
 
-| Check | Status | Notes |
-| ----- | ------ | ----- |
-| Vercel Production env keys vs `env.config` + push plan | Pass (CLI) | `pnpm vercel:env:report`: 14 keys expected after merge, 14 present on Vercel, none missing or extra; required keys complete in local `.env.production` preview. |
-| DNS + registrar (`www`, `*.nexuscanon.com`) | Pending operator | Not verifiable from the repo; confirm at registrar and in Vercel → Domains. |
-| Vercel project domains (prefer `www` + wildcard; no bare apex on project) | Partial | Apex removal previously succeeded via operator/API (`vercel:domain:remove-apex`); re-verify in Vercel if domains drift. |
-| Auth0 / IdP vs `AUTH_URL` | Deferred | `AUTH0_*` optional keys unset locally; configure Auth0 Application URLs for `https://www.nexuscanon.com` when IdP is enabled. |
-| Secret rotation post-cutover | Pending operator | Per org security process after go-live. |
-| Production deployment + health | Pending operator | Confirm current Production deployment and build status in Vercel. |
-| Post-deploy smoke | Pending operator | Run the [Post-deploy verification](#post-deploy-verification-operator) checklist when live; add dates and pass/fail per line. |
+| Check                                                                     | Status           | Notes                                                                                                                                                           |
+| ------------------------------------------------------------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Vercel Production env keys vs `env.config` + push plan                    | Pass (CLI)       | `pnpm vercel:env:report`: 14 keys expected after merge, 14 present on Vercel, none missing or extra; required keys complete in local `.env.production` preview. |
+| DNS + registrar (`www`, `*.nexuscanon.com`)                               | Pending operator | Not verifiable from the repo; confirm at registrar and in Vercel → Domains.                                                                                     |
+| Vercel project domains (prefer `www` + wildcard; no bare apex on project) | Partial          | Apex removal previously succeeded via operator/API (`vercel:domain:remove-apex`); re-verify in Vercel if domains drift.                                         |
+| Auth0 / IdP vs `AUTH_URL`                                                 | Deferred         | `AUTH0_*` optional keys unset locally; configure Auth0 Application URLs for `https://www.nexuscanon.com` when IdP is enabled.                                   |
+| Secret rotation post-cutover                                              | Pending operator | Per org security process after go-live.                                                                                                                         |
+| Production deployment + health                                            | Pending operator | Confirm current Production deployment and build status in Vercel.                                                                                               |
+| Post-deploy smoke                                                         | Pending operator | Run the [Post-deploy verification](#post-deploy-verification-operator) checklist when live; add dates and pass/fail per line.                                   |
 
 **Commands run (this evidence pass):** `pnpm vercel:env:report` (exit 0).
 

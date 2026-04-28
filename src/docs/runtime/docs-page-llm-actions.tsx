@@ -6,12 +6,7 @@ import { toast } from 'sonner';
 
 import { Button } from '@/shared/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/shared/components/ui/popover';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/shared/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/shared/components/ui/tooltip';
 
 export interface DocsPageLlmCopy {
   copyMarkdownUrl: string;
@@ -27,11 +22,7 @@ interface DocsPageLlmActionsProps {
   lastUpdated?: string;
 }
 
-export function DocsPageLlmActions({
-  markdownAbsoluteUrl,
-  copy,
-  lastUpdated,
-}: DocsPageLlmActionsProps) {
+export function DocsPageLlmActions({ markdownAbsoluteUrl, copy, lastUpdated }: DocsPageLlmActionsProps) {
   const resetTimerRef = useRef<number | null>(null);
   const [copied, setCopied] = useState(false);
   const [isCopying, setIsCopying] = useState(false);
@@ -95,10 +86,7 @@ export function DocsPageLlmActions({
 
   return (
     <TooltipProvider delayDuration={150}>
-      <div
-        className="not-wysiwyg docs-page-actions"
-        aria-label="Markdown page actions"
-      >
+      <div className="not-wysiwyg docs-page-actions" aria-label="Markdown page actions">
         {lastUpdated ? (
           <div className="docs-page-actions__updated" aria-label={`Last updated ${lastUpdated}`}>
             <CalendarDays className="size-3.5" aria-hidden="true" />

@@ -26,14 +26,8 @@ function normalizeRequiredText(value: string, field: string): string {
   return trimmed;
 }
 
-export async function countRecentDocsPageFeedbackEvents(
-  rateLimitKeyHash: string,
-  since: Date,
-): Promise<number> {
-  const normalizedRateLimitKeyHash = normalizeRequiredText(
-    rateLimitKeyHash,
-    'rateLimitKeyHash',
-  );
+export async function countRecentDocsPageFeedbackEvents(rateLimitKeyHash: string, since: Date): Promise<number> {
+  const normalizedRateLimitKeyHash = normalizeRequiredText(rateLimitKeyHash, 'rateLimitKeyHash');
 
   const [row] = await db
     .select({ total: count() })
@@ -48,9 +42,7 @@ export async function countRecentDocsPageFeedbackEvents(
   return Number(row?.total ?? 0);
 }
 
-export async function recordDocsPageFeedbackEvent(
-  input: RecordDocsPageFeedbackEventInput,
-): Promise<void> {
+export async function recordDocsPageFeedbackEvent(input: RecordDocsPageFeedbackEventInput): Promise<void> {
   await db.insert(schema.docsPageFeedbackEvents).values({
     pageUrl: normalizeRequiredText(input.pageUrl, 'pageUrl'),
     pageTitle: normalizeRequiredText(input.pageTitle, 'pageTitle'),

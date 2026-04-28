@@ -7,11 +7,7 @@ export interface DocsLayoutProps extends BaseLayoutProps {
   tree: PageTree.Root;
 }
 
-export function DocsLayout({
-  tree,
-  children,
-  ...props
-}: DocsLayoutProps) {
+export function DocsLayout({ tree, children, ...props }: DocsLayoutProps) {
   const tabs = useMemo(() => getLayoutTabs(tree), [tree]);
 
   return (

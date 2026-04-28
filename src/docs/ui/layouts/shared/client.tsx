@@ -50,10 +50,7 @@ export interface BaseSlots {
     | false;
 }
 
-export interface BaseSlotsProps<P extends BaseLayoutProps = BaseLayoutProps> extends Pick<
-  P,
-  'nav'
-> {
+export interface BaseSlotsProps<P extends BaseLayoutProps = BaseLayoutProps> extends Pick<P, 'nav'> {
   themeSwitch: Omit<NonNullable<P['themeSwitch']>, 'enabled'>;
   searchToggle: Omit<NonNullable<P['searchToggle']>, 'enabled'>;
 }
@@ -101,18 +98,17 @@ export function baseSlots({ useProps }: { useProps: () => BaseSlotsProps }) {
         baseSlots: {
           navTitle: InlineNavTitle,
           themeSwitch: themeSwitchEnabled && InlineThemeSwitch,
-          languageSelect: locales.length > 1
-            ? {
-                root: LanguageSelect,
-                text: LanguageSelectText,
-              }
-            : false,
-          searchTrigger:
-            searchToggleEnabled &&
-            {
-              sm: InlineSearchTrigger,
-              full: InlineSearchTriggerFull,
-            },
+          languageSelect:
+            locales.length > 1
+              ? {
+                  root: LanguageSelect,
+                  text: LanguageSelectText,
+                }
+              : false,
+          searchTrigger: searchToggleEnabled && {
+            sm: InlineSearchTrigger,
+            full: InlineSearchTriggerFull,
+          },
         },
         baseProps: {
           nav,

@@ -10,13 +10,7 @@ import { cn } from '@/shared/lib/cn';
 
 export type BreadcrumbProps = BreadcrumbOptions & ComponentProps<'nav'>;
 
-export function Breadcrumb({
-  includeRoot,
-  includeSeparator,
-  includePage,
-  className,
-  ...props
-}: BreadcrumbProps) {
+export function Breadcrumb({ includeRoot, includeSeparator, includePage, className, ...props }: BreadcrumbProps) {
   const path = useTreePath();
   const { root } = useTreeContext();
 
@@ -57,10 +51,7 @@ export function Breadcrumb({
           return (
             <Fragment key={`${item.name}-${item.url ?? index}`}>
               {index !== 0 && (
-                <ChevronRight
-                  aria-hidden="true"
-                  className="size-3 shrink-0 text-fd-muted-foreground/60"
-                />
+                <ChevronRight aria-hidden="true" className="size-3 shrink-0 text-fd-muted-foreground/60" />
               )}
 
               <li className="min-w-0">
@@ -69,10 +60,7 @@ export function Breadcrumb({
                     {item.name}
                   </Link>
                 ) : (
-                  <span
-                    aria-current={isCurrent ? 'page' : undefined}
-                    className={itemClassName}
-                  >
+                  <span aria-current={isCurrent ? 'page' : undefined} className={itemClassName}>
                     {item.name}
                   </span>
                 )}

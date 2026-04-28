@@ -15,11 +15,7 @@ import {
   useState,
 } from 'react';
 
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@/shared/components/ui/collapsible';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/shared/components/ui/collapsible';
 import { cn } from '@/shared/lib/cn';
 
 import { useDocsLayout } from '../..';
@@ -39,12 +35,7 @@ export type TOCProps = {
   list?: TocDefault.TOCItemsProps;
 };
 
-export function TOC({
-  container,
-  header,
-  footer,
-  list,
-}: TOCProps) {
+export function TOC({ container, header, footer, list }: TOCProps) {
   const items = Base.useTOCItems();
   const { TOCItems, TOCEmpty, TOCItem } = TocDefault;
 
@@ -104,14 +95,7 @@ export type TOCPopoverProps = {
   list?: TocDefault.TOCItemsProps;
 };
 
-export function TOCPopover({
-  container,
-  trigger,
-  content,
-  header,
-  footer,
-  list,
-}: TOCPopoverProps) {
+export function TOCPopover({ container, trigger, content, header, footer, list }: TOCPopoverProps) {
   const items = Base.useTOCItems();
   const ref = useRef<HTMLElement>(null);
   const [open, setOpen] = useState(false);
@@ -183,10 +167,7 @@ export function TOCPopover({
   );
 }
 
-function PageTOCPopoverTrigger({
-  className,
-  ...props
-}: ComponentProps<'button'>) {
+function PageTOCPopoverTrigger({ className, ...props }: ComponentProps<'button'>) {
   const { text } = useI18n();
   const context = use(TocPopoverContext);
   const open = context?.open ?? false;
@@ -213,20 +194,13 @@ function PageTOCPopoverTrigger({
       <ProgressCircle
         value={progressValue}
         max={1}
-        className={cn(
-          'shrink-0 text-fd-muted-foreground/60 transition-colors',
-          open && 'text-fd-primary',
-        )}
+        className={cn('shrink-0 text-fd-muted-foreground/60 transition-colors', open && 'text-fd-primary')}
       />
 
       <span className="flex min-w-0 flex-1 flex-col">
-        <span className="text-[11px] font-medium uppercase tracking-wide text-fd-muted-foreground">
-          {text.toc}
-        </span>
+        <span className="text-[11px] font-medium uppercase tracking-wide text-fd-muted-foreground">{text.toc}</span>
 
-        <span className="truncate text-sm font-medium text-fd-foreground">
-          {activeTitle ?? path?.name ?? text.toc}
-        </span>
+        <span className="truncate text-sm font-medium text-fd-foreground">{activeTitle ?? path?.name ?? text.toc}</span>
       </span>
 
       <ChevronDown
@@ -240,8 +214,7 @@ function PageTOCPopoverTrigger({
   );
 }
 
-interface ProgressCircleProps
-  extends Omit<React.ComponentProps<'svg'>, 'strokeWidth'> {
+interface ProgressCircleProps extends Omit<React.ComponentProps<'svg'>, 'strokeWidth'> {
   value: number;
   strokeWidth?: number;
   size?: number;
@@ -301,23 +274,14 @@ function ProgressCircle({
   );
 }
 
-function PageTOCPopoverContent({
-  className,
-  children,
-  ...props
-}: ComponentProps<'div'>) {
+function PageTOCPopoverContent({ className, children, ...props }: ComponentProps<'div'>) {
   return (
     <CollapsibleContent
       data-toc-popover-content=""
       {...props}
-      className={cn(
-        'border-t border-fd-border/60 bg-fd-background/95 backdrop-blur',
-        className,
-      )}
+      className={cn('border-t border-fd-border/60 bg-fd-background/95 backdrop-blur', className)}
     >
-      <div className="flex max-h-[60vh] flex-col gap-2 px-4 py-3 md:px-6">
-        {children}
-      </div>
+      <div className="flex max-h-[60vh] flex-col gap-2 px-4 py-3 md:px-6">{children}</div>
     </CollapsibleContent>
   );
 }

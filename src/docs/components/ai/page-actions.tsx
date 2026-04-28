@@ -66,8 +66,7 @@ export function ViewOptionsPopover({
   const pathname = usePathname();
 
   const items = useMemo(() => {
-    const origin =
-      typeof window !== 'undefined' ? window.location.origin : '';
+    const origin = typeof window !== 'undefined' ? window.location.origin : '';
 
     const pageUrl = origin ? `${origin}${pathname}` : pathname;
 

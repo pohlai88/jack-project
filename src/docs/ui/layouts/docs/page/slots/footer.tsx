@@ -61,13 +61,7 @@ export function Footer({ items, children, className, ...props }: FooterProps) {
   );
 }
 
-function FooterItem({
-  item,
-  direction,
-}: {
-  item: Item;
-  direction: 'previous' | 'next';
-}) {
+function FooterItem({ item, direction }: { item: Item; direction: 'previous' | 'next' }) {
   const { text } = useI18n();
 
   const isNext = direction === 'next';
@@ -86,28 +80,17 @@ function FooterItem({
         isNext && 'items-end text-end',
       )}
     >
-      <span className="text-xs font-medium uppercase tracking-wide text-fd-muted-foreground">
-        {label}
-      </span>
+      <span className="text-xs font-medium uppercase tracking-wide text-fd-muted-foreground">{label}</span>
 
-      <div
-        className={cn(
-          'flex min-w-0 items-center gap-2 text-fd-foreground',
-          isNext && 'flex-row-reverse',
-        )}
-      >
+      <div className={cn('flex min-w-0 items-center gap-2 text-fd-foreground', isNext && 'flex-row-reverse')}>
         <span className="flex size-7 shrink-0 items-center justify-center rounded-full border border-fd-border/70 bg-fd-background shadow-sm transition-transform group-hover:scale-105">
           <Icon className="size-4 rtl:rotate-180" aria-hidden="true" />
         </span>
 
-        <span className="truncate font-semibold">
-          {item.name}
-        </span>
+        <span className="truncate font-semibold">{item.name}</span>
       </div>
 
-      <p className="line-clamp-2 text-fd-muted-foreground">
-        {item.description ?? label}
-      </p>
+      <p className="line-clamp-2 text-fd-muted-foreground">{item.description ?? label}</p>
     </Link>
   );
 }

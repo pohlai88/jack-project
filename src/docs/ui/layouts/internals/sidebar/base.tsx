@@ -59,11 +59,7 @@ export interface SidebarProviderProps {
 const SidebarContext = createContext<SidebarContextValue | null>(null);
 const FolderContext = createContext<FolderContextValue | null>(null);
 
-export function SidebarProvider({
-  defaultOpenLevel = 0,
-  prefetch,
-  children,
-}: SidebarProviderProps) {
+export function SidebarProvider({ defaultOpenLevel = 0, prefetch, children }: SidebarProviderProps) {
   const closeOnRedirect = useRef(true);
   const [open, setOpen] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
@@ -169,12 +165,7 @@ export function SidebarContent({
   function shouldIgnoreHover(event: PointerEvent): boolean {
     const element = ref.current;
 
-    return (
-      !element ||
-      !collapsed ||
-      event.pointerType === 'touch' ||
-      element.getAnimations().length > 0
-    );
+    return !element || !collapsed || event.pointerType === 'touch' || element.getAnimations().length > 0;
   }
 
   return children({
@@ -192,15 +183,9 @@ export function SidebarContent({
 
       clearCloseTimer();
 
-      const distanceFromViewportEdge = Math.min(
-        event.clientX,
-        document.body.clientWidth - event.clientX,
-      );
+      const distanceFromViewportEdge = Math.min(event.clientX, document.body.clientWidth - event.clientX);
 
-      closeTimerRef.current = window.setTimeout(
-        () => setHovered(false),
-        distanceFromViewportEdge > 100 ? 0 : 500,
-      );
+      closeTimerRef.current = window.setTimeout(() => setHovered(false), distanceFromViewportEdge > 100 ? 0 : 500);
     },
   });
 }
@@ -236,12 +221,7 @@ export function SidebarDrawerOverlay(props: ComponentProps<'div'>) {
 
   return (
     <Presence present={open}>
-      <div
-        role="presentation"
-        data-state={open ? 'open' : 'closed'}
-        onClick={() => setOpen(false)}
-        {...props}
-      />
+      <div role="presentation" data-state={open ? 'open' : 'closed'} onClick={() => setOpen(false)} {...props} />
     </Presence>
   );
 }
@@ -308,8 +288,7 @@ export function SidebarFolder({
   const { defaultOpenLevel } = useSidebar();
   const depth = useFolderDepth() + 1;
 
-  const shouldDefaultOpen =
-    !collapsible || active || (defaultOpenProp ?? defaultOpenLevel >= depth);
+  const shouldDefaultOpen = !collapsible || active || (defaultOpenProp ?? defaultOpenLevel >= depth);
 
   const [open, setOpen] = useState(shouldDefaultOpen);
 

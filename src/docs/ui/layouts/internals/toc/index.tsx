@@ -1,14 +1,7 @@
 'use client';
 
 import * as Primitive from 'fumadocs-core/toc';
-import {
-  type ComponentPropsWithoutRef,
-  createContext,
-  forwardRef,
-  use,
-  useMemo,
-  useRef,
-} from 'react';
+import { type ComponentPropsWithoutRef, createContext, forwardRef, use, useMemo, useRef } from 'react';
 
 import { cn } from '@/shared/lib/cn';
 import { mergeRefs } from '@/shared/lib/merge-refs';
@@ -53,9 +46,7 @@ export const TOCScrollArea = forwardRef<HTMLDivElement, TOCScrollAreaProps>(func
       )}
       {...props}
     >
-      <Primitive.ScrollProvider containerRef={viewportRef}>
-        {children}
-      </Primitive.ScrollProvider>
+      <Primitive.ScrollProvider containerRef={viewportRef}>{children}</Primitive.ScrollProvider>
     </div>
   );
 });

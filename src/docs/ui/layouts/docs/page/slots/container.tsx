@@ -20,9 +20,7 @@ export function Container({ className, children, ...props }: ComponentProps<'art
         'mx-auto min-w-0 px-4 py-8 md:px-6 md:py-10 xl:px-8 xl:py-14',
         'gap-6',
 
-        full
-          ? 'max-w-[1168px]'
-          : 'max-w-[900px] xl:layout:[--fd-toc-width:268px]',
+        full ? 'max-w-[1168px]' : 'max-w-[900px] xl:layout:[--fd-toc-width:268px]',
 
         className,
       )}

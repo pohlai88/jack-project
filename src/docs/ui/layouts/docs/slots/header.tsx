@@ -23,9 +23,7 @@ export function Header(props: ComponentProps<'header'>) {
         props.className,
       )}
     >
-      {slots.navTitle && (
-        <slots.navTitle className="inline-flex items-center gap-2.5 font-semibold" />
-      )}
+      {slots.navTitle && <slots.navTitle className="inline-flex items-center gap-2.5 font-semibold" />}
       <div className="flex-1">{nav?.children}</div>
       {slots.searchTrigger && <slots.searchTrigger.sm hideIfDisabled className="p-2" />}
       {slots.sidebar && (

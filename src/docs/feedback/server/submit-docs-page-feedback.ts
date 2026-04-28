@@ -8,10 +8,7 @@ import { logger } from '@/shared/lib/logger';
 import { assertDocsFeedbackOrigin, getDocsFeedbackRequestContext } from './docs-feedback-context';
 import { assertDocsFeedbackRateLimit } from './docs-feedback-rate-limit';
 import { recordDocsPageFeedbackEvent } from './docs-feedback-service';
-import {
-  DocsFeedbackPublicError,
-  getDocsFeedbackErrorMessage,
-} from '../shared/docs-feedback.errors';
+import { DocsFeedbackPublicError, getDocsFeedbackErrorMessage } from '../shared/docs-feedback.errors';
 import { parseSubmitDocsPageFeedbackInput } from '../shared/docs-feedback.schema';
 import type {
   DocsFeedbackErrorCode,
@@ -83,9 +80,7 @@ async function recordValidatedDocsPageFeedback(
   };
 }
 
-export async function submitDocsPageFeedbackAction(
-  input: unknown,
-): Promise<DocsPageFeedbackActionResult> {
+export async function submitDocsPageFeedbackAction(input: unknown): Promise<DocsPageFeedbackActionResult> {
   try {
     const payload = parseSubmitDocsPageFeedbackInput(input);
     const result = await recordValidatedDocsPageFeedback(payload);

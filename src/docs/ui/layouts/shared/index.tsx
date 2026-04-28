@@ -122,10 +122,7 @@ export function getLayoutTabs(
 export function isLayoutTabActive(tab: LayoutTab, pathname: string) {
   if (tab.$folder) {
     return (
-      PageTree.findPath(
-        tab.$folder.children,
-        (node) => node.type === 'page' && isActive(node.url, pathname),
-      ) !== null
+      PageTree.findPath(tab.$folder.children, (node) => node.type === 'page' && isActive(node.url, pathname)) !== null
     );
   }
 
@@ -219,19 +216,12 @@ export interface CustomItemType extends Filterable {
   children: ReactNode;
 }
 
-export type LinkItemType =
-  | MainItemType
-  | IconItemType
-  | ButtonItemType
-  | MenuItemType
-  | CustomItemType;
+export type LinkItemType = MainItemType | IconItemType | ButtonItemType | MenuItemType | CustomItemType;
 
 /**
  * Get link items with shortcuts
  */
-export function resolveLinkItems({
-  links = [],
-}: Pick<BaseLayoutProps, 'links'>): LinkItemType[] {
+export function resolveLinkItems({ links = [] }: Pick<BaseLayoutProps, 'links'>): LinkItemType[] {
   return [...links];
 }
 

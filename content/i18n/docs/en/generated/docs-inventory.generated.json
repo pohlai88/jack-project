@@ -116,11 +116,7 @@
         "/api/tenants/[tenant]/permissions",
         "/api/tenants/[tenant]/settings"
       ],
-      "permissions": [
-        "admin:dashboard",
-        "admin:members",
-        "admin:settings"
-      ],
+      "permissions": ["admin:dashboard", "admin:members", "admin:settings"],
       "workflows": [
         {
           "id": "admin.member-lifecycle",
@@ -316,12 +312,7 @@
       "owner": "product-platform",
       "releaseState": "released",
       "summary": "Landing and tenant dashboard surfaces for workspace entry, activity, stats, and quick actions.",
-      "routes": [
-        "/",
-        "/[locale]",
-        "/[locale]/t/[tenant]",
-        "/api/health"
-      ],
+      "routes": ["/", "/[locale]", "/[locale]/t/[tenant]", "/api/health"],
       "permissions": [],
       "workflows": [
         {
@@ -625,10 +616,7 @@
       "owner": "member-platform",
       "releaseState": "released",
       "summary": "Member profile and profile settings surfaces.",
-      "routes": [
-        "/[locale]/t/[tenant]/profile",
-        "/[locale]/t/[tenant]/profile/settings"
-      ],
+      "routes": ["/[locale]/t/[tenant]/profile", "/[locale]/t/[tenant]/profile/settings"],
       "permissions": [],
       "workflows": [
         {
@@ -664,206 +652,74 @@
   ],
   "coverage": {
     "routes": {
-      "/[locale]/t/[tenant]/admin": [
-        "admin"
-      ],
-      "/[locale]/t/[tenant]/admin/audit-logs": [
-        "admin"
-      ],
-      "/[locale]/t/[tenant]/admin/invites": [
-        "admin"
-      ],
-      "/[locale]/t/[tenant]/admin/members": [
-        "admin"
-      ],
-      "/[locale]/t/[tenant]/admin/roles": [
-        "admin"
-      ],
-      "/[locale]/t/[tenant]/admin/settings": [
-        "admin"
-      ],
-      "/[locale]/t/[tenant]/admin/settings/ai-provider": [
-        "admin"
-      ],
-      "/[locale]/t/[tenant]/admin/settings/branding": [
-        "admin"
-      ],
-      "/[locale]/t/[tenant]/admin/settings/storage": [
-        "admin"
-      ],
-      "/[locale]/t/[tenant]/admin/settings/domain": [
-        "admin"
-      ],
-      "/api/internal/tenant-by-host": [
-        "admin"
-      ],
-      "/api/tenants/[tenant]/admin/settings/ai/test": [
-        "admin"
-      ],
-      "/api/tenants/[tenant]/admin/settings/storage/test": [
-        "admin"
-      ],
-      "/api/tenants/[tenant]/departments": [
-        "admin"
-      ],
-      "/api/tenants/[tenant]/departments/[id]": [
-        "admin"
-      ],
-      "/api/tenants/[tenant]/departments/[id]/managers": [
-        "admin"
-      ],
-      "/api/tenants/[tenant]/departments/[id]/members": [
-        "admin"
-      ],
-      "/api/tenants/[tenant]/directory": [
-        "admin"
-      ],
-      "/api/tenants/[tenant]/files/[fileId]": [
-        "admin"
-      ],
-      "/api/tenants/[tenant]/permissions": [
-        "admin"
-      ],
-      "/api/tenants/[tenant]/settings": [
-        "admin"
-      ],
-      "/[locale]/t/[tenant]/assistant": [
-        "assistant"
-      ],
-      "/api/assistant/conversations": [
-        "assistant"
-      ],
-      "/api/assistant/conversations/[id]": [
-        "assistant"
-      ],
-      "/api/chat": [
-        "assistant"
-      ],
-      "/login": [
-        "auth"
-      ],
-      "/select-tenant": [
-        "auth"
-      ],
-      "/[locale]/login": [
-        "auth"
-      ],
-      "/[locale]/select-tenant": [
-        "auth"
-      ],
-      "/[locale]/t/[tenant]/login": [
-        "auth"
-      ],
-      "/[locale]/t/[tenant]/invite/[token]": [
-        "auth"
-      ],
-      "/api/auth/[...nextauth]": [
-        "auth"
-      ],
-      "/": [
-        "dashboard"
-      ],
-      "/[locale]": [
-        "dashboard"
-      ],
-      "/[locale]/t/[tenant]": [
-        "dashboard"
-      ],
-      "/api/health": [
-        "dashboard"
-      ],
-      "/[locale]/docs": [
-        "docs"
-      ],
-      "/[locale]/docs/[[...slug]]": [
-        "docs"
-      ],
-      "/[locale]/og/docs/[...slug]": [
-        "docs"
-      ],
-      "/api/search": [
-        "docs"
-      ],
-      "/llms.txt": [
-        "docs"
-      ],
-      "/llms-full.txt": [
-        "docs"
-      ],
-      "/llms.mdx/[locale]/docs/[[...slug]]": [
-        "docs"
-      ],
-      "/rss.xml": [
-        "docs"
-      ],
-      "/api/integrations/github/callback": [
-        "github"
-      ],
-      "/api/integrations/github/connect": [
-        "github"
-      ],
-      "/api/integrations/github/user-connect": [
-        "github"
-      ],
-      "/[locale]/t/[tenant]/admin/integrations": [
-        "integration-sync"
-      ],
-      "/[locale]/t/[tenant]/admin/integrations/github": [
-        "integration-sync"
-      ],
-      "/[locale]/t/[tenant]/admin/integrations/webhooks": [
-        "integration-sync"
-      ],
-      "/api/tenants/[tenant]/admin/integrations/conflicts": [
-        "integration-sync"
-      ],
-      "/api/tenants/[tenant]/admin/integrations/field-mappings": [
-        "integration-sync"
-      ],
-      "/api/tenants/[tenant]/admin/integrations/github/assign-usernames": [
-        "integration-sync"
-      ],
-      "/api/tenants/[tenant]/admin/integrations/github/org-members": [
-        "integration-sync"
-      ],
-      "/api/tenants/[tenant]/admin/integrations/metrics": [
-        "integration-sync"
-      ],
-      "/api/tenants/[tenant]/admin/integrations/readiness": [
-        "integration-sync"
-      ],
-      "/api/tenants/[tenant]/admin/integrations/runs": [
-        "integration-sync"
-      ],
-      "/[locale]/t/[tenant]/profile": [
-        "profile"
-      ],
-      "/[locale]/t/[tenant]/profile/settings": [
-        "profile"
-      ]
+      "/[locale]/t/[tenant]/admin": ["admin"],
+      "/[locale]/t/[tenant]/admin/audit-logs": ["admin"],
+      "/[locale]/t/[tenant]/admin/invites": ["admin"],
+      "/[locale]/t/[tenant]/admin/members": ["admin"],
+      "/[locale]/t/[tenant]/admin/roles": ["admin"],
+      "/[locale]/t/[tenant]/admin/settings": ["admin"],
+      "/[locale]/t/[tenant]/admin/settings/ai-provider": ["admin"],
+      "/[locale]/t/[tenant]/admin/settings/branding": ["admin"],
+      "/[locale]/t/[tenant]/admin/settings/storage": ["admin"],
+      "/[locale]/t/[tenant]/admin/settings/domain": ["admin"],
+      "/api/internal/tenant-by-host": ["admin"],
+      "/api/tenants/[tenant]/admin/settings/ai/test": ["admin"],
+      "/api/tenants/[tenant]/admin/settings/storage/test": ["admin"],
+      "/api/tenants/[tenant]/departments": ["admin"],
+      "/api/tenants/[tenant]/departments/[id]": ["admin"],
+      "/api/tenants/[tenant]/departments/[id]/managers": ["admin"],
+      "/api/tenants/[tenant]/departments/[id]/members": ["admin"],
+      "/api/tenants/[tenant]/directory": ["admin"],
+      "/api/tenants/[tenant]/files/[fileId]": ["admin"],
+      "/api/tenants/[tenant]/permissions": ["admin"],
+      "/api/tenants/[tenant]/settings": ["admin"],
+      "/[locale]/t/[tenant]/assistant": ["assistant"],
+      "/api/assistant/conversations": ["assistant"],
+      "/api/assistant/conversations/[id]": ["assistant"],
+      "/api/chat": ["assistant"],
+      "/login": ["auth"],
+      "/select-tenant": ["auth"],
+      "/[locale]/login": ["auth"],
+      "/[locale]/select-tenant": ["auth"],
+      "/[locale]/t/[tenant]/login": ["auth"],
+      "/[locale]/t/[tenant]/invite/[token]": ["auth"],
+      "/api/auth/[...nextauth]": ["auth"],
+      "/": ["dashboard"],
+      "/[locale]": ["dashboard"],
+      "/[locale]/t/[tenant]": ["dashboard"],
+      "/api/health": ["dashboard"],
+      "/[locale]/docs": ["docs"],
+      "/[locale]/docs/[[...slug]]": ["docs"],
+      "/[locale]/og/docs/[...slug]": ["docs"],
+      "/api/search": ["docs"],
+      "/llms.txt": ["docs"],
+      "/llms-full.txt": ["docs"],
+      "/llms.mdx/[locale]/docs/[[...slug]]": ["docs"],
+      "/rss.xml": ["docs"],
+      "/api/integrations/github/callback": ["github"],
+      "/api/integrations/github/connect": ["github"],
+      "/api/integrations/github/user-connect": ["github"],
+      "/[locale]/t/[tenant]/admin/integrations": ["integration-sync"],
+      "/[locale]/t/[tenant]/admin/integrations/github": ["integration-sync"],
+      "/[locale]/t/[tenant]/admin/integrations/webhooks": ["integration-sync"],
+      "/api/tenants/[tenant]/admin/integrations/conflicts": ["integration-sync"],
+      "/api/tenants/[tenant]/admin/integrations/field-mappings": ["integration-sync"],
+      "/api/tenants/[tenant]/admin/integrations/github/assign-usernames": ["integration-sync"],
+      "/api/tenants/[tenant]/admin/integrations/github/org-members": ["integration-sync"],
+      "/api/tenants/[tenant]/admin/integrations/metrics": ["integration-sync"],
+      "/api/tenants/[tenant]/admin/integrations/readiness": ["integration-sync"],
+      "/api/tenants/[tenant]/admin/integrations/runs": ["integration-sync"],
+      "/[locale]/t/[tenant]/profile": ["profile"],
+      "/[locale]/t/[tenant]/profile/settings": ["profile"]
     },
     "permissions": {
-      "admin:dashboard": [
-        "admin"
-      ],
-      "admin:members": [
-        "admin"
-      ],
-      "admin:settings": [
-        "admin"
-      ],
-      "admin:integrations": [
-        "integration-sync"
-      ],
-      "integrations:conflicts_resolve": [
-        "integration-sync"
-      ],
-      "integrations:field_mappings": [
-        "integration-sync"
-      ],
-      "integrations:metrics_read": [
-        "integration-sync"
-      ]
+      "admin:dashboard": ["admin"],
+      "admin:members": ["admin"],
+      "admin:settings": ["admin"],
+      "admin:integrations": ["integration-sync"],
+      "integrations:conflicts_resolve": ["integration-sync"],
+      "integrations:field_mappings": ["integration-sync"],
+      "integrations:metrics_read": ["integration-sync"]
     }
   }
 }

@@ -10,11 +10,7 @@ type RenderableLinkItem = Exclude<LinkItemType, { type: 'icon' }>;
 
 type InternalComponents = Pick<
   typeof Base,
-  | 'SidebarFolder'
-  | 'SidebarFolderLink'
-  | 'SidebarFolderContent'
-  | 'SidebarFolderTrigger'
-  | 'SidebarItem'
+  'SidebarFolder' | 'SidebarFolderLink' | 'SidebarFolderContent' | 'SidebarFolderTrigger' | 'SidebarItem'
 >;
 
 interface SidebarLinkItemProps extends HTMLAttributes<HTMLElement> {
@@ -27,7 +23,9 @@ function getSidebarItemKey(item: RenderableLinkItem, index: number, parentKey: s
   return `${parentKey}:item-${index}`;
 }
 
-function renderItemLabel(item: Extract<RenderableLinkItem, { type: 'menu' }> | Extract<RenderableLinkItem, { type: 'page' }>) {
+function renderItemLabel(
+  item: Extract<RenderableLinkItem, { type: 'menu' }> | Extract<RenderableLinkItem, { type: 'page' }>,
+) {
   return (
     <>
       {item.icon}
@@ -43,11 +41,7 @@ export function createLinkItemRenderer({
   SidebarFolderTrigger,
   SidebarItem,
 }: InternalComponents) {
-  function SidebarLinkItem({
-    item,
-    className,
-    ...props
-  }: SidebarLinkItemProps): ReactNode {
+  function SidebarLinkItem({ item, className, ...props }: SidebarLinkItemProps): ReactNode {
     const pathname = usePathname();
     const active = isLinkItemActive(item, pathname);
 
@@ -63,28 +57,18 @@ export function createLinkItemRenderer({
       const folderKeyBase = item.url ?? String(item.text ?? 'menu');
 
       return (
-        <SidebarFolder
-          className={className}
-          active={active}
-          defaultOpen={active}
-          {...props}
-        >
+        <SidebarFolder className={className} active={active} defaultOpen={active} {...props}>
           {item.url ? (
             <SidebarFolderLink href={item.url} active={active} external={item.external}>
               {renderItemLabel(item)}
             </SidebarFolderLink>
           ) : (
-            <SidebarFolderTrigger>
-              {renderItemLabel(item)}
-            </SidebarFolderTrigger>
+            <SidebarFolderTrigger>{renderItemLabel(item)}</SidebarFolderTrigger>
           )}
 
           <SidebarFolderContent>
             {item.items.map((child, index) => (
-              <SidebarLinkItem
-                key={getSidebarItemKey(child, index, folderKeyBase)}
-                item={child}
-              />
+              <SidebarLinkItem key={getSidebarItemKey(child, index, folderKeyBase)} item={child} />
             ))}
           </SidebarFolderContent>
         </SidebarFolder>

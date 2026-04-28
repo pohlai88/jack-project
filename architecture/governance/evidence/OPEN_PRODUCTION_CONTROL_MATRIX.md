@@ -43,5 +43,5 @@ Do not run migrations, `db:push`, schema cleanup, or “helpful automation” ag
 
 ## Related
 
-- Operator runbook and checklist: [NEXUSCANON_RELEASE_ROLLOUT.md](NEXUSCANON_RELEASE_ROLLOUT.md) (live **Phase 1** status: *Phase 1 operator status* section there — Option A: matrix routes, rollout records).
+- Operator runbook and checklist: [NEXUSCANON_RELEASE_ROLLOUT.md](NEXUSCANON_RELEASE_ROLLOUT.md) (live **Phase 1** status: _Phase 1 operator status_ section there — Option A: matrix routes, rollout records).
 - Cookie / tenant subdomain doctrine: [ADR 0008](../../adr/0008-cookie-domain-tenant-subdomains.md)

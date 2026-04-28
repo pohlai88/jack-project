@@ -33,13 +33,7 @@ export function createPageTreeRenderer({
   SidebarSeparator,
   SidebarItem,
 }: InternalComponents) {
-  function PageTreeList({
-    nodes,
-    parentKey,
-  }: {
-    nodes: PageTree.Node[];
-    parentKey: string;
-  }) {
+  function PageTreeList({ nodes, parentKey }: { nodes: PageTree.Node[]; parentKey: string }) {
     return (
       <>
         {nodes.map((node, index) => (
@@ -53,13 +47,7 @@ export function createPageTreeRenderer({
     );
   }
 
-  function PageTreeNode({
-    node,
-    nodeKey,
-  }: {
-    node: PageTree.Node;
-    nodeKey: string;
-  }) {
+  function PageTreeNode({ node, nodeKey }: { node: PageTree.Node; nodeKey: string }) {
     if (node.type === 'separator') {
       return <SeparatorNode node={node} />;
     }
@@ -80,13 +68,7 @@ export function createPageTreeRenderer({
     );
   }
 
-  function FolderNode({
-    node,
-    nodeKey,
-  }: {
-    node: PageTree.Folder;
-    nodeKey: string;
-  }) {
+  function FolderNode({ node, nodeKey }: { node: PageTree.Folder; nodeKey: string }) {
     const pathname = usePathname();
     const treePath = useTreePath();
 
@@ -101,11 +83,7 @@ export function createPageTreeRenderer({
         defaultOpen={node.defaultOpen ?? folderActive}
       >
         {node.index ? (
-          <SidebarFolderLink
-            href={node.index.url}
-            active={indexActive}
-            external={node.index.external}
-          >
+          <SidebarFolderLink href={node.index.url} active={indexActive} external={node.index.external}>
             {node.icon}
             {node.name}
           </SidebarFolderLink>
@@ -127,12 +105,7 @@ export function createPageTreeRenderer({
     const pathname = usePathname();
 
     return (
-      <SidebarItem
-        href={node.url}
-        external={node.external}
-        active={isActive(node.url, pathname)}
-        icon={node.icon}
-      >
+      <SidebarItem href={node.url} external={node.external} active={isActive(node.url, pathname)} icon={node.icon}>
         {node.name}
       </SidebarItem>
     );

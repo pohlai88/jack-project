@@ -27,8 +27,7 @@
 
 #nd-docs-layout {
   background:
-    radial-gradient(circle at top left, color-mix(in oklab, currentColor 4%, transparent), transparent 34rem),
-    Canvas;
+    radial-gradient(circle at top left, color-mix(in oklab, currentColor 4%, transparent), transparent 34rem), Canvas;
 }
 
 #nd-content {

@@ -2,14 +2,7 @@
 
 import * as Primitive from 'fumadocs-core/toc';
 import { useI18n } from 'fumadocs-ui/contexts/i18n';
-import {
-  type ComponentProps,
-  type CSSProperties,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { type ComponentProps, type CSSProperties, useCallback, useEffect, useRef, useState } from 'react';
 
 import { cn } from '@/shared/lib/cn';
 import { mergeRefs } from '@/shared/lib/merge-refs';
@@ -93,10 +86,7 @@ export function TOCItems({ ref, className, ...props }: TOCItemsProps) {
   );
 }
 
-function getThumbStyle(
-  tocItems: Primitive.TOCItemInfo[],
-  computed: ComputedData,
-): CSSProperties {
+function getThumbStyle(tocItems: Primitive.TOCItemInfo[], computed: ComputedData): CSSProperties {
   const startIndex = tocItems.findIndex((item) => item.active);
 
   if (startIndex === -1) {
@@ -149,11 +139,7 @@ function TOCThumb({ computed }: { computed: ComputedData }) {
 export function TOCEmpty() {
   const { text } = useI18n();
 
-  return (
-    <div className="rounded-lg border bg-fd-card p-3 text-xs text-fd-muted-foreground">
-      {text.tocNoHeadings}
-    </div>
-  );
+  return <div className="rounded-lg border bg-fd-card p-3 text-xs text-fd-muted-foreground">{text.tocNoHeadings}</div>;
 }
 
 export function TOCItem({

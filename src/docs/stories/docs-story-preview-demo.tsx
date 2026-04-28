@@ -5,9 +5,7 @@ export interface DocsStoryPreviewDemoProps {
   label?: string;
 }
 
-export function DocsStoryPreviewDemo({
-  label = 'Afenda',
-}: DocsStoryPreviewDemoProps) {
+export function DocsStoryPreviewDemo({ label = 'Afenda' }: DocsStoryPreviewDemoProps) {
   return (
     <div
       className={[
@@ -25,9 +23,7 @@ export function DocsStoryPreviewDemo({
 
       <div className="relative flex items-center justify-between gap-3">
         {/* Label */}
-        <span className="font-medium text-foreground">
-          {label}
-        </span>
+        <span className="font-medium text-foreground">{label}</span>
 
         {/* Status pill (adds realism) */}
         <span className="rounded-full border border-border/70 bg-muted/60 px-2 py-0.5 text-[11px] font-medium text-muted-foreground">

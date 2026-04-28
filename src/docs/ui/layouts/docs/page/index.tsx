@@ -1,23 +1,11 @@
 'use client';
 import type { TOCItemType } from 'fumadocs-core/toc';
-import {
-  type ComponentProps,
-  createContext,
-  type FC,
-  use,
-} from 'react';
+import { type ComponentProps, createContext, type FC, use } from 'react';
 import { cn } from '@/shared/lib/cn';
 import { Breadcrumb, type BreadcrumbProps } from './slots/breadcrumb';
 import { Container } from './slots/container';
 import { Footer, type FooterProps } from './slots/footer';
-import {
-  TOC,
-  TOCPopover,
-  type TOCPopoverProps,
-  type TOCProps,
-  TOCProvider,
-  type TOCProviderProps,
-} from './slots/toc';
+import { TOC, TOCPopover, type TOCPopoverProps, type TOCProps, TOCProvider, type TOCProviderProps } from './slots/toc';
 
 export interface DocsPageProps extends ComponentProps<'article'> {
   toc?: TOCItemType[];
@@ -26,7 +14,7 @@ export interface DocsPageProps extends ComponentProps<'article'> {
    * Extend the page to fill all available space
    *
    * @defaultValue false
-  */
+   */
   full?: boolean;
 }
 
@@ -50,19 +38,11 @@ const PageContext = createContext<{
 
 export function useDocsPage() {
   const context = use(PageContext);
-  if (!context)
-    throw new Error(
-      'Please use page components under <DocsPage /> (`fumadocs-ui/layouts/docs/page`).',
-    );
+  if (!context) throw new Error('Please use page components under <DocsPage /> (`fumadocs-ui/layouts/docs/page`).');
   return context;
 }
 
-export function DocsPage({
-  full = false,
-  toc = [],
-  children,
-  ...containerProps
-}: DocsPageProps) {
+export function DocsPage({ full = false, toc = [], children, ...containerProps }: DocsPageProps) {
   const tocEnabled = !full && toc.length > 0;
   const tocPopoverEnabled = toc.length > 0;
 

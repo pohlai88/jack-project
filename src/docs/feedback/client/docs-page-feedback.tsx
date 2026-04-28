@@ -136,11 +136,7 @@ export function DocsPageFeedback({ pageUrl, pageTitle }: DocsPageFeedbackProps) 
               </p>
 
               {isSubmittedForCurrentOpinion ? (
-                <p
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
-                  role="status"
-                  aria-live="polite"
-                >
+                <p className="flex items-center gap-2 text-sm text-muted-foreground" role="status" aria-live="polite">
                   <CheckCircle2 className="h-4 w-4 text-green-600" aria-hidden="true" />
                   Feedback recorded
                 </p>

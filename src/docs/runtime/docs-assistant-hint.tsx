@@ -32,16 +32,11 @@ export async function DocsAssistantHint({ className }: DocsAssistantHintProps) {
         </div>
 
         <div className="min-w-0 flex-1">
-          <h2
-            id="docs-assistant-hint-title"
-            className="text-sm font-semibold text-fd-foreground"
-          >
+          <h2 id="docs-assistant-hint-title" className="text-sm font-semibold text-fd-foreground">
             {t('assistantHintTitle')}
           </h2>
 
-          <p className="mt-1 max-w-prose leading-6 text-fd-muted-foreground">
-            {t('assistantHint')}
-          </p>
+          <p className="mt-1 max-w-prose leading-6 text-fd-muted-foreground">{t('assistantHint')}</p>
 
           <div className="mt-3">
             <Link

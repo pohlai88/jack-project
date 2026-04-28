@@ -22,8 +22,7 @@ const itemVariants = cva(
     variants: {
       variant: {
         link: 'transition-colors hover:bg-fd-accent/50 hover:text-fd-accent-foreground/80 hover:transition-none data-[active=true]:bg-fd-primary/10 data-[active=true]:text-fd-primary data-[active=true]:hover:transition-colors',
-        button:
-          'transition-colors hover:bg-fd-accent/50 hover:text-fd-accent-foreground/80 hover:transition-none',
+        button: 'transition-colors hover:bg-fd-accent/50 hover:text-fd-accent-foreground/80 hover:transition-none',
       },
       highlight: {
         true: "data-[active=true]:before:content-[''] data-[active=true]:before:bg-fd-primary data-[active=true]:before:absolute data-[active=true]:before:w-px data-[active=true]:before:inset-y-2.5 data-[active=true]:before:inset-s-2.5",
@@ -260,11 +259,7 @@ function SidebarContent({ ref: refProp, className, children, ...props }: Compone
   );
 }
 
-function SidebarDrawer({
-  children,
-  className,
-  ...props
-}: ComponentProps<typeof Base.SidebarDrawerContent>) {
+function SidebarDrawer({ children, className, ...props }: ComponentProps<typeof Base.SidebarDrawerContent>) {
   return (
     <>
       <Base.SidebarDrawerOverlay className="fixed z-40 inset-0 backdrop-blur-xs data-[state=open]:animate-fd-fade-in data-[state=closed]:animate-fd-fade-out" />
@@ -302,12 +297,7 @@ function SidebarSeparator({ className, style, children, ...props }: ComponentPro
   );
 }
 
-function SidebarItem({
-  className,
-  style,
-  children,
-  ...props
-}: ComponentProps<typeof Base.SidebarItem>) {
+function SidebarItem({ className, style, children, ...props }: ComponentProps<typeof Base.SidebarItem>) {
   const depth = Base.useFolderDepth();
 
   return (
@@ -324,11 +314,7 @@ function SidebarItem({
   );
 }
 
-function SidebarFolderTrigger({
-  className,
-  style,
-  ...props
-}: ComponentProps<typeof Base.SidebarFolderTrigger>) {
+function SidebarFolderTrigger({ className, style, ...props }: ComponentProps<typeof Base.SidebarFolderTrigger>) {
   const { depth, collapsible } = Base.useFolder()!;
 
   return (
@@ -345,11 +331,7 @@ function SidebarFolderTrigger({
   );
 }
 
-function SidebarFolderLink({
-  className,
-  style,
-  ...props
-}: ComponentProps<typeof Base.SidebarFolderLink>) {
+function SidebarFolderLink({ className, style, ...props }: ComponentProps<typeof Base.SidebarFolderLink>) {
   const depth = Base.useFolderDepth();
 
   return (
@@ -366,11 +348,7 @@ function SidebarFolderLink({
   );
 }
 
-function SidebarFolderContent({
-  className,
-  children,
-  ...props
-}: ComponentProps<typeof Base.SidebarFolderContent>) {
+function SidebarFolderContent({ className, children, ...props }: ComponentProps<typeof Base.SidebarFolderContent>) {
   const depth = Base.useFolderDepth();
 
   return (
@@ -414,9 +392,7 @@ function SidebarTabsDropdown({
       <div className="size-9 shrink-0 empty:hidden md:size-5">{selected.icon}</div>
       <div>
         <p className="text-sm font-medium">{selected.title}</p>
-        <p className="text-sm text-fd-muted-foreground empty:hidden md:hidden">
-          {selected.description}
-        </p>
+        <p className="text-sm text-fd-muted-foreground empty:hidden md:hidden">{selected.description}</p>
       </div>
     </>
   ) : (
@@ -456,17 +432,10 @@ function SidebarTabsDropdown({
               <div className="shrink-0 size-9 md:mb-auto md:size-5 empty:hidden">{item.icon}</div>
               <div>
                 <p className="text-sm font-medium leading-none">{item.title}</p>
-                <p className="text-[0.8125rem] text-fd-muted-foreground mt-1 empty:hidden">
-                  {item.description}
-                </p>
+                <p className="text-[0.8125rem] text-fd-muted-foreground mt-1 empty:hidden">{item.description}</p>
               </div>
 
-              <Check
-                className={cn(
-                  'shrink-0 ms-auto size-3.5 text-fd-primary',
-                  !isActive && 'invisible',
-                )}
-              />
+              <Check className={cn('shrink-0 ms-auto size-3.5 text-fd-primary', !isActive && 'invisible')} />
             </Link>
           );
         })}

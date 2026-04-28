@@ -21,11 +21,7 @@ const ScrollViewport = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Viewport>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Viewport>
 >(({ className, ...props }, ref) => (
-  <ScrollAreaPrimitive.Viewport
-    ref={ref}
-    className={cn('h-full w-full rounded-[inherit]', className)}
-    {...props}
-  />
+  <ScrollAreaPrimitive.Viewport ref={ref} className={cn('h-full w-full rounded-[inherit]', className)} {...props} />
 ));
 ScrollViewport.displayName = ScrollAreaPrimitive.Viewport.displayName;
 

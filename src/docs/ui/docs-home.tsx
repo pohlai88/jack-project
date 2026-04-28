@@ -1,14 +1,5 @@
 import Link from 'fumadocs-core/link';
-import {
-  ArrowRight,
-  BookOpen,
-  Braces,
-  Building2,
-  FileText,
-  GitBranch,
-  Search,
-  Sparkles,
-} from 'lucide-react';
+import { ArrowRight, BookOpen, Braces, Building2, FileText, GitBranch, Search, Sparkles } from 'lucide-react';
 
 import { cn } from '@/shared/lib/cn';
 
@@ -110,8 +101,8 @@ export function DocsHome({ locale }: DocsHomeProps) {
         </h1>
 
         <p className="docs-home-hero__lede">
-          A premium documentation surface for teams that need enterprise clarity, fast navigation,
-          and AI-ready source material without dashboard clutter.
+          A premium documentation surface for teams that need enterprise clarity, fast navigation, and AI-ready source
+          material without dashboard clutter.
         </p>
 
         <div className="docs-home-hero__actions" aria-label="Primary documentation actions">
@@ -160,8 +151,8 @@ export function DocsHome({ locale }: DocsHomeProps) {
             <p className="docs-home-section__eyebrow">Popular guides</p>
             <h2 id="docs-home-popular">High-signal pages for first-time operators.</h2>
             <p>
-              These links prioritize practical entry points over a raw file tree. The sidebar still
-              carries the full Fumadocs page structure.
+              These links prioritize practical entry points over a raw file tree. The sidebar still carries the full
+              Fumadocs page structure.
             </p>
           </div>
         </div>
@@ -183,8 +174,8 @@ export function DocsHome({ locale }: DocsHomeProps) {
           <p className="docs-home-section__eyebrow">AI-ready documentation</p>
           <h2 id="docs-home-llm">Use the docs as source material.</h2>
           <p>
-            Afenda exposes Markdown routes for agents while keeping the visual docs optimized for
-            humans. The same source powers both.
+            Afenda exposes Markdown routes for agents while keeping the visual docs optimized for humans. The same
+            source powers both.
           </p>
         </div>
 
