@@ -7,6 +7,18 @@ const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    optimizePackageImports: [
+      '@heroicons/react',
+      '@tiptap/core',
+      '@tiptap/react',
+      '@tiptap/pm',
+      '@tiptap/starter-kit',
+      '@tiptap/extension-image',
+      '@tiptap/extension-link',
+      '@tiptap/extension-placeholder',
+    ],
+  },
   // Exclude pdf-parse from bundling to avoid issues with worker threads
   serverExternalPackages: ['pdf-parse'],
   async rewrites() {
