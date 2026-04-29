@@ -40,6 +40,61 @@ function toPublicPath(locale: string, slug: string[]): string {
   return `/${locale}/docs${tail}`;
 }
 
+function addDocsAliases(urls: Set<string>, locale: string, path: string): void {
+  urls.add(path);
+
+  if (locale === defaultLocale && path.startsWith(`/${locale}/`)) {
+    urls.add(path.slice(`/${locale}`.length) || '/');
+  }
+}
+
+function extractLiteralHrefs(content: string): string[] {
+  const hrefs: string[] = [];
+  const hrefPattern = /\bhref\s*=\s*(?:"([^"]+)"|'([^']+)')/g;
+
+  for (const match of content.matchAll(hrefPattern)) {
+    const href = match[1] ?? match[2];
+    if (href) hrefs.push(href);
+  }
+
+  return hrefs;
+}
+
+function normalizeDocsHref(href: string): string | null {
+  if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:')) return null;
+
+  const path = href.split('#')[0]?.split('?')[0] ?? href;
+  if (path === '/docs' || path.startsWith('/docs/')) return path;
+  if (path === `/${defaultLocale}/docs` || path.startsWith(`/${defaultLocale}/docs/`)) return path;
+
+  return null;
+}
+
+function validateLiteralDocsHrefs(validDocsUrls: Set<string>): string[] {
+  const errors: string[] = [];
+  const files = fg.sync(
+    [`${DOCS_CONTENT_PREFIX}/**/*.{md,mdx}`, 'src/docs/**/*.{ts,tsx}', 'src/app/**/docs/**/*.{ts,tsx}'],
+    {
+      cwd: ROOT,
+      onlyFiles: true,
+    },
+  );
+
+  for (const rel of files) {
+    const abs = join(ROOT, rel);
+    const content = readFileSync(abs, 'utf8');
+
+    for (const href of extractLiteralHrefs(content)) {
+      const docsHref = normalizeDocsHref(href);
+      if (!docsHref || validDocsUrls.has(docsHref)) continue;
+
+      errors.push(`${rel}: stale docs href "${href}".`);
+    }
+  }
+
+  return errors;
+}
+
 export async function runDocsLinkValidation(): Promise<void> {
   const relFiles = fg.sync(`${DOCS_CONTENT_PREFIX}/**/*.{md,mdx}`, {
     cwd: ROOT,
@@ -52,6 +107,7 @@ export async function runDocsLinkValidation(): Promise<void> {
   }[] = [];
 
   const fileEntries: { path: string; content: string; url: string }[] = [];
+  const validDocsUrls = new Set<string>();
 
   for (const rel of relFiles) {
     const parts = rel.replace(/\\/g, '/').split('/');
@@ -71,6 +127,7 @@ export async function runDocsLinkValidation(): Promise<void> {
     });
 
     fileEntries.push({ path: abs, content, url });
+    addDocsAliases(validDocsUrls, locale, url);
   }
 
   const scanned = await scanURLs({
@@ -106,6 +163,11 @@ export async function runDocsLinkValidation(): Promise<void> {
   });
 
   printErrors(results, true);
+
+  const literalHrefErrors = validateLiteralDocsHrefs(validDocsUrls);
+  if (literalHrefErrors.length > 0) {
+    throw new Error(literalHrefErrors.join('\n'));
+  }
 }
 
 const entry = process.argv[1] ? pathToFileURL(process.argv[1]).href : '';

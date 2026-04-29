@@ -1,9 +1,11 @@
 ---
 title: 'No tenant membership available'
 description: 'Error evidence for AFD-AUTH-NO-TENANT.'
+docsType: 'generated-evidence'
 ---
 
 import { Banner } from 'fumadocs-ui/components/banner';
+import { Callout } from 'fumadocs-ui/components/callout';
 import { File, Files, Folder } from 'fumadocs-ui/components/files';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
@@ -18,7 +20,15 @@ _/}
   GENERATED EVIDENCE - This page is rendered from validated product truth.
 </Banner>
 
-## Error Evidence
+## Overview: what this error means
+
+This page records the generated evidence for `AFD-AUTH-NO-TENANT`.
+
+## When to use this evidence
+
+Use this page when operators encounter this canonical error during authentication, authorization, or workflow execution.
+
+## Source contract
 
 <TypeTable
   type={{
@@ -35,6 +45,19 @@ _/}
   }}
 />
 
-## Mitigation
+## Runtime surfaces: operator response
 
 Confirm the user has an active tenant membership or a valid invite.
+
+## Failure modes
+
+- Regressions can alter response codes without documentation updates.
+- Unhandled upstream dependencies can change operator-visible messages.
+
+## Source evidence: traceability
+
+<Steps>
+  <Step>Keep the mitigation actionable for operators or developers.</Step>
+  <Step>Keep the error code stable once external docs reference it.</Step>
+  <Step>Regenerate evidence after changing the owning feature manifest.</Step>
+</Steps>

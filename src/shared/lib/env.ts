@@ -102,6 +102,10 @@ export const env = createEnv({
     GITHUB_INTEGRATION_CLIENT_ID: z.string().optional().describe('GitHub OAuth App client ID'),
     GITHUB_INTEGRATION_CLIENT_SECRET: z.string().optional().describe('GitHub OAuth App client secret'),
 
+    // Google Workspace (OAuth integration)
+    GOOGLE_CLIENT_ID: z.string().optional().describe('Google OAuth client ID'),
+    GOOGLE_CLIENT_SECRET: z.string().optional().describe('Google OAuth client secret'),
+
     // LinkedIn (OpenID Connect integration)
     LINKEDIN_CLIENT_ID: z.string().optional().describe('LinkedIn OAuth client ID'),
     LINKEDIN_CLIENT_SECRET: z.string().optional().describe('LinkedIn OAuth client secret'),
@@ -166,6 +170,8 @@ export const env = createEnv({
     MIDDLEWARE_TENANT_LOOKUP_SECRET: process.env.MIDDLEWARE_TENANT_LOOKUP_SECRET,
     GITHUB_INTEGRATION_CLIENT_ID: process.env.GITHUB_INTEGRATION_CLIENT_ID,
     GITHUB_INTEGRATION_CLIENT_SECRET: process.env.GITHUB_INTEGRATION_CLIENT_SECRET,
+    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+    GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     LINKEDIN_CLIENT_ID: process.env.LINKEDIN_CLIENT_ID,
     LINKEDIN_CLIENT_SECRET: process.env.LINKEDIN_CLIENT_SECRET,
     TENANT_ROOT_DOMAIN: process.env.TENANT_ROOT_DOMAIN,

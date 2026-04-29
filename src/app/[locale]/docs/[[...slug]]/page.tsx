@@ -1,17 +1,23 @@
 import { Banner } from 'fumadocs-ui/components/banner';
+import {
+  DocsBody,
+  DocsDescription,
+  DocsPage,
+  DocsTitle,
+  MarkdownCopyButton,
+  PageLastUpdate,
+  ViewOptionsPopover,
+} from 'fumadocs-ui/layouts/docs/page';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 
-import { DocsPageFeedback } from '@/docs/feedback/client/docs-page-feedback';
-import { getDocsOgImageUrlPath } from '@/docs/runtime/docs-og';
-import { DocsPageLlmActions } from '@/docs/runtime/docs-page-llm-actions';
-import { getDocsPageMarkdownAbsoluteUrl } from '@/docs/runtime/docs-site-url';
-import { DocsOpenAPIPage } from '@/docs/runtime/openapi-api-page';
-import { source } from '@/docs/runtime/source';
-import { DocsHome } from '@/docs/ui/docs-home';
-import { DocsBody, DocsDescription, DocsPage, DocsTitle } from '@/docs/ui/layouts/docs/page';
+import { getDocsOgImageUrlPath } from '@/docs/runtime/docs-og.resolver';
+import { source } from '@/docs/runtime/docs-source.registry';
+import { getDocsPageMarkdownAbsoluteUrl } from '@/docs/runtime/docs-url.server';
+import { DocsPageFeedback } from '@/docs/ui/docs-feedback';
+import { DocsOpenAPIAdapter } from '@/docs/ui/docs-openapi-adapter';
 import { getMDXComponents } from '@/mdx-components';
 
 export async function generateStaticParams() {
@@ -61,52 +67,28 @@ export default async function Page(props: DocsPageProps) {
   const page = source.getPage(slug, locale);
   if (!page) notFound();
 
-  const [markdownAbsoluteUrl, tDocs, tLlm] = await Promise.all([
+  const [markdownAbsoluteUrl, tDocs] = await Promise.all([
     getDocsPageMarkdownAbsoluteUrl(page.url),
     getTranslations('docs'),
-    getTranslations('docs.llm'),
   ]);
 
   const title = page.data.title;
   const description = page.data.description;
   const showFallbackNotice = isLocalizedFallbackPage(locale, page.absolutePath);
   const isFullWidthPage = page.type === 'openapi' ? false : (page.data.full ?? false);
-  const isDocsHome = !slug || slug.length === 0;
   const lastModified = page.type === 'openapi' ? undefined : page.data.lastModified;
-  const lastUpdated =
-    lastModified instanceof Date
-      ? new Intl.DateTimeFormat('en', {
-          month: 'short',
-          day: 'numeric',
-          year: 'numeric',
-        }).format(lastModified)
-      : undefined;
-
-  if (isDocsHome) {
-    return (
-      <DocsPage toc={[]} full>
-        <DocsBody>
-          <DocsHome locale={locale} />
-        </DocsBody>
-      </DocsPage>
-    );
-  }
 
   return (
     <DocsPage toc={page.data.toc} full={isFullWidthPage}>
       <DocsTitle>{title}</DocsTitle>
       {description ? <DocsDescription>{description}</DocsDescription> : null}
-      <DocsPageLlmActions
-        markdownAbsoluteUrl={markdownAbsoluteUrl}
-        copy={{
-          copyMarkdownUrl: tLlm('copyMarkdownUrl'),
-          openMarkdown: tLlm('openMarkdown'),
-          copied: tLlm('copied'),
-          copiedButton: tLlm('copiedButton'),
-          copyFailed: tLlm('copyFailed'),
-        }}
-        lastUpdated={lastUpdated}
-      />
+      <div className="not-prose docs-page-actions" aria-label="Documentation page actions">
+        {lastModified instanceof Date ? <PageLastUpdate date={lastModified} /> : null}
+        <div className="docs-page-actions__controls">
+          <MarkdownCopyButton markdownUrl={markdownAbsoluteUrl} />
+          <ViewOptionsPopover markdownUrl={markdownAbsoluteUrl} />
+        </div>
+      </div>
       <DocsBody>
         {showFallbackNotice ? (
           <Banner id={`docs-locale-fallback-${locale}-${page.url}`} changeLayout={false}>
@@ -114,7 +96,7 @@ export default async function Page(props: DocsPageProps) {
           </Banner>
         ) : null}
         {page.type === 'openapi' ? (
-          <DocsOpenAPIPage {...page.data.getAPIPageProps()} />
+          <DocsOpenAPIAdapter {...page.data.getAPIPageProps()} />
         ) : (
           <page.data.body
             components={getMDXComponents({

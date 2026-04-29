@@ -8,6 +8,8 @@ const actionMocks = vi.hoisted(() => ({
   warn: vi.fn(),
 }));
 
+vi.mock('server-only', () => ({}));
+
 vi.mock('next/headers', () => ({
   headers: actionMocks.headers,
 }));
@@ -24,16 +26,17 @@ vi.mock('@/shared/lib/logger', () => ({
   },
 }));
 
-vi.mock('../server/docs-feedback-rate-limit', () => ({
+vi.mock('../server/docs-feedback-rate-limit.server', () => ({
   assertDocsFeedbackRateLimit: actionMocks.assertDocsFeedbackRateLimit,
 }));
 
-vi.mock('../server/docs-feedback-service', () => ({
+vi.mock('../server/docs-feedback-service.server', () => ({
   recordDocsPageFeedbackEvent: actionMocks.recordDocsPageFeedbackEvent,
 }));
 
-import { submitDocsPageFeedbackAction } from '../server/submit-docs-page-feedback';
+import { submitDocsPageFeedbackAction } from '../server/submit-docs-page-feedback.action';
 import { DocsFeedbackPublicError } from '../shared/docs-feedback.errors';
+import { DOCS_FEEDBACK_SUCCESS_MESSAGE } from '../shared/docs-feedback.types';
 
 function sameOriginHeaders() {
   return new Headers({
@@ -76,7 +79,7 @@ describe('submitDocsPageFeedbackAction', () => {
       message: 'Useful',
     });
 
-    expect(result).toEqual({ ok: true, message: 'Thanks for the feedback.' });
+    expect(result).toEqual({ ok: true, message: DOCS_FEEDBACK_SUCCESS_MESSAGE });
     expect(actionMocks.assertDocsFeedbackRateLimit).toHaveBeenCalledOnce();
     expect(actionMocks.recordDocsPageFeedbackEvent).toHaveBeenCalledWith(
       expect.objectContaining({

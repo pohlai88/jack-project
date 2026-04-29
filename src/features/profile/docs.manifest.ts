@@ -1,4 +1,4 @@
-import { defineDocsManifest } from '@/docs/evidence/manifest';
+import { defineDocsManifest } from '@/docs/runtime/docs-contract-manifest';
 
 export default defineDocsManifest({
   id: 'profile',

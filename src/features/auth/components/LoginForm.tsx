@@ -37,13 +37,20 @@ type LoginFormValues = z.infer<typeof loginSchema>;
 interface LoginFormProps {
   /** Pre-fill email (e.g. from ?email= in URL) */
   initialEmail?: string;
+  /** Show Auth0 controls when the provider is configured. */
+  showAuth0?: boolean;
   /** When Auth0 is configured: show Universal Login sign-up (screen_hint=signup). */
   showAuth0SignUp?: boolean;
   /** Server-rendered label for sign-up (e.g. `getTranslations('auth')('createAccount')`). */
   auth0SignUpLabel?: string;
 }
 
-export const LoginForm = ({ initialEmail = '', showAuth0SignUp = false, auth0SignUpLabel }: LoginFormProps) => {
+export const LoginForm = ({
+  initialEmail = '',
+  showAuth0 = false,
+  showAuth0SignUp = false,
+  auth0SignUpLabel,
+}: LoginFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
 
@@ -128,29 +135,32 @@ export const LoginForm = ({ initialEmail = '', showAuth0SignUp = false, auth0Sig
           {serverError}
         </FormGlobalError>
 
-        {/* Auth0 Login Button */}
-        <Button
-          type="button"
-          className="w-full h-12 bg-linear-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-200 text-base font-semibold group"
-          onClick={handleAuth0Login}
-          disabled={isLoading}
-          aria-busy={isLoading}
-        >
-          <Lock className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-          {isLoading ? 'Signing in...' : 'Continue with Auth0'}
-        </Button>
+        {showAuth0 ? (
+          <>
+            <Button
+              type="button"
+              className="w-full h-12 bg-linear-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-200 text-base font-semibold group"
+              onClick={handleAuth0Login}
+              disabled={isLoading}
+              aria-busy={isLoading}
+            >
+              <Lock className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+              {isLoading ? 'Signing in...' : 'Continue with Auth0'}
+            </Button>
 
-        {showAuth0SignUp ? (
-          <Button
-            type="button"
-            variant="outline"
-            className="w-full h-11"
-            onClick={handleAuth0SignUp}
-            disabled={isLoading}
-            aria-busy={isLoading}
-          >
-            {isLoading ? 'Signing in...' : signUpCta}
-          </Button>
+            {showAuth0SignUp ? (
+              <Button
+                type="button"
+                variant="outline"
+                className="w-full h-11"
+                onClick={handleAuth0SignUp}
+                disabled={isLoading}
+                aria-busy={isLoading}
+              >
+                {isLoading ? 'Signing in...' : signUpCta}
+              </Button>
+            ) : null}
+          </>
         ) : null}
 
         <div className="relative">

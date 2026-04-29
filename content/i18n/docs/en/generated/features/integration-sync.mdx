@@ -1,9 +1,11 @@
 ---
 title: 'Integration Control Plane'
 description: 'Tenant integration administration for GitHub settings, webhooks, metrics, sync readiness, conflicts, and runs.'
+docsType: 'generated-evidence'
 ---
 
 import { Banner } from 'fumadocs-ui/components/banner';
+import { Callout } from 'fumadocs-ui/components/callout';
 import { File, Files, Folder } from 'fumadocs-ui/components/files';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
@@ -18,9 +20,21 @@ _/}
   GENERATED EVIDENCE - This page is rendered from validated product truth. Release state: released.
 </Banner>
 
-## Executive Summary
+<Callout title="Truth Surface: Integration Control Plane" type="info">
+  - Feature ID: `integration-sync` - Module: `Integrations` - Owner: `integrations-platform` - Release state: `released`
+</Callout>
+
+## Overview: what this feature actually does
 
 Tenant integration administration for GitHub settings, webhooks, metrics, sync readiness, conflicts, and runs.
+
+## When to use this evidence
+
+Use this page when you need the governed feature boundary for Integration Control Plane: owner, release state, routes,
+permissions, workflows, APIs, and failure surfaces. Curated pages may explain intent, but this generated page
+is the route and contract evidence.
+
+## Source contract
 
 <TypeTable
   type={{
@@ -40,29 +54,38 @@ Tenant integration administration for GitHub settings, webhooks, metrics, sync r
       required: true,
     },
     Routes: {
-      type: '10 routes',
-      description:
-        '/[locale]/t/[tenant]/admin/integrations, /[locale]/t/[tenant]/admin/integrations/github, /[locale]/t/[tenant]/admin/integrations/webhooks, /api/tenants/[tenant]/admin/integrations/conflicts, /api/tenants/[tenant]/admin/integrations/field-mappings, /api/tenants/[tenant]/admin/integrations/github/assign-usernames, /api/tenants/[tenant]/admin/integrations/github/org-members, /api/tenants/[tenant]/admin/integrations/metrics, /api/tenants/[tenant]/admin/integrations/readiness, /api/tenants/[tenant]/admin/integrations/runs',
+      type: '19 routes',
+      description: 'See Route coverage below.',
       required: true,
     },
     Permissions: {
       type: '4 permissions',
-      description:
-        'admin:integrations, integrations:conflicts_resolve, integrations:field_mappings, integrations:metrics_read',
+      description: 'See Permission coverage below.',
       required: true,
     },
   }}
 />
 
+## Runtime surfaces: routes and permissions
+
 <Tabs items={["Routes", "Permissions"]}>
-  <Tab>
+<Tab>
 
 <Files>
   <Folder name="Routes" defaultOpen>
     <File name="/[locale]/t/[tenant]/admin/integrations" />
     <File name="/[locale]/t/[tenant]/admin/integrations/github" />
+    <File name="/[locale]/t/[tenant]/admin/integrations/gitlab" />
+    <File name="/[locale]/t/[tenant]/admin/integrations/google-workspace" />
+    <File name="/[locale]/t/[tenant]/admin/integrations/linkedin" />
+    <File name="/[locale]/t/[tenant]/admin/integrations/slack" />
     <File name="/[locale]/t/[tenant]/admin/integrations/webhooks" />
+    <File name="/api/integrations/google-workspace/callback" />
+    <File name="/api/integrations/google-workspace/connect" />
+    <File name="/api/integrations/linkedin/callback" />
+    <File name="/api/integrations/linkedin/connect" />
     <File name="/api/tenants/[tenant]/admin/integrations/conflicts" />
+    <File name="/api/tenants/[tenant]/admin/integrations/github/sync" />
     <File name="/api/tenants/[tenant]/admin/integrations/field-mappings" />
     <File name="/api/tenants/[tenant]/admin/integrations/github/assign-usernames" />
     <File name="/api/tenants/[tenant]/admin/integrations/github/org-members" />
@@ -72,8 +95,8 @@ Tenant integration administration for GitHub settings, webhooks, metrics, sync r
   </Folder>
 </Files>
 
-  </Tab>
-  <Tab>
+</Tab>
+<Tab>
 
 <Files>
   <Folder name="Permissions" defaultOpen>
@@ -84,10 +107,13 @@ Tenant integration administration for GitHub settings, webhooks, metrics, sync r
   </Folder>
 </Files>
 
-  </Tab>
+</Tab>
 </Tabs>
 
-## Workflows
+## Workflows and actions
+
+<Tabs items={["Workflows", "Actions"]}>
+<Tab>
 
 ### GitHub integration setup
 
@@ -99,7 +125,8 @@ Tenant integration administration for GitHub settings, webhooks, metrics, sync r
 - ID: `integration-sync.conflict-resolution`
 - Summary: Review sync conflicts and resolve mapped integration data issues.
 
-## Public Actions
+</Tab>
+<Tab>
 
 ### Review integration metrics
 
@@ -111,20 +138,30 @@ Tenant integration administration for GitHub settings, webhooks, metrics, sync r
 - ID: `integration-sync.configure-webhooks`
 - Summary: Create and maintain outbound webhook integration settings.
 
-## Operational Evidence
+</Tab>
+</Tabs>
 
-<Steps>
-  <Step>Check the declared owner before changing behavior.</Step>
-  <Step>Confirm route, permission, and API references still exist in the product.</Step>
-  <Step>Run `pnpm docs:ci` after manifest or route changes.</Step>
-</Steps>
+## APIs: interface truth
 
-## APIs
+- [`integration-sync.metrics`](/docs/generated/api/integration-sync.metrics) - `GET /api/tenants/[tenant]/admin/integrations/metrics` - Return integration control plane metrics.
+- [`integration-sync.conflicts`](/docs/generated/api/integration-sync.conflicts) - `GET /api/tenants/[tenant]/admin/integrations/conflicts` - Return integration sync conflicts.
+- [`integration-sync.github.sync`](/docs/generated/api/integration-sync.github.sync) - `POST /api/tenants/[tenant]/admin/integrations/github/sync` - Trigger a tenant-scoped GitHub control plane sync run.
+- [`integration-sync.google-workspace.connect`](/docs/generated/api/integration-sync.google-workspace.connect) - `GET /api/integrations/google-workspace/connect` - Start tenant-admin Google Workspace OAuth.
+- [`integration-sync.google-workspace.callback`](/docs/generated/api/integration-sync.google-workspace.callback) - `GET /api/integrations/google-workspace/callback` - Complete Google Workspace OAuth and persist the token account.
+- [`integration-sync.linkedin.connect`](/docs/generated/api/integration-sync.linkedin.connect) - `GET /api/integrations/linkedin/connect` - Start tenant-admin LinkedIn OAuth.
+- [`integration-sync.linkedin.callback`](/docs/generated/api/integration-sync.linkedin.callback) - `GET /api/integrations/linkedin/callback` - Complete LinkedIn OAuth and persist the token account.
 
-- `GET /api/tenants/[tenant]/admin/integrations/metrics` - Return integration control plane metrics.
-- `GET /api/tenants/[tenant]/admin/integrations/conflicts` - Return integration sync conflicts.
+See [OpenAPI Reference](/docs/openapi) for documented request and response interface truth.
 
-## Errors
+## Failure modes: operator risk
 
 - `AFD-INTEGRATION-PERMISSION` - Integration permission missing: Assign admin:integrations or the more specific integration permission required by the endpoint.
 - `AFD-INTEGRATION-READINESS` - Integration readiness failed: Review credentials, mappings, and required organization membership data.
+
+## Source evidence: traceability
+
+<Steps>
+  <Step>Manifest: `src/features/integration-sync/docs.manifest.ts`.</Step>
+  <Step>Confirm route, permission, and API references still exist in the product runtime.</Step>
+  <Step>Run `pnpm docs:generate` and `pnpm docs:ci` after manifest or route changes.</Step>
+</Steps>

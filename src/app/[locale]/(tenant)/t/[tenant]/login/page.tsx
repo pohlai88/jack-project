@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { TenantLoginForm } from '@/features/auth';
 import type { TenantRole } from '@/shared/db/schema/auth';
 import { auth } from '@/shared/lib/auth';
+import { env } from '@/shared/lib/env';
 import { getTenantBySlug } from '@/shared/lib/tenant';
 
 interface TenantLoginPageProps {
@@ -25,6 +26,7 @@ export default async function TenantLoginPage({ params, searchParams }: TenantLo
   const { tenant: tenantSlug } = await params;
   const { email: emailParam } = await searchParams;
   const tenant = await getTenantBySlug(tenantSlug);
+  const auth0Configured = Boolean(env.AUTH0_CLIENT_ID && env.AUTH0_CLIENT_SECRET && env.AUTH0_ISSUER);
 
   // If tenant doesn't exist, show error
   if (!tenant) {
@@ -78,7 +80,12 @@ export default async function TenantLoginPage({ params, searchParams }: TenantLo
           <h1 className="text-3xl font-bold brand-gradient-text">{tenant.name}</h1>
           <p className="text-muted-foreground mt-2">Sign in to access your workspace</p>
         </div>
-        <TenantLoginForm tenantSlug={tenantSlug} tenantName={tenant.name} initialEmail={emailParam ?? ''} />
+        <TenantLoginForm
+          tenantSlug={tenantSlug}
+          tenantName={tenant.name}
+          showAuth0={auth0Configured}
+          initialEmail={emailParam ?? ''}
+        />
       </div>
     </div>
   );

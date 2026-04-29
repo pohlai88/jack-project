@@ -1,8 +1,8 @@
 import { llms } from 'fumadocs-core/source';
 
-import { resolveLlmsExportLocale } from '@/docs/runtime/docs-llm-locale';
-import { consumeLlmsExportRateLimit, getLlmsExportClientIp } from '@/docs/runtime/llms-export-rate-limit';
-import { source } from '@/docs/runtime/source';
+import { resolveLlmsExportLocale } from '@/docs/runtime/docs-llm-locale.resolver';
+import { consumeLlmsExportRateLimit, getLlmsExportClientIp } from '@/docs/runtime/docs-llm-rate-limit.server';
+import { source } from '@/docs/runtime/docs-source.registry';
 
 export const revalidate = false;
 

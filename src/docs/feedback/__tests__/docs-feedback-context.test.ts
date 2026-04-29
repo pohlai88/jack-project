@@ -1,5 +1,7 @@
 const authMock = vi.hoisted(() => vi.fn());
 
+vi.mock('server-only', () => ({}));
+
 vi.mock('@/shared/lib/auth', () => ({
   auth: authMock,
 }));
@@ -8,7 +10,7 @@ import {
   assertDocsFeedbackOrigin,
   buildDocsFeedbackRateLimitKeyHash,
   getDocsFeedbackRequestContext,
-} from '../server/docs-feedback-context';
+} from '../server/docs-feedback-context.server';
 import { DocsFeedbackPublicError } from '../shared/docs-feedback.errors';
 
 describe('docs feedback context', () => {

@@ -42,14 +42,15 @@ describe('LoginForm', () => {
   });
 
   it('renders Auth0 login button', () => {
-    renderWithProviders(<LoginForm />);
+    renderWithProviders(<LoginForm showAuth0 />);
 
     expect(screen.getByRole('button', { name: /continue with auth0/i })).toBeInTheDocument();
   });
 
-  it('does not render Auth0 sign-up by default', () => {
+  it('does not render Auth0 controls by default', () => {
     renderWithProviders(<LoginForm />);
 
+    expect(screen.queryByRole('button', { name: /continue with auth0/i })).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /create an account/i })).not.toBeInTheDocument();
   });
 
@@ -71,7 +72,7 @@ describe('LoginForm', () => {
       const user = userEvent.setup();
       (signIn as Mock).mockResolvedValue({ ok: true });
 
-      renderWithProviders(<LoginForm />);
+      renderWithProviders(<LoginForm showAuth0 />);
 
       const auth0Button = screen.getByRole('button', { name: /continue with auth0/i });
       await user.click(auth0Button);
@@ -83,7 +84,7 @@ describe('LoginForm', () => {
       const user = userEvent.setup();
       (signIn as Mock).mockResolvedValue({ ok: true });
 
-      renderWithProviders(<LoginForm showAuth0SignUp auth0SignUpLabel="Create an account" />);
+      renderWithProviders(<LoginForm showAuth0 showAuth0SignUp auth0SignUpLabel="Create an account" />);
 
       await user.click(screen.getByRole('button', { name: /create an account/i }));
 
@@ -98,7 +99,7 @@ describe('LoginForm', () => {
       // Create a promise that never resolves to keep loading state
       (signIn as Mock).mockImplementation(() => new Promise(() => {}));
 
-      renderWithProviders(<LoginForm />);
+      renderWithProviders(<LoginForm showAuth0 />);
 
       const auth0Button = screen.getByRole('button', { name: /continue with auth0/i });
       await user.click(auth0Button);
@@ -113,7 +114,7 @@ describe('LoginForm', () => {
       const user = userEvent.setup();
       (signIn as Mock).mockRejectedValue(new Error('Auth0 error'));
 
-      renderWithProviders(<LoginForm />);
+      renderWithProviders(<LoginForm showAuth0 />);
 
       const auth0Button = screen.getByRole('button', { name: /continue with auth0/i });
       await user.click(auth0Button);
@@ -127,7 +128,7 @@ describe('LoginForm', () => {
   describe('Development Login', () => {
     it('allows email input', async () => {
       const user = userEvent.setup();
-      renderWithProviders(<LoginForm />);
+      renderWithProviders(<LoginForm showAuth0 />);
 
       const emailInput = screen.getByLabelText(/email/i);
       await user.type(emailInput, 'test@example.com');
@@ -205,9 +206,9 @@ describe('LoginForm', () => {
       const devButton = screen.getByRole('button', { name: /development login/i });
       await user.click(devButton);
 
-      // Auth0 + dev login buttons show "Signing in..." when loading (optional third when sign-up enabled)
+      // Auth0 + dev login buttons show "Signing in..." when loading
       const buttons = screen.getAllByRole('button', { name: /signing in/i });
-      expect(buttons.length).toBeGreaterThanOrEqual(2);
+      expect(buttons.length).toBeGreaterThanOrEqual(1);
       buttons.forEach((btn) => expect(btn).toBeDisabled());
     });
 

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { listIntegrationRuns } from '@/features/integration-sync';
+import { listIntegrationRuns, parseIntegrationProvider } from '@/features/integration-sync';
 import { auth } from '@/shared/lib/auth';
 import { hasPermission } from '@/shared/lib/permissions';
 import { getTenantBySlug } from '@/shared/lib/tenant';
@@ -17,10 +17,15 @@ export async function GET(request: NextRequest, context: { params: Promise<{ ten
   const tenant = await getTenantBySlug(tenantSlug);
   if (!tenant) return NextResponse.json({ error: 'Tenant not found' }, { status: 404 });
 
+  const provider = parseIntegrationProvider(request.nextUrl.searchParams.get('provider'));
   const providerParam = request.nextUrl.searchParams.get('provider');
+  if (providerParam !== null && provider === null) {
+    return NextResponse.json({ error: 'Unsupported provider' }, { status: 400 });
+  }
+
   const runs = await listIntegrationRuns({
     tenantId: tenant.id,
-    provider: providerParam ? (providerParam as 'github') : undefined,
+    provider: provider ?? undefined,
     limit: Number(request.nextUrl.searchParams.get('limit') ?? 20),
   });
 

@@ -2,5 +2,27 @@
   "generated": true,
   "title": "Features",
   "source": "docs inventory graph",
-  "generatedBy": "pnpm docs:generate"
+  "generatedBy": "pnpm docs:generate",
+  "pages": [
+    "admin",
+    "assistant",
+    "auth",
+    "dashboard",
+    "docs",
+    "github",
+    "google-workspace",
+    "integration-sync",
+    "linkedin",
+    "profile"
+  ],
+  "admin": "Admin",
+  "assistant": "Assistant",
+  "auth": "Auth",
+  "dashboard": "Dashboard",
+  "docs": "Docs",
+  "github": "Github",
+  "google-workspace": "Google Workspace",
+  "integration-sync": "Integration Sync",
+  "linkedin": "Linkedin",
+  "profile": "Profile"
 }

@@ -1,6 +1,6 @@
 import { createFromSource } from 'fumadocs-core/search/server';
 
-import { source } from '@/docs/runtime/source';
+import { source } from '@/docs/runtime/docs-source.registry';
 
 export const { GET } = createFromSource(source, {
   localeMap: {

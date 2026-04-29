@@ -1,0 +1,39 @@
+---
+title: OpenAPI Reference
+description: Fumadocs-rendered interface truth for Afenda public and operator-facing APIs.
+docsType: 'api'
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+
+# OpenAPI Reference
+
+<Callout title="API truth surface" type="info">
+  This page renders the committed Afenda OpenAPI schema through Fumadocs OpenAPI. Generated API evidence explains
+  ownership; this page renders interface shape.
+</Callout>
+
+Use this reference for documented HTTP routes such as `platform.health`, `docs.search`, `docs.llms-index`, `assistant.chat`, and tenant-scoped administration APIs.
+
+<APIPage document="src/docs/openapi/afenda-public.json" />
+
+## Related generated evidence
+
+<Cards>
+  <Card
+    title="Platform Health"
+    href="/docs/generated/api/platform.health"
+    description="Generated API evidence for the application health route."
+  />
+  <Card
+    title="Documentation Search"
+    href="/docs/generated/api/docs.search"
+    description="Generated API evidence for the Fumadocs-backed search endpoint."
+  />
+  <Card
+    title="Machine-readable docs index"
+    href="/docs/generated/api/docs.llms-index"
+    description="Generated API evidence for the LLM page index route."
+  />
+</Cards>

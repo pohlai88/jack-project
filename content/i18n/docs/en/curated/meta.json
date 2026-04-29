@@ -1,10 +1,10 @@
 {
   "title": "Curated",
-  "icon": "Library",
   "root": true,
+  "what-is-afenda": "What is Afenda",
   "overview": "Overview",
   "doctrine": "Doctrine",
   "onboarding": "Onboarding",
   "release-notes": "Release Notes",
-  "pages": ["overview", "doctrine", "onboarding", "release-notes"]
+  "pages": ["what-is-afenda", "overview", "doctrine", "onboarding", "release-notes"]
 }

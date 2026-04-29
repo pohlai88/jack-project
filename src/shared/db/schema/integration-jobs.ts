@@ -8,7 +8,7 @@ import { tenants } from './tenants';
 /**
  * Integration type enum for processing jobs
  */
-export const integrationTypeEnum = appSchema.enum('integration_type', ['github']);
+export const integrationTypeEnum = appSchema.enum('integration_type', ['github', 'google_workspace', 'linkedin']);
 
 /**
  * Integration processing job status enum

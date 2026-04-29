@@ -2,9 +2,10 @@ import { generate as OgImage } from 'fumadocs-ui/og';
 import { notFound } from 'next/navigation';
 import { ImageResponse } from 'next/og';
 
-import { source } from '@/docs/runtime/source';
+import { source } from '@/docs/runtime/docs-source.registry';
 
 export const revalidate = false;
+export const dynamic = 'force-dynamic';
 
 interface OgRouteProps {
   params: Promise<{ locale: string; slug: string[] }>;
@@ -26,12 +27,4 @@ export async function GET(_req: Request, props: OgRouteProps) {
     width: 1200,
     height: 630,
   });
-}
-
-export function generateStaticParams() {
-  const rows = source.generateParams('slug', 'locale') as { slug?: string[]; locale: string }[];
-  return rows.map(({ slug: slugParts, locale }) => ({
-    locale,
-    slug: [...(slugParts ?? []), 'image.png'],
-  }));
 }

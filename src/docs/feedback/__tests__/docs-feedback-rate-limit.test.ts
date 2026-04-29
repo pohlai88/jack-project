@@ -1,6 +1,8 @@
 const countRecentDocsPageFeedbackEventsMock = vi.hoisted(() => vi.fn());
 
-vi.mock('../server/docs-feedback-service', () => ({
+vi.mock('server-only', () => ({}));
+
+vi.mock('../server/docs-feedback-service.server', () => ({
   countRecentDocsPageFeedbackEvents: countRecentDocsPageFeedbackEventsMock,
 }));
 
@@ -8,7 +10,7 @@ import {
   assertDocsFeedbackRateLimit,
   DOCS_FEEDBACK_RATE_LIMIT_MAX_SUBMISSIONS,
   DOCS_FEEDBACK_RATE_LIMIT_WINDOW_MS,
-} from '../server/docs-feedback-rate-limit';
+} from '../server/docs-feedback-rate-limit.server';
 import { DocsFeedbackPublicError } from '../shared/docs-feedback.errors';
 
 describe('docs feedback rate limit', () => {

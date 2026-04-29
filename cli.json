@@ -3,10 +3,10 @@
   "baseDir": "src",
   "aliases": {
     "uiDir": "./shared/components/ui",
-    "componentsDir": "./docs/components",
-    "blockDir": "./docs/components/blocks",
+    "componentsDir": "./docs/ui",
+    "blockDir": "./docs/blocks",
     "cssDir": "./app/[locale]/docs",
-    "layoutDir": "./docs/ui/layouts",
+    "layoutDir": ".fumadocs/layouts",
     "libDir": "./shared/lib"
   },
   "uiLibrary": "radix-ui",

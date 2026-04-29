@@ -2,5 +2,29 @@
   "generated": true,
   "title": "Errors",
   "source": "docs inventory graph",
-  "generatedBy": "pnpm docs:generate"
+  "generatedBy": "pnpm docs:generate",
+  "pages": [
+    "afd-admin-unauthorized",
+    "afd-ai-conversation-load",
+    "afd-auth-no-tenant",
+    "afd-dashboard-stats",
+    "afd-docs-page-not-found",
+    "afd-github-oauth",
+    "afd-google-workspace-oauth",
+    "afd-integration-permission",
+    "afd-integration-readiness",
+    "afd-linkedin-oauth",
+    "afd-profile-update"
+  ],
+  "afd-admin-unauthorized": "Afd Admin Unauthorized",
+  "afd-ai-conversation-load": "Afd Ai Conversation Load",
+  "afd-auth-no-tenant": "Afd Auth No Tenant",
+  "afd-dashboard-stats": "Afd Dashboard Stats",
+  "afd-docs-page-not-found": "Afd Docs Page Not Found",
+  "afd-github-oauth": "Afd Github Oauth",
+  "afd-google-workspace-oauth": "Afd Google Workspace Oauth",
+  "afd-integration-permission": "Afd Integration Permission",
+  "afd-integration-readiness": "Afd Integration Readiness",
+  "afd-linkedin-oauth": "Afd Linkedin Oauth",
+  "afd-profile-update": "Afd Profile Update"
 }

@@ -1,7 +1,11 @@
 import { and, eq } from 'drizzle-orm';
 import { NextRequest, NextResponse } from 'next/server';
 
-import { listIntegrationConflicts, resolveIntegrationConflict } from '@/features/integration-sync';
+import {
+  listIntegrationConflicts,
+  parseIntegrationProvider,
+  resolveIntegrationConflict,
+} from '@/features/integration-sync';
 import { db } from '@/shared/db';
 import * as schema from '@/shared/db/schema';
 import { auth } from '@/shared/lib/auth';
@@ -20,10 +24,15 @@ export async function GET(request: NextRequest, context: { params: Promise<{ ten
   const tenant = await getTenantBySlug(tenantSlug);
   if (!tenant) return NextResponse.json({ error: 'Tenant not found' }, { status: 404 });
 
-  const provider = request.nextUrl.searchParams.get('provider');
+  const providerParam = request.nextUrl.searchParams.get('provider');
+  const provider = parseIntegrationProvider(providerParam);
+  if (providerParam !== null && provider === null) {
+    return NextResponse.json({ error: 'Unsupported provider' }, { status: 400 });
+  }
+
   const conflicts = await listIntegrationConflicts({
     tenantId: tenant.id,
-    provider: provider ? (provider as 'github') : undefined,
+    provider: provider ?? undefined,
     onlyOpen: request.nextUrl.searchParams.get('onlyOpen') !== 'false',
     limit: Number(request.nextUrl.searchParams.get('limit') ?? 100),
   });

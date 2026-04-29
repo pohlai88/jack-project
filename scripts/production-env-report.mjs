@@ -9,7 +9,6 @@ import {
   analyzeProductionReadiness,
   keysExpectedOnVercelAfterPush,
   mergeProductionEnv,
-  PRODUCTION_REQUIRED_KEYS,
   VERCEL_SCOPE,
 } from './production-env-plan.mjs';
 

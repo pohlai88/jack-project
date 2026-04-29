@@ -1,4 +1,4 @@
-import { getDocsRSS } from '@/docs/runtime/rss';
+import { getDocsRSS } from '@/docs/runtime/docs-rss.generator';
 
 export const revalidate = false;
 

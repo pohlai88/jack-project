@@ -1,9 +1,11 @@
 ---
 title: 'Admin Internal Tenant By Host'
 description: 'Internal: resolve verified custom domain hostname to tenant slug for Edge proxy (Bearer MIDDLEWARE_TENANT_LOOKUP_SECRET).'
+docsType: 'generated-evidence'
 ---
 
 import { Banner } from 'fumadocs-ui/components/banner';
+import { Callout } from 'fumadocs-ui/components/callout';
 import { File, Files, Folder } from 'fumadocs-ui/components/files';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
@@ -18,7 +20,20 @@ _/}
   GENERATED EVIDENCE - This page is rendered from validated product truth.
 </Banner>
 
-## API Evidence
+<Callout title="Truth Surface: admin.internal.tenant-by-host" type="info">
+  - API ID: `admin.internal.tenant-by-host` - Route: `GET /api/internal/tenant-by-host` - Owning feature: `admin` -
+  OpenAPI reference: `/docs/openapi`
+</Callout>
+
+## Overview: what this API actually does
+
+Internal: resolve verified custom domain hostname to tenant slug for Edge proxy (Bearer MIDDLEWARE_TENANT_LOOKUP_SECRET).
+
+## When to use this evidence
+
+Use this page before changing public contracts, route guards, or payload semantics.
+
+## Source contract
 
 <TypeTable
   type={{
@@ -45,12 +60,27 @@ _/}
   }}
 />
 
-## Summary
+## Runtime surfaces: route and OpenAPI
 
-Internal: resolve verified custom domain hostname to tenant slug for Edge proxy (Bearer MIDDLEWARE_TENANT_LOOKUP_SECRET).
+This generated API page is manifest evidence. Where the route is part of the public HTTP surface, keep the
+OpenAPI schema aligned so Fumadocs can render request and response details from the machine-readable contract.
+
+See [OpenAPI Reference](/docs/openapi) for documented request and response interface truth.
 
 <Files>
   <Folder name="API Route" defaultOpen>
     <File name="GET /api/internal/tenant-by-host" />
   </Folder>
 </Files>
+
+## Failure modes
+
+Failure behavior is owned by the feature manifest and the runtime route. Confirm status codes and response semantics in the OpenAPI reference before exposing the route externally.
+
+## Source evidence: traceability
+
+<Steps>
+  <Step>Manifest: `src/features/admin/docs.manifest.ts`.</Step>
+  <Step>Confirm the Next.js route `/api/internal/tenant-by-host` exists.</Step>
+  <Step>Update OpenAPI coverage for public or operator-facing APIs.</Step>
+</Steps>

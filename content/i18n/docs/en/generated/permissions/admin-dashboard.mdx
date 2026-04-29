@@ -1,9 +1,11 @@
 ---
 title: 'Admin Dashboard'
 description: 'Permission evidence for admin:dashboard.'
+docsType: 'generated-evidence'
 ---
 
 import { Banner } from 'fumadocs-ui/components/banner';
+import { Callout } from 'fumadocs-ui/components/callout';
 import { File, Files, Folder } from 'fumadocs-ui/components/files';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
@@ -18,9 +20,16 @@ _/}
   GENERATED EVIDENCE - This page is rendered from validated product truth.
 </Banner>
 
-## Permission
+## Overview: what this permission controls
 
-`admin:dashboard`
+Use this page to confirm which feature manifests claim `admin:dashboard` and where permission coverage must remain
+aligned.
+
+## When to use this evidence
+
+Use this page when auditing authorization boundaries, role drift, and feature-to-permission coupling.
+
+## Source contract
 
 <TypeTable
   type={{
@@ -29,14 +38,33 @@ _/}
       description: 'Stable permission key discovered from guarded runtime code.',
       required: true,
     },
+    FeatureCount: {
+      type: '1',
+      description: 'Feature manifests that claim this permission.',
+      required: true,
+    },
     Coverage: {
-      type: '1 features',
-      description: 'admin',
+      type: 'admin',
+      description: 'Exact claiming feature list.',
       required: true,
     },
   }}
 />
 
-## Covered Features
+## Runtime surfaces: guarded operations
 
 - `admin`
+
+## Failure modes
+
+- Missing permissions can cause unauthorized access errors or permission leaks.
+- Stale permissions can leave protected routes without explicit coverage.
+- Regressions can appear when feature manifests move permissions without operator notice.
+
+## Source evidence: traceability
+
+<Steps>
+  <Step>Keep this permission declared in the owning feature manifests.</Step>
+  <Step>Confirm guarded runtime code still uses the permission key.</Step>
+  <Step>Regenerate evidence after permission or route changes.</Step>
+</Steps>

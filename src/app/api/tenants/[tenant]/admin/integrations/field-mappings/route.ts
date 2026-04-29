@@ -1,11 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { listIntegrationFieldMappings, upsertIntegrationFieldMapping } from '@/features/integration-sync';
+import {
+  listIntegrationFieldMappings,
+  parseIntegrationProvider,
+  upsertIntegrationFieldMapping,
+} from '@/features/integration-sync';
 import { auth } from '@/shared/lib/auth';
 import { hasPermission } from '@/shared/lib/permissions';
 import { getTenantBySlug } from '@/shared/lib/tenant';
 
-type Provider = 'github';
 type Ownership = 'remote_authoritative' | 'local_authoritative' | 'merge' | 'append_only';
 
 export async function GET(request: NextRequest, context: { params: Promise<{ tenant: string }> }) {
@@ -20,7 +23,12 @@ export async function GET(request: NextRequest, context: { params: Promise<{ ten
   const tenant = await getTenantBySlug(tenantSlug);
   if (!tenant) return NextResponse.json({ error: 'Tenant not found' }, { status: 404 });
 
-  const provider = request.nextUrl.searchParams.get('provider') as Provider | null;
+  const providerParam = request.nextUrl.searchParams.get('provider');
+  const provider = parseIntegrationProvider(providerParam);
+  if (providerParam !== null && provider === null) {
+    return NextResponse.json({ error: 'Unsupported provider' }, { status: 400 });
+  }
+
   const mappings = await listIntegrationFieldMappings({
     tenantId: tenant.id,
     provider: provider ?? undefined,
@@ -41,7 +49,7 @@ export async function POST(request: NextRequest, context: { params: Promise<{ te
   if (!tenant) return NextResponse.json({ error: 'Tenant not found' }, { status: 404 });
 
   const body = (await request.json()) as {
-    provider?: Provider;
+    provider?: string;
     entityType?: string;
     fieldPath?: string;
     ownership?: Ownership;
@@ -51,10 +59,14 @@ export async function POST(request: NextRequest, context: { params: Promise<{ te
   if (!body.provider || !body.entityType || !body.fieldPath || !body.ownership) {
     return NextResponse.json({ error: 'provider, entityType, fieldPath and ownership are required' }, { status: 400 });
   }
+  const provider = parseIntegrationProvider(body.provider);
+  if (!provider) {
+    return NextResponse.json({ error: 'Unsupported provider' }, { status: 400 });
+  }
 
   const mapping = await upsertIntegrationFieldMapping({
     tenantId: tenant.id,
-    provider: body.provider,
+    provider,
     entityType: body.entityType,
     fieldPath: body.fieldPath,
     ownership: body.ownership,

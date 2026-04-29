@@ -5,7 +5,11 @@ import { persons } from './persons';
 import { appSchema } from './schema';
 import { tenants } from './tenants';
 
-export const integrationProviderEnum = appSchema.enum('integration_provider', ['github']);
+export const integrationProviderEnum = appSchema.enum('integration_provider', [
+  'github',
+  'google_workspace',
+  'linkedin',
+]);
 
 export const integrationSyncModeEnum = appSchema.enum('integration_sync_mode', [
   'migration_full',

@@ -153,11 +153,11 @@ const ssoSchema = z.object({
 
 const googleWorkspaceSettingsSchema = integrationBaseSchema.extend({
   /**
-   * OAuth2 Client ID for Google Workspace Calendar.
+   * OAuth2 Client ID for Google Workspace. If not set, falls back to GOOGLE_CLIENT_ID env var.
    */
   clientId: z.string().optional(),
   /**
-   * OAuth2 Client Secret for Google Workspace Calendar.
+   * OAuth2 Client Secret for Google Workspace. If not set, falls back to GOOGLE_CLIENT_SECRET env var.
    */
   clientSecret: z.string().optional(),
   /**

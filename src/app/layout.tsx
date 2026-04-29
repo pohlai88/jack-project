@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
-import { docsFeedPath, docsFeedTitle } from '@/docs/runtime/rss-metadata';
+import { DOCS_FEED_PATH, DOCS_FEED_TITLE } from '@/docs/runtime/docs-rss.contract';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     types: {
       'application/rss+xml': [
         {
-          title: docsFeedTitle,
-          url: docsFeedPath,
+          title: DOCS_FEED_TITLE,
+          url: DOCS_FEED_PATH,
         },
       ],
     },

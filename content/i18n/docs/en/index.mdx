@@ -1,20 +1,113 @@
 ---
-title: 'Afenda Documentation Evidence Pipeline'
-description: 'ERP-grade documentation rendered from governed product truth.'
-icon: BookOpen
+title: 'Afenda Documentation'
+description: 'Route into Afenda truth doctrine, operator evidence, API references, and LLM-ready documentation exports.'
+docsType: 'index'
 ---
 
-## Doctrine
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { File, Files, Folder } from 'fumadocs-ui/components/files';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 
-Afenda documentation is not content. It is an evidence surface generated from product truth.
+<Callout title="Index page" type="info">
+  This page is a routing surface. Use it to choose the correct Afenda truth surface: doctrine, generated evidence, API
+  reference, or machine-readable export.
+</Callout>
 
-Docs render what product truth declares. Manual prose may explain truth, but it may not define truth.
+<Cards>
+  <Card
+    title="Truth Engine"
+    href="/docs/curated/what-is-afenda"
+    description="Start with Afenda's canonical product thesis: operational truth, NexusCanon, proof layers, and governance spine."
+  />
+  <Card
+    title="Operator / Admin"
+    href="/docs/generated/workflows/admin.tenant-settings"
+    description="Use generated workflow evidence for tenant settings, members, roles, integrations, and operational controls."
+  />
+  <Card
+    title="Developer / API"
+    href="/docs/openapi"
+    description="Inspect the Fumadocs-rendered OpenAPI reference and follow links back to generated API evidence."
+  />
+  <Card
+    title="AI / LLM"
+    href="/docs/generated/workflows/docs.machine-readable-export"
+    description="Use Markdown, LLM, RSS, search, and Open Graph exports as machine-readable documentation surfaces."
+  />
+  <Card
+    title="Generated Evidence"
+    href="/docs/generated/features/docs"
+    description="Read manifest-backed feature evidence for routes, permissions, workflows, APIs, errors, and troubleshooting."
+  />
+</Cards>
 
-## Evidence Areas
+## Choose the right truth surface
 
-- [Generated feature evidence](/docs/generated/features/admin)
-- [Generated workflow evidence](/docs/generated/workflows/admin.member-lifecycle)
-- [Generated permission evidence](/docs/generated/permissions/admin-dashboard)
-- [Generated API evidence](/docs/generated/api/admin.settings.ai.test)
-- [Generated error evidence](/docs/generated/errors/afd-admin-unauthorized)
-- [Generated troubleshooting evidence](/docs/generated/troubleshooting/docs-generated-stale)
+<Tabs items={["Curated", "Generated Evidence", "API", "LLM"]}>
+  <Tab>
+
+Curated pages establish doctrine and product meaning. They explain Afenda as a Truth Engine but do not replace manifest-backed evidence.
+
+  </Tab>
+  <Tab>
+
+Generated evidence pages are deterministic outputs from docs manifests. Use them when changing routes, permissions, workflows, APIs, errors, or troubleshooting contracts.
+
+  </Tab>
+  <Tab>
+
+The OpenAPI reference renders documented HTTP interface truth through Fumadocs OpenAPI. Use it for request/response-oriented API inspection.
+
+  </Tab>
+  <Tab>
+
+LLM routes expose the documentation corpus as machine-readable Markdown so agents can read the same truth surfaces as humans.
+
+  </Tab>
+</Tabs>
+
+## Evidence map
+
+<Files>
+  <Folder name="Curated doctrine" defaultOpen>
+    <File name="What is Afenda" />
+    <File name="Overview" />
+    <File name="Doctrine" />
+    <File name="Onboarding" />
+    <File name="Release Notes" />
+  </Folder>
+  <Folder name="Generated evidence" defaultOpen>
+    <File name="Features" />
+    <File name="Workflows" />
+    <File name="Permissions" />
+    <File name="APIs" />
+    <File name="Errors" />
+    <File name="Troubleshooting" />
+  </Folder>
+  <Folder name="Machine-readable surfaces" defaultOpen>
+    <File name="/llms.txt" />
+    <File name="/llms-full.txt" />
+    <File name="/llms.mdx/[locale]/docs/..." />
+    <File name="/rss.xml" />
+  </Folder>
+</Files>
+
+## Recommended path
+
+<Steps>
+  <Step>Read [What is Afenda?](/docs/curated/what-is-afenda) for the Truth Engine thesis.</Step>
+  <Step>Read [Doctrine](/docs/curated/doctrine) for the engineering rule spine.</Step>
+  <Step>Use [Documentation Experience](/docs/generated/features/docs) to inspect the docs evidence contract.</Step>
+  <Step>Use [OpenAPI Reference](/docs/openapi) and generated API pages for interface truth.</Step>
+  <Step>Use [/llms.txt](/llms.txt) and [/llms-full.txt](/llms-full.txt) for agent workflows.</Step>
+</Steps>
+
+## High-signal routes
+
+- [What is Afenda?](/docs/curated/what-is-afenda)
+- [Documentation Experience](/docs/generated/features/docs)
+- [Machine-readable docs export](/docs/generated/workflows/docs.machine-readable-export)
+- [OpenAPI Reference](/docs/openapi)
+- [Platform Health API evidence](/docs/generated/api/platform.health)

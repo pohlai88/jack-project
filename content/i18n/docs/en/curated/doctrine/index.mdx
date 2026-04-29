@@ -1,11 +1,42 @@
 ---
 title: 'Documentation Doctrine'
-description: 'The governing rules for Afenda documentation.'
-icon: FileText
+description: 'The governing rules for Afenda documentation evidence.'
+docsType: 'curated'
 ---
 
-## Doctrine
+## Thesis
 
-Afenda documentation is not content. It is an evidence surface generated from product truth.
+Documentation is not a narrative. It is the outward projection of governed product truth.
 
-Manual prose may explain truth, but it may not define truth.
+## Model
+
+Afenda documentation is an evidence surface generated from governed product truth. Manual prose may explain that truth, but it cannot redefine it.
+
+## Operational implication
+
+A documentation page is release-worthy only when it can be traced back to one of the following sources:
+
+- a feature manifest
+- a workflow definition
+- an API contract
+- a permission contract
+- an error taxonomy
+- a troubleshooting record
+- a governed doctrine, ADR, or ATC
+
+If the source of truth is missing, the page must be treated as explanatory context, not authoritative evidence.
+
+## Model
+
+- Generated evidence outranks narrative prose.
+- Route, API, permission, and error surfaces must remain deterministic.
+- Documentation must expose what the system proves, not what the team remembers.
+- Stale generated evidence is a release risk, not a formatting issue.
+
+## Non-negotiables
+
+## Next reading
+
+- [Overview](../overview)
+- [What is Afenda](../what-is-afenda)
+- [Release Notes](../release-notes)

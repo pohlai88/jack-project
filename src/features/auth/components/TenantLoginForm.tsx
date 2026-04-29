@@ -36,11 +36,18 @@ type TenantLoginFormValues = z.infer<typeof tenantLoginSchema>;
 interface TenantLoginFormProps {
   tenantSlug: string;
   tenantName: string;
+  /** Show Auth0 controls when the provider is configured. */
+  showAuth0?: boolean;
   /** Pre-fill email (e.g. from ?email= in URL) */
   initialEmail?: string;
 }
 
-export function TenantLoginForm({ tenantSlug, tenantName, initialEmail = '' }: TenantLoginFormProps) {
+export function TenantLoginForm({
+  tenantSlug,
+  tenantName,
+  showAuth0 = false,
+  initialEmail = '',
+}: TenantLoginFormProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
 
@@ -109,16 +116,17 @@ export function TenantLoginForm({ tenantSlug, tenantName, initialEmail = '' }: T
           {serverError}
         </FormGlobalError>
 
-        {/* Auth0 Login Button */}
-        <Button
-          type="button"
-          className="w-full h-12 bg-primary hover:opacity-90 shadow-md text-base font-medium"
-          onClick={handleAuth0Login}
-          disabled={isLoading}
-          aria-busy={isLoading}
-        >
-          {isLoading ? 'Signing in...' : 'Continue with Auth0'}
-        </Button>
+        {showAuth0 ? (
+          <Button
+            type="button"
+            className="w-full h-12 bg-primary hover:opacity-90 shadow-md text-base font-medium"
+            onClick={handleAuth0Login}
+            disabled={isLoading}
+            aria-busy={isLoading}
+          >
+            {isLoading ? 'Signing in...' : 'Continue with Auth0'}
+          </Button>
+        ) : null}
 
         <div className="relative">
           <div className="absolute inset-0 flex items-center">

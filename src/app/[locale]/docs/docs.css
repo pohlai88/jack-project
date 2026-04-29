@@ -2,160 +2,68 @@
 @import 'fumadocs-ui/css/shadcn.css';
 @import 'fumadocs-ui/css/preset.css';
 @import 'fumadocs-openapi/css/preset.css';
-@import '@fumadocs/story/css/preset.css';
 
 /*
- * Docs route owns all Fumadocs/OpenAPI/Story presentation styling.
- * App-wide tokens and theme state remain owned by globals.css and the app shell.
+ * Docs route CSS boundary.
+ *
+ * Fumadocs owns the shell, prose, sidebar, TOC, breadcrumb, footer,
+ * search, language, theme, and OpenAPI styling. Afenda CSS here is limited
+ * to route-level tokens, named Afenda wrappers, and print behavior.
  */
 
 :root {
-  color-scheme: light;
   --fd-layout-width: 1400px;
-  --docs-editorial-measure: 78ch;
-  --docs-editorial-radius: 18px;
-  --docs-editorial-border: color-mix(in oklab, currentColor 12%, transparent);
-  --docs-editorial-muted-border: color-mix(in oklab, currentColor 8%, transparent);
-  --docs-shell-surface: color-mix(in oklab, Canvas 92%, currentColor 8%);
-  --docs-editorial-surface: color-mix(in oklab, Canvas 94%, currentColor 6%);
-  --docs-editorial-soft-surface: color-mix(in oklab, Canvas 97%, currentColor 3%);
 }
 
-.dark {
-  color-scheme: dark;
+.docs-page-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-block: 1rem 1.5rem;
+  padding-block: 0.75rem;
+  border-block: 1px solid var(--color-fd-border);
 }
 
-#nd-docs-layout {
-  background:
-    radial-gradient(circle at top left, color-mix(in oklab, currentColor 4%, transparent), transparent 34rem), Canvas;
+.docs-page-actions__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
 }
 
-#nd-content {
-  max-width: var(--fd-layout-width);
-}
+@media (max-width: 640px) {
+  .docs-page-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 
-.nd-content {
-  text-wrap: pretty;
-}
-
-.nd-content > * {
-  max-width: var(--docs-editorial-measure);
-}
-
-.nd-content > table,
-.nd-content > pre,
-.nd-content > figure,
-.nd-content > .fd-openapi,
-.nd-content > [data-openapi],
-.nd-content > [data-radix-scroll-area-root] {
-  max-width: 100%;
-}
-
-.nd-content h1,
-.nd-content h2,
-.nd-content h3 {
-  letter-spacing: 0;
-}
-
-.nd-content h2 {
-  margin-top: 3rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--docs-editorial-muted-border);
-}
-
-.nd-content h3 {
-  margin-top: 2rem;
-}
-
-.nd-content a {
-  text-underline-offset: 0.18em;
-  text-decoration-thickness: 0.08em;
-}
-
-.nd-content a:focus-visible,
-.nd-content button:focus-visible {
-  outline: 2px solid var(--color-fd-ring);
-  outline-offset: 3px;
-}
-
-.nd-content pre {
-  overflow-x: auto;
-  border: 1px solid var(--docs-editorial-border);
-  border-radius: var(--docs-editorial-radius);
-  background: linear-gradient(
-    180deg,
-    color-mix(in oklab, Canvas 96%, currentColor 4%),
-    color-mix(in oklab, Canvas 92%, currentColor 8%)
-  );
-}
-
-.nd-content :not(pre) > code {
-  border: 1px solid var(--docs-editorial-muted-border);
-  border-radius: 0.45rem;
-  padding: 0.12rem 0.35rem;
-  background: var(--docs-editorial-soft-surface);
-}
-
-.nd-content table {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  border-collapse: collapse;
-}
-
-.nd-content th {
-  font-weight: 650;
-}
-
-.nd-content th,
-.nd-content td {
-  border-bottom: 1px solid var(--docs-editorial-muted-border);
-}
-
-.nd-content img {
-  max-width: 100%;
-  height: auto;
-  border-radius: var(--docs-editorial-radius);
-}
-
-.nd-content figure {
-  margin-block: 2rem;
-}
-
-.nd-content blockquote {
-  border-left: 3px solid currentColor;
-  padding: 0.75rem 1rem;
-  border-radius: 0 var(--docs-editorial-radius) var(--docs-editorial-radius) 0;
-  background: var(--docs-editorial-soft-surface);
-}
-
-.nd-banner {
-  border: 1px solid var(--docs-editorial-border);
-  border-radius: var(--docs-editorial-radius);
+  .docs-page-actions__controls {
+    justify-content: flex-start;
+  }
 }
 
 @media print {
   #nd-docs-layout {
     --fd-sidebar-width: 0px !important;
-    background: white !important;
+    background: #fff !important;
   }
 
   #nd-sidebar,
   #nd-toc,
-  .nd-banner {
+  [data-toc-popover],
+  .docs-page-actions {
     display: none !important;
   }
 
-  #nd-content {
+  #nd-page {
     max-width: 100% !important;
   }
 
-  .nd-content > * {
-    max-width: 100% !important;
-  }
-
-  .nd-content pre,
-  .nd-content table {
+  .prose pre,
+  .prose table,
+  .prose blockquote {
     break-inside: avoid;
   }
 }

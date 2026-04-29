@@ -61,6 +61,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
         </div>
         <LoginForm
           initialEmail={emailParam ?? ''}
+          showAuth0={auth0Configured}
           showAuth0SignUp={auth0Configured}
           auth0SignUpLabel={t('createAccount')}
         />

@@ -1,9 +1,37 @@
 ---
 title: 'Docs Pipeline Onboarding'
-description: 'How engineers add product truth to the documentation pipeline.'
-icon: Cog
+description: 'How engineers add governed product truth to the documentation pipeline.'
+docsType: 'curated'
 ---
 
-Add or update a feature manifest beside the feature implementation. Then run `pnpm docs:generate` and commit the generated evidence.
+## Thesis
 
-CI blocks release-visible product changes when docs evidence is missing or stale.
+Docs quality comes from governed evidence, not editor discipline.
+
+## Model
+
+The pipeline is deterministic:
+
+1. Update the implementation.
+2. Update the relevant feature manifest, contract, route, API definition, permission surface, or error taxonomy.
+3. Regenerate docs evidence.
+4. Review generated output.
+5. Commit implementation and evidence together.
+
+## Operational implication
+
+To add or update documentation evidence, update the product truth source beside the implementation first.
+
+Then run:
+
+```bash
+pnpm docs:generate
+```
+
+Commit the generated documentation evidence with the implementation change.
+
+## Next reading
+
+- [Overview](../overview)
+- [OpenAPI](../../openapi)
+- [Release Notes](../release-notes)

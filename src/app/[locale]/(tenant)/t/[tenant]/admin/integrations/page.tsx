@@ -65,16 +65,15 @@ export default async function IntegrationsPage({ params }: IntegrationsPageProps
       lastSyncAt: ghSettings?.lastSyncAt ?? null,
       comingSoon: false,
     },
-    // Active integrations
     {
       id: 'google-workspace',
       nameKey: 'integrationsPage.googleWorkspace.name',
       descriptionKey: 'integrationsPage.googleWorkspace.description',
       href: '/admin/integrations/google-workspace',
-      isConnected: false,
-      isEnabled: false,
-      lastSyncAt: null,
-      comingSoon: true,
+      isConnected: settings?.integrations?.googleWorkspace?.enabled ?? false,
+      isEnabled: settings?.integrations?.googleWorkspace?.enabled ?? false,
+      lastSyncAt: settings?.integrations?.googleWorkspace?.lastSyncAt ?? null,
+      comingSoon: false,
     },
     {
       id: 'slack',
@@ -101,10 +100,10 @@ export default async function IntegrationsPage({ params }: IntegrationsPageProps
       nameKey: 'integrationsPage.linkedin.name',
       descriptionKey: 'integrationsPage.linkedin.description',
       href: '/admin/integrations/linkedin',
-      isConnected: false,
-      isEnabled: false,
+      isConnected: settings?.integrations?.linkedin?.enabled ?? false,
+      isEnabled: settings?.integrations?.linkedin?.enabled ?? false,
       lastSyncAt: null,
-      comingSoon: true,
+      comingSoon: false,
     },
   ];
 

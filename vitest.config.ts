@@ -4,6 +4,7 @@ import path from 'node:path';
 export default defineConfig({
   resolve: {
     alias: {
+      'server-only': path.resolve(__dirname, './tests/support/server-only.ts'),
       '@': path.resolve(__dirname, './src'),
       '@tests': path.resolve(__dirname, './tests'),
       '@scripts-lib/tolgee-normalize-core': path.resolve(__dirname, './scripts/lib/tolgee-normalize-core.mjs'),

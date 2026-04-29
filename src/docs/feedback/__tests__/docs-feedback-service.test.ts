@@ -15,13 +15,15 @@ const dbMocks = vi.hoisted(() => {
   };
 });
 
+vi.mock('server-only', () => ({}));
+
 vi.mock('@/shared/db', () => ({
   db: dbMocks.db,
 }));
 
 import * as schema from '@/shared/db/schema';
 
-import { countRecentDocsPageFeedbackEvents, recordDocsPageFeedbackEvent } from '../server/docs-feedback-service';
+import { countRecentDocsPageFeedbackEvents, recordDocsPageFeedbackEvent } from '../server/docs-feedback-service.server';
 
 describe('docs feedback service', () => {
   beforeEach(() => {

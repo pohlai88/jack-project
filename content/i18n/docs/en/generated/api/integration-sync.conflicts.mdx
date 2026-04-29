@@ -1,9 +1,11 @@
 ---
 title: 'Integration Sync Conflicts'
 description: 'Return integration sync conflicts.'
+docsType: 'generated-evidence'
 ---
 
 import { Banner } from 'fumadocs-ui/components/banner';
+import { Callout } from 'fumadocs-ui/components/callout';
 import { File, Files, Folder } from 'fumadocs-ui/components/files';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
@@ -18,7 +20,20 @@ _/}
   GENERATED EVIDENCE - This page is rendered from validated product truth.
 </Banner>
 
-## API Evidence
+<Callout title="Truth Surface: integration-sync.conflicts" type="info">
+  - API ID: `integration-sync.conflicts` - Route: `GET /api/tenants/[tenant]/admin/integrations/conflicts` - Owning
+  feature: `integration-sync` - OpenAPI reference: `/docs/openapi`
+</Callout>
+
+## Overview: what this API actually does
+
+Return integration sync conflicts.
+
+## When to use this evidence
+
+Use this page before changing public contracts, route guards, or payload semantics.
+
+## Source contract
 
 <TypeTable
   type={{
@@ -45,12 +60,27 @@ _/}
   }}
 />
 
-## Summary
+## Runtime surfaces: route and OpenAPI
 
-Return integration sync conflicts.
+This generated API page is manifest evidence. Where the route is part of the public HTTP surface, keep the
+OpenAPI schema aligned so Fumadocs can render request and response details from the machine-readable contract.
+
+See [OpenAPI Reference](/docs/openapi) for documented request and response interface truth.
 
 <Files>
   <Folder name="API Route" defaultOpen>
     <File name="GET /api/tenants/[tenant]/admin/integrations/conflicts" />
   </Folder>
 </Files>
+
+## Failure modes
+
+Failure behavior is owned by the feature manifest and the runtime route. Confirm status codes and response semantics in the OpenAPI reference before exposing the route externally.
+
+## Source evidence: traceability
+
+<Steps>
+  <Step>Manifest: `src/features/integration-sync/docs.manifest.ts`.</Step>
+  <Step>Confirm the Next.js route `/api/tenants/[tenant]/admin/integrations/conflicts` exists.</Step>
+  <Step>Update OpenAPI coverage for public or operator-facing APIs.</Step>
+</Steps>

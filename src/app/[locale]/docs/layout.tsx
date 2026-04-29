@@ -1,11 +1,11 @@
 import './docs.css';
 
+import { DocsLayout as FumadocsLayout } from 'fumadocs-ui/layouts/docs';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
-import { baseOptions } from '@/docs/runtime/layout.shared';
-import { source } from '@/docs/runtime/source';
-import { DocsLayout as FumadocsLayout } from '@/docs/ui/layouts/docs';
+import { baseOptions } from '@/docs/runtime/docs-layout.config';
+import { source } from '@/docs/runtime/docs-source.registry';
 
 export const metadata: Metadata = {
   title: 'Documentation | Afenda',

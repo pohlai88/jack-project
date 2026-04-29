@@ -3,6 +3,7 @@
   "title": "Generated Evidence",
   "source": "docs inventory graph",
   "generatedBy": "pnpm docs:generate",
+  "pages": ["features", "workflows", "permissions", "api", "errors", "troubleshooting"],
   "features": "Features",
   "workflows": "Workflows",
   "permissions": "Permissions",

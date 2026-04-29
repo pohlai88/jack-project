@@ -1,9 +1,11 @@
 ---
 title: 'Administration'
 description: 'Tenant administration for audit logs, members, invites, roles, permissions, and tenant settings.'
+docsType: 'generated-evidence'
 ---
 
 import { Banner } from 'fumadocs-ui/components/banner';
+import { Callout } from 'fumadocs-ui/components/callout';
 import { File, Files, Folder } from 'fumadocs-ui/components/files';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
@@ -18,9 +20,21 @@ _/}
   GENERATED EVIDENCE - This page is rendered from validated product truth. Release state: released.
 </Banner>
 
-## Executive Summary
+<Callout title="Truth Surface: Administration" type="info">
+  - Feature ID: `admin` - Module: `Tenant Operations` - Owner: `platform-admin` - Release state: `released`
+</Callout>
+
+## Overview: what this feature actually does
 
 Tenant administration for audit logs, members, invites, roles, permissions, and tenant settings.
+
+## When to use this evidence
+
+Use this page when you need the governed feature boundary for Administration: owner, release state, routes,
+permissions, workflows, APIs, and failure surfaces. Curated pages may explain intent, but this generated page
+is the route and contract evidence.
+
+## Source contract
 
 <TypeTable
   type={{
@@ -41,20 +55,21 @@ Tenant administration for audit logs, members, invites, roles, permissions, and 
     },
     Routes: {
       type: '21 routes',
-      description:
-        '/[locale]/t/[tenant]/admin, /[locale]/t/[tenant]/admin/audit-logs, /[locale]/t/[tenant]/admin/invites, /[locale]/t/[tenant]/admin/members, /[locale]/t/[tenant]/admin/roles, /[locale]/t/[tenant]/admin/settings, /[locale]/t/[tenant]/admin/settings/ai-provider, /[locale]/t/[tenant]/admin/settings/branding, /[locale]/t/[tenant]/admin/settings/storage, /[locale]/t/[tenant]/admin/settings/domain, /api/internal/tenant-by-host, /api/tenants/[tenant]/admin/settings/ai/test, /api/tenants/[tenant]/admin/settings/storage/test, /api/tenants/[tenant]/departments, /api/tenants/[tenant]/departments/[id], /api/tenants/[tenant]/departments/[id]/managers, /api/tenants/[tenant]/departments/[id]/members, /api/tenants/[tenant]/directory, /api/tenants/[tenant]/files/[fileId], /api/tenants/[tenant]/permissions, /api/tenants/[tenant]/settings',
+      description: 'See Route coverage below.',
       required: true,
     },
     Permissions: {
       type: '3 permissions',
-      description: 'admin:dashboard, admin:members, admin:settings',
+      description: 'See Permission coverage below.',
       required: true,
     },
   }}
 />
 
+## Runtime surfaces: routes and permissions
+
 <Tabs items={["Routes", "Permissions"]}>
-  <Tab>
+<Tab>
 
 <Files>
   <Folder name="Routes" defaultOpen>
@@ -82,8 +97,8 @@ Tenant administration for audit logs, members, invites, roles, permissions, and 
   </Folder>
 </Files>
 
-  </Tab>
-  <Tab>
+</Tab>
+<Tab>
 
 <Files>
   <Folder name="Permissions" defaultOpen>
@@ -93,10 +108,13 @@ Tenant administration for audit logs, members, invites, roles, permissions, and 
   </Folder>
 </Files>
 
-  </Tab>
+</Tab>
 </Tabs>
 
-## Workflows
+## Workflows and actions
+
+<Tabs items={["Workflows", "Actions"]}>
+<Tab>
 
 ### Member lifecycle administration
 
@@ -108,7 +126,8 @@ Tenant administration for audit logs, members, invites, roles, permissions, and 
 - ID: `admin.tenant-settings`
 - Summary: Administrators configure general, branding, AI provider, storage, and optional custom domain verification.
 
-## Public Actions
+</Tab>
+<Tab>
 
 ### Manage members and invites
 
@@ -120,20 +139,25 @@ Tenant administration for audit logs, members, invites, roles, permissions, and 
 - ID: `admin.manage-settings`
 - Summary: Update tenant settings and validate external provider connectivity.
 
-## Operational Evidence
+</Tab>
+</Tabs>
 
-<Steps>
-  <Step>Check the declared owner before changing behavior.</Step>
-  <Step>Confirm route, permission, and API references still exist in the product.</Step>
-  <Step>Run `pnpm docs:ci` after manifest or route changes.</Step>
-</Steps>
+## APIs: interface truth
 
-## APIs
+- [`admin.internal.tenant-by-host`](/docs/generated/api/admin.internal.tenant-by-host) - `GET /api/internal/tenant-by-host` - Internal: resolve verified custom domain hostname to tenant slug for Edge proxy (Bearer MIDDLEWARE_TENANT_LOOKUP_SECRET).
+- [`admin.settings.ai.test`](/docs/generated/api/admin.settings.ai.test) - `POST /api/tenants/[tenant]/admin/settings/ai/test` - Validate tenant AI provider settings.
+- [`admin.settings.storage.test`](/docs/generated/api/admin.settings.storage.test) - `POST /api/tenants/[tenant]/admin/settings/storage/test` - Validate tenant storage provider settings.
 
-- `GET /api/internal/tenant-by-host` - Internal: resolve verified custom domain hostname to tenant slug for Edge proxy (Bearer MIDDLEWARE_TENANT_LOOKUP_SECRET).
-- `POST /api/tenants/[tenant]/admin/settings/ai/test` - Validate tenant AI provider settings.
-- `POST /api/tenants/[tenant]/admin/settings/storage/test` - Validate tenant storage provider settings.
+See [OpenAPI Reference](/docs/openapi) for documented request and response interface truth.
 
-## Errors
+## Failure modes: operator risk
 
 - `AFD-ADMIN-UNAUTHORIZED` - Administration permission missing: Confirm the user has the required tenant administration role and permission assignment.
+
+## Source evidence: traceability
+
+<Steps>
+  <Step>Manifest: `src/features/admin/docs.manifest.ts`.</Step>
+  <Step>Confirm route, permission, and API references still exist in the product runtime.</Step>
+  <Step>Run `pnpm docs:generate` and `pnpm docs:ci` after manifest or route changes.</Step>
+</Steps>

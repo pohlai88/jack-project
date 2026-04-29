@@ -4,6 +4,8 @@ import type { AuditLogFilters } from './services/audit-logs-service';
 
 export { AdminPageHeader } from './components/AdminPageHeader';
 export { AuditLogsClient } from './components/AuditLogsClient';
+export { ExternalOAuthCredentialsForm } from './components/ExternalOAuthCredentialsForm';
+export { ExternalOAuthSettingsPanel } from './components/ExternalOAuthSettingsPanel';
 export { GitHubCredentialsForm } from './components/GitHubCredentialsForm';
 export { GitHubSettingsPanel } from './components/GitHubSettingsPanel';
 export { IntegrationControlPlanePanel } from './components/IntegrationControlPlanePanel';
@@ -69,6 +71,21 @@ export async function getGitHubTenantCredentials(tenantSlug: string) {
 export async function getGitHubConnectionInfo(userId: string) {
   const { getGitHubConnectionInfo } = await import('./services/github-settings-service');
   return getGitHubConnectionInfo(userId);
+}
+
+export async function getExternalOAuthTenantCredentials(tenantSlug: string, provider: 'googleWorkspace' | 'linkedin') {
+  const { getExternalOAuthTenantCredentials } = await import('./services/external-oauth-settings-service');
+  return getExternalOAuthTenantCredentials(tenantSlug, provider);
+}
+
+export async function getExternalOAuthConnectionInfo(userId: string, provider: 'googleWorkspace' | 'linkedin') {
+  const { getExternalOAuthConnectionInfo } = await import('./services/external-oauth-settings-service');
+  return getExternalOAuthConnectionInfo(userId, provider);
+}
+
+export async function hasExternalOAuthEnvCredentials(provider: 'googleWorkspace' | 'linkedin') {
+  const { hasExternalOAuthEnvCredentials } = await import('./services/external-oauth-settings-service');
+  return hasExternalOAuthEnvCredentials(provider);
 }
 
 export async function acceptInvite(tenantSlug: string, token: string, userId: string) {

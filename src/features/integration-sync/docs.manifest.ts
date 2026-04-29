@@ -1,4 +1,4 @@
-import { defineDocsManifest } from '@/docs/evidence/manifest';
+import { defineDocsManifest } from '@/docs/runtime/docs-contract-manifest';
 
 export default defineDocsManifest({
   id: 'integration-sync',
@@ -11,8 +11,17 @@ export default defineDocsManifest({
   routes: [
     '/[locale]/t/[tenant]/admin/integrations',
     '/[locale]/t/[tenant]/admin/integrations/github',
+    '/[locale]/t/[tenant]/admin/integrations/gitlab',
+    '/[locale]/t/[tenant]/admin/integrations/google-workspace',
+    '/[locale]/t/[tenant]/admin/integrations/linkedin',
+    '/[locale]/t/[tenant]/admin/integrations/slack',
     '/[locale]/t/[tenant]/admin/integrations/webhooks',
+    '/api/integrations/google-workspace/callback',
+    '/api/integrations/google-workspace/connect',
+    '/api/integrations/linkedin/callback',
+    '/api/integrations/linkedin/connect',
     '/api/tenants/[tenant]/admin/integrations/conflicts',
+    '/api/tenants/[tenant]/admin/integrations/github/sync',
     '/api/tenants/[tenant]/admin/integrations/field-mappings',
     '/api/tenants/[tenant]/admin/integrations/github/assign-usernames',
     '/api/tenants/[tenant]/admin/integrations/github/org-members',
@@ -62,6 +71,41 @@ export default defineDocsManifest({
       method: 'GET',
       route: '/api/tenants/[tenant]/admin/integrations/conflicts',
       summary: 'Return integration sync conflicts.',
+    },
+    {
+      id: 'integration-sync.github.sync',
+      method: 'POST',
+      route: '/api/tenants/[tenant]/admin/integrations/github/sync',
+      summary: 'Trigger a tenant-scoped GitHub control plane sync run.',
+      public: false,
+    },
+    {
+      id: 'integration-sync.google-workspace.connect',
+      method: 'GET',
+      route: '/api/integrations/google-workspace/connect',
+      summary: 'Start tenant-admin Google Workspace OAuth.',
+      public: false,
+    },
+    {
+      id: 'integration-sync.google-workspace.callback',
+      method: 'GET',
+      route: '/api/integrations/google-workspace/callback',
+      summary: 'Complete Google Workspace OAuth and persist the token account.',
+      public: false,
+    },
+    {
+      id: 'integration-sync.linkedin.connect',
+      method: 'GET',
+      route: '/api/integrations/linkedin/connect',
+      summary: 'Start tenant-admin LinkedIn OAuth.',
+      public: false,
+    },
+    {
+      id: 'integration-sync.linkedin.callback',
+      method: 'GET',
+      route: '/api/integrations/linkedin/callback',
+      summary: 'Complete LinkedIn OAuth and persist the token account.',
+      public: false,
     },
   ],
   errors: [

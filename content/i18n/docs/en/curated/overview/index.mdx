@@ -1,17 +1,34 @@
 ---
 title: 'Overview'
 description: "How to read Afenda's generated documentation evidence."
-icon: Library
+docsType: 'curated'
 ---
 
-import { story } from '@/docs/stories/docs-story-preview-demo.story';
+## Thesis
+
+Curated pages orient readers; generated evidence pages hold governed product truth.
+
+## Model
 
 Curated pages explain the documentation system. They do not define product truth.
+Authoritative evidence lives under generated feature, workflow, permission, API, error, and troubleshooting pages.
 
-Authoritative product evidence lives under generated feature, workflow, permission, API, error, and troubleshooting pages.
+## How to read this documentation
 
-## Inline previews
+Use curated pages for orientation. Use generated pages for proof.
 
-[Fumadocs Story](https://www.fumadocs.dev/docs/integrations/story/next) embeds live client components in MDX (this is separate from the Storybook dev server). The control panel below is a minimal wiring check—replace with real design-system stories as needed.
+The docs tree separates three responsibilities:
 
-<story.WithControl />
+- **Curated context** — narrative guidance and system orientation.
+- **Generated evidence** — product truth extracted from governed definitions.
+- **Operational surfaces** — APIs, workflows, troubleshooting, and machine-readable exports.
+
+## Operational implication
+
+If a page cannot be traced to a manifest, runtime contract, or source API, it must not be treated as authoritative.
+
+## Next reading
+
+- [Doctrine](../doctrine)
+- [What is Afenda](../what-is-afenda)
+- [Release Notes](../release-notes)

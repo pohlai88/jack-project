@@ -1,9 +1,11 @@
 ---
 title: 'Profile settings update'
 description: 'Members review and update profile details in tenant context.'
+docsType: 'generated-evidence'
 ---
 
 import { Banner } from 'fumadocs-ui/components/banner';
+import { Callout } from 'fumadocs-ui/components/callout';
 import { File, Files, Folder } from 'fumadocs-ui/components/files';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
@@ -18,7 +20,20 @@ _/}
   GENERATED EVIDENCE - This page is rendered from validated product truth.
 </Banner>
 
-## Workflow Evidence
+<Callout title="Truth Surface: Profile settings update" type="info">
+  - Workflow ID: `profile.update-settings` - Owning feature: `profile` - Manifest:
+  `src/features/profile/docs.manifest.ts`
+</Callout>
+
+## Overview: what this workflow actually does
+
+Members review and update profile details in tenant context.
+
+## When to use this evidence
+
+Use this page when validating operator execution paths or reviewing manifest-to-runtime workflow alignment.
+
+## Source contract
 
 <TypeTable
   type={{
@@ -35,8 +50,19 @@ _/}
   }}
 />
 
+## Runtime surfaces: routes and actions
+
+This workflow is owned by [profile](/docs/generated/features/profile) and inherits that feature's route, permission, API, and error evidence.
+
+## Failure modes
+
+- The workflow can silently fail if required manifest routes or permissions are removed.
+- Incomplete coverage can hide partial feature regressions.
+
+## Source evidence: traceability
+
 <Steps>
-  <Step>Members review and update profile details in tenant context.</Step>
+  <Step>Workflow ID: `profile.update-settings`.</Step>
   <Step>Confirm route and permission coverage before release-visible changes.</Step>
   <Step>Regenerate evidence with `pnpm docs:generate`.</Step>
 </Steps>

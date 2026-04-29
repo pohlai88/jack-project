@@ -1,4 +1,11 @@
-export type IntegrationProvider = 'github';
+export const supportedIntegrationProviders = ['github', 'google_workspace', 'linkedin'] as const;
+
+export type IntegrationProvider = (typeof supportedIntegrationProviders)[number];
+
+export function parseIntegrationProvider(value: string | null | undefined): IntegrationProvider | null {
+  if (!value) return null;
+  return supportedIntegrationProviders.includes(value as IntegrationProvider) ? (value as IntegrationProvider) : null;
+}
 
 export type IntegrationSyncMode = 'migration_full' | 'sync_incremental' | 'reconcile' | 'dry_run';
 export type IntegrationRunStatus = 'queued' | 'running' | 'completed' | 'failed' | 'cancelled';

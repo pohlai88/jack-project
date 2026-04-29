@@ -2,5 +2,21 @@
   "generated": true,
   "title": "Permissions",
   "source": "docs inventory graph",
-  "generatedBy": "pnpm docs:generate"
+  "generatedBy": "pnpm docs:generate",
+  "pages": [
+    "admin-dashboard",
+    "admin-integrations",
+    "admin-members",
+    "admin-settings",
+    "integrations-conflicts-resolve",
+    "integrations-field-mappings",
+    "integrations-metrics-read"
+  ],
+  "admin-dashboard": "Admin Dashboard",
+  "admin-integrations": "Admin Integrations",
+  "admin-members": "Admin Members",
+  "admin-settings": "Admin Settings",
+  "integrations-conflicts-resolve": "Integrations Conflicts Resolve",
+  "integrations-field-mappings": "Integrations Field Mappings",
+  "integrations-metrics-read": "Integrations Metrics Read"
 }

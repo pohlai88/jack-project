@@ -2,7 +2,7 @@
   "generated": true,
   "version": 1,
   "doctrine": "Docs render what product truth declares. Manual prose may explain truth, but it may not define truth.",
-  "hash": "e38018ac6f8fc65450de2b000c60b5a20d583bc441584ec788067c5e26445acc",
+  "hash": "223fa6e2ead06a85fda9c22a74de0b67f3110b593a24410967d0a6e6d1ceac51",
   "generatedFrom": {
     "manifests": [
       "src/docs/docs.manifest.ts",
@@ -11,7 +11,9 @@
       "src/features/auth/docs.manifest.ts",
       "src/features/dashboard/docs.manifest.ts",
       "src/features/github/docs.manifest.ts",
+      "src/features/google-workspace/docs.manifest.ts",
       "src/features/integration-sync/docs.manifest.ts",
+      "src/features/linkedin/docs.manifest.ts",
       "src/features/profile/docs.manifest.ts"
     ],
     "appSurfaces": [
@@ -27,6 +29,10 @@
       "src/app/[locale]/(tenant)/t/[tenant]/admin/audit-logs/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/admin/integrations/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/admin/integrations/github/page.tsx",
+      "src/app/[locale]/(tenant)/t/[tenant]/admin/integrations/gitlab/page.tsx",
+      "src/app/[locale]/(tenant)/t/[tenant]/admin/integrations/google-workspace/page.tsx",
+      "src/app/[locale]/(tenant)/t/[tenant]/admin/integrations/linkedin/page.tsx",
+      "src/app/[locale]/(tenant)/t/[tenant]/admin/integrations/slack/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/admin/integrations/webhooks/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/admin/invites/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/admin/members/page.tsx",
@@ -49,12 +55,17 @@
       "src/app/api/integrations/github/callback/route.ts",
       "src/app/api/integrations/github/connect/route.ts",
       "src/app/api/integrations/github/user-connect/route.ts",
+      "src/app/api/integrations/google-workspace/callback/route.ts",
+      "src/app/api/integrations/google-workspace/connect/route.ts",
+      "src/app/api/integrations/linkedin/callback/route.ts",
+      "src/app/api/integrations/linkedin/connect/route.ts",
       "src/app/api/internal/tenant-by-host/route.ts",
       "src/app/api/search/route.ts",
       "src/app/api/tenants/[tenant]/admin/integrations/conflicts/route.ts",
       "src/app/api/tenants/[tenant]/admin/integrations/field-mappings/route.ts",
       "src/app/api/tenants/[tenant]/admin/integrations/github/assign-usernames/route.ts",
       "src/app/api/tenants/[tenant]/admin/integrations/github/org-members/route.ts",
+      "src/app/api/tenants/[tenant]/admin/integrations/github/sync/route.ts",
       "src/app/api/tenants/[tenant]/admin/integrations/metrics/route.ts",
       "src/app/api/tenants/[tenant]/admin/integrations/readiness/route.ts",
       "src/app/api/tenants/[tenant]/admin/integrations/runs/route.ts",
@@ -68,11 +79,11 @@
       "src/app/api/tenants/[tenant]/files/[fileId]/route.ts",
       "src/app/api/tenants/[tenant]/permissions/route.ts",
       "src/app/api/tenants/[tenant]/settings/route.ts",
-      "src/app/llms-full.txt/route.ts",
-      "src/app/llms.mdx/[locale]/docs/[[...slug]]/route.ts",
-      "src/app/llms.txt/route.ts",
+      "src/app/(docs-meta)/llms-full.txt/route.ts",
+      "src/app/(docs-meta)/llms.mdx/[locale]/docs/[[...slug]]/route.ts",
+      "src/app/(docs-meta)/llms.txt/route.ts",
       "src/app/login/page.tsx",
-      "src/app/rss.xml/route.ts",
+      "src/app/(docs-meta)/rss.xml/route.ts",
       "src/app/select-tenant/page.tsx"
     ],
     "permissions": [
@@ -354,123 +365,85 @@
     },
     {
       "id": "docs",
-      "title": "Documentation Evidence Pipeline",
-      "module": "Governance",
-      "owner": "docs-platform",
-      "releaseState": "beta",
-      "summary": "Fumadocs-rendered evidence surface generated from governed product truth.",
+      "title": "Documentation Experience",
+      "module": "Documentation",
+      "owner": "platform-docs",
+      "releaseState": "released",
+      "summary": "Fumadocs documentation routes, machine-readable exports, search, RSS, and Open Graph surfaces.",
       "routes": [
         "/[locale]/docs",
         "/[locale]/docs/[[...slug]]",
         "/[locale]/og/docs/[...slug]",
         "/api/search",
-        "/llms.txt",
         "/llms-full.txt",
         "/llms.mdx/[locale]/docs/[[...slug]]",
+        "/llms.txt",
         "/rss.xml"
       ],
       "permissions": [],
       "workflows": [
         {
-          "id": "docs.evidence-generation",
-          "title": "Documentation evidence generation",
-          "summary": "Validate manifests, build the docs inventory graph, generate MDX/JSON, and render through Fumadocs."
+          "id": "docs.read-docs",
+          "title": "Read documentation",
+          "summary": "Visitors browse localized Fumadocs pages and generated evidence pages."
+        },
+        {
+          "id": "docs.machine-readable-export",
+          "title": "Machine-readable docs export",
+          "summary": "LLM, RSS, search, Markdown, and Open Graph routes expose docs content without a parallel docs engine."
         }
       ],
       "actions": [
         {
-          "id": "docs.generate",
-          "title": "Generate documentation evidence",
-          "summary": "Run the documentation generation pipeline from manifest-backed product truth."
+          "id": "docs.copy-markdown-url",
+          "title": "Copy Markdown URL",
+          "summary": "Page actions expose Markdown URLs for AI and reader workflows."
         },
         {
-          "id": "docs.feedback.submit",
-          "title": "Submit documentation page feedback",
-          "summary": "Validate, rate-limit, and append a page-level feedback event for a Fumadocs-rendered documentation page."
+          "id": "docs.submit-feedback",
+          "title": "Submit docs feedback",
+          "summary": "Readers can submit lightweight page feedback through the docs feedback action."
         }
       ],
       "apis": [
         {
-          "id": "docs.llms.index",
-          "method": "GET",
-          "route": "/llms.txt",
-          "summary": "Expose the Fumadocs page index for LLM-friendly discovery. Optional `locale` query selects the language tree (default `en`)."
-        },
-        {
-          "id": "docs.llms.full",
-          "method": "GET",
-          "route": "/llms-full.txt",
-          "summary": "Expose all documentation pages as clean Markdown for LLM consumption. Optional `locale` query selects the language tree (default `en`)."
-        },
-        {
-          "id": "docs.llms.page",
-          "method": "GET",
-          "route": "/llms.mdx/[locale]/docs/[[...slug]]",
-          "summary": "Expose one locale-aware documentation page as clean Markdown for LLM consumption."
-        },
-        {
           "id": "docs.search",
           "method": "GET",
           "route": "/api/search",
-          "summary": "Expose locale-aware Fumadocs search results from the generated documentation source."
+          "summary": "Search index endpoint backed by the Fumadocs source registry."
+        },
+        {
+          "id": "docs.llms-index",
+          "method": "GET",
+          "route": "/llms.txt",
+          "summary": "Machine-readable LLM index for the documentation corpus."
+        },
+        {
+          "id": "docs.llms-full",
+          "method": "GET",
+          "route": "/llms-full.txt",
+          "summary": "Full machine-readable LLM export for the documentation corpus."
         },
         {
           "id": "docs.rss",
           "method": "GET",
           "route": "/rss.xml",
-          "summary": "Expose an RSS feed for generated documentation evidence pages."
-        },
-        {
-          "id": "docs.og.image",
-          "method": "GET",
-          "route": "/[locale]/og/docs/[...slug]",
-          "summary": "Generate Open Graph images for documentation pages (next/og + Fumadocs UI template). Static path ends with image.png."
+          "summary": "RSS feed for documentation pages."
         }
       ],
       "errors": [
         {
-          "code": "AFD-DOCS-CONTRACT",
-          "title": "Docs contract validation failed",
-          "mitigation": "Fix manifest IDs, owners, routes, permissions, APIs, errors, or troubleshooting references."
-        },
-        {
-          "code": "AFD-DOCS-FEEDBACK-VALIDATION",
-          "title": "Docs feedback validation failed",
-          "mitigation": "Submit feedback only for canonical /docs pages with a supported opinion and bounded message."
-        },
-        {
-          "code": "AFD-DOCS-FEEDBACK-ORIGIN",
-          "title": "Docs feedback origin rejected",
-          "mitigation": "Ensure the request Origin matches the deployment Host or X-Forwarded-Host."
-        },
-        {
-          "code": "AFD-DOCS-FEEDBACK-RATE-LIMIT",
-          "title": "Docs feedback rate limit exceeded",
-          "mitigation": "Wait for the feedback submission window to reset before retrying."
-        },
-        {
-          "code": "AFD-DOCS-FEEDBACK-CONTEXT",
-          "title": "Docs feedback request context unavailable",
-          "mitigation": "Confirm the deployment provides AUTH_SECRET and enough request headers to derive a rate-limit key."
-        },
-        {
-          "code": "AFD-DOCS-FEEDBACK-STORAGE",
-          "title": "Docs feedback storage failed",
-          "mitigation": "Check database connectivity and the docs_page_feedback_events migration state."
+          "code": "AFD-DOCS-PAGE-NOT-FOUND",
+          "title": "Documentation page not found",
+          "mitigation": "Confirm the requested localized docs page exists in the Fumadocs source registry."
         }
       ],
       "troubleshooting": [
         {
-          "id": "docs-generated-stale",
-          "title": "Generated docs are stale",
-          "symptom": "docs:generate --check fails in CI.",
-          "resolution": "Run pnpm docs:generate and commit the regenerated evidence files."
-        },
-        {
-          "id": "docs-feedback-submit-fails",
-          "title": "Docs feedback submission fails",
-          "symptom": "A documentation page feedback form shows a submission failure.",
-          "resolution": "Check origin headers, AUTH_SECRET, rate-limit history, and the docs_page_feedback_events database migration."
+          "id": "docs.route-build-fails",
+          "title": "Docs route build fails",
+          "symptom": "The docs route fails type-check or build after layout or runtime changes.",
+          "resolution": "Run docs source generation, verify route imports target src/docs/runtime and src/docs/ui, then run type-check."
         }
       ]
     },
@@ -526,6 +499,61 @@
       ]
     },
     {
+      "id": "google-workspace",
+      "title": "Google Workspace OAuth Integration",
+      "module": "Integrations",
+      "owner": "integrations-platform",
+      "releaseState": "released",
+      "summary": "Google Workspace OAuth connection entry points for tenant integration setup.",
+      "routes": ["/api/integrations/google-workspace/callback", "/api/integrations/google-workspace/connect"],
+      "permissions": ["admin:integrations"],
+      "workflows": [
+        {
+          "id": "google-workspace.oauth-connect",
+          "title": "Google Workspace OAuth connection",
+          "summary": "Start and complete Google Workspace OAuth for tenant integration setup."
+        }
+      ],
+      "actions": [
+        {
+          "id": "google-workspace.connect",
+          "title": "Connect Google Workspace account",
+          "summary": "Generate Google OAuth state and redirect to Google authorization."
+        }
+      ],
+      "apis": [
+        {
+          "id": "google-workspace.oauth.callback",
+          "method": "GET",
+          "route": "/api/integrations/google-workspace/callback",
+          "summary": "Handle Google Workspace OAuth callback.",
+          "public": false
+        },
+        {
+          "id": "google-workspace.oauth.connect",
+          "method": "GET",
+          "route": "/api/integrations/google-workspace/connect",
+          "summary": "Start Google Workspace OAuth authorization.",
+          "public": false
+        }
+      ],
+      "errors": [
+        {
+          "code": "AFD-GOOGLE-WORKSPACE-OAUTH",
+          "title": "Google Workspace OAuth failed",
+          "mitigation": "Validate OAuth state, Google credentials, callback URL, and tenant context."
+        }
+      ],
+      "troubleshooting": [
+        {
+          "id": "google-workspace-callback-fails",
+          "title": "Google Workspace callback fails",
+          "symptom": "Google redirects back but the integration is not connected.",
+          "resolution": "Confirm callback URL, OAuth state, Google credentials, and tenant permission."
+        }
+      ]
+    },
+    {
       "id": "integration-sync",
       "title": "Integration Control Plane",
       "module": "Integrations",
@@ -535,8 +563,17 @@
       "routes": [
         "/[locale]/t/[tenant]/admin/integrations",
         "/[locale]/t/[tenant]/admin/integrations/github",
+        "/[locale]/t/[tenant]/admin/integrations/gitlab",
+        "/[locale]/t/[tenant]/admin/integrations/google-workspace",
+        "/[locale]/t/[tenant]/admin/integrations/linkedin",
+        "/[locale]/t/[tenant]/admin/integrations/slack",
         "/[locale]/t/[tenant]/admin/integrations/webhooks",
+        "/api/integrations/google-workspace/callback",
+        "/api/integrations/google-workspace/connect",
+        "/api/integrations/linkedin/callback",
+        "/api/integrations/linkedin/connect",
         "/api/tenants/[tenant]/admin/integrations/conflicts",
+        "/api/tenants/[tenant]/admin/integrations/github/sync",
         "/api/tenants/[tenant]/admin/integrations/field-mappings",
         "/api/tenants/[tenant]/admin/integrations/github/assign-usernames",
         "/api/tenants/[tenant]/admin/integrations/github/org-members",
@@ -586,6 +623,41 @@
           "method": "GET",
           "route": "/api/tenants/[tenant]/admin/integrations/conflicts",
           "summary": "Return integration sync conflicts."
+        },
+        {
+          "id": "integration-sync.github.sync",
+          "method": "POST",
+          "route": "/api/tenants/[tenant]/admin/integrations/github/sync",
+          "summary": "Trigger a tenant-scoped GitHub control plane sync run.",
+          "public": false
+        },
+        {
+          "id": "integration-sync.google-workspace.connect",
+          "method": "GET",
+          "route": "/api/integrations/google-workspace/connect",
+          "summary": "Start tenant-admin Google Workspace OAuth.",
+          "public": false
+        },
+        {
+          "id": "integration-sync.google-workspace.callback",
+          "method": "GET",
+          "route": "/api/integrations/google-workspace/callback",
+          "summary": "Complete Google Workspace OAuth and persist the token account.",
+          "public": false
+        },
+        {
+          "id": "integration-sync.linkedin.connect",
+          "method": "GET",
+          "route": "/api/integrations/linkedin/connect",
+          "summary": "Start tenant-admin LinkedIn OAuth.",
+          "public": false
+        },
+        {
+          "id": "integration-sync.linkedin.callback",
+          "method": "GET",
+          "route": "/api/integrations/linkedin/callback",
+          "summary": "Complete LinkedIn OAuth and persist the token account.",
+          "public": false
         }
       ],
       "errors": [
@@ -606,6 +678,61 @@
           "title": "Integration metrics unavailable",
           "symptom": "The control plane cannot show metrics or readiness state.",
           "resolution": "Confirm permissions, integration credentials, and latest sync run status."
+        }
+      ]
+    },
+    {
+      "id": "linkedin",
+      "title": "LinkedIn OAuth Integration",
+      "module": "Integrations",
+      "owner": "integrations-platform",
+      "releaseState": "released",
+      "summary": "LinkedIn OAuth connection entry points for tenant integration setup.",
+      "routes": ["/api/integrations/linkedin/callback", "/api/integrations/linkedin/connect"],
+      "permissions": ["admin:integrations"],
+      "workflows": [
+        {
+          "id": "linkedin.oauth-connect",
+          "title": "LinkedIn OAuth connection",
+          "summary": "Start and complete LinkedIn OAuth for tenant integration setup."
+        }
+      ],
+      "actions": [
+        {
+          "id": "linkedin.connect",
+          "title": "Connect LinkedIn account",
+          "summary": "Generate LinkedIn OAuth state and redirect to LinkedIn authorization."
+        }
+      ],
+      "apis": [
+        {
+          "id": "linkedin.oauth.callback",
+          "method": "GET",
+          "route": "/api/integrations/linkedin/callback",
+          "summary": "Handle LinkedIn OAuth callback.",
+          "public": false
+        },
+        {
+          "id": "linkedin.oauth.connect",
+          "method": "GET",
+          "route": "/api/integrations/linkedin/connect",
+          "summary": "Start LinkedIn OAuth authorization.",
+          "public": false
+        }
+      ],
+      "errors": [
+        {
+          "code": "AFD-LINKEDIN-OAUTH",
+          "title": "LinkedIn OAuth failed",
+          "mitigation": "Validate OAuth state, LinkedIn credentials, callback URL, and tenant context."
+        }
+      ],
+      "troubleshooting": [
+        {
+          "id": "linkedin-callback-fails",
+          "title": "LinkedIn callback fails",
+          "symptom": "LinkedIn redirects back but the integration is not connected.",
+          "resolution": "Confirm callback URL, OAuth state, LinkedIn credentials, and tenant permission."
         }
       ]
     },
@@ -692,17 +819,26 @@
       "/[locale]/docs/[[...slug]]": ["docs"],
       "/[locale]/og/docs/[...slug]": ["docs"],
       "/api/search": ["docs"],
-      "/llms.txt": ["docs"],
       "/llms-full.txt": ["docs"],
       "/llms.mdx/[locale]/docs/[[...slug]]": ["docs"],
+      "/llms.txt": ["docs"],
       "/rss.xml": ["docs"],
       "/api/integrations/github/callback": ["github"],
       "/api/integrations/github/connect": ["github"],
       "/api/integrations/github/user-connect": ["github"],
+      "/api/integrations/google-workspace/callback": ["google-workspace", "integration-sync"],
+      "/api/integrations/google-workspace/connect": ["google-workspace", "integration-sync"],
       "/[locale]/t/[tenant]/admin/integrations": ["integration-sync"],
       "/[locale]/t/[tenant]/admin/integrations/github": ["integration-sync"],
+      "/[locale]/t/[tenant]/admin/integrations/gitlab": ["integration-sync"],
+      "/[locale]/t/[tenant]/admin/integrations/google-workspace": ["integration-sync"],
+      "/[locale]/t/[tenant]/admin/integrations/linkedin": ["integration-sync"],
+      "/[locale]/t/[tenant]/admin/integrations/slack": ["integration-sync"],
       "/[locale]/t/[tenant]/admin/integrations/webhooks": ["integration-sync"],
+      "/api/integrations/linkedin/callback": ["integration-sync", "linkedin"],
+      "/api/integrations/linkedin/connect": ["integration-sync", "linkedin"],
       "/api/tenants/[tenant]/admin/integrations/conflicts": ["integration-sync"],
+      "/api/tenants/[tenant]/admin/integrations/github/sync": ["integration-sync"],
       "/api/tenants/[tenant]/admin/integrations/field-mappings": ["integration-sync"],
       "/api/tenants/[tenant]/admin/integrations/github/assign-usernames": ["integration-sync"],
       "/api/tenants/[tenant]/admin/integrations/github/org-members": ["integration-sync"],
@@ -716,7 +852,7 @@
       "admin:dashboard": ["admin"],
       "admin:members": ["admin"],
       "admin:settings": ["admin"],
-      "admin:integrations": ["integration-sync"],
+      "admin:integrations": ["google-workspace", "integration-sync", "linkedin"],
       "integrations:conflicts_resolve": ["integration-sync"],
       "integrations:field_mappings": ["integration-sync"],
       "integrations:metrics_read": ["integration-sync"]

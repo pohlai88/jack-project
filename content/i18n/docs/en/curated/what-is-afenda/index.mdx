@@ -1,0 +1,164 @@
+---
+title: 'What is Afenda?'
+description: 'Afenda is the Truth Engine for enterprise operations.'
+docsType: 'curated'
+---
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+<Callout title="Thesis" type="info">
+  Afenda converts operational chaos into provable truth by enforcing one canonical record, evidence traceability,
+  doctrine governance, and auditability across time.
+</Callout>
+
+## Thesis
+
+Afenda is the proof engine for operational truth: one canonical record, bounded by evidence and governance.
+
+Afenda is not an ERP in the conventional sense. Traditional ERP systems model process and record activity. Afenda establishes, governs, and preserves a canonical record of what is operationally true.
+
+Traditional systems answer: **What happened?**
+
+Afenda answers: **What is provably true, and why?**
+
+## Model: Truth Engine
+
+Afenda competes on truth integrity, evidence traceability, and governance enforcement. It does not compete on feature count, UI density, or module sprawl.
+
+<Cards>
+  <Card
+    title="Truth integrity"
+    href="/docs/curated/doctrine"
+    description="A durable fact is accepted only when the governed system can prove it."
+  />
+  <Card
+    title="Evidence traceability"
+    href="/docs/generated/features/docs"
+    description="Routes, workflows, APIs, errors, and documentation surfaces are exposed as generated evidence."
+  />
+  <Card
+    title="Governance enforcement"
+    href="/docs/generated/troubleshooting/docs.route-build-fails"
+    description="Docs and product surfaces are checked so implementation drift becomes visible."
+  />
+</Cards>
+
+## Model: NexusCanon
+
+At the center of Afenda is **NexusCanon**: a unified canonical record that binds document, entity, event, and state transition into one authoritative truth surface.
+
+<TypeTable
+  type={{
+    'Append-only': {
+      type: 'Record invariant',
+      description: 'Canonical facts are preserved across time instead of overwritten by narrative repair.',
+      required: true,
+    },
+    'Evidence-linked': {
+      type: 'Proof invariant',
+      description: 'Every durable fact points back to identity, event, state, or justification evidence.',
+      required: true,
+    },
+    'Time-bound': {
+      type: 'Temporal invariant',
+      description: 'Records carry time meaning so the system can answer what was true at a specific moment.',
+      required: true,
+    },
+    'Tenant-scoped': {
+      type: 'Isolation invariant',
+      description: "Truth belongs to a tenant boundary and cannot leak into another tenant's operational reality.",
+      required: true,
+    },
+    'Doctrine-governed': {
+      type: 'Governance invariant',
+      description: 'Durable rules live in doctrine, ADRs, ATCs, and automated checks instead of informal memory.',
+      required: true,
+    },
+  }}
+/>
+
+NexusCanon removes fragmented records, duplicated state, and after-the-fact narrative reconstruction. It replaces them with deterministic, verifiable truth.
+
+## Model: 1 / 4 / 0 proof doctrine
+
+Afenda uses a strict proof philosophy:
+
+<Tabs items={["1 Canonical Record", "4 Proof Layers", "0 Narrative Rescue"]}>
+  <Tab>
+
+One source of truth exists for each fact. Competing records are not a documentation problem; they are a truth integrity failure.
+
+  </Tab>
+  <Tab>
+
+Proof is evaluated through identity evidence, event evidence, state evidence, and justification evidence.
+
+  </Tab>
+  <Tab>
+
+No reconstruction, manual interpretation, or after-the-fact story can rescue an unproven fact.
+
+  </Tab>
+</Tabs>
+
+If a fact cannot be proven through the system, Afenda treats it as non-existent.
+
+## Model: 7W1H truth protocol
+
+Every canonical record should satisfy the **7W1H protocol**:
+
+<Steps>
+  <Step>Identify **who** performed or owned the action.</Step>
+  <Step>Record **what** changed and **which** entity, document, or process it affected.</Step>
+  <Step>Bind **when** and **where** the fact became true.</Step>
+  <Step>Capture **why**, **whose** authority applied, and **how** the fact was produced.</Step>
+</Steps>
+
+This makes each recorded fact complete, attributable, reproducible, and auditable.
+
+## Operational implication
+
+Afenda changes how enterprise systems are judged:
+
+- a UI state cannot define truth
+- a workflow cannot rescue missing evidence
+- an API response must remain tenant-scoped and doctrine-governed
+- an audit record is proof material, not a debug log
+- documentation must project truth contracts, not invent them
+
+<Accordions type="single">
+  <Accordion title="Why not call it ERP?">
+    ERP suggests modules and process management. Afenda is positioned around canonical truth, proof, and governance
+    enforcement.
+  </Accordion>
+  <Accordion title="What makes a fact valid?">
+    A fact is valid when it is canonical, tenant-scoped, time-bound, evidence-linked, and doctrine-governed.
+  </Accordion>
+  <Accordion title="What happens when evidence is missing?">
+    The system must treat the claim as unproven instead of relying on manual reconstruction.
+  </Accordion>
+</Accordions>
+
+## Next reading
+
+<Cards>
+  <Card
+    title="Doctrine"
+    href="/docs/curated/doctrine"
+    description="Read the engineering rule spine behind Afenda's truth model."
+  />
+  <Card
+    title="Generated evidence"
+    href="/docs/generated/features/docs"
+    description="Inspect how documentation, LLM exports, search, RSS, and routes are exposed as product evidence."
+  />
+  <Card
+    title="OpenAPI Reference"
+    href="/docs/openapi"
+    description="Review documented HTTP interface truth rendered through Fumadocs OpenAPI."
+  />
+</Cards>

@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
 import { hasLocale } from 'next-intl';
 
-import { getLLMText } from '@/docs/runtime/get-llm-text';
-import { consumeLlmsExportRateLimit, getLlmsExportClientIp } from '@/docs/runtime/llms-export-rate-limit';
-import { source } from '@/docs/runtime/source';
+import { consumeLlmsExportRateLimit, getLlmsExportClientIp } from '@/docs/runtime/docs-llm-rate-limit.server';
+import { getLLMText } from '@/docs/runtime/docs-llm-text.serializer';
+import { source } from '@/docs/runtime/docs-source.registry';
 import { routing } from '@/i18n/routing';
 
 interface LLMDocsRouteProps {
@@ -11,6 +11,7 @@ interface LLMDocsRouteProps {
 }
 
 export const revalidate = false;
+export const dynamic = 'force-dynamic';
 
 export async function GET(request: Request, { params }: LLMDocsRouteProps) {
   const { locale, slug } = await params;
@@ -29,8 +30,4 @@ export async function GET(request: Request, { params }: LLMDocsRouteProps) {
       'Content-Type': 'text/markdown; charset=utf-8',
     },
   });
-}
-
-export function generateStaticParams() {
-  return source.generateParams('slug', 'locale');
 }

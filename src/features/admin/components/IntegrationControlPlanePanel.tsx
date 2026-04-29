@@ -23,7 +23,7 @@ import {
   SelectValue,
 } from '@/shared/components/ui';
 
-type Provider = 'github' | 'google_workspace';
+type Provider = 'github';
 type Mode = 'migration_full' | 'sync_incremental' | 'reconcile' | 'dry_run';
 
 interface IntegrationControlPlanePanelProps {
@@ -69,7 +69,6 @@ interface Readiness {
 
 const PROVIDER_TO_ENDPOINT: Record<Provider, string> = {
   github: 'github',
-  google_workspace: 'google-workspace',
 };
 
 export function IntegrationControlPlanePanel({ tenantSlug }: IntegrationControlPlanePanelProps) {
@@ -133,7 +132,7 @@ export function IntegrationControlPlanePanel({ tenantSlug }: IntegrationControlP
     setResult(null);
     setProgress([]);
     try {
-      const body = {};
+      const body = { mode };
 
       const res = await fetch(`/api/tenants/${tenantSlug}/admin/integrations/${endpoint}/sync`, {
         method: 'POST',
@@ -182,7 +181,7 @@ export function IntegrationControlPlanePanel({ tenantSlug }: IntegrationControlP
     } finally {
       setIsRunning(false);
     }
-  }, [endpoint, refreshOpsData, t, tenantSlug]);
+  }, [endpoint, mode, refreshOpsData, t, tenantSlug]);
 
   const resolveConflict = useCallback(
     async (conflictId: string) => {
@@ -240,7 +239,6 @@ export function IntegrationControlPlanePanel({ tenantSlug }: IntegrationControlP
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="github">GitHub</SelectItem>
-                <SelectItem value="google_workspace">Google Workspace</SelectItem>
               </SelectContent>
             </Select>
           </div>

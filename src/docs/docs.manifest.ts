@@ -1,143 +1,87 @@
-import { defineDocsManifest } from '@/docs/evidence/manifest';
-
-const DOCS_ROUTES = [
-  '/[locale]/docs',
-  '/[locale]/docs/[[...slug]]',
-  '/[locale]/og/docs/[...slug]',
-  '/api/search',
-  '/llms.txt',
-  '/llms-full.txt',
-  '/llms.mdx/[locale]/docs/[[...slug]]',
-  '/rss.xml',
-] as const;
+import { defineDocsManifest } from './runtime/docs-contract-manifest';
 
 export default defineDocsManifest({
   id: 'docs',
-  title: 'Documentation Evidence Pipeline',
-  module: 'Governance',
-  owner: 'docs-platform',
-  releaseState: 'beta',
-  summary: 'Fumadocs-rendered evidence surface generated from governed product truth.',
-
-  routes: [...DOCS_ROUTES],
-
+  title: 'Documentation Experience',
+  module: 'Documentation',
+  owner: 'platform-docs',
+  releaseState: 'released',
+  summary: 'Fumadocs documentation routes, machine-readable exports, search, RSS, and Open Graph surfaces.',
+  routes: [
+    '/[locale]/docs',
+    '/[locale]/docs/[[...slug]]',
+    '/[locale]/og/docs/[...slug]',
+    '/api/search',
+    '/llms-full.txt',
+    '/llms.mdx/[locale]/docs/[[...slug]]',
+    '/llms.txt',
+    '/rss.xml',
+  ],
   permissions: [],
-
   workflows: [
     {
-      id: 'docs.evidence-generation',
-      title: 'Documentation evidence generation',
-      summary: 'Validate manifests, build the docs inventory graph, generate MDX/JSON, and render through Fumadocs.',
+      id: 'docs.read-docs',
+      title: 'Read documentation',
+      summary: 'Visitors browse localized Fumadocs pages and generated evidence pages.',
+    },
+    {
+      id: 'docs.machine-readable-export',
+      title: 'Machine-readable docs export',
+      summary: 'LLM, RSS, search, Markdown, and Open Graph routes expose docs content without a parallel docs engine.',
     },
   ],
-
   actions: [
     {
-      id: 'docs.generate',
-      title: 'Generate documentation evidence',
-      summary: 'Run the documentation generation pipeline from manifest-backed product truth.',
+      id: 'docs.copy-markdown-url',
+      title: 'Copy Markdown URL',
+      summary: 'Page actions expose Markdown URLs for AI and reader workflows.',
     },
     {
-      id: 'docs.feedback.submit',
-      title: 'Submit documentation page feedback',
-      summary:
-        'Validate, rate-limit, and append a page-level feedback event for a Fumadocs-rendered documentation page.',
+      id: 'docs.submit-feedback',
+      title: 'Submit docs feedback',
+      summary: 'Readers can submit lightweight page feedback through the docs feedback action.',
     },
   ],
-
   apis: [
     {
-      id: 'docs.llms.index',
-      title: 'LLMs page index',
-      method: 'GET',
-      route: '/llms.txt',
-      summary:
-        'Expose the Fumadocs page index for LLM-friendly discovery. Optional `locale` query selects the language tree; defaults to `en`.',
-    },
-    {
-      id: 'docs.llms.full',
-      title: 'LLMs full export',
-      method: 'GET',
-      route: '/llms-full.txt',
-      summary:
-        'Expose all documentation pages as clean Markdown for LLM consumption. Optional `locale` query selects the language tree; defaults to `en`.',
-    },
-    {
-      id: 'docs.llms.page',
-      title: 'LLMs page markdown export',
-      method: 'GET',
-      route: '/llms.mdx/[locale]/docs/[[...slug]]',
-      summary: 'Expose one locale-aware documentation page as clean Markdown for LLM consumption.',
-    },
-    {
       id: 'docs.search',
-      title: 'Docs search API',
       method: 'GET',
       route: '/api/search',
-      summary: 'Expose locale-aware Fumadocs search results from the generated documentation source.',
+      summary: 'Search index endpoint backed by the Fumadocs source registry.',
+    },
+    {
+      id: 'docs.llms-index',
+      method: 'GET',
+      route: '/llms.txt',
+      summary: 'Machine-readable LLM index for the documentation corpus.',
+    },
+    {
+      id: 'docs.llms-full',
+      method: 'GET',
+      route: '/llms-full.txt',
+      summary: 'Full machine-readable LLM export for the documentation corpus.',
     },
     {
       id: 'docs.rss',
-      title: 'Docs RSS feed',
       method: 'GET',
       route: '/rss.xml',
-      summary: 'Expose an RSS feed for generated documentation evidence pages.',
-    },
-    {
-      id: 'docs.og.image',
-      title: 'Docs Open Graph image generator',
-      method: 'GET',
-      route: '/[locale]/og/docs/[...slug]',
-      summary: 'Generate Open Graph images for documentation pages using next/og and the Fumadocs UI template.',
+      summary: 'RSS feed for documentation pages.',
     },
   ],
-
   errors: [
     {
-      code: 'AFD-DOCS-CONTRACT',
-      title: 'Docs contract validation failed',
-      mitigation: 'Fix manifest IDs, owners, routes, permissions, APIs, errors, or troubleshooting references.',
-    },
-    {
-      code: 'AFD-DOCS-FEEDBACK-VALIDATION',
-      title: 'Docs feedback validation failed',
-      mitigation: 'Submit feedback only for canonical docs pages with a supported opinion and bounded message.',
-    },
-    {
-      code: 'AFD-DOCS-FEEDBACK-ORIGIN',
-      title: 'Docs feedback origin rejected',
-      mitigation: 'Ensure the request Origin matches the deployment Host or X-Forwarded-Host.',
-    },
-    {
-      code: 'AFD-DOCS-FEEDBACK-RATE-LIMIT',
-      title: 'Docs feedback rate limit exceeded',
-      mitigation: 'Wait for the feedback submission window to reset before retrying.',
-    },
-    {
-      code: 'AFD-DOCS-FEEDBACK-CONTEXT',
-      title: 'Docs feedback request context unavailable',
-      mitigation: 'Confirm the deployment provides AUTH_SECRET and enough request headers to derive a rate-limit key.',
-    },
-    {
-      code: 'AFD-DOCS-FEEDBACK-STORAGE',
-      title: 'Docs feedback storage failed',
-      mitigation: 'Check database connectivity and the docs_page_feedback_events migration state.',
+      code: 'AFD-DOCS-PAGE-NOT-FOUND',
+      title: 'Documentation page not found',
+      mitigation: 'Confirm the requested localized docs page exists in the Fumadocs source registry.',
     },
   ],
-
   troubleshooting: [
     {
-      id: 'docs-generated-stale',
-      title: 'Generated docs are stale',
-      symptom: '`docs:generate --check` fails in CI.',
-      resolution: 'Run `pnpm docs:generate` and commit the regenerated evidence files.',
-    },
-    {
-      id: 'docs-feedback-submit-fails',
-      title: 'Docs feedback submission fails',
-      symptom: 'A documentation page feedback form shows a submission failure.',
+      id: 'docs.route-build-fails',
+      title: 'Docs route build fails',
+      symptom: 'The docs route fails type-check or build after layout or runtime changes.',
       resolution:
-        'Check origin headers, AUTH_SECRET, rate-limit history, and the docs_page_feedback_events database migration.',
+        'Run docs source generation, verify route imports target src/docs/runtime and src/docs/ui, then run type-check.',
     },
   ],
 });

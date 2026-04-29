@@ -2,5 +2,27 @@
   "generated": true,
   "title": "Troubleshooting",
   "source": "docs inventory graph",
-  "generatedBy": "pnpm docs:generate"
+  "generatedBy": "pnpm docs:generate",
+  "pages": [
+    "admin.settings-test-fails",
+    "assistant.no-response",
+    "auth.user-cannot-enter-tenant",
+    "dashboard-empty-state",
+    "docs.route-build-fails",
+    "github-callback-fails",
+    "google-workspace-callback-fails",
+    "integration-sync-no-metrics",
+    "linkedin-callback-fails",
+    "profile-save-fails"
+  ],
+  "admin.settings-test-fails": "Admin Settings Test Fails",
+  "assistant.no-response": "Assistant No Response",
+  "auth.user-cannot-enter-tenant": "Auth User Cannot Enter Tenant",
+  "dashboard-empty-state": "Dashboard Empty State",
+  "docs.route-build-fails": "Docs Route Build Fails",
+  "github-callback-fails": "Github Callback Fails",
+  "google-workspace-callback-fails": "Google Workspace Callback Fails",
+  "integration-sync-no-metrics": "Integration Sync No Metrics",
+  "linkedin-callback-fails": "Linkedin Callback Fails",
+  "profile-save-fails": "Profile Save Fails"
 }

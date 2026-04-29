@@ -1,9 +1,9 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Afenda public HTTP API",
+    "title": "Afenda documented HTTP API",
     "version": "1.0.0",
-    "description": "Machine-readable surface for routes documented alongside Afenda guides. Replace or extend this spec as you expose more APIs."
+    "description": "Machine-readable index for API routes documented by the Afenda evidence manifests. Generated API evidence remains the ownership source; this OpenAPI document gives Fumadocs a canonical API rendering surface."
   },
   "servers": [
     {
@@ -15,42 +15,210 @@
     "/api/health": {
       "get": {
         "tags": ["Platform"],
-        "operationId": "getHealth",
-        "summary": "Health check",
-        "description": "Returns application health and dependency status for load balancers, probes, and monitoring.",
+        "operationId": "platform.health",
+        "summary": "Expose basic application health status.",
+        "description": "See generated evidence: /docs/generated/api/platform.health",
         "responses": {
           "200": {
-            "description": "Service is healthy",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "enum": ["healthy", "unhealthy"]
-                    },
-                    "timestamp": { "type": "string", "format": "date-time" },
-                    "checks": { "type": "object", "additionalProperties": true }
-                  },
-                  "required": ["status"]
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "Service is unhealthy",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
+            "description": "Request completed successfully"
           }
         }
+      }
+    },
+    "/api/internal/tenant-by-host": {
+      "get": {
+        "tags": ["Administration"],
+        "operationId": "admin.internal.tenant-by-host",
+        "summary": "Internal: resolve verified custom domain hostname to tenant slug for Edge proxy.",
+        "description": "See generated evidence: /docs/generated/api/admin.internal.tenant-by-host",
+        "responses": {
+          "200": {
+            "description": "Request completed successfully"
+          }
+        }
+      }
+    },
+    "/api/tenants/{tenant}/admin/settings/ai/test": {
+      "post": {
+        "tags": ["Administration"],
+        "operationId": "admin.settings.ai.test",
+        "summary": "Validate tenant AI provider settings.",
+        "description": "See generated evidence: /docs/generated/api/admin.settings.ai.test",
+        "parameters": [{ "$ref": "#/components/parameters/Tenant" }],
+        "responses": {
+          "200": {
+            "description": "Request completed successfully"
+          }
+        }
+      }
+    },
+    "/api/tenants/{tenant}/admin/settings/storage/test": {
+      "post": {
+        "tags": ["Administration"],
+        "operationId": "admin.settings.storage.test",
+        "summary": "Validate tenant storage provider settings.",
+        "description": "See generated evidence: /docs/generated/api/admin.settings.storage.test",
+        "parameters": [{ "$ref": "#/components/parameters/Tenant" }],
+        "responses": {
+          "200": {
+            "description": "Request completed successfully"
+          }
+        }
+      }
+    },
+    "/api/chat": {
+      "post": {
+        "tags": ["Assistant"],
+        "operationId": "assistant.chat",
+        "summary": "Send chat messages to the assistant runtime.",
+        "description": "See generated evidence: /docs/generated/api/assistant.chat",
+        "responses": {
+          "200": {
+            "description": "Request completed successfully"
+          }
+        }
+      }
+    },
+    "/api/assistant/conversations": {
+      "get": {
+        "tags": ["Assistant"],
+        "operationId": "assistant.conversations",
+        "summary": "List assistant conversations.",
+        "description": "See generated evidence: /docs/generated/api/assistant.conversations",
+        "responses": {
+          "200": {
+            "description": "Request completed successfully"
+          }
+        }
+      }
+    },
+    "/api/auth/{nextauth}": {
+      "get": {
+        "tags": ["Authentication"],
+        "operationId": "auth.nextauth",
+        "summary": "Auth.js route handler for authentication lifecycle requests.",
+        "description": "See generated evidence: /docs/generated/api/auth.nextauth",
+        "parameters": [{ "$ref": "#/components/parameters/NextAuth" }],
+        "responses": {
+          "200": {
+            "description": "Request completed successfully"
+          }
+        }
+      }
+    },
+    "/api/search": {
+      "get": {
+        "tags": ["Documentation"],
+        "operationId": "docs.search",
+        "summary": "Search index endpoint backed by the Fumadocs source registry.",
+        "description": "See generated evidence: /docs/generated/api/docs.search",
+        "responses": {
+          "200": {
+            "description": "Request completed successfully"
+          }
+        }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "tags": ["Documentation"],
+        "operationId": "docs.llms-index",
+        "summary": "Machine-readable LLM index for the documentation corpus.",
+        "description": "See generated evidence: /docs/generated/api/docs.llms-index",
+        "responses": {
+          "200": {
+            "description": "Plain-text LLM index"
+          }
+        }
+      }
+    },
+    "/llms-full.txt": {
+      "get": {
+        "tags": ["Documentation"],
+        "operationId": "docs.llms-full",
+        "summary": "Full machine-readable LLM export for the documentation corpus.",
+        "description": "See generated evidence: /docs/generated/api/docs.llms-full",
+        "responses": {
+          "200": {
+            "description": "Plain-text full documentation export"
+          }
+        }
+      }
+    },
+    "/rss.xml": {
+      "get": {
+        "tags": ["Documentation"],
+        "operationId": "docs.rss",
+        "summary": "RSS feed for documentation pages.",
+        "description": "See generated evidence: /docs/generated/api/docs.rss",
+        "responses": {
+          "200": {
+            "description": "RSS XML feed"
+          }
+        }
+      }
+    },
+    "/api/integrations/github/callback": {
+      "get": {
+        "tags": ["GitHub"],
+        "operationId": "github.oauth.callback",
+        "summary": "Handle GitHub OAuth callback.",
+        "description": "See generated evidence: /docs/generated/api/github.oauth.callback",
+        "responses": {
+          "200": {
+            "description": "Request completed successfully"
+          }
+        }
+      }
+    },
+    "/api/tenants/{tenant}/admin/integrations/metrics": {
+      "get": {
+        "tags": ["Integration Sync"],
+        "operationId": "integration-sync.metrics",
+        "summary": "Return integration control plane metrics.",
+        "description": "See generated evidence: /docs/generated/api/integration-sync.metrics",
+        "parameters": [{ "$ref": "#/components/parameters/Tenant" }],
+        "responses": {
+          "200": {
+            "description": "Request completed successfully"
+          }
+        }
+      }
+    },
+    "/api/tenants/{tenant}/admin/integrations/conflicts": {
+      "get": {
+        "tags": ["Integration Sync"],
+        "operationId": "integration-sync.conflicts",
+        "summary": "Return integration sync conflicts.",
+        "description": "See generated evidence: /docs/generated/api/integration-sync.conflicts",
+        "parameters": [{ "$ref": "#/components/parameters/Tenant" }],
+        "responses": {
+          "200": {
+            "description": "Request completed successfully"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "Tenant": {
+        "name": "tenant",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Tenant slug."
+      },
+      "NextAuth": {
+        "name": "nextauth",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Auth.js catch-all route segment."
       }
     }
   }

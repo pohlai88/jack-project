@@ -13,6 +13,8 @@ export function isDocsFeedbackOpinion(value: unknown): value is DocsFeedbackOpin
   return typeof value === 'string' && docsFeedbackOpinions.includes(value as DocsFeedbackOpinion);
 }
 
+export const DOCS_FEEDBACK_SUCCESS_MESSAGE = 'Thanks for the feedback.' as const;
+
 /* ------------------------------------------------------------------------
       Input
       ------------------------------------------------------------------------ */

@@ -1,9 +1,10 @@
-import { notFound } from 'next/navigation';
+import { headers } from 'next/headers';
+import { notFound, redirect } from 'next/navigation';
 import type { ReactNode } from 'react';
 
 import { TenantLocaleSync } from '@/i18n/tenant-locale-sync';
 import { ThemeCSSInjector } from '@/shared/components/providers/theme-css-injector';
-import { getCurrentUserPermissions } from '@/shared/lib/permissions';
+import { getCurrentRoleIds, getCurrentUserPermissions } from '@/shared/lib/permissions';
 import { getTenantBySlug } from '@/shared/lib/tenant';
 import { parseTenantSettings } from '@/shared/lib/tenant-settings';
 import { TenantProvider } from '@/shared/providers';
@@ -31,6 +32,11 @@ interface TenantLayoutProps {
  */
 export default async function TenantLayout({ children, params }: TenantLayoutProps) {
   const { tenant: tenantSlug } = await params;
+  const headerBag = await headers();
+  const pathname = headerBag.get('x-pathname') ?? '';
+  const normalizedPath = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  const isPublicTenantRoute =
+    normalizedPath === `/t/${tenantSlug}/login` || normalizedPath.startsWith(`/t/${tenantSlug}/invite/`);
 
   // Validate tenant exists
   const tenant = await getTenantBySlug(tenantSlug);
@@ -41,6 +47,14 @@ export default async function TenantLayout({ children, params }: TenantLayoutPro
 
   // Parse tenant settings
   const settings = parseTenantSettings(tenant.settings);
+
+  // Membership is required for most tenant routes; login and invite routes stay public.
+  if (!isPublicTenantRoute) {
+    const roles = await getCurrentRoleIds(tenant.slug);
+    if (roles.length === 0) {
+      redirect(`/t/${tenant.slug}/login`);
+    }
+  }
 
   // Permissions for sidebar/nav (may be returned from session when set by auth callback)
   const permissions = await getCurrentUserPermissions(tenant.slug);
