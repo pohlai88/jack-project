@@ -2,5 +2,23 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "pnpm run build",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "regions": ["sin1"],
+  "functions": {
+    "src/app/api/chat/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/api/assistant/conversations/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/api/assistant/conversations/[id]/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/(docs-meta)/llms-full.txt/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/(docs-meta)/llms.mdx/[locale]/docs/[[...slug]]/route.ts": {
+      "maxDuration": 60
+    }
+  }
 }
