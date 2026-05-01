@@ -4,32 +4,32 @@
   "locales": {
     "es": {
       "path": "src/i18n/catalogs/fallback/es.json",
-      "sha256": "bdbb3e38ad2299187bd6dcfd8ee2e145bd4c306b54301fb3dc1c91af8b2d5ae5",
+      "sha256": "d4e04f76dfb600ba72da52eda39a84a3b43c420d94a763f86936b66c2adee475",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "id": {
       "path": "src/i18n/catalogs/fallback/id.json",
-      "sha256": "fdcdfc675cca1d83a31ffabcc657ec4debf3bd8cbf0f922b28df9f83380541c5",
+      "sha256": "2d1bd84157ba19bb9922aee088c676f957c83c156a7099d9e6a5df2542664337",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "ms": {
       "path": "src/i18n/catalogs/fallback/ms.json",
-      "sha256": "329034f465a830a416c3b3daea4607131f3c7cd97ad846b7d1d60b0dfaf6730f",
+      "sha256": "58a3ce78b5af52d9fa0005e728d6a6659c0a36601e344755dde4a6e2e8db143d",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "th": {
       "path": "src/i18n/catalogs/fallback/th.json",
-      "sha256": "adac027d4400b762a921c190510346f69ae8e9a21b43f4d87ca514d27b0f75c1",
+      "sha256": "ac2159faae03d9530cae4702082c96f6ef3647ef6ad7162e2f61ad3b7c3051f0",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "vi": {
       "path": "src/i18n/catalogs/fallback/vi.json",
-      "sha256": "8971ff3e9ddff517aaffc9213d4045bcd6ae5f39f9fcc50caf8b7c41f1b3ddf5",
+      "sha256": "dc4936507f752c094b219182c2709fe523fb9612da3a28b907a4c5427b47ee82",
       "provenance": "migration from src/i18n/messages/*.json"
     },
     "zh-CN": {
       "path": "src/i18n/catalogs/fallback/zh-CN.json",
-      "sha256": "446d0b155d83e07f0aa5f9672e8d0725f0c92b8c5f7a2737078327c52077e7f1",
+      "sha256": "46cf0aceba0807e99e07f561bab7c71b3b5567c24c19f7f16806357453a395d8",
       "provenance": "migration from src/i18n/messages/*.json"
     }
   }

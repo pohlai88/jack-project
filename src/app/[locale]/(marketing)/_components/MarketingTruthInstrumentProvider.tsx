@@ -151,6 +151,7 @@ export function MarketingTruthInstrumentProvider({ children }: { children: React
     };
 
     const schedule = () => {
+      if (document.body.dataset.introActive === '1') return;
       cancelAnimationFrame(frame);
       frame = window.requestAnimationFrame(computeState);
     };

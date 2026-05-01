@@ -1,144 +1,37 @@
-import { HeroReplayButton } from './HeroReplayButton';
+import NextLink from 'next/link';
+import { getLocale } from 'next-intl/server';
 
-const proofItems = [
-  { label: 'Authority', detail: 'enforced' },
-  { label: 'Evidence', detail: 'bound' },
-  { label: 'Decision', detail: 'explainable' },
-] as const;
+import { localizeHref } from '@/i18n/navigation';
 
-const graphEdges = [
-  { tone: 'cold', d: 'M110 116 C 210 105 264 110 344 170' },
-  { tone: 'warn', d: 'M344 170 C 432 112 488 88 554 96' },
-  { tone: 'hot', d: 'M554 96 C 612 142 630 188 586 240' },
-  { tone: 'hot', d: 'M586 240 C 520 298 460 318 382 322' },
-  { tone: 'red', d: 'M382 322 C 290 330 210 322 70 314' },
-  { tone: 'hot', d: 'M70 314 C 160 410 230 458 346 500' },
-  { tone: 'cold', d: 'M346 500 C 438 570 520 550 628 500' },
-  { tone: 'hot', d: 'M628 500 C 584 418 502 364 382 322' },
-  { tone: 'cold', d: 'M150 494 C 240 452 312 390 382 322' },
-  { tone: 'hot', d: 'M382 322 C 392 238 374 210 344 170' },
-] as const;
+export async function HeroSection() {
+  const locale = await getLocale();
 
-const ontologyNodes = [
-  { id: 'supplier', label: 'Supplier', tone: 'cold' },
-  { id: 'contract', label: 'Contract', tone: 'warn' },
-  { id: 'invoice', label: 'Invoice', tone: 'cold' },
-  { id: 'payment', label: 'Payment', tone: 'neutral' },
-  { id: 'shipment', label: 'Shipment', tone: 'cold' },
-  { id: 'item', label: 'Item', tone: 'cold' },
-  { id: 'tenant', label: 'Tenant', tone: 'neutral' },
-  { id: 'policy', label: 'Policy', tone: 'red' },
-] as const;
-
-const bindingLines = [
-  'M 76 115 C 200 200 290 260 380 318',
-  'M 258 70 C 300 180 340 260 380 318',
-  'M 562 90 C 500 180 442 260 388 318',
-  'M 700 230 C 620 270 510 300 392 320',
-  'M 638 500 C 540 440 460 380 392 326',
-  'M 440 564 C 420 480 400 400 388 328',
-  'M 138 486 C 210 420 290 360 380 326',
-  'M 46 320 C 150 320 260 320 376 320',
-] as const;
-
-const provenance = [
-  { label: 'Authority', value: 'Ops Lead · u_412' },
-  { label: 'Policy', value: 'Q4-PERF-2026' },
-  { label: 'State', value: 'Committed · t+47ms' },
-] as const;
-
-const signatures = ['identity', 'policy', 'evidence', 'audit'] as const;
-
-export function HeroSection() {
   return (
-    <section
-      id="hero"
-      className="marketing-hero marketing-hero--animate"
-      data-marketing-hero
-      aria-labelledby="marketing-hero-title"
-    >
-      <div className="marketing-hero__composition" aria-label="Afenda truth resolution hero">
-        <div className="marketing-hero__copy">
-          <p className="marketing-hero__kicker">Operational truth engine</p>
+    <section id="hero" className="marketing-hero marketing-hero--quiet" aria-labelledby="marketing-hero-title">
+      <div className="marketing-hero__backdrop" aria-hidden="true">
+        <span className="marketing-hero__grain" />
+        <span className="marketing-hero__rules" />
+      </div>
+
+      <div className="marketing-hero__composition marketing-hero__grid">
+        <div className="marketing-hero__content">
           <h1 id="marketing-hero-title" className="marketing-hero__title">
-            Resolve business reality <span>before it becomes risk.</span>
+            Business truth infrastructure
           </h1>
+
           <p className="marketing-hero__lead">
-            Afenda binds fragmented operational events into a <strong>governed truth graph</strong> — resolving{' '}
-            <strong>identity, authority, policy, evidence, and state</strong> at the moment of execution, not weeks
-            later.
+            Canonical records, evidence, and policy-bound execution for teams that need audit-ready state.
           </p>
-          <div className="marketing-hero__proofline" aria-label="Resolution guarantees">
-            {proofItems.map((item) => (
-              <span key={item.label}>
-                <b>{item.label}</b> {item.detail}
-              </span>
-            ))}
+
+          <div className="marketing-hero__actions" aria-label="Afenda entry actions">
+            <NextLink href={localizeHref(locale, '/login')} className="marketing-hero__cta">
+              <span>Enter Afenda</span>
+            </NextLink>
+            <a href="#evidence" className="marketing-hero__terminal-link">
+              <span>View Evidence</span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
           </div>
-        </div>
-
-        <div className="marketing-hero__stage" aria-label="Operational truth graph resolving into canonical record">
-          <svg className="marketing-hero__graph" viewBox="0 0 760 640" preserveAspectRatio="none" aria-hidden="true">
-            {graphEdges.map((edge) => (
-              <path key={edge.d} className={`marketing-hero__edge marketing-hero__edge--${edge.tone}`} d={edge.d} />
-            ))}
-          </svg>
-
-          {ontologyNodes.map((node) => (
-            <div
-              key={node.id}
-              className={`marketing-hero__node marketing-hero__node--${node.id} marketing-hero__node--${node.tone}`}
-            >
-              <span className="marketing-hero__node-dot" aria-hidden />
-              <span className="marketing-hero__node-label">{node.label}</span>
-            </div>
-          ))}
-
-          <svg className="marketing-hero__binding" viewBox="0 0 760 640" preserveAspectRatio="none" aria-hidden="true">
-            {bindingLines.map((d) => (
-              <path key={d} d={d} />
-            ))}
-          </svg>
-
-          <div className="marketing-hero__truth-object" aria-label="Canonical record CR-7831 resolved at execution">
-            <div className="marketing-hero__truth-card">
-              <div className="marketing-hero__face marketing-hero__face--top">
-                <div className="marketing-hero__commit-ring" aria-hidden="true" />
-                <div className="marketing-hero__aftershock" aria-hidden="true" />
-                <div className="marketing-hero__record">
-                  <div>
-                    <div className="marketing-hero__record-id">CR-7831 / TENANT-AF</div>
-                    <div className="marketing-hero__verdict">RESOLVED</div>
-                    <div className="marketing-hero__subverdict">
-                      <span className="marketing-hero__hash">0xaf3e…c14d</span>
-                      <span className="marketing-hero__dotsep" aria-hidden="true" />
-                      <span>decision path intact</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="marketing-hero__provenance" aria-hidden="true">
-                  {provenance.map((item) => (
-                    <div key={item.label}>
-                      {item.label}
-                      <strong>{item.value}</strong>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="marketing-hero__face marketing-hero__face--front">
-                {signatures.map((signature) => (
-                  <span key={signature} className="marketing-hero__signature">
-                    {signature}
-                  </span>
-                ))}
-              </div>
-              <div className="marketing-hero__face marketing-hero__face--left">Lineage intact</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="marketing-hero__controls">
-          <HeroReplayButton />
         </div>
       </div>
     </section>

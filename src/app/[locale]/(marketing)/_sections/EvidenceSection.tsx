@@ -1,11 +1,64 @@
-import { EvidencePack } from './EvidencePack';
 import { AudienceChips } from '../_components/AudienceChips';
+import { DeepDiveTrigger } from '../_components/DeepDiveTrigger';
+import { MarketingSection } from '../_components/landing-primitives';
 import { evidence } from '../_content/sections';
+
+const EVIDENCE_TERMS = [
+  {
+    term: 'Canonicalization',
+    benefit: 'Stable record bytes produce the same hash across replays.',
+  },
+  {
+    term: 'Detached signature',
+    benefit: 'Tenant attestation travels with the record without mutating it.',
+  },
+  {
+    term: 'Merkle lineage',
+    benefit: 'Prior events and reversals can be proved without full export.',
+  },
+  {
+    term: 'Timestamp authority',
+    benefit: 'Event order is anchored outside application-local time.',
+  },
+  {
+    term: 'Policy decision record',
+    benefit: 'Approval basis is stored at decision time, not inferred later.',
+  },
+  {
+    term: 'Retention lock',
+    benefit: 'Evidence remains immutable through the audit window.',
+  },
+] as const;
+
+function EvidenceTermsPanel() {
+  return (
+    <section className="evidence-terms" aria-label="Professional evidence terms">
+      <div className="evidence-terms__header">
+        <p>Evidence dossier</p>
+        <span>AFD-EVD-008</span>
+      </div>
+
+      <div className="evidence-terms__hero">
+        <span>Technical terms</span>
+        <strong>Audit proof is engineered before the audit.</strong>
+      </div>
+
+      <div className="evidence-terms__grid">
+        {EVIDENCE_TERMS.map((item) => (
+          <article key={item.term} className="evidence-terms__card">
+            <h3>{item.term}</h3>
+            <p>{item.benefit}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
 
 export function EvidenceSection() {
   return (
-    <section id="evidence" className="marketing-section marketing-section--tall" aria-labelledby="evidence-title">
-      <div className="marketing-frame">
+    <MarketingSection id="evidence" className="marketing-section--tall" aria-labelledby="evidence-title">
+      <div className="marketing-frame evidence-section__frame">
         <div>
           <p className="marketing-eyebrow">Section 08 · Trust & evidence</p>
           <h2 id="evidence-title" className="marketing-h1">
@@ -14,43 +67,13 @@ export function EvidenceSection() {
           <p className="marketing-lead">{evidence.lead}</p>
           <AudienceChips sectionId="evidence" />
 
-          <ul
-            style={{
-              listStyle: 'none',
-              display: 'grid',
-              gap: '0.6rem',
-              marginTop: '1.75rem',
-              fontFamily: 'var(--marketing-mono)',
-              fontSize: '11px',
-              color: 'var(--marketing-muted)',
-            }}
-          >
-            {[
-              ['HASH', 'sha256:8b3a…21fc · canonical bytes'],
-              ['SIG', 'ed25519:0x7e…a4 · tenant attestation'],
-              ['TIME', '2026-04-30T11:42:18Z · authority NTP'],
-              ['LINEAGE', '4 prior records · 1 reversal · 0 redactions'],
-              ['POLICY', 'PRC.AP.MATCH.v6 · accepted'],
-            ].map(([k, v]) => (
-              <li
-                key={k}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '70px 1fr',
-                  gap: '12px',
-                  borderBottom: '1px solid var(--marketing-line)',
-                  paddingBottom: '6px',
-                }}
-              >
-                <span style={{ color: 'var(--marketing-cyan)', letterSpacing: '0.18em' }}>{k}</span>
-                <span style={{ color: 'var(--marketing-ink)' }}>{v}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="evidence-section__actions">
+            <DeepDiveTrigger explorerId="evidence" label="Open evidence explorer" />
+          </div>
         </div>
 
-        <EvidencePack />
+        <EvidenceTermsPanel />
       </div>
-    </section>
+    </MarketingSection>
   );
 }

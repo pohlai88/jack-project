@@ -8,7 +8,7 @@ import { useTenantOptional } from '@/shared/providers/tenant-provider';
 import { AfendaIcon, type AfendaIconSize, type AfendaIconVariant } from './AfendaIcon';
 
 type LogoSize = 'sm' | 'md' | 'lg' | 'xl';
-export type AppLogoPlacement = 'nav' | 'sidebar' | 'footer' | 'auth' | 'tenant-login' | 'favicon' | 'error';
+export type AppLogoPlacement = 'nav' | 'sidebar' | 'footer' | 'auth' | 'tenant-login' | 'favicon' | 'error' | 'splash';
 
 interface AppLogoProps {
   size?: LogoSize;
@@ -133,6 +133,15 @@ const placementConfig: Record<
     markClassName: 'rounded-2xl',
     darkMarkClassName: 'rounded-2xl',
     tenantLogoClassName: 'max-h-16 max-w-[12rem]',
+  },
+  splash: {
+    renderMode: 'mark',
+    fallbackSize: 'xl',
+    markSize: 'hero',
+    variant: 'fullColor',
+    textClass: 'text-white/80',
+    markClassName: 'marketing-pre-landing__icon',
+    tenantLogoClassName: 'max-h-32 max-w-[16rem]',
   },
 };
 

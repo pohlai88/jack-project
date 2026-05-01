@@ -55,7 +55,9 @@ const requiredLandingSelectors = [
   '.marketing-footer__inner',
   '.marketing-hero',
   '.marketing-hero__composition',
-  '.marketing-hero__replay',
+  '.marketing-intro__stage',
+  '.marketing-intro__truth-card',
+  '.marketing-pre-landing',
   '.marketing-truth-ladder',
   '.marketing-truth-ladder__module',
 ] as const;
@@ -106,9 +108,11 @@ function createLandingFixture({
       'export function MarketingTruthLadder() { return <aside className="marketing-truth-ladder"><div className="marketing-truth-ladder__module" /></aside>; }',
     [`${marketingBase}/_components/landing-primitives.tsx`]:
       'export function Primitives() { return <section className="marketing-section"><div className="marketing-section__inner marketing-section__header marketing-section__title marketing-section__copy marketing-panel marketing-panel__header marketing-status-pill marketing-meta-label" /></section>; }',
+    [`${marketingBase}/_components/MarketingIntroDiagram.tsx`]:
+      'export function MarketingIntroDiagram() { return <div className="marketing-intro__stage"><div className="marketing-intro__truth-card" /></div>; }',
+    [`${marketingBase}/_components/MarketingPreLanding.tsx`]:
+      'export function MarketingPreLanding() { return <div className="marketing-pre-landing" />; }',
     [`${marketingBase}/_content/truth-instrument.ts`]: 'export const marketingTruthMilestones = [];',
-    [`${marketingBase}/_sections/HeroReplayButton.tsx`]:
-      'export function HeroReplayButton() { return <button className="marketing-hero__replay" />; }',
     [`${marketingBase}/_sections/HeroSection.tsx`]:
       'export function HeroSection() { return <section className="marketing-hero"><div className="marketing-hero__composition" /></section>; }',
     [`${marketingBase}/_sections/MarketingFooter.tsx`]:

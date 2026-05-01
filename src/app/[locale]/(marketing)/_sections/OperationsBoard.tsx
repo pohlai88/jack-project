@@ -1,159 +1,141 @@
-/** Flat operations board — three lanes of labelled tiles connected with truth-flow lines. */
+'use client';
 
-import { operations } from '../_content/sections';
+import { useState } from 'react';
 
-type Props = { tab: (typeof operations.tabs)[number] };
+type RuntimeChain = 'who' | 'what' | 'when' | 'where' | 'why' | 'which' | 'how' | 'core' | 'record';
 
-const TAB_HIGHLIGHTS: Record<(typeof operations.tabs)[number], readonly string[]> = {
-  Procurement: ['Suppliers', 'Purchase orders', 'Inventory'],
-  Operations: ['BOM', 'Inventory', 'Work orders', 'Quality'],
-  Logistics: ['Delivery', 'Sales orders', 'Inventory'],
-  Finance: ['Sales orders', 'Purchase orders', 'Quality'],
+type RuntimeNode = {
+  id: RuntimeChain;
+  label: string;
+  value: string;
+  detail?: string;
+  className: string;
+  chains: readonly RuntimeChain[];
 };
 
-export function OperationsBoard({ tab }: Props) {
-  const highlight = new Set<string>(TAB_HIGHLIGHTS[tab]);
-  const inputs = operations.inputs;
-  const modules = operations.modules;
-  const outputs = operations.outputs;
+const RUNTIME_NODES: readonly RuntimeNode[] = [
+  { id: 'who', label: 'Who', value: 'Actor bound', className: 'is-who', chains: ['who'] },
+  { id: 'what', label: 'What', value: 'Variance event', className: 'is-what', chains: ['what'] },
+  { id: 'when', label: 'When', value: '09:42 UTC', className: 'is-when', chains: ['when'] },
+  { id: 'where', label: 'Where', value: 'Site HCM-02', className: 'is-where', chains: ['where'] },
+  {
+    id: 'core',
+    label: 'Resolution core',
+    value: 'Policy + evidence',
+    detail: '7W1H sealed route',
+    className: 'is-core',
+    chains: ['who', 'what', 'when', 'where', 'why', 'which', 'how', 'core'],
+  },
+  { id: 'why', label: 'Why', value: 'Policy path', className: 'is-why', chains: ['why'] },
+  { id: 'which', label: 'Which', value: 'SKU-4419', className: 'is-which', chains: ['which'] },
+  {
+    id: 'record',
+    label: 'Canonical record',
+    value: 'CR-7831',
+    detail: 'Resolved state',
+    className: 'is-record',
+    chains: ['record'],
+  },
+  { id: 'how', label: 'How', value: 'Approved flow', className: 'is-how', chains: ['how'] },
+] as const;
 
-  const w = 1240;
-  const h = 460;
+const RUNTIME_PATHS = [
+  { id: 'who', d: 'M 180 120 L 320 200 L 520 320' },
+  { id: 'what', d: 'M 600 120 L 600 220 L 600 320' },
+  { id: 'when', d: 'M 1020 120 L 880 200 L 680 320' },
+  { id: 'where', d: 'M 180 360 L 380 340 L 520 360' },
+  { id: 'why', d: 'M 1020 360 L 820 340 L 680 360' },
+  { id: 'which', d: 'M 180 600 L 340 520 L 520 440' },
+  { id: 'how', d: 'M 1020 600 L 860 520 L 680 440' },
+  { id: 'record', d: 'M 600 400 L 600 520 L 600 620' },
+] as const satisfies readonly { id: RuntimeChain; d: string }[];
 
-  // Lane Xs
-  const inputX = 80;
-  const moduleX = 470;
-  const outputX = 1080;
+function getActiveChains(active: RuntimeChain | 'all') {
+  if (active === 'all') {
+    return new Set<RuntimeChain>(RUNTIME_PATHS.map((path) => path.id));
+  }
 
-  const inputBoxW = 200;
-  const moduleBoxW = 280;
-  const outputBoxW = 220;
-  const boxH = 40;
+  if (active === 'core') {
+    return new Set<RuntimeChain>(['who', 'what', 'when', 'where', 'why', 'which', 'how', 'record']);
+  }
 
-  const inputYs = inputs.map((_, i) => 60 + i * ((h - 120) / Math.max(1, inputs.length - 1)));
-  const moduleYs = modules.map((_, i) => 40 + i * ((h - 80) / Math.max(1, modules.length - 1)));
-  const outputYs = outputs.map((_, i) => 100 + i * ((h - 200) / Math.max(1, outputs.length - 1)));
+  return new Set<RuntimeChain>([active, 'record']);
+}
+
+export function OperationsBoard() {
+  const [hovered, setHovered] = useState<RuntimeChain | null>(null);
+  const [pinned, setPinned] = useState<RuntimeChain | null>(null);
+  const active = pinned ?? hovered ?? 'all';
+  const activeChains = getActiveChains(active);
 
   return (
-    <div className="marketing-stage" style={{ minHeight: 480 }}>
-      <div className="marketing-stage__caption">
-        <span className="marketing-mono-strong">{tab} lane · highlighted modules</span>
-        <span className="marketing-mono">Static board — full motion in the explorer</span>
+    <div className="operations-runtime" data-pinned={pinned ? 'true' : 'false'}>
+      <div className="operations-runtime__caption">
+        <span className="marketing-mono-strong">Runtime trace · 7W1H bound</span>
+        <span className="marketing-mono">Hover to inspect · click to pin</span>
       </div>
-      <svg viewBox={`0 0 ${w} ${h}`} className="marketing-diagram" role="img" aria-label={`${tab} flat board`}>
-        <defs>
-          <linearGradient id="opLane" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0%" stopColor="rgba(99,230,168,.0)" />
-            <stop offset="50%" stopColor="rgba(99,230,168,.45)" />
-            <stop offset="100%" stopColor="rgba(127,217,255,.0)" />
-          </linearGradient>
-        </defs>
 
-        {/* Lane labels */}
-        <text x={inputX} y="30" className="mono-text dim-fill">
-          Inputs
-        </text>
-        <text x={moduleX} y="30" className="mono-text dim-fill">
-          Modules · {tab}
-        </text>
-        <text x={outputX} y="30" className="mono-text dim-fill">
-          Outputs
-        </text>
-
-        {/* Wires from inputs to active modules */}
-        {inputs.map((inp, i) =>
-          modules
-            .map((m, j) => ({ m, j }))
-            .filter(({ m }) => highlight.has(m))
-            .map(({ j }) => (
-              <path
-                key={`${inp}-${j}`}
-                d={`M ${inputX + inputBoxW} ${inputYs[i] + boxH / 2} C ${inputX + inputBoxW + 90} ${inputYs[i] + boxH / 2}, ${moduleX - 90} ${moduleYs[j] + boxH / 2}, ${moduleX} ${moduleYs[j] + boxH / 2}`}
-                stroke="rgba(99,230,168,.32)"
-                strokeWidth="0.9"
-                fill="none"
-              />
-            )),
-        )}
-
-        {/* Wires from active modules to all outputs */}
-        {modules
-          .map((m, j) => ({ m, j }))
-          .filter(({ m }) => highlight.has(m))
-          .flatMap(({ j }) =>
-            outputs.map((_o, k) => (
-              <path
-                key={`m${j}-o${k}`}
-                d={`M ${moduleX + moduleBoxW} ${moduleYs[j] + boxH / 2} C ${moduleX + moduleBoxW + 110} ${moduleYs[j] + boxH / 2}, ${outputX - 110} ${outputYs[k] + boxH / 2}, ${outputX} ${outputYs[k] + boxH / 2}`}
-                stroke="rgba(127,217,255,.36)"
-                strokeWidth="0.9"
-                fill="none"
-              />
-            )),
-          )}
-
-        {/* Input boxes */}
-        {inputs.map((inp, i) => (
-          <g key={inp}>
-            <rect
-              x={inputX}
-              y={inputYs[i]}
-              width={inputBoxW}
-              height={boxH}
-              fill="rgba(255,255,255,0.025)"
-              stroke="var(--marketing-line-2)"
+      <div className="operations-runtime__stage">
+        <svg
+          className="operations-runtime__circuit"
+          viewBox="0 0 1200 720"
+          preserveAspectRatio="xMidYMid meet"
+          aria-hidden="true"
+        >
+          {RUNTIME_PATHS.map((path) => (
+            <path
+              key={path.id}
+              className={`operations-runtime__path${activeChains.has(path.id) ? ' is-active' : ''}`}
+              data-chain={path.id}
+              d={path.d}
             />
-            <text x={inputX + 14} y={inputYs[i] + 25} className="mono-text ink-fill">
-              {inp}
-            </text>
-          </g>
-        ))}
+          ))}
+        </svg>
 
-        {/* Module boxes */}
-        {modules.map((m, j) => {
-          const active = highlight.has(m);
-          return (
-            <g key={m}>
-              <rect
-                x={moduleX}
-                y={moduleYs[j]}
-                width={moduleBoxW}
-                height={boxH}
-                fill={active ? 'rgba(99,230,168,.10)' : 'rgba(255,255,255,0.02)'}
-                stroke={active ? 'rgba(99,230,168,.55)' : 'var(--marketing-line-2)'}
-              />
-              <text
-                x={moduleX + 14}
-                y={moduleYs[j] + 25}
-                className="mono-text"
-                fill={active ? 'var(--marketing-green)' : 'var(--marketing-dim)'}
+        <div className="operations-runtime__board" aria-label="Signal resolution board">
+          {RUNTIME_NODES.map((node) => {
+            const nodeActive = node.chains.some((chain) => activeChains.has(chain)) || active === 'all';
+            const pressed = pinned === node.id;
+
+            return (
+              <button
+                key={node.id}
+                type="button"
+                className={`operations-runtime__node ${node.className}${nodeActive ? ' is-active' : ' is-dim'}`}
+                aria-pressed={pressed}
+                onClick={() => setPinned(pressed ? null : node.id)}
+                onFocus={() => setHovered(node.id)}
+                onBlur={() => setHovered(null)}
+                onMouseEnter={() => setHovered(node.id)}
+                onMouseLeave={() => setHovered(null)}
               >
-                {m}
-              </text>
-            </g>
-          );
-        })}
+                <span>{node.label}</span>
+                <strong>{node.value}</strong>
+                {node.detail ? <em>{node.detail}</em> : null}
+              </button>
+            );
+          })}
+        </div>
+      </div>
 
-        {/* Output boxes */}
-        {outputs.map((o, k) => (
-          <g key={o}>
-            <rect
-              x={outputX}
-              y={outputYs[k]}
-              width={outputBoxW}
-              height={boxH}
-              fill="rgba(127,217,255,0.06)"
-              stroke="rgba(127,217,255,.35)"
-            />
-            <text x={outputX + 14} y={outputYs[k] + 25} className="mono-text" fill="var(--marketing-cyan)">
-              {o}
-            </text>
-          </g>
-        ))}
-
-        {/* Lane spine */}
-        <line x1={inputX} x2={outputX + outputBoxW} y1={h - 20} y2={h - 20} stroke="url(#opLane)" />
-      </svg>
+      <div className="operations-runtime__status" aria-label="Resolved runtime status">
+        <span>
+          Authority
+          <strong>Bound</strong>
+        </span>
+        <span>
+          Policy
+          <strong>Accepted</strong>
+        </span>
+        <span>
+          Evidence
+          <strong>Sealed</strong>
+        </span>
+        <span>
+          Record
+          <strong>Committed</strong>
+        </span>
+      </div>
     </div>
   );
 }

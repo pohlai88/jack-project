@@ -1,30 +1,81 @@
-import { SecurityEnvelope } from './SecurityEnvelope';
 import { AudienceChips } from '../_components/AudienceChips';
+import { DeepDiveTrigger } from '../_components/DeepDiveTrigger';
+import { MarketingSection } from '../_components/landing-primitives';
 import { security } from '../_content/sections';
 
-const ROW = [
+const SECURITY_CONTROLS = [
   {
-    name: 'Purpose envelope',
-    def: 'Each access carries a declared business purpose. Without purpose, no resolution.',
+    domain: 'Identity boundary',
+    term: 'SSO + MFA posture',
+    benefit: 'Tenant users enter through governed identity before any record resolves.',
   },
   {
-    name: 'Redaction & retention',
-    def: 'Field-level redaction by purpose; retention bound to record class, not bucket.',
+    domain: 'Purpose gate',
+    term: 'Justified access',
+    benefit: 'Role alone is not enough; every read carries a business purpose.',
   },
   {
-    name: 'Role-vs-purpose',
-    def: 'Roles describe identity. Purpose constrains intent. Both must agree.',
+    domain: 'Data handling',
+    term: 'Redaction class',
+    benefit: 'Sensitive fields narrow by purpose, retention, and record category.',
   },
   {
-    name: 'Lineage of access',
-    def: 'Every read is recorded with actor, purpose, and policy decision — replayable.',
+    domain: 'Audit evidence',
+    term: 'Replayable decision',
+    benefit: 'Actor, purpose, policy result, and record state stay inspectable.',
   },
 ];
 
+const CERTIFICATE_EVIDENCE = [
+  ['Tenant scope', 'Bound'],
+  ['Policy decision', 'Captured'],
+  ['Access lineage', 'Replayable'],
+  ['Retention class', 'Mapped'],
+] as const;
+
+function SecurityCertificate() {
+  return (
+    <section className="security-cert" aria-label="Security posture certificate">
+      <div className="security-cert__header">
+        <div>
+          <p className="security-cert__eyebrow">Control certificate</p>
+          <h3 className="security-cert__title">Security posture evidence</h3>
+        </div>
+        <span className="security-cert__serial">AFD-SEC-007</span>
+      </div>
+
+      <div className="security-cert__seal" aria-label="Control posture ready">
+        <span>Purpose-bound</span>
+        <strong>Access Control</strong>
+        <small>evidence ready</small>
+      </div>
+
+      <div className="security-cert__controls">
+        {SECURITY_CONTROLS.map((control) => (
+          <article key={control.domain} className="security-cert__control">
+            <p>{control.domain}</p>
+            <h4>{control.term}</h4>
+            <span>{control.benefit}</span>
+          </article>
+        ))}
+      </div>
+
+      <div className="security-cert__ledger" aria-label="Control evidence ledger">
+        {CERTIFICATE_EVIDENCE.map(([label, value]) => (
+          <div key={label} className="security-cert__ledger-row">
+            <span>{label}</span>
+            <strong>{value}</strong>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function SecuritySection() {
   return (
-    <section id="security" className="marketing-section marketing-section--tall" aria-labelledby="security-title">
-      <div className="marketing-frame">
+    <MarketingSection id="security" className="marketing-section--tall" aria-labelledby="security-title">
+      <div className="marketing-frame security-section__frame">
         <div>
           <p className="marketing-eyebrow">Section 07 · Security & access</p>
           <h2 id="security-title" className="marketing-h1">
@@ -32,25 +83,12 @@ export function SecuritySection() {
           </h2>
           <p className="marketing-lead">{security.lead}</p>
           <AudienceChips sectionId="security" />
-          <ul style={{ listStyle: 'none', display: 'grid', gap: '0.85rem', marginTop: '1.75rem' }}>
-            {ROW.map((r) => (
-              <li
-                key={r.name}
-                style={{
-                  borderLeft: '1px solid var(--marketing-line-2)',
-                  paddingLeft: '1rem',
-                }}
-              >
-                <p className="marketing-mono-strong">{r.name}</p>
-                <p style={{ fontSize: '0.92rem', color: 'var(--marketing-muted)', lineHeight: 1.55, marginTop: '4px' }}>
-                  {r.def}
-                </p>
-              </li>
-            ))}
-          </ul>
+          <div className="security-section__actions">
+            <DeepDiveTrigger explorerId="security" label="Open security explorer" />
+          </div>
         </div>
-        <SecurityEnvelope />
+        <SecurityCertificate />
       </div>
-    </section>
+    </MarketingSection>
   );
 }

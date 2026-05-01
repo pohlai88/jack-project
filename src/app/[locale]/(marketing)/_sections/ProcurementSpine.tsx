@@ -1,18 +1,18 @@
-/** Procurement spine — flat axonometric line drawing of the lifecycle. */
+/** Compact procurement spine - canonical lifecycle, kept secondary to the operating cards. */
 
 const STAGES = ['Need', 'Source', 'Award', 'Order', 'Match', 'Pay'];
 
 export function ProcurementSpine() {
-  const w = 720;
-  const h = 220;
-  const padX = 50;
+  const w = 620;
+  const h = 128;
+  const padX = 36;
   const stepX = (w - padX * 2) / (STAGES.length - 1);
 
   return (
-    <div className="marketing-stage" style={{ minHeight: 220 }}>
+    <div className="marketing-stage procurement-spine" style={{ minHeight: 0 }}>
       <div className="marketing-stage__caption">
         <span className="marketing-mono-strong">Spine · canonical lifecycle</span>
-        <span className="marketing-mono">No screen — a record progression</span>
+        <span className="marketing-mono">Record progression</span>
       </div>
       <svg viewBox={`0 0 ${w} ${h}`} className="marketing-diagram" role="img" aria-label="Procurement spine">
         <defs>
@@ -26,7 +26,7 @@ export function ProcurementSpine() {
 
         {/* Background grid */}
         {Array.from({ length: 6 }).map((_, i) => (
-          <line key={i} x1="0" x2={w} y1={20 + i * 32} y2={20 + i * 32} stroke="rgba(255,255,255,0.04)" />
+          <line key={i} x1="0" x2={w} y1={14 + i * 18} y2={14 + i * 18} stroke="rgba(255,255,255,0.04)" />
         ))}
 
         {/* Spine line */}
@@ -37,7 +37,7 @@ export function ProcurementSpine() {
           const cx = padX + stepX * i;
           return (
             <g key={s}>
-              <line x1={cx} x2={cx} y1={h / 2 - 32} y2={h / 2 + 32} stroke="rgba(255,255,255,0.12)" />
+              <line x1={cx} x2={cx} y1={h / 2 - 22} y2={h / 2 + 22} stroke="rgba(255,255,255,0.12)" />
               <circle
                 cx={cx}
                 cy={h / 2}
@@ -47,10 +47,10 @@ export function ProcurementSpine() {
                 strokeWidth="1.5"
               />
               <circle cx={cx} cy={h / 2} r="2" fill="var(--marketing-green)" />
-              <text x={cx} y={h / 2 - 42} textAnchor="middle" className="mono-text ink-fill">
+              <text x={cx} y={h / 2 - 30} textAnchor="middle" className="mono-text ink-fill">
                 {String(i + 1).padStart(2, '0')}
               </text>
-              <text x={cx} y={h / 2 + 50} textAnchor="middle" className="mono-text dim-fill">
+              <text x={cx} y={h / 2 + 34} textAnchor="middle" className="mono-text dim-fill">
                 {s}
               </text>
             </g>
@@ -66,7 +66,7 @@ export function ProcurementSpine() {
         />
         <text
           x={padX + stepX * 3.6}
-          y={h / 2 + 56}
+          y={h / 2 + 44}
           textAnchor="middle"
           className="mono-text"
           fill="var(--marketing-cyan)"
@@ -82,7 +82,7 @@ export function ProcurementSpine() {
         />
         <text
           x={padX + stepX * 0.55}
-          y={h / 2 - 32}
+          y={h / 2 - 26}
           textAnchor="middle"
           className="mono-text"
           fill="var(--marketing-amber)"

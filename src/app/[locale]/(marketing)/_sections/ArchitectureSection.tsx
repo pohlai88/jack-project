@@ -1,16 +1,12 @@
 import { ArchitectureDeck } from './ArchitectureDeck';
 import { AudienceChips } from '../_components/AudienceChips';
 import { DeepDiveTrigger } from '../_components/DeepDiveTrigger';
-import { ExplorerSummary } from '../_components/ExplorerSummary';
+import { MarketingSection } from '../_components/landing-primitives';
 import { architecture } from '../_content/sections';
 
 export function ArchitectureSection() {
   return (
-    <section
-      id="architecture"
-      className="marketing-section marketing-section--tall"
-      aria-labelledby="architecture-title"
-    >
+    <MarketingSection id="architecture" className="marketing-section--tall" aria-labelledby="architecture-title">
       <div
         style={{
           display: 'flex',
@@ -34,16 +30,6 @@ export function ArchitectureSection() {
       <div style={{ marginTop: '1.75rem' }}>
         <ArchitectureDeck />
       </div>
-
-      <ExplorerSummary
-        explorerId="architecture"
-        bullets={[
-          'Four governed decks · ontology language, engine, security, services',
-          'Central object-graph node carries the only `--primary-halo` outside the hero',
-          'Tiles are labelled artefacts, not decoration',
-          'Decorative ribbons removed — every glow indicates real flow',
-        ]}
-      />
-    </section>
+    </MarketingSection>
   );
 }

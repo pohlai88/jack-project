@@ -92,8 +92,8 @@ export const ontology = {
 };
 
 export const procurement = {
-  title: 'Procurement is a series of bound decisions, not a series of forms.',
-  lead: 'Spend categorisation, three-way matching, supplier risk, contract compliance, fraud detection, on-time payment — each column is a governed decision lane.',
+  title: 'Procurement closes when evidence matches.',
+  lead: 'PO, receipt, invoice, supplier risk, contract terms, and payment state resolve in one governed flow.',
   columns: [
     { name: 'Contract lifecycle', bullets: ['Authoring', 'Obligations', 'Renewals', 'Deviation alerts'] },
     { name: 'Category & sourcing', bullets: ['Spend classes', 'RFx', 'Award', 'Policy gates'] },
@@ -105,8 +105,8 @@ export const procurement = {
 };
 
 export const operations = {
-  title: 'One pipeline. Every signal. Every hand-off.',
-  lead: 'Flat view of inputs, activated modules, and outputs. Open the operations explorer for the full isometric board.',
+  title: 'How a signal becomes truth.',
+  lead: 'A business event is bound to actor, policy, evidence, and state before it becomes a canonical record.',
   tabs: ['Procurement', 'Operations', 'Logistics', 'Finance'] as const,
   inputs: ['SAP', 'Oracle NetSuite', 'Infor', 'Workday', 'Rippling'],
   modules: [
@@ -126,8 +126,8 @@ export const operations = {
 
 export const architecture = {
   kicker: 'Act III — Platform proof',
-  title: 'This is governed architecture.',
-  lead: 'Four decks as editorial bands — ontology language & toolchain, engine, security & governance, data/logic/action services. Floating tiles are labelled artefacts, not decoration.',
+  title: "Why it can't be faked.",
+  lead: 'The same resolved record carries policy, evidence, authority, and lineage through the platform stack.',
   decks: [
     'Ontology language & toolchain',
     'Ontology engine',

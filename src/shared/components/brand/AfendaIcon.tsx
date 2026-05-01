@@ -8,6 +8,7 @@ const AFENDA_ICON_ASSETS = {
   appTileLight: '/brand/afenda/afenda-icon-light-bg.svg',
   appTileDark: '/brand/afenda/afenda-icon-dark-bg.svg',
   appTileGradient: '/brand/afenda/afenda-icon-gradient-bg.svg',
+  fullColor: '/brand/afenda/afenda-icon-full-color.svg',
   monoBlack: '/brand/afenda/afenda-icon-mono-black-on-light.svg',
   monoWhite: '/brand/afenda/afenda-icon-mono-white-on-dark.svg',
 } as const;

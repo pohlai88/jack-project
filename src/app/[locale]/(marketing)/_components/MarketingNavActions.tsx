@@ -1,6 +1,11 @@
+import dynamic from 'next/dynamic';
+
 import { Link } from '@/i18n/navigation';
 
-import { MarketingLiveDemoDialog } from './MarketingLiveDemoDialog';
+// Code-split the dialog bundle — trigger button is still SSR'd; ssr: true (default)
+const MarketingLiveDemoDialog = dynamic(() =>
+  import('./MarketingLiveDemoDialog').then((m) => ({ default: m.MarketingLiveDemoDialog })),
+);
 
 export function MarketingNavActions() {
   return (

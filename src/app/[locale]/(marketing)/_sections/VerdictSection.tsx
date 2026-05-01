@@ -1,8 +1,9 @@
+import { MarketingSection } from '../_components/landing-primitives';
 import { verdict } from '../_content/sections';
 
 export function VerdictSection() {
   return (
-    <section id="verdict" className="marketing-section" aria-labelledby="verdict-title">
+    <MarketingSection id="verdict" aria-labelledby="verdict-title">
       <div
         style={{
           textAlign: 'center',
@@ -49,6 +50,6 @@ export function VerdictSection() {
           Not a demo. An architecture review.
         </p>
       </div>
-    </section>
+    </MarketingSection>
   );
 }

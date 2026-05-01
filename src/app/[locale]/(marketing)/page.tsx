@@ -1,14 +1,9 @@
 import type { Metadata } from 'next';
-
 import { DevUsersPanel } from '@/app/DevUsersPanel';
+import { defaultLocale, locales } from '@/i18n/config';
 
 import { ActDivider } from './_components/ActDivider';
-import { InlineExplorerSection } from './_components/InlineExplorerSection';
-import { ArchitectureExplorerBody } from './_explorers/ArchitectureExplorerBody';
-import { ModularExplorerBody } from './_explorers/ModularExplorerBody';
-import { OntologyObjectExplorerBody } from './_explorers/OntologyObjectExplorerBody';
-import { OperationsExplorerBody } from './_explorers/OperationsExplorerBody';
-import { ProcurementExplorerBody } from './_explorers/ProcurementExplorerBody';
+import { MarketingPreLandingLazy as MarketingPreLanding } from './_components/MarketingPreLandingLazy';
 import { ArchitectureSection } from './_sections/ArchitectureSection';
 import { EvidenceSection } from './_sections/EvidenceSection';
 import { HeroSection } from './_sections/HeroSection';
@@ -20,32 +15,67 @@ import { SecuritySection } from './_sections/SecuritySection';
 import { ThesisSection } from './_sections/ThesisSection';
 import { VerdictSection } from './_sections/VerdictSection';
 
-export const metadata: Metadata = {
-  title: 'Afenda — Business Truth Infrastructure',
-  description:
-    'Afenda is the business truth engine. Canonical records, 7W1H evidence, tenant-scoped truth, policy-bound execution, and audit-ready state for enterprise operations.',
-  keywords: [
-    'business truth engine',
-    'canonical records',
-    '7W1H audit trail',
-    'tenant truth',
-    'policy-bound execution',
-    'audit infrastructure',
-    'enterprise operations platform',
-    'governed business data',
-  ],
-  openGraph: {
-    title: 'Afenda — Business Truth Infrastructure',
-    description: 'The business truth engine for governed operations.',
-    type: 'website',
-    siteName: 'Afenda',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Afenda — Business Truth Infrastructure',
-    description: 'The business truth engine for governed operations.',
-  },
-};
+const pageTitle = 'Afenda — Business Truth Infrastructure';
+const pageDescription =
+  'Afenda is the business truth engine. Canonical records, 7W1H evidence, tenant-scoped truth, policy-bound execution, and audit-ready state for enterprise operations.';
+const pageKeywords = [
+  'business truth engine',
+  'canonical records',
+  '7W1H audit trail',
+  'tenant truth',
+  'policy-bound execution',
+  'audit infrastructure',
+  'enterprise operations platform',
+  'governed business data',
+];
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://afenda.com';
+  const canonicalUrl = `${siteUrl}/${locale}`;
+
+  const languageAlternates = Object.fromEntries(locales.map((l) => [l, `${siteUrl}/${l}`])) as Record<string, string>;
+
+  return {
+    title: pageTitle,
+    description: pageDescription,
+    keywords: pageKeywords,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+    },
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        ...languageAlternates,
+        'x-default': `${siteUrl}/${defaultLocale}`,
+      },
+    },
+    openGraph: {
+      title: pageTitle,
+      description: 'The business truth engine for governed operations.',
+      type: 'website',
+      url: canonicalUrl,
+      siteName: 'Afenda',
+      locale: locale.replace('-', '_'),
+      images: [
+        {
+          url: '/icons/afenda-icon-512-transparent.png',
+          width: 512,
+          height: 512,
+          alt: 'Afenda — Business Truth Infrastructure',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: pageTitle,
+      description: 'The business truth engine for governed operations.',
+      images: ['/icons/afenda-icon-512-transparent.png'],
+    },
+  };
+}
 
 /**
  * Marketing home page — locale root (/{locale}/)
@@ -61,14 +91,14 @@ export const metadata: Metadata = {
  * - Act dividers (editorial structure)
  * - Content sections (thesis, ontology, procurement, operations, architecture,
  *   security, evidence, modular, verdict)
- * - Inline explorer sections (non-modal fallback content)
  * - Dev-only utilities (DevUsersPanel)
  */
-export default async function MarketingPage() {
+export default function MarketingPage() {
   const isDevStage = process.env.NEXT_PUBLIC_STAGE === 'dev' || process.env.NODE_ENV === 'development';
 
   return (
     <>
+      <MarketingPreLanding />
       <HeroSection />
 
       <ActDivider num="I" title="Declaration" />
@@ -76,31 +106,16 @@ export default async function MarketingPage() {
 
       <ActDivider num="II" title="Business model of truth" />
       <OntologySection />
-      <InlineExplorerSection id="ontology-object" label="Ontology object explorer">
-        <OntologyObjectExplorerBody />
-      </InlineExplorerSection>
       <ProcurementSection />
-      <InlineExplorerSection id="procurement" label="Procurement explorer">
-        <ProcurementExplorerBody />
-      </InlineExplorerSection>
       <OperationsSection />
-      <InlineExplorerSection id="operations" label="Operations explorer">
-        <OperationsExplorerBody />
-      </InlineExplorerSection>
 
-      <ActDivider num="III" title="Platform proof" />
+      <ActDivider num="III" title="Platform proof" variant="bridge" />
       <ArchitectureSection />
-      <InlineExplorerSection id="architecture" label="Architecture explorer">
-        <ArchitectureExplorerBody />
-      </InlineExplorerSection>
       <SecuritySection />
       <EvidenceSection />
 
       <ActDivider num="IV" title="Extensibility" />
       <ModularSection />
-      <InlineExplorerSection id="modular" label="Modular explorer">
-        <ModularExplorerBody />
-      </InlineExplorerSection>
 
       <ActDivider num="V" title="Close" />
       <VerdictSection />

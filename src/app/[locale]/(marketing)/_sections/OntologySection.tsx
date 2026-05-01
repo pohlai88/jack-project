@@ -1,12 +1,12 @@
-import { OntologyGraph } from './OntologyGraph';
+import { OntologyStrategyCards } from './OntologyStrategyCards';
 import { AudienceChips } from '../_components/AudienceChips';
 import { DeepDiveTrigger } from '../_components/DeepDiveTrigger';
-import { ExplorerSummary } from '../_components/ExplorerSummary';
+import { MarketingSection } from '../_components/landing-primitives';
 import { ontology } from '../_content/sections';
 
 export function OntologySection() {
   return (
-    <section id="ontology" className="marketing-section marketing-section--tall" aria-labelledby="ontology-title">
+    <MarketingSection id="ontology" className="marketing-section--tall" aria-labelledby="ontology-title">
       <div
         style={{
           display: 'flex',
@@ -28,18 +28,8 @@ export function OntologySection() {
       </div>
 
       <div style={{ marginTop: '2rem' }}>
-        <OntologyGraph />
+        <OntologyStrategyCards />
       </div>
-
-      <ExplorerSummary
-        explorerId="ontology-object"
-        bullets={[
-          '9 canonical objects · Audit Event hub binds lineage on every write',
-          'Each object carries Properties · Functions · Actions · Automations',
-          'Truth resolution = object + policy + evidence at action time',
-          'Reduced-motion users see facets statically — no functionality lost',
-        ]}
-      />
-    </section>
+    </MarketingSection>
   );
 }

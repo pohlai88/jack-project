@@ -1,4 +1,6 @@
-/** Wired 3×3 ontology grid — Audit Event hub, every surrounding cell shows the four doctrine bands. */
+'use client';
+
+/** Wired 3x3 ontology grid - Audit Event hub, every surrounding cell shows the four doctrine bands. */
 
 import { ontology } from '../_content/sections';
 

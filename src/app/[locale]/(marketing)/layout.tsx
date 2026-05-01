@@ -25,16 +25,17 @@ type MarketingLayoutProps = {
  */
 export default function MarketingLayout({ children }: MarketingLayoutProps) {
   return (
-    <MarketingExplorerProvider>
-      <MarketingTruthInstrumentProvider>
-        <div className="marketing-root">
+    <div className="marketing-root">
+      {/* Async footer stays outside client providers so next-intl Link hydrates with locale context. */}
+      <MarketingExplorerProvider>
+        <MarketingTruthInstrumentProvider>
           <MarketingNav />
           <MarketingTruthLadder />
           <MarketingExplorerDialog />
           <main>{children}</main>
-          <MarketingFooter />
-        </div>
-      </MarketingTruthInstrumentProvider>
-    </MarketingExplorerProvider>
+        </MarketingTruthInstrumentProvider>
+      </MarketingExplorerProvider>
+      <MarketingFooter />
+    </div>
   );
 }

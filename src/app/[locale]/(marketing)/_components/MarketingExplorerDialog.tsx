@@ -22,6 +22,14 @@ const ArchitectureExplorerBody = dynamic(
   () => import('../_explorers/ArchitectureExplorerBody').then((m) => m.ArchitectureExplorerBody),
   { ssr: false },
 );
+const SecurityExplorerBody = dynamic(
+  () => import('../_explorers/SecurityExplorerBody').then((m) => m.SecurityExplorerBody),
+  { ssr: false },
+);
+const EvidenceExplorerBody = dynamic(
+  () => import('../_explorers/EvidenceExplorerBody').then((m) => m.EvidenceExplorerBody),
+  { ssr: false },
+);
 const ModularExplorerBody = dynamic(
   () => import('../_explorers/ModularExplorerBody').then((m) => m.ModularExplorerBody),
   { ssr: false },
@@ -37,6 +45,10 @@ function ExplorerBody({ id }: { id: ExplorerId }) {
       return <OperationsExplorerBody />;
     case 'architecture':
       return <ArchitectureExplorerBody />;
+    case 'security':
+      return <SecurityExplorerBody />;
+    case 'evidence':
+      return <EvidenceExplorerBody />;
     case 'modular':
       return <ModularExplorerBody />;
     default:
@@ -79,9 +91,6 @@ export function MarketingExplorerDialog() {
             <p className="marketing-modal__title">{meta.label}</p>
             <div className="marketing-modal__sub">
               <span className="marketing-mono">parent · #{meta.parentSection}</span>
-              <a className="marketing-link" href={`#${meta.fallbackAnchor}`} onClick={close}>
-                Non-modal summary
-              </a>
             </div>
           </div>
           <button type="button" className="marketing-modal__close" onClick={close} aria-label="Close explorer">
