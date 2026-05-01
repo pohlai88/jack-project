@@ -1,0 +1,69 @@
+/* ============================================================
+   PORTAL AND GRAPH VENDOR BRIDGE
+   Route/runtime support styles for graph surfaces and vendor UI.
+
+   Rules:
+   - Imported after diagram.css so vendor overrides do not leak into the
+     resolution diagram contract.
+   - Never re-import Tailwind or redefine design tokens.
+   - Keep third-party selectors here until a graph-specific stylesheet exists.
+   ============================================================ */
+
+.dark .react-flow__controls,
+.dark .react-flow__controls button,
+.dark .react-flow__minimap {
+  background-color: hsl(var(--background)) !important;
+  border-color: hsl(var(--border)) !important;
+}
+
+.dark .react-flow__controls button {
+  color: hsl(var(--foreground)) !important;
+}
+
+.dark .react-flow__controls button:hover {
+  background-color: hsl(var(--accent)) !important;
+}
+
+.dark .react-flow__minimap-mask {
+  fill: hsl(var(--background) / 0.3) !important;
+}
+
+.dark .react-flow__minimap-node {
+  fill: hsl(var(--primary)) !important;
+}
+
+.dark .react-flow__background-pattern {
+  stroke: hsl(var(--muted-foreground)) !important;
+  opacity: 0.2 !important;
+}
+
+.react-flow__arrowhead,
+.react-flow__arrowhead-closed,
+.dark .react-flow__arrowhead,
+.dark .react-flow__arrowhead-closed,
+.react-flow__edge .react-flow__arrowhead,
+.react-flow__edge .react-flow__arrowhead-closed,
+.dark .react-flow__edge .react-flow__arrowhead,
+.dark .react-flow__edge .react-flow__arrowhead-closed,
+.react-flow__arrowhead path,
+.react-flow__arrowhead-closed path,
+.dark .react-flow__arrowhead path,
+.dark .react-flow__arrowhead-closed path {
+  fill: hsl(var(--primary)) !important;
+}
+
+.react-flow__edge-path,
+.dark .react-flow__edge-path {
+  stroke: hsl(var(--primary)) !important;
+  stroke-width: 3 !important;
+  stroke-opacity: 1 !important;
+}
+
+.react-flow__viewport {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.react-flow__viewport::-webkit-scrollbar {
+  display: none;
+}

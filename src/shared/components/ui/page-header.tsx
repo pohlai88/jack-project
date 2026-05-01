@@ -140,7 +140,7 @@ export function PageHeader({
       >
         {/* Subtle radial overlay for hero — single, restrained, not multiple animated blobs */}
         {isHero && (
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-br from-white/10 via-transparent to-black/10 pointer-events-none" />
         )}
 
         <div className="relative">

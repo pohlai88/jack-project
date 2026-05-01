@@ -18,6 +18,7 @@ import { db } from '@/shared/db';
 import * as schema from '@/shared/db/schema';
 import type { TenantRole } from '@/shared/db/schema/auth';
 import { resolveSharedCookieDomain } from '@/shared/lib/auth-cookie-domain';
+import { resolveAuth0IssuerUrl } from '@/shared/lib/auth0-provider-config';
 import { env } from '@/shared/lib/env';
 import { getAllTenantPermissionsForUser } from '@/shared/lib/permissions';
 
@@ -35,7 +36,7 @@ declare module 'next-auth' {
       name?: string | null;
       email?: string | null;
       image?: string | null;
-      /** Role per tenant slug: { "example": "admin", "acme": "member" } */
+      /** Role per tenant slug: { "example": "admin", "afenda": "member" } */
       roles: Record<string, TenantRole>;
       /** Permission keys per tenant slug (for UI/nav only; API authorization always uses DB) */
       permissions?: Record<string, string[]>;
@@ -51,12 +52,14 @@ declare module 'next-auth' {
 const providers: NextAuthConfig['providers'] = [];
 
 // Auth0 provider (production)
-if (env.AUTH0_CLIENT_ID && env.AUTH0_CLIENT_SECRET && env.AUTH0_ISSUER) {
+const auth0Issuer = resolveAuth0IssuerUrl(env);
+
+if (env.AUTH0_CLIENT_ID && env.AUTH0_CLIENT_SECRET && auth0Issuer) {
   providers.push(
     Auth0({
       clientId: env.AUTH0_CLIENT_ID,
       clientSecret: env.AUTH0_CLIENT_SECRET,
-      issuer: env.AUTH0_ISSUER,
+      issuer: auth0Issuer,
     }),
   );
 }

@@ -132,6 +132,14 @@ Feature boundaries are strict:
 | `pnpm test`                  | Run Vitest once                                                     |
 | `pnpm test:watch`            | Run Vitest in watch mode                                            |
 | `pnpm test:coverage`         | Run Vitest with coverage                                            |
+| `pnpm test:unit:stable`      | Run Vitest in stable single-worker fork mode                        |
+| `pnpm test:workspace`        | Fast local confidence gate                                          |
+| `pnpm test:quality`          | Deterministic full local quality gate                               |
+| `pnpm test:release`          | Quality gate plus production Lighthouse gate                        |
+| `pnpm test:e2e:auth`         | Run deterministic end-to-end auth lifecycle coverage                |
+| `pnpm test:e2e:smoke`        | Run Playwright smoke coverage; reuses local port 3000 when running  |
+| `pnpm test:e2e:oauth-live`   | Run opt-in live OAuth browser smoke with provider test credentials  |
+| `pnpm test:lighthouse`       | Run production-build Lighthouse gate                                |
 | `pnpm db:generate`           | Generate Drizzle migrations from schema changes                     |
 | `pnpm db:migrate`            | Run pending Drizzle migrations                                      |
 | `pnpm db:push`               | Alias to `db:migrate`; direct push is intentionally gated           |
@@ -145,6 +153,14 @@ Feature boundaries are strict:
 | `pnpm storybook`             | Start Storybook on port 6006                                        |
 | `pnpm build-storybook`       | Build static Storybook                                              |
 
+Test bundle tiers:
+
+- `test:workspace` = fast local confidence
+- `test:quality` = deterministic full local quality gate
+- `test:release` = quality + production Lighthouse gate
+
+Use `test:quality` before PR/release candidate validation. Use `test:release` only when Lighthouse evidence is required.
+
 ---
 
 ## 📖 Documentation
@@ -157,6 +173,13 @@ Engineering authority now lives in the architecture doctrine system:
 - **Deprecated docs tombstone:** [architecture/docs/README.md](./architecture/docs/README.md)
 - **Contributing:** [CONTRIBUTING.md](./CONTRIBUTING.md)
 - **i18n operating model:** [src/i18n/README.md](./src/i18n/README.md)
+
+Brand implementation references:
+
+- **Afenda brand guideline docs:** `/docs/curated/brand-guidelines`
+- **Public icon assets:** [public/brand/afenda](./public/brand/afenda)
+- **Frontend logo API:** `AppLogo placement="nav" | "sidebar" | "footer" | "auth" | "tenant-login" | "favicon" | "error"`
+- **Doctrine:** [architecture/doctrine/0010-afenda-icon-placement.md](./architecture/doctrine/0010-afenda-icon-placement.md)
 
 ---
 

@@ -16,7 +16,7 @@ describe('normalizeCustomDomainHostname', () => {
   });
 
   it('allows localhost-style dev hosts', () => {
-    expect(normalizeCustomDomainHostname('acme.localhost')).toBe('acme.localhost');
+    expect(normalizeCustomDomainHostname('afenda.localhost')).toBe('afenda.localhost');
   });
 });
 

@@ -1,11 +1,12 @@
-import { Sparkles } from 'lucide-react';
 import { redirect } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 import { LoginForm } from '@/features/auth';
 import { localizeHref } from '@/i18n';
+import { AppLogo } from '@/shared/components/brand/Logo';
 import type { TenantRole } from '@/shared/db/schema/auth';
 import { auth } from '@/shared/lib/auth';
+import { isAuth0ProviderConfigured } from '@/shared/lib/auth0-provider-config';
 import { env } from '@/shared/lib/env';
 
 export const metadata = {
@@ -17,14 +18,18 @@ export const metadata = {
 export const dynamic = 'force-dynamic';
 
 interface LoginPageProps {
-  searchParams: Promise<{ email?: string }>;
+  searchParams: Promise<{ email?: string; invite_email?: string; callbackUrl?: string }>;
 }
 
 export default async function LoginPage({ searchParams }: LoginPageProps) {
-  const { email: emailParam } = await searchParams;
+  const { email: emailParam, invite_email: inviteEmailParam, callbackUrl: callbackUrlParam } = await searchParams;
   const locale = await getLocale();
   const t = await getTranslations('auth');
-  const auth0Configured = Boolean(env.AUTH0_CLIENT_ID && env.AUTH0_CLIENT_SECRET && env.AUTH0_ISSUER);
+  const auth0Configured = isAuth0ProviderConfigured(env);
+  const callbackUrl =
+    callbackUrlParam && callbackUrlParam.startsWith('/') && !callbackUrlParam.startsWith('//')
+      ? callbackUrlParam
+      : '/select-tenant';
 
   // Redirect if already authenticated
   const session = await auth();
@@ -53,14 +58,13 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
 
       <div className="w-full max-w-md relative z-10">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-linear-to-br from-primary to-secondary shadow-lg mb-4 animate-pulse">
-            <Sparkles className="h-8 w-8 text-white" />
-          </div>
+          <AppLogo placement="auth" href={null} showText={false} className="mb-4 justify-center" />
           <h1 className="text-3xl font-bold brand-gradient-text mb-2">Welcome to Afenda</h1>
           <p className="text-muted-foreground">Sign in to your workspace</p>
         </div>
         <LoginForm
-          initialEmail={emailParam ?? ''}
+          initialEmail={emailParam ?? inviteEmailParam ?? ''}
+          callbackUrl={callbackUrl}
           showAuth0={auth0Configured}
           showAuth0SignUp={auth0Configured}
           auth0SignUpLabel={t('createAccount')}

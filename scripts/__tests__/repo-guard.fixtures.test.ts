@@ -244,4 +244,132 @@ describe('repo guard fixtures', () => {
     expect(ids).toContain('RG-FEAT-003');
     expect(ids).toContain('RG-FEAT-004');
   });
+
+  it('flags raw Afenda brand assets and direct AfendaIcon usage outside the brand component layer', () => {
+    const root = createFixture({
+      'src/app/page.tsx': [
+        'import { AfendaIcon } from "@/shared/components/brand/AfendaIcon";',
+        '',
+        'export default function Page() {',
+        '  return <AfendaIcon variant="appTileDark" />;',
+        '}',
+        '',
+        'export const rawAsset = "/brand/' + 'afenda/" + "afenda-icon-dark-bg.svg";',
+        '',
+      ].join('\n'),
+    });
+
+    expect(idsFor(root)).toContain('RG-BRAND-001');
+  });
+
+  it('flags AfendaIcon alias imports routed through barrel exports', () => {
+    const root = createFixture({
+      'src/shared/components/brand/index.ts': 'export { AfendaIcon } from "./AfendaIcon";\n',
+      'src/app/page.tsx': [
+        'import { AfendaIcon as BrandMark } from "@/shared/components/brand";',
+        '',
+        'export default function Page() {',
+        '  return <BrandMark variant="inlineDark" />;',
+        '}',
+        '',
+      ].join('\n'),
+    });
+
+    expect(idsFor(root)).toContain('RG-BRAND-001');
+  });
+
+  it('flags AfendaIcon factory calls outside AppLogo component layer', () => {
+    const root = createFixture({
+      'src/app/page.tsx': [
+        'import React from "react";',
+        'import { AfendaIcon as BrandMark } from "@/shared/components/brand/AfendaIcon";',
+        '',
+        'export default function Page() {',
+        '  return React.createElement(BrandMark, { variant: "inline" });',
+        '}',
+        '',
+      ].join('\n'),
+    });
+
+    expect(idsFor(root)).toContain('RG-BRAND-001');
+  });
+
+  it('allows Afenda raw asset paths only in approved brand, docs, and metadata owners', () => {
+    const root = createFixture({
+      'src/shared/components/brand/AfendaIcon.tsx':
+        'export const src = "/brand/' + 'afenda/" + "afenda-icon-transparent.svg";\n',
+      'src/shared/components/brand/Logo.tsx': [
+        'import { AfendaIcon } from "./AfendaIcon";',
+        '',
+        'export function AppLogo() {',
+        '  return <AfendaIcon />;',
+        '}',
+        '',
+      ].join('\n'),
+      'src/docs/runtime/docs-layout.config.ts':
+        'export const docsIcon = "/brand/' + 'afenda/" + "afenda-icon-inline-dark.svg";\n',
+      'src/app/manifest.ts': 'export const appIcon = "/icons/" + "afenda-icon-512-transparent.png";\n',
+    });
+
+    expect(idsFor(root)).not.toContain('RG-BRAND-001');
+  });
+
+  it('flags marketing AppLogo matrix violations for nav/footer', () => {
+    const root = createFixture({
+      'src/app/[locale]/(marketing)/_components/MarketingNav.tsx': [
+        'import { AppLogo } from "@/shared/components/brand/Logo";',
+        'export function MarketingNav() {',
+        '  return <AppLogo placement="nav" size="sm" tagline="Business Machine" />;',
+        '}',
+        '',
+      ].join('\n'),
+      'src/app/[locale]/(marketing)/_sections/MarketingFooter.tsx': [
+        'import { AppLogo } from "@/shared/components/brand/Logo";',
+        'export function MarketingFooter() {',
+        '  return <AppLogo placement="footer" size="md" />;',
+        '}',
+        '',
+      ].join('\n'),
+    });
+
+    expect(idsFor(root)).toContain('RG-BRAND-002');
+  });
+
+  it('allows compliant marketing AppLogo matrix usage', () => {
+    const root = createFixture({
+      'src/app/[locale]/(marketing)/_components/MarketingNav.tsx': [
+        'import { AppLogo } from "@/shared/components/brand/Logo";',
+        'export function MarketingNav() {',
+        '  return <AppLogo placement="nav" size="xl" allowTenantLogo={false} />;',
+        '}',
+        '',
+      ].join('\n'),
+      'src/app/[locale]/(marketing)/_sections/MarketingFooter.tsx': [
+        'import { AppLogo } from "@/shared/components/brand/Logo";',
+        'export function MarketingFooter() {',
+        '  return <AppLogo placement="footer" size="xl" allowTenantLogo={false} />;',
+        '}',
+        '',
+      ].join('\n'),
+    });
+
+    expect(idsFor(root)).not.toContain('RG-BRAND-002');
+  });
+
+  it('flags AppLogo contract drift when nav/footer stop using combined lockup assets', () => {
+    const root = createFixture({
+      'src/shared/components/brand/Logo.tsx': [
+        'const placementConfig = {',
+        '  nav: { renderMode: "mark", variant: "inline" },',
+        '  footer: { renderMode: "mark", variant: "inline" },',
+        '};',
+        'export function AppLogo() {',
+        '  return null;',
+        '}',
+        '',
+      ].join('\n'),
+    });
+
+    expect(idsFor(root)).toContain('RG-BRAND-002');
+  });
 });

@@ -161,7 +161,7 @@ export function UnifiedSidebar({ tenantSlug, permissions: permissionsProp }: Uni
                   <span className="font-semibold text-foreground truncate">{viewHeaderConfig.title}</span>
                 </a>
               ) : (
-                <AppLogo href={basePath || '/'} showText size="md" />
+                <AppLogo href={basePath || '/'} placement="sidebar" showText />
               )}
               {toggleCollapsed && (
                 <Tooltip>
@@ -182,7 +182,7 @@ export function UnifiedSidebar({ tenantSlug, permissions: permissionsProp }: Uni
             </>
           ) : (
             /* Collapsed: just logo icon centered, toggle on hover via peek */
-            <AppLogo href={basePath || '/'} showText={false} size="md" />
+            <AppLogo href={basePath || '/'} placement="sidebar" showText={false} />
           )}
         </div>
 
@@ -218,7 +218,7 @@ export function UnifiedSidebar({ tenantSlug, permissions: permissionsProp }: Uni
                 <span className="font-semibold">{viewHeaderConfig.title}</span>
               </>
             ) : (
-              <AppLogo size="md" href={null} />
+              <AppLogo placement="sidebar" href={null} />
             )}
           </Link>
         </div>
@@ -257,7 +257,7 @@ export function UnifiedSidebar({ tenantSlug, permissions: permissionsProp }: Uni
                     <span>{viewHeaderConfig.title}</span>
                   </>
                 ) : (
-                  <AppLogo href={basePath || '/'} size="md" />
+                  <AppLogo href={basePath || '/'} placement="sidebar" />
                 )}
               </SheetTitle>
             </SheetHeader>

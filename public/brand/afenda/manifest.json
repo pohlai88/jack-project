@@ -1,0 +1,194 @@
+{
+  "source": "Afenda brand guideline local source files promoted into public SVG assets.",
+  "publicBasePath": "/brand/afenda",
+  "note": "Current lynx source master is raster artwork embedded in SVG containers to preserve exact approved geometry. Replace internals only after a true vector master is approved; keep filenames stable.",
+  "assetSets": {
+    "lynx": {
+      "purpose": "Canonical Afenda lynx observer mark for product chrome, app tiles, favicon, mono production, and compact identity placements.",
+      "rule": "Use through AppLogo placement semantics in frontend code. Do not redraw the lynx, beads, or field.",
+      "files": [
+        "afenda-icon-transparent.svg",
+        "afenda-icon-inline-dark.svg",
+        "afenda-icon-full-color.svg",
+        "afenda-icon-dark.svg",
+        "afenda-icon-mono.svg",
+        "afenda-icon-dark-bg.svg",
+        "afenda-icon-light-bg.svg",
+        "afenda-icon-gradient-bg.svg",
+        "afenda-icon-mono-white-on-dark.svg",
+        "afenda-icon-mono-black-on-light.svg"
+      ]
+    },
+    "typography": {
+      "purpose": "Afenda wordmark and typography lockup for editorial, deck, documentation, and partner brand surfaces where the lynx mark is already present or intentionally omitted.",
+      "rule": "Do not use as a functional UI icon. Do not use as the source for lynx/bead artwork.",
+      "files": [
+        "afenda-typography-wordmark-transparent.svg",
+        "afenda-typography-wordmark-mono-black-on-light.svg",
+        "afenda-typography-wordmark-mono-white-on-dark.svg",
+        "afenda-typography-lockup-transparent.svg",
+        "afenda-typography-lockup-mono-black-on-light.svg",
+        "afenda-typography-lockup-mono-white-on-dark.svg"
+      ]
+    },
+    "combined": {
+      "purpose": "Wide Afenda lockups that combine the approved public lynx variants with the typography lockup for brand boards, presentations, docs, and controlled marketing surfaces.",
+      "rule": "The lynx side of each combined asset is embedded from public/brand/afenda lynx assets. Do not derive the lynx from typography proposal artwork because the beads are hidden there.",
+      "files": [
+        "afenda-combined-lockup-transparent.svg",
+        "afenda-combined-lockup-inline-dark.svg",
+        "afenda-combined-lockup-full-color.svg",
+        "afenda-combined-lockup-dark.svg",
+        "afenda-combined-lockup-light-bg.svg",
+        "afenda-combined-lockup-dark-bg.svg",
+        "afenda-combined-lockup-gradient-bg.svg",
+        "afenda-combined-lockup-mono-black-on-light.svg",
+        "afenda-combined-lockup-mono-white-on-dark.svg"
+      ]
+    }
+  },
+  "semanticAliases": {
+    "inline": "afenda-icon-transparent.svg",
+    "inlineDark": "afenda-icon-inline-dark.svg",
+    "appTileLight": "afenda-icon-light-bg.svg",
+    "appTileDark": "afenda-icon-dark-bg.svg",
+    "appTileGradient": "afenda-icon-gradient-bg.svg",
+    "monoBlack": "afenda-icon-mono-black-on-light.svg",
+    "monoWhite": "afenda-icon-mono-white-on-dark.svg",
+    "typographyWordmark": "afenda-typography-wordmark-transparent.svg",
+    "typographyLockup": "afenda-typography-lockup-transparent.svg",
+    "combinedLockup": "afenda-combined-lockup-transparent.svg"
+  },
+  "icons": [
+    {
+      "file": "afenda-icon-transparent.svg",
+      "set": "lynx",
+      "use": "Inline unframed mark for nav, sidebar, footer, docs chrome, and wordmark identity."
+    },
+    {
+      "file": "afenda-icon-inline-dark.svg",
+      "set": "lynx",
+      "use": "Inline unframed dark-surface mark with a white internal field behind the lynx and beads."
+    },
+    {
+      "file": "afenda-icon-full-color.svg",
+      "set": "lynx",
+      "use": "Full current mark reference for controlled light surfaces and legacy previews."
+    },
+    {
+      "file": "afenda-icon-dark.svg",
+      "set": "lynx",
+      "use": "Dark inline reference; use only through placement semantics."
+    },
+    {
+      "file": "afenda-icon-mono.svg",
+      "set": "lynx",
+      "use": "One-color fallback on light print or UI surfaces."
+    },
+    {
+      "file": "afenda-icon-dark-bg.svg",
+      "set": "lynx",
+      "use": "Dark framed app tile for auth, launcher, splash, and dark app-icon surfaces."
+    },
+    {
+      "file": "afenda-icon-light-bg.svg",
+      "set": "lynx",
+      "use": "Light framed app tile for auth, launcher, splash, and app-icon surfaces."
+    },
+    {
+      "file": "afenda-icon-gradient-bg.svg",
+      "set": "lynx",
+      "use": "Gradient framed app tile for favicon, launch, social, and high-signal brand surfaces."
+    },
+    {
+      "file": "afenda-icon-mono-white-on-dark.svg",
+      "set": "lynx",
+      "use": "One-color white fallback on dark print or UI surfaces."
+    },
+    {
+      "file": "afenda-icon-mono-black-on-light.svg",
+      "set": "lynx",
+      "use": "One-color black fallback on light print or UI surfaces."
+    },
+    {
+      "file": "afenda-typography-wordmark-transparent.svg",
+      "set": "typography",
+      "use": "Transparent Afenda wordmark for light neutral editorial and documentation surfaces."
+    },
+    {
+      "file": "afenda-typography-wordmark-mono-black-on-light.svg",
+      "set": "typography",
+      "use": "Black wordmark for single-ink light production surfaces."
+    },
+    {
+      "file": "afenda-typography-wordmark-mono-white-on-dark.svg",
+      "set": "typography",
+      "use": "White wordmark for single-ink dark production surfaces."
+    },
+    {
+      "file": "afenda-typography-lockup-transparent.svg",
+      "set": "typography",
+      "use": "Transparent Afenda typography lockup with supporting line for editorial and deck surfaces."
+    },
+    {
+      "file": "afenda-typography-lockup-mono-black-on-light.svg",
+      "set": "typography",
+      "use": "Black typography lockup for single-ink light production surfaces."
+    },
+    {
+      "file": "afenda-typography-lockup-mono-white-on-dark.svg",
+      "set": "typography",
+      "use": "White typography lockup for single-ink dark production surfaces."
+    },
+    {
+      "file": "afenda-combined-lockup-transparent.svg",
+      "set": "combined",
+      "use": "Wide lockup using the approved transparent lynx and typography lockup for light neutral brand surfaces."
+    },
+    {
+      "file": "afenda-combined-lockup-inline-dark.svg",
+      "set": "combined",
+      "use": "Wide lockup using the approved inline dark lynx for dark neutral brand surfaces."
+    },
+    {
+      "file": "afenda-combined-lockup-full-color.svg",
+      "set": "combined",
+      "use": "Wide full-color lockup for controlled brand previews."
+    },
+    {
+      "file": "afenda-combined-lockup-dark.svg",
+      "set": "combined",
+      "use": "Wide dark lockup for controlled dark brand previews."
+    },
+    {
+      "file": "afenda-combined-lockup-light-bg.svg",
+      "set": "combined",
+      "use": "Wide lockup using the approved light app tile when the mark must carry its own field."
+    },
+    {
+      "file": "afenda-combined-lockup-dark-bg.svg",
+      "set": "combined",
+      "use": "Wide lockup using the approved dark app tile for dark framed identity surfaces."
+    },
+    {
+      "file": "afenda-combined-lockup-gradient-bg.svg",
+      "set": "combined",
+      "use": "Wide lockup using the approved gradient app tile for high-signal launch or social brand surfaces."
+    },
+    {
+      "file": "afenda-combined-lockup-mono-black-on-light.svg",
+      "set": "combined",
+      "use": "Wide black lockup for single-ink light production surfaces."
+    },
+    {
+      "file": "afenda-combined-lockup-mono-white-on-dark.svg",
+      "set": "combined",
+      "use": "Wide white lockup for single-ink dark production surfaces."
+    },
+    {
+      "file": "afenda-brand-guideline.svg",
+      "set": "documentation",
+      "use": "Full current brand guideline board for documentation."
+    }
+  ]
+}

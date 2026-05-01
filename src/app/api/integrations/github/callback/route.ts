@@ -24,6 +24,7 @@ import {
 import { db } from '@/shared/db';
 import * as schema from '@/shared/db/schema';
 import { auth } from '@/shared/lib/auth';
+import { hasPermission } from '@/shared/lib/permissions';
 import { getTenantBySlug } from '@/shared/lib/tenant';
 
 export async function GET(request: Request) {
@@ -75,6 +76,10 @@ export async function GET(request: Request) {
 
   if (!code) {
     return NextResponse.redirect(new URL(`${returnUrl}?error=github_missing_code`, request.url));
+  }
+
+  if (tenantSlug && connectType !== 'user' && !(await hasPermission(tenantSlug, 'admin:integrations'))) {
+    return NextResponse.redirect(new URL(`${returnUrl}?error=github_forbidden`, request.url));
   }
 
   const redirectUri = getGitHubRedirectUri(request);

@@ -1,24 +1,17 @@
+import { createAPIPage } from 'fumadocs-openapi/ui';
 import { Banner } from 'fumadocs-ui/components/banner';
-import {
-  DocsBody,
-  DocsDescription,
-  DocsPage,
-  DocsTitle,
-  MarkdownCopyButton,
-  PageLastUpdate,
-  ViewOptionsPopover,
-} from 'fumadocs-ui/layouts/docs/page';
+import { DocsBody, DocsDescription, DocsPage, DocsTitle, PageLastUpdate } from 'fumadocs-ui/layouts/docs/page';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 
 import { getDocsOgImageUrlPath } from '@/docs/runtime/docs-og.resolver';
+import { openapi } from '@/docs/runtime/docs-openapi.server';
 import { source } from '@/docs/runtime/docs-source.registry';
-import { getDocsPageMarkdownAbsoluteUrl } from '@/docs/runtime/docs-url.server';
-import { DocsPageFeedback } from '@/docs/ui/docs-feedback';
-import { DocsOpenAPIAdapter } from '@/docs/ui/docs-openapi-adapter';
 import { getMDXComponents } from '@/mdx-components';
+
+const DocsOpenAPIPage = createAPIPage(openapi);
 
 export async function generateStaticParams() {
   return source.generateParams('slug', 'locale');
@@ -62,19 +55,20 @@ function isLocalizedFallbackPage(locale: string, absolutePath?: string): boolean
   return !normalizedPath.includes(`/content/i18n/docs/${locale}/`);
 }
 
+function getFallbackBannerId(locale: string, pageUrl: string): string {
+  const stablePageKey = pageUrl.replaceAll(/[^a-zA-Z0-9_-]/g, '-').replaceAll(/-+/g, '-');
+  return `docs-locale-fallback-${locale}-${stablePageKey}`;
+}
+
 export default async function Page(props: DocsPageProps) {
   const { locale, slug } = await props.params;
   const page = source.getPage(slug, locale);
   if (!page) notFound();
 
-  const [markdownAbsoluteUrl, tDocs] = await Promise.all([
-    getDocsPageMarkdownAbsoluteUrl(page.url),
-    getTranslations('docs'),
-  ]);
-
   const title = page.data.title;
   const description = page.data.description;
   const showFallbackNotice = isLocalizedFallbackPage(locale, page.absolutePath);
+  const fallbackNotice = showFallbackNotice ? (await getTranslations('docs'))('fallbackNotice') : null;
   const isFullWidthPage = page.type === 'openapi' ? false : (page.data.full ?? false);
   const lastModified = page.type === 'openapi' ? undefined : page.data.lastModified;
 
@@ -82,21 +76,15 @@ export default async function Page(props: DocsPageProps) {
     <DocsPage toc={page.data.toc} full={isFullWidthPage}>
       <DocsTitle>{title}</DocsTitle>
       {description ? <DocsDescription>{description}</DocsDescription> : null}
-      <div className="not-prose docs-page-actions" aria-label="Documentation page actions">
-        {lastModified instanceof Date ? <PageLastUpdate date={lastModified} /> : null}
-        <div className="docs-page-actions__controls">
-          <MarkdownCopyButton markdownUrl={markdownAbsoluteUrl} />
-          <ViewOptionsPopover markdownUrl={markdownAbsoluteUrl} />
-        </div>
-      </div>
+      {lastModified instanceof Date ? <PageLastUpdate date={lastModified} /> : null}
       <DocsBody>
-        {showFallbackNotice ? (
-          <Banner id={`docs-locale-fallback-${locale}-${page.url}`} changeLayout={false}>
-            {tDocs('fallbackNotice')}
+        {fallbackNotice ? (
+          <Banner id={getFallbackBannerId(locale, page.url)} changeLayout={false}>
+            {fallbackNotice}
           </Banner>
         ) : null}
         {page.type === 'openapi' ? (
-          <DocsOpenAPIAdapter {...page.data.getAPIPageProps()} />
+          <DocsOpenAPIPage {...page.data.getAPIPageProps()} />
         ) : (
           <page.data.body
             components={getMDXComponents({
@@ -105,7 +93,6 @@ export default async function Page(props: DocsPageProps) {
           />
         )}
       </DocsBody>
-      <DocsPageFeedback pageUrl={page.url} pageTitle={title ?? page.url} />
     </DocsPage>
   );
 }

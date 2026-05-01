@@ -12,6 +12,7 @@ import {
 import { db } from '@/shared/db';
 import * as schema from '@/shared/db/schema';
 import { auth } from '@/shared/lib/auth';
+import { hasPermission } from '@/shared/lib/permissions';
 import { getTenantBySlug } from '@/shared/lib/tenant';
 
 export async function GET(request: Request) {
@@ -44,6 +45,10 @@ export async function GET(request: Request) {
 
   if (!code) {
     return NextResponse.redirect(new URL(`${returnUrl}?error=google_missing_code`, request.url));
+  }
+
+  if (tenantSlug && !(await hasPermission(tenantSlug, 'admin:integrations'))) {
+    return NextResponse.redirect(new URL(`${returnUrl}?error=google_forbidden`, request.url));
   }
 
   const tenantCredentials = tenantSlug ? await getExternalOAuthTenantCredentials(tenantSlug, 'googleWorkspace') : null;

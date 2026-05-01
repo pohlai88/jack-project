@@ -1,0 +1,161 @@
+/* ============================================================
+   DESIGN TOKENS
+   Figma reference: Design System / Tokens
+   Frames: Radius, Color, Typography, Elevation, Motion
+
+   Use @theme only for tokens that must create Tailwind utilities.
+   Use palette.css for runtime CSS variables that do not create
+   utilities directly.
+   ============================================================ */
+
+@theme {
+  /* Radius scale */
+  --radius-sm: calc(var(--radius) - 0.25rem);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 0.25rem);
+  --radius-xl: calc(var(--radius) + 0.5rem);
+
+  /* Semantic color map */
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  /* Status semantic colors */
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+  --color-info: hsl(var(--info));
+  --color-info-foreground: hsl(var(--info-foreground));
+
+  /* Domain palette */
+  --color-domain-okr: hsl(var(--domain-okr));
+  --color-domain-learning: hsl(var(--domain-learning));
+  --color-domain-performance: hsl(var(--domain-performance));
+  --color-domain-project: hsl(var(--domain-project));
+  --color-domain-recognition: hsl(var(--domain-recognition));
+  --color-domain-oneonone: hsl(var(--domain-oneonone));
+
+  /* Surface tints */
+  --color-surface-skill: hsl(var(--surface-skill));
+  --color-surface-interest: hsl(var(--surface-interest));
+  --color-surface-okr: hsl(var(--surface-okr));
+  --color-surface-learning: hsl(var(--surface-learning));
+  --color-surface-performance: hsl(var(--surface-performance));
+  --color-surface-project: hsl(var(--surface-project));
+  --color-surface-recognition: hsl(var(--surface-recognition));
+  --color-surface-oneonone: hsl(var(--surface-oneonone));
+  --color-surface-success: hsl(var(--surface-success));
+  --color-surface-warning: hsl(var(--surface-warning));
+  --color-surface-info: hsl(var(--surface-info));
+  --color-surface-destructive: hsl(var(--surface-destructive));
+
+  /* Chart color series */
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  /* Specialty OKLCH colors */
+  --color-skill: oklch(55% 0.18 290);
+  --color-skill-foreground: oklch(98% 0.005 290);
+  --color-interest: oklch(70% 0.16 75);
+  --color-interest-foreground: oklch(20% 0.02 75);
+  --color-assessment-self: oklch(60% 0.12 250);
+  --color-assessment-supervised: oklch(65% 0.16 145);
+  --color-assessment-inferred: oklch(60% 0.14 290);
+
+  /* Layout */
+  --breakpoint-2xl: 87.5rem;
+
+  /* Typography */
+  --font-sans: var(--font-sans, ui-sans-serif, system-ui, 'DM Sans', sans-serif);
+  --font-mono: var(--font-mono, ui-monospace, monospace);
+
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.6;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 1.5;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 1.4;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 1.2;
+
+  --leading-relaxed: 1.75;
+
+  /* Elevation */
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px rgb(0 0 0 / 0.08), 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-md: 0 4px 6px rgb(0 0 0 / 0.06), 0 2px 4px rgb(0 0 0 / 0.04);
+  --shadow-lg: 0 10px 15px rgb(0 0 0 / 0.08), 0 4px 6px rgb(0 0 0 / 0.04);
+  --shadow-xl: 0 20px 25px rgb(0 0 0 / 0.08), 0 8px 10px rgb(0 0 0 / 0.03);
+
+  /* Motion */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-typing: typing 1s steps(3, end) infinite;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes typing {
+    0%,
+    60%,
+    100% {
+      opacity: 1;
+    }
+
+    30% {
+      opacity: 0;
+    }
+  }
+}
+
+/* Canonical layout shell. */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  max-width: 87.5rem;
+}

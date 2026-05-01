@@ -58,5 +58,8 @@ jobs:
       - name: Run i18n readiness report
         run: pnpm i18n:readiness:report
 
+      - name: Verify landing design system
+        run: pnpm verify-landing-design-system
+
       - name: Run lint
         run: pnpm lint

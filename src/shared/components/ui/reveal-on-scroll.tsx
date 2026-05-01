@@ -18,7 +18,8 @@ interface RevealOnScrollProps {
 /**
  * RevealOnScroll — wraps content to fade+slide in when scrolled into view.
  *
- * Uses the CSS classes from globals.css (reveal-hidden / reveal-visible)
+ * Uses the CSS classes from `src/shared/styles/motion.css`
+ * (reveal-hidden / reveal-visible)
  * and the useRevealOnScroll hook (IntersectionObserver).
  */
 export function RevealOnScroll({ children, className, threshold, delay }: RevealOnScrollProps) {

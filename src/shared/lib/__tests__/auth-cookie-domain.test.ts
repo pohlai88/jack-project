@@ -42,10 +42,10 @@ describe('isUnsafeSharedCookieDomain', () => {
     expect(isUnsafeSharedCookieDomain('10.0.0.1')).toBe(true);
   });
 
-  it('flags mDNS .local but not .localhost', () => {
+  it('flags localhost and mDNS .local but not tenant localhost hosts', () => {
     expect(isUnsafeSharedCookieDomain('machine.local')).toBe(true);
-    expect(isUnsafeSharedCookieDomain('acme.localhost')).toBe(false);
-    expect(isUnsafeSharedCookieDomain('localhost')).toBe(false);
+    expect(isUnsafeSharedCookieDomain('afenda.localhost')).toBe(false);
+    expect(isUnsafeSharedCookieDomain('localhost')).toBe(true);
   });
 });
 
@@ -53,11 +53,12 @@ describe('finalizeSharedCookieDomain', () => {
   it('clears unsafe hosts', () => {
     expect(finalizeSharedCookieDomain('vercel.app')).toBeUndefined();
     expect(finalizeSharedCookieDomain('127.0.0.1')).toBeUndefined();
+    expect(finalizeSharedCookieDomain('localhost')).toBeUndefined();
   });
 
   it('keeps safe hosts', () => {
     expect(finalizeSharedCookieDomain('example.com')).toBe('example.com');
-    expect(finalizeSharedCookieDomain('localhost')).toBe('localhost');
+    expect(finalizeSharedCookieDomain('afenda.localhost')).toBe('afenda.localhost');
   });
 });
 
@@ -67,7 +68,7 @@ describe('resolveSharedCookieDomain', () => {
   });
 
   it('falls back to TENANT_ROOT_DOMAIN', () => {
-    expect(resolveSharedCookieDomain(undefined, 'localhost')).toBe('localhost');
+    expect(resolveSharedCookieDomain(undefined, 'localhost')).toBeUndefined();
   });
 
   it('falls back to NEXT_PUBLIC_COOKIE_DOMAIN', () => {
@@ -75,7 +76,7 @@ describe('resolveSharedCookieDomain', () => {
   });
 
   it('falls back to NEXT_PUBLIC_TENANT_ROOT_DOMAIN', () => {
-    expect(resolveSharedCookieDomain(undefined, undefined, undefined, 'localhost')).toBe('localhost');
+    expect(resolveSharedCookieDomain(undefined, undefined, undefined, 'localhost')).toBeUndefined();
   });
 
   it('AUTH_COOKIE_DOMAIN wins over NEXT_PUBLIC_COOKIE_DOMAIN', () => {

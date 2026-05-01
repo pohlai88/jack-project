@@ -156,7 +156,7 @@ export function extractMdxImports(content: string): string[] {
   return imports;
 }
 
-function isAllowedImport(source: string): boolean {
+function isAllowedImport(source: string, _docsType: DocsContentType): boolean {
   return (
     MDX_ALLOWED_IMPORT_PREFIXES.some((prefix) => source === prefix || source.startsWith(prefix)) ||
     source.startsWith('@/shared/components/markdown/Mermaid')
@@ -170,9 +170,9 @@ export function validateMdxImportPolicy(content: string, file: string, docsType:
   if (imports.length === 0) return errors;
 
   for (const source of imports) {
-    if (!isAllowedImport(source)) {
+    if (!isAllowedImport(source, docsType)) {
       errors.push(
-        `${file}: docs type "${docsType}" imports "${source}", which is outside policy (allowed imports: Fumadocs UI and shared Markdown helpers).`,
+        `${file}: docs type "${docsType}" imports "${source}", which is outside policy (allowed imports: package Fumadocs UI/OpenAPI modules and approved shared Markdown helpers).`,
       );
     }
 

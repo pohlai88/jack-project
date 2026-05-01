@@ -57,107 +57,57 @@
   "landing": {
     "hero": {
       "badge": "Nền tảng SaaS gốc AI",
-      "title": {
-        "one": "Xây dựng với ",
-        "two": "Afenda"
-      },
+      "title": "Operational truth, engineered into the system of work.",
       "description": "Triển khai nền tảng SaaS đa tenant có quản trị, với xác thực, luồng công việc AI, tích hợp, quản trị đội ngũ và nền tảng kiểm soát sẵn sàng cho doanh nghiệp.",
       "cta": {
-        "goToDashboard": "Đến bảng điều khiển",
-        "getStarted": "Bắt đầu",
-        "explore": "Khám phá tài liệu"
+        "goToWorkspace": "Go to governed workspace",
+        "requestBriefing": "Request executive briefing",
+        "readBrief": "Read the system brief"
       },
-      "socialProof": {
-        "enterpriseReady": "Sẵn sàng cho doanh nghiệp",
-        "aiNative": "Thiết kế cho AI",
-        "growthFocused": "Tập trung tăng trưởng",
-        "enterpriseDesc": "Cách ly tenant, khả năng kiểm toán và truy cập theo vai trò được tích hợp sẵn.",
-        "aiNativeDesc": "Kết nối trợ lý, luồng tri thức và dữ liệu tích hợp ngay từ đầu.",
-        "growthDesc": "Thiết kế cho các đội cần di chuyển nhanh mà không mất kiểm soát."
-      }
-    },
-    "features": {
-      "title": "Mọi thứ đội ngũ bạn cần để mở rộng",
-      "description": "Nền tảng SaaS thực dụng cho người dùng, đội ngũ, quản trị viên, luồng công việc AI và tích hợp."
-    },
-    "pricing": {
-      "badge": "Gói đơn giản",
-      "title": "Bắt đầu gọn nhẹ, mở rộng có kiểm soát",
-      "description": "Dùng bản demo miễn phí, sau đó điều chỉnh nền tảng cho đội ngũ đang phát triển và triển khai doanh nghiệp.",
-      "mostPopular": "Phổ biến nhất",
-      "perMonth": "/tháng",
-      "plans": {
-        "free": {
-          "name": "Miễn phí",
-          "description": "Tối đa 10 người dùng. Bắt đầu với các tính năng cơ bản.",
-          "cta": "Bắt đầu",
-          "features": {
-            "1": "Tối đa 10 người dùng",
-            "2": "Trợ lý AI (giới hạn)",
-            "3": "Tích hợp GitHub",
-            "4": "Cơ sở tri thức (chỉ đọc)",
-            "5": "Hỗ trợ cộng đồng"
+      "principles": {
+        "identity": "Deterministic workforce identity",
+        "telemetry": "Continuous skills telemetry",
+        "accessEvidence": "Governed access and role evidence",
+        "operatingMemory": "Audit-ready operating memory"
+      },
+      "surface": {
+        "eyebrow": "Operating Surface",
+        "title": "Workforce Control Record",
+        "state": "Governed",
+        "caption": "Designed for executive review, implementation governance, and operational audit continuity.",
+        "controls": {
+          "identity": {
+            "label": "Identity",
+            "value": "Resolved"
+          },
+          "skillsGraph": {
+            "label": "Skills Graph",
+            "value": "Current"
+          },
+          "governance": {
+            "label": "Governance",
+            "value": "Enforced"
           }
         },
-        "pro": {
-          "name": "Pro",
-          "description": "Dành cho đội ngũ đang phát triển cần nhiều năng lực hơn.",
-          "cta": "Bắt đầu",
-          "features": {
-            "1": "Người dùng không giới hạn",
-            "2": "Vai trò & quyền tùy chỉnh",
-            "3": "Webhook & nhật ký kiểm toán",
-            "4": "Cơ sở tri thức đầy đủ",
-            "5": "Hỗ trợ ưu tiên"
+        "evidence": {
+          "accessControl": {
+            "title": "Access control",
+            "description": "Roles, permissions, and team boundaries remain explicit."
+          },
+          "workforceGraph": {
+            "title": "Workforce graph",
+            "description": "People, capabilities, knowledge, and execution signals connect into one operating view."
+          },
+          "evidenceLayer": {
+            "title": "Evidence layer",
+            "description": "Decisions and changes become traceable records, not scattered narrative."
           }
-        },
-        "enterprise": {
-          "name": "Enterprise",
-          "description": "Dành cho tổ chức có nhu cầu nâng cao.",
-          "cta": "Liên hệ",
-          "features": {
-            "1": "Mọi thứ trong Pro",
-            "2": "SSO (Auth0)",
-            "3": "Tích hợp tùy chỉnh",
-            "4": "Cam kết SLA",
-            "5": "Hỗ trợ chuyên dụng"
-          }
-        }
-      }
-    },
-    "faq": {
-      "title": "Câu hỏi thường gặp",
-      "items": {
-        "try": {
-          "question": "Afenda có thể dùng thử miễn phí không?",
-          "answer": "Có. Môi trường demo hoạt động đầy đủ mà không yêu cầu thanh toán. Khám phá mọi tính năng với dữ liệu mẫu."
-        },
-        "startData": {
-          "question": "Tôi cần dữ liệu gì để bắt đầu?",
-          "answer": "Chỉ cần danh sách thành viên đội. Bạn có thể nhập CSV, mời thủ công hoặc dùng quy trình nhập hàng loạt."
-        },
-        "existingTools": {
-          "question": "Nó có hoạt động với công cụ hiện có của chúng tôi không?",
-          "answer": "Nền tảng bao gồm GitHub sẵn và có khung tích hợp linh hoạt cho webhook và bộ đồng bộ tùy chỉnh."
-        },
-        "assistant": {
-          "question": "Trợ lý AI hoạt động như thế nào?",
-          "answer": "AI sử dụng cơ sở tri thức và dữ liệu người dùng của bạn để trả lời câu hỏi, tìm kiếm tài liệu và cung cấp trợ giúp theo ngữ cảnh. Hỗ trợ mô hình OpenAI và Anthropic."
-        },
-        "security": {
-          "question": "Dữ liệu của tôi có an toàn không?",
-          "answer": "Có. Nền tảng được thiết kế đa tenant, với cách ly dữ liệu tenant, xác thực doanh nghiệp và kiểm soát truy cập theo quyền."
-        },
-        "migration": {
-          "question": "Tôi có thể di chuyển dữ liệu hiện có không?",
-          "answer": "Có. Bạn có thể nhập dữ liệu đội từ CSV, và engine tích hợp có thể đồng bộ hệ thống bên ngoài theo lịch."
         }
       }
     },
     "nav": {
-      "features": "Tính năng",
-      "pricing": "Giá",
-      "docs": "Tài liệu",
+      "primaryNavigation": "Primary navigation",
+      "mobileNavigation": "Mobile navigation",
       "language": "Ngôn ngữ",
       "selectLanguage": "Chọn ngôn ngữ",
       "theme": "Giao diện",
@@ -168,187 +118,749 @@
         "dark": "Tối",
         "system": "Hệ thống"
       },
-      "bookDemo": "Đặt lịch demo"
+      "items": {
+        "system": "System",
+        "surface": "Surface",
+        "domains": "Domains",
+        "guarantees": "Guarantees",
+        "docs": "Docs"
+      }
     },
-    "howItWorks": {
-      "title": "Cách hoạt động",
-      "description": "Đưa đội của bạn vào hoạt động trong ba bước đơn giản.",
-      "steps": {
-        "configure": {
-          "title": "Triển khai & cấu hình",
-          "description": "Triển khai mẫu, tạo tenant, cấu hình thương hiệu, vai trò và kết nối nhà cung cấp AI."
+    "heroPreview": {
+      "ariaLabel": "Trích xuất sự thật vận hành chuẩn",
+      "diagram": {
+        "eyebrow": "Truth resolution console",
+        "title": "Signals become operating truth after resolution.",
+        "subtitle": "Afenda binds operational movement to identity, evaluates it against policy, and commits only the record the business can defend.",
+        "trace": {
+          "label": "Resolution state",
+          "mode": "Governed",
+          "state": "Resolved"
         },
-        "invite": {
-          "title": "Mời người dùng",
-          "description": "Mời thành viên đội, gán vai trò và để họ thiết lập hồ sơ và tích hợp."
+        "connectors": {
+          "normalize": "Normalize",
+          "govern": "Govern",
+          "commit": "Commit",
+          "expose": "Expose"
         },
-        "launch": {
-          "title": "Ra mắt với AI",
-          "description": "Kết nối cơ sở tri thức, bật trợ lý AI, cấu hình webhook và đi vào hoạt động."
+        "flowLabel": "Signal / Boundary / Policy / Canonical Record / Evidence",
+        "proofTags": {
+          "nonBypassable": "Non-bypassable",
+          "identityBound": "Identity-bound",
+          "auditReady": "Audit-ready"
+        },
+        "stages": {
+          "signals": {
+            "title": "Operational signals",
+            "subtitle": "Messy workforce movement enters with context.",
+            "items": {
+              "identity": "Identity",
+              "skills": "Skills",
+              "activity": "Activity",
+              "knowledge": "Knowledge"
+            }
+          },
+          "boundary": {
+            "title": "Controlled boundary",
+            "subtitle": "Only governed input crosses the control gate.",
+            "note": "Tenant scope, authority, and source reliability are checked before state can move."
+          },
+          "core": {
+            "title": "Resolution core",
+            "subtitle": "Deterministic control layer",
+            "items": {
+              "identityBinding": "Identity binding",
+              "policyResolution": "Policy resolution",
+              "evidenceCommit": "Evidence commit"
+            }
+          },
+          "record": {
+            "title": "Canonical record",
+            "subtitle": "Resolved state committed for operation.",
+            "cardTitle": "Canonical record",
+            "cardSubtitle": "Resolved. Governed. Trusted.",
+            "fields": {
+              "recordId": {
+                "term": "Record ID",
+                "value": "CR-7F3A-9821"
+              },
+              "identity": {
+                "term": "Identity",
+                "value": "A1F9.7C2E.4D88"
+              },
+              "skills": {
+                "term": "Skills",
+                "value": "12 verified"
+              },
+              "policyOutcome": {
+                "term": "Policy outcome",
+                "value": "Allowed"
+              },
+              "evidenceHash": {
+                "term": "Evidence hash",
+                "value": "4f7c...9e21"
+              }
+            }
+          },
+          "audit": {
+            "title": "Audit & visibility",
+            "subtitle": "Proof is produced with the record.",
+            "items": {
+              "proof": {
+                "title": "Proof",
+                "body": "Verifiable evidence and outcomes"
+              },
+              "monitoring": {
+                "title": "Monitoring",
+                "body": "Real-time oversight and alerts"
+              },
+              "trace": {
+                "title": "Trace",
+                "body": "End-to-end lineage and audit trail"
+              }
+            }
+          }
+        }
+      },
+      "eyebrow": "Bề mặt sự thật vận hành",
+      "title": "Một bản ghi chưa được chấp nhận cho đến khi danh tính, chính sách, bằng chứng và trạng thái thống nhất.",
+      "subtitle": "Bề mặt này không phải là bản xem trước bảng điều khiển. Đây là trích xuất chính thức về cách Afenda chuyển chuyển động vận hành thành một sự thật kinh doanh chuẩn có thể vận hành, quản trị và kiểm toán.",
+      "trace": {
+        "metaLabel": "Dấu vết sự thật",
+        "id": "TRUTH-TRACE / 7W1H",
+        "modeLabel": "Chế độ",
+        "mode": "Được quản trị",
+        "stateLabel": "Trạng thái",
+        "state": "Đã phân giải"
+      },
+      "ledger": {
+        "indexLabel": "01 / Sổ kiểm soát",
+        "sequence": "Có thứ tự",
+        "title": "Sổ kiểm soát từ sự kiện đến bản ghi",
+        "description": "Mỗi sự kiện vận hành phải vượt qua ràng buộc danh tính, đánh giá chính sách và gắn bằng chứng trước khi được phép dịch chuyển trạng thái kinh doanh.",
+        "rows": {
+          "eventReceived": {
+            "code": "EVT-2401",
+            "label": "Sự kiện vận hành được nhận từ nguồn được quản trị",
+            "status": "Đã chấp nhận",
+            "time": "09:41:12"
+          },
+          "identityBound": {
+            "code": "IDN-7W1H",
+            "label": "Tác nhân, tenant, ngữ cảnh, quyền sở hữu và thời điểm đã được ràng buộc",
+            "status": "Đã ràng buộc",
+            "time": "09:41:13"
+          },
+          "policyApplied": {
+            "code": "POL-GOV",
+            "label": "Chính sách kiểm soát được đánh giá trước khi chuyển trạng thái",
+            "status": "Đã kiểm soát",
+            "time": "09:41:14"
+          },
+          "recordResolved": {
+            "code": "REC-CANON",
+            "label": "Bản ghi chuẩn được phân giải cùng chuỗi bằng chứng",
+            "status": "Đã xác minh",
+            "time": "09:41:16"
+          }
+        }
+      },
+      "resolved": {
+        "indexLabel": "02 / Bản ghi đã phân giải",
+        "title": "Trạng thái vận hành đã phân giải",
+        "description": "Afenda không thêm một lớp diễn giải khác. Afenda phân giải trạng thái mà doanh nghiệp có thể vận hành, bảo vệ và đối soát.",
+        "recordLabel": "Bản ghi chuẩn",
+        "state": "Một sự thật đang hoạt động",
+        "body": "Trạng thái được chấp nhận được giới hạn theo tenant, ràng buộc với tác nhân, kiểm thử bằng chính sách và kết nối với bằng chứng cần thiết để giải thích vì sao nó tồn tại."
+      },
+      "evidence": {
+        "record": {
+          "term": "Bản ghi",
+          "value": "Đối tượng trạng thái chuẩn"
+        },
+        "tenantBoundary": {
+          "term": "Ranh giới",
+          "value": "Theo phạm vi tenant và nhận biết quyền sở hữu"
+        },
+        "decisionPath": {
+          "term": "Đường quyết định",
+          "value": "Dấu vết chính sách, ngoại lệ và bộ phân giải"
+        },
+        "auditPosture": {
+          "term": "Tư thế kiểm toán",
+          "value": "Được tạo ra bởi vận hành, không tái dựng về sau"
+        }
+      },
+      "obligations": {
+        "title": "Nghĩa vụ doanh nghiệp",
+        "items": {
+          "economic": {
+            "term": "Kinh tế",
+            "value": "Đã đối soát"
+          },
+          "operational": {
+            "term": "Vận hành",
+            "value": "Có thể thực thi"
+          },
+          "technical": {
+            "term": "Kỹ thuật",
+            "value": "Có giới hạn"
+          },
+          "audit": {
+            "term": "Kiểm toán",
+            "value": "Có thể bảo vệ"
+          }
+        }
+      },
+      "consequence": {
+        "label": "Hệ quả kinh doanh",
+        "title": "Không có câu chuyện cứu vãn sau khi sự việc đã xảy ra.",
+        "body": "Hệ thống buộc sự thật được tạo ra tại thời điểm vận hành, để tài chính, kiểm toán, quản lý và thực thi làm việc từ cùng một bản ghi đã phân giải."
+      }
+    },
+    "system": {
+      "eyebrow": "System definition",
+      "title": "Afenda is not a feature surface. It is the canonical layer beneath operational judgment.",
+      "description": "The product exists to prevent the familiar enterprise failure: useful activity spread across tools, but no single accountable record strong enough for decision, audit, and control.",
+      "points": {
+        "recordDiscipline": {
+          "label": "Record discipline",
+          "title": "Every operational event resolves into a governed source of truth.",
+          "body": "Afenda treats documents, entities, actions, approvals, and state transitions as durable business facts, not as disconnected interface activity."
+        },
+        "evidenceBinding": {
+          "label": "Evidence binding",
+          "title": "The system keeps proof close to the decision it supports.",
+          "body": "A decision without lineage is only a claim. Afenda binds actor, time, tenant, source, reason, and resulting state into a traceable operating layer."
+        },
+        "resolutionControl": {
+          "label": "Resolution control",
+          "title": "Conflicting activity is resolved by policy, not by memory.",
+          "body": "When systems disagree, the operating model needs precedence, auditability, and controlled mutation. Afenda is built around that discipline."
         }
       }
     },
-    "featureTabs": {
-      "users": {
-        "label": "Dành cho Người dùng",
-        "description": "Mọi thứ người dùng cần để bắt đầu và duy trì năng suất.",
-        "features": {
-          "profile": {
-            "title": "Hồ sơ",
-            "description": "Hồ sơ người dùng đầy đủ với avatar và tích hợp GitHub."
+    "topology": {
+      "eyebrow": "Kiến trúc hệ thống",
+      "title": "Một luồng duy nhất từ tín hiệu thô đến bản ghi có thể bảo vệ.",
+      "description": "Afenda không phân tán sự thật khắp công cụ. Đầu vào được chuẩn hóa, đánh giá trong lõi phân giải và phát ra trạng thái chuẩn với khả năng kiểm toán.",
+      "thesis": "Nếu tổ chức không vẽ được đường này trên một sơ đồ, không có một sự thật vận hành duy nhất — chỉ những cách hiểu tranh luận.",
+      "diagram": {
+        "label": "Kiến trúc điều khiển",
+        "title": "Chuẩn hóa → phân giải → cam kết",
+        "state": "Bất biến kiến trúc"
+      },
+      "inputs": {
+        "title": "Đầu vào vận hành",
+        "items": {
+          "identity": {
+            "title": "Tín hiệu định danh",
+            "body": "Tác nhân, tenant và ngữ cảnh sở hữu là sự kiện hạng nhất."
           },
-          "assistant": {
-            "title": "Trợ lý AI",
-            "description": "Trò chuyện ngôn ngữ tự nhiên được hỗ trợ bởi OpenAI hoặc Anthropic."
+          "skills": {
+            "title": "Đồ thị năng lực",
+            "body": "Kỹ năng, trình độ và cơ cấu nhân sự là thuộc tính được quản trị."
           },
-          "knowledgeBase": {
-            "title": "Cơ sở tri thức",
-            "description": "Tìm kiếm và duyệt tài liệu và nội dung tổ chức."
+          "activity": {
+            "title": "Telemetry thực thi",
+            "body": "Sự kiện quy trình, tài liệu và HRIS có nguồn và dấu thời gian."
           },
-          "directory": {
-            "title": "Danh bạ",
-            "description": "Tìm và kết nối với thành viên đội."
+          "knowledge": {
+            "title": "Đối tượng tri thức",
+            "body": "Hiện vật và bản ghi học tập gắn với phạm vi và chính sách."
           }
         }
       },
-      "team": {
-        "label": "Dành cho Đội",
-        "description": "Công cụ cộng tác và hiển thị cho đội đang phát triển.",
-        "features": {
-          "peopleDirectory": {
-            "title": "Danh bạ nhân sự",
-            "description": "Duyệt và tìm thành viên đội với bộ lọc."
+      "connectors": {
+        "normalize": "Chuẩn hóa",
+        "resolve": "Phân giải"
+      },
+      "controls": {
+        "title": "Lõi phân giải",
+        "items": {
+          "identityBinding": {
+            "title": "Ràng buộc định danh",
+            "body": "Mỗi chuyển trạng thái gắn tác nhân và tenant trước khi áp chính sách."
           },
-          "orgChart": {
-            "title": "Sơ đồ tổ chức",
-            "description": "Trực quan hóa cấu trúc đội và quan hệ báo cáo."
+          "policyResolution": {
+            "title": "Phân giải chính sách",
+            "body": "Thẩm quyền, thứ tự ưu tiên và quy tắc quyết định trạng thái có thể thay đổi."
           },
-          "activityFeed": {
-            "title": "Dòng hoạt động",
-            "description": "Cập nhật thời gian thực về hoạt động đội và nền tảng."
-          },
-          "webhooks": {
-            "title": "Webhook",
-            "description": "Đẩy sự kiện tới hệ thống bên ngoài khi có thay đổi."
+          "evidenceCommit": {
+            "title": "Cam kết bằng chứng",
+            "body": "Bằng chứng đính kèm khi ghi — không dựng lại sau."
           }
         }
       },
-      "admin": {
-        "label": "Quản trị",
-        "description": "Toàn quyền kiểm soát cho quản trị viên quản lý nền tảng.",
-        "features": {
-          "memberManagement": {
-            "title": "Quản lý thành viên",
-            "description": "Mời, quản lý và vô hiệu hóa thành viên đội."
+      "outputs": {
+        "title": "Sự thật phát ra",
+        "items": {
+          "record": {
+            "label": "Bản ghi chuẩn",
+            "value": "Một trạng thái đã cam kết để doanh nghiệp vận hành."
           },
-          "roles": {
-            "title": "Vai trò & Quyền",
-            "description": "PBAC chi tiết với gói vai trò tùy chỉnh."
+          "visibility": {
+            "label": "Hiển thị được quản trị",
+            "value": "Góc nhìn theo vai trên cùng bản ghi nền."
           },
-          "auditLogs": {
-            "title": "Nhật ký kiểm toán",
-            "description": "Lưu vết đầy đủ mọi hành động trên nền tảng."
-          },
-          "settings": {
-            "title": "Cài đặt",
-            "description": "Cấu hình cấp tenant, thương hiệu và feature flags."
+          "audit": {
+            "label": "Đường mòn kiểm toán",
+            "value": "Lộ trình từ tín hiệu đến trạng thái được chấp nhận."
           }
         }
       },
-      "ai": {
-        "label": "AI & Tích hợp",
-        "description": "Kết nối AI và hệ thống bên ngoài vào nền tảng của bạn.",
-        "features": {
-          "chat": {
-            "title": "Trò chuyện AI",
-            "description": "Tìm kiếm hội thoại trên toàn bộ dữ liệu của bạn."
+      "consequence": {
+        "label": "Hệ quả thiết kế",
+        "title": "Không thẩm quyền song song.",
+        "body": "Nếu kênh có thể thay đổi sự thật doanh nghiệp mà không đi qua cột sống này, Afenda cố ý không coi là được quản trị."
+      }
+    },
+    "surface": {
+      "eyebrow": "Operational surface",
+      "title": "The interface is reduced to what the organization must know, prove, and control.",
+      "description": "No decorative dashboards. No synthetic theatre. The operational surface exists to expose canonical records, policy decisions, evidence links, and state movement."
+    },
+    "integrationReality": {
+      "eyebrow": "Thực tế tích hợp",
+      "title": "Hệ thống bên ngoài cung cấp tín hiệu. Afenda giữ thẩm quyền.",
+      "description": "ERP, HRIS, định danh và cộng tác vẫn là nguồn — không phải sổ cái sự thật cạnh tranh. Mọi luồng vào đi qua phạm vi định danh, chuẩn hóa, quản trị và kỷ luật cam kết.",
+      "quote": "Tích hợp chứng minh điều gì đã qua ranh giới — không phải doanh nghiệp được phép tin gì.",
+      "panel": {
+        "label": "Bề mặt kiểm soát tích hợp",
+        "title": "Từ tín hiệu bên ngoài đến bản ghi giới hạn",
+        "state": "Ranh giới được thực thi",
+        "traceLine": "tín hiệu bên ngoài → ranh giới kiểm soát → bản ghi chuẩn"
+      },
+      "interfaces": {
+        "identity": {
+          "title": "Mặt phẳng định danh",
+          "body": "SSO, HR master, nhà thầu và principal liên bang ánh xạ định danh nhân sự theo tenant."
+        },
+        "systems": {
+          "title": "Connector hệ thống ghi nhận",
+          "body": "Workday, SAP, BambooHR, ATS, LMS, ticketing — nhập như nguồn được quản trị có dấu thời gian."
+        },
+        "knowledge": {
+          "title": "Tri thức & tài liệu",
+          "body": "Đối tượng Confluence, Notion, Drive đăng ký với sở hữu, độ nhạy và thẻ chính sách."
+        },
+        "governance": {
+          "title": "Thực thi quản trị",
+          "body": "Gói quy tắc, chuỗi phê duyệt, break-glass và phát hiện trôi dạt trước khi trạng thái tiến."
+        }
+      },
+      "boundary": {
+        "index": "03 / Ranh giới thực thi",
+        "title": "Trình tự không thể bỏ qua",
+        "description": "Mỗi giai đoạn bắt buộc. Bỏ qua giai đoạn không phải tùy chọn cấu hình — đó là hợp đồng tích hợp thất bại.",
+        "meta": "trình tự thực thi · không bypass",
+        "steps": {
+          "connect": {
+            "label": "Kết nối",
+            "value": "Connector xác thực với bí mật least-privilege và phạm vi rõ ràng."
           },
-          "vectorSearch": {
-            "title": "Tìm kiếm vector",
-            "description": "Tìm kiếm ngữ nghĩa được hỗ trợ bởi embedding pgvector."
+          "normalize": {
+            "label": "Chuẩn hóa",
+            "value": "Ánh xạ schema, khử trùng lặp và cờ xung đột trước chính sách."
           },
-          "githubIntegration": {
-            "title": "Tích hợp GitHub",
-            "description": "Đồng bộ hồ sơ người dùng và hoạt động từ GitHub."
+          "govern": {
+            "label": "Quản trị",
+            "value": "Chính sách, phê duyệt và ngoại lệ được đánh giá kèm yêu cầu bằng chứng."
           },
-          "integrationEngine": {
-            "title": "Engine tích hợp",
-            "description": "Kết nối bất kỳ hệ thống bên ngoài nào bằng khung đồng bộ."
+          "commit": {
+            "label": "Cam kết",
+            "value": "Bản ghi chuẩn được ghi với dòng dõi bất biến."
           }
+        }
+      },
+      "record": {
+        "label": "Biên lai tích hợp",
+        "title": "BOUNDARY-CLOSED",
+        "description": "Bản ghi này chứng nhận hoạt động bên ngoài đi qua toàn bộ chuỗi thực thi trước khi thay đổi sự thật doanh nghiệp.",
+        "footer": "Hash dòng dõi · lịch xoay · chứng thực phạm vi trong hồ sơ",
+        "tagline": "giữ nguồn · ranh giới thực thi · trạng thái đã phân giải",
+        "fields": {
+          "source": {
+            "term": "Hệ thống nguồn",
+            "value": "Workday HCM (prod-west)"
+          },
+          "contract": {
+            "term": "Hợp đồng connector",
+            "value": "WD-HCM-2025.3 · đã ký"
+          },
+          "boundary": {
+            "term": "Điểm kiểm ranh giới",
+            "value": "Định danh ✓ · Chính sách ✓ · Bằng chứng ✓"
+          },
+          "result": {
+            "term": "Kết quả đã cam kết",
+            "value": "Bản ghi nhân sự chuẩn được cập nhật kèm gói kiểm toán"
+          }
+        }
+      },
+      "consequence": {
+        "label": "Quy tắc vận hành",
+        "title": "Tích hợp không có cửa sau tới sự thật.",
+        "body": "Nếu nhà cung cấp hoặc luồng ngầm không trình được cùng biên lai, nó không thuộc mô hình vận hành được quản trị — bất kể tiện UI."
+      }
+    },
+    "resolutionStages": {
+      "input": {
+        "step": "Đầu vào",
+        "title": "Sự kiện vào như sự kiện mang bằng chứng.",
+        "description": "Tài liệu, hành động, tích hợp, định danh và thay đổi trạng thái được thu đủ ngữ cảnh để xét sau."
+      },
+      "control": {
+        "step": "Kiểm soát",
+        "title": "Chính sách quyết định thẩm quyền và thứ tự.",
+        "description": "Hệ thống đánh giá phạm vi tenant, thẩm quyền vai trò, độ tin cậy nguồn và ràng buộc quy tắc trước khi cho phép thay đổi trạng thái."
+      },
+      "truth": {
+        "step": "Sự thật",
+        "title": "Bản ghi chuẩn được phân giải và lưu giữ.",
+        "description": "Trạng thái kết quả có thể kiểm tra, kiểm toán và dùng xuyên tổ chức mà không cần giải thích thủ công."
+      }
+    },
+    "domains": {
+      "eyebrow": "Capability domains",
+      "title": "Capabilities are expressed as enterprise controls, not feature cards.",
+      "description": "Each domain answers one question: what can the organization rely on when operational pressure, system disagreement, and audit scrutiny arrive together?"
+    },
+    "capabilities": {
+      "canonicalRecords": {
+        "title": "Canonical records",
+        "body": "Operational entities, documents, events, and transitions are normalized into accountable records with stable ownership, scope, and identity.",
+        "proof": "Reduces duplicate truth surfaces and prevents record drift across teams, tools, and tenants."
+      },
+      "evidenceBinding": {
+        "title": "Evidence binding",
+        "body": "Every material state carries the proof required to defend it: source, actor, timestamp, reason, tenant boundary, and decision path.",
+        "proof": "Turns operational claims into inspectable facts before audit pressure arrives."
+      },
+      "governanceControls": {
+        "title": "Governance controls",
+        "body": "Policy, role, approval, precedence, and exception handling are treated as first-class controls rather than implementation comments.",
+        "proof": "Keeps operational change inside a controlled spine instead of relying on informal process memory."
+      },
+      "auditContinuity": {
+        "title": "Audit continuity",
+        "body": "The system preserves the path from original event to current state, including reversals, overrides, and resolution authority.",
+        "proof": "Supports executive review, regulatory inspection, and internal accountability without narrative reconstruction."
+      },
+      "operationalResolution": {
+        "title": "Operational resolution",
+        "body": "When incoming facts conflict, Afenda resolves them through declared precedence, tenant scope, and evidence quality.",
+        "proof": "Prevents the business from manually negotiating which system should be believed."
+      },
+      "enterpriseIntegration": {
+        "title": "Enterprise integration",
+        "body": "External systems connect as sources and consumers of truth, not as uncontrolled parallel ledgers.",
+        "proof": "Allows ERP, identity, document, and workflow systems to participate without fragmenting authority."
+      }
+    },
+    "commercial": {
+      "eyebrow": "Thế mạnh thương mại",
+      "title": "Sẵn sàng mua sắm — không làm xiếc thương mại.",
+      "description": "Afenda căn chỉnh pháp lý, bảo mật và triển khai trên cùng sự kiện kiến trúc: thẩm quyền giới hạn, giữ bằng chứng và một thế bản ghi chuẩn.",
+      "cta": {
+        "primary": "Đặt lịch rà soát lãnh đạo",
+        "secondary": "Mở hồ sơ hệ thống"
+      },
+      "panel": {
+        "label": "Khía cạnh rà soát",
+        "title": "Do diligence thực sự kiểm gì",
+        "state": "Tài liệu đã thống nhất"
+      },
+      "review": {
+        "governance": {
+          "title": "Hiện vật quản trị",
+          "body": "Ma trận kiểm soát, khung DPIA, mô hình phân tách, bản đồ lưu trữ — xuất từ cấu hình thực."
+        },
+        "implementation": {
+          "title": "Sổ tay triển khai",
+          "body": "Onboarding theo pha có rollback rõ ràng, cổng kiểm tra và tiêu chí thành công gắn bản ghi chuẩn."
+        },
+        "security": {
+          "title": "Bằng chứng bảo mật",
+          "body": "Xoay bí mật, SSO, dòng dõi kiểm toán bất biến, định tuyến bất thường được ghi — không chỉ khẳng định."
+        },
+        "commercial": {
+          "title": "Cấu trúc thương mại",
+          "body": "Dung lượng, cấp hỗ trợ và giới hạn trách nhiệm đối chiếu điều khiển thực tế — không SKU trên kệ."
+        }
+      },
+      "process": {
+        "index": "04 / Nhịp thương mại",
+        "title": "Từ cuộc trò chuyện đầu đến sản xuất được quản trị",
+        "description": "Mỗi bước tạo hiện vật có chữ ký. Không bước nào dựa vào lời nói suông.",
+        "steps": {
+          "scope": {
+            "label": "Phạm vi",
+            "value": "Liệt kê mặt sự thật và hợp đồng tích hợp."
+          },
+          "validate": {
+            "label": "Xác thực",
+            "value": "Tenant pilot tuân đủ chồng chính sách — không tắt demo."
+          },
+          "align": {
+            "label": "Căn chỉnh",
+            "value": "Pháp luật, IT và điều hành ký cùng gói kiến trúc."
+          },
+          "commit": {
+            "label": "Cam kết",
+            "value": "Triển khai sản xuất với xác minh bằng chứng liên tục."
+          }
+        }
+      },
+      "record": {
+        "label": "Bản ghi diligence",
+        "title": "SIGN-OFF ACTIVE",
+        "description": "Bảng theo dõi sự căn chỉnh hợp đồng giữa điều khiển được marketing và cấu hình đã triển khai.",
+        "footer": "Hồ sơ khóa phiên bản · nhật ký thay đổi dưới quyền truy cập nội bộ",
+        "fields": {
+          "model": {
+            "term": "Mô hình triển khai",
+            "value": "Mặt phẳng điều khiển đơn-tenant · cô lập tải đa-tenant"
+          },
+          "basis": {
+            "term": "Cơ sở trách nhiệm",
+            "value": "Lộ trình SOC2 Type II · phụ lụu uptime & cư trú dữ liệu"
+          },
+          "review": {
+            "term": "Gói xem xét HĐQT",
+            "value": "v2025-Q2 · đã lưu hành"
+          },
+          "outcome": {
+            "term": "Kết quả hiện tại",
+            "value": "Chờ chữ ký đối ứng CIO · không có lỗ hổng kiểm soát"
+          }
+        }
+      },
+      "consequence": {
+        "label": "Hệ quả thương mại",
+        "title": "Hợp đồng trích dẫn kiến trúc — không phải slide.",
+        "body": "Khi tranh chấp hoặc kiểm toán, hai bên lần theo nghĩa vụ tới điều khiển được liệt kê và bản ghi bất biến — không phải tuyên bố marketing diễn giải lại."
+      }
+    },
+    "guarantees": {
+      "eyebrow": "Evidence / guarantees",
+      "title": "Credibility comes from what the system can prove under pressure.",
+      "description": "The guarantee is not speed, dashboards, or generic automation. The guarantee is that the organization can inspect how an operational state became true.",
+      "items": {
+        "canonicalState": {
+          "title": "One canonical state",
+          "body": "The business does not need three reports and a meeting to decide which record is true."
+        },
+        "decisionPath": {
+          "title": "Traceable decision path",
+          "body": "Every material decision can be followed through actor, source, policy, reason, and resulting state."
+        },
+        "tenantBounded": {
+          "title": "Tenant-bounded records",
+          "body": "Records remain scoped to the correct tenant, legal entity, operating boundary, and authority model."
+        },
+        "auditReady": {
+          "title": "Audit-ready evidence",
+          "body": "Evidence is retained as part of the operational record, not collected later as a separate rescue exercise."
+        },
+        "controlledChange": {
+          "title": "Controlled change",
+          "body": "Overrides, exceptions, and reversals move through visible governance rather than hidden operational shortcuts."
+        },
+        "integrationDiscipline": {
+          "title": "Integration discipline",
+          "body": "Connected systems exchange truth through controlled boundaries instead of becoming competing authorities."
         }
       }
     },
-    "socialProofSection": {
-      "title": "Được tin dùng bởi các đội trên toàn thế giới",
-      "description": "Xem cách các tổ chức sử dụng Afenda để tự động hóa và mở rộng quy trình làm việc.",
-      "roleAt": "{role} tại {company}",
-      "sponsorsTitle": "Đối tác & Nhà tài trợ",
-      "sponsorLabel": "Đối tác {index}",
-      "comingSoon": "Sắp ra mắt",
-      "sponsorCta": "Quan tâm tài trợ Afenda?",
-      "sponsorCtaLink": "Liên hệ",
-      "testimonials": {
-        "1": {
-          "role": "Phó Chủ tịch Kỹ thuật",
-          "text": "Afenda đã thay đổi cách chúng tôi xây dựng và tự động hóa quy trình. Mọi thứ giờ minh bạch và dựa trên dữ liệu."
+    "evidence": {
+      "eyebrow": "Kiến trúc bằng chứng",
+      "title": "Niềm tin là thuộc tính của bản ghi — không phải của slide.",
+      "description": "Afenda làm bằng chứng có cấu trúc: ràng buộc định danh, đánh giá chính sách, cam kết chuẩn và khả năng kiểm toán là giai đoạn hiển thị, không phải chú thích thêm.",
+      "quote": "Nếu không lan man được, đó không phải bằng chứng — đó là ý kiến.",
+      "panel": {
+        "label": "Chồng bằng chứng",
+        "title": "Bốn đảm bảo không thể rút gọn trước khi công nhận sự thật",
+        "state": "Mọi giai đoạn đã đạt"
+      },
+      "items": {
+        "identity": {
+          "title": "Ràng buộc định danh",
+          "body": "Tác nhân, tenant, phiên, dấu thời gian và phạm vi được khẳng định trước khi diễn giải."
         },
-        "2": {
-          "role": "Quản lý Nhân sự",
-          "text": "Trợ lý AI và engine tích hợp đã giúp đội chúng tôi tiết kiệm hàng tuần thời gian thiết lập. Việc ra mắt SaaS chưa bao giờ nhanh hơn thế."
+        "policy": {
+          "title": "Cổng chính sách",
+          "body": "Quy tắc, phê duyệt, miễn trừ và break-glass được đánh giá và ghi lý do."
         },
-        "3": {
-          "role": "Giám đốc Tuyển dụng",
-          "text": "Cuối cùng có một nền tảng để quản lý tập trung vào tăng trưởng thay vì bảng tính. Tích hợp OKR rất mượt mà."
+        "record": {
+          "title": "Cam kết chuẩn",
+          "body": "Chuyển trạng thái ghi sự kiện bền với phiên bản và hash dòng dõi."
+        },
+        "audit": {
+          "title": "Bề mặt kiểm toán",
+          "body": "Thanh tra thấy đường từ sự kiện gốc tới kết quả được bảo vệ — không tái dựng ngoại tuyến."
+        }
+      },
+      "auditPath": {
+        "index": "03 / Dòng dõi có thể kiểm tra",
+        "title": "Chuỗi tối thiểu mọi cơ quan quản lý yêu cầu — tích hợp sẵn",
+        "description": "Mỗi bước được chứng thực mật mã hoặc vận hành. Bỏ bước làm vô hiệu bản ghi.",
+        "steps": {
+          "actor": {
+            "label": "Chứng thực tác nhân",
+            "value": "Phiên có phần cứng + bước thêm cho chuyển trạng thái nhạy cảm"
+          },
+          "tenant": {
+            "label": "Cô lập tenant",
+            "value": "Bảo mật cấp hàng + cấm gọi liên tenant ở biên API"
+          },
+          "policy": {
+            "label": "Đánh giá chính sách",
+            "value": "Phiên máy deterministic được log kèm hash kết quả"
+          },
+          "decision": {
+            "label": "Ghi nhận quyết định con người",
+            "value": "ID người phê duyệt, chứng minh thẩm quyền ủy quyền, SLA dấu thời gian"
+          },
+          "record": {
+            "label": "Lưu trữ chuẩn",
+            "value": "Mảnh log WORM + chứng thực lưu trữ lạnh phản chiếu"
+          }
+        }
+      },
+      "record": {
+        "label": "Gói đã xác minh",
+        "title": "EVIDENCE-PACK CLOSED",
+        "description": "Gói đáp ứng danh mục kiểm tra nội bộ AC-417 không cần lắp phụ lụm thủ công.",
+        "footer": "Gốc cây hash · chữ ký quorum · cờ cư trú pháp lý",
+        "fields": {
+          "source": {
+            "term": "Nguồn phát sinh",
+            "value": "3 hệ thống · lệch tự động cờ"
+          },
+          "control": {
+            "term": "Tham chiếu kiểm soát",
+            "value": "Ánh xạ ISO27001 Annex A theo họ kiểm soát"
+          },
+          "result": {
+            "term": "Hash trạng thái kết quả",
+            "value": "sha256:92f…c11"
+          },
+          "review": {
+            "term": "Rà soát độc lập",
+            "value": "Nhập workbook Big-4 · delta 0"
+          }
+        }
+      },
+      "consequence": {
+        "label": "Thế kiểm toán",
+        "title": "Nợ bằng chứng lũy kế — Afenda khấu hao ngay khi ghi.",
+        "body": "Hoãn ghi nhận bằng chứng làm chi phí hợp lũy trên mỗi kiểm toán, tranh chấp hoặc chuyển giao lãnh đạo sau đó."
+      }
+    },
+    "closing": {
+      "eyebrow": "Closing position",
+      "title": "The system either knows the truth, or the business negotiates it manually.",
+      "description": "Afenda is designed for the former: a governed truth layer where operational records survive growth, integration pressure, tenant complexity, and executive review without requiring narrative rescue."
+    },
+    "readiness": {
+      "eyebrow": "Readiness questions",
+      "title": "Enterprise adoption begins with evidence, scope, and operating discipline.",
+      "description": "These are the questions the product is built to answer before procurement, rollout, or executive sponsorship creates pressure.",
+      "questions": {
+        "replacement": {
+          "question": "What does Afenda replace?",
+          "answer": "Afenda does not begin as a replacement for ERP, document storage, or workflow tools. It establishes the truth layer that governs how operational facts become reliable records across those systems."
+        },
+        "start": {
+          "question": "Where does implementation start?",
+          "answer": "Implementation starts with the highest-risk truth surface: records where conflicting sources, manual reconciliation, approval ambiguity, or audit exposure already create operational cost."
+        },
+        "integrations": {
+          "question": "How does Afenda handle integrations?",
+          "answer": "Integrations are treated as governed sources and consumers. They are not allowed to silently create a second authority without identity, scope, precedence, and evidence rules."
+        },
+        "enterpriseGrade": {
+          "question": "What makes this enterprise-grade?",
+          "answer": "The enterprise posture comes from tenant boundaries, evidence retention, audit continuity, policy-driven state transitions, and a product model that treats control as architecture rather than an afterthought."
+        },
+        "executiveReview": {
+          "question": "How should executives evaluate the product?",
+          "answer": "Evaluate whether Afenda can explain who changed what, why it changed, which source was trusted, whose authority applied, when the state became true, and how the evidence survives review."
+        }
+      }
+    },
+    "executiveClose": {
+      "eyebrow": "Quyết định điều hành",
+      "title": "Bước tiếp theo là rà soát kiến trúc — không phải demo nữa.",
+      "description": "Afenda công bố cùng bản thể học cho mua hàng, kỹ sư, kiểm toán và vận hành. Hãy chọn một cột sống sự thật cấu trúc hay chi phối đối chiếu tăng dần.",
+      "cta": {
+        "workspace": "Vào không gian làm việc được quản trị",
+        "briefing": "Đặt lịch trình báo cấp lãnh đạo",
+        "systemBrief": "Xem hồ sơ hệ thống"
+      },
+      "panel": {
+        "ariaLabel": "Bảng hỗ trợ quyết định điều hành",
+        "label": "Hiện vật sẵn cho HĐQT",
+        "title": "Điều lãnh đạo ký nhận",
+        "governance": {
+          "title": "Hồ sơ quản trị",
+          "body": "Gói chính sách, lớp RACI, sơ đồ phân tách, khung DPIA — xuất thành gói phiên bản."
+        },
+        "review": {
+          "title": "Bản ghi nhớ rà đỏ",
+          "body": "Chênh lệch pentest bên thứ ba, điều khiển mật mã, kết quả diễn tập anomaly."
+        },
+        "close": {
+          "label": "Điểm kiểm quyết định",
+          "title": "Còn chỗ trống kiến trúc không?",
+          "body": "Nếu mục nào vẫn “định nghĩa khi triển khai,” rà soát chưa xong — quy mô không sửa kiểm soát mơ hồ."
         }
       }
     },
     "footer": {
+      "heading": "Afenda footer",
+      "navLabel": "Footer navigation",
       "blurb": "Nền tảng SaaS sẵn sàng sản xuất với đa tenant, luồng công việc AI, tích hợp và kiểm soát phù hợp cho quản trị.",
-      "sections": {
-        "product": "Sản phẩm",
-        "resources": "Tài nguyên",
-        "company": "Công ty"
-      },
       "links": {
-        "features": "Tính năng",
-        "pricing": "Giá",
-        "howItWorks": "Cách hoạt động",
-        "documentation": "Tài liệu",
-        "blog": "Blog (sắp ra mắt)",
-        "changelog": "Nhật ký thay đổi (sắp ra mắt)",
-        "about": "Giới thiệu (sắp ra mắt)",
-        "contact": "Liên hệ (sắp ra mắt)",
-        "privacy": "Quyền riêng tư (sắp ra mắt)",
-        "terms": "Điều khoản (sắp ra mắt)"
+        "system": "System definition",
+        "surface": "Operational surface",
+        "domains": "Capability domains",
+        "guarantees": "Evidence guarantees",
+        "docs": "Documentation"
       },
-      "builtWith": "Xây dựng bằng Next.js, Tailwind CSS và Drizzle ORM.",
-      "socialComingSoon": "{name} (sắp ra mắt)"
+      "copyright": "(c) {year} Afenda. Operational truth, governed by design.",
+      "position": "Built for enterprises that require proof before scale."
     },
-    "heroPreview": {
-      "fasterOnboarding": "+42% tăng tốc onboarding",
-      "profileCard": {
-        "personName": "Jane Doe",
-        "personRole": "Senior Developer",
-        "badge": "+ Lãnh đạo"
-      },
-      "activityCard": {
-        "title": "Hoạt động nền tảng",
-        "teamVelocity": "Tốc độ đội",
-        "delivery": "Giao hàng"
-      },
-      "peopleFinder": {
-        "title": "Tìm người"
-      },
-      "people": {
-        "ana": {
-          "role": "Kỹ sư cấp cao"
-        },
-        "marco": {
-          "role": "Trưởng nhóm kỹ thuật"
+    "bookDemo": {
+      "back": "Back to Afenda",
+      "eyebrow": "Executive briefing",
+      "title": "Briefing intake is being prepared for controlled activation.",
+      "description": "This route is intentionally present so executive interest never resolves to a dead end. Until the formal intake workflow is connected, use the workspace entrypoint or review the system documentation.",
+      "primaryCta": "Enter workspace",
+      "secondaryCta": "Read documentation",
+      "briefingCard": {
+        "eyebrow": "Briefing scope",
+        "title": "What the review should cover",
+        "items": {
+          "identity": {
+            "term": "Identity",
+            "value": "How workforce identity is resolved, bounded, and kept deterministic across tenants."
+          },
+          "skills": {
+            "term": "Skills graph",
+            "value": "How skills telemetry, role evidence, and execution signals become a governed workforce graph."
+          },
+          "governance": {
+            "term": "Governance",
+            "value": "How access, permissions, approvals, and operating boundaries are enforced."
+          },
+          "audit": {
+            "term": "Audit continuity",
+            "value": "How decisions and changes remain traceable without after-the-fact narrative reconstruction."
+          }
         }
-      },
-      "integrationsCount": "12 tích hợp",
-      "aiInsights": "Thông tin chi tiết AI"
+      }
     }
   },
   "auth": {
@@ -969,6 +1481,7 @@
       "copied": "Đã sao chép URL Markdown vào clipboard",
       "copiedButton": "Đã sao chép",
       "copyFailed": "Không thể sao chép vào clipboard",
+      "assistantHintTitle": "Ask the assistant inside the app",
       "assistantHint": "Trợ lý Afenda AI hoạt động trong workspace của tenant (sidebar → Assistant) cho người dùng đã đăng nhập, truy cập ngữ cảnh tổ chức khi được bật",
       "assistantHintAria": "Sử dụng trợ lý AI",
       "assistantCta": "Mở trang chính của ứng dụng",

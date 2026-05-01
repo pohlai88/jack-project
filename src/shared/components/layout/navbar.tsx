@@ -3,7 +3,7 @@
 import { BookOpen, LogOut, Menu, User } from 'lucide-react';
 
 import { usePathname } from 'next/navigation';
-import { signOut, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 import { useMemo, useState } from 'react';
 import { Link } from '@/i18n/navigation';
@@ -21,6 +21,7 @@ import {
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/shared/components/ui/sheet';
 import { ThemeToggle } from '@/shared/components/ui/theme-toggle';
 import { useFeatureFlags } from '@/shared/hooks';
+import { performClientSignOut } from '@/shared/lib/client-sign-out';
 import { cn } from '@/shared/lib/utils';
 import { AppLogo } from '../brand/Logo';
 
@@ -85,7 +86,7 @@ export function Navbar({ tenantSlug }: NavbarProps) {
     <header className="sticky top-0 z-50 w-full border-b border-border/80 bg-card/95 shadow-sm backdrop-blur supports-backdrop-filter:bg-card/80">
       <div className="container flex h-14 items-center justify-between">
         {/* Logo */}
-        <AppLogo href={basePath || '/'} size="md" />
+        <AppLogo href={basePath || '/'} placement="nav" />
 
         {/* Navigation */}
         {tenantSlug && (
@@ -151,7 +152,9 @@ export function Navbar({ tenantSlug }: NavbarProps) {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
                   className="cursor-pointer text-destructive"
-                  onClick={() => signOut({ callbackUrl: '/' })}
+                  onClick={() => {
+                    void performClientSignOut('/');
+                  }}
                 >
                   <LogOut className="mr-2 h-4 w-4" />
                   {tAuth('signOut')}
@@ -178,11 +181,8 @@ export function Navbar({ tenantSlug }: NavbarProps) {
         <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <SheetContent side="left" className="w-72">
             <SheetHeader>
-              <SheetTitle className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg brand-gradient">
-                  <span className="text-lg font-bold text-white">S</span>
-                </div>
-                <span className="text-lg font-bold">Afenda</span>
+              <SheetTitle asChild>
+                <AppLogo href={basePath || '/'} placement="nav" />
               </SheetTitle>
             </SheetHeader>
             <nav className="mt-6 flex flex-col gap-1">

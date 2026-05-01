@@ -1,0 +1,75 @@
+/* ============================================================
+   BASE DOCUMENT AND APP SHELL
+   Figma reference: Design System / Base
+   Frames: Document, Focus, Selection, Theme Assets
+
+   Keep docs route behavior scoped out of .afenda-app where Fumadocs
+   owns document typography.
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings:
+    'liga' 1,
+    'calt' 1;
+}
+
+.afenda-app {
+  min-height: 100dvh;
+}
+
+/*
+ * Fumadocs RootProvider renders an empty banner before app routes. On the
+ * locale marketing root it otherwise consumes 24px and pushes the sticky
+ * landing header off the viewport edge.
+ */
+body > main:has(> .afenda-app--marketing) > div[class~='bg-fd-secondary/50'][class~='p-3'] {
+  display: none;
+  padding: 0;
+}
+
+.afenda-app ::selection {
+  background: hsl(var(--primary) / 0.18);
+  color: hsl(var(--foreground));
+}
+
+.afenda-app :focus-visible {
+  outline: 2px solid hsl(var(--ring) / 0.55);
+  outline-offset: 2px;
+}
+
+.afenda-app h1,
+.afenda-app h2,
+.afenda-app h3,
+.afenda-app h4,
+.afenda-app h5,
+.afenda-app h6 {
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+/* Theme-conditional asset visibility. */
+.afenda-theme-dark {
+  display: none;
+}
+
+.dark .afenda-theme-light {
+  display: none;
+}
+
+.dark .afenda-theme-dark {
+  display: block;
+}

@@ -28,7 +28,7 @@ export type NavIconTint =
 /**
  * Icon tint classes aligned with the Design System domain colors.
  *
- * Cross-reference with globals.css domain color tokens:
+ * Cross-reference with src/shared/styles/tokens.css and palette.css:
  *   skill → violet (oklch 55% 0.18 290) → violet-500
  *   interest → amber (oklch 70% 0.16 75) → amber-500
  *   okr → emerald (HSL 155) → emerald-500

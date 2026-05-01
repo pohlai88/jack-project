@@ -94,7 +94,7 @@ export function ActivityFeed({ activities, emptyMessage, tenantSlug }: ActivityF
             <div className="relative">
               {/* Timeline line — animates height from top on mount */}
               <div
-                className="absolute left-5 top-3 bottom-3 w-0.5 bg-gradient-to-b from-primary/50 via-secondary/30 to-transparent origin-top"
+                className="absolute left-5 top-3 bottom-3 w-0.5 bg-linear-to-b from-primary/50 via-secondary/30 to-transparent origin-top"
                 style={{ animation: 'timeline-grow 1s ease-out both' }}
               />
 

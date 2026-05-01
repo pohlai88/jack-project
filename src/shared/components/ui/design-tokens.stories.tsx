@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { AppLogo } from '@/shared/components/brand/Logo';
+
 /**
  * # Design Tokens
  *
  * Visual reference for all design tokens in the Afenda design system.
- * These tokens are defined in `globals.css` (@theme block).
+ * Tailwind-facing tokens are defined in `src/shared/styles/tokens.css`.
+ * Runtime palette variables are defined in `src/shared/styles/palette.css`.
  *
  * See architecture/doctrine/ for durable design-system authority.
  * and its rationale.
@@ -200,10 +203,12 @@ function ColorPalette() {
       <div>
         <h3 className="text-lg font-semibold mb-3">Brand Gradient (The ONE Gradient)</h3>
         <p className="text-sm text-muted-foreground mb-3">
-          Reserved for logo mark and hero sections only. See Section 8.4 of DESIGN_SYSTEM.md: &quot;The Brand
-          Moment&quot;.
+          Reserved for approved Afenda icon surfaces and hero sections only. See the curated brand guideline docs.
         </p>
-        <div className="h-12 rounded-lg brand-gradient shadow-sm" />
+        <div className="flex items-center gap-4">
+          <AppLogo placement="favicon" showText={false} href={null} />
+          <div className="h-12 flex-1 rounded-lg brand-gradient shadow-sm" />
+        </div>
         <p className="text-xs text-muted-foreground mt-2 font-mono">
           linear-gradient(135deg, hsl(var(--brand-gradient-from)), hsl(var(--brand-gradient-to)))
         </p>

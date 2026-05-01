@@ -14,7 +14,7 @@ import { buildGitHubAuthorizationUrl, getGitHubCredentials, getGitHubRedirectUri
 import { auth } from '@/shared/lib/auth';
 
 /**
- * Extract tenant slug from returnUrl path (e.g., /t/demo/profile/... -> demo)
+ * Extract tenant slug from returnUrl path (e.g., /t/afenda/profile/... -> afenda)
  */
 function extractTenantFromReturnUrl(returnUrl: string): string | null {
   const match = returnUrl.match(/^\/t\/([^/]+)/);

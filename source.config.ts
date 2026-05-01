@@ -1,4 +1,5 @@
 import { remarkMdxMermaid } from 'fumadocs-core/mdx-plugins';
+import { remarkMdxFiles } from 'fumadocs-core/mdx-plugins/remark-mdx-files';
 import { defineConfig, defineDocs, frontmatterSchema } from 'fumadocs-mdx/config';
 import lastModified from 'fumadocs-mdx/plugins/last-modified';
 import { createFileSystemGeneratorCache, createGenerator, remarkAutoTypeTable } from 'fumadocs-typescript';
@@ -27,7 +28,7 @@ export const docs = defineDocs({
 
 export default defineConfig({
   mdxOptions: {
-    remarkPlugins: [remarkMdxMermaid, [remarkAutoTypeTable, { generator: typescriptGenerator }]],
+    remarkPlugins: [remarkMdxMermaid, remarkMdxFiles, [remarkAutoTypeTable, { generator: typescriptGenerator }]],
   },
   plugins: [
     lastModified({

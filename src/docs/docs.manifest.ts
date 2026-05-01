@@ -80,8 +80,7 @@ export default defineDocsManifest({
       id: 'docs.route-build-fails',
       title: 'Docs route build fails',
       symptom: 'The docs route fails type-check or build after layout or runtime changes.',
-      resolution:
-        'Run docs source generation, verify route imports target src/docs/runtime and src/docs/ui, then run type-check.',
+      resolution: 'Run docs source generation, verify route imports target src/docs/runtime, then run type-check.',
     },
   ],
 });

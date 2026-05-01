@@ -9,6 +9,10 @@ import * as fs from 'fs';
 
 const legacyTestHelperImport = '@/' + '__tests__/*';
 const featureDeepImportPattern = '@/features/*/*';
+const afendaRawAssetSelector =
+  'Literal[value*="/brand/afenda/"], Literal[value*="/icons/afenda-icon-"], TemplateElement[value.raw*="/brand/afenda/"], TemplateElement[value.raw*="/icons/afenda-icon-"]';
+const afendaIconComponentSelector =
+  'ImportDeclaration[source.value=/AfendaIcon$/], ImportSpecifier[imported.name="AfendaIcon"], JSXIdentifier[name="AfendaIcon"]';
 
 const eslintIgnore = [
   '.git/',
@@ -83,6 +87,45 @@ const config = typescriptEslint.config(
               message: 'RG-FEAT-002: import features only through @/features/<feature>.',
             },
           ],
+        },
+      ],
+    },
+  },
+  {
+    files: ['src/**/*.{ts,tsx}'],
+    ignores: [
+      'src/shared/components/brand/AfendaIcon.tsx',
+      'src/docs/runtime/docs-layout.config.ts',
+      'src/app/layout.tsx',
+      'src/app/manifest.ts',
+      'src/app/[locale]/docs/layout.tsx',
+      'src/docs/runtime/docs-rss.generator.ts',
+    ],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: afendaRawAssetSelector,
+          message:
+            'RG-BRAND-001: product code must request Afenda brand placement through AppLogo instead of raw brand asset paths.',
+        },
+      ],
+    },
+  },
+  {
+    files: ['src/**/*.{ts,tsx}'],
+    ignores: [
+      'src/shared/components/brand/Logo.tsx',
+      'src/shared/components/brand/AfendaIcon.tsx',
+      'src/shared/components/ui/*.stories.tsx',
+    ],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: afendaIconComponentSelector,
+          message:
+            'RG-BRAND-001: product code must use AppLogo placement semantics instead of rendering AfendaIcon directly.',
         },
       ],
     },

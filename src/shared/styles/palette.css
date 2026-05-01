@@ -1,0 +1,167 @@
+/* ============================================================
+   RUNTIME PALETTE
+   Figma reference: Design System / Palette
+   Frames: Light Mode, Dark Mode
+
+   HSL channel variables intentionally omit hsl() so Tailwind can
+   apply alpha modifiers through the @theme color map.
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+
+  /* Neutral base */
+  --background: 240 8% 96%;
+  --foreground: 240 10% 16%;
+  --card: 240 6% 98%;
+  --card-foreground: 240 10% 16%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 16%;
+
+  /* Brand */
+  --primary: 216 54% 34%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 174 45% 34%;
+  --secondary-foreground: 0 0% 100%;
+
+  /* Neutrals */
+  --muted: 240 8% 92%;
+  --muted-foreground: 240 5% 42%;
+  --accent: 240 6% 94%;
+  --accent-foreground: 240 10% 16%;
+
+  /* Status */
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 152 60% 38%;
+  --success-foreground: 0 0% 100%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 38 92% 10%;
+  --info: 210 80% 52%;
+  --info-foreground: 0 0% 100%;
+
+  /* Misc semantic */
+  --growth: 155 60% 42%;
+  --growth-foreground: 0 0% 100%;
+  --surface-growth: 155 40% 95%;
+  --surface-warm: 30 15% 96%;
+
+  /* Domain palette */
+  --domain-okr: 155 65% 38%;
+  --domain-okr-foreground: 0 0% 100%;
+  --domain-learning: 210 70% 48%;
+  --domain-learning-foreground: 0 0% 100%;
+  --domain-performance: 30 85% 52%;
+  --domain-performance-foreground: 0 0% 100%;
+  --domain-project: 245 55% 52%;
+  --domain-project-foreground: 0 0% 100%;
+  --domain-recognition: 350 68% 55%;
+  --domain-recognition-foreground: 0 0% 100%;
+  --domain-oneonone: 175 55% 40%;
+  --domain-oneonone-foreground: 0 0% 100%;
+
+  /* Surface tints */
+  --surface-skill: 270 50% 96%;
+  --surface-interest: 38 65% 95%;
+  --surface-okr: 155 40% 95%;
+  --surface-learning: 210 50% 95%;
+  --surface-performance: 30 60% 95%;
+  --surface-project: 245 50% 96%;
+  --surface-recognition: 350 50% 96%;
+  --surface-oneonone: 175 40% 95%;
+  --surface-success: 152 40% 95%;
+  --surface-warning: 38 60% 95%;
+  --surface-info: 210 50% 95%;
+  --surface-destructive: 0 50% 96%;
+
+  /* Primitives */
+  --border: 240 6% 88%;
+  --input: 240 6% 88%;
+  --ring: 216 54% 34%;
+  --radius: 0.625rem;
+
+  /* Brand gradient */
+  --brand-gradient-from: 216 54% 34%;
+  --brand-gradient-to: 174 45% 34%;
+
+  /* Chart series */
+  --chart-1: 245 58% 52%;
+  --chart-2: 270 30% 58%;
+  --chart-3: 175 55% 40%;
+  --chart-4: 38 92% 50%;
+  --chart-5: 0 72% 51%;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --background: 240 14% 10%;
+  --foreground: 240 8% 93%;
+  --card: 240 14% 10%;
+  --card-foreground: 240 8% 93%;
+  --popover: 240 14% 12%;
+  --popover-foreground: 240 8% 93%;
+
+  --primary: 214 64% 62%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 174 45% 56%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 240 10% 18%;
+  --muted-foreground: 240 5% 62%;
+  --accent: 240 10% 16%;
+  --accent-foreground: 240 8% 93%;
+
+  --destructive: 0 62% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 152 55% 45%;
+  --success-foreground: 0 0% 100%;
+  --warning: 38 85% 55%;
+  --warning-foreground: 38 92% 10%;
+  --info: 210 75% 58%;
+  --info-foreground: 0 0% 100%;
+
+  --growth: 155 55% 48%;
+  --growth-foreground: 0 0% 100%;
+  --surface-growth: 155 25% 14%;
+  --surface-warm: 30 10% 13%;
+
+  --domain-okr: 155 55% 45%;
+  --domain-okr-foreground: 0 0% 100%;
+  --domain-learning: 210 65% 58%;
+  --domain-learning-foreground: 0 0% 100%;
+  --domain-performance: 30 80% 58%;
+  --domain-performance-foreground: 0 0% 10%;
+  --domain-project: 245 60% 65%;
+  --domain-project-foreground: 0 0% 100%;
+  --domain-recognition: 350 62% 62%;
+  --domain-recognition-foreground: 0 0% 100%;
+  --domain-oneonone: 175 50% 48%;
+  --domain-oneonone-foreground: 0 0% 100%;
+
+  --surface-skill: 270 30% 14%;
+  --surface-interest: 38 30% 14%;
+  --surface-okr: 155 25% 13%;
+  --surface-learning: 210 25% 14%;
+  --surface-performance: 30 25% 14%;
+  --surface-project: 245 25% 15%;
+  --surface-recognition: 350 22% 14%;
+  --surface-oneonone: 175 22% 13%;
+  --surface-success: 152 22% 13%;
+  --surface-warning: 38 25% 14%;
+  --surface-info: 210 22% 14%;
+  --surface-destructive: 0 22% 14%;
+
+  --border: 240 10% 22%;
+  --input: 240 10% 22%;
+  --ring: 214 64% 62%;
+
+  --brand-gradient-from: 214 64% 62%;
+  --brand-gradient-to: 174 45% 56%;
+
+  --chart-1: 245 68% 65%;
+  --chart-2: 270 40% 62%;
+  --chart-3: 175 50% 48%;
+  --chart-4: 38 85% 55%;
+  --chart-5: 0 62% 55%;
+}

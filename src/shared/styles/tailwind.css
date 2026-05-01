@@ -1,0 +1,19 @@
+/* ============================================================
+   TAILWIND BOOTSTRAP
+   Figma reference: Design System / Foundations / Tailwind Bridge
+
+   Owns framework imports only. Do not add selectors here.
+   ============================================================ */
+
+@import 'tailwindcss';
+
+/*
+ * Typography policy:
+ * keep @tailwindcss/typography on a custom class (`wysiwyg`)
+ * so Fumadocs docs can continue owning the default `prose` styling.
+ */
+@plugin "@tailwindcss/typography" {
+  classname: wysiwyg;
+}
+
+@plugin "tailwindcss-animate";

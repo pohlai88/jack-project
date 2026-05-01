@@ -2,7 +2,7 @@
   "generated": true,
   "version": 1,
   "doctrine": "Docs render what product truth declares. Manual prose may explain truth, but it may not define truth.",
-  "hash": "223fa6e2ead06a85fda9c22a74de0b67f3110b593a24410967d0a6e6d1ceac51",
+  "hash": "c4480cf398916860cb1907763167a5ab4edda451433e164d89e295e354eecf89",
   "generatedFrom": {
     "manifests": [
       "src/docs/docs.manifest.ts",
@@ -45,6 +45,7 @@
       "src/app/[locale]/(tenant)/t/[tenant]/assistant/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/invite/[token]/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/login/page.tsx",
+      "src/app/[locale]/(tenant)/t/[tenant]/onboarding/cv/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/profile/page.tsx",
       "src/app/[locale]/(tenant)/t/[tenant]/profile/settings/page.tsx",
       "src/app/api/assistant/conversations/route.ts",
@@ -260,6 +261,7 @@
         "/[locale]/select-tenant",
         "/[locale]/t/[tenant]/login",
         "/[locale]/t/[tenant]/invite/[token]",
+        "/[locale]/t/[tenant]/onboarding/cv",
         "/api/auth/[...nextauth]"
       ],
       "permissions": [],
@@ -443,7 +445,7 @@
           "id": "docs.route-build-fails",
           "title": "Docs route build fails",
           "symptom": "The docs route fails type-check or build after layout or runtime changes.",
-          "resolution": "Run docs source generation, verify route imports target src/docs/runtime and src/docs/ui, then run type-check."
+          "resolution": "Run docs source generation, verify route imports target src/docs/runtime, then run type-check."
         }
       ]
     },
@@ -810,6 +812,7 @@
       "/[locale]/select-tenant": ["auth"],
       "/[locale]/t/[tenant]/login": ["auth"],
       "/[locale]/t/[tenant]/invite/[token]": ["auth"],
+      "/[locale]/t/[tenant]/onboarding/cv": ["auth"],
       "/api/auth/[...nextauth]": ["auth"],
       "/": ["dashboard"],
       "/[locale]": ["dashboard"],

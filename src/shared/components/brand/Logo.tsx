@@ -5,60 +5,236 @@ import { Link } from '@/i18n/navigation';
 
 import { cn } from '@/shared/lib/utils';
 import { useTenantOptional } from '@/shared/providers/tenant-provider';
+import { AfendaIcon, type AfendaIconSize, type AfendaIconVariant } from './AfendaIcon';
 
-type LogoSize = 'sm' | 'md' | 'lg';
+type LogoSize = 'sm' | 'md' | 'lg' | 'xl';
+export type AppLogoPlacement = 'nav' | 'sidebar' | 'footer' | 'auth' | 'tenant-login' | 'favicon' | 'error';
 
 interface AppLogoProps {
   size?: LogoSize;
+  placement?: AppLogoPlacement;
   showText?: boolean;
+  allowTenantLogo?: boolean;
   href?: string | null;
   className?: string;
   ariaLabel?: string;
+  logoUrl?: string | null;
+  displayName?: string | null;
+  tagline?: string | null;
 }
 
 const sizeConfig: Record<
   LogoSize,
-  { icon: string; iconText: string; textMain: string; textSub: string; imgSize: number }
+  { icon: string; markSize: AfendaIconSize; textMain: string; textSub: string; imgSize: number }
 > = {
-  sm: { icon: 'h-7 w-7', iconText: 'text-sm', textMain: 'text-base', textSub: 'text-base', imgSize: 28 },
-  md: { icon: 'h-8 w-8', iconText: 'text-lg', textMain: 'text-lg', textSub: 'text-lg', imgSize: 32 },
-  lg: { icon: 'h-10 w-10', iconText: 'text-xl', textMain: 'text-2xl', textSub: 'text-2xl', imgSize: 40 },
+  sm: { icon: 'h-6 w-6', markSize: 'sm', textMain: 'text-base', textSub: 'text-base', imgSize: 24 },
+  md: { icon: 'h-8 w-8', markSize: 'md', textMain: 'text-lg', textSub: 'text-lg', imgSize: 32 },
+  lg: { icon: 'h-12 w-12', markSize: 'lg', textMain: 'text-2xl', textSub: 'text-2xl', imgSize: 48 },
+  xl: { icon: 'h-16 w-16', markSize: 'xl', textMain: 'text-2xl', textSub: 'text-2xl', imgSize: 64 },
+};
+
+const placementConfig: Record<
+  AppLogoPlacement,
+  {
+    renderMode: 'mark' | 'combinedLockup';
+    fallbackSize: LogoSize;
+    markSize: AfendaIconSize;
+    variant: AfendaIconVariant;
+    darkVariant?: AfendaIconVariant;
+    lockupLightSrc?: string;
+    lockupDarkSrc?: string;
+    lockupClassName?: string;
+    darkLockupClassName?: string;
+    textClass: string;
+    markClassName: string;
+    darkMarkClassName?: string;
+    tenantLogoClassName: string;
+  }
+> = {
+  nav: {
+    renderMode: 'combinedLockup',
+    fallbackSize: 'md',
+    markSize: 'md',
+    variant: 'inline',
+    darkVariant: 'inlineDark',
+    lockupLightSrc: '/brand/afenda/afenda-combined-lockup-transparent.svg',
+    lockupDarkSrc: '/brand/afenda/afenda-combined-lockup-inline-dark.svg',
+    lockupClassName: 'transition-transform duration-300 group-hover:scale-[1.01]',
+    darkLockupClassName: 'transition-transform duration-300 group-hover:scale-[1.01]',
+    textClass: 'brand-gradient-text',
+    markClassName: 'transition-transform duration-300 group-hover:scale-105',
+    darkMarkClassName: 'transition-transform duration-300 group-hover:scale-105',
+    tenantLogoClassName: 'max-h-8 max-w-[8rem]',
+  },
+  sidebar: {
+    renderMode: 'mark',
+    fallbackSize: 'md',
+    markSize: 'md',
+    variant: 'inline',
+    darkVariant: 'inlineDark',
+    textClass: 'brand-gradient-text',
+    markClassName: 'transition-transform duration-300 group-hover:scale-105',
+    darkMarkClassName: 'transition-transform duration-300 group-hover:scale-105',
+    tenantLogoClassName: 'max-h-8 max-w-8',
+  },
+  footer: {
+    renderMode: 'combinedLockup',
+    fallbackSize: 'sm',
+    markSize: 'sm',
+    variant: 'inline',
+    darkVariant: 'inlineDark',
+    lockupLightSrc: '/brand/afenda/afenda-combined-lockup-transparent.svg',
+    lockupDarkSrc: '/brand/afenda/afenda-combined-lockup-inline-dark.svg',
+    lockupClassName: '',
+    darkLockupClassName: '',
+    textClass: 'brand-gradient-text',
+    markClassName: '',
+    darkMarkClassName: '',
+    tenantLogoClassName: 'max-h-6 max-w-[7rem]',
+  },
+  auth: {
+    renderMode: 'mark',
+    fallbackSize: 'lg',
+    markSize: 'xl',
+    variant: 'appTileLight',
+    darkVariant: 'appTileDark',
+    textClass: 'brand-gradient-text',
+    markClassName: 'drop-shadow-[0_18px_28px_rgba(0,0,0,0.22)]',
+    darkMarkClassName: 'drop-shadow-[0_18px_28px_rgba(0,0,0,0.22)]',
+    tenantLogoClassName: 'max-h-16 max-w-[12rem]',
+  },
+  'tenant-login': {
+    renderMode: 'mark',
+    fallbackSize: 'lg',
+    markSize: 'xl',
+    variant: 'appTileLight',
+    darkVariant: 'appTileDark',
+    textClass: 'brand-gradient-text',
+    markClassName: 'drop-shadow-[0_18px_28px_rgba(0,0,0,0.22)]',
+    darkMarkClassName: 'drop-shadow-[0_18px_28px_rgba(0,0,0,0.22)]',
+    tenantLogoClassName: 'max-h-16 max-w-[12rem]',
+  },
+  favicon: {
+    renderMode: 'mark',
+    fallbackSize: 'lg',
+    markSize: 'xl',
+    variant: 'appTileGradient',
+    textClass: 'brand-gradient-text',
+    markClassName: '',
+    tenantLogoClassName: 'max-h-16 max-w-16',
+  },
+  error: {
+    renderMode: 'mark',
+    fallbackSize: 'lg',
+    markSize: 'xl',
+    variant: 'monoBlack',
+    darkVariant: 'monoWhite',
+    textClass: 'text-foreground',
+    markClassName: 'rounded-2xl',
+    darkMarkClassName: 'rounded-2xl',
+    tenantLogoClassName: 'max-h-16 max-w-[12rem]',
+  },
 };
 
 /**
  * App Logo — renders tenant custom logo or default app brand.
  * If the tenant has a custom logoUrl configured, it renders that instead.
  */
-export function AppLogo({ size = 'md', showText = true, href = '/', className, ariaLabel }: AppLogoProps) {
+export function AppLogo({
+  size,
+  placement = 'nav',
+  showText = true,
+  allowTenantLogo = true,
+  href = '/',
+  className,
+  ariaLabel,
+  logoUrl: logoUrlProp,
+  displayName: displayNameProp,
+  tagline,
+}: AppLogoProps) {
   const tenant = useTenantOptional();
-  const s = sizeConfig[size];
-  const logoUrl = tenant?.settings?.ui?.logoUrl;
-  const displayName = tenant?.settings?.ui?.displayName || tenant?.name || 'A8n Hub';
+  const placementStyle = placementConfig[placement];
+  const resolvedSize = size ?? placementStyle.fallbackSize;
+  const s = sizeConfig[resolvedSize];
+  const lockupWidth = Math.round((s.imgSize * 1800) / 488);
+  const tenantLogoUrl = allowTenantLogo ? tenant?.settings?.ui?.logoUrl : null;
+  const logoUrl = logoUrlProp ?? tenantLogoUrl;
+  const displayName = displayNameProp ?? tenant?.settings?.ui?.displayName ?? tenant?.name ?? 'Afenda';
+  const renderAssetWordmark = placementStyle.renderMode === 'combinedLockup';
+  const shouldConstrainTenantIcon =
+    !showText && (placement === 'nav' || placement === 'sidebar' || placement === 'footer');
+  const tenantLogoBoxClassName = shouldConstrainTenantIcon ? s.icon : 'min-h-0 min-w-0';
+  const shouldRenderText = showText && !renderAssetWordmark;
 
   const content = (
     <>
       {logoUrl ? (
-        <div className={cn('flex items-center justify-center rounded-xl overflow-hidden', s.icon)}>
+        <div className={cn('flex items-center justify-center overflow-hidden', tenantLogoBoxClassName)}>
           <Image
             src={logoUrl}
             alt={displayName}
-            width={s.imgSize}
-            height={s.imgSize}
-            className="object-contain"
+            width={s.imgSize * 4}
+            height={s.imgSize * 4}
+            className={cn('h-auto w-auto object-contain', placementStyle.tenantLogoClassName)}
             unoptimized
           />
         </div>
+      ) : placementStyle.renderMode === 'combinedLockup' && placementStyle.lockupLightSrc ? (
+        <>
+          <Image
+            src={placementStyle.lockupLightSrc}
+            alt={displayName}
+            width={lockupWidth}
+            height={s.imgSize}
+            className={cn(
+              'h-auto w-auto shrink-0 object-contain',
+              placementStyle.lockupDarkSrc && 'afenda-theme-light',
+              placementStyle.lockupClassName,
+            )}
+            unoptimized
+          />
+          {placementStyle.lockupDarkSrc ? (
+            <Image
+              src={placementStyle.lockupDarkSrc}
+              alt={displayName}
+              width={lockupWidth}
+              height={s.imgSize}
+              className={cn(
+                'afenda-theme-dark h-auto w-auto shrink-0 object-contain',
+                placementStyle.darkLockupClassName,
+              )}
+              unoptimized
+            />
+          ) : null}
+        </>
       ) : (
-        <div
-          className={cn(
-            'flex items-center justify-center rounded-xl brand-gradient shadow-sm transition-transform duration-300 group-hover:rotate-3',
-            s.icon,
+        <>
+          <AfendaIcon
+            variant={placementStyle.variant}
+            size={placementStyle.markSize}
+            decorative={showText}
+            alt={showText ? '' : displayName}
+            className={cn(placementStyle.markClassName, placementStyle.darkVariant && 'afenda-theme-light')}
+          />
+          {placementStyle.darkVariant && (
+            <AfendaIcon
+              variant={placementStyle.darkVariant}
+              size={placementStyle.markSize}
+              decorative={showText}
+              alt={showText ? '' : displayName}
+              className={cn('afenda-theme-dark', placementStyle.darkMarkClassName)}
+            />
           )}
-        >
-          <span className={cn('font-bold text-white', s.iconText)}>A</span>
-        </div>
+        </>
       )}
-      {showText && <span className={cn('font-bold brand-gradient-text', s.textMain)}>{displayName}</span>}
+      {shouldRenderText && (
+        <span className={cn('app-logo__text inline-flex min-w-0 flex-col justify-center', tagline ? 'gap-1' : '')}>
+          <span className={cn('app-logo__wordmark font-bold leading-none', placementStyle.textClass, s.textMain)}>
+            {displayName}
+          </span>
+          {tagline ? <span className="app-logo__tagline leading-none">{tagline}</span> : null}
+        </span>
+      )}
     </>
   );
 

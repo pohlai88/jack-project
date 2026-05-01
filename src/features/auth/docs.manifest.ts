@@ -15,6 +15,7 @@ export default defineDocsManifest({
     '/[locale]/select-tenant',
     '/[locale]/t/[tenant]/login',
     '/[locale]/t/[tenant]/invite/[token]',
+    '/[locale]/t/[tenant]/onboarding/cv',
     '/api/auth/[...nextauth]',
   ],
   permissions: [],

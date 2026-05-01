@@ -88,6 +88,32 @@ pnpm vercel:domain:remove-apex
 - **Readiness snapshot hash:** after material readiness changes, run `pnpm i18n:readiness:report` and sync `source_artifact_hash` in `architecture/governance/evidence/i18n/I18N_LOCALE_ACTIVATION_SNAPSHOT.md` with the printed Markdown SHA-256.
 - **Tolgee CI (optional TMS):** repository secret **`TOLGEE_API_KEY`** → workflow **`tolgee-i18n`** runs **`pnpm i18n:tolgee:ci`**; locally same command with env set. Until the secret exists, CI skips — intentional. Engineering track is complete; remaining steps are **operating model closure** (see same evidence note).
 
+## Afenda Brand Assets
+
+- Approved icon assets live in `public/brand/afenda/`; use root-relative paths such as `/brand/afenda/afenda-icon-full-color.svg`.
+- Docs guideline surface: `/docs/curated/brand-guidelines` (`content/i18n/docs/en/curated/brand-guidelines/index.mdx`).
+- Frontend callers must use `AppLogo` placement semantics (`nav`, `sidebar`, `footer`, `auth`, `tenant-login`, `favicon`, `error`) instead of choosing raw icon asset variants.
+- Use Afenda brand marks only for brand identity placements. Do not replace functional, navigational, status, CTA, search, settings, error, or feature icons with the Afenda mark. Callers must request logo placement semantics, not raw icon asset variants.
+- Inline/navigation mark: `afenda-icon-transparent.svg`; dark-surface inline mark: `afenda-icon-inline-dark.svg`; app tile light/dark/gradient: `afenda-icon-light-bg.svg`, `afenda-icon-dark-bg.svg`, `afenda-icon-gradient-bg.svg`.
+- Single-ink, print fallback, embossing, engraving, or stamp work: use `afenda-icon-mono.svg`, `afenda-icon-mono-white-on-dark.svg`, or `afenda-icon-mono-black-on-light.svg`.
+- Do not redraw the lynx, beads, or field in code. The current master is raster artwork embedded in SVG containers to preserve approved geometry; keep public filenames stable if a true vector master replaces the internals later.
+
+## GitHub MCP
+
+- **Project config (validated vs Cursor docs):** [`.cursor/mcp.json`](.cursor/mcp.json) registers **`github`** as **Streamable HTTP** at `https://api.githubcopilot.com/mcp/` with `Authorization: Bearer ${env:GITHUB_MCP_PAT}` ([Cursor MCP — config interpolation](https://cursor.com/docs/mcp)). Create a [GitHub PAT](https://github.com/settings/personal-access-tokens/new) with scopes your workflow needs; store it as **`GITHUB_MCP_PAT`** in private **`env.config`** → **`pnpm env:sync`** → `.env.local` (see `env.config.example`). **Do not commit tokens.**
+- **Important:** Cursor resolves `${env:...}` from the **environment visible to the Cursor process**. `.env.local` is for the app and sync tooling; it does **not** automatically hydrate MCP unless that variable is also set at the OS/user level or your workflow exports it before launching Cursor. If GitHub MCP fails auth after sync, set **`GITHUB_MCP_PAT`** in Windows/macOS user environment (or shell profile) or use **global** `~/.cursor/mcp.json` for a machine-local secret.
+- **Remote limitation:** HTTP/SSE MCP servers **cannot** use `envFile` in `mcp.json` — that option applies only to **stdio** servers ([Cursor MCP docs](https://cursor.com/docs/mcp)).
+- **Strict `.env.local`-only for GitHub MCP:** Use the **Docker stdio** server from [GitHub’s Cursor guide](https://github.com/github/github-mcp-server/blob/main/docs/installation-guides/install-cursor.md) with `"envFile": "${workspaceFolder}/.env.local"` and **`GITHUB_PERSONAL_ACCESS_TOKEN`** in `.env.local` (stdio transport loads that file). Rename or duplicate your PAT key accordingly; keep it gitignored.
+- **Requirements:** Cursor **v0.48+** for Streamable HTTP; reload MCP after edits. Upstream: [GitHub MCP Server — Cursor install](https://github.com/github/github-mcp-server/blob/main/docs/installation-guides/install-cursor.md).
+- **Local alternative:** Docker `ghcr.io/github/github-mcp-server` (**stdio**) supports `envFile` if you prefer loading `.env.local` directly into the MCP subprocess — see the same GitHub install guide.
+
+## Figma MCP (remote + desktop)
+
+- **Project config:** [`.cursor/mcp.json`](.cursor/mcp.json) defines **`Figma`** (remote, `https://mcp.figma.com/mcp`) and **`figma-desktop`** (`http://127.0.0.1:3845/mcp`). Use **remote** for pasted `figma.com/design/...?node-id=...` links (`fileKey` + `nodeId`). Use **desktop** when the **Figma desktop** app has the target file open and you rely on **current selection / open file** (per Figma MCP tool behavior).
+- **Enable desktop MCP (each session):** Open the **Figma desktop** app (not browser-only) → open a Design file → **Dev Mode** (toolbar) → in the **right sidebar**, turn on the **MCP server**. Confirm or copy the URL — default is `http://127.0.0.1:3845/mcp`. If nothing listens on that port, Cursor cannot connect until this is on.
+- **Cursor:** After changing `.cursor/mcp.json`, reload MCP (Settings → MCP). Connect **`figma-desktop`** if Cursor prompts for authentication.
+- **Smoke check:** `curl` to `http://127.0.0.1:3845/mcp` — **connection refused** means the desktop server is off; a JSON MCP response (e.g. invalid session) on GET usually means the server is listening.
+
 ## Repo Hygiene Guardrails
 
 - `env.config` is the maintained local environment source; **`pnpm env:sync`** generates **`.env.local`** (dev) and **`.env.production`** (production merge + full Vercel key catalog with commented gaps). Both are gitignored.

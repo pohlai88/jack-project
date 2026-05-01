@@ -1,69 +1,136 @@
 @import 'tailwindcss';
+
 @import 'fumadocs-ui/css/shadcn.css';
 @import 'fumadocs-ui/css/preset.css';
 @import 'fumadocs-openapi/css/preset.css';
+@import '@fumadocs/story/css/preset.css';
+@import '../../../shared/styles/docs.css';
 
 /*
- * Docs route CSS boundary.
+ * Afenda Docs design-system bridge.
  *
- * Fumadocs owns the shell, prose, sidebar, TOC, breadcrumb, footer,
- * search, language, theme, and OpenAPI styling. Afenda CSS here is limited
- * to route-level tokens, named Afenda wrappers, and print behavior.
+ * Tailwind v4 and shadcn semantic tokens are owned by src/app/globals.css.
+ * This route stylesheet only maps those tokens into Fumadocs and applies
+ * narrowly scoped document behavior that the content model requires.
  */
 
 :root {
-  --fd-layout-width: 1400px;
+  --fd-layout-width: 1480px;
+  --fd-page-width: 920px;
+  --fd-toc-width: 280px;
+
+  --color-fd-background: hsl(var(--background));
+  --color-fd-foreground: hsl(var(--foreground));
+  --color-fd-card: hsl(var(--card));
+  --color-fd-card-foreground: hsl(var(--card-foreground));
+  --color-fd-popover: hsl(var(--popover));
+  --color-fd-popover-foreground: hsl(var(--popover-foreground));
+  --color-fd-primary: hsl(var(--primary));
+  --color-fd-primary-foreground: hsl(var(--primary-foreground));
+  --color-fd-secondary: hsl(var(--muted));
+  --color-fd-secondary-foreground: hsl(var(--foreground));
+  --color-fd-muted: hsl(var(--muted));
+  --color-fd-muted-foreground: hsl(var(--muted-foreground));
+  --color-fd-accent: hsl(var(--accent));
+  --color-fd-accent-foreground: hsl(var(--accent-foreground));
+  --color-fd-destructive: hsl(var(--destructive));
+  --color-fd-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-fd-border: hsl(var(--border));
+  --color-fd-input: hsl(var(--input));
+  --color-fd-ring: hsl(var(--ring));
 }
 
-.docs-page-actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-block: 1rem 1.5rem;
-  padding-block: 0.75rem;
-  border-block: 1px solid var(--color-fd-border);
+html,
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
 }
 
-.docs-page-actions__controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.5rem;
+::selection {
+  background: hsl(var(--primary) / 0.16);
+  color: hsl(var(--foreground));
 }
 
-@media (max-width: 640px) {
-  .docs-page-actions {
-    align-items: flex-start;
-    flex-direction: column;
-  }
+:where(.docs-content, .nd-content, .prose) :where(p, li, td, blockquote) > a {
+  border-radius: calc(var(--radius) - 0.25rem);
+  color: hsl(var(--primary));
+  font-weight: 600;
+  text-decoration-line: none;
+  text-underline-offset: 0.2em;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
 
-  .docs-page-actions__controls {
-    justify-content: flex-start;
+:where(.docs-content, .nd-content, .prose) :where(p, li, td, blockquote) > a:hover,
+:where(.docs-content, .nd-content, .prose) :where(p, li, td, blockquote) > a:focus-visible {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  text-decoration-line: none;
+}
+
+:where(.docs-content, .nd-content, .prose) :where(h1, h2, h3, h4, h5, h6) > a {
+  color: inherit;
+  text-decoration-line: none;
+}
+
+:where(.docs-content, .nd-content, .prose) a[data-card],
+:where(.docs-content, .nd-content, .prose) a[data-card] * {
+  text-decoration-line: none;
+}
+
+:where(.docs-content, .nd-content, .prose) a[data-card]:not([href^='#']) {
+  border-color: hsl(var(--border));
+  color: hsl(var(--card-foreground));
+}
+
+:where(.docs-content, .nd-content, .prose) a[data-card]:not([href^='#']):hover,
+:where(.docs-content, .nd-content, .prose) a[data-card]:not([href^='#']):focus-visible {
+  border-color: hsl(var(--ring) / 0.45);
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+:where(.docs-content, .nd-content, .prose) :where(h1, h2, h3, h4, h5, h6) > a[data-card] {
+  border: 0;
+  background: transparent;
+}
+
+:where(.docs-content, .nd-content, .prose) li::marker {
+  color: hsl(var(--primary));
+}
+
+:where(a, button, [role='button'], input, textarea, select):focus-visible {
+  outline: 2px solid hsl(var(--ring) / 0.58);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fd-page-width: 100%;
   }
 }
 
 @media print {
-  #nd-docs-layout {
-    --fd-sidebar-width: 0px !important;
-    background: #fff !important;
+  body {
+    background: white !important;
+    color: black !important;
   }
 
   #nd-sidebar,
   #nd-toc,
-  [data-toc-popover],
-  .docs-page-actions {
+  [data-toc-popover] {
     display: none !important;
   }
+}
 
-  #nd-page {
-    max-width: 100% !important;
-  }
-
-  .prose pre,
-  .prose table,
-  .prose blockquote {
-    break-inside: avoid;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

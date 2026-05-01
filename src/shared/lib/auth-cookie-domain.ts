@@ -22,11 +22,13 @@ export function normalizeCookieDomainInput(input: string | null | undefined): st
 
 /**
  * Hostnames where a shared Set-Cookie `Domain` must not be applied (preview provider roots, IPs, mDNS).
- * `*.localhost` is allowed for local multi-tenant dev; `localhost` is allowed.
+ * Bare `localhost` stays host-only in local dev because browser handling of `Domain=localhost`
+ * is inconsistent, especially for cookie deletion during sign-out.
  */
 export function isUnsafeSharedCookieDomain(hostname: string): boolean {
   const h = hostname.trim().toLowerCase();
   if (!h) return true;
+  if (h === 'localhost') return true;
   if (h === 'vercel.app' || h.endsWith('.vercel.app')) return true;
   if (/^\d{1,3}(\.\d{1,3}){3}$/.test(h)) return true;
   if (h.endsWith('.local') && !h.endsWith('.localhost')) return true;

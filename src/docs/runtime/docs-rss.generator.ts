@@ -20,7 +20,7 @@ export function getDocsRSS(): string {
       rss: feedUrl,
     },
     language: DOCS_DEFAULT_LOCALE,
-    favicon: `${baseUrl}/favicon.ico`,
+    favicon: `${baseUrl}/icons/afenda-icon-192-transparent.png`,
     description: DOCS_FEED_DESCRIPTION,
     copyright: `All rights reserved ${new Date().getFullYear()}, ${DOCS_FEED_AUTHOR}`,
   });

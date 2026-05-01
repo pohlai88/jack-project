@@ -1,21 +1,27 @@
 'use client';
 
-import { useSelectedLayoutSegments } from 'next/navigation';
+import { usePathname, useSelectedLayoutSegments } from 'next/navigation';
 import type { ReactNode } from 'react';
 
 interface AppShellBoundaryProps {
   children: ReactNode;
 }
 
-const DOCS_SEGMENT = 'docs';
-
+/**
+ * Rendering authority boundary.
+ *
+ * `/docs` remains owned by Fumadocs.
+ * Non-docs routes receive the Afenda application shell scope.
+ */
 export function AppShellBoundary({ children }: AppShellBoundaryProps) {
-  const segments = useSelectedLayoutSegments();
-  const isDocsRoute = segments.includes(DOCS_SEGMENT);
+  const [firstSegment] = useSelectedLayoutSegments();
+  const pathname = usePathname();
+  const isDocsRoute = firstSegment === 'docs';
+  const isMarketingRoot = /^\/[^/]+\/?$/.test(pathname);
 
   if (isDocsRoute) {
     return <>{children}</>;
   }
 
-  return <div className="afenda-app">{children}</div>;
+  return <div className={isMarketingRoot ? 'afenda-app afenda-app--marketing' : 'afenda-app'}>{children}</div>;
 }

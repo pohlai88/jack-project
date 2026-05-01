@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="Afenda truth surface diagram">
+  <rect width="1200" height="720" fill="#050505"/>
+  <rect x="44" y="44" width="1112" height="632" fill="none" stroke="#ffffff" stroke-opacity="0.22"/>
+  <text x="88" y="122" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="8">AFENDA TRUTH SURFACE</text>
+  <line x1="88" y1="166" x2="1112" y2="166" stroke="#ffffff" stroke-opacity="0.3"/>
+  <g fill="none" stroke="#ffffff" stroke-width="2">
+    <rect x="90" y="246" width="230" height="126" rx="8"/>
+    <rect x="365" y="246" width="230" height="126" rx="8"/>
+    <rect x="640" y="246" width="230" height="126" rx="8"/>
+    <rect x="915" y="246" width="200" height="126" rx="8"/>
+    <path d="M320 309h45M595 309h45M870 309h45"/>
+  </g>
+  <g fill="#ffffff" font-family="Arial, sans-serif">
+    <text x="118" y="300" font-size="24" font-weight="700">Record</text>
+    <text x="118" y="334" font-size="15" opacity="0.72">canonical fact</text>
+    <text x="393" y="300" font-size="24" font-weight="700">Evidence</text>
+    <text x="393" y="334" font-size="15" opacity="0.72">identity/event/state/why</text>
+    <text x="668" y="300" font-size="24" font-weight="700">Doctrine</text>
+    <text x="668" y="334" font-size="15" opacity="0.72">governed rule spine</text>
+    <text x="943" y="300" font-size="24" font-weight="700">Audit</text>
+    <text x="943" y="334" font-size="15" opacity="0.72">durable proof feed</text>
+  </g>
+  <g fill="#ffffff" font-family="Arial, sans-serif" opacity="0.9">
+    <text x="90" y="486" font-size="60" font-weight="800">1 / 4 / 0</text>
+    <text x="90" y="534" font-size="22">one record, four proof layers, zero narrative rescue</text>
+  </g>
+  <line x1="90" y1="586" x2="1110" y2="586" stroke="#ffffff" stroke-opacity="0.24"/>
+  <text x="90" y="630" fill="#ffffff" fill-opacity="0.7" font-family="Arial, sans-serif" font-size="18">Who - What - When - Where - Why - Which - Whose - How</text>
+</svg>

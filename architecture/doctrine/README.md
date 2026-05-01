@@ -17,3 +17,5 @@ This directory contains current engineering rules and operating principles.
 | [0007](./0007-ui-component-design-system-rules.md)      | UI component and design system rules             |
 | [0008](./0008-test-ci-artifact-hygiene.md)              | Test, CI, and artifact hygiene                   |
 | [0009](./0009-i18n-runtime-locale-authority.md)         | I18N runtime locale authority (I18N-RUNTIME-001) |
+| [0010](./0010-afenda-icon-placement.md)                 | Afenda icon placement                            |
+| [0011](./0011-fumadocs-docs-layout-adoption.md)         | Fumadocs docs layout adoption                    |

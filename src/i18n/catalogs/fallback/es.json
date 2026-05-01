@@ -57,107 +57,57 @@
   "landing": {
     "hero": {
       "badge": "Plataforma SaaS nativa de IA",
-      "title": {
-        "one": "Construye con ",
-        "two": "Afenda"
-      },
+      "title": "Operational truth, engineered into the system of work.",
       "description": "Despliega una plataforma SaaS multiinquilino gobernada, con identidad, flujos de trabajo de IA, integraciones, administración de equipos y fundamentos de control listos para empresa.",
       "cta": {
-        "goToDashboard": "Ir al panel",
-        "getStarted": "Comenzar",
-        "explore": "Explorar documentación"
+        "goToWorkspace": "Go to governed workspace",
+        "requestBriefing": "Request executive briefing",
+        "readBrief": "Read the system brief"
       },
-      "socialProof": {
-        "enterpriseReady": "Listo para empresas",
-        "aiNative": "Nativo de IA",
-        "growthFocused": "Enfocado en crecimiento",
-        "enterpriseDesc": "Aislamiento de inquilinos, auditabilidad y acceso basado en roles integrados.",
-        "aiNativeDesc": "Conecta asistentes, flujos de conocimiento y datos de integraciones desde el primer día.",
-        "growthDesc": "Diseñado para equipos que necesitan moverse rápido sin perder control."
-      }
-    },
-    "features": {
-      "title": "Todo lo que tu equipo necesita para escalar",
-      "description": "Una base SaaS práctica para usuarios, equipos, administradores, flujos de trabajo de IA e integraciones."
-    },
-    "pricing": {
-      "badge": "Planes sencillos",
-      "title": "Comienza ligero, escala con control",
-      "description": "Usa la demo gratis y luego adapta la plataforma para equipos en crecimiento y despliegues empresariales.",
-      "mostPopular": "Más popular",
-      "perMonth": "/mes",
-      "plans": {
-        "free": {
-          "name": "Gratis",
-          "description": "Hasta 10 usuarios. Comienza con lo esencial.",
-          "cta": "Comenzar",
-          "features": {
-            "1": "Hasta 10 usuarios",
-            "2": "Asistente de IA (limitado)",
-            "3": "Integración con GitHub",
-            "4": "Base de conocimiento (solo lectura)",
-            "5": "Soporte comunitario"
+      "principles": {
+        "identity": "Deterministic workforce identity",
+        "telemetry": "Continuous skills telemetry",
+        "accessEvidence": "Governed access and role evidence",
+        "operatingMemory": "Audit-ready operating memory"
+      },
+      "surface": {
+        "eyebrow": "Operating Surface",
+        "title": "Workforce Control Record",
+        "state": "Governed",
+        "caption": "Designed for executive review, implementation governance, and operational audit continuity.",
+        "controls": {
+          "identity": {
+            "label": "Identity",
+            "value": "Resolved"
+          },
+          "skillsGraph": {
+            "label": "Skills Graph",
+            "value": "Current"
+          },
+          "governance": {
+            "label": "Governance",
+            "value": "Enforced"
           }
         },
-        "pro": {
-          "name": "Pro",
-          "description": "Para equipos en crecimiento que necesitan más potencia.",
-          "cta": "Comenzar",
-          "features": {
-            "1": "Usuarios ilimitados",
-            "2": "Roles y permisos personalizados",
-            "3": "Webhooks y registros de auditoría",
-            "4": "Base de conocimiento completa",
-            "5": "Soporte prioritario"
+        "evidence": {
+          "accessControl": {
+            "title": "Access control",
+            "description": "Roles, permissions, and team boundaries remain explicit."
+          },
+          "workforceGraph": {
+            "title": "Workforce graph",
+            "description": "People, capabilities, knowledge, and execution signals connect into one operating view."
+          },
+          "evidenceLayer": {
+            "title": "Evidence layer",
+            "description": "Decisions and changes become traceable records, not scattered narrative."
           }
-        },
-        "enterprise": {
-          "name": "Enterprise",
-          "description": "Para organizaciones con necesidades avanzadas.",
-          "cta": "Contáctanos",
-          "features": {
-            "1": "Todo lo de Pro",
-            "2": "SSO (Auth0)",
-            "3": "Integraciones personalizadas",
-            "4": "Garantía SLA",
-            "5": "Soporte dedicado"
-          }
-        }
-      }
-    },
-    "faq": {
-      "title": "Preguntas frecuentes",
-      "items": {
-        "try": {
-          "question": "¿Afenda se puede probar gratis?",
-          "answer": "Sí. El entorno de demostración es totalmente funcional sin pago requerido. Explora todas las funciones con datos de ejemplo."
-        },
-        "startData": {
-          "question": "¿Qué datos necesito para comenzar?",
-          "answer": "Solo la lista de tu equipo. Puedes importar CSV, invitar miembros manualmente o usar el flujo de importación masiva."
-        },
-        "existingTools": {
-          "question": "¿Funciona con nuestras herramientas existentes?",
-          "answer": "La plataforma incluye GitHub por defecto y un marco de integración flexible para webhooks y adaptadores de sincronización personalizados."
-        },
-        "assistant": {
-          "question": "¿Cómo funciona el asistente de IA?",
-          "answer": "La IA usa tu base de conocimiento y datos de usuario para responder preguntas, buscar documentos y ofrecer ayuda contextual. Soporta modelos de OpenAI y Anthropic."
-        },
-        "security": {
-          "question": "¿Mis datos están seguros?",
-          "answer": "Sí. La plataforma está diseñada multiinquilino, con aislamiento de datos por inquilino, autenticación empresarial y control de acceso basado en permisos."
-        },
-        "migration": {
-          "question": "¿Puedo migrar mis datos existentes?",
-          "answer": "Sí. Puedes importar datos de equipo desde CSV y el motor de integraciones puede sincronizar sistemas externos según un calendario."
         }
       }
     },
     "nav": {
-      "features": "Funciones",
-      "pricing": "Precios",
-      "docs": "Docs",
+      "primaryNavigation": "Primary navigation",
+      "mobileNavigation": "Mobile navigation",
       "language": "Idioma",
       "selectLanguage": "Seleccionar idioma",
       "theme": "Tema",
@@ -168,187 +118,749 @@
         "dark": "Oscuro",
         "system": "Sistema"
       },
-      "bookDemo": "Reservar demo"
+      "items": {
+        "system": "System",
+        "surface": "Surface",
+        "domains": "Domains",
+        "guarantees": "Guarantees",
+        "docs": "Docs"
+      }
     },
-    "howItWorks": {
-      "title": "Cómo funciona",
-      "description": "Pon a tu equipo en marcha en tres pasos sencillos.",
-      "steps": {
-        "configure": {
-          "title": "Desplegar y configurar",
-          "description": "Despliega la plantilla, crea tu inquilino, configura la marca, roles y conecta tu proveedor de IA."
+    "heroPreview": {
+      "ariaLabel": "Extracto de verdad operativa canónica",
+      "diagram": {
+        "eyebrow": "Truth resolution console",
+        "title": "Signals become operating truth after resolution.",
+        "subtitle": "Afenda binds operational movement to identity, evaluates it against policy, and commits only the record the business can defend.",
+        "trace": {
+          "label": "Resolution state",
+          "mode": "Governed",
+          "state": "Resolved"
         },
-        "invite": {
-          "title": "Invitar usuarios",
-          "description": "Invita a los miembros del equipo, asigna roles y permite que configuren perfiles e integraciones."
+        "connectors": {
+          "normalize": "Normalize",
+          "govern": "Govern",
+          "commit": "Commit",
+          "expose": "Expose"
         },
-        "launch": {
-          "title": "Lanzar con IA",
-          "description": "Conecta tu base de conocimiento, habilita el asistente de IA, configura webhooks y lánzalo."
+        "flowLabel": "Signal / Boundary / Policy / Canonical Record / Evidence",
+        "proofTags": {
+          "nonBypassable": "Non-bypassable",
+          "identityBound": "Identity-bound",
+          "auditReady": "Audit-ready"
+        },
+        "stages": {
+          "signals": {
+            "title": "Operational signals",
+            "subtitle": "Messy workforce movement enters with context.",
+            "items": {
+              "identity": "Identity",
+              "skills": "Skills",
+              "activity": "Activity",
+              "knowledge": "Knowledge"
+            }
+          },
+          "boundary": {
+            "title": "Controlled boundary",
+            "subtitle": "Only governed input crosses the control gate.",
+            "note": "Tenant scope, authority, and source reliability are checked before state can move."
+          },
+          "core": {
+            "title": "Resolution core",
+            "subtitle": "Deterministic control layer",
+            "items": {
+              "identityBinding": "Identity binding",
+              "policyResolution": "Policy resolution",
+              "evidenceCommit": "Evidence commit"
+            }
+          },
+          "record": {
+            "title": "Canonical record",
+            "subtitle": "Resolved state committed for operation.",
+            "cardTitle": "Canonical record",
+            "cardSubtitle": "Resolved. Governed. Trusted.",
+            "fields": {
+              "recordId": {
+                "term": "Record ID",
+                "value": "CR-7F3A-9821"
+              },
+              "identity": {
+                "term": "Identity",
+                "value": "A1F9.7C2E.4D88"
+              },
+              "skills": {
+                "term": "Skills",
+                "value": "12 verified"
+              },
+              "policyOutcome": {
+                "term": "Policy outcome",
+                "value": "Allowed"
+              },
+              "evidenceHash": {
+                "term": "Evidence hash",
+                "value": "4f7c...9e21"
+              }
+            }
+          },
+          "audit": {
+            "title": "Audit & visibility",
+            "subtitle": "Proof is produced with the record.",
+            "items": {
+              "proof": {
+                "title": "Proof",
+                "body": "Verifiable evidence and outcomes"
+              },
+              "monitoring": {
+                "title": "Monitoring",
+                "body": "Real-time oversight and alerts"
+              },
+              "trace": {
+                "title": "Trace",
+                "body": "End-to-end lineage and audit trail"
+              }
+            }
+          }
+        }
+      },
+      "eyebrow": "Superficie de verdad operativa",
+      "title": "Un registro no se acepta hasta que identidad, política, evidencia y estado coinciden.",
+      "subtitle": "Esta superficie no es una vista previa de un panel. Es un extracto formal de cómo Afenda convierte el movimiento operativo en una verdad empresarial canónica que puede operarse, gobernarse y auditarse.",
+      "trace": {
+        "metaLabel": "Trazabilidad de verdad",
+        "id": "TRUTH-TRACE / 7W1H",
+        "modeLabel": "Modo",
+        "mode": "Gobernado",
+        "stateLabel": "Estado",
+        "state": "Resuelto"
+      },
+      "ledger": {
+        "indexLabel": "01 / Libro de control",
+        "sequence": "Ordenado",
+        "title": "Libro de control de evento a registro",
+        "description": "Cada evento operativo debe superar la vinculación de identidad, la evaluación de políticas y la adjunción de evidencia antes de poder mover el estado del negocio.",
+        "rows": {
+          "eventReceived": {
+            "code": "EVT-2401",
+            "label": "Evento operativo recibido desde una fuente gobernada",
+            "status": "Aceptado",
+            "time": "09:41:12"
+          },
+          "identityBound": {
+            "code": "IDN-7W1H",
+            "label": "Actor, inquilino, contexto, propiedad y marca de tiempo vinculados",
+            "status": "Vinculado",
+            "time": "09:41:13"
+          },
+          "policyApplied": {
+            "code": "POL-GOV",
+            "label": "Política de control evaluada antes de la transición de estado",
+            "status": "Controlado",
+            "time": "09:41:14"
+          },
+          "recordResolved": {
+            "code": "REC-CANON",
+            "label": "Registro canónico resuelto con cadena de evidencia",
+            "status": "Verificado",
+            "time": "09:41:16"
+          }
+        }
+      },
+      "resolved": {
+        "indexLabel": "02 / Registro resuelto",
+        "title": "Estado operativo resuelto",
+        "description": "Afenda no añade otra capa de interpretación. Resuelve el estado contra el que el negocio puede operar, defenderse y reconciliar.",
+        "recordLabel": "Registro canónico",
+        "state": "Una verdad activa",
+        "body": "El estado aceptado está limitado por inquilino, vinculado al actor, probado por política y conectado con la evidencia necesaria para explicar por qué existe."
+      },
+      "evidence": {
+        "record": {
+          "term": "Registro",
+          "value": "Objeto de estado canónico"
+        },
+        "tenantBoundary": {
+          "term": "Límite",
+          "value": "Con alcance de inquilino y consciente de la propiedad"
+        },
+        "decisionPath": {
+          "term": "Ruta de decisión",
+          "value": "Trazabilidad de política, excepción y resolución"
+        },
+        "auditPosture": {
+          "term": "Postura de auditoría",
+          "value": "Producida por la operación, no reconstruida después"
+        }
+      },
+      "obligations": {
+        "title": "Obligaciones empresariales",
+        "items": {
+          "economic": {
+            "term": "Económica",
+            "value": "Reconciliada"
+          },
+          "operational": {
+            "term": "Operativa",
+            "value": "Ejecutable"
+          },
+          "technical": {
+            "term": "Técnica",
+            "value": "Limitada"
+          },
+          "audit": {
+            "term": "Auditoría",
+            "value": "Defendible"
+          }
+        }
+      },
+      "consequence": {
+        "label": "Consecuencia empresarial",
+        "title": "No hay rescate narrativo después del hecho.",
+        "body": "El sistema obliga a producir la verdad en el momento de la operación, para que finanzas, auditoría, dirección y ejecución trabajen desde el mismo registro resuelto."
+      }
+    },
+    "system": {
+      "eyebrow": "System definition",
+      "title": "Afenda is not a feature surface. It is the canonical layer beneath operational judgment.",
+      "description": "The product exists to prevent the familiar enterprise failure: useful activity spread across tools, but no single accountable record strong enough for decision, audit, and control.",
+      "points": {
+        "recordDiscipline": {
+          "label": "Record discipline",
+          "title": "Every operational event resolves into a governed source of truth.",
+          "body": "Afenda treats documents, entities, actions, approvals, and state transitions as durable business facts, not as disconnected interface activity."
+        },
+        "evidenceBinding": {
+          "label": "Evidence binding",
+          "title": "The system keeps proof close to the decision it supports.",
+          "body": "A decision without lineage is only a claim. Afenda binds actor, time, tenant, source, reason, and resulting state into a traceable operating layer."
+        },
+        "resolutionControl": {
+          "label": "Resolution control",
+          "title": "Conflicting activity is resolved by policy, not by memory.",
+          "body": "When systems disagree, the operating model needs precedence, auditability, and controlled mutation. Afenda is built around that discipline."
         }
       }
     },
-    "featureTabs": {
-      "users": {
-        "label": "Para usuarios",
-        "description": "Todo lo que tus usuarios necesitan para comenzar y ser productivos.",
-        "features": {
-          "profile": {
-            "title": "Perfil",
-            "description": "Perfiles completos de usuario con avatar e integración con GitHub."
+    "topology": {
+      "eyebrow": "Topología del sistema",
+      "title": "Un único oleoducto desde la señal bruta hasta el registro defendible.",
+      "description": "Afenda no dispersa la verdad entre herramientas. Las entradas se normalizan, se evalúan en un núcleo de resolución y emergen como estado canónico con visibilidad de auditoría.",
+      "thesis": "Si la organización no puede trazar esta línea en un solo diagrama, no tiene una única verdad operativa: solo interpretaciones en disputa.",
+      "diagram": {
+        "label": "Topología de control",
+        "title": "Normalizar → resolver → confirmar",
+        "state": "Invariante arquitectónico"
+      },
+      "inputs": {
+        "title": "Entradas operativas",
+        "items": {
+          "identity": {
+            "title": "Señales de identidad",
+            "body": "Actores, inquilinos y contexto de propiedad como hechos de primer orden."
           },
-          "assistant": {
-            "title": "Asistente de IA",
-            "description": "Chat en lenguaje natural impulsado por OpenAI o Anthropic."
+          "skills": {
+            "title": "Grafo de capacidades",
+            "body": "Competencias, dominio y estructura de la fuerza laboral como atributos gobernados."
           },
-          "knowledgeBase": {
-            "title": "Base de conocimiento",
-            "description": "Buscar y navegar los documentos y contenidos de tu organización."
+          "activity": {
+            "title": "Telemetría de ejecución",
+            "body": "Eventos de flujo de trabajo, documentos y HRIS con fuente y marca temporal."
           },
-          "directory": {
-            "title": "Directorio",
-            "description": "Encuentra y conéctate con miembros del equipo."
+          "knowledge": {
+            "title": "Objetos de conocimiento",
+            "body": "Artefactos y registros de aprendizaje ligados al alcance y a la política."
           }
         }
       },
-      "team": {
-        "label": "Para equipos",
-        "description": "Herramientas de colaboración y visibilidad para equipos en crecimiento.",
-        "features": {
-          "peopleDirectory": {
-            "title": "Directorio de personas",
-            "description": "Navega y busca miembros del equipo con filtros."
+      "connectors": {
+        "normalize": "Normalizar",
+        "resolve": "Resolver"
+      },
+      "controls": {
+        "title": "Núcleo de resolución",
+        "items": {
+          "identityBinding": {
+            "title": "Vinculación de identidad",
+            "body": "Cada transición está ligada al actor y al inquilino antes de aplicar la política."
           },
-          "orgChart": {
-            "title": "Organigrama",
-            "description": "Visualiza la estructura del equipo y relaciones de reporte."
+          "policyResolution": {
+            "title": "Resolución de políticas",
+            "body": "Autoridad, precedencia y reglas deciden qué estado puede cambiar."
           },
-          "activityFeed": {
-            "title": "Feed de actividad",
-            "description": "Actualizaciones en tiempo real sobre la actividad del equipo y la plataforma."
-          },
-          "webhooks": {
-            "title": "Webhooks",
-            "description": "Envía eventos a sistemas externos cuando ocurren cambios."
+          "evidenceCommit": {
+            "title": "Confirmación con evidencia",
+            "body": "La prueba se adjunta al escribir el registro — no se reconstruye después."
           }
         }
       },
-      "admin": {
-        "label": "Administración",
-        "description": "Control total para administradores que gestionan la plataforma.",
-        "features": {
-          "memberManagement": {
-            "title": "Gestión de miembros",
-            "description": "Invita, administra y desactiva miembros del equipo."
+      "outputs": {
+        "title": "Verdad emitida",
+        "items": {
+          "record": {
+            "label": "Registro canónico",
+            "value": "Un estado confirmado contra el que el negocio puede operar."
           },
-          "roles": {
-            "title": "Roles y permisos",
-            "description": "PBAC de granularidad fina con paquetes de roles personalizados."
+          "visibility": {
+            "label": "Visibilidad gobernada",
+            "value": "Vistas por rol sobre el mismo registro subyacente."
           },
-          "auditLogs": {
-            "title": "Registros de auditoría",
-            "description": "Rastro completo de todas las acciones en la plataforma."
-          },
-          "settings": {
-            "title": "Configuración",
-            "description": "Configuración a nivel de inquilino, marca y feature flags."
+          "audit": {
+            "label": "Pista de auditoría",
+            "value": "Camino trazable desde la señal hasta el estado aceptado."
           }
         }
       },
-      "ai": {
-        "label": "IA e integraciones",
-        "description": "Conecta IA y sistemas externos a tu plataforma.",
-        "features": {
-          "chat": {
-            "title": "Chat de IA",
-            "description": "Búsqueda conversacional a través de todos tus datos."
+      "consequence": {
+        "label": "Consecuencia de diseño",
+        "title": "Sin autoridad paralela.",
+        "body": "Si un canal puede cambiar la verdad empresarial sin atravesar esta columna, Afenda deliberadamente no lo considera gobernado."
+      }
+    },
+    "surface": {
+      "eyebrow": "Operational surface",
+      "title": "The interface is reduced to what the organization must know, prove, and control.",
+      "description": "No decorative dashboards. No synthetic theatre. The operational surface exists to expose canonical records, policy decisions, evidence links, and state movement."
+    },
+    "integrationReality": {
+      "eyebrow": "Realidad de integración",
+      "title": "Los sistemas externos aportan señales. Afenda conserva la autoridad.",
+      "description": "ERP, HRIS, identidad y colaboración siguen siendo fuentes — no libros mayores rivales de la verdad. Cada ruta entrante atraviesa alcance de identidad, normalización, gobernanza y disciplina de confirmación.",
+      "quote": "Una integración prueba qué cruzó el límite — no qué le está permitido creer al negocio.",
+      "panel": {
+        "label": "Superficie de control de integraciones",
+        "title": "De señal externa a registro acotado",
+        "state": "Límite aplicado",
+        "traceLine": "señales externas → límite controlado → registro canónico"
+      },
+      "interfaces": {
+        "identity": {
+          "title": "Planos de identidad",
+          "body": "SSO, RR.HH. maestro, contratistas y principales federados mapeados a identidad laboral por inquilino."
+        },
+        "systems": {
+          "title": "Conectores del sistema registral",
+          "body": "Workday, SAP, BambooHR, ATS, LMS, ticketing — ingestados como fuentes gobernadas con marca temporal."
+        },
+        "knowledge": {
+          "title": "Conocimiento y documentos",
+          "body": "Objetos de Confluence, Notion, Drive registrados con propiedad, sensibilidad y etiquetas de política."
+        },
+        "governance": {
+          "title": "Aplicación de gobernanza",
+          "body": "Paquetes de reglas, cadenas de aprobación, ruptura controlada y detección de deriva antes de avanzar el estado."
+        }
+      },
+      "boundary": {
+        "index": "03 / Límite de aplicación",
+        "title": "Secuencia sin atajos",
+        "description": "Cada etapa es obligatoria. Omitir una etapa no es configuración — es un contrato de integración incumplido.",
+        "meta": "secuencia de aplicación · sin bypass",
+        "steps": {
+          "connect": {
+            "label": "Conectar",
+            "value": "Conector autenticado con secretos de mínimo privilegio y alcance explícito."
           },
-          "vectorSearch": {
-            "title": "Búsqueda vectorial",
-            "description": "Búsqueda semántica impulsada por embeddings pgvector."
+          "normalize": {
+            "label": "Normalizar",
+            "value": "Mapeo de esquema, deduplicación y banderas de conflicto antes de la política."
           },
-          "githubIntegration": {
-            "title": "Integración con GitHub",
-            "description": "Sincroniza perfiles de usuario y actividad desde GitHub."
+          "govern": {
+            "label": "Gobernar",
+            "value": "Política, aprobación y excepciones evaluadas con requisitos de evidencia."
           },
-          "integrationEngine": {
-            "title": "Motor de integraciones",
-            "description": "Conecta cualquier sistema externo con el marco de sincronización."
+          "commit": {
+            "label": "Confirmar",
+            "value": "Registro canónico escrito con linaje inmutable."
           }
+        }
+      },
+      "record": {
+        "label": "Recibo de integración",
+        "title": "BOUNDARY-CLOSED",
+        "description": "Este registro certifica que la actividad externa cruzó toda la cadena de aplicación antes de mutar la verdad empresarial.",
+        "footer": "Hash de linaje · calendario de rotación · certificación de alcance en archivo",
+        "tagline": "fuente retenida · límite aplicado · estado resuelto",
+        "fields": {
+          "source": {
+            "term": "Sistema origen",
+            "value": "Workday HCM (prod-west)"
+          },
+          "contract": {
+            "term": "Contrato del conector",
+            "value": "WD-HCM-2025.3 · firmado"
+          },
+          "boundary": {
+            "term": "Punto de control del límite",
+            "value": "Identidad ✓ · Política ✓ · Evidencia ✓"
+          },
+          "result": {
+            "term": "Resultado confirmado",
+            "value": "Registro laboral canónico actualizado con paquete de auditoría"
+          }
+        }
+      },
+      "consequence": {
+        "label": "Regla operativa",
+        "title": "Las integraciones no tienen puerta trasera hacia la verdad.",
+        "body": "Si un proveedor o flujo paralelo no puede presentar el mismo recibo, no forma parte del modelo operativo gobernado — sin importar la comodidad de la interfaz."
+      }
+    },
+    "resolutionStages": {
+      "input": {
+        "step": "Entrada",
+        "title": "Los eventos entran como hechos con evidencia.",
+        "description": "Documentos, acciones, integraciones, identidades y cambios de estado se capturan con contexto suficiente para juzgarlos después."
+      },
+      "control": {
+        "step": "Control",
+        "title": "La política determina autoridad y precedencia.",
+        "description": "El sistema evalúa el alcance del inquilino, la autoridad del rol, la fiabilidad de la fuente y los enlaces de reglas antes de permitir mover el estado."
+      },
+      "truth": {
+        "step": "Verdad",
+        "title": "Se resuelve y retiene un registro canónico.",
+        "description": "El estado resultante es inspeccionable, auditable y utilizable en toda la organización sin depender de explicación manual."
+      }
+    },
+    "domains": {
+      "eyebrow": "Capability domains",
+      "title": "Capabilities are expressed as enterprise controls, not feature cards.",
+      "description": "Each domain answers one question: what can the organization rely on when operational pressure, system disagreement, and audit scrutiny arrive together?"
+    },
+    "capabilities": {
+      "canonicalRecords": {
+        "title": "Canonical records",
+        "body": "Operational entities, documents, events, and transitions are normalized into accountable records with stable ownership, scope, and identity.",
+        "proof": "Reduces duplicate truth surfaces and prevents record drift across teams, tools, and tenants."
+      },
+      "evidenceBinding": {
+        "title": "Evidence binding",
+        "body": "Every material state carries the proof required to defend it: source, actor, timestamp, reason, tenant boundary, and decision path.",
+        "proof": "Turns operational claims into inspectable facts before audit pressure arrives."
+      },
+      "governanceControls": {
+        "title": "Governance controls",
+        "body": "Policy, role, approval, precedence, and exception handling are treated as first-class controls rather than implementation comments.",
+        "proof": "Keeps operational change inside a controlled spine instead of relying on informal process memory."
+      },
+      "auditContinuity": {
+        "title": "Audit continuity",
+        "body": "The system preserves the path from original event to current state, including reversals, overrides, and resolution authority.",
+        "proof": "Supports executive review, regulatory inspection, and internal accountability without narrative reconstruction."
+      },
+      "operationalResolution": {
+        "title": "Operational resolution",
+        "body": "When incoming facts conflict, Afenda resolves them through declared precedence, tenant scope, and evidence quality.",
+        "proof": "Prevents the business from manually negotiating which system should be believed."
+      },
+      "enterpriseIntegration": {
+        "title": "Enterprise integration",
+        "body": "External systems connect as sources and consumers of truth, not as uncontrolled parallel ledgers.",
+        "proof": "Allows ERP, identity, document, and workflow systems to participate without fragmenting authority."
+      }
+    },
+    "commercial": {
+      "eyebrow": "Postura comercial",
+      "title": "Listo para compras sin teatro de compras.",
+      "description": "Afenda alinea a legal, seguridad e implantación sobre los mismos hechos arquitectónicos: autoridad acotada, evidencia conservada y un único registro canónico.",
+      "cta": {
+        "primary": "Programar revisión ejecutiva",
+        "secondary": "Abrir dossier del sistema"
+      },
+      "panel": {
+        "label": "Dimensiones de revisión",
+        "title": "Lo que la diligencia realmente inspecciona",
+        "state": "Materiales alineados"
+      },
+      "review": {
+        "governance": {
+          "title": "Artefactos de gobernanza",
+          "body": "Matriz de control, esqueleto DPIA, modelo de segregación, mapa de retención — exportados desde la configuración en vivo."
+        },
+        "implementation": {
+          "title": "Guía de implantación",
+          "body": "Incorporación por fases con rollback explícito, hitos de validación y criterios de éxito ligados a registros canónicos."
+        },
+        "security": {
+          "title": "Evidencia de seguridad",
+          "body": "Rotación de secretos, enlace SSO, linaje de auditoría inmutable, enrutamiento de anomalías documentado — no solo afirmado."
+        },
+        "commercial": {
+          "title": "Estructura comercial",
+          "body": "Capacidad, niveles de soporte y límites de responsabilidad expresados frente a controles reales — sin SKU de estantería."
+        }
+      },
+      "process": {
+        "index": "04 / Cadencia comercial",
+        "title": "De la primera conversación a producción gobernada",
+        "description": "Cada paso produce un artefacto firmado. Ninguno depende de discurso vacío.",
+        "steps": {
+          "scope": {
+            "label": "Alcance",
+            "value": "Superficies de verdad y contratos de integración enumerados."
+          },
+          "validate": {
+            "label": "Validar",
+            "value": "El inquilino piloto cumple la pila de políticas completa — sin atajos de demo."
+          },
+          "align": {
+            "label": "Alinear",
+            "value": "Legal, TI y dirección firman el mismo paquete arquitectónico."
+          },
+          "commit": {
+            "label": "Confirmar",
+            "value": "Despliegue a producción con verificación continua de evidencia."
+          }
+        }
+      },
+      "record": {
+        "label": "Registro de diligencia",
+        "title": "SIGN-OFF ACTIVE",
+        "description": "Este panel sigue la alineación contractual entre controles comercializados y configuración desplegada.",
+        "footer": "Dossier con versión bloqueada · registro de cambios bajo acceso corporativo",
+        "fields": {
+          "model": {
+            "term": "Modelo de entrega",
+            "value": "Plano de control single-tenant · aislamiento de carga multi-tenant"
+          },
+          "basis": {
+            "term": "Base de responsabilidad",
+            "value": "Hoja de ruta SOC2 Tipo II · anexo de disponibilidad y residencia de datos"
+          },
+          "review": {
+            "term": "Paquete de revisión del consejo",
+            "value": "v2025-Q2 · circulado"
+          },
+          "outcome": {
+            "term": "Resultado actual",
+            "value": "En espera de contrafirma del CIO · sin brechas de control abiertas"
+          }
+        }
+      },
+      "consequence": {
+        "label": "Consecuencia comercial",
+        "title": "El contrato cita la arquitectura — no las diapositivas.",
+        "body": "Ante disputa o auditoría, ambas partes rastrean obligaciones hasta controles enumerados y registros inmutables — no a reclamos de marketing reinterpretados."
+      }
+    },
+    "guarantees": {
+      "eyebrow": "Evidence / guarantees",
+      "title": "Credibility comes from what the system can prove under pressure.",
+      "description": "The guarantee is not speed, dashboards, or generic automation. The guarantee is that the organization can inspect how an operational state became true.",
+      "items": {
+        "canonicalState": {
+          "title": "One canonical state",
+          "body": "The business does not need three reports and a meeting to decide which record is true."
+        },
+        "decisionPath": {
+          "title": "Traceable decision path",
+          "body": "Every material decision can be followed through actor, source, policy, reason, and resulting state."
+        },
+        "tenantBounded": {
+          "title": "Tenant-bounded records",
+          "body": "Records remain scoped to the correct tenant, legal entity, operating boundary, and authority model."
+        },
+        "auditReady": {
+          "title": "Audit-ready evidence",
+          "body": "Evidence is retained as part of the operational record, not collected later as a separate rescue exercise."
+        },
+        "controlledChange": {
+          "title": "Controlled change",
+          "body": "Overrides, exceptions, and reversals move through visible governance rather than hidden operational shortcuts."
+        },
+        "integrationDiscipline": {
+          "title": "Integration discipline",
+          "body": "Connected systems exchange truth through controlled boundaries instead of becoming competing authorities."
         }
       }
     },
-    "socialProofSection": {
-      "title": "Confiado por equipos en todo el mundo",
-      "description": "Ve cómo organizaciones usan Afenda para automatizar y escalar sus flujos de trabajo.",
-      "roleAt": "{role} en {company}",
-      "sponsorsTitle": "Nuestros socios y patrocinadores",
-      "sponsorLabel": "Socio {index}",
-      "comingSoon": "Próximamente",
-      "sponsorCta": "¿Interesado en patrocinar Afenda?",
-      "sponsorCtaLink": "Contáctanos",
-      "testimonials": {
-        "1": {
-          "role": "VP de Ingeniería",
-          "text": "Afenda transformó cómo construimos y automatizamos nuestros flujos de trabajo. Todo ahora es transparente y basado en datos."
+    "evidence": {
+      "eyebrow": "Arquitectura de prueba",
+      "title": "La confianza es propiedad del registro — no de la presentación.",
+      "description": "Afenda hace la evidencia estructural: vinculación de identidad, evaluación de política, confirmación canónica y visibilidad de auditoría son etapas visibles, no notas añadidas después.",
+      "quote": "Si no se puede trazar, no es evidencia — es opinión.",
+      "panel": {
+        "label": "Pila de evidencia",
+        "title": "Cuatro garantías irreductibles antes de acreditar la verdad",
+        "state": "Todas las etapas cumplidas"
+      },
+      "items": {
+        "identity": {
+          "title": "Vinculación de identidad",
+          "body": "Actor, inquilino, sesión, marca temporal y alcance se afirman antes de interpretar."
         },
-        "2": {
-          "role": "Gerente de Operaciones de Personas",
-          "text": "El asistente de IA y el motor de integraciones nos ahorraron semanas de configuración. Lanzar nuestro SaaS nunca fue tan rápido."
+        "policy": {
+          "title": "Puerta de política",
+          "body": "Reglas, aprobaciones, exenciones y ruptura controlada se evalúan con la razón registrada."
         },
-        "3": {
-          "role": "Director de Talento",
-          "text": "Finalmente, una plataforma donde los gerentes pueden enfocarse en el crecimiento en lugar de hojas de cálculo. La integración de OKR es fluida."
+        "record": {
+          "title": "Confirmación canónica",
+          "body": "Las transiciones de estado escriben hechos duraderos con versionado y hashes de linaje."
+        },
+        "audit": {
+          "title": "Superficie de auditoría",
+          "body": "Los inspectores ven el camino del evento origen al resultado defendido — nada reconstruido offline."
+        }
+      },
+      "auditPath": {
+        "index": "03 / Linaje inspeccionable",
+        "title": "La cadena mínima que todo regulador exige — integrada",
+        "description": "Cada salto está atestiguado criptográficamente u operativamente. Quitar un salto invalida el registro.",
+        "steps": {
+          "actor": {
+            "label": "Atestación del actor",
+            "value": "Sesión respaldada por hardware + escalada para transiciones sensibles"
+          },
+          "tenant": {
+            "label": "Aislamiento por inquilino",
+            "value": "Seguridad a nivel de fila + prohibición de llamadas entre inquilinos en el perímetro API"
+          },
+          "policy": {
+            "label": "Evaluación de política",
+            "value": "Versión determinista del motor registrada con hash de resultado"
+          },
+          "decision": {
+            "label": "Captura de decisión humana",
+            "value": "ID del aprobador, prueba de autoridad delegada, marca SLA"
+          },
+          "record": {
+            "label": "Persistencia canónica",
+            "value": "Fragmento de log de eventos nivel WORM + atestaciones en almacenamiento frío replicado"
+          }
+        }
+      },
+      "record": {
+        "label": "Paquete verificado",
+        "title": "EVIDENCE-PACK CLOSED",
+        "description": "Este paquete cumple la lista de auditoría interna AC-417 sin montar anexos manualmente.",
+        "footer": "Raíz del árbol de hash · firmas de quórum · bandera de residencia jurisdiccional",
+        "fields": {
+          "source": {
+            "term": "Fuentes de origen",
+            "value": "3 sistemas · divergencia marcada automáticamente"
+          },
+          "control": {
+            "term": "Referencias de control",
+            "value": "Mapeos Anexo A ISO27001 por familia de control"
+          },
+          "result": {
+            "term": "Hash del estado resultante",
+            "value": "sha256:92f…c11"
+          },
+          "review": {
+            "term": "Revisión independiente",
+            "value": "Importación libro Big-4 · delta 0"
+          }
+        }
+      },
+      "consequence": {
+        "label": "Postura de auditoría",
+        "title": "La deuda de evidencia se capitaliza — Afenda la amortiza al escribir.",
+        "body": "Las organizaciones que aplazan capturar evidencia pagan interés compuesto en cada auditoría, disputa o cambio de liderazgo posterior. La evidencia estructural evita esa trayectoria."
+      }
+    },
+    "closing": {
+      "eyebrow": "Closing position",
+      "title": "The system either knows the truth, or the business negotiates it manually.",
+      "description": "Afenda is designed for the former: a governed truth layer where operational records survive growth, integration pressure, tenant complexity, and executive review without requiring narrative rescue."
+    },
+    "readiness": {
+      "eyebrow": "Readiness questions",
+      "title": "Enterprise adoption begins with evidence, scope, and operating discipline.",
+      "description": "These are the questions the product is built to answer before procurement, rollout, or executive sponsorship creates pressure.",
+      "questions": {
+        "replacement": {
+          "question": "What does Afenda replace?",
+          "answer": "Afenda does not begin as a replacement for ERP, document storage, or workflow tools. It establishes the truth layer that governs how operational facts become reliable records across those systems."
+        },
+        "start": {
+          "question": "Where does implementation start?",
+          "answer": "Implementation starts with the highest-risk truth surface: records where conflicting sources, manual reconciliation, approval ambiguity, or audit exposure already create operational cost."
+        },
+        "integrations": {
+          "question": "How does Afenda handle integrations?",
+          "answer": "Integrations are treated as governed sources and consumers. They are not allowed to silently create a second authority without identity, scope, precedence, and evidence rules."
+        },
+        "enterpriseGrade": {
+          "question": "What makes this enterprise-grade?",
+          "answer": "The enterprise posture comes from tenant boundaries, evidence retention, audit continuity, policy-driven state transitions, and a product model that treats control as architecture rather than an afterthought."
+        },
+        "executiveReview": {
+          "question": "How should executives evaluate the product?",
+          "answer": "Evaluate whether Afenda can explain who changed what, why it changed, which source was trusted, whose authority applied, when the state became true, and how the evidence survives review."
+        }
+      }
+    },
+    "executiveClose": {
+      "eyebrow": "Decisión ejecutiva",
+      "title": "El siguiente paso es revisión arquitectónica — no otra demo.",
+      "description": "Afenda publica la misma ontología para compras, equipos de construcción, auditores y operadores. Decida si una única columna vertebral de verdad estructural compensa el costo creciente de conciliación.",
+      "cta": {
+        "workspace": "Entrar al espacio de trabajo gobernado",
+        "briefing": "Reservar briefing ejecutivo",
+        "systemBrief": "Revisar dossier del sistema"
+      },
+      "panel": {
+        "ariaLabel": "Panel de apoyo a la decisión ejecutiva",
+        "label": "Artefactos listos para el consejo",
+        "title": "Lo que firma el liderazgo",
+        "governance": {
+          "title": "Dossier de gobernanza",
+          "body": "Paquetes de política, superposiciones RACI, diagramas de segregación, esqueleto DPIA — exportados como bundles versionados."
+        },
+        "review": {
+          "title": "Memorando de revisión red-team",
+          "body": "Deltas de pentest externo, controles criptográficos, resultados de simulación de cadena de anomalías."
+        },
+        "close": {
+          "label": "Punto de control de decisión",
+          "title": "¿Sin incógnitas arquitectónicas pendientes?",
+          "body": "Si algo sigue “por definir en la implantación”, la revisión no está completa — la escala no corrige controles ambiguos."
         }
       }
     },
     "footer": {
+      "heading": "Afenda footer",
+      "navLabel": "Footer navigation",
       "blurb": "Base de plataforma SaaS lista para producción con multiinquilino, flujos de trabajo de IA, integraciones y controles listos para gobernanza.",
-      "sections": {
-        "product": "Producto",
-        "resources": "Recursos",
-        "company": "Empresa"
-      },
       "links": {
-        "features": "Funciones",
-        "pricing": "Precios",
-        "howItWorks": "Cómo funciona",
-        "documentation": "Documentación",
-        "blog": "Blog (próximamente)",
-        "changelog": "Registro de cambios (próximamente)",
-        "about": "Acerca de (próximamente)",
-        "contact": "Contacto (próximamente)",
-        "privacy": "Privacidad (próximamente)",
-        "terms": "Términos (próximamente)"
+        "system": "System definition",
+        "surface": "Operational surface",
+        "domains": "Capability domains",
+        "guarantees": "Evidence guarantees",
+        "docs": "Documentation"
       },
-      "builtWith": "Construido con Next.js, Tailwind CSS y Drizzle ORM.",
-      "socialComingSoon": "{name} (próximamente)"
+      "copyright": "(c) {year} Afenda. Operational truth, governed by design.",
+      "position": "Built for enterprises that require proof before scale."
     },
-    "heroPreview": {
-      "fasterOnboarding": "+42% onboarding más rápido",
-      "profileCard": {
-        "personName": "Jane Doe",
-        "personRole": "Desarrolladora Senior",
-        "badge": "+ Liderazgo"
-      },
-      "activityCard": {
-        "title": "Actividad de la plataforma",
-        "teamVelocity": "Velocidad del equipo",
-        "delivery": "Entrega"
-      },
-      "peopleFinder": {
-        "title": "Buscador de personas"
-      },
-      "people": {
-        "ana": {
-          "role": "Ingeniera Senior"
-        },
-        "marco": {
-          "role": "Líder técnico"
+    "bookDemo": {
+      "back": "Back to Afenda",
+      "eyebrow": "Executive briefing",
+      "title": "Briefing intake is being prepared for controlled activation.",
+      "description": "This route is intentionally present so executive interest never resolves to a dead end. Until the formal intake workflow is connected, use the workspace entrypoint or review the system documentation.",
+      "primaryCta": "Enter workspace",
+      "secondaryCta": "Read documentation",
+      "briefingCard": {
+        "eyebrow": "Briefing scope",
+        "title": "What the review should cover",
+        "items": {
+          "identity": {
+            "term": "Identity",
+            "value": "How workforce identity is resolved, bounded, and kept deterministic across tenants."
+          },
+          "skills": {
+            "term": "Skills graph",
+            "value": "How skills telemetry, role evidence, and execution signals become a governed workforce graph."
+          },
+          "governance": {
+            "term": "Governance",
+            "value": "How access, permissions, approvals, and operating boundaries are enforced."
+          },
+          "audit": {
+            "term": "Audit continuity",
+            "value": "How decisions and changes remain traceable without after-the-fact narrative reconstruction."
+          }
         }
-      },
-      "integrationsCount": "12 integraciones",
-      "aiInsights": "Insights de IA"
+      }
     }
   },
   "auth": {
@@ -969,6 +1481,7 @@
       "copied": "URL Markdown copiada al portapapeles",
       "copiedButton": "Copiado",
       "copyFailed": "No se pudo copiar al portapapeles",
+      "assistantHintTitle": "Ask the assistant inside the app",
       "assistantHint": "El asistente Afenda AI funciona dentro del espacio de trabajo del inquilino (barra lateral → Asistente) para usuarios autenticados y accede al contexto organizacional cuando está habilitado",
       "assistantHintAria": "Uso del asistente de IA",
       "assistantCta": "Abrir la página principal de la app",

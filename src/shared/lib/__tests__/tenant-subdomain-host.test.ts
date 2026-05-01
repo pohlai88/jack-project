@@ -52,7 +52,7 @@ function rewritePathForSubdomainHost(input: {
 
 describe('parseTenantSubdomainSlugFromHost', () => {
   it('returns slug for tenant root domain', () => {
-    expect(parseTenantSubdomainSlugFromHost('acme.example.com', 'example.com')).toBe('acme');
+    expect(parseTenantSubdomainSlugFromHost('afenda.example.com', 'example.com')).toBe('afenda');
   });
 
   it('returns null for apex and www', () => {
@@ -65,11 +65,11 @@ describe('parseTenantSubdomainSlugFromHost', () => {
   });
 
   it('strips port', () => {
-    expect(parseTenantSubdomainSlugFromHost('acme.localhost:3000', 'localhost')).toBe('acme');
+    expect(parseTenantSubdomainSlugFromHost('afenda.localhost:3000', 'localhost')).toBe('afenda');
   });
 
   it('returns null when root unset', () => {
-    expect(parseTenantSubdomainSlugFromHost('acme.example.com', undefined)).toBeNull();
+    expect(parseTenantSubdomainSlugFromHost('afenda.example.com', undefined)).toBeNull();
   });
 
   it('rejects nested subdomain labels', () => {
@@ -77,15 +77,15 @@ describe('parseTenantSubdomainSlugFromHost', () => {
   });
 
   it('normalizes uppercase host and root', () => {
-    expect(parseTenantSubdomainSlugFromHost('ACME.EXAMPLE.COM', 'EXAMPLE.COM')).toBe('acme');
+    expect(parseTenantSubdomainSlugFromHost('AFENDA.EXAMPLE.COM', 'EXAMPLE.COM')).toBe('afenda');
   });
 
   it('accepts root domain with scheme in config', () => {
-    expect(parseTenantSubdomainSlugFromHost('acme.example.com', 'https://example.com')).toBe('acme');
+    expect(parseTenantSubdomainSlugFromHost('afenda.example.com', 'https://example.com')).toBe('afenda');
   });
 
   it('accepts root domain with trailing slash in config', () => {
-    expect(parseTenantSubdomainSlugFromHost('acme.example.com', 'example.com/')).toBe('acme');
+    expect(parseTenantSubdomainSlugFromHost('afenda.example.com', 'example.com/')).toBe('afenda');
   });
 
   it('returns single-label slug when not www', () => {
@@ -99,34 +99,34 @@ describe('resolveTenantSlugFromIncomingRequest', () => {
   it('prefers subdomain over path when both present', () => {
     expect(
       resolveTenantSlugFromIncomingRequest({
-        host: 'acme.example.com',
+        host: 'afenda.example.com',
         pathname: '/en/t/other/dashboard',
         tenantRootDomain: 'example.com',
         locales,
       }),
-    ).toEqual({ slug: 'acme', source: 'subdomain' });
+    ).toEqual({ slug: 'afenda', source: 'subdomain' });
   });
 
   it('resolves from path when no tenant host', () => {
     expect(
       resolveTenantSlugFromIncomingRequest({
         host: 'example.com',
-        pathname: '/en/t/acme/settings',
+        pathname: '/en/t/afenda/settings',
         tenantRootDomain: 'example.com',
         locales,
       }),
-    ).toEqual({ slug: 'acme', source: 'path' });
+    ).toEqual({ slug: 'afenda', source: 'path' });
   });
 
   it('resolves path tenant without locale prefix', () => {
     expect(
       resolveTenantSlugFromIncomingRequest({
         host: 'example.com',
-        pathname: '/t/acme',
+        pathname: '/t/afenda',
         tenantRootDomain: 'example.com',
         locales,
       }),
-    ).toEqual({ slug: 'acme', source: 'path' });
+    ).toEqual({ slug: 'afenda', source: 'path' });
   });
 
   it('returns null when neither applies', () => {
@@ -144,11 +144,11 @@ describe('resolveTenantSlugFromIncomingRequest', () => {
     expect(
       resolveTenantSlugFromIncomingRequest({
         host: '',
-        pathname: '/en/t/acme',
+        pathname: '/en/t/afenda',
         tenantRootDomain: 'example.com',
         locales,
       }),
-    ).toEqual({ slug: 'acme', source: 'path' });
+    ).toEqual({ slug: 'afenda', source: 'path' });
   });
 
   it('returns null slug when host is unrelated and path has no /t/', () => {
@@ -165,16 +165,16 @@ describe('resolveTenantSlugFromIncomingRequest', () => {
 
 describe('stripLeadingLocaleSegment', () => {
   it('strips known locale', () => {
-    expect(stripLeadingLocaleSegment('/en/t/acme', ['en', 'es'])).toEqual({
+    expect(stripLeadingLocaleSegment('/en/t/afenda', ['en', 'es'])).toEqual({
       localeFromPath: 'en',
-      restPath: '/t/acme',
+      restPath: '/t/afenda',
     });
   });
 
   it('returns null locale when missing', () => {
-    expect(stripLeadingLocaleSegment('/t/acme', ['en'])).toEqual({
+    expect(stripLeadingLocaleSegment('/t/afenda', ['en'])).toEqual({
       localeFromPath: null,
-      restPath: '/t/acme',
+      restPath: '/t/afenda',
     });
   });
 });
@@ -182,7 +182,7 @@ describe('stripLeadingLocaleSegment', () => {
 describe('stripLeadingTenantPathPrefix', () => {
   it('removes /t/slug prefix', () => {
     expect(stripLeadingTenantPathPrefix('/t/wrong/dashboard')).toBe('/dashboard');
-    expect(stripLeadingTenantPathPrefix('/t/acme')).toBe('/');
+    expect(stripLeadingTenantPathPrefix('/t/afenda')).toBe('/');
   });
 
   it('leaves path without tenant prefix', () => {
@@ -204,56 +204,56 @@ describe('buildTenantHostRewritePathname', () => {
   it('builds home path', () => {
     expect(
       buildTenantHostRewritePathname({
-        hostSlug: 'acme',
+        hostSlug: 'afenda',
         pathname: '/',
         locales: ['en', 'es'],
         resolvedLocale: 'en',
       }),
-    ).toBe('/en/t/acme/');
+    ).toBe('/en/t/afenda/');
   });
 
   it('rewrites path under tenant host', () => {
     expect(
       buildTenantHostRewritePathname({
-        hostSlug: 'acme',
+        hostSlug: 'afenda',
         pathname: '/skills',
         locales: ['en', 'es'],
         resolvedLocale: 'en',
       }),
-    ).toBe('/en/t/acme/skills');
+    ).toBe('/en/t/afenda/skills');
   });
 
   it('replaces conflicting path tenant with host slug', () => {
     expect(
       buildTenantHostRewritePathname({
-        hostSlug: 'acme',
+        hostSlug: 'afenda',
         pathname: '/en/t/other/page',
         locales: ['en', 'es'],
         resolvedLocale: 'en',
       }),
-    ).toBe('/en/t/acme/page');
+    ).toBe('/en/t/afenda/page');
   });
 
   it('builds tenant home when pathname is only a locale prefix', () => {
     expect(
       buildTenantHostRewritePathname({
-        hostSlug: 'acme',
+        hostSlug: 'afenda',
         pathname: '/en',
         locales: ['en', 'es'],
         resolvedLocale: 'en',
       }),
-    ).toBe('/en/t/acme/');
+    ).toBe('/en/t/afenda/');
   });
 
   it('normalizes tenant-only path to home under host slug', () => {
     expect(
       buildTenantHostRewritePathname({
-        hostSlug: 'acme',
+        hostSlug: 'afenda',
         pathname: '/en/t/other/',
         locales: ['en', 'es'],
         resolvedLocale: 'en',
       }),
-    ).toBe('/en/t/acme/');
+    ).toBe('/en/t/afenda/');
   });
 });
 
@@ -263,70 +263,70 @@ describe('proxy-aligned locale chain (matches src/proxy.ts subdomain branch)', (
   it('uses NEXT_LOCALE cookie over Accept-Language when both present', () => {
     const cookieHeader = buildLocaleCookie('vi');
     const out = rewritePathForSubdomainHost({
-      host: 'acme.example.com',
+      host: 'afenda.example.com',
       pathname: '/pricing',
       tenantRootDomain: tenantRoot,
       cookieHeader,
       acceptLanguage: 'en-US,en;q=0.9',
     });
-    expect(out.hostSlug).toBe('acme');
+    expect(out.hostSlug).toBe('afenda');
     expect(out.resolvedLocale).toBe('vi');
-    expect(out.newPathname).toBe('/vi/t/acme/pricing');
+    expect(out.newPathname).toBe('/vi/t/afenda/pricing');
   });
 
   it('uses Accept-Language when cookie absent', () => {
     const out = rewritePathForSubdomainHost({
-      host: 'acme.example.com',
+      host: 'afenda.example.com',
       pathname: '/app',
       tenantRootDomain: tenantRoot,
       cookieHeader: undefined,
       acceptLanguage: 'vi,en;q=0.8',
     });
     expect(out.resolvedLocale).toBe('vi');
-    expect(out.newPathname).toBe('/vi/t/acme/app');
+    expect(out.newPathname).toBe('/vi/t/afenda/app');
   });
 
   it('uses defaultLocale when cookie and Accept-Language do not select a locale', () => {
     const out = rewritePathForSubdomainHost({
-      host: 'acme.example.com',
+      host: 'afenda.example.com',
       pathname: '/',
       tenantRootDomain: tenantRoot,
       cookieHeader: undefined,
       acceptLanguage: undefined,
     });
     expect(out.resolvedLocale).toBe(defaultLocale);
-    expect(out.newPathname).toBe(`/${defaultLocale}/t/acme/`);
+    expect(out.newPathname).toBe(`/${defaultLocale}/t/afenda/`);
   });
 
   it('cookie locale wins over locale prefix in pathname when rewriting', () => {
     const cookieHeader = buildLocaleCookie('es');
     const out = rewritePathForSubdomainHost({
-      host: 'acme.example.com',
+      host: 'afenda.example.com',
       pathname: '/en/dashboard',
       tenantRootDomain: tenantRoot,
       cookieHeader,
       acceptLanguage: 'en',
     });
     expect(out.resolvedLocale).toBe('es');
-    expect(out.newPathname).toBe('/es/t/acme/dashboard');
+    expect(out.newPathname).toBe('/es/t/afenda/dashboard');
   });
 
   it('rewrites path tenant to host slug using resolved locale', () => {
     const out = rewritePathForSubdomainHost({
-      host: 'acme.example.com',
+      host: 'afenda.example.com',
       pathname: '/en/t/other/page',
       tenantRootDomain: tenantRoot,
       cookieHeader: undefined,
       acceptLanguage: 'en',
     });
     expect(out.resolvedLocale).toBe('en');
-    expect(out.newPathname).toBe('/en/t/acme/page');
+    expect(out.newPathname).toBe('/en/t/afenda/page');
   });
 
   it('returns no rewrite when not a tenant subdomain', () => {
     const out = rewritePathForSubdomainHost({
       host: 'example.com',
-      pathname: '/en/t/acme',
+      pathname: '/en/t/afenda',
       tenantRootDomain: tenantRoot,
       cookieHeader: undefined,
       acceptLanguage: 'en',

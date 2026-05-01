@@ -1,7 +1,7 @@
 'use client';
 
 import { BookOpen, LogOut, Search, Settings, User } from 'lucide-react';
-import { signOut, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 import { useSyncExternalStore } from 'react';
 import { Link } from '@/i18n/navigation';
@@ -18,6 +18,7 @@ import {
   DropdownMenuTrigger,
 } from '@/shared/components/ui/dropdown-menu';
 import { ThemeToggle } from '@/shared/components/ui/theme-toggle';
+import { performClientSignOut } from '@/shared/lib/client-sign-out';
 import { cn } from '@/shared/lib/utils';
 import { useSidebarOptional } from '@/shared/providers';
 
@@ -138,7 +139,9 @@ export function TopHeader({ tenantSlug }: TopHeaderProps) {
               <DropdownMenuSeparator />
               <DropdownMenuItem
                 className="cursor-pointer text-destructive"
-                onClick={() => signOut({ callbackUrl: '/' })}
+                onClick={() => {
+                  void performClientSignOut('/');
+                }}
               >
                 <LogOut className="mr-2 h-4 w-4" />
                 {tAuth('signOut')}

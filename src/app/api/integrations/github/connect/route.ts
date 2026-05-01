@@ -8,9 +8,10 @@ import { NextResponse } from 'next/server';
 import { getGitHubTenantCredentials } from '@/features/admin';
 import { buildGitHubAuthorizationUrl, getGitHubCredentials, getGitHubRedirectUri } from '@/features/github';
 import { auth } from '@/shared/lib/auth';
+import { hasPermission } from '@/shared/lib/permissions';
 
 /**
- * Extract tenant slug from returnUrl path (e.g., /t/demo/admin/... -> demo)
+ * Extract tenant slug from returnUrl path (e.g., /t/afenda/admin/... -> afenda)
  */
 function extractTenantFromReturnUrl(returnUrl: string): string | null {
   const match = returnUrl.match(/^\/t\/([^/]+)/);
@@ -30,6 +31,9 @@ export async function GET(request: Request) {
 
   // Extract tenant from returnUrl to get tenant-specific credentials
   const tenantSlug = extractTenantFromReturnUrl(safeReturn);
+  if (!tenantSlug || !(await hasPermission(tenantSlug, 'admin:integrations'))) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+  }
 
   // Get credentials: tenant settings first, then env vars
   let tenantCredentials: { clientId?: string; clientSecret?: string } | null = null;

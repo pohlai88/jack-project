@@ -105,8 +105,8 @@ export async function validateTenantSlug(slug: string): Promise<boolean> {
  * Build a tenant-scoped URL path.
  *
  * @example
- * buildTenantPath('acme', '/dashboard') // '/t/acme/dashboard'
- * buildTenantPath('acme', 'skills')     // '/t/acme/skills'
+ * buildTenantPath('afenda', '/dashboard') // '/t/afenda/dashboard'
+ * buildTenantPath('afenda', 'skills')     // '/t/afenda/skills'
  */
 export function buildTenantPath(tenantSlug: string, path: string): string {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
@@ -117,7 +117,7 @@ export function buildTenantPath(tenantSlug: string, path: string): string {
  * Extract tenant slug from a path.
  *
  * @example
- * extractTenantSlug('/t/acme/dashboard') // 'acme'
+ * extractTenantSlug('/t/afenda/dashboard') // 'afenda'
  * extractTenantSlug('/about')            // null
  */
 export function extractTenantSlug(path: string): string | null {

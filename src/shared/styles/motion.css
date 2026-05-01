@@ -1,0 +1,281 @@
+/* ============================================================
+   AFENDA ENTERPRISE MOTION SYSTEM
+   Purpose: communicate signal state, sequence, and continuity.
+   Not decoration — these are operational instrumentation patterns.
+
+   Figma: Design System / Motion / Operational Signals
+   - State dot: Design System / Motion / Live State
+   - Scan: Design System / Motion / Scan Surface
+   - Sequence: Design System / Motion / Stagger Sequence
+   - Entrance: Design System / Motion / Entrance
+   - Reveal: Design System / Motion / Scroll Reveal
+
+   Rules:
+   - Apply ONLY to live-state labels, scan surfaces, ordered sequences
+   - NEVER animate: headings, CTAs, navigation, cards, or full sections
+   - All animations MUST respect prefers-reduced-motion
+   - Scope: consumed via globals.css @import only
+   ============================================================ */
+
+/* ==========================================================================
+   OPERATIONAL MOTION CLASSES
+   ========================================================================== */
+
+/* Live state indicator — prepended via ::before pseudo-element
+   Usage: add .afenda-motion-state to the live status label's parent */
+.afenda-motion-state {
+  position: relative;
+}
+
+.afenda-motion-state::before {
+  content: '';
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: 0.5rem;
+  border-radius: 999px;
+  background: hsl(var(--primary));
+  animation: afenda-operational-pulse 2.8s ease-in-out infinite;
+}
+
+/* Scan overlay — applied to product preview surfaces
+   Usage: add .afenda-motion-scan to the panel wrapper */
+.afenda-motion-scan {
+  position: relative;
+  overflow: hidden;
+}
+
+.afenda-motion-scan::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  width: 42%;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.08), transparent);
+  animation: afenda-signal-scan 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Stagger sequence — entrance for ordered list children
+   Usage: add .afenda-motion-sequence to the container; children enter staggered */
+.afenda-motion-sequence > * {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: afenda-sequence-enter 0.56s ease-out forwards;
+}
+
+.afenda-motion-sequence > *:nth-child(1) {
+  animation-delay: 40ms;
+}
+
+.afenda-motion-sequence > *:nth-child(2) {
+  animation-delay: 110ms;
+}
+
+.afenda-motion-sequence > *:nth-child(3) {
+  animation-delay: 180ms;
+}
+
+.afenda-motion-sequence > *:nth-child(4) {
+  animation-delay: 250ms;
+}
+
+.afenda-motion-sequence > *:nth-child(5) {
+  animation-delay: 320ms;
+}
+
+.afenda-motion-sequence > *:nth-child(6) {
+  animation-delay: 390ms;
+}
+
+/* ==========================================================================
+   OPERATIONAL KEYFRAMES
+   ========================================================================== */
+@keyframes afenda-operational-pulse {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.28);
+  }
+}
+
+@keyframes afenda-signal-scan {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(350%);
+  }
+}
+
+@keyframes afenda-sequence-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   SHARED UI MOTION HELPERS
+   Figma: Design System / Motion / UI Feedback
+   ========================================================================== */
+
+.status-dot-pulse {
+  animation: statusDotPulse 1.8s ease-out infinite;
+}
+
+@keyframes statusDotPulse {
+  0% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.45);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px hsl(var(--primary) / 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0);
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 25%,
+    hsl(var(--muted-foreground) / 0.06) 50%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes skeletonShimmer {
+  from {
+    background-position: -200% 0;
+  }
+
+  to {
+    background-position: 200% 0;
+  }
+}
+
+.progress-striped {
+  background-image: linear-gradient(
+    45deg,
+    rgb(255 255 255 / 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgb(255 255 255 / 0.15) 50%,
+    rgb(255 255 255 / 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  animation: progressStripe 0.5s linear infinite;
+}
+
+@keyframes progressStripe {
+  from {
+    background-position: 1rem 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+
+/* ==========================================================================
+   UI ENTRANCE ANIMATIONS
+   One-shot mount animations. Used for page transitions and component load.
+   Figma: Design System / Motion / Entrance
+   ========================================================================== */
+
+/* Fade + slight rise on mount */
+.entrance-fade {
+  animation: entrance-fade-in 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Stagger modifier — pair with --stagger-index CSS variable on the element:
+   style={{ '--stagger-index': i } as React.CSSProperties} */
+.entrance-stagger {
+  animation-delay: calc(var(--stagger-index, 0) * 50ms);
+}
+
+@keyframes entrance-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================================================
+   SCROLL-TRIGGERED REVEAL
+   Toggled by RevealOnScroll component (JS intersection observer).
+   Initial state: hidden. Revealed state: visible.
+   Figma: Design System / Motion / Scroll Reveal
+   ========================================================================== */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Immediately reveal if a descendant is the URL anchor target
+   (keyboard skip-link and deep-link accessibility) */
+.afenda-app .reveal-hidden:has(:target) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   MOTION SAFETY — prefers-reduced-motion
+   Disables all operational and entrance animations for motion-sensitive users.
+   This block only covers motion.css classes; the global safety valve in
+   globals.css covers everything else.
+   Reference: WCAG 2.1 SC 2.3.3 — Animation from Interactions
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .afenda-motion-state::before,
+  .afenda-motion-scan::after,
+  .afenda-motion-sequence > *,
+  .status-dot-pulse,
+  .skeleton-shimmer,
+  .progress-striped {
+    animation: none !important;
+  }
+
+  .afenda-motion-state::before,
+  .afenda-motion-scan::after,
+  .afenda-motion-sequence > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .entrance-fade,
+  .entrance-stagger {
+    animation: none !important;
+  }
+
+  .reveal-hidden {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

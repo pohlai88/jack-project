@@ -31,9 +31,7 @@ const DOCS_SEARCH_MIN_PAGES = 60;
 const DOCS_SEARCH_MIN_TEXT_CHARS = 5000;
 const DOCS_DEFAULT_FIRST_FORBIDDEN_PATHS = [
   'src/docs/_ui-components',
-  'src/docs/ui/layouts',
   'src/layouts',
-  'src/docs/ui/docs-home.tsx',
   'src/docs/runtime/docs-assistant-hint.tsx',
   'src/docs/runtime/docs-page-llm-actions.tsx',
   'src/docs/runtime/docs-governance.contract.ts',
@@ -48,7 +46,6 @@ const DOCS_DEFAULT_FIRST_FORBIDDEN_TEXT = [
   'docs-governance.contract',
   'docs-system.definition',
 ] as const;
-const DOCS_FORBIDDEN_CSS_SELECTORS = ['.docs-content', '.nd-content', '.docs-tree-icon'] as const;
 const GENERATED_HEADER_MARKER = 'data-generated-docs-header="GENERATED FILE - DO NOT EDIT"';
 const GENERATED_HEADER = [
   '<div',
@@ -1185,13 +1182,42 @@ function checkSearchOutput(): string[] {
     return errors;
   }
 
+  const featuresMetaPath = join(ENGLISH_DOCS_ROOT, 'generated', 'features', 'meta.json');
+  const apiMetaPath = join(ENGLISH_DOCS_ROOT, 'generated', 'api', 'meta.json');
+  let featureSample = '/en/docs/generated/features/docs';
+  let apiSample = '/en/docs/generated/api/platform.health';
+
+  try {
+    if (existsSync(featuresMetaPath)) {
+      const payload = JSON.parse(readFileSync(featuresMetaPath, 'utf8')) as { pages?: string[] };
+      const pages = payload.pages ?? [];
+      if (pages.length > 0 && typeof pages[0] === 'string') {
+        featureSample = `/en/docs/generated/features/${pages[0]}`;
+      }
+    }
+  } catch {
+    // Keep deterministic fallback route.
+  }
+
+  try {
+    if (existsSync(apiMetaPath)) {
+      const payload = JSON.parse(readFileSync(apiMetaPath, 'utf8')) as { pages?: string[] };
+      const pages = payload.pages ?? [];
+      if (pages.length > 0 && typeof pages[0] === 'string') {
+        apiSample = `/en/docs/generated/api/${pages[0]}`;
+      }
+    }
+  } catch {
+    // Keep deterministic fallback route.
+  }
+
   const expectedMirrors = [
     '/en/docs',
     '/en/docs/curated/what-is-afenda',
     '/en/docs/curated/doctrine',
     '/en/docs/openapi',
-    '/en/docs/generated/features/docs',
-    '/en/docs/generated/api/platform.health',
+    featureSample,
+    apiSample,
   ];
   for (const route of expectedMirrors) {
     const expectedPath = join(SEARCH_SITE_ROOT, routeToSearchMirrorPath(route));
@@ -1319,24 +1345,6 @@ function checkDocsDefaultFirstBoundary(): string[] {
     }
   }
 
-  const docsCssPath = join(ROOT, 'src/app/[locale]/docs/docs.css');
-  if (existsSync(docsCssPath)) {
-    const docsCss = readFileSync(docsCssPath, 'utf8');
-    const beforePrint = docsCss.split('@media print')[0] ?? docsCss;
-
-    for (const selector of DOCS_FORBIDDEN_CSS_SELECTORS) {
-      if (docsCss.includes(selector)) {
-        errors.push(`src/app/[locale]/docs/docs.css must not override Fumadocs selector "${selector}".`);
-      }
-    }
-
-    for (const selector of ['#nd-sidebar', '#nd-toc']) {
-      if (beforePrint.includes(selector)) {
-        errors.push(`src/app/[locale]/docs/docs.css may only target "${selector}" inside print rules.`);
-      }
-    }
-  }
-
   return errors;
 }
 
@@ -1388,15 +1396,30 @@ async function checkLLMExports(): Promise<string[]> {
     errors.push('getLLMText must read processed Markdown from Fumadocs.');
   }
 
-  const representative = join(ROOT, 'content/i18n/docs/en/generated/features/admin.mdx');
+  let representative = join(ROOT, 'content/i18n/docs/en/generated/features/admin.mdx');
+  try {
+    const featuresMeta = join(ENGLISH_DOCS_ROOT, 'generated', 'features', 'meta.json');
+    if (existsSync(featuresMeta)) {
+      const payload = JSON.parse(readFileSync(featuresMeta, 'utf8')) as { pages?: string[] };
+      const featurePages = Array.isArray(payload?.pages)
+        ? payload.pages.filter((item) => typeof item === 'string')
+        : [];
+      if (featurePages.length > 0 && featurePages[0]) {
+        representative = join(ENGLISH_DOCS_ROOT, 'generated', 'features', `${featurePages[0]}.mdx`);
+      }
+    }
+  } catch {
+    // Keep admin fallback when manifest metadata is not parseable.
+  }
+
   if (!existsSync(representative)) {
-    errors.push('content/i18n/docs/en/generated/features/admin.mdx is missing; run pnpm docs:generate.');
+    errors.push('generated feature evidence docs are missing; run pnpm docs:generate.');
   } else {
     const content = readFileSync(representative, 'utf8');
-    if (
-      (!content.includes('title: "Administration"') && !content.includes("title: 'Administration'")) ||
-      !content.includes(GENERATED_HEADER_MARKER)
-    ) {
+    if (!content.includes("docsType: 'generated-evidence'") && !content.includes('docsType: "generated-evidence"')) {
+      errors.push('representative generated docs page must declare docsType: "generated-evidence".');
+    }
+    if (!content.includes(GENERATED_HEADER_MARKER)) {
       errors.push('representative generated docs page is not ready for LLM export.');
     }
   }

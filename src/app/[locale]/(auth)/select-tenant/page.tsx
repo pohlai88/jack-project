@@ -1,10 +1,11 @@
-import { Building2, Sparkles } from 'lucide-react';
+import { Building2 } from 'lucide-react';
 import { redirect } from 'next/navigation';
 import { getLocale } from 'next-intl/server';
 
 import { CreateOrganizationForm } from '@/features/auth';
 import { localizeHref } from '@/i18n';
 import { Link } from '@/i18n/navigation';
+import { AppLogo } from '@/shared/components/brand/Logo';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui';
 
 import type { TenantRole } from '@/shared/db/schema/auth';
@@ -91,9 +92,7 @@ export default async function SelectTenantPage() {
     <div className="min-h-screen flex items-center justify-center bg-primary/5 p-4 relative overflow-hidden">
       <div className="w-full max-w-md relative">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-primary shadow-lg mb-4">
-            <Sparkles className="h-8 w-8 text-primary-foreground" />
-          </div>
+          <AppLogo placement="auth" href={null} showText={false} className="mb-4 justify-center" />
           <h1 className="text-3xl font-bold brand-gradient-text">Select Organization</h1>
           <p className="text-muted-foreground mt-2">Choose which workspace to access</p>
         </div>

@@ -7,6 +7,7 @@ import { ThemeCSSInjector } from '@/shared/components/providers/theme-css-inject
 import { getCurrentRoleIds, getCurrentUserPermissions } from '@/shared/lib/permissions';
 import { getTenantBySlug } from '@/shared/lib/tenant';
 import { parseTenantSettings } from '@/shared/lib/tenant-settings';
+import { createTenantThemeStyleText } from '@/shared/lib/tenant-theme-css';
 import { TenantProvider } from '@/shared/providers';
 
 import { TenantLayoutClient } from './TenantLayoutClient';
@@ -68,6 +69,7 @@ export default async function TenantLayout({ children, params }: TenantLayoutPro
         settings,
       }}
     >
+      <style id="tenant-theme-vars" dangerouslySetInnerHTML={{ __html: createTenantThemeStyleText(settings) }} />
       <TenantLocaleSync tenantDefaultLocale={settings.ui?.defaultLanguage} />
       <ThemeCSSInjector />
       <TenantLayoutClient tenantSlug={tenant.slug} permissions={permissions}>

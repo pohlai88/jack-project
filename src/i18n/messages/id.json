@@ -57,107 +57,57 @@
   "landing": {
     "hero": {
       "badge": "Platform SaaS berorientasi AI",
-      "title": {
-        "one": "Bangun dengan ",
-        "two": "Afenda"
-      },
+      "title": "Operational truth, engineered into the system of work.",
       "description": "Terapkan platform SaaS multi-tenant yang dikelola, dengan identitas, alur kerja AI, integrasi, administrasi tim, dan fondasi kontrol siap perusahaan.",
       "cta": {
-        "goToDashboard": "Ke dasbor",
-        "getStarted": "Mulai",
-        "explore": "Jelajahi dokumen"
+        "goToWorkspace": "Go to governed workspace",
+        "requestBriefing": "Request executive briefing",
+        "readBrief": "Read the system brief"
       },
-      "socialProof": {
-        "enterpriseReady": "Siap untuk perusahaan",
-        "aiNative": "AI-native",
-        "growthFocused": "Fokus pertumbuhan",
-        "enterpriseDesc": "Isolasi tenant, auditabilitas, dan akses berbasis peran sudah terintegrasi.",
-        "aiNativeDesc": "Hubungkan asisten, alur pengetahuan, dan data integrasi sejak hari pertama.",
-        "growthDesc": "Dirancang untuk tim yang perlu bergerak cepat tanpa kehilangan kendali."
-      }
-    },
-    "features": {
-      "title": "Segala yang tim Anda butuhkan untuk skala",
-      "description": "Fondasi SaaS praktis untuk pengguna, tim, admin, alur kerja AI, dan integrasi."
-    },
-    "pricing": {
-      "badge": "Paket sederhana",
-      "title": "Mulai hemat, skala dengan kendali",
-      "description": "Gunakan demo gratis, lalu sesuaikan platform untuk tim yang berkembang dan penerapan perusahaan.",
-      "mostPopular": "Paling populer",
-      "perMonth": "/bulan",
-      "plans": {
-        "free": {
-          "name": "Gratis",
-          "description": "Hingga 10 pengguna. Mulai dengan fitur dasar.",
-          "cta": "Mulai",
-          "features": {
-            "1": "Hingga 10 pengguna",
-            "2": "Asisten AI (terbatas)",
-            "3": "Integrasi GitHub",
-            "4": "Basis pengetahuan (baca)",
-            "5": "Dukungan komunitas"
+      "principles": {
+        "identity": "Deterministic workforce identity",
+        "telemetry": "Continuous skills telemetry",
+        "accessEvidence": "Governed access and role evidence",
+        "operatingMemory": "Audit-ready operating memory"
+      },
+      "surface": {
+        "eyebrow": "Operating Surface",
+        "title": "Workforce Control Record",
+        "state": "Governed",
+        "caption": "Designed for executive review, implementation governance, and operational audit continuity.",
+        "controls": {
+          "identity": {
+            "label": "Identity",
+            "value": "Resolved"
+          },
+          "skillsGraph": {
+            "label": "Skills Graph",
+            "value": "Current"
+          },
+          "governance": {
+            "label": "Governance",
+            "value": "Enforced"
           }
         },
-        "pro": {
-          "name": "Pro",
-          "description": "Untuk tim yang berkembang yang membutuhkan lebih banyak kemampuan.",
-          "cta": "Mulai",
-          "features": {
-            "1": "Pengguna tak terbatas",
-            "2": "Peran & izin kustom",
-            "3": "Webhook & log audit",
-            "4": "Basis pengetahuan penuh",
-            "5": "Dukungan prioritas"
+        "evidence": {
+          "accessControl": {
+            "title": "Access control",
+            "description": "Roles, permissions, and team boundaries remain explicit."
+          },
+          "workforceGraph": {
+            "title": "Workforce graph",
+            "description": "People, capabilities, knowledge, and execution signals connect into one operating view."
+          },
+          "evidenceLayer": {
+            "title": "Evidence layer",
+            "description": "Decisions and changes become traceable records, not scattered narrative."
           }
-        },
-        "enterprise": {
-          "name": "Enterprise",
-          "description": "Untuk organisasi dengan kebutuhan lanjutan.",
-          "cta": "Hubungi kami",
-          "features": {
-            "1": "Semua di Pro",
-            "2": "SSO (Auth0)",
-            "3": "Integrasi kustom",
-            "4": "Jaminan SLA",
-            "5": "Dukungan khusus"
-          }
-        }
-      }
-    },
-    "faq": {
-      "title": "Pertanyaan yang sering diajukan",
-      "items": {
-        "try": {
-          "question": "Apakah Afenda dapat dicoba gratis?",
-          "answer": "Ya. Lingkungan demo berfungsi penuh tanpa pembayaran. Jelajahi setiap fitur dengan data contoh."
-        },
-        "startData": {
-          "question": "Data apa yang saya butuhkan untuk memulai?",
-          "answer": "Cukup daftar tim Anda. Anda dapat mengimpor CSV, mengundang anggota secara manual, atau menggunakan alur impor massal."
-        },
-        "existingTools": {
-          "question": "Apakah ini bekerja dengan alat yang sudah kami gunakan?",
-          "answer": "Platform menyertakan GitHub secara bawaan dan kerangka integrasi fleksibel untuk webhook dan adapter sinkronisasi kustom."
-        },
-        "assistant": {
-          "question": "Bagaimana asisten AI bekerja?",
-          "answer": "AI menggunakan basis pengetahuan dan data pengguna Anda untuk menjawab pertanyaan, mencari dokumen, dan memberikan bantuan kontekstual. Mendukung model OpenAI dan Anthropic."
-        },
-        "security": {
-          "question": "Apakah data saya aman?",
-          "answer": "Ya. Platform dirancang multi-tenant, dengan isolasi data tenant, autentikasi perusahaan, dan kontrol akses berbasis izin."
-        },
-        "migration": {
-          "question": "Bisakah saya memigrasikan data yang sudah ada?",
-          "answer": "Ya. Anda dapat mengimpor data tim dari CSV, dan mesin integrasi dapat menyinkronkan sistem eksternal sesuai jadwal."
         }
       }
     },
     "nav": {
-      "features": "Fitur",
-      "pricing": "Harga",
-      "docs": "Dokumen",
+      "primaryNavigation": "Primary navigation",
+      "mobileNavigation": "Mobile navigation",
       "language": "Bahasa",
       "selectLanguage": "Pilih bahasa",
       "theme": "Tema",
@@ -168,187 +118,749 @@
         "dark": "Gelap",
         "system": "Sistem"
       },
-      "bookDemo": "Pesan Demo"
+      "items": {
+        "system": "System",
+        "surface": "Surface",
+        "domains": "Domains",
+        "guarantees": "Guarantees",
+        "docs": "Docs"
+      }
     },
-    "howItWorks": {
-      "title": "Cara kerjanya",
-      "description": "Siapkan tim Anda dalam tiga langkah sederhana.",
-      "steps": {
-        "configure": {
-          "title": "Terapkan & konfigurasikan",
-          "description": "Terapkan template, buat tenant Anda, konfigurasikan branding, peran, dan hubungkan penyedia AI Anda."
+    "heroPreview": {
+      "ariaLabel": "Ekstrak kebenaran operasional kanonis",
+      "diagram": {
+        "eyebrow": "Truth resolution console",
+        "title": "Signals become operating truth after resolution.",
+        "subtitle": "Afenda binds operational movement to identity, evaluates it against policy, and commits only the record the business can defend.",
+        "trace": {
+          "label": "Resolution state",
+          "mode": "Governed",
+          "state": "Resolved"
         },
-        "invite": {
-          "title": "Undang pengguna",
-          "description": "Undang anggota tim, tetapkan peran, dan biarkan mereka menyiapkan profil dan integrasi."
+        "connectors": {
+          "normalize": "Normalize",
+          "govern": "Govern",
+          "commit": "Commit",
+          "expose": "Expose"
         },
-        "launch": {
-          "title": "Luncurkan dengan AI",
-          "description": "Hubungkan basis pengetahuan, aktifkan asisten AI, atur webhook, dan jalankan."
+        "flowLabel": "Signal / Boundary / Policy / Canonical Record / Evidence",
+        "proofTags": {
+          "nonBypassable": "Non-bypassable",
+          "identityBound": "Identity-bound",
+          "auditReady": "Audit-ready"
+        },
+        "stages": {
+          "signals": {
+            "title": "Operational signals",
+            "subtitle": "Messy workforce movement enters with context.",
+            "items": {
+              "identity": "Identity",
+              "skills": "Skills",
+              "activity": "Activity",
+              "knowledge": "Knowledge"
+            }
+          },
+          "boundary": {
+            "title": "Controlled boundary",
+            "subtitle": "Only governed input crosses the control gate.",
+            "note": "Tenant scope, authority, and source reliability are checked before state can move."
+          },
+          "core": {
+            "title": "Resolution core",
+            "subtitle": "Deterministic control layer",
+            "items": {
+              "identityBinding": "Identity binding",
+              "policyResolution": "Policy resolution",
+              "evidenceCommit": "Evidence commit"
+            }
+          },
+          "record": {
+            "title": "Canonical record",
+            "subtitle": "Resolved state committed for operation.",
+            "cardTitle": "Canonical record",
+            "cardSubtitle": "Resolved. Governed. Trusted.",
+            "fields": {
+              "recordId": {
+                "term": "Record ID",
+                "value": "CR-7F3A-9821"
+              },
+              "identity": {
+                "term": "Identity",
+                "value": "A1F9.7C2E.4D88"
+              },
+              "skills": {
+                "term": "Skills",
+                "value": "12 verified"
+              },
+              "policyOutcome": {
+                "term": "Policy outcome",
+                "value": "Allowed"
+              },
+              "evidenceHash": {
+                "term": "Evidence hash",
+                "value": "4f7c...9e21"
+              }
+            }
+          },
+          "audit": {
+            "title": "Audit & visibility",
+            "subtitle": "Proof is produced with the record.",
+            "items": {
+              "proof": {
+                "title": "Proof",
+                "body": "Verifiable evidence and outcomes"
+              },
+              "monitoring": {
+                "title": "Monitoring",
+                "body": "Real-time oversight and alerts"
+              },
+              "trace": {
+                "title": "Trace",
+                "body": "End-to-end lineage and audit trail"
+              }
+            }
+          }
+        }
+      },
+      "eyebrow": "Permukaan kebenaran operasional",
+      "title": "Sebuah catatan belum diterima sampai identitas, kebijakan, bukti, dan status selaras.",
+      "subtitle": "Permukaan ini bukan pratinjau dasbor. Ini adalah ekstrak formal tentang bagaimana Afenda mengubah pergerakan operasional menjadi kebenaran bisnis kanonis yang dapat dioperasikan, diatur, dan diaudit.",
+      "trace": {
+        "metaLabel": "Jejak kebenaran",
+        "id": "TRUTH-TRACE / 7W1H",
+        "modeLabel": "Mode",
+        "mode": "Tata kelola aktif",
+        "stateLabel": "Status",
+        "state": "Terselesaikan"
+      },
+      "ledger": {
+        "indexLabel": "01 / Buku kontrol",
+        "sequence": "Berurutan",
+        "title": "Buku kontrol dari peristiwa ke catatan",
+        "description": "Setiap peristiwa operasional harus melewati pengikatan identitas, evaluasi kebijakan, dan pelampiran bukti sebelum diizinkan menggerakkan status bisnis.",
+        "rows": {
+          "eventReceived": {
+            "code": "EVT-2401",
+            "label": "Peristiwa operasional diterima dari sumber yang dikelola",
+            "status": "Diterima",
+            "time": "09:41:12"
+          },
+          "identityBound": {
+            "code": "IDN-7W1H",
+            "label": "Aktor, tenant, konteks, kepemilikan, dan stempel waktu terikat",
+            "status": "Terikat",
+            "time": "09:41:13"
+          },
+          "policyApplied": {
+            "code": "POL-GOV",
+            "label": "Kebijakan kontrol dievaluasi sebelum transisi status",
+            "status": "Terkontrol",
+            "time": "09:41:14"
+          },
+          "recordResolved": {
+            "code": "REC-CANON",
+            "label": "Catatan kanonis diselesaikan dengan rantai bukti",
+            "status": "Terverifikasi",
+            "time": "09:41:16"
+          }
+        }
+      },
+      "resolved": {
+        "indexLabel": "02 / Catatan terselesaikan",
+        "title": "Status operasional terselesaikan",
+        "description": "Afenda tidak menambahkan lapisan interpretasi lain. Afenda menyelesaikan status yang dapat dioperasikan, dipertahankan, dan direkonsiliasi oleh bisnis.",
+        "recordLabel": "Catatan kanonis",
+        "state": "Satu kebenaran aktif",
+        "body": "Status yang diterima dibatasi tenant, terikat aktor, diuji kebijakan, dan terhubung ke bukti yang diperlukan untuk menjelaskan mengapa status itu ada."
+      },
+      "evidence": {
+        "record": {
+          "term": "Catatan",
+          "value": "Objek status kanonis"
+        },
+        "tenantBoundary": {
+          "term": "Batas",
+          "value": "Berlingkup tenant dan sadar kepemilikan"
+        },
+        "decisionPath": {
+          "term": "Jalur keputusan",
+          "value": "Jejak kebijakan, pengecualian, dan penyelesai"
+        },
+        "auditPosture": {
+          "term": "Postur audit",
+          "value": "Dihasilkan oleh operasi, bukan direkonstruksi kemudian"
+        }
+      },
+      "obligations": {
+        "title": "Kewajiban perusahaan",
+        "items": {
+          "economic": {
+            "term": "Ekonomi",
+            "value": "Terekonsiliasi"
+          },
+          "operational": {
+            "term": "Operasional",
+            "value": "Dapat dieksekusi"
+          },
+          "technical": {
+            "term": "Teknis",
+            "value": "Terbatas"
+          },
+          "audit": {
+            "term": "Audit",
+            "value": "Dapat dipertahankan"
+          }
+        }
+      },
+      "consequence": {
+        "label": "Konsekuensi bisnis",
+        "title": "Tidak ada penyelamatan naratif setelah fakta terjadi.",
+        "body": "Sistem memaksa kebenaran diproduksi pada saat operasi berlangsung, sehingga keuangan, audit, manajemen, dan eksekusi bekerja dari catatan terselesaikan yang sama."
+      }
+    },
+    "system": {
+      "eyebrow": "System definition",
+      "title": "Afenda is not a feature surface. It is the canonical layer beneath operational judgment.",
+      "description": "The product exists to prevent the familiar enterprise failure: useful activity spread across tools, but no single accountable record strong enough for decision, audit, and control.",
+      "points": {
+        "recordDiscipline": {
+          "label": "Record discipline",
+          "title": "Every operational event resolves into a governed source of truth.",
+          "body": "Afenda treats documents, entities, actions, approvals, and state transitions as durable business facts, not as disconnected interface activity."
+        },
+        "evidenceBinding": {
+          "label": "Evidence binding",
+          "title": "The system keeps proof close to the decision it supports.",
+          "body": "A decision without lineage is only a claim. Afenda binds actor, time, tenant, source, reason, and resulting state into a traceable operating layer."
+        },
+        "resolutionControl": {
+          "label": "Resolution control",
+          "title": "Conflicting activity is resolved by policy, not by memory.",
+          "body": "When systems disagree, the operating model needs precedence, auditability, and controlled mutation. Afenda is built around that discipline."
         }
       }
     },
-    "featureTabs": {
-      "users": {
-        "label": "Untuk Pengguna",
-        "description": "Segala yang dibutuhkan pengguna Anda untuk memulai dan tetap produktif.",
-        "features": {
-          "profile": {
-            "title": "Profil",
-            "description": "Profil pengguna lengkap dengan avatar dan integrasi GitHub."
+    "topology": {
+      "eyebrow": "Topologi sistem",
+      "title": "Satu alur dari sinyal mentah ke catatan yang dapat dipertahankan.",
+      "description": "Afenda tidak menyebar kebenaran di banyak alat. Masukan dinormalisasi, dievaluasi di inti resolusi, dan dikeluarkan sebagai status kanonik dengan visibilitas audit.",
+      "thesis": "Jika organisasi tidak dapat menggambar garis ini dalam satu diagram, ia tidak memiliki satu kebenaran operasional—hanya interpretasi yang diperselisihkan.",
+      "diagram": {
+        "label": "Topologi kontrol",
+        "title": "Normalisasi → resolusi → komit",
+        "state": "Invariant arsitektur"
+      },
+      "inputs": {
+        "title": "Masukan operasional",
+        "items": {
+          "identity": {
+            "title": "Sinyal identitas",
+            "body": "Aktor, penyewa, dan konteks kepemilikan sebagai fakta tingkat pertama."
           },
-          "assistant": {
-            "title": "Asisten AI",
-            "description": "Obrolan bahasa alami didukung oleh OpenAI atau Anthropic."
+          "skills": {
+            "title": "Graf kemampuan",
+            "body": "Keterampilan, kemahiran, dan struktur tenaga kerja sebagai atribut yang diatur."
           },
-          "knowledgeBase": {
-            "title": "Basis Pengetahuan",
-            "description": "Cari dan telusuri dokumen serta konten organisasi Anda."
+          "activity": {
+            "title": "Telemetri eksekusi",
+            "body": "Peristiwa alur kerja, dokumen, dan HRIS dengan sumber dan stempel waktu."
           },
-          "directory": {
-            "title": "Direktori",
-            "description": "Temukan dan hubungkan dengan anggota tim."
+          "knowledge": {
+            "title": "Objek pengetahuan",
+            "body": "Artefak dan catatan pembelajaran terikat pada cakupan dan kebijakan."
           }
         }
       },
-      "team": {
-        "label": "Untuk Tim",
-        "description": "Alat kolaborasi dan visibilitas untuk tim yang berkembang.",
-        "features": {
-          "peopleDirectory": {
-            "title": "Direktori Orang",
-            "description": "Telusuri dan cari anggota tim dengan filter."
+      "connectors": {
+        "normalize": "Normalisasi",
+        "resolve": "Resolusi"
+      },
+      "controls": {
+        "title": "Inti resolusi",
+        "items": {
+          "identityBinding": {
+            "title": "Pengikatan identitas",
+            "body": "Setiap transisi terikat pada aktor dan penyewa sebelum kebijakan dijalankan."
           },
-          "orgChart": {
-            "title": "Bagan Organisasi",
-            "description": "Visualisasikan struktur tim dan hubungan pelaporan."
+          "policyResolution": {
+            "title": "Resolusi kebijakan",
+            "body": "Otoritas, presedensi, dan aturan menentukan status yang boleh berubah."
           },
-          "activityFeed": {
-            "title": "Umpan Aktivitas",
-            "description": "Pembaruan real-time tentang aktivitas tim dan platform."
-          },
-          "webhooks": {
-            "title": "Webhook",
-            "description": "Kirim peristiwa ke sistem eksternal saat sesuatu terjadi."
+          "evidenceCommit": {
+            "title": "Komit bukti",
+            "body": "Bukti dilampirkan saat catatan ditulis—bukan dibuat ulang kemudian."
           }
         }
       },
-      "admin": {
-        "label": "Administrasi",
-        "description": "Kontrol penuh bagi admin yang mengelola platform.",
-        "features": {
-          "memberManagement": {
-            "title": "Manajemen Anggota",
-            "description": "Undang, kelola, dan nonaktifkan anggota tim."
+      "outputs": {
+        "title": "Kebenaran yang dikeluarkan",
+        "items": {
+          "record": {
+            "label": "Catatan kanonik",
+            "value": "Satu status terkomitmen yang dapat dioperasikan bisnis."
           },
-          "roles": {
-            "title": "Peran & Izin",
-            "description": "PBAC yang terperinci dengan bundel peran kustom."
+          "visibility": {
+            "label": "Visibilitas teratur",
+            "value": "Tampilan per peran atas catatan yang sama di bawahnya."
           },
-          "auditLogs": {
-            "title": "Log Audit",
-            "description": "Jejak lengkap semua tindakan di seluruh platform."
-          },
-          "settings": {
-            "title": "Pengaturan",
-            "description": "Konfigurasi tingkat tenant, branding, dan feature flags."
+          "audit": {
+            "label": "Jejak audit",
+            "value": "Jalur terlacak dari sinyal ke status yang diterima."
           }
         }
       },
-      "ai": {
-        "label": "AI & Integrasi",
-        "description": "Hubungkan AI dan sistem eksternal ke platform Anda.",
-        "features": {
-          "chat": {
-            "title": "Obrolan AI",
-            "description": "Pencarian percakapan di seluruh data Anda."
+      "consequence": {
+        "label": "Konsekuensi desain",
+        "title": "Tanpa otoritas paralel.",
+        "body": "Jika saluran dapat mengubah kebenaran bisnis tanpa melalui tulang punggung ini, Afenda sengaja tidak menganggapnya teratur."
+      }
+    },
+    "surface": {
+      "eyebrow": "Operational surface",
+      "title": "The interface is reduced to what the organization must know, prove, and control.",
+      "description": "No decorative dashboards. No synthetic theatre. The operational surface exists to expose canonical records, policy decisions, evidence links, and state movement."
+    },
+    "integrationReality": {
+      "eyebrow": "Realitas integrasi",
+      "title": "Sistem eksternal menyumbang sinyal. Afenda mempertahankan otoritas.",
+      "description": "ERP, HRIS, identitas, dan kolaborasi tetap sebagai sumber—bukan buku besar kebenaran yang bersaing. Setiap jalur masuk melewati cakupan identitas, normalisasi, tata kelola, dan disiplin komit.",
+      "quote": "Integrasi membuktikan apa yang melewati batas—bukan apa yang boleh dipercaya bisnis.",
+      "panel": {
+        "label": "Permukaan kontrol integrasi",
+        "title": "Dari sinyal eksternal ke catatan terbatas",
+        "state": "Batas ditegakkan",
+        "traceLine": "sinyal eksternal → batas terkontrol → catatan kanonik"
+      },
+      "interfaces": {
+        "identity": {
+          "title": "Bidang identitas",
+          "body": "SSO, master SDM, kontraktor, dan principal federasi dipetakan ke identitas tenaga kerja per penyewa."
+        },
+        "systems": {
+          "title": "Konektor sistem pencatat",
+          "body": "Workday, SAP, BambooHR, ATS, LMS, tiket—dimasukkan sebagai sumber teratur berstempel waktu."
+        },
+        "knowledge": {
+          "title": "Pengetahuan & dokumen",
+          "body": "Objek Confluence, Notion, Drive terdaftar dengan kepemilikan, sensitivitas, dan tag kebijakan."
+        },
+        "governance": {
+          "title": "Penegakan tata kelola",
+          "body": "Paket aturan, rantai persetujuan, break-glass, dan deteksi drift sebelum status maju."
+        }
+      },
+      "boundary": {
+        "index": "03 / Batas penegakan",
+        "title": "Urutan tanpa jalan pintas",
+        "description": "Setiap tahap wajib. Melewatkan tahap bukan opsi konfigurasi—itu kontrak integrasi yang gagal.",
+        "meta": "urutan penegakan · tanpa bypass",
+        "steps": {
+          "connect": {
+            "label": "Hubungkan",
+            "value": "Konektor terautentikasi dengan rahasia least-privilege dan cakupan eksplisit."
           },
-          "vectorSearch": {
-            "title": "Pencarian Vektor",
-            "description": "Pencarian semantik didukung embedding pgvector."
+          "normalize": {
+            "label": "Normalisasi",
+            "value": "Pemetaan skema, deduplikasi, dan penanda konflik sebelum kebijakan."
           },
-          "githubIntegration": {
-            "title": "Integrasi GitHub",
-            "description": "Sinkronkan profil pengguna dan aktivitas dari GitHub."
+          "govern": {
+            "label": "Tata kelola",
+            "value": "Kebijakan, persetujuan, dan pengecualian dievaluasi dengan persyaratan bukti."
           },
-          "integrationEngine": {
-            "title": "Mesin Integrasi",
-            "description": "Hubungkan sistem eksternal apa pun dengan kerangka sinkronisasi."
+          "commit": {
+            "label": "Komit",
+            "value": "Catatan kanonik ditulis dengan silsilah tak terubah."
           }
+        }
+      },
+      "record": {
+        "label": "Bukti integrasi",
+        "title": "BOUNDARY-CLOSED",
+        "description": "Catatan ini menjamin aktivitas eksternal melewati seluruh rantai penegakan sebelum mengubah kebenaran perusahaan.",
+        "footer": "Hash silsilah · jadwal rotasi · atestasi cakupan dalam berkas",
+        "tagline": "sumber disimpan · batas ditegakkan · status diselesaikan",
+        "fields": {
+          "source": {
+            "term": "Sistem sumber",
+            "value": "Workday HCM (prod-west)"
+          },
+          "contract": {
+            "term": "Kontrak konektor",
+            "value": "WD-HCM-2025.3 · ditandatangani"
+          },
+          "boundary": {
+            "term": "Pos pemeriksaan batas",
+            "value": "Identitas ✓ · Kebijakan ✓ · Bukti ✓"
+          },
+          "result": {
+            "term": "Hasil terkomitmen",
+            "value": "Catatan tenaga kerja kanonik diperbarui dengan bundel audit"
+          }
+        }
+      },
+      "consequence": {
+        "label": "Aturan operasi",
+        "title": "Integrasi tidak mendapat pintu samping ke kebenaran.",
+        "body": "Jika vendor atau alur bayangan tidak dapat menunjukkan bukti yang sama, itu bukan bagian model operasi teratur—terlepas dari kenyamanan UI."
+      }
+    },
+    "resolutionStages": {
+      "input": {
+        "step": "Masukan",
+        "title": "Peristiwa masuk sebagai fakta yang membawa bukti.",
+        "description": "Dokumen, tindakan, integrasi, identitas, dan perubahan status ditangkap dengan konteks cukup untuk dinilai nanti."
+      },
+      "control": {
+        "step": "Kontrol",
+        "title": "Kebijakan menentukan otoritas dan presedensi.",
+        "description": "Sistem mengevaluasi cakupan penyewa, otoritas peran, keandalan sumber, dan ikatan aturan sebelum status boleh bergerak."
+      },
+      "truth": {
+        "step": "Kebenaran",
+        "title": "Catatan kanonik diselesaikan dan disimpan.",
+        "description": "Status yang dihasilkan dapat diperiksa, diaudit, dan digunakan di seluruh organisasi tanpa mengandalkan penjelasan manual."
+      }
+    },
+    "domains": {
+      "eyebrow": "Capability domains",
+      "title": "Capabilities are expressed as enterprise controls, not feature cards.",
+      "description": "Each domain answers one question: what can the organization rely on when operational pressure, system disagreement, and audit scrutiny arrive together?"
+    },
+    "capabilities": {
+      "canonicalRecords": {
+        "title": "Canonical records",
+        "body": "Operational entities, documents, events, and transitions are normalized into accountable records with stable ownership, scope, and identity.",
+        "proof": "Reduces duplicate truth surfaces and prevents record drift across teams, tools, and tenants."
+      },
+      "evidenceBinding": {
+        "title": "Evidence binding",
+        "body": "Every material state carries the proof required to defend it: source, actor, timestamp, reason, tenant boundary, and decision path.",
+        "proof": "Turns operational claims into inspectable facts before audit pressure arrives."
+      },
+      "governanceControls": {
+        "title": "Governance controls",
+        "body": "Policy, role, approval, precedence, and exception handling are treated as first-class controls rather than implementation comments.",
+        "proof": "Keeps operational change inside a controlled spine instead of relying on informal process memory."
+      },
+      "auditContinuity": {
+        "title": "Audit continuity",
+        "body": "The system preserves the path from original event to current state, including reversals, overrides, and resolution authority.",
+        "proof": "Supports executive review, regulatory inspection, and internal accountability without narrative reconstruction."
+      },
+      "operationalResolution": {
+        "title": "Operational resolution",
+        "body": "When incoming facts conflict, Afenda resolves them through declared precedence, tenant scope, and evidence quality.",
+        "proof": "Prevents the business from manually negotiating which system should be believed."
+      },
+      "enterpriseIntegration": {
+        "title": "Enterprise integration",
+        "body": "External systems connect as sources and consumers of truth, not as uncontrolled parallel ledgers.",
+        "proof": "Allows ERP, identity, document, and workflow systems to participate without fragmenting authority."
+      }
+    },
+    "commercial": {
+      "eyebrow": "Postur komersial",
+      "title": "Siap pengadaan tanpa teater pengadaan.",
+      "description": "Afenda menyelaraskan hukum, keamanan, dan implementasi pada fakta arsitektur yang sama: otoritas terbatas, bukti dipertahankan, dan satu postur catatan kanonik.",
+      "cta": {
+        "primary": "Jadwalkan tinjauan eksekutif",
+        "secondary": "Buka dossier sistem"
+      },
+      "panel": {
+        "label": "Dimensi tinjauan",
+        "title": "Yang benar-benar diperiksa dalam due diligence",
+        "state": "Materi selaras"
+      },
+      "review": {
+        "governance": {
+          "title": "Artefak tata kelola",
+          "body": "Matriks kontrol, kerangka DPIA, model segregasi, peta retensi—diekspor dari konfigurasi aktif."
+        },
+        "implementation": {
+          "title": "Buku panduan implementasi",
+          "body": "Onboarding bertahap dengan rollback eksplisit, gerbang validasi, dan kriteria sukses terikat catatan kanonik."
+        },
+        "security": {
+          "title": "Bukti keamanan",
+          "body": "Rotasi rahasia, ikatan SSO, silsilah audit tak terubah, routing anomali terdokumentasi—bukan hanya klaim."
+        },
+        "commercial": {
+          "title": "Struktur komersial",
+          "body": "Kapasitas, tingkat dukungan, dan batas tanggung jawab terhadap kontrol fitur nyata—tanpa SKU rak."
+        }
+      },
+      "process": {
+        "index": "04 / Ritme komersial",
+        "title": "Dari percakapan pertama ke produksi teratur",
+        "description": "Setiap langkah menghasilkan artefak bertanda tangan. Tidak ada yang mengandalkan narasi kosong.",
+        "steps": {
+          "scope": {
+            "label": "Cakupan",
+            "value": "Permukaan kebenaran dan kontrak integrasi terdaftar."
+          },
+          "validate": {
+            "label": "Validasi",
+            "value": "Penyewa pilot mematuhi tumpukan kebijakan penuh—tanpa jalan pintas demo."
+          },
+          "align": {
+            "label": "Selaraskan",
+            "value": "Hukum, TI, dan eksekutif menandatangani paket arsitektur yang identik."
+          },
+          "commit": {
+            "label": "Komit",
+            "value": "Rollout produksi dengan verifikasi bukti berkelanjutan."
+          }
+        }
+      },
+      "record": {
+        "label": "Catatan due diligence",
+        "title": "SIGN-OFF ACTIVE",
+        "description": "Panel ini melacak keselarasan kontrak antara kontrol yang dipasarkan dan konfigurasi yang di-deploy.",
+        "footer": "Dossier terkunci versi · log perubahan di bawah akses korporat",
+        "fields": {
+          "model": {
+            "term": "Model pengiriman",
+            "value": "Bidang kontrol single-tenant · isolasi beban multi-tenant"
+          },
+          "basis": {
+            "term": "Dasar tanggung jawab",
+            "value": "Peta jalan SOC2 Tipe II · lampiran uptime & residensi data"
+          },
+          "review": {
+            "term": "Paket tinjauan dewan",
+            "value": "v2025-Q2 · diedarkan"
+          },
+          "outcome": {
+            "term": "Hasil saat ini",
+            "value": "Menunggu kontra-tanda CIO · tanpa celah kontrol terbuka"
+          }
+        }
+      },
+      "consequence": {
+        "label": "Konsekuensi komersial",
+        "title": "Kontrak mengutip arsitektur—bukan slide.",
+        "body": "Saat sengketa atau audit, kedua pihak menelusuri kewajiban ke kontrol terdaftar dan catatan tak terubah—bukan klaim pemasaran yang ditafsir ulang."
+      }
+    },
+    "guarantees": {
+      "eyebrow": "Evidence / guarantees",
+      "title": "Credibility comes from what the system can prove under pressure.",
+      "description": "The guarantee is not speed, dashboards, or generic automation. The guarantee is that the organization can inspect how an operational state became true.",
+      "items": {
+        "canonicalState": {
+          "title": "One canonical state",
+          "body": "The business does not need three reports and a meeting to decide which record is true."
+        },
+        "decisionPath": {
+          "title": "Traceable decision path",
+          "body": "Every material decision can be followed through actor, source, policy, reason, and resulting state."
+        },
+        "tenantBounded": {
+          "title": "Tenant-bounded records",
+          "body": "Records remain scoped to the correct tenant, legal entity, operating boundary, and authority model."
+        },
+        "auditReady": {
+          "title": "Audit-ready evidence",
+          "body": "Evidence is retained as part of the operational record, not collected later as a separate rescue exercise."
+        },
+        "controlledChange": {
+          "title": "Controlled change",
+          "body": "Overrides, exceptions, and reversals move through visible governance rather than hidden operational shortcuts."
+        },
+        "integrationDiscipline": {
+          "title": "Integration discipline",
+          "body": "Connected systems exchange truth through controlled boundaries instead of becoming competing authorities."
         }
       }
     },
-    "socialProofSection": {
-      "title": "Dipercaya oleh tim di seluruh dunia",
-      "description": "Lihat bagaimana organisasi menggunakan Afenda untuk mengotomasi dan memperluas alur kerja mereka.",
-      "roleAt": "{role} di {company}",
-      "sponsorsTitle": "Mitra & sponsor kami",
-      "sponsorLabel": "Mitra {index}",
-      "comingSoon": "Segera hadir",
-      "sponsorCta": "Tertarik menjadi sponsor Afenda?",
-      "sponsorCtaLink": "Hubungi kami",
-      "testimonials": {
-        "1": {
-          "role": "Wakil Presiden Teknik",
-          "text": "Afenda mengubah cara kami membangun dan mengotomasi alur kerja. Segalanya kini transparan dan berbasis data."
+    "evidence": {
+      "eyebrow": "Arsitektur bukti",
+      "title": "Kepercayaan adalah properti catatan—bukan dek presentasi.",
+      "description": "Afenda menjadikan bukti struktural: pengikatan identitas, evaluasi kebijakan, komit kanonik, dan visibilitas audit adalah tahap yang terlihat, bukan catatan tambahan.",
+      "quote": "Jika tidak dapat dilacak, itu bukan bukti—itu opini.",
+      "panel": {
+        "label": "Tumpukan bukti",
+        "title": "Empat jaminan tak tereduksi sebelum kebenaran diakui",
+        "state": "Semua tahap terpenuhi"
+      },
+      "items": {
+        "identity": {
+          "title": "Pengikatan identitas",
+          "body": "Aktor, penyewa, sesi, stempel waktu, dan cakupan ditegaskan sebelum interpretasi."
         },
-        "2": {
-          "role": "Manajer Operasi SDM",
-          "text": "Asisten AI dan mesin integrasi menghemat minggu-minggu waktu pengaturan tim kami. Pengiriman SaaS kami belum pernah secepat ini."
+        "policy": {
+          "title": "Gerbang kebijakan",
+          "body": "Aturan, persetujuan, pengecualian, dan break-glass dievaluasi dengan alasan tercatat."
         },
-        "3": {
-          "role": "Direktur Talent",
-          "text": "Akhirnya, platform di mana manajer bisa fokus pada pertumbuhan daripada spreadsheet. Integrasi OKR mulus."
+        "record": {
+          "title": "Komit kanonik",
+          "body": "Transisi status menulis fakta tahan lama dengan versi dan hash silsilah."
+        },
+        "audit": {
+          "title": "Permukaan audit",
+          "body": "Inspektur melihat jalur dari peristiwa asal ke hasil yang dipertahankan—tanpa rekonstruksi offline."
+        }
+      },
+      "auditPath": {
+        "index": "03 / Silsilah yang dapat diperiksa",
+        "title": "Rantai minimum yang diminta regulator—terintegrasi",
+        "description": "Setiap lompatan diattestasi kriptografis atau operasional. Menghapus lompatan membatalkan catatan.",
+        "steps": {
+          "actor": {
+            "label": "Atestasi aktor",
+            "value": "Sesi ber-hardware + step-up untuk transisi sensitif"
+          },
+          "tenant": {
+            "label": "Isolasi penyewa",
+            "value": "Keamanan tingkat baris + larangan panggilan lintas penyewa di tepi API"
+          },
+          "policy": {
+            "label": "Evaluasi kebijakan",
+            "value": "Versi mesin deterministik dilog dengan hash hasil"
+          },
+          "decision": {
+            "label": "Pengambilan keputusan manusia",
+            "value": "ID persetujuan, bukti otoritas delegasi, stempel SLA"
+          },
+          "record": {
+            "label": "Persistensi kanonik",
+            "value": "Shard log peristiwa tier-WORM + atestasi penyimpanan dingin bermirror"
+          }
+        }
+      },
+      "record": {
+        "label": "Bundel terverifikasi",
+        "title": "EVIDENCE-PACK CLOSED",
+        "description": "Bundel ini memenuhi daftar periksa audit internal AC-417 tanpa merakit lampiran manual.",
+        "footer": "Akar pohon hash · tanda tangan kuorum · bendera residensi yurisdiksi",
+        "fields": {
+          "source": {
+            "term": "Sumber asal",
+            "value": "3 sistem · divergensi ditandai otomatis"
+          },
+          "control": {
+            "term": "Referensi kontrol",
+            "value": "Pemetaan Lampiran A ISO27001 per keluarga kontrol"
+          },
+          "result": {
+            "term": "Hash status hasil",
+            "value": "sha256:92f…c11"
+          },
+          "review": {
+            "term": "Tinjauan independen",
+            "value": "Impor workbook Big-4 · delta 0"
+          }
+        }
+      },
+      "consequence": {
+        "label": "Postur audit",
+        "title": "Utang bukti bermajemuk—Afenda amortisasi saat menulis.",
+        "body": "Organisasi yang menunda pengambilan bukti membayar bunga majemuk pada setiap audit, sengketa, atau transisi kepemimpinan berikutnya. Bukti struktural menghindari trajektori itu."
+      }
+    },
+    "closing": {
+      "eyebrow": "Closing position",
+      "title": "The system either knows the truth, or the business negotiates it manually.",
+      "description": "Afenda is designed for the former: a governed truth layer where operational records survive growth, integration pressure, tenant complexity, and executive review without requiring narrative rescue."
+    },
+    "readiness": {
+      "eyebrow": "Readiness questions",
+      "title": "Enterprise adoption begins with evidence, scope, and operating discipline.",
+      "description": "These are the questions the product is built to answer before procurement, rollout, or executive sponsorship creates pressure.",
+      "questions": {
+        "replacement": {
+          "question": "What does Afenda replace?",
+          "answer": "Afenda does not begin as a replacement for ERP, document storage, or workflow tools. It establishes the truth layer that governs how operational facts become reliable records across those systems."
+        },
+        "start": {
+          "question": "Where does implementation start?",
+          "answer": "Implementation starts with the highest-risk truth surface: records where conflicting sources, manual reconciliation, approval ambiguity, or audit exposure already create operational cost."
+        },
+        "integrations": {
+          "question": "How does Afenda handle integrations?",
+          "answer": "Integrations are treated as governed sources and consumers. They are not allowed to silently create a second authority without identity, scope, precedence, and evidence rules."
+        },
+        "enterpriseGrade": {
+          "question": "What makes this enterprise-grade?",
+          "answer": "The enterprise posture comes from tenant boundaries, evidence retention, audit continuity, policy-driven state transitions, and a product model that treats control as architecture rather than an afterthought."
+        },
+        "executiveReview": {
+          "question": "How should executives evaluate the product?",
+          "answer": "Evaluate whether Afenda can explain who changed what, why it changed, which source was trusted, whose authority applied, when the state became true, and how the evidence survives review."
+        }
+      }
+    },
+    "executiveClose": {
+      "eyebrow": "Keputusan eksekutif",
+      "title": "Langkah berikutnya adalah tinjauan arsitektur—bukan demo lagi.",
+      "description": "Afenda menerbitkan ontologi yang sama untuk pengadaan, pembangun, auditor, dan operator. Putuskan apakah satu tulang punggung kebenaran struktural lebih baik daripada biaya rekonsiliasi yang meningkat.",
+      "cta": {
+        "workspace": "Masuk ruang kerja teratur",
+        "briefing": "Pesan briefing eksekutif",
+        "systemBrief": "Tinjau dossier sistem"
+      },
+      "panel": {
+        "ariaLabel": "Panel dukungan keputusan eksekutif",
+        "label": "Artefak siap dewan",
+        "title": "Yang ditandatangani kepemimpinan",
+        "governance": {
+          "title": "Dossier tata kelola",
+          "body": "Paket kebijakan, overlay RACI, diagram segregasi, kerangka DPIA—diekspor sebagai bundel berversi."
+        },
+        "review": {
+          "title": "Memo tinjauan red-team",
+          "body": "Delta pentest pihak ketiga, kontrol kriptografis, hasil drill rantai anomaly."
+        },
+        "close": {
+          "label": "Pos pemeriksaan keputusan",
+          "title": "Tidak ada ketidaktahuan arsitektur tersisa?",
+          "body": "Jika ada item masih “akan ditentukan saat implementasi,” tinjauan belum selesai—skala tidak memperbaiki kontrol ambigu."
         }
       }
     },
     "footer": {
+      "heading": "Afenda footer",
+      "navLabel": "Footer navigation",
       "blurb": "Fondasi platform SaaS siap produksi dengan multi-tenant, alur kerja AI, integrasi, dan kontrol yang siap untuk tata kelola.",
-      "sections": {
-        "product": "Produk",
-        "resources": "Sumber daya",
-        "company": "Perusahaan"
-      },
       "links": {
-        "features": "Fitur",
-        "pricing": "Harga",
-        "howItWorks": "Cara Kerja",
-        "documentation": "Dokumentasi",
-        "blog": "Blog (segera hadir)",
-        "changelog": "Catatan perubahan (segera hadir)",
-        "about": "Tentang (segera hadir)",
-        "contact": "Kontak (segera hadir)",
-        "privacy": "Privasi (segera hadir)",
-        "terms": "Syarat (segera hadir)"
+        "system": "System definition",
+        "surface": "Operational surface",
+        "domains": "Capability domains",
+        "guarantees": "Evidence guarantees",
+        "docs": "Documentation"
       },
-      "builtWith": "Dibangun dengan Next.js, Tailwind CSS, dan Drizzle ORM.",
-      "socialComingSoon": "{name} (segera hadir)"
+      "copyright": "(c) {year} Afenda. Operational truth, governed by design.",
+      "position": "Built for enterprises that require proof before scale."
     },
-    "heroPreview": {
-      "fasterOnboarding": "+42% onboarding lebih cepat",
-      "profileCard": {
-        "personName": "Jane Doe",
-        "personRole": "Pengembang Senior",
-        "badge": "+ Kepemimpinan"
-      },
-      "activityCard": {
-        "title": "Aktivitas Platform",
-        "teamVelocity": "Kecepatan tim",
-        "delivery": "Pengiriman"
-      },
-      "peopleFinder": {
-        "title": "Pencari Orang"
-      },
-      "people": {
-        "ana": {
-          "role": "Insinyur Senior"
-        },
-        "marco": {
-          "role": "Pemimpin Teknis"
+    "bookDemo": {
+      "back": "Back to Afenda",
+      "eyebrow": "Executive briefing",
+      "title": "Briefing intake is being prepared for controlled activation.",
+      "description": "This route is intentionally present so executive interest never resolves to a dead end. Until the formal intake workflow is connected, use the workspace entrypoint or review the system documentation.",
+      "primaryCta": "Enter workspace",
+      "secondaryCta": "Read documentation",
+      "briefingCard": {
+        "eyebrow": "Briefing scope",
+        "title": "What the review should cover",
+        "items": {
+          "identity": {
+            "term": "Identity",
+            "value": "How workforce identity is resolved, bounded, and kept deterministic across tenants."
+          },
+          "skills": {
+            "term": "Skills graph",
+            "value": "How skills telemetry, role evidence, and execution signals become a governed workforce graph."
+          },
+          "governance": {
+            "term": "Governance",
+            "value": "How access, permissions, approvals, and operating boundaries are enforced."
+          },
+          "audit": {
+            "term": "Audit continuity",
+            "value": "How decisions and changes remain traceable without after-the-fact narrative reconstruction."
+          }
         }
-      },
-      "integrationsCount": "12 integrasi",
-      "aiInsights": "Wawasan AI"
+      }
     }
   },
   "auth": {
@@ -969,6 +1481,7 @@
       "copied": "URL Markdown disalin ke clipboard",
       "copiedButton": "Disalin",
       "copyFailed": "Gagal menyalin ke clipboard",
+      "assistantHintTitle": "Ask the assistant inside the app",
       "assistantHint": "Asisten Afenda AI berfungsi dalam workspace tenant (sidebar → Assistant) untuk pengguna yang masuk, mengakses konteks organisasi Anda saat diaktifkan",
       "assistantHintAria": "Penggunaan asisten AI",
       "assistantCta": "Buka halaman utama aplikasi",

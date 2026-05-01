@@ -1,11 +1,13 @@
-import { Sparkles } from 'lucide-react';
 import { redirect } from 'next/navigation';
 
 import { TenantLoginForm } from '@/features/auth';
+import { AppLogo } from '@/shared/components/brand/Logo';
 import type { TenantRole } from '@/shared/db/schema/auth';
 import { auth } from '@/shared/lib/auth';
+import { isAuth0ProviderConfigured } from '@/shared/lib/auth0-provider-config';
 import { env } from '@/shared/lib/env';
 import { getTenantBySlug } from '@/shared/lib/tenant';
+import { applySettingsDefaults, parseTenantSettings } from '@/shared/lib/tenant-settings';
 
 interface TenantLoginPageProps {
   params: Promise<{ tenant: string }>;
@@ -26,7 +28,10 @@ export default async function TenantLoginPage({ params, searchParams }: TenantLo
   const { tenant: tenantSlug } = await params;
   const { email: emailParam } = await searchParams;
   const tenant = await getTenantBySlug(tenantSlug);
-  const auth0Configured = Boolean(env.AUTH0_CLIENT_ID && env.AUTH0_CLIENT_SECRET && env.AUTH0_ISSUER);
+  const auth0Configured = isAuth0ProviderConfigured(env);
+  const tenantSettings = tenant ? applySettingsDefaults(parseTenantSettings(tenant.settings)) : null;
+  const tenantDisplayName = tenantSettings?.ui.displayName || tenant?.name || tenantSlug;
+  const tenantLogoUrl = tenantSettings?.ui.logoUrl;
 
   // If tenant doesn't exist, show error
   if (!tenant) {
@@ -55,13 +60,11 @@ export default async function TenantLoginPage({ params, searchParams }: TenantLo
       return (
         <div className="min-h-screen flex items-center justify-center bg-amber-500/5 p-4">
           <div className="text-center max-w-md">
-            <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-amber-500/10 mb-4">
-              <Sparkles className="h-8 w-8 text-amber-500" />
-            </div>
+            <AppLogo placement="error" href={null} showText={false} className="mb-4 justify-center" />
             <h1 className="text-2xl font-bold mb-2">Access Required</h1>
             <p className="text-muted-foreground mb-4">
               You&apos;re signed in as <strong>{session.user.email}</strong>, but you don&apos;t have access to{' '}
-              <strong>{tenant.name}</strong>.
+              <strong>{tenantDisplayName}</strong>.
             </p>
             <p className="text-sm text-muted-foreground">Contact your organization admin to request an invitation.</p>
           </div>
@@ -74,15 +77,20 @@ export default async function TenantLoginPage({ params, searchParams }: TenantLo
     <div className="min-h-screen flex items-center justify-center bg-primary/5 p-4 relative overflow-hidden">
       <div className="w-full max-w-md relative">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-primary shadow-lg mb-4">
-            <Sparkles className="h-8 w-8 text-primary-foreground" />
-          </div>
-          <h1 className="text-3xl font-bold brand-gradient-text">{tenant.name}</h1>
+          <AppLogo
+            placement="tenant-login"
+            href={null}
+            showText={false}
+            logoUrl={tenantLogoUrl}
+            displayName={tenantDisplayName}
+            className="mb-4 justify-center"
+          />
+          <h1 className="text-3xl font-bold brand-gradient-text">{tenantDisplayName}</h1>
           <p className="text-muted-foreground mt-2">Sign in to access your workspace</p>
         </div>
         <TenantLoginForm
           tenantSlug={tenantSlug}
-          tenantName={tenant.name}
+          tenantName={tenantDisplayName}
           showAuth0={auth0Configured}
           initialEmail={emailParam ?? ''}
         />

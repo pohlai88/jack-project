@@ -1,7 +1,6 @@
 'use client';
 
 import { ArrowLeft, LogOut, User } from 'lucide-react';
-import { signOut } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
@@ -14,6 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/shared/components/ui/dropdown-menu';
+import { performClientSignOut } from '@/shared/lib/client-sign-out';
 
 interface SidebarUserMenuProps {
   user: {
@@ -115,7 +115,7 @@ export function SidebarUserMenu({
           className="cursor-pointer text-destructive"
           onClick={() => {
             onItemClick?.();
-            signOut({ callbackUrl: '/' });
+            void performClientSignOut('/');
           }}
         >
           <LogOut className="mr-2 h-4 w-4" />

@@ -12,20 +12,20 @@ describe('normalizeOrganizationSlug', () => {
   });
 
   it('strips invalid characters', () => {
-    expect(normalizeOrganizationSlug('Acme™ (EU)')).toBe('acme-eu');
+    expect(normalizeOrganizationSlug('Afenda™ (EU)')).toBe('afenda-eu');
   });
 });
 
 describe('isReservedOrganizationSlug', () => {
   it('flags reserved labels', () => {
     expect(isReservedOrganizationSlug('api')).toBe(true);
-    expect(isReservedOrganizationSlug('acme')).toBe(false);
+    expect(isReservedOrganizationSlug('afenda')).toBe(false);
   });
 });
 
 describe('assertValidOrganizationSlug', () => {
   it('accepts valid slugs', () => {
-    expect(assertValidOrganizationSlug('acme-corp')).toBeNull();
+    expect(assertValidOrganizationSlug('afenda-corp')).toBeNull();
   });
 
   it('rejects too short', () => {

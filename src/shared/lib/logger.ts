@@ -37,7 +37,7 @@ export const logger = pino({
  *
  * Usage:
  * ```ts
- * const log = createLogger({ module: 'auth', tenantId: 'acme' });
+ * const log = createLogger({ module: 'auth', tenantId: 'afenda' });
  * log.info('Processing request');
  * ```
  */

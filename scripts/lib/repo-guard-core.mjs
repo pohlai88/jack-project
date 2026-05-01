@@ -1,3 +1,5 @@
+import ts from 'typescript';
+
 import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { extname, join } from 'node:path';
@@ -70,6 +72,23 @@ const legacyJestPackages = new Set([
   'jest-environment-jsdom',
   'jest-transform-stub',
 ]);
+const afendaRawAssetAllowlist = new Set([
+  'eslint.config.mjs',
+  'src/shared/components/brand/Logo.tsx',
+  'src/shared/components/brand/AfendaIcon.tsx',
+  'src/docs/runtime/docs-layout.config.ts',
+  'src/app/layout.tsx',
+  'src/app/manifest.ts',
+  'src/app/[locale]/docs/layout.tsx',
+  'src/docs/runtime/docs-rss.generator.ts',
+]);
+const afendaIconComponentAllowlist = new Set([
+  'src/shared/components/brand/Logo.tsx',
+  'src/shared/components/brand/AfendaIcon.tsx',
+  'src/shared/components/ui/brand-identity.stories.tsx',
+  'src/shared/components/ui/design-tokens.stories.tsx',
+]);
+const afendaRawAssetPathPattern = /\/(?:brand\/afenda\/|icons\/afenda-icon-)/;
 
 function addFinding(context, id, message, options = {}) {
   context.findings.push({
@@ -475,6 +494,307 @@ function checkFeatureImportBoundaries(context) {
   }
 }
 
+function lineForTsNode(sourceFile, node) {
+  return sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile)).line + 1;
+}
+
+function getJsxTagName(node) {
+  if (ts.isIdentifier(node)) {
+    return node.text;
+  }
+
+  if (ts.isPropertyAccessExpression(node)) {
+    return node.name.text;
+  }
+
+  return null;
+}
+
+function getImportLocalNames(importClause) {
+  if (!importClause) {
+    return [];
+  }
+
+  const names = [];
+  if (importClause.name) {
+    names.push(importClause.name.text);
+  }
+
+  const namedBindings = importClause.namedBindings;
+  if (!namedBindings) {
+    return names;
+  }
+
+  if (ts.isNamespaceImport(namedBindings)) {
+    names.push(namedBindings.name.text);
+    return names;
+  }
+
+  for (const element of namedBindings.elements) {
+    names.push(element.name.text);
+  }
+
+  return names;
+}
+
+function isAfendaIconModuleSpecifier(specifier) {
+  return /(?:^|\/|\.)AfendaIcon$/.test(specifier);
+}
+
+function isAppLogoModuleSpecifier(specifier) {
+  return /(?:^|\/)(?:brand\/)?Logo$/.test(specifier);
+}
+
+function getJsxAttribute(node, attributeName) {
+  for (const property of node.attributes.properties) {
+    if (ts.isJsxAttribute(property) && property.name.text === attributeName) {
+      return property;
+    }
+  }
+
+  return null;
+}
+
+function getJsxAttributeStringValue(attribute) {
+  if (!attribute?.initializer) {
+    return null;
+  }
+
+  if (ts.isStringLiteral(attribute.initializer)) {
+    return attribute.initializer.text;
+  }
+
+  if (ts.isJsxExpression(attribute.initializer)) {
+    const expression = attribute.initializer.expression;
+    if (expression && ts.isStringLiteralLike(expression)) {
+      return expression.text;
+    }
+  }
+
+  return null;
+}
+
+function jsxAttributeHasTruthyValue(attribute) {
+  if (!attribute) {
+    return false;
+  }
+
+  if (!attribute.initializer) {
+    return true;
+  }
+
+  if (ts.isStringLiteral(attribute.initializer)) {
+    return attribute.initializer.text.trim().length > 0;
+  }
+
+  if (ts.isJsxExpression(attribute.initializer)) {
+    const expression = attribute.initializer.expression;
+    if (!expression) {
+      return false;
+    }
+
+    if (expression.kind === ts.SyntaxKind.FalseKeyword || expression.kind === ts.SyntaxKind.NullKeyword) {
+      return false;
+    }
+
+    if (ts.isIdentifier(expression) && expression.text === 'undefined') {
+      return false;
+    }
+
+    if (ts.isStringLiteralLike(expression)) {
+      return expression.text.trim().length > 0;
+    }
+  }
+
+  return true;
+}
+
+function jsxAttributeIsFalseLiteral(attribute) {
+  if (!attribute?.initializer || !ts.isJsxExpression(attribute.initializer)) {
+    return false;
+  }
+
+  const expression = attribute.initializer.expression;
+  return Boolean(expression && expression.kind === ts.SyntaxKind.FalseKeyword);
+}
+
+function checkAppLogoCombinedLockupContract(context) {
+  const file = 'src/shared/components/brand/Logo.tsx';
+  const fullPath = join(context.root, file);
+  if (!existsSync(fullPath)) {
+    return;
+  }
+
+  const content = readFileSync(fullPath, 'utf8');
+  const requiredPatterns = [
+    /nav:\s*\{[\s\S]*?renderMode:\s*'combinedLockup'/,
+    /footer:\s*\{[\s\S]*?renderMode:\s*'combinedLockup'/,
+    /afenda-combined-lockup-transparent\.svg/,
+    /afenda-combined-lockup-inline-dark\.svg/,
+  ];
+
+  for (const pattern of requiredPatterns) {
+    if (!pattern.test(content)) {
+      addFinding(context, 'RG-BRAND-002', 'AppLogo nav/footer must map to combined lockup assets', { file });
+      return;
+    }
+  }
+}
+
+function checkAfendaBrandUsage(context) {
+  for (const file of getCandidateFiles(context)) {
+    if (!isSourceCodeFile(file)) {
+      continue;
+    }
+
+    const fullPath = join(context.root, file);
+    if (!existsSync(fullPath)) {
+      continue;
+    }
+
+    const content = readFileSync(fullPath, 'utf8');
+    const sourceFile = ts.createSourceFile(file, content, ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
+    const afendaIconLocalNames = new Set(['AfendaIcon']);
+    const appLogoLocalNames = new Set(['AppLogo']);
+    const rawAssetAllowed = afendaRawAssetAllowlist.has(file);
+    const afendaIconAllowed = afendaIconComponentAllowlist.has(file);
+    const marketingPlacementFile = file.startsWith('src/app/[locale]/(marketing)/');
+
+    const visit = (node) => {
+      if (
+        !rawAssetAllowed &&
+        (ts.isStringLiteralLike(node) ||
+          ts.isTemplateHead(node) ||
+          ts.isTemplateMiddle(node) ||
+          ts.isTemplateTail(node))
+      ) {
+        const text = 'text' in node ? node.text : node.rawText;
+        if (typeof text === 'string' && afendaRawAssetPathPattern.test(text)) {
+          addFinding(context, 'RG-BRAND-001', 'raw Afenda brand asset path found outside approved asset owner', {
+            file,
+            detail: `line ${lineForTsNode(sourceFile, node)}`,
+          });
+        }
+      }
+
+      if (ts.isImportDeclaration(node) && ts.isStringLiteral(node.moduleSpecifier)) {
+        const specifier = node.moduleSpecifier.text;
+        let restrictImport = false;
+
+        if (isAfendaIconModuleSpecifier(specifier)) {
+          getImportLocalNames(node.importClause).forEach((name) => afendaIconLocalNames.add(name));
+          restrictImport = true;
+        }
+
+        const namedBindings = node.importClause?.namedBindings;
+        if (namedBindings && ts.isNamedImports(namedBindings)) {
+          for (const element of namedBindings.elements) {
+            const importedName = element.propertyName?.text ?? element.name.text;
+            if (importedName === 'AfendaIcon') {
+              afendaIconLocalNames.add(element.name.text);
+              restrictImport = true;
+            }
+
+            if (isAppLogoModuleSpecifier(specifier) && importedName === 'AppLogo') {
+              appLogoLocalNames.add(element.name.text);
+            }
+          }
+        }
+
+        if (isAppLogoModuleSpecifier(specifier) && node.importClause?.name) {
+          appLogoLocalNames.add(node.importClause.name.text);
+        }
+
+        if (isAppLogoModuleSpecifier(specifier)) {
+          const namespaceImport = node.importClause?.namedBindings;
+          if (namespaceImport && ts.isNamespaceImport(namespaceImport)) {
+            appLogoLocalNames.add(namespaceImport.name.text);
+          }
+        }
+
+        if (restrictImport && !afendaIconAllowed) {
+          addFinding(context, 'RG-BRAND-001', 'AfendaIcon imports are restricted to the AppLogo component layer', {
+            file,
+            detail: `line ${lineForTsNode(sourceFile, node)}`,
+          });
+        }
+      }
+
+      if (!afendaIconAllowed && ts.isJsxOpeningLikeElement(node)) {
+        const tagName = getJsxTagName(node.tagName);
+        if (tagName && afendaIconLocalNames.has(tagName)) {
+          addFinding(context, 'RG-BRAND-001', 'AfendaIcon JSX usage must go through AppLogo placement semantics', {
+            file,
+            detail: `line ${lineForTsNode(sourceFile, node)}`,
+          });
+        }
+      }
+
+      if (marketingPlacementFile && ts.isJsxOpeningLikeElement(node)) {
+        const tagName = getJsxTagName(node.tagName);
+        if (tagName && appLogoLocalNames.has(tagName)) {
+          const placementAttribute = getJsxAttribute(node, 'placement');
+          const placement = getJsxAttributeStringValue(placementAttribute);
+          const isMarketingBrandPlacement = placement === 'nav' || placement === 'footer';
+
+          if (isMarketingBrandPlacement) {
+            const allowTenantLogoAttribute = getJsxAttribute(node, 'allowTenantLogo');
+            if (!jsxAttributeIsFalseLiteral(allowTenantLogoAttribute)) {
+              addFinding(context, 'RG-BRAND-002', 'marketing AppLogo nav/footer must disable tenant-logo overrides', {
+                file,
+                detail: `line ${lineForTsNode(sourceFile, node)}`,
+              });
+            }
+
+            const taglineAttribute = getJsxAttribute(node, 'tagline');
+            if (jsxAttributeHasTruthyValue(taglineAttribute)) {
+              addFinding(context, 'RG-BRAND-002', 'marketing AppLogo nav/footer must not render tagline text', {
+                file,
+                detail: `line ${lineForTsNode(sourceFile, node)}`,
+              });
+            }
+
+            const sizeAttribute = getJsxAttribute(node, 'size');
+            const size = getJsxAttributeStringValue(sizeAttribute);
+            if (placement === 'nav' && size && size !== 'xl') {
+              addFinding(context, 'RG-BRAND-002', 'marketing nav AppLogo size must be xl (64px) when explicitly set', {
+                file,
+                detail: `line ${lineForTsNode(sourceFile, node)}`,
+              });
+            }
+
+            if (placement === 'footer' && size && size !== 'xl') {
+              addFinding(
+                context,
+                'RG-BRAND-002',
+                'marketing footer AppLogo size must be xl (64px) when explicitly set',
+                {
+                  file,
+                  detail: `line ${lineForTsNode(sourceFile, node)}`,
+                },
+              );
+            }
+          }
+        }
+      }
+
+      if (!afendaIconAllowed && ts.isCallExpression(node)) {
+        const firstArgument = node.arguments[0];
+        if (firstArgument && ts.isIdentifier(firstArgument) && afendaIconLocalNames.has(firstArgument.text)) {
+          addFinding(context, 'RG-BRAND-001', 'AfendaIcon factory usage must go through AppLogo placement semantics', {
+            file,
+            detail: `line ${lineForTsNode(sourceFile, firstArgument)}`,
+          });
+        }
+      }
+
+      ts.forEachChild(node, visit);
+    };
+
+    visit(sourceFile);
+  }
+}
+
 export function runRepoGuard({ root = process.cwd() } = {}) {
   const context = {
     root,
@@ -492,6 +812,8 @@ export function runRepoGuard({ root = process.cwd() } = {}) {
   checkSourceBoundaries(context);
   checkFeatureRootBarrels(context);
   checkFeatureImportBoundaries(context);
+  checkAppLogoCombinedLockupContract(context);
+  checkAfendaBrandUsage(context);
 
   return context.findings;
 }

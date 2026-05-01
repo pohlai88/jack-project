@@ -80,6 +80,17 @@ describe('LoginForm', () => {
       expect(signIn).toHaveBeenCalledWith('auth0', { callbackUrl: '/select-tenant' });
     });
 
+    it('uses the provided callback URL for auth0 login', async () => {
+      const user = userEvent.setup();
+      (signIn as Mock).mockResolvedValue({ ok: true });
+
+      renderWithProviders(<LoginForm showAuth0 callbackUrl="/t/afenda/invite/token-123" />);
+
+      await user.click(screen.getByRole('button', { name: /continue with auth0/i }));
+
+      expect(signIn).toHaveBeenCalledWith('auth0', { callbackUrl: '/t/afenda/invite/token-123' });
+    });
+
     it('calls signIn with signup screen_hint when sign-up enabled', async () => {
       const user = userEvent.setup();
       (signIn as Mock).mockResolvedValue({ ok: true });
@@ -90,6 +101,27 @@ describe('LoginForm', () => {
 
       expect(signIn).toHaveBeenCalledWith('auth0', {
         callbackUrl: '/select-tenant',
+        authorizationParams: { screen_hint: 'signup' },
+      });
+    });
+
+    it('uses the provided callback URL for auth0 sign-up', async () => {
+      const user = userEvent.setup();
+      (signIn as Mock).mockResolvedValue({ ok: true });
+
+      renderWithProviders(
+        <LoginForm
+          showAuth0
+          showAuth0SignUp
+          callbackUrl="/t/afenda/invite/token-123"
+          auth0SignUpLabel="Create an account"
+        />,
+      );
+
+      await user.click(screen.getByRole('button', { name: /create an account/i }));
+
+      expect(signIn).toHaveBeenCalledWith('auth0', {
+        callbackUrl: '/t/afenda/invite/token-123',
         authorizationParams: { screen_hint: 'signup' },
       });
     });
@@ -152,6 +184,22 @@ describe('LoginForm', () => {
         email: 'dev@example.com',
         redirect: false,
         callbackUrl: '/select-tenant',
+      });
+    });
+
+    it('uses the provided callback URL for development login', async () => {
+      const user = userEvent.setup();
+      (signIn as Mock).mockResolvedValue({ ok: true, url: '/t/afenda/invite/token-123' });
+
+      renderWithProviders(<LoginForm callbackUrl="/t/afenda/invite/token-123" />);
+
+      await user.type(screen.getByLabelText(/email/i), 'dev@example.com');
+      await user.click(screen.getByRole('button', { name: /development login/i }));
+
+      expect(signIn).toHaveBeenCalledWith('development', {
+        email: 'dev@example.com',
+        redirect: false,
+        callbackUrl: '/t/afenda/invite/token-123',
       });
     });
 
@@ -224,6 +272,12 @@ describe('LoginForm', () => {
 
       const emailInput = screen.getByLabelText(/email/i);
       expect(emailInput).toHaveAttribute('type', 'email');
+    });
+
+    it('prefills the initial email value', () => {
+      renderWithProviders(<LoginForm initialEmail="invitee@example.com" />);
+
+      expect(screen.getByLabelText(/email/i)).toHaveValue('invitee@example.com');
     });
   });
 

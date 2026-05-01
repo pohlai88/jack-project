@@ -42,7 +42,7 @@ export function ProfileCompletion({ tenantSlug, percentage, steps }: ProfileComp
     <Card data-tutorial="profile-completion" className="border-0 shadow-md relative overflow-hidden rounded-xl">
       {/* Decorative background */}
       {percentage >= 100 && (
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-primary/10 pointer-events-none" />
       )}
 
       <CardHeader className="relative">

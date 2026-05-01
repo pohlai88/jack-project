@@ -7,7 +7,6 @@ docsType: 'index'
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { Callout } from 'fumadocs-ui/components/callout';
 import { File, Files, Folder } from 'fumadocs-ui/components/files';
-import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 
 <Callout title="Index page" type="info">
@@ -22,6 +21,16 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
     description="Start with Afenda's canonical product thesis: operational truth, NexusCanon, proof layers, and governance spine."
   />
   <Card
+    title="Afenda Flagship"
+    href="/docs/curated/doctrine"
+    description="View the flagship doctrine page with a complete Fumadocs component baseline and contract-first structure."
+  />
+  <Card
+    title="Brand Guidelines"
+    href="/docs/curated/brand-guidelines"
+    description="Use approved Afenda icon SVGs, variant selection rules, digital tokens, and print color references."
+  />
+  <Card
     title="Operator / Admin"
     href="/docs/generated/workflows/admin.tenant-settings"
     description="Use generated workflow evidence for tenant settings, members, roles, integrations, and operational controls."
@@ -33,8 +42,8 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
   />
   <Card
     title="AI / LLM"
-    href="/docs/generated/workflows/docs.machine-readable-export"
-    description="Use Markdown, LLM, RSS, search, and Open Graph exports as machine-readable documentation surfaces."
+    href="/docs/generated/features/docs"
+    description="Review generated feature evidence and verify that machine-facing routes are traceable."
   />
   <Card
     title="Generated Evidence"
@@ -73,6 +82,7 @@ LLM routes expose the documentation corpus as machine-readable Markdown so agent
 <Files>
   <Folder name="Curated doctrine" defaultOpen>
     <File name="What is Afenda" />
+    <File name="Brand Guidelines" />
     <File name="Overview" />
     <File name="Doctrine" />
     <File name="Onboarding" />
@@ -96,18 +106,62 @@ LLM routes expose the documentation corpus as machine-readable Markdown so agent
 
 ## Recommended path
 
-<Steps>
-  <Step>Read [What is Afenda?](/docs/curated/what-is-afenda) for the Truth Engine thesis.</Step>
-  <Step>Read [Doctrine](/docs/curated/doctrine) for the engineering rule spine.</Step>
-  <Step>Use [Documentation Experience](/docs/generated/features/docs) to inspect the docs evidence contract.</Step>
-  <Step>Use [OpenAPI Reference](/docs/openapi) and generated API pages for interface truth.</Step>
-  <Step>Use [/llms.txt](/llms.txt) and [/llms-full.txt](/llms-full.txt) for agent workflows.</Step>
-</Steps>
+<Cards>
+  <Card
+    title="1. Truth thesis"
+    href="/docs/curated/what-is-afenda"
+    description="Start with the canonical Afenda product model and vocabulary."
+  />
+  <Card
+    title="2. Engineering doctrine"
+    href="/docs/curated/doctrine"
+    description="Review the doctrine that governs implementation decisions."
+  />
+  <Card
+    title="3. Docs evidence contract"
+    href="/docs/generated/features/docs"
+    description="Inspect how routes, workflows, APIs, and generated evidence are declared."
+  />
+  <Card
+    title="4. Interface truth"
+    href="/docs/openapi"
+    description="Use the OpenAPI reference and generated API pages for HTTP interface details."
+  />
+  <Card
+    title="5. Agent export"
+    href="/llms.txt"
+    description="Start with the LLM index, then use the full export for agent workflows."
+  />
+</Cards>
 
 ## High-signal routes
 
-- [What is Afenda?](/docs/curated/what-is-afenda)
-- [Documentation Experience](/docs/generated/features/docs)
-- [Machine-readable docs export](/docs/generated/workflows/docs.machine-readable-export)
-- [OpenAPI Reference](/docs/openapi)
-- [Platform Health API evidence](/docs/generated/api/platform.health)
+<Cards>
+  <Card
+    title="What is Afenda?"
+    href="/docs/curated/what-is-afenda"
+    description="Product thesis and Truth Engine model."
+  />
+  <Card
+    title="Brand Guidelines"
+    href="/docs/curated/brand-guidelines"
+    description="Approved icon, placement, digital, and print guidance."
+  />
+  <Card title="Doctrine" href="/docs/curated/doctrine" description="Engineering rule spine and operating principles." />
+  <Card
+    title="Documentation Experience"
+    href="/docs/generated/features/docs"
+    description="Manifest-backed docs feature evidence."
+  />
+  <Card
+    title="Machine-readable export"
+    href="/docs/generated/workflows/docs.machine-readable-export"
+    description="LLM, Markdown, RSS, search, and Open Graph surfaces."
+  />
+  <Card title="OpenAPI Reference" href="/docs/openapi" description="Rendered HTTP interface reference." />
+  <Card
+    title="Platform Health API"
+    href="/docs/generated/api/platform.health"
+    description="Generated evidence for platform health checks."
+  />
+</Cards>

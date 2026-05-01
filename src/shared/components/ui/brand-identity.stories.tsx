@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { AppLogo } from '@/shared/components/brand/Logo';
+
 /**
  * # Brand Identity
  *
@@ -11,7 +13,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * 1. **Domain Accent Bar** — 3px colored left border on cards
  * 2. **Premium Elevation** — Layered shadows for depth
  * 3. **Solid Primary Action** — No gradient on buttons
- * 4. **The Brand Moment** — ONE gradient (logo + hero only)
+ * 4. **The Brand Moment** — approved Afenda icon + reserved hero gradient
  * 5. **Warm Neutral Canvas** — Slightly warm backgrounds
  */
 
@@ -135,18 +137,11 @@ function BrandIdentityShowcase() {
       <div>
         <h3 className="text-lg font-semibold mb-3">4. The Brand Moment</h3>
         <p className="text-sm text-muted-foreground mb-4">
-          ONE gradient in the entire app: primary → secondary. Appears ONLY on the logo mark and hero banners.
+          The approved Afenda icon anchors brand placement. The gradient is reserved for the mark system and hero
+          banners.
         </p>
         <div className="flex items-center gap-4">
-          {/* Logo mark */}
-          <div className="h-12 w-12 rounded-xl brand-gradient shadow-sm flex items-center justify-center">
-            <span className="text-xl font-bold text-white">S</span>
-          </div>
-          {/* Wordmark */}
-          <span className="text-2xl font-bold">
-            <span className="brand-gradient-text">Skill</span>
-            <span className="text-foreground">House</span>
-          </span>
+          <AppLogo placement="nav" size="lg" />
         </div>
         <div className="mt-4 h-16 rounded-lg brand-gradient flex items-center justify-center">
           <span className="text-white font-semibold">Hero Banner — the one gradient moment</span>

@@ -57,107 +57,57 @@
   "landing": {
     "hero": {
       "badge": "แพลตฟอร์ม SaaS ที่เน้น AI",
-      "title": {
-        "one": "สร้างด้วย ",
-        "two": "Afenda"
-      },
+      "title": "Operational truth, engineered into the system of work.",
       "description": "ปรับใช้แพลตฟอร์ม SaaS แบบหลายผู้เช่า ที่มีการกำกับดูแล พร้อมระบบยืนยันตัวตน เวิร์กโฟลว์ AI การเชื่อมต่อ และการบริหารทีม พร้อมพื้นฐานการควบคุมระดับองค์กร",
       "cta": {
-        "goToDashboard": "ไปที่แดชบอร์ด",
-        "getStarted": "เริ่มต้น",
-        "explore": "สำรวจเอกสาร"
+        "goToWorkspace": "Go to governed workspace",
+        "requestBriefing": "Request executive briefing",
+        "readBrief": "Read the system brief"
       },
-      "socialProof": {
-        "enterpriseReady": "พร้อมใช้งานสำหรับองค์กร",
-        "aiNative": "ออกแบบสำหรับ AI",
-        "growthFocused": "มุ่งเน้นการเติบโต",
-        "enterpriseDesc": "การแยกข้อมูลผู้เช่า การตรวจสอบ และการเข้าถึงตามบทบาท ถูกออกแบบมาแล้ว",
-        "aiNativeDesc": "เชื่อมต่อผู้ช่วย เวิร์กโฟลว์ความรู้ และข้อมูลการรวมตั้งแต่วันแรก",
-        "growthDesc": "ออกแบบสำหรับทีมที่ต้องการเคลื่อนไหวอย่างรวดเร็วโดยไม่สูญเสียการควบคุม"
-      }
-    },
-    "features": {
-      "title": "ทุกสิ่งที่ทีมของคุณต้องการเพื่อขยายตัว",
-      "description": "พื้นฐาน SaaS ที่ใช้งานได้จริงสำหรับผู้ใช้ ทีม ผู้ดูแล ระบบเวิร์กโฟลว์ AI และการเชื่อมต่อ"
-    },
-    "pricing": {
-      "badge": "แผนเรียบง่าย",
-      "title": "เริ่มแบบประหยัด ขยายด้วยการควบคุม",
-      "description": "ใช้เดโมได้ฟรี แล้วปรับแพลตฟอร์มให้เหมาะกับทีมที่เติบโตและการใช้งานระดับองค์กร",
-      "mostPopular": "เป็นที่นิยมที่สุด",
-      "perMonth": "/เดือน",
-      "plans": {
-        "free": {
-          "name": "ฟรี",
-          "description": "สูงสุด 10 ผู้ใช้ เริ่มต้นด้วยฟีเจอร์พื้นฐาน",
-          "cta": "เริ่มต้น",
-          "features": {
-            "1": "สูงสุด 10 ผู้ใช้",
-            "2": "ผู้ช่วย AI (จำกัด)",
-            "3": "การเชื่อมต่อ GitHub",
-            "4": "ฐานความรู้ (อ่านได้)",
-            "5": "การสนับสนุนจากชุมชน"
+      "principles": {
+        "identity": "Deterministic workforce identity",
+        "telemetry": "Continuous skills telemetry",
+        "accessEvidence": "Governed access and role evidence",
+        "operatingMemory": "Audit-ready operating memory"
+      },
+      "surface": {
+        "eyebrow": "Operating Surface",
+        "title": "Workforce Control Record",
+        "state": "Governed",
+        "caption": "Designed for executive review, implementation governance, and operational audit continuity.",
+        "controls": {
+          "identity": {
+            "label": "Identity",
+            "value": "Resolved"
+          },
+          "skillsGraph": {
+            "label": "Skills Graph",
+            "value": "Current"
+          },
+          "governance": {
+            "label": "Governance",
+            "value": "Enforced"
           }
         },
-        "pro": {
-          "name": "Pro",
-          "description": "สำหรับทีมที่เติบโตและต้องการพลังมากขึ้น",
-          "cta": "เริ่มต้น",
-          "features": {
-            "1": "ผู้ใช้ไม่จำกัด",
-            "2": "บทบาทและสิทธิ์ที่กำหนดเอง",
-            "3": "เว็บฮุกและบันทึกการตรวจสอบ",
-            "4": "ฐานความรู้เต็มรูปแบบ",
-            "5": "การสนับสนุนแบบลำดับความสำคัญ"
+        "evidence": {
+          "accessControl": {
+            "title": "Access control",
+            "description": "Roles, permissions, and team boundaries remain explicit."
+          },
+          "workforceGraph": {
+            "title": "Workforce graph",
+            "description": "People, capabilities, knowledge, and execution signals connect into one operating view."
+          },
+          "evidenceLayer": {
+            "title": "Evidence layer",
+            "description": "Decisions and changes become traceable records, not scattered narrative."
           }
-        },
-        "enterprise": {
-          "name": "Enterprise",
-          "description": "สำหรับองค์กรที่มีความต้องการขั้นสูง",
-          "cta": "ติดต่อเรา",
-          "features": {
-            "1": "ทุกอย่างใน Pro",
-            "2": "SSO (Auth0)",
-            "3": "การเชื่อมต่อแบบกำหนดเอง",
-            "4": "การรับประกัน SLA",
-            "5": "การสนับสนุนเฉพาะ"
-          }
-        }
-      }
-    },
-    "faq": {
-      "title": "คำถามที่พบบ่อย",
-      "items": {
-        "try": {
-          "question": "Afenda ทดลองใช้ได้ฟรีหรือไม่?",
-          "answer": "ใช่ สภาพแวดล้อมเดโมใช้งานได้เต็มรูปแบบโดยไม่ต้องชำระเงิน สำรวจทุกฟีเจอร์ด้วยข้อมูลตัวอย่าง"
-        },
-        "startData": {
-          "question": "ฉันต้องใช้ข้อมูลอะไรในการเริ่มต้น?",
-          "answer": "เพียงรายชื่อทีมของคุณ คุณสามารถนำเข้า CSV เชิญสมาชิกด้วยตนเอง หรือใช้กระบวนการนำเข้าจำนวนมาก"
-        },
-        "existingTools": {
-          "question": "สามารถใช้งานร่วมกับเครื่องมือที่เรามีอยู่ได้หรือไม่?",
-          "answer": "แพลตฟอร์มมีการเชื่อมต่อ GitHub มาให้โดยค่าเริ่มต้น และมีกรอบการเชื่อมต่อที่ยืดหยุ่นสำหรับเว็บฮุกและตัวเชื่อมซิงค์แบบกำหนดเอง"
-        },
-        "assistant": {
-          "question": "ผู้ช่วย AI ทำงานอย่างไร?",
-          "answer": "AI ใช้ฐานความรู้และข้อมูลผู้ใช้ของคุณเพื่อตอบคำถาม ค้นหาเอกสาร และให้ความช่วยเหลือเชิงบริบท รองรับโมเดลของ OpenAI และ Anthropic"
-        },
-        "security": {
-          "question": "ข้อมูลของฉันปลอดภัยหรือไม่?",
-          "answer": "ใช่ แพลตฟอร์มออกแบบเป็นแบบหลายผู้เช่า โดยมีการแยกข้อมูลผู้เช่า การยืนยันตัวตนระดับองค์กร และการควบคุมการเข้าถึงตามสิทธิ์"
-        },
-        "migration": {
-          "question": "สามารถย้ายข้อมูลที่มีอยู่ได้หรือไม่?",
-          "answer": "ใช่ คุณสามารถนำเข้าข้อมูลทีมจาก CSV และเอนจินการเชื่อมต่อสามารถซิงค์ระบบภายนอกตามตารางเวลาได้"
         }
       }
     },
     "nav": {
-      "features": "ฟีเจอร์",
-      "pricing": "ราคา",
-      "docs": "เอกสาร",
+      "primaryNavigation": "Primary navigation",
+      "mobileNavigation": "Mobile navigation",
       "language": "ภาษา",
       "selectLanguage": "เลือกภาษา",
       "theme": "ธีม",
@@ -168,187 +118,749 @@
         "dark": "มืด",
         "system": "ระบบ"
       },
-      "bookDemo": "จองเดโม"
+      "items": {
+        "system": "System",
+        "surface": "Surface",
+        "domains": "Domains",
+        "guarantees": "Guarantees",
+        "docs": "Docs"
+      }
     },
-    "howItWorks": {
-      "title": "วิธีการทำงาน",
-      "description": "ให้ทีมของคุณเริ่มใช้งานได้ในสามขั้นตอนง่ายๆ",
-      "steps": {
-        "configure": {
-          "title": "ปรับใช้และกำหนดค่า",
-          "description": "ปรับใช้เทมเพลต สร้างผู้เช่าของคุณ กำหนดแบรนด์ บทบาท และเชื่อมต่อผู้ให้บริการ AI"
+    "heroPreview": {
+      "ariaLabel": "สารสกัดความจริงเชิงปฏิบัติการแบบแคนนอนิคัล",
+      "diagram": {
+        "eyebrow": "Truth resolution console",
+        "title": "Signals become operating truth after resolution.",
+        "subtitle": "Afenda binds operational movement to identity, evaluates it against policy, and commits only the record the business can defend.",
+        "trace": {
+          "label": "Resolution state",
+          "mode": "Governed",
+          "state": "Resolved"
         },
-        "invite": {
-          "title": "เชิญผู้ใช้",
-          "description": "เชิญสมาชิกทีม กำหนดบทบาท และให้พวกเขาตั้งค่าโปรไฟล์และการเชื่อมต่อ"
+        "connectors": {
+          "normalize": "Normalize",
+          "govern": "Govern",
+          "commit": "Commit",
+          "expose": "Expose"
         },
-        "launch": {
-          "title": "เปิดใช้งานด้วย AI",
-          "description": "เชื่อมต่อฐานความรู้ เปิดใช้งานผู้ช่วย AI ตั้งค่าเว็บฮุก และเปิดใช้งาน"
+        "flowLabel": "Signal / Boundary / Policy / Canonical Record / Evidence",
+        "proofTags": {
+          "nonBypassable": "Non-bypassable",
+          "identityBound": "Identity-bound",
+          "auditReady": "Audit-ready"
+        },
+        "stages": {
+          "signals": {
+            "title": "Operational signals",
+            "subtitle": "Messy workforce movement enters with context.",
+            "items": {
+              "identity": "Identity",
+              "skills": "Skills",
+              "activity": "Activity",
+              "knowledge": "Knowledge"
+            }
+          },
+          "boundary": {
+            "title": "Controlled boundary",
+            "subtitle": "Only governed input crosses the control gate.",
+            "note": "Tenant scope, authority, and source reliability are checked before state can move."
+          },
+          "core": {
+            "title": "Resolution core",
+            "subtitle": "Deterministic control layer",
+            "items": {
+              "identityBinding": "Identity binding",
+              "policyResolution": "Policy resolution",
+              "evidenceCommit": "Evidence commit"
+            }
+          },
+          "record": {
+            "title": "Canonical record",
+            "subtitle": "Resolved state committed for operation.",
+            "cardTitle": "Canonical record",
+            "cardSubtitle": "Resolved. Governed. Trusted.",
+            "fields": {
+              "recordId": {
+                "term": "Record ID",
+                "value": "CR-7F3A-9821"
+              },
+              "identity": {
+                "term": "Identity",
+                "value": "A1F9.7C2E.4D88"
+              },
+              "skills": {
+                "term": "Skills",
+                "value": "12 verified"
+              },
+              "policyOutcome": {
+                "term": "Policy outcome",
+                "value": "Allowed"
+              },
+              "evidenceHash": {
+                "term": "Evidence hash",
+                "value": "4f7c...9e21"
+              }
+            }
+          },
+          "audit": {
+            "title": "Audit & visibility",
+            "subtitle": "Proof is produced with the record.",
+            "items": {
+              "proof": {
+                "title": "Proof",
+                "body": "Verifiable evidence and outcomes"
+              },
+              "monitoring": {
+                "title": "Monitoring",
+                "body": "Real-time oversight and alerts"
+              },
+              "trace": {
+                "title": "Trace",
+                "body": "End-to-end lineage and audit trail"
+              }
+            }
+          }
+        }
+      },
+      "eyebrow": "พื้นผิวความจริงเชิงปฏิบัติการ",
+      "title": "ระเบียนจะยังไม่ได้รับการยอมรับ จนกว่าอัตลักษณ์ นโยบาย หลักฐาน และสถานะจะสอดคล้องกัน",
+      "subtitle": "พื้นผิวนี้ไม่ใช่ตัวอย่างแดชบอร์ด แต่เป็นสารสกัดอย่างเป็นทางการของวิธีที่ Afenda แปลงความเคลื่อนไหวเชิงปฏิบัติการให้เป็นความจริงทางธุรกิจแบบแคนนอนิคัลที่นำไปปฏิบัติ กำกับดูแล และตรวจสอบได้",
+      "trace": {
+        "metaLabel": "ร่องรอยความจริง",
+        "id": "TRUTH-TRACE / 7W1H",
+        "modeLabel": "โหมด",
+        "mode": "อยู่ภายใต้การกำกับ",
+        "stateLabel": "สถานะ",
+        "state": "แก้ข้อสรุปแล้ว"
+      },
+      "ledger": {
+        "indexLabel": "01 / บัญชีควบคุม",
+        "sequence": "เรียงลำดับแล้ว",
+        "title": "บัญชีควบคุมจากเหตุการณ์สู่ระเบียน",
+        "description": "เหตุการณ์เชิงปฏิบัติการแต่ละรายการต้องผ่านการผูกอัตลักษณ์ การประเมินนโยบาย และการแนบหลักฐาน ก่อนจะได้รับอนุญาตให้เปลี่ยนสถานะทางธุรกิจ",
+        "rows": {
+          "eventReceived": {
+            "code": "EVT-2401",
+            "label": "ได้รับเหตุการณ์เชิงปฏิบัติการจากแหล่งที่อยู่ภายใต้การกำกับ",
+            "status": "ยอมรับแล้ว",
+            "time": "09:41:12"
+          },
+          "identityBound": {
+            "code": "IDN-7W1H",
+            "label": "ผูกผู้กระทำ เทนแนนต์ บริบท ความเป็นเจ้าของ และเวลาแล้ว",
+            "status": "ผูกแล้ว",
+            "time": "09:41:13"
+          },
+          "policyApplied": {
+            "code": "POL-GOV",
+            "label": "ประเมินนโยบายควบคุมก่อนเปลี่ยนสถานะ",
+            "status": "ควบคุมแล้ว",
+            "time": "09:41:14"
+          },
+          "recordResolved": {
+            "code": "REC-CANON",
+            "label": "ระเบียนแคนนอนิคัลได้รับการสรุปพร้อมห่วงโซ่หลักฐาน",
+            "status": "ยืนยันแล้ว",
+            "time": "09:41:16"
+          }
+        }
+      },
+      "resolved": {
+        "indexLabel": "02 / ระเบียนที่สรุปแล้ว",
+        "title": "สถานะปฏิบัติการที่สรุปแล้ว",
+        "description": "Afenda ไม่เพิ่มชั้นการตีความอีกชั้นหนึ่ง แต่สรุปสถานะที่ธุรกิจสามารถนำไปปฏิบัติ ปกป้อง และกระทบยอดได้",
+        "recordLabel": "ระเบียนแคนนอนิคัล",
+        "state": "ความจริงที่ใช้งานอยู่หนึ่งเดียว",
+        "body": "สถานะที่ได้รับการยอมรับถูกจำกัดตามเทนแนนต์ ผูกกับผู้กระทำ ทดสอบด้วยนโยบาย และเชื่อมกับหลักฐานที่จำเป็นต่อการอธิบายว่าทำไมสถานะนี้จึงมีอยู่"
+      },
+      "evidence": {
+        "record": {
+          "term": "ระเบียน",
+          "value": "ออบเจ็กต์สถานะแคนนอนิคัล"
+        },
+        "tenantBoundary": {
+          "term": "ขอบเขต",
+          "value": "อยู่ในขอบเขตเทนแนนต์และรับรู้ความเป็นเจ้าของ"
+        },
+        "decisionPath": {
+          "term": "เส้นทางการตัดสินใจ",
+          "value": "ร่องรอยนโยบาย ข้อยกเว้น และตัวแก้ข้อสรุป"
+        },
+        "auditPosture": {
+          "term": "ท่าทีด้านการตรวจสอบ",
+          "value": "ผลิตจากการปฏิบัติการ ไม่ใช่สร้างย้อนกลับภายหลัง"
+        }
+      },
+      "obligations": {
+        "title": "พันธะขององค์กร",
+        "items": {
+          "economic": {
+            "term": "เศรษฐกิจ",
+            "value": "กระทบยอดแล้ว"
+          },
+          "operational": {
+            "term": "ปฏิบัติการ",
+            "value": "ดำเนินการได้"
+          },
+          "technical": {
+            "term": "เทคนิค",
+            "value": "มีขอบเขต"
+          },
+          "audit": {
+            "term": "ตรวจสอบ",
+            "value": "ปกป้องได้"
+          }
+        }
+      },
+      "consequence": {
+        "label": "ผลลัพธ์ทางธุรกิจ",
+        "title": "ไม่มีการกอบกู้ด้วยคำอธิบายภายหลังข้อเท็จจริง",
+        "body": "ระบบบังคับให้ความจริงถูกผลิต ณ ช่วงเวลาของการปฏิบัติการ เพื่อให้การเงิน การตรวจสอบ การจัดการ และการดำเนินงานทำงานจากระเบียนที่สรุปแล้วชุดเดียวกัน"
+      }
+    },
+    "system": {
+      "eyebrow": "System definition",
+      "title": "Afenda is not a feature surface. It is the canonical layer beneath operational judgment.",
+      "description": "The product exists to prevent the familiar enterprise failure: useful activity spread across tools, but no single accountable record strong enough for decision, audit, and control.",
+      "points": {
+        "recordDiscipline": {
+          "label": "Record discipline",
+          "title": "Every operational event resolves into a governed source of truth.",
+          "body": "Afenda treats documents, entities, actions, approvals, and state transitions as durable business facts, not as disconnected interface activity."
+        },
+        "evidenceBinding": {
+          "label": "Evidence binding",
+          "title": "The system keeps proof close to the decision it supports.",
+          "body": "A decision without lineage is only a claim. Afenda binds actor, time, tenant, source, reason, and resulting state into a traceable operating layer."
+        },
+        "resolutionControl": {
+          "label": "Resolution control",
+          "title": "Conflicting activity is resolved by policy, not by memory.",
+          "body": "When systems disagree, the operating model needs precedence, auditability, and controlled mutation. Afenda is built around that discipline."
         }
       }
     },
-    "featureTabs": {
-      "users": {
-        "label": "สำหรับผู้ใช้",
-        "description": "ทุกสิ่งที่ผู้ใช้ของคุณต้องการเพื่อเริ่มต้นและรักษาประสิทธิภาพ",
-        "features": {
-          "profile": {
-            "title": "โปรไฟล์",
-            "description": "โปรไฟล์ผู้ใช้ที่สมบูรณ์พร้อมอวาตาร์และการเชื่อมต่อ GitHub"
+    "topology": {
+      "eyebrow": "โทโพโลจีของระบบ",
+      "title": "ท่อข้อมูลเดียวจากสัญญาณดิบสู่บันทึกที่ชี้แจงได้จริง",
+      "description": "Afenda ไม่กระจัดกระจายความเป็นจริงไปหลายเครื่องมือ อินพุตได้รับการทำให้เป็นมาตรฐาน ประเมินในศูนย์หลักการแปลความ และส่งออกเป็นสถานะเริ่มต้นพร้อมการตรวจสอบ",
+      "thesis": "หากองค์กรลากเส้นนี้ในแผนภาพเดียวไม่ได้ ก็ไม่มีความจริงเชิงการดำเนินการเพียงหนึ่งเดียว — เหลือเพียงการตีความที่ถกเถียง",
+      "diagram": {
+        "label": "โทโพโลจีควบคุม",
+        "title": "มาตรฐาน → แปลความ → ยืนยัน",
+        "state": "สิ่งคงที่เชิงสถาปัตยกรรม"
+      },
+      "inputs": {
+        "title": "อินพุตเชิงปฏิบัติการ",
+        "items": {
+          "identity": {
+            "title": "สัญญาณยืนยันตัวตน",
+            "body": "ผู้กระทำ ผู้เช่าบัญชี และบริบทความเป็นเจ้าของเป็นข้อเท็จจริงระดับแรก"
           },
-          "assistant": {
-            "title": "ผู้ช่วย AI",
-            "description": "แชทด้วยภาษาธรรมชาติขับเคลื่อนโดย OpenAI หรือ Anthropic"
+          "skills": {
+            "title": "กราฟความสามารถ",
+            "body": "ทักษะ ระดับความชำนาญ และโครงสร้างกำลังคนเป็นคุณลักษณะที่ถูกกำกับ"
           },
-          "knowledgeBase": {
-            "title": "ฐานความรู้",
-            "description": "ค้นหาและเรียกดูเอกสารและเนื้อหาขององค์กรของคุณ"
+          "activity": {
+            "title": "การวัดประสิทธิภาพปฏิบัติการ",
+            "body": "เหตุการณ์เวิร์กโฟลว์ เอกสาร และ HRIS ที่มีที่มาและประทับเวลา"
           },
-          "directory": {
-            "title": "ไดเรกทอรี",
-            "description": "ค้นหาและเชื่อมต่อกับสมาชิกทีม"
+          "knowledge": {
+            "title": "วัตถุความรู้",
+            "body": "งานประดิษฐ์และบันทึกการเรียนรู้ผูกกับขอบเขตและนโยบาย"
           }
         }
       },
-      "team": {
-        "label": "สำหรับทีม",
-        "description": "เครื่องมือการทำงานร่วมกันและการมองเห็นสำหรับทีมที่เติบโต",
-        "features": {
-          "peopleDirectory": {
-            "title": "ไดเรกทอรีบุคคล",
-            "description": "เรียกดูและค้นหาสมาชิกทีมพร้อมตัวกรอง"
+      "connectors": {
+        "normalize": "ปรับมาตรฐาน",
+        "resolve": "แปลความ"
+      },
+      "controls": {
+        "title": "ศูนย์กลางการแปลความ",
+        "items": {
+          "identityBinding": {
+            "title": "การผูกยืนยันตัวตน",
+            "body": "ทุกการเปลี่ยนสถานะผูกกับผู้กระทำและผู้เช่าก่อนบังคับนโยบาย"
           },
-          "orgChart": {
-            "title": "แผนผังองค์กร",
-            "description": "แสดงโครงสร้างทีมและความสัมพันธ์การรายงาน"
+          "policyResolution": {
+            "title": "การแปลนโยบาย",
+            "body": "อำนาจ ลำดับความสำคัญ และกติกาตัดสินสถานะที่อาจเปลี่ยน"
           },
-          "activityFeed": {
-            "title": "ฟีดกิจกรรม",
-            "description": "อัปเดตแบบเรียลไทม์เกี่ยวกับกิจกรรมของทีมและแพลตฟอร์ม"
-          },
-          "webhooks": {
-            "title": "เว็บฮุก",
-            "description": "ส่งเหตุการณ์ไปยังระบบภายนอกเมื่อมีการเปลี่ยนแปลง"
+          "evidenceCommit": {
+            "title": "บันทึกพร้อมหลักฐาน",
+            "body": "หลักฐานแนบตอนบันทึก — ไม่สร้างย้อนหลัง"
           }
         }
       },
-      "admin": {
-        "label": "การบริหาร",
-        "description": "การควบคุมเต็มรูปแบบสำหรับผู้ดูแลระบบที่จัดการแพลตฟอร์ม",
-        "features": {
-          "memberManagement": {
-            "title": "การจัดการสมาชิก",
-            "description": "เชิญ จัดการ และยกเลิกการใช้งานสมาชิกทีม"
+      "outputs": {
+        "title": "ความเป็นจริงที่ได้รับออกจากระบบ",
+        "items": {
+          "record": {
+            "label": "บันทึกมาตรฐาน",
+            "value": "สภาวะที่ยืนยันแล้วที่ธุรกิจปฏิบัติต่อได้"
           },
-          "roles": {
-            "title": "บทบาทและสิทธิ์",
-            "description": "PBAC ระดับละเอียดพร้อมชุดบทบาทที่กำหนดเอง"
+          "visibility": {
+            "label": "การมองเห็นที่ถูกกำกับ",
+            "value": "มุมมองแยกตามบทบาทเหนือบันทึกชุดเดียวกัน"
           },
-          "auditLogs": {
-            "title": "บันทึกการตรวจสอบ",
-            "description": "บันทึกการกระทำทั้งหมดในแพลตฟอร์ม"
-          },
-          "settings": {
-            "title": "การตั้งค่า",
-            "description": "การกำหนดค่าระดับผู้เช่า แบรนด์ และฟีเจอร์แฟลก"
+          "audit": {
+            "label": "เส้นทางการตรวจสอบ",
+            "value": "ลำดับติดตามได้จากสัญญาณสู่สถานะที่รับแล้ว"
           }
         }
       },
-      "ai": {
-        "label": "AI และการเชื่อมต่อ",
-        "description": "เชื่อมต่อ AI และระบบภายนอกกับแพลตฟอร์มของคุณ",
-        "features": {
-          "chat": {
-            "title": "AI แชท",
-            "description": "การค้นหาเชิงสนทนาข้ามข้อมูลทั้งหมดของคุณ"
+      "consequence": {
+        "label": "ผลจากการออกแบบ",
+        "title": "ไม่มีอำนาจแบบขนาน",
+        "body": "หากมีช่องทางเปลี่ยนความจริงทางธุรกิจโดยไม่ผ่านกระดูกสันหลังนี้ Afenda เลือกที่จะไม่นับว่าเป็นการกำกับ"
+      }
+    },
+    "surface": {
+      "eyebrow": "Operational surface",
+      "title": "The interface is reduced to what the organization must know, prove, and control.",
+      "description": "No decorative dashboards. No synthetic theatre. The operational surface exists to expose canonical records, policy decisions, evidence links, and state movement."
+    },
+    "integrationReality": {
+      "eyebrow": "ความเป็นจริงของการเชื่อมต่อ",
+      "title": "ระบบภายนอกส่งสัญญาณเข้ามา Afenda ยังคงถืออำนาจสุดท้าย",
+      "description": "ERP, HRIS, ตัวตน และเครื่องมือทำงานร่วมยังเป็นแหล่งข้อมูล — ไม่ใช่สมุดบัญชีความจริงที่แข่งกัน เส้นทางเข้าทุกเส้นต้องข้ามการกำหนดขอบเขตตัวตน การทำให้เป็นมาตรฐาน การบริหาร และวินัยการยืนยันบันทึก",
+      "quote": "การเชื่อมต่อพิสูจน์ว่าอะไรข้ามขอบเขต — ไม่ใช่ว่าองค์กรถูกอนุญาตให้เชื่ออะไร",
+      "panel": {
+        "label": "พื้นผิวควบคุมการเชื่อมต่อ",
+        "title": "จากสัญญาณภายนอกสู่บันทึกที่มีขอบเขต",
+        "state": "บังคับใช้ขอบเขตแล้ว",
+        "traceLine": "สัญญาณภายนอก → ขอบเขตที่ควบคุม → บันทึกมาตรฐาน"
+      },
+      "interfaces": {
+        "identity": {
+          "title": "ชั้นตัวตน",
+          "body": "SSO HR หลัก ผู้รับเหมา และหลักประจำตัวฟีเดอเรชันถูกแมปเข้ากับข้อมูลบุคลากรภายใน boundaries ของผู้เช่า"
+        },
+        "systems": {
+          "title": "ตัวเชื่อมระบบบันทึกหลัก",
+          "body": "Workday, SAP, BambooHR, ATS, LMS, ระบบตั๋ว — นำเข้าเป็นแหล่งที่อยู่ภายใต้การกำกับพร้อมประทับเวลา"
+        },
+        "knowledge": {
+          "title": "ความรู้และเอกสาร",
+          "body": "ออบเจ็กต์ Confluence Notion และ Drive ผูกกับเจ้าของ เชิงความอ่อนไหว และป้ายนโยบาย"
+        },
+        "governance": {
+          "title": "บังคับใช้การกำกับ",
+          "body": "ชุดกติกา การอนุมัติลำดับ ทางเลือกฉุกเฉิน และการจับความคลาดในก่อนเลื่อนสถานะ"
+        }
+      },
+      "boundary": {
+        "index": "03 / ขอบเขตการบังคับใช้",
+        "title": "ลำดับที่เลี่ยงไม่ได้",
+        "description": "ทุกขั้นต้องครบ เว้นขั้นหนึ่งไม่ใช่ตั้งค่า — เป็นการละเมิดข้อตกลงการเชื่อมต่อ",
+        "meta": "ลำดับการบังคับใช้ · ข้ามขั้นต่อไม่ได้",
+        "steps": {
+          "connect": {
+            "label": "เชื่อมต่อ",
+            "value": "ตัวเชื่อมที่ผ่านการยืนยันตัวตน ใช้ข้อลับอย่างน้อย และขอบเขตที่ไม่คลุมเคลือ"
           },
-          "vectorSearch": {
-            "title": "การค้นหาเชิงเวกเตอร์",
-            "description": "การค้นหาเชิงความหมายขับเคลื่อนโดยการฝังข้อมูล pgvector"
+          "normalize": {
+            "label": "ปรับมาตรฐาน",
+            "value": "จับคู่สคีม่า ลดซ้ำ และทำธงความขัดแย้งก่อนนโยบาย"
           },
-          "githubIntegration": {
-            "title": "การเชื่อมต่อ GitHub",
-            "description": "ซิงค์โปรไฟล์ผู้ใช้และกิจกรรมจาก GitHub"
+          "govern": {
+            "label": "กำกับ",
+            "value": "นโยบายการอนุมัติและข้อยกเว้น ถูกประเมินพร้อมข้อบังคับหลักฐาน"
           },
-          "integrationEngine": {
-            "title": "เอนจินการเชื่อมต่อ",
-            "description": "เชื่อมต่อระบบภายนอกใด ๆ ด้วยกรอบการซิงค์"
+          "commit": {
+            "label": "ยืนยันบันทึก",
+            "value": "เขียนบันทึกมาตรฐานพร้อมลำดับสายเลือดที่เปลี่ยนแปลงไม่ได้"
           }
+        }
+      },
+      "record": {
+        "label": "ใบรับการเชื่อมต่อ",
+        "title": "BOUNDARY-CLOSED",
+        "description": "บันทึกนี้รับรองว่าการเคลื่อนไหวจากภายนอกผ่านขั้นบังคับครบถ้วนก่อนเปลี่ยนความจริงขององค์กร",
+        "footer": "แฮชลำดับสายเลือด · กำหนดการหมุนเวียน · หลักฐานขอบเขตในระบบ",
+        "tagline": "เก็บแหล่งบันทึก · บังคับขอบเขต · ได้สถานะที่แปลความแล้ว",
+        "fields": {
+          "source": {
+            "term": "ระบบต้นทาง",
+            "value": "Workday HCM (prod-west)"
+          },
+          "contract": {
+            "term": "สัญญาตัวเชื่อม",
+            "value": "WD-HCM-2025.3 · ลงนามแล้ว"
+          },
+          "boundary": {
+            "term": "จุดตรวจขอบเขต",
+            "value": "ตัวตน ✓ · นโยบาย ✓ · หลักฐาน ✓"
+          },
+          "result": {
+            "term": "ผลที่ได้รับการยืนยัน",
+            "value": "อัปเดตบันทึกกำลังคนแบบมาตรฐานพร้อมชุดตรวจสอบ"
+          }
+        }
+      },
+      "consequence": {
+        "label": "กติการะหว่างดำเนินการ",
+        "title": "การเชื่อมต่อไม่มีประตูเล็กเข้สู่ความจริง",
+        "body": "ผู้ให้บริการหรือกระบวนการเงาแสดงใบรับเดียวกันไม่ได้ ก็อยู่นอกแบบจำลองที่ถูกกำกับ — ไม่สนว่า UI จะสะดวกแค่ไหน"
+      }
+    },
+    "resolutionStages": {
+      "input": {
+        "step": "อินพุต",
+        "title": "เหตุการณ์เข้ามาเป็นเหตุการณ์ที่พกหลักฐานได้",
+        "description": "เอกสาร การดำเนินการ การเชื่อมต่อ ตัวตน และการเปลี่ยนสถานะถูกบันทึกพร้อมบริบทที่เพียงพอให้ผู้เกี่ยวข้องให้ความเห็นทีหลัง"
+      },
+      "control": {
+        "step": "ควบคุม",
+        "title": "นโยบายกำหนดอำนาจและลำดับความชัดเจน",
+        "description": "ระบบประเมินขอบเขตผู้เช่าอำนาจตามบทบาทความน่าเชื่อของแหล่งและข้อผูกกติกาก่อนยอมให้สถานะขยับ"
+      },
+      "truth": {
+        "step": "ความเป็นจริง",
+        "title": "บันทึกมาตรฐานได้ถูกแปลความและเก็บคงไว้",
+        "description": "สภาวะที่เกิดแล้วสามารถตรวจ ต้านการตรวจสอบ และใช้ทั่วองค์กรได้โดยไม่ต้องชี้อธิบายด้วยวาจา"
+      }
+    },
+    "domains": {
+      "eyebrow": "Capability domains",
+      "title": "Capabilities are expressed as enterprise controls, not feature cards.",
+      "description": "Each domain answers one question: what can the organization rely on when operational pressure, system disagreement, and audit scrutiny arrive together?"
+    },
+    "capabilities": {
+      "canonicalRecords": {
+        "title": "Canonical records",
+        "body": "Operational entities, documents, events, and transitions are normalized into accountable records with stable ownership, scope, and identity.",
+        "proof": "Reduces duplicate truth surfaces and prevents record drift across teams, tools, and tenants."
+      },
+      "evidenceBinding": {
+        "title": "Evidence binding",
+        "body": "Every material state carries the proof required to defend it: source, actor, timestamp, reason, tenant boundary, and decision path.",
+        "proof": "Turns operational claims into inspectable facts before audit pressure arrives."
+      },
+      "governanceControls": {
+        "title": "Governance controls",
+        "body": "Policy, role, approval, precedence, and exception handling are treated as first-class controls rather than implementation comments.",
+        "proof": "Keeps operational change inside a controlled spine instead of relying on informal process memory."
+      },
+      "auditContinuity": {
+        "title": "Audit continuity",
+        "body": "The system preserves the path from original event to current state, including reversals, overrides, and resolution authority.",
+        "proof": "Supports executive review, regulatory inspection, and internal accountability without narrative reconstruction."
+      },
+      "operationalResolution": {
+        "title": "Operational resolution",
+        "body": "When incoming facts conflict, Afenda resolves them through declared precedence, tenant scope, and evidence quality.",
+        "proof": "Prevents the business from manually negotiating which system should be believed."
+      },
+      "enterpriseIntegration": {
+        "title": "Enterprise integration",
+        "body": "External systems connect as sources and consumers of truth, not as uncontrolled parallel ledgers.",
+        "proof": "Allows ERP, identity, document, and workflow systems to participate without fragmenting authority."
+      }
+    },
+    "commercial": {
+      "eyebrow": "ภาคธุรกิจเชิงกลยุทธ์",
+      "title": "พร้อมสำหรับจัดหา — ไม่ใช่โชว์จัดหาลวงตา",
+      "description": "Afenda ให้ฝ่ายกฎหมาย ความปลอดภัย และทีมขับเคลื่อนอยู่บนข้อเท็จจริงด้านสถาปัตย์เดียวกัน — อำนาจอยู่ภายในขอบ หลักฐานถูกเก็บ และเป็นท่าบันทึกมาตรฐานเพียงชุดเดียว",
+      "cta": {
+        "primary": "นัดทบทวนระดับผู้บริหาร",
+        "secondary": "เปิดโฟลเดอร์คำอธิบายระบบ"
+      },
+      "panel": {
+        "label": "มิติการตรวจสอบ",
+        "title": "สิ่งที่ due diligence สอดส่องจริง ๆ",
+        "state": "เอกสารสอดคล้องกันแล้ว"
+      },
+      "review": {
+        "governance": {
+          "title": "วัตถุกำกับดูแล",
+          "body": "เมทริกซ์การควบคุม โครง DPIA โมเดลแยกภาค แผนที่การเก็บรักษา — ส่งออกจากการตั้งค่าจริง"
+        },
+        "implementation": {
+          "title": "คู่มือดำเนินการโครงการ",
+          "body": "เข้าสู่ระบบเป็นเฟส พร้อมแผน rollback จุดประตูตรวจ และเป้าที่ผูกบันทึกมาตรฐาน"
+        },
+        "security": {
+          "title": "หลักฐานด้านความปลอดภัย",
+          "body": "หมุนข้อลับ ผูก SSO ลำดับสายเลือดตรวจสอบที่แก้ไม่ได้ การนำทางเหตุผิดปกติถูกเขียนเป็นเอกสาร — ไม่ใช่ข้ออ้างอย่างเดียว"
+        },
+        "commercial": {
+          "title": "โครงสร้างเชิงพาณิชย์",
+          "body": "กำลังรองรับ ระดับการช่วยเหลือ และขอบความรับผิดเทียบกับการควบคุมจากฟีเจอร์จริง — ไม่มี SKU บนชั้นวาง"
+        }
+      },
+      "process": {
+        "index": "04 / จังหวะเชิงพาณิชย์",
+        "title": "จากสนทนารอบแรกสู่การผลิตที่ถูกกำกับ",
+        "description": "แต่ละขั้นสร้างวัตถุมีลายเซ็น ไม่มีขั้นใดให้แก้ด้วยเรื่องเล่าเปล่า ๆ",
+        "steps": {
+          "scope": {
+            "label": "ขอบเขต",
+            "value": "ผิวความจริงและข้อตกลงเชื่อมต่อถูกเรียงครบ"
+          },
+          "validate": {
+            "label": "ตรวจสอบ",
+            "value": "ผู้เช่านำร่องทำตามสแต็กนโยบายเต็ม — ไม่ตัดทางลัดเดโม"
+          },
+          "align": {
+            "label": "จัดให้ตรง",
+            "value": "กฎหมาย IT และผู้มีส่วนได้เสียผู้บริหารลงชื่อแพ็กสถาปัตย์เดียวกัน"
+          },
+          "commit": {
+            "label": "ส่งมอบผล",
+            "value": "เปิดใช้ผลิตพร้อมยืนยันหลักฐานอย่างต่อเนื่อง"
+          }
+        }
+      },
+      "record": {
+        "label": "บันทึก due diligence",
+        "title": "SIGN-OFF ACTIVE",
+        "description": "พาเนลติดตามการสอดคล้องสัญญาระหว่างการควบคุมที่นำเสนอกับคอนฟิกที่ deploy จริง",
+        "footer": "โฟลเดอร์ล็อกเวอร์ชัน · บันทึกการเปลี่ยนภายใต้การเข้าถึงในองค์กร",
+        "fields": {
+          "model": {
+            "term": "รูปแบบการส่งมอบ",
+            "value": "ชั้นควบคุม single-tenant · แยกภาระหลายผู้เช่า"
+          },
+          "basis": {
+            "term": "พื้นฐานความรับผิด",
+            "value": "แผน SOC2 Type II · ภาคผนวก uptime และที่ตั้งข้อมูล"
+          },
+          "review": {
+            "term": "แพ็กบอร์ดที่ตรวจ",
+            "value": "v2025-Q2 · ส่งในองค์กรแล้ว"
+          },
+          "outcome": {
+            "term": "ผลล่าสุด",
+            "value": "รอ CIO ลงนามรับรอง · ไม่มีช่องว่างการควบคุมค้างอยู่"
+          }
+        }
+      },
+      "consequence": {
+        "label": "ผลในทางพาณิชย์",
+        "title": "สัญญาอ้างสถาปัตย์ — ไม่ใช่แค่สไลด์",
+        "body": "เมื่อมีข้อพิพาทหรือตรวจสอบ คู่สัญญาไล่หน้าที่ไปยังการควบคุมที่นับค่าได้และบันทึกที่แก้ไม่ได้ — ไม่ใช้คำขายที่ตีความใหม่"
+      }
+    },
+    "guarantees": {
+      "eyebrow": "Evidence / guarantees",
+      "title": "Credibility comes from what the system can prove under pressure.",
+      "description": "The guarantee is not speed, dashboards, or generic automation. The guarantee is that the organization can inspect how an operational state became true.",
+      "items": {
+        "canonicalState": {
+          "title": "One canonical state",
+          "body": "The business does not need three reports and a meeting to decide which record is true."
+        },
+        "decisionPath": {
+          "title": "Traceable decision path",
+          "body": "Every material decision can be followed through actor, source, policy, reason, and resulting state."
+        },
+        "tenantBounded": {
+          "title": "Tenant-bounded records",
+          "body": "Records remain scoped to the correct tenant, legal entity, operating boundary, and authority model."
+        },
+        "auditReady": {
+          "title": "Audit-ready evidence",
+          "body": "Evidence is retained as part of the operational record, not collected later as a separate rescue exercise."
+        },
+        "controlledChange": {
+          "title": "Controlled change",
+          "body": "Overrides, exceptions, and reversals move through visible governance rather than hidden operational shortcuts."
+        },
+        "integrationDiscipline": {
+          "title": "Integration discipline",
+          "body": "Connected systems exchange truth through controlled boundaries instead of becoming competing authorities."
         }
       }
     },
-    "socialProofSection": {
-      "title": "ได้รับความไว้วางใจจากทีมทั่วโลก",
-      "description": "ดูว่าองค์กรต่างๆ ใช้ Afenda เพื่อทำงานอัตโนมัติและขยายเวิร์กโฟลว์ของพวกเขาอย่างไร",
-      "roleAt": "{role} ที่ {company}",
-      "sponsorsTitle": "พันธมิตรและผู้สนับสนุนของเรา",
-      "sponsorLabel": "พันธมิตร {index}",
-      "comingSoon": "เร็วๆ นี้",
-      "sponsorCta": "สนใจเป็นผู้สนับสนุน Afenda หรือไม่?",
-      "sponsorCtaLink": "ติดต่อเรา",
-      "testimonials": {
-        "1": {
-          "role": "รองประธานฝ่ายวิศวกรรม",
-          "text": "Afenda เปลี่ยนวิธีที่เราสร้างและทำงานอัตโนมัติในเวิร์กโฟลว์ ทุกอย่างโปร่งใสและขับเคลื่อนด้วยข้อมูล"
+    "evidence": {
+      "eyebrow": "สถาปัตย์หลักฐาน",
+      "title": "ความน่าเชื่ออยู่ที่บันทึก — ไม่ได้อยู่บนสไลด์",
+      "description": "Afenda ทำให้หลักฐานมีโครงสร้าง: การผูกตัวตน การประเมินนโยบาย การยืนยันบันทึกมาตรฐาน และการมองเห็นจากการตรวจเป็นเวทีให้เห็นชัด ไม่ใช่การติดฟูกทีหลัง",
+      "quote": "ติดตามย้อนหลังไม่ได้ ก็ไม่ใช่หลักฐาน — เป็นเพียงความเห็น",
+      "panel": {
+        "label": "ชั้นหลักฐาน",
+        "title": "สี่คำประกันเชิงโครงสร้างก่อนรับรองความจริง",
+        "state": "ครบทุกเวทีแล้ว"
+      },
+      "items": {
+        "identity": {
+          "title": "การผูกยืนยันตัวตน",
+          "body": "ผู้กระทำ ผู้เช่า เซสชัน เวลา และขอบเขตได้รับการยืนยันก่อนตีความเริ่ม"
         },
-        "2": {
-          "role": "ผู้จัดการฝ่ายปฏิบัติการบุคคล",
-          "text": "ผู้ช่วย AI และเอนจินการเชื่อมต่อช่วยประหยัดเวลาการตั้งค่าของทีมเราเป็นสัปดาห์ การส่งมอบ SaaS ของเราไม่เคยรวดเร็วยิ่งขึ้น"
+        "policy": {
+          "title": "ประตูนโยบาย",
+          "body": "กติกา การอนุมัติข้อยกเว้น และทางฉุกเฉิน ถูกประเมินพร้อมบันทึกเหตุผล"
         },
-        "3": {
-          "role": "ผู้อำนวยการฝ่ายบุคลากร",
-          "text": "ในที่สุดก็มีแพลตฟอร์มที่ผู้จัดการสามารถมุ่งเน้นการเติบโตแทนการจัดการสเปรดชีต การรวม OKR เป็นไปอย่างราบรื่น"
+        "record": {
+          "title": "ยืนยันบันทึกแบบมาตรฐาน",
+          "body": "การเปลี่ยนสถานะเขียนข้อเท็จจริงมีอายุความเป็นมาพร้อมเวอร์ชันและแฮชลำดับสายเลือด"
+        },
+        "audit": {
+          "title": "พื้นผิวการตรวจสอบ",
+          "body": "ผู้ตรวจเห็นทางจากเหตุการณ์เริ่มจนผลที่ป้องกันได้ — ไม่สร้างใหม่จากนอกระบบ"
+        }
+      },
+      "auditPath": {
+        "index": "03 / เส้นเลือดให้ไล่ดูได้",
+        "title": "โครงขั้นต่ำที่ผู้ควบคุมต้องการ — อยู่ในตัวระบบ",
+        "description": "ทุกดีลมีหลักฐานจากการเข้ารหัสหรือคำให้การทางระบบ ตัดโหนดได้แปลว่าบันทึกเสียความถูกต้อง",
+        "steps": {
+          "actor": {
+            "label": "การรับรองผู้ลงมือทำ",
+            "value": "เซสชันที่พึ่งฮาร์ดแวร์ + ระดับเพิ่มสำหรับความเปลี่ยนที่ระมัดระวังเป็นพิเศษ"
+          },
+          "tenant": {
+            "label": "การแยกผู้เช่า",
+            "value": "ความปลอดภัยถึงแถว + ปิดการเรียกข้ามผู้เช่าที่ขอบ API"
+          },
+          "policy": {
+            "label": "ประเมินนโยบาย",
+            "value": "เวอร์ชันเครื่องยนต์แบบกำหนดผลเขียนบันทึกพร้อมแฮชผล"
+          },
+          "decision": {
+            "label": "บันทึกการตัดสินของผู้มีอำนาจ",
+            "value": "รหัสผู้อนุมัติ หลักฐานอำนาจมอบหมาย เวลา SLA"
+          },
+          "record": {
+            "label": "การเก็บรักษามาตรฐาน",
+            "value": "ชิ้นส่วนลอกเหตุการณ์เกรด WORM + หลักฐานจากคลังเยือกแข็งสำเนากระจาย"
+          }
+        }
+      },
+      "record": {
+        "label": "ชุดที่ยืนยันแล้ว",
+        "title": "EVIDENCE-PACK CLOSED",
+        "description": "ชุดนี้ตรงกับช็อกลิสต์ตรวจภายใน AC-417 โดยไม่ต้องแนบประกันมือใน",
+        "footer": "ต้นต่อแผนผังแฮช · ชุดลายเซ็นคณะ · เครื่องหมายที่ตั้งทางการปกครองข้อมูล",
+        "fields": {
+          "source": {
+            "term": "แหล่งก่อกำเนิด",
+            "value": "3 ระบบ · ความต่างถูกทำเครื่องหมายอัตโนมัติ"
+          },
+          "control": {
+            "term": "อ้างอิงควบคุม",
+            "value": "เชื่อมภาคผนวก A ISO27001 ครอบครัวควบคุม"
+          },
+          "result": {
+            "term": "แฮชของสภาวะที่ได้",
+            "value": "sha256:92f…c11"
+          },
+          "review": {
+            "term": "การตรวจอิสระ",
+            "value": "นำเข้าเวิร์คบุ๊ก Big-4 · ตัวเลขต่าง ศูนย์"
+          }
+        }
+      },
+      "consequence": {
+        "label": "ท่าการตรวจสอบ",
+        "title": "หนีหลักฐานสะสมดอกโห่ — Afenda แบ่งเป็นค่าน้อยเมื่อเขียนจริง",
+        "body": "องค์กรที่ผัดหลักฐานจะสะสมต้นทุนทบซ้ำทุกครั้งที่มีการตรวจ ข้อพิพาท หรือการสับเปลี่ยนผู้นำ หลักฐานเชิงโครงสร้างช่วยหลีกเลี่ยงเส้นทางนั้น"
+      }
+    },
+    "closing": {
+      "eyebrow": "Closing position",
+      "title": "The system either knows the truth, or the business negotiates it manually.",
+      "description": "Afenda is designed for the former: a governed truth layer where operational records survive growth, integration pressure, tenant complexity, and executive review without requiring narrative rescue."
+    },
+    "readiness": {
+      "eyebrow": "Readiness questions",
+      "title": "Enterprise adoption begins with evidence, scope, and operating discipline.",
+      "description": "These are the questions the product is built to answer before procurement, rollout, or executive sponsorship creates pressure.",
+      "questions": {
+        "replacement": {
+          "question": "What does Afenda replace?",
+          "answer": "Afenda does not begin as a replacement for ERP, document storage, or workflow tools. It establishes the truth layer that governs how operational facts become reliable records across those systems."
+        },
+        "start": {
+          "question": "Where does implementation start?",
+          "answer": "Implementation starts with the highest-risk truth surface: records where conflicting sources, manual reconciliation, approval ambiguity, or audit exposure already create operational cost."
+        },
+        "integrations": {
+          "question": "How does Afenda handle integrations?",
+          "answer": "Integrations are treated as governed sources and consumers. They are not allowed to silently create a second authority without identity, scope, precedence, and evidence rules."
+        },
+        "enterpriseGrade": {
+          "question": "What makes this enterprise-grade?",
+          "answer": "The enterprise posture comes from tenant boundaries, evidence retention, audit continuity, policy-driven state transitions, and a product model that treats control as architecture rather than an afterthought."
+        },
+        "executiveReview": {
+          "question": "How should executives evaluate the product?",
+          "answer": "Evaluate whether Afenda can explain who changed what, why it changed, which source was trusted, whose authority applied, when the state became true, and how the evidence survives review."
+        }
+      }
+    },
+    "executiveClose": {
+      "eyebrow": "การตัดสินระดับผู้บริหาร",
+      "title": "ถัดไปคือการทบทวนสถาปัตย์ — ไม่ใช่เดโมรอบหน้าอย่างเดียว",
+      "description": "Afenda เผยแพร่ออนโทโลจีชุดเดียวกันให้ฝ่ายจัดหา ทีมพัฒนา ผู้สอบ และผู้ปฏิบัติงาน ตัดสินใจว่าจะมีกระดูกสันหลังความจริงเชิงโครงสร้างเดียว หรือยอมรับต้นทุนการกระทบยอดที่พุ่งสูงขึ้น",
+      "cta": {
+        "workspace": "เข้าสู่พื้นที่ปฏิบัติการที่ถูกกำกับ",
+        "briefing": "จองบรีฟผู้บริหาร",
+        "systemBrief": "อ่านแฟ้มคำจำแนกระบบ"
+      },
+      "panel": {
+        "ariaLabel": "พาเนลประกองการตัดสินระดับผู้บริหาร",
+        "label": "ของพร้อมเข้าการประชุมคณะทำงาน",
+        "title": "ส่วนที่ผู้นำรับผิดชอบลงชื่อให้เป็นไปได้",
+        "governance": {
+          "title": "แฟ้มกำกับดูแล",
+          "body": "ชุดนโยบาย RACI พาดบน เส้นแผนภูมิแบ่งเขต พิมพ์เขียว DPIA — ถูกจัดเป็นแพ็กพร้อมเวอร์ชันแล้ว"
+        },
+        "review": {
+          "title": "บันทึกการทบทวนแบบทีมแดง",
+          "body": "ผลต่างจากการถลองเข้าระบบภายนอก การควบคุมเชิงเข้ารหัส และการซ้อมความเป็นท่อจับความผิดปกติ"
+        },
+        "close": {
+          "label": "จุดตรวจการตัดสินใจ",
+          "title": "ยังเหลือคำว่าได้ยินไม่รู้จากสถาปัตย์หรือไม่?",
+          "body": "ถ้ามีข้อควรทำอยู่ว่ากำหนดหลังลงภาคสนามอยู่อีกใหญ่ครึ่ง — ให้ถือว่ายังประเมินไม่ครบ และการขยายขนาดไม่ให้ความควบคุมที่ว่างอยู่ความครบทันที"
         }
       }
     },
     "footer": {
+      "heading": "Afenda footer",
+      "navLabel": "Footer navigation",
       "blurb": "พื้นฐานแพลตฟอร์ม SaaS พร้อมใช้งานสำหรับการผลิต ที่มีหลายผู้เช่า เวิร์กโฟลว์ AI การเชื่อมต่อ และการควบคุมที่พร้อมสำหรับการกำกับดูแล",
-      "sections": {
-        "product": "ผลิตภัณฑ์",
-        "resources": "ทรัพยากร",
-        "company": "บริษัท"
-      },
       "links": {
-        "features": "ฟีเจอร์",
-        "pricing": "ราคา",
-        "howItWorks": "วิธีการทำงาน",
-        "documentation": "เอกสาร",
-        "blog": "บล็อก (เร็วๆ นี้)",
-        "changelog": "บันทึกการเปลี่ยนแปลง (เร็วๆ นี้)",
-        "about": "เกี่ยวกับ (เร็วๆ นี้)",
-        "contact": "ติดต่อ (เร็วๆ นี้)",
-        "privacy": "นโยบายความเป็นส่วนตัว (เร็วๆ นี้)",
-        "terms": "ข้อกำหนด (เร็วๆ นี้)"
+        "system": "System definition",
+        "surface": "Operational surface",
+        "domains": "Capability domains",
+        "guarantees": "Evidence guarantees",
+        "docs": "Documentation"
       },
-      "builtWith": "สร้างด้วย Next.js, Tailwind CSS และ Drizzle ORM.",
-      "socialComingSoon": "{name} (เร็วๆ นี้)"
+      "copyright": "(c) {year} Afenda. Operational truth, governed by design.",
+      "position": "Built for enterprises that require proof before scale."
     },
-    "heroPreview": {
-      "fasterOnboarding": "+42% การเริ่มต้นใช้งานที่เร็วขึ้น",
-      "profileCard": {
-        "personName": "Jane Doe",
-        "personRole": "นักพัฒนาระดับอาวุโส",
-        "badge": "+ ภาวะผู้นำ"
-      },
-      "activityCard": {
-        "title": "กิจกรรมแพลตฟอร์ม",
-        "teamVelocity": "ความเร็วทีม",
-        "delivery": "การส่งมอบ"
-      },
-      "peopleFinder": {
-        "title": "ค้นหาบุคคล"
-      },
-      "people": {
-        "ana": {
-          "role": "วิศวกรอาวุโส"
-        },
-        "marco": {
-          "role": "หัวหน้าทีมเทคนิค"
+    "bookDemo": {
+      "back": "Back to Afenda",
+      "eyebrow": "Executive briefing",
+      "title": "Briefing intake is being prepared for controlled activation.",
+      "description": "This route is intentionally present so executive interest never resolves to a dead end. Until the formal intake workflow is connected, use the workspace entrypoint or review the system documentation.",
+      "primaryCta": "Enter workspace",
+      "secondaryCta": "Read documentation",
+      "briefingCard": {
+        "eyebrow": "Briefing scope",
+        "title": "What the review should cover",
+        "items": {
+          "identity": {
+            "term": "Identity",
+            "value": "How workforce identity is resolved, bounded, and kept deterministic across tenants."
+          },
+          "skills": {
+            "term": "Skills graph",
+            "value": "How skills telemetry, role evidence, and execution signals become a governed workforce graph."
+          },
+          "governance": {
+            "term": "Governance",
+            "value": "How access, permissions, approvals, and operating boundaries are enforced."
+          },
+          "audit": {
+            "term": "Audit continuity",
+            "value": "How decisions and changes remain traceable without after-the-fact narrative reconstruction."
+          }
         }
-      },
-      "integrationsCount": "การเชื่อมต่อ 12 รายการ",
-      "aiInsights": "ข้อมูลเชิงลึกจาก AI"
+      }
     }
   },
   "auth": {
@@ -969,6 +1481,7 @@
       "copied": "คัดลอก URL Markdown ไปยังคลิปบอร์ดแล้ว",
       "copiedButton": "คัดลอกแล้ว",
       "copyFailed": "ไม่สามารถคัดลอกไปยังคลิปบอร์ดได้",
+      "assistantHintTitle": "Ask the assistant inside the app",
       "assistantHint": "ผู้ช่วย Afenda AI ทำงานภายในพื้นที่ทำงานของผู้เช่า (แถบด้านข้าง → ผู้ช่วย) สำหรับผู้ใช้ที่ลงชื่อเข้าใช้ โดยจะเข้าถึงบริบทขององค์กรของคุณเมื่อเปิดใช้งาน",
       "assistantHintAria": "การใช้งานผู้ช่วย AI",
       "assistantCta": "เปิดหน้าหลักของแอป",

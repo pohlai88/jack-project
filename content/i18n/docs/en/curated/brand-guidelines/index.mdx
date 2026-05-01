@@ -1,0 +1,280 @@
+---
+title: 'Afenda Brand Guidelines'
+description: 'Afenda icon assets, usage rules, digital color tokens, CMYK print baselines, and Pantone production guidance.'
+docsType: 'curated'
+---
+
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { File, Files, Folder } from 'fumadocs-ui/components/files';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+<Callout title="Source of truth" type="info">
+  Use the SVG assets in <code>/public/brand/afenda</code> during development. The current master artwork is preserved as
+  raster artwork inside SVG containers so the approved lynx geometry is not redrawn or approximated.
+</Callout>
+
+<Callout title="Combined lockup source" type="warn">
+  The combined lockups use the ready lynx variants from <code>/public/brand/afenda</code>. Do not extract the lynx from
+  typography proposal artwork because the beads are hidden in that source.
+</Callout>
+
+![Afenda brand guideline board](/brand/afenda/afenda-brand-guideline.svg)
+
+## Thesis
+
+Afenda brand marks identify governed truth surfaces. Use them as brand identity anchors only; do not use the lynx as a
+functional UI icon, status glyph, CTA marker, settings icon, or feature illustration.
+
+## Model
+
+<Files>
+  <Folder name="public/brand/afenda" defaultOpen>
+    <File name="afenda-icon-full-color.svg" />
+    <File name="afenda-icon-transparent.svg" />
+    <File name="afenda-icon-inline-dark.svg" />
+    <File name="afenda-icon-dark.svg" />
+    <File name="afenda-icon-mono.svg" />
+    <File name="afenda-icon-dark-bg.svg" />
+    <File name="afenda-icon-light-bg.svg" />
+    <File name="afenda-icon-gradient-bg.svg" />
+    <File name="afenda-icon-mono-white-on-dark.svg" />
+    <File name="afenda-icon-mono-black-on-light.svg" />
+    <File name="afenda-typography-wordmark-transparent.svg" />
+    <File name="afenda-typography-wordmark-mono-black-on-light.svg" />
+    <File name="afenda-typography-wordmark-mono-white-on-dark.svg" />
+    <File name="afenda-typography-lockup-transparent.svg" />
+    <File name="afenda-typography-lockup-mono-black-on-light.svg" />
+    <File name="afenda-typography-lockup-mono-white-on-dark.svg" />
+    <File name="afenda-combined-lockup-transparent.svg" />
+    <File name="afenda-combined-lockup-inline-dark.svg" />
+    <File name="afenda-combined-lockup-full-color.svg" />
+    <File name="afenda-combined-lockup-dark.svg" />
+    <File name="afenda-combined-lockup-light-bg.svg" />
+    <File name="afenda-combined-lockup-dark-bg.svg" />
+    <File name="afenda-combined-lockup-gradient-bg.svg" />
+    <File name="afenda-combined-lockup-mono-black-on-light.svg" />
+    <File name="afenda-combined-lockup-mono-white-on-dark.svg" />
+    <File name="afenda-icon-source-figma-export.svg" />
+    <File name="afenda-brand-guideline.svg" />
+    <File name="manifest.json" />
+  </Folder>
+</Files>
+
+### Three asset sets
+
+<Cards>
+  <Card
+    title="Lynx set"
+    href="/brand/afenda/afenda-icon-transparent.svg"
+    description="Canonical observer mark variants for AppLogo placements, compact product chrome, app tiles, favicon, and mono production."
+  />
+  <Card
+    title="Typography set"
+    href="/brand/afenda/afenda-typography-lockup-transparent.svg"
+    description="Wordmark and typography lockups for decks, documentation, editorial layouts, and partner brand surfaces."
+  />
+  <Card
+    title="Combined set"
+    href="/brand/afenda/afenda-combined-lockup-transparent.svg"
+    description="Wide lockups that pair the approved public lynx variants with typography for controlled brand and marketing surfaces."
+  />
+</Cards>
+
+| Set        | Files                          | Use when                                                                    | Do not use for                                            |
+| ---------- | ------------------------------ | --------------------------------------------------------------------------- | --------------------------------------------------------- |
+| Lynx       | `afenda-icon-*.svg`            | Product chrome, favicon, app tiles, compact identity, mono production       | Functional UI icons or feature illustrations              |
+| Typography | `afenda-typography-*.svg`      | Wordmark-only surfaces, editorial layouts, docs, decks, partner lockups     | Lynx extraction, compact nav icons, status or CTA icons   |
+| Combined   | `afenda-combined-lockup-*.svg` | Wide brand boards, executive decks, docs hero images, social brand previews | Navbar/sidebar chrome unless a component supports lockups |
+
+The combined set uses ready lynx variants already approved in the public asset folder. It does not use the typography
+proposal icon as a lynx source.
+
+### Choose the right variant
+
+Developers choose placement semantics through `AppLogo`; raw files stay behind the brand component layer.
+
+<Cards>
+  <Card
+    title="Inline mark"
+    href="/brand/afenda/afenda-icon-transparent.svg"
+    description="Use for sidebar and docs chrome. It is unframed and carries no tile treatment."
+  />
+  <Card
+    title="Inline dark mark"
+    href="/brand/afenda/afenda-icon-inline-dark.svg"
+    description="Use for dark sidebar and docs chrome when the negative lynx must stay white."
+  />
+  <Card
+    title="Combined lockup"
+    href="/brand/afenda/afenda-combined-lockup-transparent.svg"
+    description="Use for top-level header/nav and footer brand anchors to keep a stable logo lockup."
+  />
+  <Card
+    title="App tile light"
+    href="/brand/afenda/afenda-icon-light-bg.svg"
+    description="Use when Afenda must carry its own light field, especially auth and app-icon contexts."
+  />
+  <Card
+    title="App tile dark"
+    href="/brand/afenda/afenda-icon-dark-bg.svg"
+    description="Use for dark app-icon or splash contexts. Do not use this as the default nav wordmark."
+  />
+  <Card
+    title="App tile gradient"
+    href="/brand/afenda/afenda-icon-gradient-bg.svg"
+    description="Use for favicon, social previews, app launchers, and high-signal launch surfaces."
+  />
+  <Card
+    title="Mono fallbacks"
+    href="/brand/afenda/afenda-icon-mono.svg"
+    description="Use mono variants for single-ink, embossing, engraving, stamp, or accessibility fallback contexts."
+  />
+</Cards>
+
+Do not redraw the lynx, beads, or field. If a true vector master is approved later, replace the internals of these
+public SVG files while keeping the filenames stable.
+
+## Operational Implication
+
+Use root-relative public paths. Do not import from the user's Downloads directory, Figma node URLs, or generated report
+artifacts.
+
+```tsx
+export function ProductNavBrand() {
+  return <AppLogo placement="nav" />;
+}
+```
+
+Use placement semantics instead of raw asset variants.
+
+```tsx
+<AppLogo placement="sidebar" showText={false} />
+<AppLogo placement="auth" showText={false} href={null} />
+<AppLogo placement="error" showText={false} href={null} />
+```
+
+For CSS backgrounds, keep the same public contract:
+
+```css
+.afenda-launch-tile {
+  background-image: url('/brand/afenda/afenda-icon-gradient-bg.svg');
+}
+```
+
+### Frontend placement matrix
+
+| Placement                   | Integration point                              | Size target           | Semantic placement / variant            | How to apply                                                                                                          |
+| --------------------------- | ---------------------------------------------- | --------------------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Landing navbar              | `AppLogo placement="nav"`                      | 64 px rendered height | `combinedLockup` / `combinedLockupDark` | Set `size="xl"`, set `allowTenantLogo={false}`, keep `tagline` off; `landing.css` enforces final rendered dimensions. |
+| Landing footer              | `AppLogo placement="footer"`                   | 64 px rendered height | `combinedLockup` / `combinedLockupDark` | Set `size="xl"`, set `allowTenantLogo={false}`, keep `tagline` off; `landing.css` enforces final rendered dimensions. |
+| App sidebar expanded        | `AppLogo placement="sidebar"`                  | 32 px                 | tenant logo or `inline` / `inlineDark`  | Unframed mark; tenant logo may override in tenant-scoped chrome.                                                      |
+| Collapsed sidebar           | `AppLogo placement="sidebar" showText={false}` | 32 px                 | tenant logo or `inline` / `inlineDark`  | Keep tenant fallback within max `32x32` without forced crop.                                                          |
+| Mobile drawer title         | `AppLogo placement="sidebar"`                  | 32 px                 | tenant logo or `inline` / `inlineDark`  | Match sidebar identity and sizing.                                                                                    |
+| Auth entry pages            | `AppLogo placement="auth"`                     | 64 px                 | `appTileLight` / `appTileDark`          | Framed tile is allowed for splash brand context.                                                                      |
+| Tenant login                | `AppLogo placement="tenant-login"`             | 64 px                 | tenant logo, fallback app tile          | Prefer tenant logo; fallback may be framed.                                                                           |
+| Metadata favicon            | root metadata                                  | browser controlled    | `appTileGradient`                       | Use icon outputs in `/public/icons` and manifest metadata.                                                            |
+| Docs shell                  | Fumadocs nav title                             | 24 px                 | `inline` / `inlineDark`                 | Keep mark unframed and compact.                                                                                       |
+| Error / not-found states    | global error and 404 page                      | 64 px                 | `monoBlack` / `monoWhite`               | Brand anchor only; do not replace functional status icons.                                                            |
+| Functional UI icons         | search, CTA, status, feature, settings         | normal UI size        | Lucide or semantic icon                 | Never use Afenda brand marks as functional icons.                                                                     |
+| Social / launch preview     | future OG, launch, social preview work         | 128 / 256 px          | `appTileGradient`                       | Use only for high-signal launch surfaces.                                                                             |
+| Print and single-ink output | print, stamp, engraving, embossing             | production-specific   | mono variants                           | Confirm physical proof before production.                                                                             |
+
+Theme-dependent app tiles must render deterministically. Prefer CSS visibility (`afenda-theme-light` /
+`afenda-theme-dark`) over reading the active theme during server render.
+
+### Mark meaning
+
+The Afenda mark represents an intelligent observer inside a bounded truth system. The circle is the governed system
+field. The lynx is precision, clarity, and silent intelligence beyond noise. The bead sequence is the verification
+chain. The blue to violet flow represents raw signal becoming verified canonical truth.
+
+### Digital color system
+
+| Role           | Digital reference | OKLCH reference       | Meaning                  |
+| -------------- | ----------------- | --------------------- | ------------------------ |
+| Raw Signal     | `#2563EB`         | `oklch(62% 0.18 250)` | Precise input signal     |
+| Processing     | `#5B21B6`         | `oklch(68% 0.16 275)` | Governed transformation  |
+| Verified Truth | `#9333EA`         | `oklch(58% 0.20 310)` | Resolved canonical truth |
+
+### Print color system
+
+<Callout title="Production note" type="warn">
+  CMYK and Pantone values are production starting points, not guaranteed visual matches. Confirm with the printer, paper
+  stock, lighting condition, and physical proof before final production.
+</Callout>
+
+| Role                  | HEX       | CMYK baseline   | Pantone Coated   | Pantone Uncoated |
+| --------------------- | --------- | --------------- | ---------------- | ---------------- |
+| Raw Signal Blue       | `#2563EB` | `C85 M65 Y0 K0` | `Pantone 2728 C` | `2728 U`         |
+| Processing Indigo     | `#5B21B6` | `C80 M95 Y0 K0` | `Pantone 2736 C` | `2736 U`         |
+| Verified Truth Purple | `#9333EA` | `C60 M85 Y0 K0` | `Pantone 2665 C` | `2665 U`         |
+
+Premium editorial alternatives: use `Pantone 7687 C` for a deeper institutional blue and `Pantone 2090 C` for a
+richer violet.
+
+Print controls:
+
+- Keep total ink coverage at or below `280%`.
+- Avoid `C + M > 180%` in violet blends because the gradient can become muddy.
+- Avoid black ink in the core gradient unless producing the dark or monochrome variant.
+- Use 300 DPI minimum source artwork and prefer a 16-bit gradient source for large-format output.
+- Add 1-2% grain when a vendor confirms visible gradient banding.
+- Use coated values as the baseline, Pantone U for uncoated stock, slight contrast boost for matte stock, and avoid
+  fine gradient transitions on textured stock.
+
+### Variant preview
+
+<Tabs items={["Lynx Core", "Lynx Tiles", "Lynx Mono", "Typography", "Combined"]}>
+  <Tab>
+
+![Afenda full color icon](/brand/afenda/afenda-icon-full-color.svg)
+
+![Afenda transparent icon](/brand/afenda/afenda-icon-transparent.svg)
+
+![Afenda inline dark icon](/brand/afenda/afenda-icon-inline-dark.svg)
+
+  </Tab>
+  <Tab>
+
+![Afenda dark background icon](/brand/afenda/afenda-icon-dark-bg.svg)
+
+![Afenda light background icon](/brand/afenda/afenda-icon-light-bg.svg)
+
+![Afenda gradient background icon](/brand/afenda/afenda-icon-gradient-bg.svg)
+
+  </Tab>
+  <Tab>
+
+![Afenda mono icon](/brand/afenda/afenda-icon-mono.svg)
+
+![Afenda mono white on dark icon](/brand/afenda/afenda-icon-mono-white-on-dark.svg)
+
+![Afenda mono black on light icon](/brand/afenda/afenda-icon-mono-black-on-light.svg)
+
+  </Tab>
+  <Tab>
+
+![Afenda typography wordmark](/brand/afenda/afenda-typography-wordmark-transparent.svg)
+
+![Afenda typography lockup](/brand/afenda/afenda-typography-lockup-transparent.svg)
+
+![Afenda typography lockup mono white on dark](/brand/afenda/afenda-typography-lockup-mono-white-on-dark.svg)
+
+  </Tab>
+  <Tab>
+
+![Afenda combined transparent lockup](/brand/afenda/afenda-combined-lockup-transparent.svg)
+
+![Afenda combined inline dark lockup](/brand/afenda/afenda-combined-lockup-inline-dark.svg)
+
+![Afenda combined gradient lockup](/brand/afenda/afenda-combined-lockup-gradient-bg.svg)
+
+  </Tab>
+</Tabs>
+
+## Next Reading
+
+- [Afenda doctrine](/docs/curated/doctrine)
+- [What is Afenda?](/docs/curated/what-is-afenda)
+- [Documentation Experience](/docs/generated/features/docs)

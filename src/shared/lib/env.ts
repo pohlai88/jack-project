@@ -48,6 +48,13 @@ export const env = createEnv({
     AUTH0_CLIENT_ID: z.string().optional().describe('Auth0 client ID'),
     AUTH0_CLIENT_SECRET: z.string().optional().describe('Auth0 client secret'),
     AUTH0_ISSUER: z.url().optional().describe('Auth0 issuer URL'),
+    AUTH0_DOMAIN: z
+      .string()
+      .min(1)
+      .optional()
+      .describe('Auth0 tenant domain from the Auth0 Next.js quickstart, without https://'),
+    AUTH0_SECRET: z.string().min(32).optional().describe('Auth0 SDK session secret from the Auth0 quickstart'),
+    APP_BASE_URL: z.url().optional().describe('Auth0 SDK base URL from the Auth0 Next.js quickstart'),
 
     // AI / LLM
     AI_GATEWAY_API_KEY: z.string().optional().describe('Vercel AI Gateway API key'),
@@ -149,6 +156,9 @@ export const env = createEnv({
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
     AUTH0_CLIENT_SECRET: process.env.AUTH0_CLIENT_SECRET,
     AUTH0_ISSUER: process.env.AUTH0_ISSUER,
+    AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
+    AUTH0_SECRET: process.env.AUTH0_SECRET,
+    APP_BASE_URL: process.env.APP_BASE_URL,
     AI_GATEWAY_API_KEY: process.env.AI_GATEWAY_API_KEY,
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
     ANTHROPIC_API_KEY: process.env.ANTHROPIC_API_KEY,

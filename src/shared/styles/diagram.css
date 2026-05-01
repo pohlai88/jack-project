@@ -1,0 +1,672 @@
+/* ============================================================
+   AFENDA RESOLUTION DIAGRAM — Truth Surface Visual System
+   The 5-stage workforce truth resolution pipeline diagram.
+
+   Figma: Landing / Diagram / Truth Resolution System
+   - Stage layout: Landing / Diagram / Pipeline Stages
+   - Connector: Landing / Diagram / Connectors
+   - Core stage: Landing / Diagram / Core Stage (highlighted)
+   - Record: Landing / Diagram / Canonical Record
+   - Footer: Landing / Diagram / Proof Tags
+
+   Also: React Flow dark mode token bridge.
+   Figma: App / Graph View / Dark Theme Overrides
+
+   Rules:
+   - Imported from app/globals.css after palette + base so semantic colors resolve.
+   - Uses self-contained --resolution-* tokens (not --landing-*) so diagram styles
+     work on every route.
+   - Never re-import tailwindcss or re-define core palette tokens here
+   ============================================================ */
+
+:root {
+  --resolution-panel-radius: 1.5rem;
+  --resolution-inner-radius: 0.875rem;
+  --resolution-panel-border: hsl(var(--border) / 0.72);
+  --resolution-panel-shadow:
+    0 28px 82px -58px hsl(var(--foreground) / 0.42), 0 0 0 1px hsl(var(--background) / 0.42) inset;
+  --resolution-divider: hsl(var(--border) / 0.72);
+}
+
+.dark {
+  --resolution-panel-border: hsl(var(--border) / 0.78);
+  --resolution-panel-shadow: 0 32px 92px -58px rgb(0 0 0 / 0.82), 0 0 0 1px hsl(var(--foreground) / 0.04) inset;
+  --resolution-divider: hsl(var(--border) / 0.78);
+}
+
+/* ==========================================================================
+   RESOLUTION DIAGRAM — LAYOUT SHELL
+   ========================================================================== */
+.afenda-resolution {
+  width: 100%;
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+.afenda-resolution-frame {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--resolution-panel-border);
+  border-radius: var(--resolution-panel-radius);
+  background:
+    radial-gradient(circle at 50% 28%, hsl(var(--primary) / 0.14), transparent 38%),
+    linear-gradient(135deg, hsl(var(--card) / 0.98), hsl(var(--muted) / 0.42));
+  box-shadow: var(--resolution-panel-shadow);
+}
+
+.dark .afenda-resolution-frame {
+  background:
+    radial-gradient(circle at 50% 30%, hsl(var(--primary) / 0.18), transparent 42%),
+    linear-gradient(135deg, hsl(var(--background)), hsl(var(--card) / 0.86));
+  box-shadow:
+    0 32px 90px -44px rgb(0 0 0 / 0.82),
+    0 0 0 1px hsl(var(--border) / 0.7);
+}
+
+/* Background grid overlay */
+.afenda-resolution-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.36;
+  background-image:
+    linear-gradient(hsl(var(--border) / 0.36) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--border) / 0.36) 1px, transparent 1px);
+  background-size: 1.5rem 1.5rem;
+  mask-image: linear-gradient(180deg, rgb(0 0 0 / 0.8), transparent 92%);
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.afenda-resolution-header {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--resolution-divider);
+}
+
+.afenda-resolution-title {
+  max-width: 18ch;
+  margin-top: 0.85rem;
+  color: hsl(var(--foreground));
+  font-size: 1.65rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.afenda-resolution-subtitle {
+  max-width: 44rem;
+  margin-top: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+/* Trace pill — live system badge */
+.afenda-resolution-trace {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: start;
+  border: 1px solid var(--resolution-divider);
+  border-radius: 999px;
+  background: hsl(var(--background) / 0.72);
+  padding: 0.42rem 0.65rem;
+  color: hsl(var(--muted-foreground));
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.afenda-resolution-trace strong {
+  color: hsl(var(--primary));
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   PIPELINE MAP — STAGES + CONNECTORS
+   ========================================================================== */
+.afenda-resolution-map {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.25rem;
+}
+
+/* Stage card */
+.afenda-resolution-stage {
+  position: relative;
+  min-width: 0;
+  border: 1px solid var(--resolution-divider);
+  border-radius: var(--resolution-inner-radius);
+  background: hsl(var(--card) / 0.72);
+  padding: 1rem;
+}
+
+/* Core stage — highlighted variant */
+.afenda-resolution-stage--core {
+  border-color: hsl(var(--primary) / 0.46);
+  background: radial-gradient(circle at 50% 0%, hsl(var(--primary) / 0.12), transparent 46%), hsl(var(--card) / 0.82);
+  box-shadow: 0 0 0 1px hsl(var(--primary) / 0.14);
+}
+
+/* Stage header */
+.afenda-resolution-stage-header span {
+  display: inline-flex;
+  color: hsl(var(--primary));
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.afenda-resolution-stage-header h3 {
+  margin-top: 0.55rem;
+  color: hsl(var(--foreground));
+  font-size: 0.9rem;
+  font-weight: 680;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.afenda-resolution-stage-header p,
+.afenda-resolution-stage-note {
+  margin-top: 0.4rem;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
+/* Signal, Core, and Audit stacks */
+.afenda-resolution-signal-stack,
+.afenda-resolution-core-stack,
+.afenda-resolution-audit-stack {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.95rem;
+}
+
+.afenda-resolution-signal,
+.afenda-resolution-core-step,
+.afenda-resolution-audit-item {
+  display: grid;
+  min-width: 0;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid hsl(var(--border) / 0.72);
+  border-radius: 0.75rem;
+  background: hsl(var(--background) / 0.66);
+  padding: 0.58rem;
+}
+
+.afenda-resolution-signal,
+.afenda-resolution-core-step {
+  grid-template-columns: auto minmax(0, 1fr);
+  color: hsl(var(--foreground));
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+/* Icon badge */
+.afenda-resolution-icon,
+.afenda-resolution-core-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 1.9rem;
+  height: 1.9rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid hsl(var(--primary) / 0.28);
+  border-radius: 999px;
+  background: hsl(var(--primary) / 0.08);
+  color: hsl(var(--primary));
+}
+
+/* Policy boundary block */
+.afenda-resolution-boundary {
+  display: grid;
+  min-height: 7.5rem;
+  place-items: center;
+  margin-top: 0.95rem;
+}
+
+.afenda-resolution-boundary-slab {
+  display: grid;
+  width: min(100%, 4rem);
+  min-height: 6.5rem;
+  place-items: center;
+  border: 1px solid hsl(var(--primary) / 0.42);
+  border-radius: 0.75rem;
+  background:
+    linear-gradient(90deg, hsl(var(--primary) / 0.18), transparent 38%, hsl(var(--primary) / 0.1)),
+    repeating-linear-gradient(135deg, hsl(var(--foreground) / 0.08) 0 1px, transparent 1px 6px);
+  color: hsl(var(--primary));
+  box-shadow: inset 0 0 24px hsl(var(--primary) / 0.08);
+}
+
+/* ==========================================================================
+   CANONICAL RECORD
+   ========================================================================== */
+.afenda-resolution-record {
+  margin-top: 0.95rem;
+  border: 1px solid hsl(var(--border) / 0.72);
+  border-radius: 0.8rem;
+  background: hsl(var(--background) / 0.7);
+}
+
+.afenda-resolution-record-heading {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: center;
+  border-bottom: 1px solid var(--resolution-divider);
+  padding: 0.75rem;
+}
+
+.afenda-resolution-record-heading svg {
+  color: hsl(var(--primary));
+}
+
+.afenda-resolution-record-heading p {
+  color: hsl(var(--foreground));
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.afenda-resolution-record-heading span {
+  display: block;
+  margin-top: 0.2rem;
+  color: hsl(var(--primary));
+  font-size: 0.7rem;
+  line-height: 1.25;
+}
+
+.afenda-resolution-record-fields {
+  display: grid;
+}
+
+.afenda-resolution-record-fields div {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: 0.5rem;
+  border-top: 1px solid hsl(var(--border) / 0.5);
+  padding: 0.48rem 0.75rem;
+  font-size: 0.7rem;
+  line-height: 1.3;
+}
+
+.afenda-resolution-record-fields div:first-child {
+  border-top: 0;
+}
+
+.afenda-resolution-record-fields dt {
+  color: hsl(var(--muted-foreground));
+}
+
+.afenda-resolution-record-fields dd {
+  min-width: 0;
+  color: hsl(var(--foreground));
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+/* Audit item */
+.afenda-resolution-audit-item {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.afenda-resolution-audit-item p {
+  color: hsl(var(--foreground));
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.afenda-resolution-audit-item span {
+  display: block;
+  margin-top: 0.22rem;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   STAGE CONNECTOR
+   ========================================================================== */
+.afenda-resolution-connector {
+  position: relative;
+  display: grid;
+  min-height: 2rem;
+  place-items: center;
+  color: hsl(var(--primary));
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.afenda-resolution-connector::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, transparent, hsl(var(--primary) / 0.62), transparent);
+}
+
+.afenda-resolution-connector span {
+  position: relative;
+  border: 1px solid hsl(var(--primary) / 0.28);
+  border-radius: 999px;
+  background: hsl(var(--background) / 0.82);
+  padding: 0.24rem 0.42rem;
+}
+
+/* ==========================================================================
+   FOOTER — PROOF TAGS
+   ========================================================================== */
+.afenda-resolution-footer {
+  display: grid;
+  gap: 1rem;
+  border-top: 1px solid var(--resolution-divider);
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.afenda-resolution-footer > p {
+  color: hsl(var(--muted-foreground));
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.55;
+  text-transform: uppercase;
+}
+
+.afenda-resolution-proof-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.afenda-resolution-proof-tag {
+  border: 1px solid var(--resolution-divider);
+  border-radius: 999px;
+  background: hsl(var(--background) / 0.66);
+  padding: 0.5rem 0.7rem;
+  color: hsl(var(--foreground));
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (min-width: 640px) {
+  .afenda-resolution-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+  }
+
+  .afenda-resolution-title {
+    font-size: 1.85rem;
+  }
+
+  .afenda-resolution-proof-tags {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .afenda-resolution {
+    max-width: 100%;
+  }
+
+  .afenda-resolution-header {
+    padding: 1.15rem;
+  }
+
+  .afenda-resolution-title {
+    font-size: 1.55rem;
+  }
+
+  .afenda-resolution-subtitle {
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  /* Horizontal pipeline layout at large viewports */
+  .afenda-resolution-map {
+    grid-template-columns:
+      minmax(0, 1.05fr) 0.5rem
+      minmax(0, 0.9fr) 0.5rem
+      minmax(0, 1.25fr) 0.5rem
+      minmax(0, 1.05fr) 0.5rem
+      minmax(0, 1.05fr);
+    gap: 0;
+    align-items: stretch;
+    padding: 1rem 0.9rem 0.9rem;
+  }
+
+  .afenda-resolution-stage {
+    display: grid;
+    align-content: start;
+    padding: 0.72rem;
+  }
+
+  .afenda-resolution-stage-header span {
+    font-size: 0.66rem;
+  }
+
+  .afenda-resolution-stage-header h3 {
+    font-size: 0.68rem;
+    line-height: 1.28;
+    overflow-wrap: anywhere;
+  }
+
+  .afenda-resolution-stage-header p,
+  .afenda-resolution-stage-note {
+    font-size: 0.62rem;
+  }
+
+  .afenda-resolution-signal-stack,
+  .afenda-resolution-core-stack,
+  .afenda-resolution-audit-stack {
+    gap: 0.36rem;
+    margin-top: 0.7rem;
+  }
+
+  .afenda-resolution-signal,
+  .afenda-resolution-core-step,
+  .afenda-resolution-audit-item {
+    gap: 0.38rem;
+    padding: 0.42rem;
+  }
+
+  /* Flatten to single-column at desktop (labels only) */
+  .afenda-resolution-signal {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .afenda-resolution-audit-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Hide icons in signal and audit columns to save horizontal space */
+  .afenda-resolution-stage--signals .afenda-resolution-icon,
+  .afenda-resolution-stage--audit .afenda-resolution-icon {
+    display: none;
+  }
+
+  .afenda-resolution-signal,
+  .afenda-resolution-core-step,
+  .afenda-resolution-audit-item p {
+    font-size: 0.62rem;
+  }
+
+  .afenda-resolution-audit-item span {
+    font-size: 0.58rem;
+  }
+
+  .afenda-resolution-icon,
+  .afenda-resolution-core-icon {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+
+  .afenda-resolution-icon svg,
+  .afenda-resolution-core-icon svg {
+    width: 0.82rem;
+    height: 0.82rem;
+  }
+
+  .afenda-resolution-boundary {
+    min-height: 9rem;
+  }
+
+  .afenda-resolution-boundary-slab {
+    width: 3.1rem;
+    min-height: 8rem;
+  }
+
+  .afenda-resolution-record {
+    margin-top: 0.7rem;
+  }
+
+  .afenda-resolution-record-heading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
+    padding: 0.55rem;
+  }
+
+  .afenda-resolution-record-heading svg {
+    display: none;
+  }
+
+  .afenda-resolution-record-heading p {
+    font-size: 0.62rem;
+    overflow-wrap: anywhere;
+  }
+
+  .afenda-resolution-record-heading span,
+  .afenda-resolution-record-fields div {
+    font-size: 0.56rem;
+  }
+
+  .afenda-resolution-record-fields div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.12rem;
+    padding: 0.36rem 0.55rem;
+  }
+
+  /* Horizontal connectors at desktop */
+  .afenda-resolution-connector {
+    min-height: auto;
+    min-width: 1rem;
+  }
+
+  .afenda-resolution-connector::before {
+    inset-block: 50% auto;
+    inset-inline: 0;
+    width: auto;
+    height: 1px;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.62), transparent);
+  }
+
+  .afenda-resolution-connector span {
+    display: none;
+  }
+
+  .afenda-resolution-footer {
+    padding: 0.9rem 1rem 1rem;
+  }
+
+  .afenda-resolution-footer > p {
+    text-align: center;
+  }
+
+  .afenda-resolution-proof-tags {
+    gap: 0.4rem;
+  }
+
+  .afenda-resolution-proof-tag {
+    padding: 0.42rem 0.55rem;
+    font-size: 0.56rem;
+  }
+}
+
+/* ==========================================================================
+   DIAGRAM ENTRANCE ANIMATIONS
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  .afenda-resolution-stage,
+  .afenda-resolution-proof-tag {
+    animation: afenda-resolution-enter 0.62s ease-out both;
+  }
+
+  .afenda-resolution-stage--signals {
+    animation-delay: 40ms;
+  }
+
+  .afenda-resolution-stage--boundary {
+    animation-delay: 90ms;
+  }
+
+  .afenda-resolution-stage--core {
+    animation-delay: 140ms;
+  }
+
+  .afenda-resolution-stage--record {
+    animation-delay: 190ms;
+  }
+
+  .afenda-resolution-stage--audit {
+    animation-delay: 240ms;
+  }
+
+  .afenda-resolution-core-step {
+    animation: afenda-resolution-core-pulse 5.8s ease-in-out infinite;
+  }
+}
+
+@keyframes afenda-resolution-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes afenda-resolution-core-pulse {
+  0%,
+  100% {
+    border-color: hsl(var(--border) / 0.72);
+  }
+
+  50% {
+    border-color: hsl(var(--primary) / 0.34);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .afenda-resolution-stage,
+  .afenda-resolution-proof-tag,
+  .afenda-resolution-core-step {
+    animation: none !important;
+  }
+}

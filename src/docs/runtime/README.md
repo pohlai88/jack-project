@@ -7,10 +7,9 @@ Afenda owns content contracts, evidence manifests, and runtime adapters.
 ## Canonical Boundaries
 
 - Fumadocs shells, sidebar, TOC, breadcrumb, header/footer, search, and OpenAPI visuals come from package defaults.
+- The docs app adopts `fumadocs-ui/layouts/docs` as the canonical documentation shell; see
+  `architecture/doctrine/0011-fumadocs-docs-layout-adoption.md`.
 - `src/app/[locale]/docs/**` owns route wiring and imports.
-- `src/docs/ui/**` owns only local docs UI adapters:
-  - `docs-feedback.tsx` – feedback widget.
-  - `docs-openapi-adapter.tsx` – API page adapter wrapper for `<APIPage />`.
 - `src/docs/feedback/**` owns persistence, validation, and rate-limit for page feedback.
 - `src/docs/runtime/**` owns shared contracts/helpers/resolvers/clients for docs surface behavior.
 
@@ -99,9 +98,17 @@ Use these as part of the docs CI sequence when touching route graphs or manifest
 ## Operational notes
 
 - Keep default Fumadocs ownership. Do not create local copies of docs shell primitives.
-- Keep custom style in `src/app/[locale]/docs/docs.css` minimal and scoped to boundary tokens / print behavior.
+- Use official Fumadocs component imports for documentation UI. `Accordion`, `Accordions`, `Banner`, `InlineTOC`,
+  `Step`, `Steps`, `Tab`, `Tabs`, `TabsContent`, `TabsList`, `TabsTrigger`, `TypeTable`, and `AutoTypeTable` are
+  registered centrally in `src/mdx-components.tsx`; do not create Afenda-local clones or visual wrappers for them.
+- `AutoTypeTable` must use the shared `fumadocs-typescript` generator with a filesystem cache. MDX pages may use
+  `<AutoTypeTable />` directly, but pages that need build-time transformation should prefer the configured
+  `remarkAutoTypeTable` pipeline in `source.config.ts`.
+- Put site-wide announcement banners at the top of the docs/root layout. Page-specific notices should avoid changing
+  Fumadocs layout unless the upstream `Banner` documentation explicitly calls for it.
 - Do not restore deleted local layout/layout-slot components except where explicitly documented as Afenda-owned adapters.
 - If a page is intentionally exempt from heading/import rules (temporary transition), add it only through a migration plan and a time-bound override in `scripts/docs-content-policy.ts`.
+- `docs:search` and `docs:llms` sample checks derive representative targets from generated evidence metadata (`generated/**/meta.json`) to remain stable when evidence pages change.
 
 ## How to author docs safely
 

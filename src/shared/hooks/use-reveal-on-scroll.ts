@@ -7,7 +7,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
  * enters the viewport, powering scroll-triggered reveal animations.
  *
  * Uses IntersectionObserver with configurable threshold.
- * The animation itself is pure CSS (see globals.css: reveal-hidden / reveal-visible).
+ * The animation itself is pure CSS (see src/shared/styles/motion.css:
+ * reveal-hidden / reveal-visible).
  *
  * @param options.threshold - Fraction of element visible to trigger (default 0.15)
  * @param options.once - Only trigger once (default true)

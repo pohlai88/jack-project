@@ -2,9 +2,10 @@
   "title": "Curated",
   "root": true,
   "what-is-afenda": "What is Afenda",
+  "brand-guidelines": "Afenda Brand Guidelines",
   "overview": "Overview",
   "doctrine": "Doctrine",
   "onboarding": "Onboarding",
   "release-notes": "Release Notes",
-  "pages": ["what-is-afenda", "overview", "doctrine", "onboarding", "release-notes"]
+  "pages": ["what-is-afenda", "brand-guidelines", "overview", "doctrine", "onboarding", "release-notes"]
 }

@@ -57,107 +57,57 @@
   "landing": {
     "hero": {
       "badge": "以 AI 为核心的 SaaS 平台",
-      "title": {
-        "one": "与 ",
-        "two": "Afenda 一起构建"
-      },
+      "title": "Operational truth, engineered into the system of work.",
       "description": "部署一个受治理的多租户 SaaS 平台，具备身份认证、AI 工作流、集成、团队管理以及面向企业的控制基础。",
       "cta": {
-        "goToDashboard": "前往仪表盘",
-        "getStarted": "开始使用",
-        "explore": "查看文档"
+        "goToWorkspace": "Go to governed workspace",
+        "requestBriefing": "Request executive briefing",
+        "readBrief": "Read the system brief"
       },
-      "socialProof": {
-        "enterpriseReady": "企业级就绪",
-        "aiNative": "AI 原生",
-        "growthFocused": "以增长为导向",
-        "enterpriseDesc": "内置租户隔离、可审计性和基于角色的访问控制。",
-        "aiNativeDesc": "从第一天起连接助手、知识工作流和集成数据。",
-        "growthDesc": "为需要快速行动且不失控的团队而设计。"
-      }
-    },
-    "features": {
-      "title": "团队扩展所需的一切",
-      "description": "为用户、团队、管理员、AI 工作流和集成提供实用的 SaaS 基础。"
-    },
-    "pricing": {
-      "badge": "简明方案",
-      "title": "从精简开始，受控扩展",
-      "description": "先免费使用演示，然后根据成长团队和企业部署调整平台。",
-      "mostPopular": "最受欢迎",
-      "perMonth": "/月",
-      "plans": {
-        "free": {
-          "name": "免费",
-          "description": "最多 10 名用户。使用基础功能开始。",
-          "cta": "开始使用",
-          "features": {
-            "1": "最多 10 名用户",
-            "2": "AI 助手（受限）",
-            "3": "GitHub 集成",
-            "4": "知识库（只读）",
-            "5": "社区支持"
+      "principles": {
+        "identity": "Deterministic workforce identity",
+        "telemetry": "Continuous skills telemetry",
+        "accessEvidence": "Governed access and role evidence",
+        "operatingMemory": "Audit-ready operating memory"
+      },
+      "surface": {
+        "eyebrow": "Operating Surface",
+        "title": "Workforce Control Record",
+        "state": "Governed",
+        "caption": "Designed for executive review, implementation governance, and operational audit continuity.",
+        "controls": {
+          "identity": {
+            "label": "Identity",
+            "value": "Resolved"
+          },
+          "skillsGraph": {
+            "label": "Skills Graph",
+            "value": "Current"
+          },
+          "governance": {
+            "label": "Governance",
+            "value": "Enforced"
           }
         },
-        "pro": {
-          "name": "Pro",
-          "description": "适用于需要更多能力的成长团队。",
-          "cta": "开始使用",
-          "features": {
-            "1": "无限用户",
-            "2": "自定义角色与权限",
-            "3": "Webhook 和审计日志",
-            "4": "完整知识库",
-            "5": "优先支持"
+        "evidence": {
+          "accessControl": {
+            "title": "Access control",
+            "description": "Roles, permissions, and team boundaries remain explicit."
+          },
+          "workforceGraph": {
+            "title": "Workforce graph",
+            "description": "People, capabilities, knowledge, and execution signals connect into one operating view."
+          },
+          "evidenceLayer": {
+            "title": "Evidence layer",
+            "description": "Decisions and changes become traceable records, not scattered narrative."
           }
-        },
-        "enterprise": {
-          "name": "Enterprise",
-          "description": "适合有高级需求的组织。",
-          "cta": "联系我们",
-          "features": {
-            "1": "包含 Pro 的所有功能",
-            "2": "SSO（Auth0）",
-            "3": "自定义集成",
-            "4": "SLA 保证",
-            "5": "专属支持"
-          }
-        }
-      }
-    },
-    "faq": {
-      "title": "常见问题",
-      "items": {
-        "try": {
-          "question": "Afenda 可以免费试用吗？",
-          "answer": "可以。演示环境功能完整且无需付款。使用示例数据探索所有功能。"
-        },
-        "startData": {
-          "question": "我需要哪些数据来开始？",
-          "answer": "只需团队成员名单。您可以导入 CSV、手动邀请成员或使用批量导入流程。"
-        },
-        "existingTools": {
-          "question": "它能与我们现有的工具配合使用吗？",
-          "answer": "平台默认包含 GitHub，并提供灵活的集成框架以支持 Webhook 和自定义同步适配器。"
-        },
-        "assistant": {
-          "question": "AI 助手如何工作？",
-          "answer": "AI 使用您的知识库和用户数据来回答问题、检索文档并提供上下文帮助。支持 OpenAI 与 Anthropic 模型。"
-        },
-        "security": {
-          "question": "我的数据安全吗？",
-          "answer": "是的。平台采用多租户设计，具备租户数据隔离、企业级认证和基于权限的访问控制。"
-        },
-        "migration": {
-          "question": "我可以迁移现有数据吗？",
-          "answer": "可以。您可以从 CSV 导入团队数据，集成引擎可按计划同步外部系统。"
         }
       }
     },
     "nav": {
-      "features": "功能",
-      "pricing": "定价",
-      "docs": "文档",
+      "primaryNavigation": "Primary navigation",
+      "mobileNavigation": "Mobile navigation",
       "language": "语言",
       "selectLanguage": "选择语言",
       "theme": "主题",
@@ -168,187 +118,749 @@
         "dark": "深色",
         "system": "系统"
       },
-      "bookDemo": "预约演示"
+      "items": {
+        "system": "System",
+        "surface": "Surface",
+        "domains": "Domains",
+        "guarantees": "Guarantees",
+        "docs": "Docs"
+      }
     },
-    "howItWorks": {
-      "title": "工作原理",
-      "description": "三步让团队快速上线。",
-      "steps": {
-        "configure": {
-          "title": "部署与配置",
-          "description": "部署模板，创建租户，配置品牌、角色并连接 AI 提供商。"
+    "heroPreview": {
+      "ariaLabel": "规范化运营事实摘录",
+      "diagram": {
+        "eyebrow": "Truth resolution console",
+        "title": "Signals become operating truth after resolution.",
+        "subtitle": "Afenda binds operational movement to identity, evaluates it against policy, and commits only the record the business can defend.",
+        "trace": {
+          "label": "Resolution state",
+          "mode": "Governed",
+          "state": "Resolved"
         },
-        "invite": {
-          "title": "邀请用户",
-          "description": "邀请团队成员、分配角色，让他们设置个人资料与集成。"
+        "connectors": {
+          "normalize": "Normalize",
+          "govern": "Govern",
+          "commit": "Commit",
+          "expose": "Expose"
         },
-        "launch": {
-          "title": "启用 AI 上线",
-          "description": "连接知识库，启用 AI 助手，配置 Webhook 并上线。"
+        "flowLabel": "Signal / Boundary / Policy / Canonical Record / Evidence",
+        "proofTags": {
+          "nonBypassable": "Non-bypassable",
+          "identityBound": "Identity-bound",
+          "auditReady": "Audit-ready"
+        },
+        "stages": {
+          "signals": {
+            "title": "Operational signals",
+            "subtitle": "Messy workforce movement enters with context.",
+            "items": {
+              "identity": "Identity",
+              "skills": "Skills",
+              "activity": "Activity",
+              "knowledge": "Knowledge"
+            }
+          },
+          "boundary": {
+            "title": "Controlled boundary",
+            "subtitle": "Only governed input crosses the control gate.",
+            "note": "Tenant scope, authority, and source reliability are checked before state can move."
+          },
+          "core": {
+            "title": "Resolution core",
+            "subtitle": "Deterministic control layer",
+            "items": {
+              "identityBinding": "Identity binding",
+              "policyResolution": "Policy resolution",
+              "evidenceCommit": "Evidence commit"
+            }
+          },
+          "record": {
+            "title": "Canonical record",
+            "subtitle": "Resolved state committed for operation.",
+            "cardTitle": "Canonical record",
+            "cardSubtitle": "Resolved. Governed. Trusted.",
+            "fields": {
+              "recordId": {
+                "term": "Record ID",
+                "value": "CR-7F3A-9821"
+              },
+              "identity": {
+                "term": "Identity",
+                "value": "A1F9.7C2E.4D88"
+              },
+              "skills": {
+                "term": "Skills",
+                "value": "12 verified"
+              },
+              "policyOutcome": {
+                "term": "Policy outcome",
+                "value": "Allowed"
+              },
+              "evidenceHash": {
+                "term": "Evidence hash",
+                "value": "4f7c...9e21"
+              }
+            }
+          },
+          "audit": {
+            "title": "Audit & visibility",
+            "subtitle": "Proof is produced with the record.",
+            "items": {
+              "proof": {
+                "title": "Proof",
+                "body": "Verifiable evidence and outcomes"
+              },
+              "monitoring": {
+                "title": "Monitoring",
+                "body": "Real-time oversight and alerts"
+              },
+              "trace": {
+                "title": "Trace",
+                "body": "End-to-end lineage and audit trail"
+              }
+            }
+          }
+        }
+      },
+      "eyebrow": "运营事实界面",
+      "title": "只有当身份、策略、证据和状态一致时，记录才会被接受。",
+      "subtitle": "这个界面不是仪表盘预览。它是一个正式摘录，说明 Afenda 如何将运营流动转化为可运营、可治理、可审计的规范化业务事实。",
+      "trace": {
+        "metaLabel": "事实轨迹",
+        "id": "TRUTH-TRACE / 7W1H",
+        "modeLabel": "模式",
+        "mode": "受治理",
+        "stateLabel": "状态",
+        "state": "已解析"
+      },
+      "ledger": {
+        "indexLabel": "01 / 控制台账",
+        "sequence": "有序",
+        "title": "从事件到记录的控制台账",
+        "description": "每个运营事件必须先通过身份绑定、策略评估和证据附加，才允许推动业务状态变更。",
+        "rows": {
+          "eventReceived": {
+            "code": "EVT-2401",
+            "label": "从受治理来源接收运营事件",
+            "status": "已接受",
+            "time": "09:41:12"
+          },
+          "identityBound": {
+            "code": "IDN-7W1H",
+            "label": "已绑定执行者、租户、上下文、所有权和时间戳",
+            "status": "已绑定",
+            "time": "09:41:13"
+          },
+          "policyApplied": {
+            "code": "POL-GOV",
+            "label": "状态转换前已评估控制策略",
+            "status": "已控制",
+            "time": "09:41:14"
+          },
+          "recordResolved": {
+            "code": "REC-CANON",
+            "label": "已通过证据链解析规范化记录",
+            "status": "已验证",
+            "time": "09:41:16"
+          }
+        }
+      },
+      "resolved": {
+        "indexLabel": "02 / 已解析记录",
+        "title": "已解析的运营状态",
+        "description": "Afenda 不再添加另一层解释。它解析出业务可以操作、辩护和对账的状态。",
+        "recordLabel": "规范化记录",
+        "state": "一个有效事实",
+        "body": "被接受的状态受租户边界限制、与执行者绑定、经过策略测试，并连接到解释其存在原因所需的证据。"
+      },
+      "evidence": {
+        "record": {
+          "term": "记录",
+          "value": "规范化状态对象"
+        },
+        "tenantBoundary": {
+          "term": "边界",
+          "value": "租户范围内且感知所有权"
+        },
+        "decisionPath": {
+          "term": "决策路径",
+          "value": "策略、例外和解析器轨迹"
+        },
+        "auditPosture": {
+          "term": "审计姿态",
+          "value": "由运营产生，而不是事后重建"
+        }
+      },
+      "obligations": {
+        "title": "企业义务",
+        "items": {
+          "economic": {
+            "term": "经济",
+            "value": "已对账"
+          },
+          "operational": {
+            "term": "运营",
+            "value": "可执行"
+          },
+          "technical": {
+            "term": "技术",
+            "value": "有边界"
+          },
+          "audit": {
+            "term": "审计",
+            "value": "可辩护"
+          }
+        }
+      },
+      "consequence": {
+        "label": "业务后果",
+        "title": "事后不能靠叙事补救。",
+        "body": "系统强制在运营发生的时刻产生事实，因此财务、审计、管理和执行都基于同一条已解析记录工作。"
+      }
+    },
+    "system": {
+      "eyebrow": "System definition",
+      "title": "Afenda is not a feature surface. It is the canonical layer beneath operational judgment.",
+      "description": "The product exists to prevent the familiar enterprise failure: useful activity spread across tools, but no single accountable record strong enough for decision, audit, and control.",
+      "points": {
+        "recordDiscipline": {
+          "label": "Record discipline",
+          "title": "Every operational event resolves into a governed source of truth.",
+          "body": "Afenda treats documents, entities, actions, approvals, and state transitions as durable business facts, not as disconnected interface activity."
+        },
+        "evidenceBinding": {
+          "label": "Evidence binding",
+          "title": "The system keeps proof close to the decision it supports.",
+          "body": "A decision without lineage is only a claim. Afenda binds actor, time, tenant, source, reason, and resulting state into a traceable operating layer."
+        },
+        "resolutionControl": {
+          "label": "Resolution control",
+          "title": "Conflicting activity is resolved by policy, not by memory.",
+          "body": "When systems disagree, the operating model needs precedence, auditability, and controlled mutation. Afenda is built around that discipline."
         }
       }
     },
-    "featureTabs": {
-      "users": {
-        "label": "面向用户",
-        "description": "用户开始并保持高效所需的一切。",
-        "features": {
-          "profile": {
-            "title": "个人资料",
-            "description": "完整的用户资料，支持头像与 GitHub 集成。"
+    "topology": {
+      "eyebrow": "系统拓扑",
+      "title": "从原始信号到可辩护记录的唯一管线。",
+      "description": "Afenda 不会把真理分散在各个工具里。输入经标准化后在解析核心中被评估，并以可审计的规范状态输出。",
+      "thesis": "如果组织无法用一张图画出这条路径，就无法拥有单一的运营真理—只有分歧的阐释。",
+      "diagram": {
+        "label": "控制拓扑",
+        "title": "标准化 → 解析 → 提交",
+        "state": "架构不变式"
+      },
+      "inputs": {
+        "title": "运营输入",
+        "items": {
+          "identity": {
+            "title": "身份信号",
+            "body": "行为者、租户与所有权上下文作为一等事实。"
           },
-          "assistant": {
-            "title": "AI 助手",
-            "description": "由 OpenAI 或 Anthropic 驱动的自然语言聊天。"
+          "skills": {
+            "title": "能力图",
+            "body": "技能、熟练度与劳动力结构是受治理的属性。"
           },
-          "knowledgeBase": {
-            "title": "知识库",
-            "description": "搜索并浏览组织的文档与内容。"
+          "activity": {
+            "title": "执行遥测",
+            "body": "工作流、文档与 HRIS 事件带来源与时间戳。"
           },
-          "directory": {
-            "title": "目录",
-            "description": "查找并连接团队成员。"
+          "knowledge": {
+            "title": "知识对象",
+            "body": "制品与学习记录绑定范围与策略。"
           }
         }
       },
-      "team": {
-        "label": "面向团队",
-        "description": "为成长团队提供协作与可视化工具。",
-        "features": {
-          "peopleDirectory": {
-            "title": "人员目录",
-            "description": "使用筛选器浏览并查找团队成员。"
+      "connectors": {
+        "normalize": "标准化",
+        "resolve": "解析"
+      },
+      "controls": {
+        "title": "解析核心",
+        "items": {
+          "identityBinding": {
+            "title": "身份绑定",
+            "body": "每次状态迁移在策略运行前先绑定行为者与租户。"
           },
-          "orgChart": {
-            "title": "组织结构图",
-            "description": "可视化团队结构与汇报关系。"
+          "policyResolution": {
+            "title": "策略解析",
+            "body": "权威、优先级与规则决定哪些状态可以改变。"
           },
-          "activityFeed": {
-            "title": "活动流",
-            "description": "关于团队与平台活动的实时更新。"
-          },
-          "webhooks": {
-            "title": "Webhook",
-            "description": "在事件发生时向外部系统推送通知。"
+          "evidenceCommit": {
+            "title": "证据提交",
+            "body": "在写入记录时附带证明—事后不可重建补办。"
           }
         }
       },
-      "admin": {
-        "label": "管理",
-        "description": "为管理平台的管理员提供全面控制。",
-        "features": {
-          "memberManagement": {
-            "title": "成员管理",
-            "description": "邀请、管理并停用团队成员。"
+      "outputs": {
+        "title": "输出的真理",
+        "items": {
+          "record": {
+            "label": "规范记录",
+            "value": "企业可赖以运营的单次提交状态。"
           },
-          "roles": {
-            "title": "角色与权限",
-            "description": "细粒度 PBAC，支持自定义角色包。"
+          "visibility": {
+            "label": "受治理可见性",
+            "value": "同一底层记录的按角色视图。"
           },
-          "auditLogs": {
-            "title": "审计日志",
-            "description": "记录平台上的所有操作轨迹。"
-          },
-          "settings": {
-            "title": "设置",
-            "description": "租户级配置、品牌与功能开关。"
+          "audit": {
+            "label": "审计轨迹",
+            "value": "从信号到接受状态的可追溯路径。"
           }
         }
       },
-      "ai": {
-        "label": "AI 与集成",
-        "description": "将 AI 与外部系统连接到您的平台。",
-        "features": {
-          "chat": {
-            "title": "AI 聊天",
-            "description": "跨所有数据的对话式检索。"
+      "consequence": {
+        "label": "设计后果",
+        "title": "无并行权威。",
+        "body": "若某一通道绕过此脊柱仍可改变业务真理，Afenda 故意不把它视为受治理。"
+      }
+    },
+    "surface": {
+      "eyebrow": "Operational surface",
+      "title": "The interface is reduced to what the organization must know, prove, and control.",
+      "description": "No decorative dashboards. No synthetic theatre. The operational surface exists to expose canonical records, policy decisions, evidence links, and state movement."
+    },
+    "integrationReality": {
+      "eyebrow": "集成现实",
+      "title": "外部系统贡献信号；Afenda 保留权威。",
+      "description": "ERP、HRIS、身份与协作工具仍是数据源—而非彼此竞争的真理账本。每条入站路径跨过身份范围、标准化、治理与提交纪律。",
+      "quote": "集成证明穿过了何种边界——而非业务被允许相信什么。",
+      "panel": {
+        "label": "集成控制面",
+        "title": "从外部信号到有界记录",
+        "state": "边界已强制执行",
+        "traceLine": "外部信号 → 受控边界 → 规范记录"
+      },
+      "interfaces": {
+        "identity": {
+          "title": "身份平面",
+          "body": "将 SSO、人力主档、承包商与联邦主体映射到租户范围的人力身份。"
+        },
+        "systems": {
+          "title": "记录系统连接器",
+          "body": "将 Workday、SAP、BambooHR、ATS、LMS、工单作为带时间戳的受治理源摄取。"
+        },
+        "knowledge": {
+          "title": "知识与文档",
+          "body": "为 Confluence、Notion、Drive 对象注册所有权、敏感性与策略标签。"
+        },
+        "governance": {
+          "title": "治理执行",
+          "body": "在状态推进前应用规则包、审批链、破窗权限与漂移检测。"
+        }
+      },
+      "boundary": {
+        "index": "03 / 执行边界",
+        "title": "不可绕过的序列",
+        "description": "每阶段为强制。跳过阶段不是配置项—而是失败的集成合同。",
+        "meta": "执行序列 · 不可绕过",
+        "steps": {
+          "connect": {
+            "label": "连接",
+            "value": "经身份验证的连接器，最小特权凭据与显式范围。"
           },
-          "vectorSearch": {
-            "title": "向量检索",
-            "description": "由 pgvector 嵌入驱动的语义搜索。"
+          "normalize": {
+            "label": "标准化",
+            "value": "策略前的模式映射、去重与冲突标记。"
           },
-          "githubIntegration": {
-            "title": "GitHub 集成",
-            "description": "同步用户资料与来自 GitHub 的活动。"
+          "govern": {
+            "label": "治理",
+            "value": "在证据要求下评估策略、审批与例外路径。"
           },
-          "integrationEngine": {
-            "title": "集成引擎",
-            "description": "通过同步框架连接任意外部系统。"
+          "commit": {
+            "label": "提交",
+            "value": "以不可变谱系写入规范记录。"
           }
+        }
+      },
+      "record": {
+        "label": "集成回执",
+        "title": "BOUNDARY-CLOSED",
+        "description": "本条记录证明外部活动已通过完整执行链后才改变企业真理。",
+        "footer": "谱系哈希 · 轮换计划 · 范围证明已归档",
+        "tagline": "来源保留 · 边界执行 · 状态已解析",
+        "fields": {
+          "source": {
+            "term": "源系统",
+            "value": "Workday HCM（prod-west）"
+          },
+          "contract": {
+            "term": "连接器契约",
+            "value": "WD-HCM-2025.3 · 已签署"
+          },
+          "boundary": {
+            "term": "边界检查点",
+            "value": "身份 ✓ · 策略 ✓ · 证据 ✓"
+          },
+          "result": {
+            "term": "已提交结果",
+            "value": "规范人力记录随审计包更新"
+          }
+        }
+      },
+      "consequence": {
+        "label": "运营规则",
+        "title": "集成没有通向真理的后门。",
+        "body": "若供应商或影子流程拿不出相同回执，则不属于受治理运营模型——无论界面多方便。"
+      }
+    },
+    "resolutionStages": {
+      "input": {
+        "step": "输入",
+        "title": "事件以携带证据的事实进入。",
+        "description": "捕获文档、操作、集成、身份与状态变更，并具有足够上下文供后续评判。"
+      },
+      "control": {
+        "step": "控制",
+        "title": "策略决定权威与优先级。",
+        "description": "系统在允许移动状态之前评估租户范围、角色权威、源可靠性与规则绑定。"
+      },
+      "truth": {
+        "step": "真理",
+        "title": "规范记录被解析并保留。",
+        "description": "结果状态可被检查、可被审计并可跨组织使用，无须依赖口述解释。"
+      }
+    },
+    "domains": {
+      "eyebrow": "Capability domains",
+      "title": "Capabilities are expressed as enterprise controls, not feature cards.",
+      "description": "Each domain answers one question: what can the organization rely on when operational pressure, system disagreement, and audit scrutiny arrive together?"
+    },
+    "capabilities": {
+      "canonicalRecords": {
+        "title": "Canonical records",
+        "body": "Operational entities, documents, events, and transitions are normalized into accountable records with stable ownership, scope, and identity.",
+        "proof": "Reduces duplicate truth surfaces and prevents record drift across teams, tools, and tenants."
+      },
+      "evidenceBinding": {
+        "title": "Evidence binding",
+        "body": "Every material state carries the proof required to defend it: source, actor, timestamp, reason, tenant boundary, and decision path.",
+        "proof": "Turns operational claims into inspectable facts before audit pressure arrives."
+      },
+      "governanceControls": {
+        "title": "Governance controls",
+        "body": "Policy, role, approval, precedence, and exception handling are treated as first-class controls rather than implementation comments.",
+        "proof": "Keeps operational change inside a controlled spine instead of relying on informal process memory."
+      },
+      "auditContinuity": {
+        "title": "Audit continuity",
+        "body": "The system preserves the path from original event to current state, including reversals, overrides, and resolution authority.",
+        "proof": "Supports executive review, regulatory inspection, and internal accountability without narrative reconstruction."
+      },
+      "operationalResolution": {
+        "title": "Operational resolution",
+        "body": "When incoming facts conflict, Afenda resolves them through declared precedence, tenant scope, and evidence quality.",
+        "proof": "Prevents the business from manually negotiating which system should be believed."
+      },
+      "enterpriseIntegration": {
+        "title": "Enterprise integration",
+        "body": "External systems connect as sources and consumers of truth, not as uncontrolled parallel ledgers.",
+        "proof": "Allows ERP, identity, document, and workflow systems to participate without fragmenting authority."
+      }
+    },
+    "commercial": {
+      "eyebrow": "商业姿态",
+      "title": "为采购就绪，而非采购表演。",
+      "description": "Afenda 让法务、安全与实施基于同一架构事实对齐：bounded 权威、保留证据及单一规范记录姿态。",
+      "cta": {
+        "primary": "安排高管评审",
+        "secondary": "打开系统档案"
+      },
+      "panel": {
+        "label": "尽调维度",
+        "title": "尽调真正检查什么",
+        "state": "材料已对齐"
+      },
+      "review": {
+        "governance": {
+          "title": "治理工件",
+          "body": "控制矩阵、DPIA 脚手架、分离模型与保留图谱—从实时配置导出。"
+        },
+        "implementation": {
+          "title": "实施手册",
+          "body": "分阶段入职，明示回滚、验证关口与绑定规范记录的成功标准。"
+        },
+        "security": {
+          "title": "安全证据",
+          "body": "凭据轮换、SSO 绑定、不可变审计血缘与异常路由均有文档——非声称。"
+        },
+        "commercial": {
+          "title": "商业结构",
+          "body": "容量、支持与责任边界对齐真实控制能力—无虚列 SKU。"
+        }
+      },
+      "process": {
+        "index": "04 / 商业节奏",
+        "title": "从首次沟通到受治理生产",
+        "description": "每步产出可签署工件；不依赖空谈叙事。",
+        "steps": {
+          "scope": {
+            "label": "范围",
+            "value": "列出真理表面与集成合同。"
+          },
+          "validate": {
+            "label": "验证",
+            "value": "试点租户服从完整策略栈——无演示捷径。"
+          },
+          "align": {
+            "label": "对齐",
+            "value": "法务、IT 与高管签署同一架构包。"
+          },
+          "commit": {
+            "label": "提交",
+            "value": "生产上线并持续验证证据。"
+          }
+        }
+      },
+      "record": {
+        "label": "尽调记录",
+        "title": "SIGN-OFF ACTIVE",
+        "description": "面板跟踪市面控制与实际部署之间的合同对齐。",
+        "footer": "版本锁定档案 · 变更日志在企业访问下",
+        "fields": {
+          "model": {
+            "term": "交付模型",
+            "value": "单租户控制面 · 多租户工作负载隔离"
+          },
+          "basis": {
+            "term": "责任基础",
+            "value": "SOC2 Type II 路线图 · 合同可用性与数据驻留附件"
+          },
+          "review": {
+            "term": "董事会评审包",
+            "value": "v2025-Q2 · 已传阅"
+          },
+          "outcome": {
+            "term": "当前结果",
+            "value": "待 CIO 会签 · 无开放控制缺口"
+          }
+        }
+      },
+      "consequence": {
+        "label": "商业后果",
+        "title": "合同引用架构—而非幻灯片。",
+        "body": "争议或审计发生时，双方沿列明控制与不可变记录追溯义务—而非重新解读营销表述。"
+      }
+    },
+    "guarantees": {
+      "eyebrow": "Evidence / guarantees",
+      "title": "Credibility comes from what the system can prove under pressure.",
+      "description": "The guarantee is not speed, dashboards, or generic automation. The guarantee is that the organization can inspect how an operational state became true.",
+      "items": {
+        "canonicalState": {
+          "title": "One canonical state",
+          "body": "The business does not need three reports and a meeting to decide which record is true."
+        },
+        "decisionPath": {
+          "title": "Traceable decision path",
+          "body": "Every material decision can be followed through actor, source, policy, reason, and resulting state."
+        },
+        "tenantBounded": {
+          "title": "Tenant-bounded records",
+          "body": "Records remain scoped to the correct tenant, legal entity, operating boundary, and authority model."
+        },
+        "auditReady": {
+          "title": "Audit-ready evidence",
+          "body": "Evidence is retained as part of the operational record, not collected later as a separate rescue exercise."
+        },
+        "controlledChange": {
+          "title": "Controlled change",
+          "body": "Overrides, exceptions, and reversals move through visible governance rather than hidden operational shortcuts."
+        },
+        "integrationDiscipline": {
+          "title": "Integration discipline",
+          "body": "Connected systems exchange truth through controlled boundaries instead of becoming competing authorities."
         }
       }
     },
-    "socialProofSection": {
-      "title": "全球团队的信赖之选",
-      "description": "查看组织如何使用 Afenda 自动化并扩展其工作流。",
-      "roleAt": "{role} 于 {company}",
-      "sponsorsTitle": "我们的合作伙伴与赞助商",
-      "sponsorLabel": "合作伙伴 {index}",
-      "comingSoon": "敬请期待",
-      "sponsorCta": "有兴趣赞助 Afenda 吗？",
-      "sponsorCtaLink": "联系我们",
-      "testimonials": {
-        "1": {
-          "role": "工程副总裁",
-          "text": "Afenda 改变了我们构建和自动化工作流的方式。一切现在都透明且以数据驱动。"
+    "evidence": {
+      "eyebrow": "证据架构",
+      "title": "信任是记录的属性—不是讲稿。",
+      "description": "Afenda 将证据结构化：身份绑定、策略评估、规范提交与审计可见性均为显式阶段，而非事后批注。",
+      "quote": "若无法追踪，则不是证据—只是观点。",
+      "panel": {
+        "label": "证据栈",
+        "title": "承认真理前四项不可删减保证",
+        "state": "各阶段均已满足"
+      },
+      "items": {
+        "identity": {
+          "title": "身份绑定",
+          "body": "在解释前断言行为者、租户、会话、时间戳与范围。"
         },
-        "2": {
-          "role": "人事运营经理",
-          "text": "AI 助手和集成引擎为我们的团队节省了数周的设置时间。我们的 SaaS 上线从未如此迅速。"
+        "policy": {
+          "title": "策略闸口",
+          "body": "在记录理由前提下评估规则、审批、豁免与破窗。"
         },
-        "3": {
-          "role": "人才总监",
-          "text": "终于有了一个平台，让经理们可以专注于增长而不是电子表格。OKR 集成非常顺畅。"
+        "record": {
+          "title": "规范提交",
+          "body": "状态迁移写入耐久事实并带版本与谱系哈希。"
+        },
+        "audit": {
+          "title": "审计界面",
+          "body": "检查者能看到从始发事件到可辩护结果的完整路径—无离线拼凑。"
+        }
+      },
+      "auditPath": {
+        "index": "03 / 可检查谱系",
+        "title": "监管机构最低要求的链路—内置",
+        "description": "每一步均有密码学或运维证明；缺一步记录即失效。",
+        "steps": {
+          "actor": {
+            "label": "行为者证明",
+            "value": "硬件支撑会话与敏感迁移的强化验证"
+          },
+          "tenant": {
+            "label": "租户隔离",
+            "value": "行级安全及 API 边界的跨租户调用禁止"
+          },
+          "policy": {
+            "label": "策略评估",
+            "value": "记录确定性引擎版本与结果哈希"
+          },
+          "decision": {
+            "label": "人为决策捕获",
+            "value": "审批人 ID、委派权威证明与 SLA 时间戳"
+          },
+          "record": {
+            "label": "规范持久化",
+            "value": "WORM 级事件分片日志与镜像冷存证明"
+          }
+        }
+      },
+      "record": {
+        "label": "已验证束",
+        "title": "EVIDENCE-PACK CLOSED",
+        "description": "本束满足内部审计清单 AC-417，无须手工装订附件。",
+        "footer": "哈希树根 · 法定人数签名 · 管辖驻留标记",
+        "fields": {
+          "source": {
+            "term": "来源系统",
+            "value": "3 套系统 · 分歧自动标记"
+          },
+          "control": {
+            "term": "控制引用",
+            "value": "按控制族关联 ISO27001 附录 A 映射"
+          },
+          "result": {
+            "term": "结果状态哈希",
+            "value": "sha256:92f…c11"
+          },
+          "review": {
+            "term": "独立复核",
+            "value": "四大工作簿导入 · 差异 0"
+          }
+        }
+      },
+      "consequence": {
+        "label": "审计姿态",
+        "title": "证据债务会复利—Afenda 在写入时分摊。",
+        "body": "推迟取证会在后续每次审计、争议或领导班子更替中产生复利成本；结构化证据避免该轨迹。"
+      }
+    },
+    "closing": {
+      "eyebrow": "Closing position",
+      "title": "The system either knows the truth, or the business negotiates it manually.",
+      "description": "Afenda is designed for the former: a governed truth layer where operational records survive growth, integration pressure, tenant complexity, and executive review without requiring narrative rescue."
+    },
+    "readiness": {
+      "eyebrow": "Readiness questions",
+      "title": "Enterprise adoption begins with evidence, scope, and operating discipline.",
+      "description": "These are the questions the product is built to answer before procurement, rollout, or executive sponsorship creates pressure.",
+      "questions": {
+        "replacement": {
+          "question": "What does Afenda replace?",
+          "answer": "Afenda does not begin as a replacement for ERP, document storage, or workflow tools. It establishes the truth layer that governs how operational facts become reliable records across those systems."
+        },
+        "start": {
+          "question": "Where does implementation start?",
+          "answer": "Implementation starts with the highest-risk truth surface: records where conflicting sources, manual reconciliation, approval ambiguity, or audit exposure already create operational cost."
+        },
+        "integrations": {
+          "question": "How does Afenda handle integrations?",
+          "answer": "Integrations are treated as governed sources and consumers. They are not allowed to silently create a second authority without identity, scope, precedence, and evidence rules."
+        },
+        "enterpriseGrade": {
+          "question": "What makes this enterprise-grade?",
+          "answer": "The enterprise posture comes from tenant boundaries, evidence retention, audit continuity, policy-driven state transitions, and a product model that treats control as architecture rather than an afterthought."
+        },
+        "executiveReview": {
+          "question": "How should executives evaluate the product?",
+          "answer": "Evaluate whether Afenda can explain who changed what, why it changed, which source was trusted, whose authority applied, when the state became true, and how the evidence survives review."
+        }
+      }
+    },
+    "executiveClose": {
+      "eyebrow": "高管决策",
+      "title": "下一步是架构评审—不是再做一次演示。",
+      "description": "Afenda 向采购、建设者、审计与运营公布同一本体。请选择一条结构性真理脊柱，还是不断升级的对账成本。",
+      "cta": {
+        "workspace": "进入受治理工作区",
+        "briefing": "预约高管简报",
+        "systemBrief": "审阅系统档案"
+      },
+      "panel": {
+        "ariaLabel": "高管决策支持面板",
+        "label": "董事会就绪工件",
+        "title": "领导层签署的核心内容",
+        "governance": {
+          "title": "治理档案袋",
+          "body": "策略包、RACI 叠加、分离示意图、DPIA 脚手架—导出为版本化合集。"
+        },
+        "review": {
+          "title": "红队评审备忘录",
+          "body": "第三方渗透差异、加密控制与异常链路演练结果。"
+        },
+        "close": {
+          "label": "决策检查点",
+          "title": "是否仍无架构盲点？",
+          "body": "若有事项仍标注“实施时再定义”，则评审未完—规模化无法修补模糊控制。"
         }
       }
     },
     "footer": {
+      "heading": "Afenda footer",
+      "navLabel": "Footer navigation",
       "blurb": "面向生产的 SaaS 平台基础，具备多租户、AI 工作流、集成与治理就绪的控制能力。",
-      "sections": {
-        "product": "产品",
-        "resources": "资源",
-        "company": "公司"
-      },
       "links": {
-        "features": "功能",
-        "pricing": "定价",
-        "howItWorks": "工作原理",
-        "documentation": "文档",
-        "blog": "博客（敬请期待）",
-        "changelog": "更新日志（敬请期待）",
-        "about": "关于（敬请期待）",
-        "contact": "联系（敬请期待）",
-        "privacy": "隐私（敬请期待）",
-        "terms": "条款（敬请期待）"
+        "system": "System definition",
+        "surface": "Operational surface",
+        "domains": "Capability domains",
+        "guarantees": "Evidence guarantees",
+        "docs": "Documentation"
       },
-      "builtWith": "基于 Next.js、Tailwind CSS 与 Drizzle ORM 构建。",
-      "socialComingSoon": "{name}（敬请期待）"
+      "copyright": "(c) {year} Afenda. Operational truth, governed by design.",
+      "position": "Built for enterprises that require proof before scale."
     },
-    "heroPreview": {
-      "fasterOnboarding": "入职速度提升 +42%",
-      "profileCard": {
-        "personName": "Jane Doe",
-        "personRole": "高级开发工程师",
-        "badge": "+ 领导力"
-      },
-      "activityCard": {
-        "title": "平台活动",
-        "teamVelocity": "团队速度",
-        "delivery": "交付"
-      },
-      "peopleFinder": {
-        "title": "人员查找"
-      },
-      "people": {
-        "ana": {
-          "role": "资深工程师"
-        },
-        "marco": {
-          "role": "技术负责人"
+    "bookDemo": {
+      "back": "Back to Afenda",
+      "eyebrow": "Executive briefing",
+      "title": "Briefing intake is being prepared for controlled activation.",
+      "description": "This route is intentionally present so executive interest never resolves to a dead end. Until the formal intake workflow is connected, use the workspace entrypoint or review the system documentation.",
+      "primaryCta": "Enter workspace",
+      "secondaryCta": "Read documentation",
+      "briefingCard": {
+        "eyebrow": "Briefing scope",
+        "title": "What the review should cover",
+        "items": {
+          "identity": {
+            "term": "Identity",
+            "value": "How workforce identity is resolved, bounded, and kept deterministic across tenants."
+          },
+          "skills": {
+            "term": "Skills graph",
+            "value": "How skills telemetry, role evidence, and execution signals become a governed workforce graph."
+          },
+          "governance": {
+            "term": "Governance",
+            "value": "How access, permissions, approvals, and operating boundaries are enforced."
+          },
+          "audit": {
+            "term": "Audit continuity",
+            "value": "How decisions and changes remain traceable without after-the-fact narrative reconstruction."
+          }
         }
-      },
-      "integrationsCount": "12 个集成",
-      "aiInsights": "AI 洞察"
+      }
     }
   },
   "auth": {
@@ -969,6 +1481,7 @@
       "copied": "Markdown URL 已复制到剪贴板",
       "copiedButton": "已复制",
       "copyFailed": "无法复制到剪贴板",
+      "assistantHintTitle": "Ask the assistant inside the app",
       "assistantHint": "Afenda AI 助手在租户工作区内运行（侧栏 → 助手），对已登录用户可用，启用时可访问组织上下文",
       "assistantHintAria": "AI 助手的使用",
       "assistantCta": "打开应用主页面",

@@ -2,99 +2,102 @@
 
 import { ChevronDown, ChevronUp, Code2 } from 'lucide-react';
 import { useState } from 'react';
+
 import { Link } from '@/i18n/navigation';
+
+const DEV_TENANT_SLUG = 'afenda';
 
 const DEV_USERS = [
   {
-    label: 'Admin – Full Access',
+    label: 'Admin',
     email: 'admin@example.com',
-    role: 'Admin',
-    description: 'Full admin access, all features enabled.',
+    role: 'Full access',
+    description: 'Administrative tenant access.',
   },
   {
-    label: 'Member – Sample User',
+    label: 'Member',
     email: 'member@example.com',
-    role: 'Member',
-    description: 'Regular member with sample data.',
+    role: 'Standard access',
+    description: 'Seeded member account.',
   },
   {
-    label: 'Member – Fresh Start',
+    label: 'New member',
     email: 'member_new@example.com',
-    role: 'Member',
-    description: 'New user, no data, good for testing onboarding.',
+    role: 'Onboarding',
+    description: 'Empty-state onboarding account.',
   },
-];
-
-function roleBadgeClass(role: string): string {
-  switch (role) {
-    case 'Admin':
-      return 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300';
-    default:
-      return 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300';
-  }
-}
+] as const;
 
 export function DevUsersPanel() {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
+
+  if (process.env.NODE_ENV === 'production') {
+    return null;
+  }
 
   if (collapsed) {
     return (
       <button
         type="button"
         onClick={() => setCollapsed(false)}
-        className="fixed bottom-4 left-4 z-50 flex items-center gap-2 px-3 py-2 bg-amber-50 dark:bg-amber-500/15 border border-amber-300 dark:border-amber-500/30 rounded-lg shadow-lg backdrop-blur-sm hover:bg-amber-100 dark:hover:bg-amber-500/20 transition-colors"
-        aria-label="Abrir panel de usuarios de desarrollo"
+        className="fixed bottom-4 left-4 z-50 inline-flex items-center gap-2 border border-border bg-background px-3 py-2 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:text-foreground"
+        aria-label="Open development user panel"
       >
-        <Code2 className="h-4 w-4 text-amber-600 dark:text-amber-400 shrink-0" />
-        <span className="text-sm font-medium text-amber-800 dark:text-amber-200">Dev users</span>
-        <ChevronUp className="h-4 w-4 text-amber-600 dark:text-amber-400 rotate-180 shrink-0" aria-hidden />
+        <Code2 className="h-4 w-4" aria-hidden />
+        Dev access
+        <ChevronUp className="h-4 w-4" aria-hidden />
       </button>
     );
   }
 
   return (
-    <div className="fixed bottom-4 left-4 z-50 p-4 bg-amber-50 dark:bg-amber-500/15 border border-amber-300 dark:border-amber-500/30 rounded-lg shadow-lg max-w-xs backdrop-blur-sm">
-      <div className="flex items-center justify-between gap-2 mb-3">
+    <aside className="fixed bottom-4 left-4 z-50 w-[20rem] border border-border bg-background shadow-lg">
+      <header className="flex items-center justify-between border-b border-border px-4 py-3">
         <div className="flex items-center gap-2">
-          <Code2 className="h-4 w-4 text-amber-600 dark:text-amber-400 shrink-0" />
-          <p className="font-semibold text-amber-800 dark:text-amber-200 text-sm">Development Mode</p>
+          <Code2 className="h-4 w-4 text-muted-foreground" aria-hidden />
+          <p className="text-sm font-semibold text-foreground">Development access</p>
         </div>
+
         <button
           type="button"
           onClick={() => setCollapsed(true)}
-          className="p-1 rounded hover:bg-amber-200 dark:hover:bg-amber-800/50 text-amber-700 dark:text-amber-300 transition-colors"
-          aria-label="Minimizar panel de usuarios de desarrollo"
+          className="p-1 text-muted-foreground transition-colors hover:text-foreground"
+          aria-label="Collapse development user panel"
         >
-          <ChevronDown className="h-4 w-4" />
+          <ChevronDown className="h-4 w-4" aria-hidden />
         </button>
+      </header>
+
+      <div className="px-4 py-3">
+        <p className="text-xs leading-5 text-muted-foreground">
+          Tenant: <code className="font-mono text-foreground">{DEV_TENANT_SLUG}</code>
+        </p>
       </div>
-      <p className="text-xs text-amber-700 dark:text-amber-300 mb-3">
-        Test users for tenant <code className="bg-amber-200 dark:bg-amber-900 px-1 rounded">demo</code>:
-      </p>
-      <ul className="space-y-2">
+
+      <ul className="divide-y divide-border border-t border-border">
         {DEV_USERS.map((devUser) => (
-          <li key={devUser.email} className="text-xs">
+          <li key={devUser.email}>
             <Link
-              href={`/login?email=${encodeURIComponent(devUser.email)}`}
-              className="block rounded-md p-2 -mx-2 transition-colors hover:bg-amber-100 dark:hover:bg-amber-900/50 border border-transparent hover:border-amber-300 dark:hover:border-amber-700"
-              aria-label={`Sign in as ${devUser.label} (${devUser.email})`}
+              href={`/t/${DEV_TENANT_SLUG}/login?email=${encodeURIComponent(devUser.email)}`}
+              className="block px-4 py-3 transition-colors hover:bg-muted/40"
+              aria-label={`Sign in as ${devUser.label}`}
             >
-              <div className="flex items-center gap-2">
-                <span
-                  className={`px-1.5 py-0.5 rounded text-[10px] font-medium shrink-0 ${roleBadgeClass(devUser.role)}`}
-                >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-sm font-medium text-foreground">{devUser.label}</p>
+                  <p className="mt-1 text-xs leading-5 text-muted-foreground">{devUser.description}</p>
+                </div>
+
+                <span className="shrink-0 border border-border px-2 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground">
                   {devUser.role}
                 </span>
-                <span className="font-medium text-amber-900 dark:text-amber-100 truncate">{devUser.label}</span>
               </div>
-              <p className="text-amber-600 dark:text-amber-400 mt-0.5 ml-[52px]">{devUser.description}</p>
-              <code className="text-[10px] text-amber-700 dark:text-amber-300 mt-0.5 ml-[52px] block font-mono truncate">
-                {devUser.email}
-              </code>
+
+              <code className="mt-2 block truncate font-mono text-[11px] text-muted-foreground">{devUser.email}</code>
             </Link>
           </li>
         ))}
       </ul>
-    </div>
+    </aside>
   );
 }

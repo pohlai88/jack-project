@@ -24,7 +24,7 @@ type SectionVariant =
 /**
  * Section variant styles — aligned with Design System domain colors.
  *
- * Cross-reference with SidebarNavItem.iconTintClasses and globals.css.
+ * Cross-reference with SidebarNavItem.iconTintClasses and src/shared/styles/tokens.css.
  * See architecture/doctrine/ for durable design-system authority.
  */
 const variantStyles: Record<SectionVariant, { bg: string; border: string; icon: string }> = {

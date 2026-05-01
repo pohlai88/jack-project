@@ -37,6 +37,8 @@ type LoginFormValues = z.infer<typeof loginSchema>;
 interface LoginFormProps {
   /** Pre-fill email (e.g. from ?email= in URL) */
   initialEmail?: string;
+  /** Optional post-login callback path. Defaults to tenant selector. */
+  callbackUrl?: string;
   /** Show Auth0 controls when the provider is configured. */
   showAuth0?: boolean;
   /** When Auth0 is configured: show Universal Login sign-up (screen_hint=signup). */
@@ -47,6 +49,7 @@ interface LoginFormProps {
 
 export const LoginForm = ({
   initialEmail = '',
+  callbackUrl = '/select-tenant',
   showAuth0 = false,
   showAuth0SignUp = false,
   auth0SignUpLabel,
@@ -64,9 +67,6 @@ export const LoginForm = ({
       email: initialEmail,
     },
   });
-
-  // Callback URL goes to tenant selector which handles smart redirect
-  const callbackUrl = '/select-tenant';
 
   // Handle development credentials login
   const onSubmit = async (data: LoginFormValues) => {
