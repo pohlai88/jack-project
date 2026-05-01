@@ -870,549 +870,561 @@
     },
     "footerDocs": {
       "footer": {
-        "navigationAriaLabel": "Footer navigation",
+        "navigationAriaLabel": "Điều hướng chân trang",
         "brand": {
-          "tagline": "Enterprise truth infrastructure",
-          "summary": "Canonical records, policy-bound execution, and audit-ready evidence for operational teams.",
-          "statusAriaLabel": "Enterprise posture",
+          "tagline": "Cơ sở hạ tầng sự thật doanh nghiệp",
+          "summary": "Hồ sơ chuẩn mực, việc thực thi theo chính sách và bằng chứng sẵn sàng kiểm tra cho các nhóm vận hành.",
+          "statusAriaLabel": "Tư thế doanh nghiệp",
           "status": {
-            "privacyRequests": "Privacy requests",
-            "securityReview": "Security review",
-            "compliancePacket": "Compliance packet"
+            "privacyRequests": "Yêu cầu quyền riêng tư",
+            "securityReview": "Đánh giá bảo mật",
+            "compliancePacket": "Gói tuân thủ"
           }
         },
         "groups": {
           "product": {
-            "title": "Product",
+            "title": "Sản phẩm",
             "links": {
-              "documentation": "Documentation Access Record",
-              "demo": "Demo Engagement Docket",
-              "architectureReview": "Architecture Review Intake Memorandum"
+              "documentation": "Bản ghi truy cập tài liệu",
+              "demo": "Bản demo tương tác",
+              "architectureReview": "Biên bản ghi nhớ đánh giá kiến ​​trúc"
             }
           },
           "governance": {
-            "title": "Governance",
+            "title": "Quản trị",
             "links": {
-              "securityContact": "Security Contact Protocol",
-              "compliancePacket": "Compliance Packet Request",
-              "dpaRequest": "Data Processing Addendum Request"
+              "securityContact": "Giao thức liên hệ bảo mật",
+              "compliancePacket": "Yêu cầu gói tuân thủ",
+              "dpaRequest": "Yêu cầu phụ lục xử lý dữ liệu"
             }
           },
           "legal": {
-            "title": "Legal",
+            "title": "Hợp pháp",
             "links": {
-              "privacyRequest": "Privacy Request Desk",
-              "termsDesk": "Terms and Contract Desk",
-              "investorRelations": "Investor Relations Legal Channel"
+              "privacyRequest": "Bàn yêu cầu quyền riêng tư",
+              "termsDesk": "Bàn điều khoản và hợp đồng",
+              "investorRelations": "Kênh pháp lý quan hệ nhà đầu tư"
             }
           }
         },
         "authorities": {
-          "ariaLabel": "Legal authority citations",
-          "kicker": "Jurisdictional Authority Register",
-          "lead": "Formal legal citation ledger governing privacy notice duties, data-subject rights, and enforcement posture."
+          "ariaLabel": "Trích dẫn cơ quan pháp luật",
+          "kicker": "Đăng ký cơ quan có thẩm quyền",
+          "lead": "Sổ cái trích dẫn pháp lý chính thức quản lý các nghĩa vụ thông báo về quyền riêng tư, quyền của chủ thể dữ liệu và tư thế thực thi."
         },
         "legalLinks": {
-          "ariaLabel": "Legal links",
-          "generalCounsel": "Office of General Counsel",
-          "dataSubjectRights": "Data Subject Rights Desk",
-          "regulatoryEvidence": "Regulatory Evidence Office",
-          "disclosureDesk": "Coordinated Disclosure Desk"
+          "ariaLabel": "Liên kết pháp lý",
+          "generalCounsel": "Văn phòng Tổng cố vấn",
+          "dataSubjectRights": "Bàn về quyền của chủ thể dữ liệu",
+          "regulatoryEvidence": "Văn phòng chứng cứ quy định",
+          "disclosureDesk": "Bàn công bố phối hợp"
         }
       },
       "index": {
-        "kicker": "Footer Governance Hub",
-        "title": "Marketing Footer Legal Documents",
-        "description": "Central index of all individual footer legal, compliance, and authority documents. Each page is structured for counsel review and evidentiary traceability.",
-        "openDossier": "Open dossier"
+        "kicker": "Trung tâm quản trị chân trang",
+        "title": "Tiếp thị Footer Văn bản pháp luật",
+        "description": "Chỉ mục trung tâm của tất cả các tài liệu pháp lý, tuân thủ và thẩm quyền ở chân trang riêng lẻ. Mỗi trang được cấu trúc để xem xét tư vấn và truy xuất nguồn gốc bằng chứng.",
+        "openDossier": "Mở hồ sơ"
       },
       "ui": {
-        "kicker": "Footer Legal Dossier",
-        "purpose": "Purpose",
-        "contact": "Contact",
-        "responseStandard": "Response Standard",
-        "authorities": "Authorities and References",
-        "returnToIndex": "Return to footer document index",
-        "openPrimaryDocumentation": "Open primary documentation",
-        "openDemoScheduling": "Open demo scheduling"
+        "kicker": "Footer Hồ sơ pháp lý",
+        "purpose": "Mục đích",
+        "contact": "Liên hệ",
+        "responseStandard": "Tiêu chuẩn đáp ứng",
+        "authorities": "Cơ quan và tài liệu tham khảo",
+        "returnToIndex": "Quay lại chỉ mục tài liệu chân trang",
+        "openPrimaryDocumentation": "Mở tài liệu chính",
+        "openDemoScheduling": "Mở lịch trình demo"
       },
       "documentsBySlug": {
         "documentation": {
-          "title": "Documentation Access Record",
-          "subtitle": "Controlled entry point to product, architecture, and governance documentation.",
-          "purpose": "Provides the formal footer-linked documentation entry while preserving a traceable legal and governance context.",
+          "title": "Bản ghi truy cập tài liệu",
+          "subtitle": "Điểm truy cập được kiểm soát đối với tài liệu về sản phẩm, kiến ​​trúc và quản trị.",
+          "purpose": "Cung cấp mục nhập tài liệu được liên kết ở chân trang chính thức trong khi vẫn duy trì bối cảnh pháp lý và quản trị có thể theo dõi được.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Documentation access is immediate; citation clarifications follow legal desk standards.",
+          "responseStandard": "Truy cập tài liệu ngay lập tức; làm rõ trích dẫn tuân theo các tiêu chuẩn của bàn pháp lý.",
           "sections": [
             {
-              "heading": "Document Scope",
+              "heading": "Phạm vi tài liệu",
               "paragraphs": [
-                "This page routes readers to official product documentation and related governance references without ambiguity."
+                "Trang này dẫn người đọc đến tài liệu chính thức về sản phẩm và các tài liệu tham khảo về quản trị có liên quan một cách rõ ràng."
               ]
             },
             {
-              "heading": "Operational Link",
-              "paragraphs": ["Authoritative documentation remains published at the main docs endpoint."],
-              "bullets": ["Primary docs endpoint: /docs"]
+              "heading": "Liên kết hoạt động",
+              "paragraphs": ["Tài liệu có thẩm quyền vẫn được xuất bản ở điểm cuối tài liệu chính."],
+              "bullets": ["Điểm cuối tài liệu chính: /docs"]
             }
           ]
         },
         "book-demo": {
-          "title": "Demo Engagement Docket",
-          "subtitle": "Formal intake channel for demonstration and technical qualification sessions.",
-          "purpose": "Provides a footer-governed pathway for scheduling a platform demonstration with traceable request intent.",
+          "title": "Bản demo tương tác",
+          "subtitle": "Kênh tiếp nhận chính thức dành cho các buổi trình diễn và đánh giá kỹ thuật.",
+          "purpose": "Cung cấp một lộ trình do chân trang quản lý để lên lịch trình diễn nền tảng với mục đích yêu cầu có thể theo dõi.",
           "contact": "architecture-review@afenda.io",
-          "responseStandard": "Demo intake acknowledgments and scheduling windows are issued by commercial operations.",
+          "responseStandard": "Xác nhận tiếp nhận demo và thời gian lập kế hoạch được phát hành bởi các hoạt động thương mại.",
           "sections": [
             {
-              "heading": "Engagement Inputs",
+              "heading": "Đầu vào tương tác",
               "paragraphs": [
-                "Include operational objective, stakeholder roles, and priority workflows to structure the demonstration session."
+                "Bao gồm mục tiêu hoạt động, vai trò của các bên liên quan và quy trình công việc ưu tiên để cấu trúc phiên trình diễn."
               ]
             },
             {
-              "heading": "Operational Link",
-              "paragraphs": ["The active scheduling workflow remains available through the demo endpoint."],
-              "bullets": ["Primary demo endpoint: /book-demo"]
+              "heading": "Liên kết hoạt động",
+              "paragraphs": ["Quy trình lập kế hoạch hoạt động vẫn có sẵn thông qua điểm cuối demo."],
+              "bullets": ["Điểm cuối demo chính: /book-demo"]
             }
           ]
         },
         "architecture-review": {
-          "title": "Architecture Review Intake Memorandum",
-          "subtitle": "Technical governance intake for regulated processing environments.",
-          "purpose": "Establishes the submission protocol for architecture-risk review, control mapping, and evidentiary adequacy prior to deployment.",
+          "title": "Biên bản ghi nhớ đánh giá kiến ​​trúc",
+          "subtitle": "Tiếp nhận quản trị kỹ thuật cho môi trường xử lý được quản lý.",
+          "purpose": "Thiết lập giao thức gửi để xem xét rủi ro kiến ​​trúc, lập bản đồ kiểm soát và tính đầy đủ bằng chứng trước khi triển khai.",
           "contact": "architecture-review@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; substantive triage memorandum within 7 business days.",
+          "responseStandard": "Xác nhận trong vòng 2 ngày làm việc; bản ghi nhớ phân loại nội dung trong vòng 7 ngày làm việc.",
           "sections": [
             {
-              "heading": "Required Submission Record",
+              "heading": "Hồ sơ nộp bắt buộc",
               "paragraphs": [
-                "Submit a system diagram, data-flow narrative, and decision log that identifies controller, processor, and sub-processor roles."
+                "Gửi sơ đồ hệ thống, tường thuật luồng dữ liệu và nhật ký quyết định xác định vai trò của bộ điều khiển, bộ xử lý và bộ xử lý phụ."
               ],
               "bullets": [
-                "Data classification table",
-                "Access-control model",
-                "Incident response attachment",
-                "Retention and deletion schedule"
+                "Bảng phân loại dữ liệu",
+                "Mô hình kiểm soát truy cập",
+                "Tệp đính kèm ứng phó sự cố",
+                "Lịch trình lưu giữ và xóa"
               ]
             },
             {
-              "heading": "Review Output",
+              "heading": "Xem lại đầu ra",
               "paragraphs": [
-                "Review outcomes include control sufficiency findings, remediation directives, and evidentiary gaps requiring closure before production approval."
+                "Kết quả đánh giá bao gồm các phát hiện về tính đầy đủ của biện pháp kiểm soát, chỉ thị khắc phục và những thiếu sót về bằng chứng cần phải đóng lại trước khi phê duyệt sản xuất."
               ]
             }
           ]
         },
         "security-contact": {
-          "title": "Security Contact Protocol",
-          "subtitle": "Primary channel for security assessment and control assurance requests.",
-          "purpose": "Defines intake and handling rules for security questionnaires, control attestations, and trust-center requests.",
+          "title": "Giao thức liên hệ bảo mật",
+          "subtitle": "Kênh chính để đánh giá an ninh và yêu cầu đảm bảo kiểm soát.",
+          "purpose": "Xác định các quy tắc tiếp nhận và xử lý các câu hỏi bảo mật, chứng thực kiểm soát và các yêu cầu của trung tâm tin cậy.",
           "contact": "security@afenda.io",
-          "responseStandard": "Acknowledgment within 1 business day; complete response package subject to scope and NDA status.",
+          "responseStandard": "Xác nhận trong vòng 1 ngày làm việc; gói phản hồi hoàn chỉnh tùy thuộc vào phạm vi và trạng thái NDA.",
           "sections": [
             {
-              "heading": "Submission Scope",
+              "heading": "Phạm vi gửi",
               "paragraphs": [
-                "Requests must identify control family, intended regulatory use, and evidence period to ensure accurate retrieval of records."
+                "Các yêu cầu phải xác định họ kiểm soát, mục đích sử dụng theo quy định và khoảng thời gian bằng chứng để đảm bảo truy xuất hồ sơ một cách chính xác."
               ]
             },
             {
-              "heading": "Disclosure Basis",
+              "heading": "Cơ sở công bố",
               "paragraphs": [
-                "Evidence is released under least-disclosure principle and contractual confidentiality obligations."
+                "Bằng chứng được công bố theo nguyên tắc ít tiết lộ nhất và nghĩa vụ bảo mật theo hợp đồng."
               ]
             }
           ]
         },
         "compliance-packet": {
-          "title": "Compliance Packet Request",
-          "subtitle": "Formal request channel for regulatory and audit evidence packs.",
-          "purpose": "Provides standardized packet assembly for due diligence, audit preparation, and procurement governance.",
+          "title": "Yêu cầu gói tuân thủ",
+          "subtitle": "Kênh yêu cầu chính thức về các gói bằng chứng kiểm toán và quản lý.",
+          "purpose": "Cung cấp tập hợp gói tiêu chuẩn hóa để thẩm định, chuẩn bị kiểm toán và quản lý mua sắm.",
           "contact": "compliance@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; packet assembly timeline communicated after scope validation.",
+          "responseStandard": "Xác nhận trong vòng 2 ngày làm việc; Dòng thời gian tập hợp gói được truyền đạt sau khi xác thực phạm vi.",
           "sections": [
             {
-              "heading": "Packet Components",
+              "heading": "Thành phần gói",
               "paragraphs": [
-                "Compliance packets may include policy indices, control matrices, subprocessors, and incident reporting posture statements."
+                "Các gói tuân thủ có thể bao gồm các chỉ số chính sách, ma trận kiểm soát, bộ xử lý phụ và các tuyên bố về tình trạng báo cáo sự cố."
               ]
             },
             {
-              "heading": "Verification Controls",
+              "heading": "Kiểm soát xác minh",
               "paragraphs": [
-                "Requests are subject to requester identity verification and legitimate purpose assessment."
+                "Các yêu cầu phải được xác minh danh tính của người yêu cầu và đánh giá mục đích hợp pháp."
               ]
             }
           ]
         },
         "dpa-request": {
-          "title": "Data Processing Addendum Request",
-          "subtitle": "Contractual pathway for controller-processor terms and transfer safeguards.",
-          "purpose": "Initiates DPA negotiation and execution with jurisdictional annexes and transfer mechanism schedules.",
+          "title": "Yêu cầu phụ lục xử lý dữ liệu",
+          "subtitle": "Lộ trình hợp đồng cho các điều khoản của bộ điều khiển-bộ xử lý và các biện pháp bảo vệ chuyển giao.",
+          "purpose": "Bắt đầu đàm phán và thực thi DPA với các phụ lục pháp lý và lịch trình cơ chế chuyển giao.",
           "contact": "privacy@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; redline review sequence confirmed after template intake.",
+          "responseStandard": "Xác nhận trong vòng 2 ngày làm việc; trình tự xem xét giới hạn lại được xác nhận sau khi lấy mẫu.",
           "sections": [
             {
-              "heading": "Contracting Requirements",
+              "heading": "Yêu cầu hợp đồng",
               "paragraphs": [
-                "Provide legal entity details, role allocation, subprocessors constraints, and required transfer mechanism clauses."
+                "Cung cấp thông tin chi tiết về pháp nhân, phân bổ vai trò, các ràng buộc của bộ xử lý phụ và các điều khoản về cơ chế chuyển giao bắt buộc."
               ]
             },
             {
-              "heading": "Cross-Border Safeguards",
+              "heading": "Các biện pháp bảo vệ xuyên biên giới",
               "paragraphs": [
-                "Transfer clauses must identify destination jurisdictions, legal basis, and supplementary measures where applicable."
+                "Các điều khoản chuyển nhượng phải xác định khu vực pháp lý nơi nhận, cơ sở pháp lý và các biện pháp bổ sung nếu có."
               ]
             }
           ]
         },
         "privacy-request": {
-          "title": "Privacy Request Desk",
-          "subtitle": "Unified intake channel for privacy notices, policy interpretation, and data handling questions.",
-          "purpose": "Records and routes privacy governance requests to legal and operational reviewers under documented intake controls.",
+          "title": "Bàn yêu cầu quyền riêng tư",
+          "subtitle": "Kênh tiếp nhận thống nhất dành cho các thông báo về quyền riêng tư, giải thích chính sách và các câu hỏi xử lý dữ liệu.",
+          "purpose": "Ghi lại và gửi các yêu cầu quản trị quyền riêng tư đến người đánh giá hoạt động và pháp lý dưới sự kiểm soát tiếp nhận được ghi lại.",
           "contact": "privacy@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; response schedule set after issue classification.",
+          "responseStandard": "Xác nhận trong vòng 2 ngày làm việc; lịch phản hồi được thiết lập sau khi phân loại vấn đề.",
           "sections": [
             {
-              "heading": "Request Classes",
+              "heading": "Yêu cầu lớp học",
               "paragraphs": [
-                "Includes notice interpretation, lawful-basis clarification, retention policy inquiries, and transparency obligations."
+                "Bao gồm việc giải thích thông báo, làm rõ cơ sở pháp lý, yêu cầu chính sách lưu giữ và nghĩa vụ minh bạch."
               ]
             },
             {
-              "heading": "File Integrity",
-              "paragraphs": ["All requests are logged with timestamped references to preserve audit traceability."]
+              "heading": "Tính toàn vẹn của tệp",
+              "paragraphs": [
+                "Tất cả các yêu cầu đều được ghi lại với các tham chiếu được đánh dấu thời gian để duy trì khả năng truy xuất nguồn gốc kiểm tra."
+              ]
             }
           ]
         },
         "terms-request": {
-          "title": "Terms and Contract Desk",
-          "subtitle": "Formal channel for terms review, contract clarifications, and legal language requests.",
-          "purpose": "Centralizes legal drafting and interpretation requests related to contractual terms governing service usage.",
+          "title": "Bàn điều khoản và hợp đồng",
+          "subtitle": "Kênh chính thức để xem xét các điều khoản, làm rõ hợp đồng và yêu cầu ngôn ngữ pháp lý.",
+          "purpose": "Tập trung các yêu cầu soạn thảo và giải thích pháp lý liên quan đến các điều khoản hợp đồng chi phối việc sử dụng dịch vụ.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; legal analysis turnaround by complexity class.",
+          "responseStandard": "Xác nhận trong vòng 2 ngày làm việc; quay vòng phân tích pháp lý theo lớp phức tạp.",
           "sections": [
             {
-              "heading": "Drafting Inputs",
+              "heading": "Soạn thảo đầu vào",
               "paragraphs": [
-                "Identify clause references, redline intent, and governing-law requirements in each submission."
+                "Xác định các tham chiếu điều khoản, mục đích giới hạn và các yêu cầu về luật điều chỉnh trong mỗi lần gửi."
               ]
             },
             {
-              "heading": "Version Control",
-              "paragraphs": ["Issued drafts preserve revision history to maintain negotiation traceability."]
+              "heading": "Kiểm soát phiên bản",
+              "paragraphs": [
+                "Bản dự thảo đã ban hành lưu giữ lịch sử sửa đổi để duy trì khả năng truy xuất nguồn gốc đàm phán."
+              ]
             }
           ]
         },
         "investor-relations": {
-          "title": "Investor Relations Legal Channel",
-          "subtitle": "Governance disclosures and legal response stream for investor diligence.",
-          "purpose": "Provides controlled access to governance statements and legally reviewable representations for financing diligence.",
+          "title": "Kênh pháp lý quan hệ nhà đầu tư",
+          "subtitle": "Công bố thông tin quản trị và luồng phản hồi pháp lý dành cho nhà đầu tư.",
+          "purpose": "Cung cấp quyền truy cập có kiểm soát vào các báo cáo quản trị và các giải trình có thể được xem xét về mặt pháp lý để thẩm định tài chính.",
           "contact": "investors@example.com",
-          "responseStandard": "Acknowledgment within 3 business days; disclosure pack subject to eligibility and confidentiality screening.",
+          "responseStandard": "Xác nhận trong vòng 3 ngày làm việc; gói tiết lộ tùy thuộc vào tính đủ điều kiện và sàng lọc bảo mật.",
           "sections": [
             {
-              "heading": "Disclosure Preconditions",
+              "heading": "Điều kiện tiên quyết tiết lộ",
               "paragraphs": [
-                "Requests must provide fund identity, diligence purpose, and executed confidentiality terms."
+                "Các yêu cầu phải cung cấp danh tính quỹ, mục đích thẩm định và các điều khoản bảo mật được thực hiện."
               ]
             },
             {
-              "heading": "Disclosure Scope",
+              "heading": "Phạm vi tiết lộ",
               "paragraphs": [
-                "Responses exclude privileged material and unpublished strategic matters unless expressly authorized."
+                "Các phản hồi không bao gồm tài liệu đặc quyền và các vấn đề chiến lược chưa được công bố trừ khi được cho phép rõ ràng."
               ]
             }
           ]
         },
         "legal-desk": {
-          "title": "Office of General Counsel",
-          "subtitle": "Primary legal operations desk for statutory interpretation and governance directives.",
-          "purpose": "Handles legal citations, interpretation requests, and jurisdictional applicability analyses for published statements.",
+          "title": "Văn phòng Tổng cố vấn",
+          "subtitle": "Bàn hoạt động pháp lý chính để giải thích theo luật định và chỉ thị quản trị.",
+          "purpose": "Xử lý các trích dẫn pháp lý, yêu cầu giải thích và phân tích khả năng áp dụng theo thẩm quyền đối với các tuyên bố đã xuất bản.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; legal memorandum issuance based on scope complexity.",
+          "responseStandard": "Xác nhận trong vòng 2 ngày làm việc; ban hành bản ghi nhớ pháp lý dựa trên mức độ phức tạp của phạm vi.",
           "sections": [
             {
-              "heading": "Legal Citation Handling",
-              "paragraphs": ["Citation requests are answered with law/section precision and source traceability."]
+              "heading": "Xử lý trích dẫn pháp lý",
+              "paragraphs": [
+                "Yêu cầu trích dẫn được trả lời với độ chính xác về luật/phần và khả năng truy xuất nguồn gốc."
+              ]
             },
             {
-              "heading": "Publication Governance",
-              "paragraphs": ["External legal statements are reviewed for statutory accuracy before release."]
+              "heading": "Quản trị xuất bản",
+              "paragraphs": [
+                "Các báo cáo pháp lý bên ngoài được xem xét về tính chính xác theo luật định trước khi phát hành."
+              ]
             }
           ]
         },
         "data-subject-rights": {
-          "title": "Data Subject Rights Desk",
-          "subtitle": "Operational intake for access, correction, deletion, restriction, portability, and objection rights.",
-          "purpose": "Registers and executes verified rights requests under documented identity and authority controls.",
+          "title": "Bàn về quyền của chủ thể dữ liệu",
+          "subtitle": "Thông tin vận hành để truy cập, chỉnh sửa, xóa, hạn chế, di chuyển và quyền phản đối.",
+          "purpose": "Đăng ký và thực hiện các yêu cầu quyền đã được xác minh dưới sự kiểm soát quyền hạn và danh tính được ghi lại.",
           "contact": "privacy@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; statutory response timelines applied by governing jurisdiction.",
+          "responseStandard": "Xác nhận trong vòng 2 ngày làm việc; các mốc thời gian phản hồi theo luật định được áp dụng bởi cơ quan có thẩm quyền quản lý.",
           "sections": [
             {
-              "heading": "Identity Verification",
+              "heading": "Xác minh danh tính",
               "paragraphs": [
-                "Rights fulfillment requires identity verification proportionate to the sensitivity of requested actions."
+                "Việc thực hiện quyền yêu cầu xác minh danh tính tương ứng với mức độ nhạy cảm của hành động được yêu cầu."
               ]
             },
             {
-              "heading": "Execution Record",
-              "paragraphs": ["Each request receives a dated execution log, legal basis record, and completion status."]
+              "heading": "Bản ghi thực hiện",
+              "paragraphs": [
+                "Mỗi yêu cầu sẽ nhận được nhật ký thực hiện theo ngày, hồ sơ cơ sở pháp lý và trạng thái hoàn thành."
+              ]
             }
           ],
           "citations": [
             {
-              "label": "GDPR Arts. 15-21",
+              "label": "Nghệ thuật GDPR. 15-21",
               "href": "https://gdpr-info.eu/chapter-3/",
-              "note": "EU data-subject rights framework."
+              "note": "Khung quyền chủ thể dữ liệu của EU."
             },
             {
-              "label": "Cal. Civ. Code §§ 1798.105, 1798.106, 1798.110",
+              "label": "Cal. Dân sự. Mã §§ 1798.105, 1798.106, 1798.110",
               "href": "https://oag.ca.gov/privacy/ccpa",
-              "note": "California deletion, correction, and know rights."
+              "note": "Quyền xóa, chỉnh sửa và quyền được biết của California."
             },
             {
               "label": "UU PDP Pasal 5-15",
               "href": "https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022",
-              "note": "Indonesia rights of personal data subjects."
+              "note": "Quyền của chủ thể dữ liệu cá nhân ở Indonesia."
             }
           ]
         },
         "regulatory-evidence": {
-          "title": "Regulatory Evidence Office",
-          "subtitle": "Evidence issuance desk for supervisory, procurement, and audit reviewers.",
-          "purpose": "Produces evidentiary files that map controls and operations to statutory and contractual obligations.",
+          "title": "Văn phòng chứng cứ quy định",
+          "subtitle": "Bàn phát hành bằng chứng cho người đánh giá giám sát, mua sắm và kiểm toán.",
+          "purpose": "Tạo ra các hồ sơ chứng cứ thể hiện các biện pháp kiểm soát và hoạt động phù hợp với các nghĩa vụ theo luật định và hợp đồng.",
           "contact": "compliance@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; evidentiary package target date issued after scope confirmation.",
+          "responseStandard": "Xác nhận trong vòng 2 ngày làm việc; ngày mục tiêu của gói chứng cứ được ban hành sau khi xác nhận phạm vi.",
           "sections": [
             {
-              "heading": "Evidence Standards",
-              "paragraphs": ["Evidence files are timestamped, source-linked, and prepared for independent review."]
+              "heading": "Tiêu chuẩn bằng chứng",
+              "paragraphs": [
+                "Các tệp bằng chứng được đánh dấu thời gian, liên kết nguồn và chuẩn bị để xem xét độc lập."
+              ]
             },
             {
-              "heading": "Admissibility Posture",
-              "paragraphs": ["Records are structured for verification, with clear provenance and issuance authority."]
+              "heading": "Tư thế chấp nhận",
+              "paragraphs": ["Hồ sơ được cấu trúc để xác minh, có nguồn gốc xuất xứ và cơ quan cấp phát rõ ràng."]
             }
           ]
         },
         "responsible-disclosure": {
-          "title": "Coordinated Disclosure Desk",
-          "subtitle": "Responsible vulnerability reporting channel with controlled remediation workflow.",
-          "purpose": "Receives, verifies, and triages vulnerability disclosures under coordinated disclosure norms.",
+          "title": "Bàn công bố phối hợp",
+          "subtitle": "Kênh báo cáo lỗ hổng có trách nhiệm với quy trình khắc phục được kiểm soát.",
+          "purpose": "Nhận, xác minh và phân loại các tiết lộ về lỗ hổng bảo mật theo các tiêu chuẩn tiết lộ phối hợp.",
           "contact": "security@afenda.io",
-          "responseStandard": "Acknowledgment within 1 business day; severity triage and remediation track opened after validation.",
+          "responseStandard": "Xác nhận trong vòng 1 ngày làm việc; theo dõi phân loại mức độ nghiêm trọng và khắc phục được mở sau khi xác thực.",
           "sections": [
             {
-              "heading": "Minimum Report Contents",
+              "heading": "Nội dung báo cáo tối thiểu",
               "paragraphs": [
-                "Include impacted asset, reproduction details, proof-of-concept boundary, and safe disclosure contact."
+                "Bao gồm tài sản bị ảnh hưởng, chi tiết tái tạo, ranh giới bằng chứng về khái niệm và thông tin liên hệ tiết lộ an toàn."
               ]
             },
             {
-              "heading": "Good-Faith Handling",
-              "paragraphs": ["Good-faith reports are handled under coordinated remediation and disclosure sequencing."]
+              "heading": "Xử lý thiện chí",
+              "paragraphs": ["Các báo cáo có thiện chí được xử lý theo trình tự phối hợp khắc phục và công bố."]
             }
           ]
         },
         "authority-eu-gdpr": {
-          "title": "EU Authority Note — GDPR",
-          "subtitle": "Primary EU statutory references used in footer legal statements.",
-          "purpose": "Identifies operative GDPR provisions governing transparency, lawful basis, rights, and complaints.",
+          "title": "Lưu ý của Cơ quan Liên minh Châu Âu - GDPR",
+          "subtitle": "Các tài liệu tham khảo pháp lý chính của EU được sử dụng trong các tuyên bố pháp lý ở chân trang.",
+          "purpose": "Xác định các điều khoản GDPR có hiệu lực quản lý tính minh bạch, cơ sở hợp pháp, quyền và khiếu nại.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Citation clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Việc làm rõ trích dẫn được xử lý thông qua quy trình làm việc của Văn phòng Tổng Cố vấn.",
           "sections": [
             {
-              "heading": "Operative Provisions",
+              "heading": "Quy định hoạt động",
               "paragraphs": [
-                "The footer references Arts. 12-14, Art. 6(1), Arts. 15-21, and Art. 77 as baseline obligations and rights instruments."
+                "Phần chân trang tham khảo Arts. 12-14, Nghệ thuật. 6(1), Nghệ thuật. 15-21, và Nghệ thuật. 77 làm nghĩa vụ cơ bản và các công cụ về quyền."
               ]
             }
           ],
           "citations": [
             {
-              "label": "Art. 6 GDPR",
+              "label": "Nghệ thuật. 6 GDPR",
               "href": "https://gdpr-info.eu/art-6-gdpr/",
-              "note": "Lawfulness of processing."
+              "note": "Tính hợp pháp của việc xử lý."
             },
             {
-              "label": "Chapter III GDPR",
+              "label": "Chương III GDPR",
               "href": "https://gdpr-info.eu/chapter-3/",
-              "note": "Rights of the data subject."
+              "note": "Quyền của chủ thể dữ liệu."
             },
             {
-              "label": "Art. 77 GDPR",
+              "label": "Nghệ thuật. 77 GDPR",
               "href": "https://gdpr-info.eu/art-77-gdpr/",
-              "note": "Right to lodge a complaint."
+              "note": "Quyền khiếu nại."
             }
           ]
         },
         "authority-us-ccpa-cpra": {
-          "title": "US Authority Note — CCPA/CPRA",
-          "subtitle": "California statutory citations used in footer legal statements.",
-          "purpose": "Catalogs California provisions for notice, rights execution, and anti-discrimination duties.",
+          "title": "Lưu ý của Cơ quan có thẩm quyền Hoa Kỳ — CCPA/CPRA",
+          "subtitle": "Các trích dẫn theo luật định của California được sử dụng trong các tuyên bố pháp lý ở chân trang.",
+          "purpose": "Danh mục các quy định của California về thông báo, thực thi quyền và nghĩa vụ chống phân biệt đối xử.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Citation clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Việc làm rõ trích dẫn được xử lý thông qua quy trình làm việc của Văn phòng Tổng Cố vấn.",
           "sections": [
             {
-              "heading": "Operative Provisions",
+              "heading": "Quy định hoạt động",
               "paragraphs": [
-                "The footer references §§ 1798.100, 1798.130, 1798.105, 1798.106, 1798.120, 1798.135, and 1798.125."
+                "Phần chân trang tham chiếu §§ 1798.100, 1798.130, 1798.105, 1798.106, 1798.120, 1798.135 và 1798.125."
               ]
             }
           ],
           "citations": [
             {
-              "label": "California AG — CCPA Portal",
+              "label": "California AG — Cổng thông tin CCPA",
               "href": "https://oag.ca.gov/privacy/ccpa",
-              "note": "Primary public statutory guidance and enforcement context."
+              "note": "Bối cảnh thực thi và hướng dẫn luật pháp cơ bản dành cho công chúng."
             }
           ]
         },
         "authority-id-pdp": {
-          "title": "Indonesia Authority Note — UU No. 27/2022",
-          "subtitle": "Indonesian personal data protection citations used in footer legal statements.",
-          "purpose": "Catalogs rights, controller obligations, and sanction provisions under Indonesia PDP law.",
+          "title": "Công hàm của Cơ quan có thẩm quyền Indonesia — UU số 27/2022",
+          "subtitle": "Các trích dẫn bảo vệ dữ liệu cá nhân của Indonesia được sử dụng trong các tuyên bố pháp lý ở chân trang.",
+          "purpose": "Lập danh mục các quyền, nghĩa vụ của bên kiểm soát và các điều khoản xử phạt theo luật PDP của Indonesia.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Citation clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Việc làm rõ trích dẫn được xử lý thông qua quy trình làm việc của Văn phòng Tổng Cố vấn.",
           "sections": [
             {
-              "heading": "Operative Provisions",
+              "heading": "Quy định hoạt động",
               "paragraphs": [
-                "The footer references Pasal 5-15, Pasal 20-50, Pasal 57, and Pasal 67-73 as the governing rights and enforcement anchors."
+                "Phần chân trang tham chiếu Pasal 5-15, Pasal 20-50, Pasal 57 và Pasal 67-73 làm cơ sở cho các quyền quản lý và thực thi."
               ]
             }
           ],
           "citations": [
             {
-              "label": "UU No. 27 Tahun 2022 (BPK)",
+              "label": "UU số 27 Tahun 2022 (BPK)",
               "href": "https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022",
-              "note": "Authoritative statute publication entry."
+              "note": "Mục nhập công bố quy chế có thẩm quyền."
             }
           ]
         },
         "open-source-docket": {
-          "title": "Open-Source Legal Docket",
-          "subtitle": "Research ledger of public legal-policy repositories referenced by the footer.",
-          "purpose": "Documents source provenance for legal drafting patterns and citation architecture used in public footer statements.",
+          "title": "Sổ sách pháp lý nguồn mở",
+          "subtitle": "Sổ cái nghiên cứu kho chính sách pháp luật công được tham chiếu ở phần chân trang.",
+          "purpose": "Xuất xứ nguồn tài liệu cho các mẫu soạn thảo pháp lý và kiến ​​trúc trích dẫn được sử dụng trong các tuyên bố ở chân trang công khai.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Việc làm rõ nguồn gốc được xử lý thông qua quy trình làm việc của Văn phòng Tổng Cố vấn.",
           "sections": [
             {
-              "heading": "Docket Scope",
+              "heading": "Phạm vi sổ ghi án",
               "paragraphs": [
-                "The docket is a research aid and does not override controlling law, regulation, or contract terms."
+                "Sổ ghi chép này là một công cụ hỗ trợ nghiên cứu và không thay thế luật, quy định hoặc điều khoản hợp đồng kiểm soát."
               ]
             }
           ],
           "citations": [
             {
-              "label": "VSBS CCPA/CPRA Notice Framework",
+              "label": "Khung thông báo CCPA/CPRA của VSBS",
               "href": "https://github.com/divyamohan1993/vsbs/blob/main/docs/compliance/ccpa-cpra.md",
-              "note": "Notice-at-collection and rights matrix pattern."
+              "note": "Mẫu ma trận thông báo lúc thu thập và quyền."
             },
             {
-              "label": "Giant Swarm Privacy Policy",
+              "label": "Chính sách về quyền riêng tư của Giant Swarm",
               "href": "https://github.com/giantswarm/legal/blob/master/privacypolicy.md",
-              "note": "Rights sectioning and article reference style."
+              "note": "Phần quyền và phong cách tham khảo bài viết."
             },
             {
-              "label": "UU 27/2022 Text Mirror",
+              "label": "Gương văn bản UU 27/2022",
               "href": "https://github.com/mashanz/peraturan-perundang-undangan/blob/main/hierarchy/03-uu-perppu/uu-27-2022.md",
-              "note": "Pasal-level structure and sanction mapping."
+              "note": "Cấu trúc cấp độ Pasal và ánh xạ xử phạt."
             },
             {
-              "label": "Simple Analytics Compliance FAQ",
+              "label": "Câu hỏi thường gặp về tuân thủ phân tích đơn giản",
               "href": "https://github.com/simpleanalytics/docs/blob/main/_docs/36_legal/04_compliance-faq.md",
-              "note": "Public compliance statement framing."
+              "note": "Khung tuyên bố tuân thủ công khai."
             }
           ]
         },
         "source-vsbs-ccpa-cpra": {
-          "title": "Source Dossier — VSBS CCPA/CPRA Notice Framework",
-          "subtitle": "Public source record for California notice-at-collection and rights matrix drafting patterns.",
-          "purpose": "Captures provenance and drafting utility of the VSBS CCPA/CPRA source used to shape footer legal statement structure.",
+          "title": "Hồ sơ nguồn — Khung thông báo CCPA/CPRA của VSBS",
+          "subtitle": "Hồ sơ nguồn công cộng về các mẫu soạn thảo ma trận quyền và thông báo tại California.",
+          "purpose": "Nắm bắt nguồn gốc và tiện ích soạn thảo của nguồn CCPA/CPRA của VSBS được sử dụng để định hình cấu trúc tuyên bố pháp lý ở chân trang.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Việc làm rõ nguồn gốc được xử lý thông qua quy trình làm việc của Văn phòng Tổng Cố vấn.",
           "sections": [
             {
-              "heading": "Document Utility",
+              "heading": "Tiện ích tài liệu",
               "paragraphs": [
-                "Used as an open-source pattern reference for rights tables, notice-at-collection wording, and response timeline presentation."
+                "Được sử dụng làm tham chiếu mẫu nguồn mở cho các bảng quyền, cách diễn đạt thông báo tại bộ sưu tập và trình bày dòng thời gian phản hồi."
               ]
             }
           ],
           "citations": [
             {
-              "label": "VSBS — CCPA + CPRA Notice",
+              "label": "VSBS — Thông báo CCPA + CPRA",
               "href": "https://github.com/divyamohan1993/vsbs/blob/main/docs/compliance/ccpa-cpra.md",
-              "note": "Primary public source used for California rights and notice framing."
+              "note": "Nguồn công khai chính được sử dụng để đóng khung thông báo và quyền của California."
             }
           ]
         },
         "source-giant-swarm-privacy": {
-          "title": "Source Dossier — Giant Swarm Privacy Policy",
-          "subtitle": "Public source record for article-mapped GDPR rights disclosure structure.",
-          "purpose": "Captures provenance and drafting utility of the Giant Swarm privacy policy structure used for rights indexing.",
+          "title": "Hồ sơ nguồn — Chính sách bảo mật của Giant Swarm",
+          "subtitle": "Hồ sơ nguồn công khai về cấu trúc tiết lộ quyền GDPR được ánh xạ theo bài viết.",
+          "purpose": "Nắm bắt nguồn gốc và tiện ích soạn thảo của cấu trúc chính sách quyền riêng tư của Giant Swarm được sử dụng để lập chỉ mục quyền.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Việc làm rõ nguồn gốc được xử lý thông qua quy trình làm việc của Văn phòng Tổng Cố vấn.",
           "sections": [
             {
-              "heading": "Document Utility",
+              "heading": "Tiện ích tài liệu",
               "paragraphs": [
-                "Used as a structural reference for explicit, article-level rights mapping in public-facing privacy statements."
+                "Được sử dụng làm tài liệu tham khảo mang tính cấu trúc để lập bản đồ các quyền ở cấp độ bài viết một cách rõ ràng trong các tuyên bố về quyền riêng tư đối với công chúng."
               ]
             }
           ],
           "citations": [
             {
-              "label": "Giant Swarm — Privacy Policy",
+              "label": "Giant Swarm — Chính sách bảo mật",
               "href": "https://github.com/giantswarm/legal/blob/master/privacypolicy.md",
-              "note": "Primary public source used for GDPR rights section architecture."
+              "note": "Nguồn công cộng chính được sử dụng cho kiến ​​trúc phần quyền GDPR."
             }
           ]
         },
         "source-indonesia-uu-27-2022": {
-          "title": "Source Dossier — Indonesia UU 27/2022 Text Mirror",
-          "subtitle": "Public source record for Pasal-level legal text and sanctions mapping.",
-          "purpose": "Captures provenance and drafting utility of the machine-readable Indonesian PDP law source.",
+          "title": "Nguồn Hồ sơ — Indonesia UU 27/2022 Text Mirror",
+          "subtitle": "Hồ sơ nguồn công khai về văn bản pháp luật cấp độ Pasal và bản đồ các biện pháp trừng phạt.",
+          "purpose": "Nắm bắt được nguồn gốc và tiện ích soạn thảo của nguồn luật PDP của Indonesia có thể đọc được bằng máy.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Việc làm rõ nguồn gốc được xử lý thông qua quy trình làm việc của Văn phòng Tổng Cố vấn.",
           "sections": [
             {
-              "heading": "Document Utility",
+              "heading": "Tiện ích tài liệu",
               "paragraphs": [
-                "Used to verify Pasal references, rights scope language, and sanctions mapping in the footer authority note."
+                "Được sử dụng để xác minh các tham chiếu Pasal, ngôn ngữ phạm vi quyền và ánh xạ các biện pháp trừng phạt trong ghi chú chính thức ở chân trang."
               ]
             }
           ],
           "citations": [
             {
-              "label": "Peraturan Perundang-Undangan — UU No. 27 Tahun 2022",
+              "label": "Peraturan Perundang-Undangan — UU số 27 Tahun 2022",
               "href": "https://github.com/mashanz/peraturan-perundang-undangan/blob/main/hierarchy/03-uu-perppu/uu-27-2022.md",
-              "note": "Primary public source used for Indonesian statute structure and article mapping."
+              "note": "Nguồn công khai chính được sử dụng cho cấu trúc quy chế và bản đồ bài viết của Indonesia."
             }
           ]
         },
         "source-simple-analytics-faq": {
-          "title": "Source Dossier — Simple Analytics Compliance FAQ",
-          "subtitle": "Public source record for concise recital/article compliance statement style.",
-          "purpose": "Captures provenance and drafting utility of concise compliance-language presentation patterns.",
+          "title": "Hồ sơ nguồn - Câu hỏi thường gặp về tuân thủ phân tích đơn giản",
+          "subtitle": "Bản ghi nguồn công khai dành cho phong cách tuyên bố tuân thủ bài viết/đọc lại ngắn gọn.",
+          "purpose": "Nắm bắt nguồn gốc và tiện ích soạn thảo của các mẫu trình bày bằng ngôn ngữ tuân thủ ngắn gọn.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Việc làm rõ nguồn gốc được xử lý thông qua quy trình làm việc của Văn phòng Tổng Cố vấn.",
           "sections": [
             {
-              "heading": "Document Utility",
+              "heading": "Tiện ích tài liệu",
               "paragraphs": [
-                "Used as a style reference for concise, citation-led compliance summaries in public legal surfaces."
+                "Được sử dụng làm tài liệu tham khảo về phong cách cho các bản tóm tắt tuân thủ ngắn gọn, dựa trên trích dẫn trong các nền tảng pháp lý công cộng."
               ]
             }
           ],
           "citations": [
             {
-              "label": "Simple Analytics — Compliance FAQ",
+              "label": "Phân tích đơn giản — Câu hỏi thường gặp về tuân thủ",
               "href": "https://github.com/simpleanalytics/docs/blob/main/_docs/36_legal/04_compliance-faq.md",
-              "note": "Primary public source used for compact compliance wording patterns."
+              "note": "Nguồn công khai chính được sử dụng cho các mẫu từ ngữ tuân thủ nhỏ gọn."
             }
           ]
         }

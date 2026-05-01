@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
 
 import { useMarketingExplorer } from './MarketingExplorerProvider';
-import { type ExplorerId, EXPLORERS } from '../_content/explorers';
+import { type ExplorerId, getExplorer } from '../_content/explorers';
 
 const OntologyObjectExplorerBody = dynamic(
   () => import('../_explorers/OntologyObjectExplorerBody').then((m) => m.OntologyObjectExplorerBody),
@@ -79,7 +79,7 @@ export function MarketingExplorerDialog() {
 
   if (!openId) return null;
 
-  const meta = EXPLORERS[openId];
+  const meta = getExplorer(openId);
 
   return (
     <div className="marketing-modal" role="dialog" aria-modal="true" aria-label={meta.label}>

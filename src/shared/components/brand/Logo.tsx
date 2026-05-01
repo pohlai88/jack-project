@@ -13,8 +13,10 @@ export type AppLogoPlacement = 'nav' | 'sidebar' | 'footer' | 'auth' | 'tenant-l
 interface AppLogoProps {
   size?: LogoSize;
   placement?: AppLogoPlacement;
+  surface?: 'auto' | 'light' | 'dark';
   showText?: boolean;
   allowTenantLogo?: boolean;
+  priority?: boolean;
   href?: string | null;
   className?: string;
   ariaLabel?: string;
@@ -152,8 +154,10 @@ const placementConfig: Record<
 export function AppLogo({
   size,
   placement = 'nav',
+  surface = 'auto',
   showText = true,
   allowTenantLogo = true,
+  priority = false,
   href = '/',
   className,
   ariaLabel,
@@ -174,6 +178,15 @@ export function AppLogo({
     !showText && (placement === 'nav' || placement === 'sidebar' || placement === 'footer');
   const tenantLogoBoxClassName = shouldConstrainTenantIcon ? s.icon : 'min-h-0 min-w-0';
   const shouldRenderText = showText && !renderAssetWordmark;
+  const shouldForceDarkSurface = surface === 'dark';
+  const shouldForceLightSurface = surface === 'light';
+  const shouldRenderLightAsset = !shouldForceDarkSurface;
+  const shouldRenderDarkAsset = Boolean(placementStyle.lockupDarkSrc) && !shouldForceLightSurface;
+  const lightAssetClassName =
+    placementStyle.lockupDarkSrc && !shouldForceLightSurface ? 'afenda-theme-light' : undefined;
+  const darkAssetClassName = shouldForceDarkSurface || shouldForceLightSurface ? undefined : 'afenda-theme-dark';
+  const lightMarkClassName = placementStyle.darkVariant && !shouldForceLightSurface ? 'afenda-theme-light' : undefined;
+  const darkMarkClassName = shouldForceDarkSurface || shouldForceLightSurface ? undefined : 'afenda-theme-dark';
 
   const content = (
     <>
@@ -185,37 +198,77 @@ export function AppLogo({
             width={s.imgSize * 4}
             height={s.imgSize * 4}
             className={cn('h-auto w-auto object-contain', placementStyle.tenantLogoClassName)}
+            priority={priority}
             unoptimized
           />
         </div>
       ) : placementStyle.renderMode === 'combinedLockup' && placementStyle.lockupLightSrc ? (
-        <>
-          <Image
-            src={placementStyle.lockupLightSrc}
-            alt={displayName}
-            width={lockupWidth}
-            height={s.imgSize}
-            className={cn(
-              'h-auto w-auto shrink-0 object-contain',
-              placementStyle.lockupDarkSrc && 'afenda-theme-light',
-              placementStyle.lockupClassName,
-            )}
-            unoptimized
-          />
-          {placementStyle.lockupDarkSrc ? (
-            <Image
-              src={placementStyle.lockupDarkSrc}
-              alt={displayName}
-              width={lockupWidth}
-              height={s.imgSize}
-              className={cn(
-                'afenda-theme-dark h-auto w-auto shrink-0 object-contain',
-                placementStyle.darkLockupClassName,
-              )}
-              unoptimized
-            />
-          ) : null}
-        </>
+        placement === 'footer' ? (
+          <>
+            {shouldRenderLightAsset ? (
+              <Image
+                src={placementStyle.lockupLightSrc}
+                alt={displayName}
+                width={lockupWidth}
+                height={s.imgSize}
+                className={cn(
+                  'h-auto w-auto shrink-0 object-contain',
+                  lightAssetClassName,
+                  placementStyle.lockupClassName,
+                )}
+                priority={priority}
+                unoptimized
+              />
+            ) : shouldRenderDarkAsset && placementStyle.lockupDarkSrc ? (
+              <Image
+                src={placementStyle.lockupDarkSrc}
+                alt={displayName}
+                width={lockupWidth}
+                height={s.imgSize}
+                className={cn(
+                  'h-auto w-auto shrink-0 object-contain',
+                  darkAssetClassName,
+                  placementStyle.darkLockupClassName,
+                )}
+                priority={priority}
+                unoptimized
+              />
+            ) : null}
+          </>
+        ) : (
+          <>
+            {shouldRenderLightAsset ? (
+              <Image
+                src={placementStyle.lockupLightSrc}
+                alt={displayName}
+                width={lockupWidth}
+                height={s.imgSize}
+                className={cn(
+                  'h-auto w-auto shrink-0 object-contain',
+                  lightAssetClassName,
+                  placementStyle.lockupClassName,
+                )}
+                priority={priority}
+                unoptimized
+              />
+            ) : null}
+            {shouldRenderDarkAsset && placementStyle.lockupDarkSrc ? (
+              <Image
+                src={placementStyle.lockupDarkSrc}
+                alt={displayName}
+                width={lockupWidth}
+                height={s.imgSize}
+                className={cn(
+                  'h-auto w-auto shrink-0 object-contain',
+                  darkAssetClassName,
+                  placementStyle.darkLockupClassName,
+                )}
+                priority={priority}
+                unoptimized
+              />
+            ) : null}
+          </>
+        )
       ) : (
         <>
           <AfendaIcon
@@ -223,15 +276,17 @@ export function AppLogo({
             size={placementStyle.markSize}
             decorative={showText}
             alt={showText ? '' : displayName}
-            className={cn(placementStyle.markClassName, placementStyle.darkVariant && 'afenda-theme-light')}
+            className={cn(placementStyle.markClassName, lightMarkClassName)}
+            priority={priority}
           />
-          {placementStyle.darkVariant && (
+          {placementStyle.darkVariant && !shouldForceLightSurface && (
             <AfendaIcon
               variant={placementStyle.darkVariant}
               size={placementStyle.markSize}
               decorative={showText}
               alt={showText ? '' : displayName}
-              className={cn('afenda-theme-dark', placementStyle.darkMarkClassName)}
+              className={cn(darkMarkClassName, placementStyle.darkMarkClassName)}
+              priority={priority}
             />
           )}
         </>

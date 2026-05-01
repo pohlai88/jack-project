@@ -47,7 +47,7 @@ export function VerdictSection() {
         </div>
 
         <p className="marketing-mono" style={{ color: 'var(--marketing-faint)', marginTop: '1rem' }}>
-          Not a demo. An architecture review.
+          {verdict.note}
         </p>
       </div>
     </MarketingSection>

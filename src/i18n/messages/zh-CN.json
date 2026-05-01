@@ -870,549 +870,498 @@
     },
     "footerDocs": {
       "footer": {
-        "navigationAriaLabel": "Footer navigation",
+        "navigationAriaLabel": "页脚导航",
         "brand": {
-          "tagline": "Enterprise truth infrastructure",
-          "summary": "Canonical records, policy-bound execution, and audit-ready evidence for operational teams.",
-          "statusAriaLabel": "Enterprise posture",
+          "tagline": "企业真相基础设施",
+          "summary": "为运营团队提供规范记录、政策约束执行和审计就绪证据。",
+          "statusAriaLabel": "企业姿态",
           "status": {
-            "privacyRequests": "Privacy requests",
-            "securityReview": "Security review",
-            "compliancePacket": "Compliance packet"
+            "privacyRequests": "隐私要求",
+            "securityReview": "安全审查",
+            "compliancePacket": "合规包"
           }
         },
         "groups": {
           "product": {
-            "title": "Product",
+            "title": "产品",
             "links": {
-              "documentation": "Documentation Access Record",
-              "demo": "Demo Engagement Docket",
-              "architectureReview": "Architecture Review Intake Memorandum"
+              "documentation": "文档查阅记录",
+              "demo": "演示参与记录",
+              "architectureReview": "架构审查摄入备忘录"
             }
           },
           "governance": {
-            "title": "Governance",
+            "title": "治理",
             "links": {
-              "securityContact": "Security Contact Protocol",
-              "compliancePacket": "Compliance Packet Request",
-              "dpaRequest": "Data Processing Addendum Request"
+              "securityContact": "安全联系协议",
+              "compliancePacket": "合规数据包请求",
+              "dpaRequest": "数据处理附录请求"
             }
           },
           "legal": {
-            "title": "Legal",
+            "title": "合法的",
             "links": {
-              "privacyRequest": "Privacy Request Desk",
-              "termsDesk": "Terms and Contract Desk",
-              "investorRelations": "Investor Relations Legal Channel"
+              "privacyRequest": "隐私请求台",
+              "termsDesk": "条款和合同台",
+              "investorRelations": "投资者关系 法律频道"
             }
           }
         },
         "authorities": {
-          "ariaLabel": "Legal authority citations",
-          "kicker": "Jurisdictional Authority Register",
-          "lead": "Formal legal citation ledger governing privacy notice duties, data-subject rights, and enforcement posture."
+          "ariaLabel": "法律权威引用",
+          "kicker": "司法机关登记册",
+          "lead": "管理隐私通知义务、数据主体权利和执行态势的正式法律引文分类账。"
         },
         "legalLinks": {
-          "ariaLabel": "Legal links",
-          "generalCounsel": "Office of General Counsel",
-          "dataSubjectRights": "Data Subject Rights Desk",
-          "regulatoryEvidence": "Regulatory Evidence Office",
-          "disclosureDesk": "Coordinated Disclosure Desk"
+          "ariaLabel": "法律链接",
+          "generalCounsel": "总法律顾问办公室",
+          "dataSubjectRights": "数据主体权利台",
+          "regulatoryEvidence": "监管证据办公室",
+          "disclosureDesk": "协调披露台"
         }
       },
       "index": {
-        "kicker": "Footer Governance Hub",
-        "title": "Marketing Footer Legal Documents",
-        "description": "Central index of all individual footer legal, compliance, and authority documents. Each page is structured for counsel review and evidentiary traceability.",
-        "openDossier": "Open dossier"
+        "kicker": "页脚治理中心",
+        "title": "营销页脚法律文件",
+        "description": "所有个人页脚法律、合规性和权威文档的中心索引。每个页面的结构都适合律师审查和证据可追溯性。",
+        "openDossier": "打开档案"
       },
       "ui": {
-        "kicker": "Footer Legal Dossier",
-        "purpose": "Purpose",
-        "contact": "Contact",
-        "responseStandard": "Response Standard",
-        "authorities": "Authorities and References",
-        "returnToIndex": "Return to footer document index",
-        "openPrimaryDocumentation": "Open primary documentation",
-        "openDemoScheduling": "Open demo scheduling"
+        "kicker": "页脚法律档案",
+        "purpose": "目的",
+        "contact": "接触",
+        "responseStandard": "响应标准",
+        "authorities": "权威机构和参考文献",
+        "returnToIndex": "返回页脚文档索引",
+        "openPrimaryDocumentation": "打开主要文档",
+        "openDemoScheduling": "打开演示调度"
       },
       "documentsBySlug": {
         "documentation": {
-          "title": "Documentation Access Record",
-          "subtitle": "Controlled entry point to product, architecture, and governance documentation.",
-          "purpose": "Provides the formal footer-linked documentation entry while preserving a traceable legal and governance context.",
+          "title": "文档查阅记录",
+          "subtitle": "产品、架构和治理文档的受控入口点。",
+          "purpose": "提供正式的页脚链接文档条目，同时保留可追溯的法律和治理背景。",
           "contact": "legal@afenda.io",
-          "responseStandard": "Documentation access is immediate; citation clarifications follow legal desk standards.",
+          "responseStandard": "文档访问是立即的；引文澄清遵循法律台标准。",
           "sections": [
             {
-              "heading": "Document Scope",
-              "paragraphs": [
-                "This page routes readers to official product documentation and related governance references without ambiguity."
-              ]
+              "heading": "文件范围",
+              "paragraphs": ["此页面明确地将读者引导至官方产品文档和相关治理参考。"]
             },
             {
-              "heading": "Operational Link",
-              "paragraphs": ["Authoritative documentation remains published at the main docs endpoint."],
-              "bullets": ["Primary docs endpoint: /docs"]
+              "heading": "运营链接",
+              "paragraphs": ["权威文档仍然发布在主要文档端点上。"],
+              "bullets": ["主要文档端点：/docs"]
             }
           ]
         },
         "book-demo": {
-          "title": "Demo Engagement Docket",
-          "subtitle": "Formal intake channel for demonstration and technical qualification sessions.",
-          "purpose": "Provides a footer-governed pathway for scheduling a platform demonstration with traceable request intent.",
+          "title": "演示参与记录",
+          "subtitle": "演示和技术资格会议的正式入场渠道。",
+          "purpose": "提供页脚管理的路径，用于安排具有可追踪请求意图的平台演示。",
           "contact": "architecture-review@afenda.io",
-          "responseStandard": "Demo intake acknowledgments and scheduling windows are issued by commercial operations.",
+          "responseStandard": "演示接收确认和调度窗口由商业运营部门发布。",
           "sections": [
             {
-              "heading": "Engagement Inputs",
-              "paragraphs": [
-                "Include operational objective, stakeholder roles, and priority workflows to structure the demonstration session."
-              ]
+              "heading": "参与度输入",
+              "paragraphs": ["包括运营目标、利益相关者角色和优先工作流程来构建演示会议。"]
             },
             {
-              "heading": "Operational Link",
-              "paragraphs": ["The active scheduling workflow remains available through the demo endpoint."],
-              "bullets": ["Primary demo endpoint: /book-demo"]
+              "heading": "运营链接",
+              "paragraphs": ["活动调度工作流程仍然可以通过演示端点使用。"],
+              "bullets": ["主要演示端点：/book-demo"]
             }
           ]
         },
         "architecture-review": {
-          "title": "Architecture Review Intake Memorandum",
-          "subtitle": "Technical governance intake for regulated processing environments.",
-          "purpose": "Establishes the submission protocol for architecture-risk review, control mapping, and evidentiary adequacy prior to deployment.",
+          "title": "架构审查摄入备忘录",
+          "subtitle": "受监管的处理环境的技术治理摄入量。",
+          "purpose": "在部署之前建立架构风险审查、控制映射和证据充分性的提交协议。",
           "contact": "architecture-review@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; substantive triage memorandum within 7 business days.",
+          "responseStandard": "2 个工作日内确认； 7 个工作日内发出实质性分类备忘录。",
           "sections": [
             {
-              "heading": "Required Submission Record",
-              "paragraphs": [
-                "Submit a system diagram, data-flow narrative, and decision log that identifies controller, processor, and sub-processor roles."
-              ],
-              "bullets": [
-                "Data classification table",
-                "Access-control model",
-                "Incident response attachment",
-                "Retention and deletion schedule"
-              ]
+              "heading": "所需提交记录",
+              "paragraphs": ["提交识别控制者、处理者和子处理者角色的系统图、数据流叙述和决策日志。"],
+              "bullets": ["数据分类表", "访问控制模型", "事件响应附件", "保留和删除时间表"]
             },
             {
-              "heading": "Review Output",
-              "paragraphs": [
-                "Review outcomes include control sufficiency findings, remediation directives, and evidentiary gaps requiring closure before production approval."
-              ]
+              "heading": "审核输出",
+              "paragraphs": ["审查结果包括控制充分性调查结果、补救指令以及需要在生产批准之前弥补的证据差距。"]
             }
           ]
         },
         "security-contact": {
-          "title": "Security Contact Protocol",
-          "subtitle": "Primary channel for security assessment and control assurance requests.",
-          "purpose": "Defines intake and handling rules for security questionnaires, control attestations, and trust-center requests.",
+          "title": "安全联系协议",
+          "subtitle": "安全评估和控制保证请求的主要渠道。",
+          "purpose": "定义安全调查问卷、控制证明和信任中心请求的接收和处理规则。",
           "contact": "security@afenda.io",
-          "responseStandard": "Acknowledgment within 1 business day; complete response package subject to scope and NDA status.",
+          "responseStandard": "1 个工作日内确认；完整的响应包取决于范围和 NDA 状态。",
           "sections": [
             {
-              "heading": "Submission Scope",
-              "paragraphs": [
-                "Requests must identify control family, intended regulatory use, and evidence period to ensure accurate retrieval of records."
-              ]
+              "heading": "提交范围",
+              "paragraphs": ["请求必须确定控制家族、预期监管用途和证据期限，以确保准确检索记录。"]
             },
             {
-              "heading": "Disclosure Basis",
-              "paragraphs": [
-                "Evidence is released under least-disclosure principle and contractual confidentiality obligations."
-              ]
+              "heading": "披露依据",
+              "paragraphs": ["证据是根据最少披露原则和合同保密义务公布的。"]
             }
           ]
         },
         "compliance-packet": {
-          "title": "Compliance Packet Request",
-          "subtitle": "Formal request channel for regulatory and audit evidence packs.",
-          "purpose": "Provides standardized packet assembly for due diligence, audit preparation, and procurement governance.",
+          "title": "合规数据包请求",
+          "subtitle": "监管和审计证据包的正式请求渠道。",
+          "purpose": "为尽职调查、审计准备和采购管理提供标准化数据包组装。",
           "contact": "compliance@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; packet assembly timeline communicated after scope validation.",
+          "responseStandard": "2 个工作日内确认；范围验证后传达数据包组装时间表。",
           "sections": [
             {
-              "heading": "Packet Components",
-              "paragraphs": [
-                "Compliance packets may include policy indices, control matrices, subprocessors, and incident reporting posture statements."
-              ]
+              "heading": "数据包组件",
+              "paragraphs": ["合规性数据包可能包括策略索引、控制矩阵、子处理器和事件报告状态声明。"]
             },
             {
-              "heading": "Verification Controls",
-              "paragraphs": [
-                "Requests are subject to requester identity verification and legitimate purpose assessment."
-              ]
+              "heading": "验证控制",
+              "paragraphs": ["请求需接受请求者身份验证和合法目的评估。"]
             }
           ]
         },
         "dpa-request": {
-          "title": "Data Processing Addendum Request",
-          "subtitle": "Contractual pathway for controller-processor terms and transfer safeguards.",
-          "purpose": "Initiates DPA negotiation and execution with jurisdictional annexes and transfer mechanism schedules.",
+          "title": "数据处理附录请求",
+          "subtitle": "控制者-处理者条款和转让保障措施的合同途径。",
+          "purpose": "启动 DPA 与管辖附件和转移机制时间表的谈判和执行。",
           "contact": "privacy@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; redline review sequence confirmed after template intake.",
+          "responseStandard": "2 个工作日内确认；模板摄入后确认红线审查顺序。",
           "sections": [
             {
-              "heading": "Contracting Requirements",
-              "paragraphs": [
-                "Provide legal entity details, role allocation, subprocessors constraints, and required transfer mechanism clauses."
-              ]
+              "heading": "承包要求",
+              "paragraphs": ["提供法人实体详细信息、角色分配、子处理者约束以及所需的转移机制条款。"]
             },
             {
-              "heading": "Cross-Border Safeguards",
-              "paragraphs": [
-                "Transfer clauses must identify destination jurisdictions, legal basis, and supplementary measures where applicable."
-              ]
+              "heading": "跨境保障",
+              "paragraphs": ["转让条款必须明确目的地司法管辖区、法律依据以及适用的补充措施。"]
             }
           ]
         },
         "privacy-request": {
-          "title": "Privacy Request Desk",
-          "subtitle": "Unified intake channel for privacy notices, policy interpretation, and data handling questions.",
-          "purpose": "Records and routes privacy governance requests to legal and operational reviewers under documented intake controls.",
+          "title": "隐私请求台",
+          "subtitle": "隐私声明、政策解读、数据处理问题的统一受理渠道。",
+          "purpose": "根据记录的接收控制记录隐私治理请求并将其发送给法律和运营审核员。",
           "contact": "privacy@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; response schedule set after issue classification.",
+          "responseStandard": "2 个工作日内确认；问题分类后设置响应时间表。",
           "sections": [
             {
-              "heading": "Request Classes",
-              "paragraphs": [
-                "Includes notice interpretation, lawful-basis clarification, retention policy inquiries, and transparency obligations."
-              ]
+              "heading": "请求课程",
+              "paragraphs": ["包括通知解释、法律依据澄清、保留政策查询和透明度义务。"]
             },
             {
-              "heading": "File Integrity",
-              "paragraphs": ["All requests are logged with timestamped references to preserve audit traceability."]
+              "heading": "文件完整性",
+              "paragraphs": ["所有请求都记录有带时间戳的引用，以保持审计可追溯性。"]
             }
           ]
         },
         "terms-request": {
-          "title": "Terms and Contract Desk",
-          "subtitle": "Formal channel for terms review, contract clarifications, and legal language requests.",
-          "purpose": "Centralizes legal drafting and interpretation requests related to contractual terms governing service usage.",
+          "title": "条款和合同台",
+          "subtitle": "条款审查、合同澄清和法律语言请求的正式渠道。",
+          "purpose": "集中与管理服务使用的合同条款相关的法律起草和解释请求。",
           "contact": "legal@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; legal analysis turnaround by complexity class.",
+          "responseStandard": "2 个工作日内确认；按复杂程度划分的法律分析周期。",
           "sections": [
             {
-              "heading": "Drafting Inputs",
-              "paragraphs": [
-                "Identify clause references, redline intent, and governing-law requirements in each submission."
-              ]
+              "heading": "绘图输入",
+              "paragraphs": ["确定每份提交内容中的条款引用、红线意图和管辖法律要求。"]
             },
             {
-              "heading": "Version Control",
-              "paragraphs": ["Issued drafts preserve revision history to maintain negotiation traceability."]
+              "heading": "版本控制",
+              "paragraphs": ["已发布的草案保留修订历史记录以保持谈判的可追溯性。"]
             }
           ]
         },
         "investor-relations": {
-          "title": "Investor Relations Legal Channel",
-          "subtitle": "Governance disclosures and legal response stream for investor diligence.",
-          "purpose": "Provides controlled access to governance statements and legally reviewable representations for financing diligence.",
+          "title": "投资者关系 法律频道",
+          "subtitle": "投资者尽职调查的治理披露和法律回应流。",
+          "purpose": "提供对治理声明和融资调查的法律可审查陈述的受控访问。",
           "contact": "investors@example.com",
-          "responseStandard": "Acknowledgment within 3 business days; disclosure pack subject to eligibility and confidentiality screening.",
+          "responseStandard": "3 个工作日内确认；披露包须接受资格和保密审查。",
           "sections": [
             {
-              "heading": "Disclosure Preconditions",
-              "paragraphs": [
-                "Requests must provide fund identity, diligence purpose, and executed confidentiality terms."
-              ]
+              "heading": "披露先决条件",
+              "paragraphs": ["请求必须提供基金身份、尽职调查目的和已执行的保密条款。"]
             },
             {
-              "heading": "Disclosure Scope",
-              "paragraphs": [
-                "Responses exclude privileged material and unpublished strategic matters unless expressly authorized."
-              ]
+              "heading": "披露范围",
+              "paragraphs": ["除非明确授权，否则回应不包括特权材料和未发表的战略事项。"]
             }
           ]
         },
         "legal-desk": {
-          "title": "Office of General Counsel",
-          "subtitle": "Primary legal operations desk for statutory interpretation and governance directives.",
-          "purpose": "Handles legal citations, interpretation requests, and jurisdictional applicability analyses for published statements.",
+          "title": "总法律顾问办公室",
+          "subtitle": "主要法律业务部门负责法律解释和治理指令。",
+          "purpose": "处理已发布声明的法律引文、解释请求和管辖范围适用性分析。",
           "contact": "legal@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; legal memorandum issuance based on scope complexity.",
+          "responseStandard": "2 个工作日内确认；根据范围复杂性发布法律备忘录。",
           "sections": [
             {
-              "heading": "Legal Citation Handling",
-              "paragraphs": ["Citation requests are answered with law/section precision and source traceability."]
+              "heading": "法律引文处理",
+              "paragraphs": ["引文请求得到法律/章节精度和来源可追溯性的答复。"]
             },
             {
-              "heading": "Publication Governance",
-              "paragraphs": ["External legal statements are reviewed for statutory accuracy before release."]
+              "heading": "出版治理",
+              "paragraphs": ["外部法律声明在发布前会经过审查以确保法定准确性。"]
             }
           ]
         },
         "data-subject-rights": {
-          "title": "Data Subject Rights Desk",
-          "subtitle": "Operational intake for access, correction, deletion, restriction, portability, and objection rights.",
-          "purpose": "Registers and executes verified rights requests under documented identity and authority controls.",
+          "title": "数据主体权利台",
+          "subtitle": "访问、更正、删除、限制、可移植性和反对权的操作权限。",
+          "purpose": "在记录的身份和权限控制下注册并执行经过验证的权限请求。",
           "contact": "privacy@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; statutory response timelines applied by governing jurisdiction.",
+          "responseStandard": "2 个工作日内确认；管辖管辖区适用的法定响应时间表。",
           "sections": [
             {
-              "heading": "Identity Verification",
-              "paragraphs": [
-                "Rights fulfillment requires identity verification proportionate to the sensitivity of requested actions."
-              ]
+              "heading": "身份验证",
+              "paragraphs": ["权利的履行需要与所请求的操作的敏感性成比例的身份验证。"]
             },
             {
-              "heading": "Execution Record",
-              "paragraphs": ["Each request receives a dated execution log, legal basis record, and completion status."]
+              "heading": "执行记录",
+              "paragraphs": ["每个请求都会收到带有日期的执行日志、法律依据记录和完成状态。"]
             }
           ],
           "citations": [
             {
-              "label": "GDPR Arts. 15-21",
+              "label": "GDPR 艺术。 15-21日",
               "href": "https://gdpr-info.eu/chapter-3/",
-              "note": "EU data-subject rights framework."
+              "note": "欧盟数据主体权利框架。"
             },
             {
-              "label": "Cal. Civ. Code §§ 1798.105, 1798.106, 1798.110",
+              "label": "卡尔。公民。法典第 §§ 1798.105、1798.106、1798.110",
               "href": "https://oag.ca.gov/privacy/ccpa",
-              "note": "California deletion, correction, and know rights."
+              "note": "加利福尼亚州删除、更正和知情权。"
             },
             {
-              "label": "UU PDP Pasal 5-15",
+              "label": "UU PDP 帕萨尔 5-15",
               "href": "https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022",
-              "note": "Indonesia rights of personal data subjects."
+              "note": "印度尼西亚个人数据主体的权利。"
             }
           ]
         },
         "regulatory-evidence": {
-          "title": "Regulatory Evidence Office",
-          "subtitle": "Evidence issuance desk for supervisory, procurement, and audit reviewers.",
-          "purpose": "Produces evidentiary files that map controls and operations to statutory and contractual obligations.",
+          "title": "监管证据办公室",
+          "subtitle": "监督、采购和审计审核人员的证据发放台。",
+          "purpose": "生成证据文件，将控制和操作映射到法定和合同义务。",
           "contact": "compliance@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; evidentiary package target date issued after scope confirmation.",
+          "responseStandard": "2 个工作日内确认；范围确认后发布证据包目标日期。",
           "sections": [
             {
-              "heading": "Evidence Standards",
-              "paragraphs": ["Evidence files are timestamped, source-linked, and prepared for independent review."]
+              "heading": "证据标准",
+              "paragraphs": ["证据文件带有时间戳、来源链接，并准备供独立审查。"]
             },
             {
-              "heading": "Admissibility Posture",
-              "paragraphs": ["Records are structured for verification, with clear provenance and issuance authority."]
+              "heading": "受理姿势",
+              "paragraphs": ["记录的结构便于验证，具有明确的出处和发布权限。"]
             }
           ]
         },
         "responsible-disclosure": {
-          "title": "Coordinated Disclosure Desk",
-          "subtitle": "Responsible vulnerability reporting channel with controlled remediation workflow.",
-          "purpose": "Receives, verifies, and triages vulnerability disclosures under coordinated disclosure norms.",
+          "title": "协调披露台",
+          "subtitle": "负责任的漏洞报告渠道和受控的修复工作流程。",
+          "purpose": "根据协调的披露规范接收、验证和分类漏洞披露。",
           "contact": "security@afenda.io",
-          "responseStandard": "Acknowledgment within 1 business day; severity triage and remediation track opened after validation.",
+          "responseStandard": "1 个工作日内确认；验证后打开严重性分类和补救跟踪。",
           "sections": [
             {
-              "heading": "Minimum Report Contents",
-              "paragraphs": [
-                "Include impacted asset, reproduction details, proof-of-concept boundary, and safe disclosure contact."
-              ]
+              "heading": "最低报告内容",
+              "paragraphs": ["包括受影响的资产、复制详细信息、概念验证边界和安全披露联系人。"]
             },
             {
-              "heading": "Good-Faith Handling",
-              "paragraphs": ["Good-faith reports are handled under coordinated remediation and disclosure sequencing."]
+              "heading": "诚信经营",
+              "paragraphs": ["善意报告是在协调补救和披露顺序下处理的。"]
             }
           ]
         },
         "authority-eu-gdpr": {
-          "title": "EU Authority Note — GDPR",
-          "subtitle": "Primary EU statutory references used in footer legal statements.",
-          "purpose": "Identifies operative GDPR provisions governing transparency, lawful basis, rights, and complaints.",
+          "title": "欧盟当局说明 - GDPR",
+          "subtitle": "页脚法律声明中使用的主要欧盟法定参考。",
+          "purpose": "确定管理透明度、合法依据、权利和投诉的有效 GDPR 条款。",
           "contact": "legal@afenda.io",
-          "responseStandard": "Citation clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "通过总法律顾问办公室工作流程处理的引文澄清。",
           "sections": [
             {
-              "heading": "Operative Provisions",
+              "heading": "执行条款",
               "paragraphs": [
-                "The footer references Arts. 12-14, Art. 6(1), Arts. 15-21, and Art. 77 as baseline obligations and rights instruments."
+                "页脚引用了艺术。 12-14，艺术。 6（1），艺术。 15-21，和艺术。 77 作为基准义务和权利文书。"
               ]
             }
           ],
           "citations": [
             {
-              "label": "Art. 6 GDPR",
+              "label": "艺术。 6 通用数据保护条例",
               "href": "https://gdpr-info.eu/art-6-gdpr/",
-              "note": "Lawfulness of processing."
+              "note": "处理的合法性。"
             },
             {
-              "label": "Chapter III GDPR",
+              "label": "第三章 GDPR",
               "href": "https://gdpr-info.eu/chapter-3/",
-              "note": "Rights of the data subject."
+              "note": "数据主体的权利。"
             },
             {
-              "label": "Art. 77 GDPR",
+              "label": "艺术。 77 通用数据保护条例",
               "href": "https://gdpr-info.eu/art-77-gdpr/",
-              "note": "Right to lodge a complaint."
+              "note": "提出投诉的权利。"
             }
           ]
         },
         "authority-us-ccpa-cpra": {
-          "title": "US Authority Note — CCPA/CPRA",
-          "subtitle": "California statutory citations used in footer legal statements.",
-          "purpose": "Catalogs California provisions for notice, rights execution, and anti-discrimination duties.",
+          "title": "美国权威说明 — CCPA/CPRA",
+          "subtitle": "页脚法律声明中使用的加利福尼亚州法定引文。",
+          "purpose": "目录加州有关通知、权利执行和反歧视义务的规定。",
           "contact": "legal@afenda.io",
-          "responseStandard": "Citation clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "通过总法律顾问办公室工作流程处理的引文澄清。",
           "sections": [
             {
-              "heading": "Operative Provisions",
-              "paragraphs": [
-                "The footer references §§ 1798.100, 1798.130, 1798.105, 1798.106, 1798.120, 1798.135, and 1798.125."
-              ]
+              "heading": "执行条款",
+              "paragraphs": ["页脚引用了 §§ 1798.100、1798.130、1798.105、1798.106、1798.120、1798.135 和 1798.125。"]
             }
           ],
           "citations": [
             {
-              "label": "California AG — CCPA Portal",
+              "label": "加州 AG — CCPA 门户",
               "href": "https://oag.ca.gov/privacy/ccpa",
-              "note": "Primary public statutory guidance and enforcement context."
+              "note": "主要公共法定指导和执行背景。"
             }
           ]
         },
         "authority-id-pdp": {
-          "title": "Indonesia Authority Note — UU No. 27/2022",
-          "subtitle": "Indonesian personal data protection citations used in footer legal statements.",
-          "purpose": "Catalogs rights, controller obligations, and sanction provisions under Indonesia PDP law.",
+          "title": "印度尼西亚当局说明 — UU No. 27/2022",
+          "subtitle": "页脚法律声明中使用的印度尼西亚个人数据保护引文。",
+          "purpose": "印度尼西亚 PDP 法规定的目录权利、控制者义务和制裁条款。",
           "contact": "legal@afenda.io",
-          "responseStandard": "Citation clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "通过总法律顾问办公室工作流程处理的引文澄清。",
           "sections": [
             {
-              "heading": "Operative Provisions",
-              "paragraphs": [
-                "The footer references Pasal 5-15, Pasal 20-50, Pasal 57, and Pasal 67-73 as the governing rights and enforcement anchors."
-              ]
+              "heading": "执行条款",
+              "paragraphs": ["页脚引用巴沙尔 5-15、巴沙尔 20-50、巴沙尔 57 和巴沙尔 67-73 作为管理权利和执行锚点。"]
             }
           ],
           "citations": [
             {
-              "label": "UU No. 27 Tahun 2022 (BPK)",
+              "label": "UU No. 27 塔洪 2022 (BPK)",
               "href": "https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022",
-              "note": "Authoritative statute publication entry."
+              "note": "权威法规发布条目。"
             }
           ]
         },
         "open-source-docket": {
-          "title": "Open-Source Legal Docket",
-          "subtitle": "Research ledger of public legal-policy repositories referenced by the footer.",
-          "purpose": "Documents source provenance for legal drafting patterns and citation architecture used in public footer statements.",
+          "title": "开源法律案卷",
+          "subtitle": "页脚引用的公共法律政策存储库的研究分类帐。",
+          "purpose": "公开页脚声明中使用的法律起草模式和引文架构的文档来源。",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "通过总法律顾问办公室工作流程处理来源来源澄清。",
           "sections": [
             {
-              "heading": "Docket Scope",
-              "paragraphs": [
-                "The docket is a research aid and does not override controlling law, regulation, or contract terms."
-              ]
+              "heading": "案卷范围",
+              "paragraphs": ["该案卷是一种研究辅助工具，并不凌驾于控制法律、法规或合同条款之上。"]
             }
           ],
           "citations": [
             {
-              "label": "VSBS CCPA/CPRA Notice Framework",
+              "label": "VSBS CCPA/CPRA 通知框架",
               "href": "https://github.com/divyamohan1993/vsbs/blob/main/docs/compliance/ccpa-cpra.md",
-              "note": "Notice-at-collection and rights matrix pattern."
+              "note": "收集通知和权利矩阵模式。"
             },
             {
-              "label": "Giant Swarm Privacy Policy",
+              "label": "巨群隐私政策",
               "href": "https://github.com/giantswarm/legal/blob/master/privacypolicy.md",
-              "note": "Rights sectioning and article reference style."
+              "note": "权限划分和文章参考样式。"
             },
             {
-              "label": "UU 27/2022 Text Mirror",
+              "label": "UU 27/2022 文本镜像",
               "href": "https://github.com/mashanz/peraturan-perundang-undangan/blob/main/hierarchy/03-uu-perppu/uu-27-2022.md",
-              "note": "Pasal-level structure and sanction mapping."
+              "note": "帕萨尔级结构和制裁映射。"
             },
             {
-              "label": "Simple Analytics Compliance FAQ",
+              "label": "简单分析合规性常见问题解答",
               "href": "https://github.com/simpleanalytics/docs/blob/main/_docs/36_legal/04_compliance-faq.md",
-              "note": "Public compliance statement framing."
+              "note": "公共合规声明框架。"
             }
           ]
         },
         "source-vsbs-ccpa-cpra": {
-          "title": "Source Dossier — VSBS CCPA/CPRA Notice Framework",
-          "subtitle": "Public source record for California notice-at-collection and rights matrix drafting patterns.",
-          "purpose": "Captures provenance and drafting utility of the VSBS CCPA/CPRA source used to shape footer legal statement structure.",
+          "title": "来源档案 — VSBS CCPA/CPRA 通知框架",
+          "subtitle": "加州收集通知和权利矩阵起草模式的公共来源记录。",
+          "purpose": "捕获用于塑造页脚法律声明结构的 VSBS CCPA/CPRA 来源的出处和起草实用性。",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "通过总法律顾问办公室工作流程处理来源来源澄清。",
           "sections": [
             {
-              "heading": "Document Utility",
-              "paragraphs": [
-                "Used as an open-source pattern reference for rights tables, notice-at-collection wording, and response timeline presentation."
-              ]
+              "heading": "文档实用程序",
+              "paragraphs": ["用作权利表、收集通知措辞和响应时间线演示的开源模式参考。"]
             }
           ],
           "citations": [
             {
-              "label": "VSBS — CCPA + CPRA Notice",
+              "label": "VSBS — CCPA + CPRA 通知",
               "href": "https://github.com/divyamohan1993/vsbs/blob/main/docs/compliance/ccpa-cpra.md",
-              "note": "Primary public source used for California rights and notice framing."
+              "note": "用于加州权利和通知框架的主要公共来源。"
             }
           ]
         },
         "source-giant-swarm-privacy": {
-          "title": "Source Dossier — Giant Swarm Privacy Policy",
-          "subtitle": "Public source record for article-mapped GDPR rights disclosure structure.",
-          "purpose": "Captures provenance and drafting utility of the Giant Swarm privacy policy structure used for rights indexing.",
+          "title": "来源档案 — Giant Swarm 隐私政策",
+          "subtitle": "文章映射的 GDPR 权利披露结构的公共源记录。",
+          "purpose": "捕获用于权限索引的 Giant Swarm 隐私策略结构的出处和起草实用性。",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "通过总法律顾问办公室工作流程处理来源来源澄清。",
           "sections": [
             {
-              "heading": "Document Utility",
-              "paragraphs": [
-                "Used as a structural reference for explicit, article-level rights mapping in public-facing privacy statements."
-              ]
+              "heading": "文档实用程序",
+              "paragraphs": ["用作面向公众的隐私声明中明确的文章级权利映射的结构参考。"]
             }
           ],
           "citations": [
             {
-              "label": "Giant Swarm — Privacy Policy",
+              "label": "Giant Swarm — 隐私政策",
               "href": "https://github.com/giantswarm/legal/blob/master/privacypolicy.md",
-              "note": "Primary public source used for GDPR rights section architecture."
+              "note": "用于 GDPR 权利部分架构的主要公共来源。"
             }
           ]
         },
         "source-indonesia-uu-27-2022": {
-          "title": "Source Dossier — Indonesia UU 27/2022 Text Mirror",
-          "subtitle": "Public source record for Pasal-level legal text and sanctions mapping.",
-          "purpose": "Captures provenance and drafting utility of the machine-readable Indonesian PDP law source.",
+          "title": "来源档案 — 印度尼西亚 UU 27/2022 文本镜像",
+          "subtitle": "巴萨尔级法律文本和制裁映射的公共源记录。",
+          "purpose": "获取机器可读的印度尼西亚 PDP 法律来源的出处和起草实用性。",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "通过总法律顾问办公室工作流程处理来源来源澄清。",
           "sections": [
             {
-              "heading": "Document Utility",
-              "paragraphs": [
-                "Used to verify Pasal references, rights scope language, and sanctions mapping in the footer authority note."
-              ]
+              "heading": "文档实用程序",
+              "paragraphs": ["用于验证页脚规范注释中的 Pasal 引用、权限范围语言和制裁映射。"]
             }
           ],
           "citations": [
             {
               "label": "Peraturan Perundang-Undangan — UU No. 27 Tahun 2022",
               "href": "https://github.com/mashanz/peraturan-perundang-undangan/blob/main/hierarchy/03-uu-perppu/uu-27-2022.md",
-              "note": "Primary public source used for Indonesian statute structure and article mapping."
+              "note": "用于印度尼西亚法规结构和条款映射的主要公共来源。"
             }
           ]
         },
         "source-simple-analytics-faq": {
-          "title": "Source Dossier — Simple Analytics Compliance FAQ",
-          "subtitle": "Public source record for concise recital/article compliance statement style.",
-          "purpose": "Captures provenance and drafting utility of concise compliance-language presentation patterns.",
+          "title": "源档案 — 简单分析合规性常见问题解答",
+          "subtitle": "简洁叙述/文章合规声明风格的公共源记录。",
+          "purpose": "捕获简洁的合规性语言演示模式的出处和起草实用性。",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "通过总法律顾问办公室工作流程处理来源来源澄清。",
           "sections": [
             {
-              "heading": "Document Utility",
-              "paragraphs": [
-                "Used as a style reference for concise, citation-led compliance summaries in public legal surfaces."
-              ]
+              "heading": "文档实用程序",
+              "paragraphs": ["用作公共法律表面上简洁、以引文为主导的合规性摘要的风格参考。"]
             }
           ],
           "citations": [
             {
-              "label": "Simple Analytics — Compliance FAQ",
+              "label": "简单分析 - 合规性常见问题解答",
               "href": "https://github.com/simpleanalytics/docs/blob/main/_docs/36_legal/04_compliance-faq.md",
-              "note": "Primary public source used for compact compliance wording patterns."
+              "note": "用于紧凑合规措辞模式的主要公共来源。"
             }
           ]
         }

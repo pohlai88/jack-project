@@ -46,7 +46,7 @@ const signatures = ['identity', 'policy', 'evidence', 'audit'] as const;
 export function MarketingIntroDiagram() {
   return (
     <div
-      className="marketing-pre-landing__diagram marketing-intro--animate"
+      className="marketing-intro-scene__diagram marketing-intro--animate"
       aria-label="Operational truth graph resolving into canonical record"
     >
       <div className="marketing-intro__stage" aria-hidden="true">

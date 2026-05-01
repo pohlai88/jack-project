@@ -1,4 +1,66 @@
-import { complianceFooterConfig, formatDisclosureStatus } from '../_content/compliance-footer';
+import type { Metadata } from 'next';
+
+import { defaultLocale, locales } from '@/i18n/config';
+import { AFENDA_METADATA_IMAGE, AFENDA_METADATA_IMAGE_URL } from '@/shared/components/brand/metadata';
+
+import {
+  complianceFooterConfig,
+  type ComplianceJurisdictionEvidence,
+  formatDisclosureLabel,
+} from '../_content/compliance-footer';
+
+const legalDisclosureTitle = 'Legal Disclosure — Afenda';
+const legalDisclosureDescription =
+  'Malaysia legal anchor and ASEAN disclosure posture: registration, jurisdictional notices, ' +
+  'policy summaries, and compliance contacts for Afenda.';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://afenda.com';
+  const canonicalUrl = `${siteUrl}/${locale}/legal-disclosure`;
+
+  const languageAlternates = Object.fromEntries(locales.map((l) => [l, `${siteUrl}/${l}/legal-disclosure`])) as Record<
+    string,
+    string
+  >;
+
+  return {
+    title: legalDisclosureTitle,
+    description: legalDisclosureDescription,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+    },
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        ...languageAlternates,
+        'x-default': `${siteUrl}/${defaultLocale}/legal-disclosure`,
+      },
+    },
+    openGraph: {
+      title: legalDisclosureTitle,
+      description: legalDisclosureDescription,
+      type: 'website',
+      url: canonicalUrl,
+      siteName: 'Afenda',
+      locale: locale.replace('-', '_'),
+      images: [
+        {
+          ...AFENDA_METADATA_IMAGE,
+          alt: legalDisclosureTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: legalDisclosureTitle,
+      description: legalDisclosureDescription,
+      images: [AFENDA_METADATA_IMAGE_URL],
+    },
+  };
+}
 
 const DISCLOSURE_SECTIONS = [
   {
@@ -78,8 +140,9 @@ export default function LegalDisclosurePage() {
           <p className="landing-kicker">Afenda Legal Disclosure</p>
           <h1 id="legal-disclosure-title">Malaysia legal anchor. ASEAN disclosure map.</h1>
           <p>
-            Afenda is operated by {legalIdentity.legalName}, a company registered in Malaysia with the{' '}
-            {legalIdentity.registrationAuthority} under registration number {legalIdentity.registrationNumber}.
+            Afenda maintains Malaysia as its legal anchor. Formal Malaysian legal entity details, SSM registration
+            number, registered office, and tax/SST information are published here after counsel and accounting
+            verification.
           </p>
           <p>
             Unless expressly stated, Afenda does not claim local incorporation, regulator approval, licensing,
@@ -116,6 +179,10 @@ export default function LegalDisclosurePage() {
                 <dd>{legalIdentity.taxId}</dd>
               </div>
               <div>
+                <dt>Effective date</dt>
+                <dd>{legalIdentity.effectiveDate}</dd>
+              </div>
+              <div>
                 <dt>Last updated</dt>
                 <dd>{legalIdentity.lastUpdated}</dd>
               </div>
@@ -140,36 +207,73 @@ export default function LegalDisclosurePage() {
         <section className="landing-panel legal-disclosure__jurisdictions" aria-labelledby="jurisdiction-map-title">
           <h2 id="jurisdiction-map-title">Country-Specific Disclosure Posture</h2>
           <div className="legal-disclosure__table">
-            {jurisdictions.map((jurisdiction) => (
-              <article key={jurisdiction.countryCode}>
-                <h3>
-                  {jurisdiction.displayName} <span>{jurisdiction.countryCode}</span>
-                </h3>
-                <dl>
-                  <div>
-                    <dt>Entity status</dt>
-                    <dd>{formatDisclosureStatus(jurisdiction.localEntityStatus)}</dd>
-                  </div>
-                  <div>
-                    <dt>Authority</dt>
-                    <dd>{jurisdiction.authorityLabel}</dd>
-                  </div>
-                  <div>
-                    <dt>Reference</dt>
-                    <dd>{jurisdiction.publicRegistrationReference}</dd>
-                  </div>
-                  <div>
-                    <dt>Privacy</dt>
-                    <dd>{formatDisclosureStatus(jurisdiction.privacyStatus)}</dd>
-                  </div>
-                  <div>
-                    <dt>Commerce</dt>
-                    <dd>{formatDisclosureStatus(jurisdiction.ecommerceStatus)}</dd>
-                  </div>
-                </dl>
-                <p>{jurisdiction.claimBoundary}</p>
-              </article>
-            ))}
+            {jurisdictions.map((jurisdiction) => {
+              const evidence = jurisdiction.evidence as ComplianceJurisdictionEvidence | undefined;
+
+              return (
+                <article key={jurisdiction.countryCode}>
+                  <h3>
+                    {jurisdiction.displayName} <span>{jurisdiction.countryCode}</span>
+                  </h3>
+                  <dl>
+                    <div>
+                      <dt>Entity status</dt>
+                      <dd>{formatDisclosureLabel(jurisdiction.localEntityStatus)}</dd>
+                    </div>
+                    <div>
+                      <dt>Registration posture</dt>
+                      <dd>{formatDisclosureLabel(jurisdiction.registrationStatus)}</dd>
+                    </div>
+                    <div>
+                      <dt>Authority</dt>
+                      <dd>{jurisdiction.authorityLabel}</dd>
+                    </div>
+                    <div>
+                      <dt>Reference</dt>
+                      <dd>{jurisdiction.publicRegistrationReference}</dd>
+                    </div>
+                    <div>
+                      <dt>Privacy</dt>
+                      <dd>{formatDisclosureLabel(jurisdiction.privacyStatus)}</dd>
+                    </div>
+                    <div>
+                      <dt>Commerce</dt>
+                      <dd>{formatDisclosureLabel(jurisdiction.ecommerceStatus)}</dd>
+                    </div>
+                    {evidence ? (
+                      <div>
+                        <dt>Evidence references</dt>
+                        <dd>
+                          <dl>
+                            {evidence.registration ? (
+                              <div>
+                                <dt>Registration</dt>
+                                <dd>{evidence.registration}</dd>
+                              </div>
+                            ) : null}
+                            {evidence.privacy ? (
+                              <div>
+                                <dt>Privacy</dt>
+                                <dd>{evidence.privacy}</dd>
+                              </div>
+                            ) : null}
+                            {evidence.ecommerce ? (
+                              <div>
+                                <dt>Commerce</dt>
+                                <dd>{evidence.ecommerce}</dd>
+                              </div>
+                            ) : null}
+                          </dl>
+                        </dd>
+                      </div>
+                    ) : null}
+                  </dl>
+                  <p data-prohibits-overclaim={jurisdiction.claimBoundary.prohibitsOverclaim ? 'true' : 'false'}>
+                    {jurisdiction.claimBoundary.summary}
+                  </p>
+                </article>
+              );
+            })}
           </div>
         </section>
 

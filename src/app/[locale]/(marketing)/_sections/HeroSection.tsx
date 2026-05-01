@@ -3,6 +3,8 @@ import { getLocale } from 'next-intl/server';
 
 import { localizeHref } from '@/i18n/navigation';
 
+import { hero } from '../_content/sections';
+
 export async function HeroSection() {
   const locale = await getLocale();
 
@@ -16,19 +18,17 @@ export async function HeroSection() {
       <div className="marketing-hero__composition marketing-hero__grid">
         <div className="marketing-hero__content">
           <h1 id="marketing-hero-title" className="marketing-hero__title">
-            Business truth infrastructure
+            {hero.title}
           </h1>
 
-          <p className="marketing-hero__lead">
-            Canonical records, evidence, and policy-bound execution for teams that need audit-ready state.
-          </p>
+          <p className="marketing-hero__lead">{hero.lead}</p>
 
           <div className="marketing-hero__actions" aria-label="Afenda entry actions">
-            <NextLink href={localizeHref(locale, '/login')} className="marketing-hero__cta">
-              <span>Enter Afenda</span>
+            <NextLink href={localizeHref(locale, hero.actions.primary.href)} className="marketing-hero__cta">
+              <span>{hero.actions.primary.label}</span>
             </NextLink>
-            <a href="#evidence" className="marketing-hero__terminal-link">
-              <span>View Evidence</span>
+            <a href={hero.actions.secondary.href} className="marketing-hero__terminal-link">
+              <span>{hero.actions.secondary.label}</span>
               <span aria-hidden="true">-&gt;</span>
             </a>
           </div>

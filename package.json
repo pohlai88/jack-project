@@ -12,6 +12,8 @@
     "lint:fix": "eslint . --fix",
     "lint:a11y": "eslint . --report-unused-disable-directives --max-warnings 0",
     "verify-landing-design-system": "tsx scripts/verify-landing-design-system.ts",
+    "verify-marketing-audience": "tsx scripts/verify-marketing-audience.ts",
+    "verify-data-rights-doctrine": "tsx scripts/verify-data-rights-doctrine.ts",
     "landing:audit": "pnpm verify-landing-design-system",
     "repo:guard": "node scripts/repo-guard.mjs",
     "type-check": "fumadocs-mdx && tsc --noEmit",

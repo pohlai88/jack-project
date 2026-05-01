@@ -1,0 +1,39 @@
+src\app\[locale]\(marketing)\footer\page.tsx:10:  'Index of footer-linked legal memoranda, authority notes, compliance desks, and operational dossiers.';
+src\app\[locale]\(marketing)\footer\_components\FooterDocumentShell.tsx:76:                  — {citation.note}
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:10:  note: string;
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:237:      { label: 'GDPR Arts. 15-21', href: 'https://gdpr-info.eu/chapter-3/', note: 'EU data-subject rights framework.' },
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:238:      { label: 'Cal. Civ. Code §§ 1798.105, 1798.106, 1798.110', href: 'https://oag.ca.gov/privacy/ccpa', note: 'California deletion, correction, and know rights.' },
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:242:        note: 'Indonesia rights of personal data subjects.',
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:284:    title: 'EU Authority Note — GDPR',
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:296:      { label: 'Art. 6 GDPR', href: 'https://gdpr-info.eu/art-6-gdpr/', note: 'Lawfulness of processing.' },
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:297:      { label: 'Chapter III GDPR', href: 'https://gdpr-info.eu/chapter-3/', note: 'Rights of the data subject.' },
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:298:      { label: 'Art. 77 GDPR', href: 'https://gdpr-info.eu/art-77-gdpr/', note: 'Right to lodge a complaint.' },
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:303:    title: 'US Authority Note — CCPA/CPRA',
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:315:      { label: 'California AG — CCPA Portal', href: 'https://oag.ca.gov/privacy/ccpa', note: 'Primary public statutory guidance and enforcement context.' },
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:320:    title: 'Indonesia Authority Note — UU No. 27/2022',
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:335:        note: 'Authoritative statute publication entry.',
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:357:        note: 'Notice-at-collection and rights matrix pattern.',
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:362:        note: 'Rights sectioning and article reference style.',
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:367:        note: 'Pasal-level structure and sanction mapping.',
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:372:        note: 'Public compliance statement framing.',
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:394:        note: 'Primary public source used for California rights and notice framing.',
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:416:        note: 'Primary public source used for GDPR rights section architecture.',
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:430:        paragraphs: ['Used to verify Pasal references, rights scope language, and sanctions mapping in the footer authority note.'],
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:437:        note: 'Primary public source used for Indonesian statute structure and article mapping.',
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:458:        note: 'Primary public source used for compact compliance wording patterns.',
+src\app\[locale]\(marketing)\footer\_content\footer-documents.ts:477:        typeof (item as FooterCitation).note === 'string',
+src\app\[locale]\(marketing)\_components\MarketingScanlineLedger.tsx:551: *  NOTE: `marketing-scanline-ledger__track` is kept as the single track      *
+src\app\[locale]\(marketing)\_content\sections.ts:106:  spineNote: 'The spine these capabilities ride on — see Architecture explorer.',
+src\app\[locale]\(marketing)\_content\sections.ts:178:  note: footerLegalDisclosure.copyrightNotice,
+src\app\[locale]\(marketing)\_sections\ArchitectureDeck.tsx:152:            <p className="architecture-stack__layer-note">Human operating layer · compact views over governed state</p>
+src\app\[locale]\(marketing)\_sections\ArchitectureDeck.tsx:227:            <p className="architecture-stack__layer-note">Machine layer · events, models, writebacks, and memory</p>
+src\app\[locale]\(marketing)\_sections\DataRightsSpecimenBoard.tsx:103:  const scrollToDoctrine = useCallback((key: DataRightsDoctrineKey) => {
+src\app\[locale]\(marketing)\_sections\DataRightsSpecimenBoard.tsx:147:          <p className="data-rights__doctrine-note">One business record. Six inspection states.</p>
+src\app\[locale]\(marketing)\_sections\DataRightsSpecimenBoard.tsx:215:                  onClick={() => scrollToDoctrine(key)}
+src\app\[locale]\(marketing)\_sections\MarketingFooter.tsx:99:          <p className="marketing-mono marketing-footer__note marketing-footer__copyright">
+src\app\[locale]\(marketing)\_sections\ModularSection.tsx:10:    note: 'Ontology-aware TypeScript contracts.',
+src\app\[locale]\(marketing)\_sections\ModularSection.tsx:15:    note: 'REST and gRPC surfaces with semver discipline.',
+src\app\[locale]\(marketing)\_sections\ModularSection.tsx:20:    note: 'Logic executes beside governed records.',
+src\app\[locale]\(marketing)\_sections\ModularSection.tsx:25:    note: 'Every mutation carries authority and evidence.',
+src\app\[locale]\(marketing)\_sections\ModularSection.tsx:47:            <p>{term.note}</p>
+src\app\[locale]\(marketing)\_sections\ProcurementSpine.tsx:60:        {/* Evidence note arcs */}

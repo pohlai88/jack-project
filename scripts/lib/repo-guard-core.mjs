@@ -75,6 +75,7 @@ const legacyJestPackages = new Set([
 const afendaRawAssetAllowlist = new Set([
   'eslint.config.mjs',
   'src/shared/components/brand/Logo.tsx',
+  'src/shared/components/brand/metadata.ts',
   'src/shared/components/brand/AfendaIcon.tsx',
   'src/docs/runtime/docs-layout.config.ts',
   'src/app/layout.tsx',
@@ -795,6 +796,113 @@ function checkAfendaBrandUsage(context) {
   }
 }
 
+function checkLegalPageRegistryIntegrity(context) {
+  const scriptPath = join(context.root, 'scripts', 'verify-legal-registry.ts');
+  if (!existsSync(scriptPath)) {
+    addFinding(context, 'RG-COMPLIANCE-LEGAL-REGISTRY', 'Legal registry verifier script is missing', {
+      file: normalizePath('scripts/verify-legal-registry.ts'),
+    });
+    return;
+  }
+
+  const tsxCli = join(context.root, 'node_modules', 'tsx', 'dist', 'cli.mjs');
+  if (!existsSync(tsxCli)) {
+    addFinding(context, 'RG-COMPLIANCE-LEGAL-REGISTRY', 'tsx is not installed (required to verify legal registry)', {
+      file: normalizePath('node_modules/tsx/dist/cli.mjs'),
+    });
+    return;
+  }
+
+  try {
+    execFileSync(process.execPath, [tsxCli, scriptPath], {
+      cwd: context.root,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+  } catch (error) {
+    let detail = '';
+    if (error && typeof error === 'object') {
+      const stderr = error.stderr;
+      if (typeof stderr === 'string') {
+        detail = stderr;
+      } else if (Buffer.isBuffer(stderr)) {
+        detail = stderr.toString('utf8');
+      }
+      if (!detail && typeof error.stdout === 'string') {
+        detail = error.stdout;
+      } else if (!detail && Buffer.isBuffer(error.stdout)) {
+        detail = error.stdout.toString('utf8');
+      }
+      if (!detail && error instanceof Error) {
+        detail = error.message;
+      }
+    }
+    if (!detail) {
+      detail = String(error);
+    }
+
+    addFinding(context, 'RG-COMPLIANCE-LEGAL-REGISTRY', 'Legal page registry validation failed', {
+      detail: detail.trim().slice(0, 800),
+    });
+  }
+}
+
+function checkDataRightsDoctrineContract(context) {
+  const scriptPath = join(context.root, 'scripts', 'verify-data-rights-doctrine.ts');
+  if (!existsSync(scriptPath)) {
+    addFinding(context, 'RG-COMPLIANCE-DATA-RIGHTS-DOCTRINE', 'Data rights doctrine verifier script is missing', {
+      file: normalizePath('scripts/verify-data-rights-doctrine.ts'),
+    });
+    return;
+  }
+
+  const tsxCli = join(context.root, 'node_modules', 'tsx', 'dist', 'cli.mjs');
+  if (!existsSync(tsxCli)) {
+    addFinding(
+      context,
+      'RG-COMPLIANCE-DATA-RIGHTS-DOCTRINE',
+      'tsx is not installed (required to verify data rights doctrine)',
+      {
+        file: normalizePath('node_modules/tsx/dist/cli.mjs'),
+      },
+    );
+    return;
+  }
+
+  try {
+    execFileSync(process.execPath, [tsxCli, scriptPath], {
+      cwd: context.root,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+  } catch (error) {
+    let detail = '';
+    if (error && typeof error === 'object') {
+      const stderr = error.stderr;
+      if (typeof stderr === 'string') {
+        detail = stderr;
+      } else if (Buffer.isBuffer(stderr)) {
+        detail = stderr.toString('utf8');
+      }
+      if (!detail && typeof error.stdout === 'string') {
+        detail = error.stdout;
+      } else if (!detail && Buffer.isBuffer(error.stdout)) {
+        detail = error.stdout.toString('utf8');
+      }
+      if (!detail && error instanceof Error) {
+        detail = error.message;
+      }
+    }
+    if (!detail) {
+      detail = String(error);
+    }
+
+    addFinding(context, 'RG-COMPLIANCE-DATA-RIGHTS-DOCTRINE', 'Data rights doctrine contract validation failed', {
+      detail: detail.trim().slice(0, 800),
+    });
+  }
+}
+
 export function runRepoGuard({ root = process.cwd() } = {}) {
   const context = {
     root,
@@ -814,6 +922,8 @@ export function runRepoGuard({ root = process.cwd() } = {}) {
   checkFeatureImportBoundaries(context);
   checkAppLogoCombinedLockupContract(context);
   checkAfendaBrandUsage(context);
+  checkLegalPageRegistryIntegrity(context);
+  checkDataRightsDoctrineContract(context);
 
   return context.findings;
 }

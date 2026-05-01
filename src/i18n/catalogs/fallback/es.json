@@ -870,416 +870,436 @@
     },
     "footerDocs": {
       "footer": {
-        "navigationAriaLabel": "Footer navigation",
+        "navigationAriaLabel": "Navegación de pie de página",
         "brand": {
-          "tagline": "Enterprise truth infrastructure",
-          "summary": "Canonical records, policy-bound execution, and audit-ready evidence for operational teams.",
-          "statusAriaLabel": "Enterprise posture",
+          "tagline": "Infraestructura de verdad empresarial",
+          "summary": "Registros canónicos, ejecución sujeta a políticas y evidencia lista para auditoría para equipos operativos.",
+          "statusAriaLabel": "Postura empresarial",
           "status": {
-            "privacyRequests": "Privacy requests",
-            "securityReview": "Security review",
-            "compliancePacket": "Compliance packet"
+            "privacyRequests": "Solicitudes de privacidad",
+            "securityReview": "Revisión de seguridad",
+            "compliancePacket": "Paquete de cumplimiento"
           }
         },
         "groups": {
           "product": {
-            "title": "Product",
+            "title": "Producto",
             "links": {
-              "documentation": "Documentation Access Record",
-              "demo": "Demo Engagement Docket",
-              "architectureReview": "Architecture Review Intake Memorandum"
+              "documentation": "Registro de acceso a la documentación",
+              "demo": "Expediente de participación de demostración",
+              "architectureReview": "Memorando de admisión de revisión de arquitectura"
             }
           },
           "governance": {
-            "title": "Governance",
+            "title": "Gobernancia",
             "links": {
-              "securityContact": "Security Contact Protocol",
-              "compliancePacket": "Compliance Packet Request",
-              "dpaRequest": "Data Processing Addendum Request"
+              "securityContact": "Protocolo de contacto de seguridad",
+              "compliancePacket": "Solicitud de paquete de cumplimiento",
+              "dpaRequest": "Solicitud de anexo sobre procesamiento de datos"
             }
           },
           "legal": {
             "title": "Legal",
             "links": {
-              "privacyRequest": "Privacy Request Desk",
-              "termsDesk": "Terms and Contract Desk",
-              "investorRelations": "Investor Relations Legal Channel"
+              "privacyRequest": "Escritorio de solicitud de privacidad",
+              "termsDesk": "Mesa de términos y contratos",
+              "investorRelations": "Canal Jurídico de Relación con Inversores"
             }
           }
         },
         "authorities": {
-          "ariaLabel": "Legal authority citations",
-          "kicker": "Jurisdictional Authority Register",
-          "lead": "Formal legal citation ledger governing privacy notice duties, data-subject rights, and enforcement posture."
+          "ariaLabel": "Citaciones de autoridad legal",
+          "kicker": "Registro de Autoridades Jurisdiccionales",
+          "lead": "Libro de citas legales formales que rigen los deberes de los avisos de privacidad, los derechos de los interesados ​​y la postura de cumplimiento."
         },
         "legalLinks": {
-          "ariaLabel": "Legal links",
-          "generalCounsel": "Office of General Counsel",
-          "dataSubjectRights": "Data Subject Rights Desk",
-          "regulatoryEvidence": "Regulatory Evidence Office",
-          "disclosureDesk": "Coordinated Disclosure Desk"
+          "ariaLabel": "Enlaces legales",
+          "generalCounsel": "Oficina del Asesor General",
+          "dataSubjectRights": "Mesa de derechos de los interesados",
+          "regulatoryEvidence": "Oficina de Pruebas Regulatorias",
+          "disclosureDesk": "Mesa de divulgación coordinada"
         }
       },
       "index": {
-        "kicker": "Footer Governance Hub",
-        "title": "Marketing Footer Legal Documents",
-        "description": "Central index of all individual footer legal, compliance, and authority documents. Each page is structured for counsel review and evidentiary traceability.",
-        "openDossier": "Open dossier"
+        "kicker": "Centro de gobernanza de pie de página",
+        "title": "Documentos legales de pie de página de marketing",
+        "description": "Índice central de todos los documentos legales, de cumplimiento y de autoridad de pie de página individuales. Cada página está estructurada para la revisión de los abogados y la trazabilidad de las pruebas.",
+        "openDossier": "expediente abierto"
       },
       "ui": {
-        "kicker": "Footer Legal Dossier",
-        "purpose": "Purpose",
-        "contact": "Contact",
-        "responseStandard": "Response Standard",
-        "authorities": "Authorities and References",
-        "returnToIndex": "Return to footer document index",
-        "openPrimaryDocumentation": "Open primary documentation",
-        "openDemoScheduling": "Open demo scheduling"
+        "kicker": "Pie de página Dossier Legal",
+        "purpose": "Objetivo",
+        "contact": "Contacto",
+        "responseStandard": "Estándar de respuesta",
+        "authorities": "Autoridades y Referencias",
+        "returnToIndex": "Volver al índice del documento al pie de página",
+        "openPrimaryDocumentation": "Abrir documentación primaria",
+        "openDemoScheduling": "Programación de demostración abierta"
       },
       "documentsBySlug": {
         "documentation": {
-          "title": "Documentation Access Record",
-          "subtitle": "Controlled entry point to product, architecture, and governance documentation.",
-          "purpose": "Provides the formal footer-linked documentation entry while preserving a traceable legal and governance context.",
+          "title": "Registro de acceso a la documentación",
+          "subtitle": "Punto de entrada controlado a la documentación de productos, arquitectura y gobernanza.",
+          "purpose": "Proporciona la entrada de documentación formal vinculada al pie de página y al mismo tiempo preserva un contexto legal y de gobernanza rastreable.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Documentation access is immediate; citation clarifications follow legal desk standards.",
+          "responseStandard": "El acceso a la documentación es inmediato; las aclaraciones de citas siguen los estándares legales.",
           "sections": [
             {
-              "heading": "Document Scope",
+              "heading": "Alcance del documento",
               "paragraphs": [
-                "This page routes readers to official product documentation and related governance references without ambiguity."
+                "Esta página dirige a los lectores a la documentación oficial del producto y referencias de gobernanza relacionadas sin ambigüedades."
               ]
             },
             {
-              "heading": "Operational Link",
-              "paragraphs": ["Authoritative documentation remains published at the main docs endpoint."],
-              "bullets": ["Primary docs endpoint: /docs"]
+              "heading": "Enlace operativo",
+              "paragraphs": [
+                "La documentación autorizada permanece publicada en el punto final de documentos principales."
+              ],
+              "bullets": ["Punto final de documentos principal: /docs"]
             }
           ]
         },
         "book-demo": {
-          "title": "Demo Engagement Docket",
-          "subtitle": "Formal intake channel for demonstration and technical qualification sessions.",
-          "purpose": "Provides a footer-governed pathway for scheduling a platform demonstration with traceable request intent.",
+          "title": "Expediente de participación de demostración",
+          "subtitle": "Canal de admisión formal para sesiones demostrativas y de calificación técnica.",
+          "purpose": "Proporciona una ruta regida por el pie de página para programar una demostración de la plataforma con intención de solicitud rastreable.",
           "contact": "architecture-review@afenda.io",
-          "responseStandard": "Demo intake acknowledgments and scheduling windows are issued by commercial operations.",
+          "responseStandard": "Los acuses de recibo de admisión de demostración y las ventanas de programación son emitidos por operaciones comerciales.",
           "sections": [
             {
-              "heading": "Engagement Inputs",
+              "heading": "Aportes de participación",
               "paragraphs": [
-                "Include operational objective, stakeholder roles, and priority workflows to structure the demonstration session."
+                "Incluya el objetivo operativo, los roles de las partes interesadas y los flujos de trabajo prioritarios para estructurar la sesión de demostración."
               ]
             },
             {
-              "heading": "Operational Link",
-              "paragraphs": ["The active scheduling workflow remains available through the demo endpoint."],
-              "bullets": ["Primary demo endpoint: /book-demo"]
+              "heading": "Enlace operativo",
+              "paragraphs": [
+                "El flujo de trabajo de programación activo permanece disponible a través del punto final de demostración."
+              ],
+              "bullets": ["Punto final de demostración principal: /book-demo"]
             }
           ]
         },
         "architecture-review": {
-          "title": "Architecture Review Intake Memorandum",
-          "subtitle": "Technical governance intake for regulated processing environments.",
-          "purpose": "Establishes the submission protocol for architecture-risk review, control mapping, and evidentiary adequacy prior to deployment.",
+          "title": "Memorando de admisión de revisión de arquitectura",
+          "subtitle": "Admisión de gobernanza técnica para entornos de procesamiento regulados.",
+          "purpose": "Establece el protocolo de presentación para la revisión de riesgos de arquitectura, mapeo de control y adecuación de las pruebas antes de la implementación.",
           "contact": "architecture-review@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; substantive triage memorandum within 7 business days.",
+          "responseStandard": "Acuse de recibo dentro de los 2 días hábiles; memorando de clasificación sustantivo dentro de los 7 días hábiles.",
           "sections": [
             {
-              "heading": "Required Submission Record",
+              "heading": "Registro de envío requerido",
               "paragraphs": [
-                "Submit a system diagram, data-flow narrative, and decision log that identifies controller, processor, and sub-processor roles."
+                "Envíe un diagrama del sistema, una descripción del flujo de datos y un registro de decisiones que identifique los roles de controlador, procesador y subprocesador."
               ],
               "bullets": [
-                "Data classification table",
-                "Access-control model",
-                "Incident response attachment",
-                "Retention and deletion schedule"
+                "Tabla de clasificación de datos",
+                "Modelo de control de acceso",
+                "Adjunto de respuesta a incidentes",
+                "Calendario de retención y eliminación"
               ]
             },
             {
-              "heading": "Review Output",
+              "heading": "Revisar el resultado",
               "paragraphs": [
-                "Review outcomes include control sufficiency findings, remediation directives, and evidentiary gaps requiring closure before production approval."
+                "Los resultados de la revisión incluyen hallazgos sobre la suficiencia del control, directivas de remediación y lagunas probatorias que deben cerrarse antes de la aprobación de la producción."
               ]
             }
           ]
         },
         "security-contact": {
-          "title": "Security Contact Protocol",
-          "subtitle": "Primary channel for security assessment and control assurance requests.",
-          "purpose": "Defines intake and handling rules for security questionnaires, control attestations, and trust-center requests.",
+          "title": "Protocolo de contacto de seguridad",
+          "subtitle": "Canal principal para las solicitudes de evaluación de seguridad y aseguramiento del control.",
+          "purpose": "Define reglas de admisión y manejo de cuestionarios de seguridad, atestados de control y solicitudes de centros de confianza.",
           "contact": "security@afenda.io",
-          "responseStandard": "Acknowledgment within 1 business day; complete response package subject to scope and NDA status.",
+          "responseStandard": "Acuse de recibo dentro de 1 día hábil; paquete de respuesta completo sujeto al alcance y al estado del NDA.",
           "sections": [
             {
-              "heading": "Submission Scope",
+              "heading": "Alcance del envío",
               "paragraphs": [
-                "Requests must identify control family, intended regulatory use, and evidence period to ensure accurate retrieval of records."
+                "Las solicitudes deben identificar la familia de controles, el uso regulatorio previsto y el período de evidencia para garantizar una recuperación precisa de los registros."
               ]
             },
             {
-              "heading": "Disclosure Basis",
+              "heading": "Base de divulgación",
               "paragraphs": [
-                "Evidence is released under least-disclosure principle and contractual confidentiality obligations."
+                "La evidencia se divulga bajo el principio de mínima divulgación y obligaciones contractuales de confidencialidad."
               ]
             }
           ]
         },
         "compliance-packet": {
-          "title": "Compliance Packet Request",
-          "subtitle": "Formal request channel for regulatory and audit evidence packs.",
-          "purpose": "Provides standardized packet assembly for due diligence, audit preparation, and procurement governance.",
+          "title": "Solicitud de paquete de cumplimiento",
+          "subtitle": "Canal formal de solicitud de paquetes de evidencia regulatoria y de auditoría.",
+          "purpose": "Proporciona ensamblaje de paquetes estandarizados para diligencia debida, preparación de auditorías y gestión de adquisiciones.",
           "contact": "compliance@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; packet assembly timeline communicated after scope validation.",
+          "responseStandard": "Acuse de recibo dentro de los 2 días hábiles; cronograma de ensamblaje de paquetes comunicado después de la validación del alcance.",
           "sections": [
             {
-              "heading": "Packet Components",
+              "heading": "Componentes del paquete",
               "paragraphs": [
-                "Compliance packets may include policy indices, control matrices, subprocessors, and incident reporting posture statements."
+                "Los paquetes de cumplimiento pueden incluir índices de políticas, matrices de control, subprocesadores y declaraciones de postura para informar incidentes."
               ]
             },
             {
-              "heading": "Verification Controls",
+              "heading": "Controles de verificación",
               "paragraphs": [
-                "Requests are subject to requester identity verification and legitimate purpose assessment."
+                "Las solicitudes están sujetas a la verificación de la identidad del solicitante y a la evaluación del propósito legítimo."
               ]
             }
           ]
         },
         "dpa-request": {
-          "title": "Data Processing Addendum Request",
-          "subtitle": "Contractual pathway for controller-processor terms and transfer safeguards.",
-          "purpose": "Initiates DPA negotiation and execution with jurisdictional annexes and transfer mechanism schedules.",
+          "title": "Solicitud de anexo sobre procesamiento de datos",
+          "subtitle": "Vía contractual para los términos responsable-procesador y salvaguardas de transferencia.",
+          "purpose": "Inicia negociación y ejecución de DPA con anexos jurisdiccionales y cronogramas de mecanismos de transferencia.",
           "contact": "privacy@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; redline review sequence confirmed after template intake.",
+          "responseStandard": "Acuse de recibo dentro de los 2 días hábiles; Secuencia de revisión de línea roja confirmada después de la ingesta de la plantilla.",
           "sections": [
             {
-              "heading": "Contracting Requirements",
+              "heading": "Requisitos de contratación",
               "paragraphs": [
-                "Provide legal entity details, role allocation, subprocessors constraints, and required transfer mechanism clauses."
+                "Proporcione detalles de la entidad legal, asignación de roles, restricciones de los subprocesadores y cláusulas del mecanismo de transferencia requerido."
               ]
             },
             {
-              "heading": "Cross-Border Safeguards",
+              "heading": "Salvaguardias transfronterizas",
               "paragraphs": [
-                "Transfer clauses must identify destination jurisdictions, legal basis, and supplementary measures where applicable."
+                "Las cláusulas de transferencia deben identificar las jurisdicciones de destino, la base legal y las medidas complementarias cuando corresponda."
               ]
             }
           ]
         },
         "privacy-request": {
-          "title": "Privacy Request Desk",
-          "subtitle": "Unified intake channel for privacy notices, policy interpretation, and data handling questions.",
-          "purpose": "Records and routes privacy governance requests to legal and operational reviewers under documented intake controls.",
+          "title": "Escritorio de solicitud de privacidad",
+          "subtitle": "Canal de admisión unificado para avisos de privacidad, interpretación de políticas y consultas sobre manejo de datos.",
+          "purpose": "Registra y dirige solicitudes de gestión de privacidad a revisores legales y operativos bajo controles de admisión documentados.",
           "contact": "privacy@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; response schedule set after issue classification.",
+          "responseStandard": "Acuse de recibo dentro de los 2 días hábiles; cronograma de respuesta establecido después de la clasificación del problema.",
           "sections": [
             {
-              "heading": "Request Classes",
+              "heading": "Solicitar clases",
               "paragraphs": [
-                "Includes notice interpretation, lawful-basis clarification, retention policy inquiries, and transparency obligations."
+                "Incluye interpretación de avisos, aclaración de bases legales, consultas sobre políticas de retención y obligaciones de transparencia."
               ]
             },
             {
-              "heading": "File Integrity",
-              "paragraphs": ["All requests are logged with timestamped references to preserve audit traceability."]
+              "heading": "Integridad del archivo",
+              "paragraphs": [
+                "Todas las solicitudes se registran con referencias con marca de tiempo para preservar la trazabilidad de la auditoría."
+              ]
             }
           ]
         },
         "terms-request": {
-          "title": "Terms and Contract Desk",
-          "subtitle": "Formal channel for terms review, contract clarifications, and legal language requests.",
-          "purpose": "Centralizes legal drafting and interpretation requests related to contractual terms governing service usage.",
+          "title": "Mesa de términos y contratos",
+          "subtitle": "Canal formal para revisión de términos, aclaraciones de contratos y solicitudes de lenguaje legal.",
+          "purpose": "Centraliza las solicitudes de redacción e interpretación jurídica relacionadas con los términos contractuales que rigen el uso del servicio.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; legal analysis turnaround by complexity class.",
+          "responseStandard": "Acuse de recibo dentro de los 2 días hábiles; análisis jurídico del cambio por clase de complejidad.",
           "sections": [
             {
-              "heading": "Drafting Inputs",
+              "heading": "Entradas de redacción",
               "paragraphs": [
-                "Identify clause references, redline intent, and governing-law requirements in each submission."
+                "Identifique las referencias a las cláusulas, la intención de las líneas rojas y los requisitos de la ley vigente en cada envío."
               ]
             },
             {
-              "heading": "Version Control",
-              "paragraphs": ["Issued drafts preserve revision history to maintain negotiation traceability."]
+              "heading": "Control de versiones",
+              "paragraphs": [
+                "Los borradores emitidos preservan el historial de revisiones para mantener la trazabilidad de la negociación."
+              ]
             }
           ]
         },
         "investor-relations": {
-          "title": "Investor Relations Legal Channel",
-          "subtitle": "Governance disclosures and legal response stream for investor diligence.",
-          "purpose": "Provides controlled access to governance statements and legally reviewable representations for financing diligence.",
+          "title": "Canal Jurídico de Relación con Inversores",
+          "subtitle": "Divulgaciones de gobernanza y flujo de respuestas legales para la diligencia de los inversores.",
+          "purpose": "Proporciona acceso controlado a declaraciones de gobernanza y representaciones legalmente revisables para la diligencia financiera.",
           "contact": "investors@example.com",
-          "responseStandard": "Acknowledgment within 3 business days; disclosure pack subject to eligibility and confidentiality screening.",
+          "responseStandard": "Acuse de recibo dentro de los 3 días hábiles; paquete de divulgación sujeto a evaluación de elegibilidad y confidencialidad.",
           "sections": [
             {
-              "heading": "Disclosure Preconditions",
+              "heading": "Condiciones previas de divulgación",
               "paragraphs": [
-                "Requests must provide fund identity, diligence purpose, and executed confidentiality terms."
+                "Las solicitudes deben proporcionar la identidad del fondo, el propósito de la diligencia y los términos de confidencialidad ejecutados."
               ]
             },
             {
-              "heading": "Disclosure Scope",
+              "heading": "Alcance de la divulgación",
               "paragraphs": [
-                "Responses exclude privileged material and unpublished strategic matters unless expressly authorized."
+                "Las respuestas excluyen material privilegiado y asuntos estratégicos inéditos a menos que se autorice expresamente."
               ]
             }
           ]
         },
         "legal-desk": {
-          "title": "Office of General Counsel",
-          "subtitle": "Primary legal operations desk for statutory interpretation and governance directives.",
-          "purpose": "Handles legal citations, interpretation requests, and jurisdictional applicability analyses for published statements.",
+          "title": "Oficina del Asesor General",
+          "subtitle": "Mesa de operaciones legales primarias para directivas de gobernanza e interpretación legal.",
+          "purpose": "Maneja citas legales, solicitudes de interpretación y análisis de aplicabilidad jurisdiccional para declaraciones publicadas.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; legal memorandum issuance based on scope complexity.",
+          "responseStandard": "Acuse de recibo dentro de los 2 días hábiles; Emisión de memorandos legales basados ​​en la complejidad del alcance.",
           "sections": [
             {
-              "heading": "Legal Citation Handling",
-              "paragraphs": ["Citation requests are answered with law/section precision and source traceability."]
+              "heading": "Manejo de citaciones legales",
+              "paragraphs": [
+                "Las solicitudes de citación se responden con precisión de ley/sección y trazabilidad de la fuente."
+              ]
             },
             {
-              "heading": "Publication Governance",
-              "paragraphs": ["External legal statements are reviewed for statutory accuracy before release."]
+              "heading": "Gobernanza de publicaciones",
+              "paragraphs": [
+                "Las declaraciones legales externas se revisan para verificar su exactitud legal antes de su publicación."
+              ]
             }
           ]
         },
         "data-subject-rights": {
-          "title": "Data Subject Rights Desk",
-          "subtitle": "Operational intake for access, correction, deletion, restriction, portability, and objection rights.",
-          "purpose": "Registers and executes verified rights requests under documented identity and authority controls.",
+          "title": "Mesa de derechos de los interesados",
+          "subtitle": "Entrada operativa de derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición.",
+          "purpose": "Registra y ejecuta solicitudes de derechos verificadas bajo controles de identidad y autoridad documentados.",
           "contact": "privacy@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; statutory response timelines applied by governing jurisdiction.",
+          "responseStandard": "Acuse de recibo dentro de los 2 días hábiles; plazos de respuesta legales aplicados por la jurisdicción aplicable.",
           "sections": [
             {
-              "heading": "Identity Verification",
+              "heading": "Verificación de identidad",
               "paragraphs": [
-                "Rights fulfillment requires identity verification proportionate to the sensitivity of requested actions."
+                "El cumplimiento de los derechos requiere una verificación de identidad proporcional a la sensibilidad de las acciones solicitadas."
               ]
             },
             {
-              "heading": "Execution Record",
-              "paragraphs": ["Each request receives a dated execution log, legal basis record, and completion status."]
+              "heading": "Registro de ejecución",
+              "paragraphs": [
+                "Cada solicitud recibe un registro de ejecución fechado, un registro de base legal y un estado de finalización."
+              ]
             }
           ],
           "citations": [
             {
-              "label": "GDPR Arts. 15-21",
+              "label": "Artes del RGPD. 15-21",
               "href": "https://gdpr-info.eu/chapter-3/",
-              "note": "EU data-subject rights framework."
+              "note": "Marco de derechos de los interesados ​​de la UE."
             },
             {
-              "label": "Cal. Civ. Code §§ 1798.105, 1798.106, 1798.110",
+              "label": "California. Civilización. Código §§ 1798.105, 1798.106, 1798.110",
               "href": "https://oag.ca.gov/privacy/ccpa",
-              "note": "California deletion, correction, and know rights."
+              "note": "Eliminación, corrección y derechos de conocimiento de California."
             },
             {
-              "label": "UU PDP Pasal 5-15",
+              "label": "UU PPD Pasal 5-15",
               "href": "https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022",
-              "note": "Indonesia rights of personal data subjects."
+              "note": "Derechos de los interesados ​​en Indonesia de los interesados."
             }
           ]
         },
         "regulatory-evidence": {
-          "title": "Regulatory Evidence Office",
-          "subtitle": "Evidence issuance desk for supervisory, procurement, and audit reviewers.",
-          "purpose": "Produces evidentiary files that map controls and operations to statutory and contractual obligations.",
+          "title": "Oficina de Pruebas Regulatorias",
+          "subtitle": "Mesa de emisión de evidencias para revisores de supervisión, adquisiciones y auditoría.",
+          "purpose": "Produce archivos probatorios que relacionan los controles y operaciones con las obligaciones legales y contractuales.",
           "contact": "compliance@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; evidentiary package target date issued after scope confirmation.",
+          "responseStandard": "Acuse de recibo dentro de los 2 días hábiles; fecha prevista del paquete de pruebas emitida después de la confirmación del alcance.",
           "sections": [
             {
-              "heading": "Evidence Standards",
-              "paragraphs": ["Evidence files are timestamped, source-linked, and prepared for independent review."]
+              "heading": "Estándares de evidencia",
+              "paragraphs": [
+                "Los archivos de evidencia tienen marca de tiempo, están vinculados a las fuentes y están preparados para una revisión independiente."
+              ]
             },
             {
-              "heading": "Admissibility Posture",
-              "paragraphs": ["Records are structured for verification, with clear provenance and issuance authority."]
+              "heading": "Postura de admisibilidad",
+              "paragraphs": [
+                "Los registros están estructurados para su verificación, con clara procedencia y autoridad de emisión."
+              ]
             }
           ]
         },
         "responsible-disclosure": {
-          "title": "Coordinated Disclosure Desk",
-          "subtitle": "Responsible vulnerability reporting channel with controlled remediation workflow.",
-          "purpose": "Receives, verifies, and triages vulnerability disclosures under coordinated disclosure norms.",
+          "title": "Mesa de divulgación coordinada",
+          "subtitle": "Canal responsable de informes de vulnerabilidades con flujo de trabajo de remediación controlado.",
+          "purpose": "Recibe, verifica y clasifica las divulgaciones de vulnerabilidades según normas de divulgación coordinadas.",
           "contact": "security@afenda.io",
-          "responseStandard": "Acknowledgment within 1 business day; severity triage and remediation track opened after validation.",
+          "responseStandard": "Acuse de recibo dentro de 1 día hábil; La ruta de clasificación y remediación de gravedad se abrió después de la validación.",
           "sections": [
             {
-              "heading": "Minimum Report Contents",
+              "heading": "Contenido mínimo del informe",
               "paragraphs": [
-                "Include impacted asset, reproduction details, proof-of-concept boundary, and safe disclosure contact."
+                "Incluya el activo afectado, los detalles de reproducción, el límite de la prueba de concepto y el contacto de divulgación segura."
               ]
             },
             {
-              "heading": "Good-Faith Handling",
-              "paragraphs": ["Good-faith reports are handled under coordinated remediation and disclosure sequencing."]
+              "heading": "Manejo de buena fe",
+              "paragraphs": [
+                "Los informes de buena fe se manejan bajo una secuencia coordinada de remediación y divulgación."
+              ]
             }
           ]
         },
         "authority-eu-gdpr": {
-          "title": "EU Authority Note — GDPR",
-          "subtitle": "Primary EU statutory references used in footer legal statements.",
-          "purpose": "Identifies operative GDPR provisions governing transparency, lawful basis, rights, and complaints.",
+          "title": "Nota de la autoridad de la UE: RGPD",
+          "subtitle": "Referencias legales primarias de la UE utilizadas en declaraciones legales de pie de página.",
+          "purpose": "Identifica las disposiciones operativas del RGPD que rigen la transparencia, la base legal, los derechos y las quejas.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Citation clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Aclaraciones de citaciones manejadas a través del flujo de trabajo de la Oficina del Asesor General.",
           "sections": [
             {
-              "heading": "Operative Provisions",
+              "heading": "Disposiciones operativas",
               "paragraphs": [
-                "The footer references Arts. 12-14, Art. 6(1), Arts. 15-21, and Art. 77 as baseline obligations and rights instruments."
+                "El pie de página hace referencia a los Arts. 12-14, art. 6(1), arts. 15-21, y art. 77 como instrumentos básicos de obligaciones y derechos."
               ]
             }
           ],
           "citations": [
             {
-              "label": "Art. 6 GDPR",
+              "label": "Arte. 6 RGPD",
               "href": "https://gdpr-info.eu/art-6-gdpr/",
-              "note": "Lawfulness of processing."
+              "note": "Legalidad del tratamiento."
             },
             {
-              "label": "Chapter III GDPR",
+              "label": "Capítulo III RGPD",
               "href": "https://gdpr-info.eu/chapter-3/",
-              "note": "Rights of the data subject."
+              "note": "Derechos del interesado."
             },
             {
-              "label": "Art. 77 GDPR",
+              "label": "Arte. 77 RGPD",
               "href": "https://gdpr-info.eu/art-77-gdpr/",
-              "note": "Right to lodge a complaint."
+              "note": "Derecho a presentar una queja."
             }
           ]
         },
         "authority-us-ccpa-cpra": {
-          "title": "US Authority Note — CCPA/CPRA",
-          "subtitle": "California statutory citations used in footer legal statements.",
-          "purpose": "Catalogs California provisions for notice, rights execution, and anti-discrimination duties.",
+          "title": "Nota de la autoridad estadounidense: CCPA/CPRA",
+          "subtitle": "Citas legales de California utilizadas en declaraciones legales de pie de página.",
+          "purpose": "Cataloga las disposiciones de California en materia de notificación, ejecución de derechos y deberes antidiscriminatorios.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Citation clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Aclaraciones de citaciones manejadas a través del flujo de trabajo de la Oficina del Asesor General.",
           "sections": [
             {
-              "heading": "Operative Provisions",
+              "heading": "Disposiciones operativas",
               "paragraphs": [
-                "The footer references §§ 1798.100, 1798.130, 1798.105, 1798.106, 1798.120, 1798.135, and 1798.125."
+                "El pie de página hace referencia a §§ 1798.100, 1798.130, 1798.105, 1798.106, 1798.120, 1798.135 y 1798.125."
               ]
             }
           ],
           "citations": [
             {
-              "label": "California AG — CCPA Portal",
+              "label": "California AG — Portal CCPA",
               "href": "https://oag.ca.gov/privacy/ccpa",
-              "note": "Primary public statutory guidance and enforcement context."
+              "note": "Orientación legal pública primaria y contexto de aplicación."
             }
           ]
         },
         "authority-id-pdp": {
-          "title": "Indonesia Authority Note — UU No. 27/2022",
-          "subtitle": "Indonesian personal data protection citations used in footer legal statements.",
-          "purpose": "Catalogs rights, controller obligations, and sanction provisions under Indonesia PDP law.",
+          "title": "Nota de autoridad de Indonesia — UU No. 27/2022",
+          "subtitle": "Citas de protección de datos personales de Indonesia utilizadas en declaraciones legales de pie de página.",
+          "purpose": "Cataloga derechos, obligaciones del controlador y disposiciones de sanciones según la ley PDP de Indonesia.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Citation clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Aclaraciones de citaciones manejadas a través del flujo de trabajo de la Oficina del Asesor General.",
           "sections": [
             {
-              "heading": "Operative Provisions",
+              "heading": "Disposiciones operativas",
               "paragraphs": [
-                "The footer references Pasal 5-15, Pasal 20-50, Pasal 57, and Pasal 67-73 as the governing rights and enforcement anchors."
+                "El pie de página hace referencia a Pasal 5-15, Pasal 20-50, Pasal 57 y Pasal 67-73 como los derechos que rigen y los anclajes de aplicación."
               ]
             }
           ],
@@ -1287,102 +1307,102 @@
             {
               "label": "UU No. 27 Tahun 2022 (BPK)",
               "href": "https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022",
-              "note": "Authoritative statute publication entry."
+              "note": "Entrada de publicación de estatuto autorizada."
             }
           ]
         },
         "open-source-docket": {
-          "title": "Open-Source Legal Docket",
-          "subtitle": "Research ledger of public legal-policy repositories referenced by the footer.",
-          "purpose": "Documents source provenance for legal drafting patterns and citation architecture used in public footer statements.",
+          "title": "Expediente legal de código abierto",
+          "subtitle": "Libro mayor de investigaciones de repositorios públicos de políticas jurídicas al que se hace referencia en el pie de página.",
+          "purpose": "Los documentos proceden de las fuentes para los patrones de redacción legal y la arquitectura de citas utilizadas en las declaraciones de pie de página públicas.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Aclaraciones de procedencia de fuentes manejadas a través del flujo de trabajo de la Oficina del Asesor Jurídico General.",
           "sections": [
             {
-              "heading": "Docket Scope",
+              "heading": "Alcance del expediente",
               "paragraphs": [
-                "The docket is a research aid and does not override controlling law, regulation, or contract terms."
+                "El expediente es una ayuda para la investigación y no anula las leyes, regulaciones o términos contractuales que lo controlan."
               ]
             }
           ],
           "citations": [
             {
-              "label": "VSBS CCPA/CPRA Notice Framework",
+              "label": "Marco de notificación VSBS CCPA/CPRA",
               "href": "https://github.com/divyamohan1993/vsbs/blob/main/docs/compliance/ccpa-cpra.md",
-              "note": "Notice-at-collection and rights matrix pattern."
+              "note": "Patrón de aviso en el momento del cobro y matriz de derechos."
             },
             {
-              "label": "Giant Swarm Privacy Policy",
+              "label": "Política de privacidad de enjambre gigante",
               "href": "https://github.com/giantswarm/legal/blob/master/privacypolicy.md",
-              "note": "Rights sectioning and article reference style."
+              "note": "Seccionamiento de derechos y estilo de referencia del artículo."
             },
             {
-              "label": "UU 27/2022 Text Mirror",
+              "label": "UU 27/2022 Espejo de Texto",
               "href": "https://github.com/mashanz/peraturan-perundang-undangan/blob/main/hierarchy/03-uu-perppu/uu-27-2022.md",
-              "note": "Pasal-level structure and sanction mapping."
+              "note": "Estructura a nivel de Pasal y mapeo de sanciones."
             },
             {
-              "label": "Simple Analytics Compliance FAQ",
+              "label": "Preguntas frecuentes sobre el cumplimiento de Simple Analytics",
               "href": "https://github.com/simpleanalytics/docs/blob/main/_docs/36_legal/04_compliance-faq.md",
-              "note": "Public compliance statement framing."
+              "note": "Encuadre de la declaración de cumplimiento público."
             }
           ]
         },
         "source-vsbs-ccpa-cpra": {
-          "title": "Source Dossier — VSBS CCPA/CPRA Notice Framework",
-          "subtitle": "Public source record for California notice-at-collection and rights matrix drafting patterns.",
-          "purpose": "Captures provenance and drafting utility of the VSBS CCPA/CPRA source used to shape footer legal statement structure.",
+          "title": "Dossier fuente: marco de notificación VSBS CCPA/CPRA",
+          "subtitle": "Registro de fuente pública para patrones de redacción de matrices de derechos y avisos de cobranza de California.",
+          "purpose": "Captura la procedencia y la utilidad de redacción de la fuente VSBS CCPA/CPRA utilizada para dar forma a la estructura de la declaración legal del pie de página.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Aclaraciones de procedencia de fuentes manejadas a través del flujo de trabajo de la Oficina del Asesor Jurídico General.",
           "sections": [
             {
-              "heading": "Document Utility",
+              "heading": "Utilidad de documentos",
               "paragraphs": [
-                "Used as an open-source pattern reference for rights tables, notice-at-collection wording, and response timeline presentation."
+                "Se utiliza como referencia de patrón de código abierto para tablas de derechos, redacción de avisos de cobro y presentación del cronograma de respuesta."
               ]
             }
           ],
           "citations": [
             {
-              "label": "VSBS — CCPA + CPRA Notice",
+              "label": "VSBS: Aviso CCPA + CPRA",
               "href": "https://github.com/divyamohan1993/vsbs/blob/main/docs/compliance/ccpa-cpra.md",
-              "note": "Primary public source used for California rights and notice framing."
+              "note": "Fuente pública primaria utilizada para los derechos de California y el marco de avisos."
             }
           ]
         },
         "source-giant-swarm-privacy": {
-          "title": "Source Dossier — Giant Swarm Privacy Policy",
-          "subtitle": "Public source record for article-mapped GDPR rights disclosure structure.",
-          "purpose": "Captures provenance and drafting utility of the Giant Swarm privacy policy structure used for rights indexing.",
+          "title": "Dossier fuente: Política de privacidad de Giant Swarm",
+          "subtitle": "Registro de fuente pública para la estructura de divulgación de derechos GDPR asignada por artículos.",
+          "purpose": "Capta la procedencia y la utilidad de redacción de la estructura de políticas de privacidad de Giant Swarm utilizada para la indexación de derechos.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Aclaraciones de procedencia de fuentes manejadas a través del flujo de trabajo de la Oficina del Asesor Jurídico General.",
           "sections": [
             {
-              "heading": "Document Utility",
+              "heading": "Utilidad de documentos",
               "paragraphs": [
-                "Used as a structural reference for explicit, article-level rights mapping in public-facing privacy statements."
+                "Se utiliza como referencia estructural para el mapeo explícito de derechos a nivel de artículo en declaraciones de privacidad públicas."
               ]
             }
           ],
           "citations": [
             {
-              "label": "Giant Swarm — Privacy Policy",
+              "label": "Enjambre gigante — Política de privacidad",
               "href": "https://github.com/giantswarm/legal/blob/master/privacypolicy.md",
-              "note": "Primary public source used for GDPR rights section architecture."
+              "note": "Fuente pública principal utilizada para la arquitectura de la sección de derechos GDPR."
             }
           ]
         },
         "source-indonesia-uu-27-2022": {
-          "title": "Source Dossier — Indonesia UU 27/2022 Text Mirror",
-          "subtitle": "Public source record for Pasal-level legal text and sanctions mapping.",
-          "purpose": "Captures provenance and drafting utility of the machine-readable Indonesian PDP law source.",
+          "title": "Dossier fuente — Indonesia UU 27/2022 Text Mirror",
+          "subtitle": "Registro de fuente pública para el mapeo de sanciones y textos legales a nivel Pasal.",
+          "purpose": "Capta la procedencia y la utilidad de redacción de la fuente legal legible por máquina del PDP de Indonesia.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Aclaraciones de procedencia de fuentes manejadas a través del flujo de trabajo de la Oficina del Asesor Jurídico General.",
           "sections": [
             {
-              "heading": "Document Utility",
+              "heading": "Utilidad de documentos",
               "paragraphs": [
-                "Used to verify Pasal references, rights scope language, and sanctions mapping in the footer authority note."
+                "Se utiliza para verificar las referencias de Pasal, el lenguaje del alcance de los derechos y el mapeo de sanciones en la nota de autoridad del pie de página."
               ]
             }
           ],
@@ -1390,29 +1410,29 @@
             {
               "label": "Peraturan Perundang-Undangan — UU No. 27 Tahun 2022",
               "href": "https://github.com/mashanz/peraturan-perundang-undangan/blob/main/hierarchy/03-uu-perppu/uu-27-2022.md",
-              "note": "Primary public source used for Indonesian statute structure and article mapping."
+              "note": "Fuente pública primaria utilizada para la estructura de los estatutos de Indonesia y el mapeo de artículos."
             }
           ]
         },
         "source-simple-analytics-faq": {
-          "title": "Source Dossier — Simple Analytics Compliance FAQ",
-          "subtitle": "Public source record for concise recital/article compliance statement style.",
-          "purpose": "Captures provenance and drafting utility of concise compliance-language presentation patterns.",
+          "title": "Dossier de origen: preguntas frecuentes sobre el cumplimiento de Simple Analytics",
+          "subtitle": "Registro de fuente pública para un estilo conciso de declaración de cumplimiento de considerando/artículo.",
+          "purpose": "Capta la procedencia y la utilidad de redacción de patrones de presentación concisos en el lenguaje de cumplimiento.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Aclaraciones de procedencia de fuentes manejadas a través del flujo de trabajo de la Oficina del Asesor Jurídico General.",
           "sections": [
             {
-              "heading": "Document Utility",
+              "heading": "Utilidad de documentos",
               "paragraphs": [
-                "Used as a style reference for concise, citation-led compliance summaries in public legal surfaces."
+                "Se utiliza como referencia de estilo para resúmenes de cumplimiento concisos y basados ​​en citas en superficies legales públicas."
               ]
             }
           ],
           "citations": [
             {
-              "label": "Simple Analytics — Compliance FAQ",
+              "label": "Análisis simple: preguntas frecuentes sobre cumplimiento",
               "href": "https://github.com/simpleanalytics/docs/blob/main/_docs/36_legal/04_compliance-faq.md",
-              "note": "Primary public source used for compact compliance wording patterns."
+              "note": "Fuente pública primaria utilizada para patrones de redacción de cumplimiento compactos."
             }
           ]
         }

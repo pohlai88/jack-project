@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+
 import { DevUsersPanel } from '@/app/DevUsersPanel';
 import { defaultLocale, locales } from '@/i18n/config';
+import { AFENDA_METADATA_IMAGE, AFENDA_METADATA_IMAGE_URL } from '@/shared/components/brand/metadata';
 
 import { ActDivider } from './_components/ActDivider';
-import { MarketingPreLandingLazy as MarketingPreLanding } from './_components/MarketingPreLandingLazy';
+import { metadata as marketingMetadata } from './_content/sections';
 import { ArchitectureSection } from './_sections/ArchitectureSection';
 import { EvidenceSection } from './_sections/EvidenceSection';
 import { HeroSection } from './_sections/HeroSection';
@@ -15,35 +17,39 @@ import { SecuritySection } from './_sections/SecuritySection';
 import { ThesisSection } from './_sections/ThesisSection';
 import { VerdictSection } from './_sections/VerdictSection';
 
-const pageTitle = 'Afenda — Business Truth Infrastructure';
-const pageDescription =
-  'Afenda is the business truth engine. Canonical records, 7W1H evidence, tenant-scoped truth, policy-bound execution, and audit-ready state for enterprise operations.';
-const pageKeywords = [
-  'business truth engine',
-  'canonical records',
-  '7W1H audit trail',
-  'tenant truth',
-  'policy-bound execution',
-  'audit infrastructure',
-  'enterprise operations platform',
-  'governed business data',
-];
+const pageTitle = marketingMetadata.title;
+const pageDescription = marketingMetadata.description;
+
+function getSiteUrl() {
+  return (process.env.NEXT_PUBLIC_APP_URL ?? 'https://afenda.com').replace(/\/$/, '');
+}
+
+function resolveLocale(locale: string) {
+  return locales.includes(locale as (typeof locales)[number]) ? locale : defaultLocale;
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://afenda.com';
-  const canonicalUrl = `${siteUrl}/${locale}`;
+  const siteUrl = getSiteUrl();
+  const resolvedLocale = resolveLocale(locale);
+  const canonicalUrl = `${siteUrl}/${resolvedLocale}`;
 
-  const languageAlternates = Object.fromEntries(locales.map((l) => [l, `${siteUrl}/${l}`])) as Record<string, string>;
+  const languageAlternates = Object.fromEntries(
+    locales.map((localeCode) => [localeCode, `${siteUrl}/${localeCode}`]),
+  ) as Record<string, string>;
 
   return {
     title: pageTitle,
     description: pageDescription,
-    keywords: pageKeywords,
+    keywords: [...marketingMetadata.keywords],
     robots: {
       index: true,
       follow: true,
-      googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+      },
     },
     alternates: {
       canonical: canonicalUrl,
@@ -54,16 +60,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     openGraph: {
       title: pageTitle,
-      description: 'The business truth engine for governed operations.',
+      description: marketingMetadata.openGraphDescription,
       type: 'website',
       url: canonicalUrl,
       siteName: 'Afenda',
-      locale: locale.replace('-', '_'),
+      locale: resolvedLocale.replace('-', '_'),
       images: [
         {
-          url: '/icons/afenda-icon-512-transparent.png',
-          width: 512,
-          height: 512,
+          ...AFENDA_METADATA_IMAGE,
           alt: 'Afenda — Business Truth Infrastructure',
         },
       ],
@@ -71,34 +75,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     twitter: {
       card: 'summary_large_image',
       title: pageTitle,
-      description: 'The business truth engine for governed operations.',
-      images: ['/icons/afenda-icon-512-transparent.png'],
+      description: marketingMetadata.openGraphDescription,
+      images: [AFENDA_METADATA_IMAGE_URL],
     },
   };
 }
 
-/**
- * Marketing home page — locale root (/{locale}/)
- *
- * Server Component (async) that composes the marketing landing page as one
- * continuous scrollable surface divided into five editorial acts.
- *
- * Layout responsibility (not here):
- * - Nav, footer, explorer modal, providers (see layout.tsx)
- *
- * This page responsibility:
- * - Typed hero section
- * - Act dividers (editorial structure)
- * - Content sections (thesis, ontology, procurement, operations, architecture,
- *   security, evidence, modular, verdict)
- * - Dev-only utilities (DevUsersPanel)
- */
 export default function MarketingPage() {
-  const isDevStage = process.env.NEXT_PUBLIC_STAGE === 'dev' || process.env.NODE_ENV === 'development';
+  const showDevUsersPanel = process.env.NODE_ENV !== 'production' && process.env.NEXT_PUBLIC_STAGE === 'dev';
 
   return (
-    <>
-      <MarketingPreLanding />
+    <main className="marketing-page" data-surface="marketing-home">
       <HeroSection />
 
       <ActDivider num="I" title="Declaration" />
@@ -120,7 +107,7 @@ export default function MarketingPage() {
       <ActDivider num="V" title="Close" />
       <VerdictSection />
 
-      {isDevStage ? <DevUsersPanel /> : null}
-    </>
+      {showDevUsersPanel ? <DevUsersPanel /> : null}
+    </main>
   );
 }

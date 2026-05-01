@@ -1,7 +1,8 @@
 'use client';
 
-import { type CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
+import type { DataRightsDoctrineEvidenceContract } from '@/governance/data-rights-doctrine.contract';
 import { cn } from '@/shared/lib/utils';
 
 import {
@@ -11,13 +12,16 @@ import {
   DOCTRINE_ORDER,
 } from '../_content/data-rights-declaration-data';
 
-type DataRightsStyle = CSSProperties & {
-  '--data-rights-accent'?: string;
-  '--data-rights-accent-soft'?: string;
-};
-
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);
+}
+
+function formatDoctrineProof(fields: readonly string[]) {
+  return fields.map((f) => f.replace(/_/g, ' ')).join(' · ');
+}
+
+function formatDoctrineEvidence(evidence: DataRightsDoctrineEvidenceContract) {
+  return evidence.required ? `Evidence: ${evidence.type} · required` : `Evidence: ${evidence.type} · recommended`;
 }
 
 function getPageOffset(element: HTMLElement) {
@@ -49,13 +53,6 @@ export function DataRightsSpecimenBoard() {
   const [activeKey, setActiveKey] = useState<DataRightsDoctrineKey>(DEFAULT_DATA_RIGHTS_DOCTRINE);
 
   const activeDoctrine = dataRightsDoctrines[activeKey];
-  const style = useMemo<DataRightsStyle>(
-    () => ({
-      '--data-rights-accent': activeDoctrine.accent,
-      '--data-rights-accent-soft': activeDoctrine.accentSoft,
-    }),
-    [activeDoctrine.accent, activeDoctrine.accentSoft],
-  );
 
   const updateFromScroll = useCallback(() => {
     const section = sectionRef.current;
@@ -125,7 +122,6 @@ export function DataRightsSpecimenBoard() {
       className="data-rights"
       data-active={activeKey}
       aria-labelledby="thesis-title"
-      style={style}
     >
       <div className="data-rights__sticky">
         <div className="data-rights__copy">
@@ -151,7 +147,7 @@ export function DataRightsSpecimenBoard() {
           <div className="data-rights__specimen">
             <div className="data-rights__specimen-header">
               <span>Data Rights Specimen</span>
-              <span>AFD-PRIVACY-001</span>
+              <span>{activeDoctrine.id}</span>
             </div>
 
             <div className="data-rights__boundary" aria-label="Tenant boundary active">
@@ -223,11 +219,17 @@ export function DataRightsSpecimenBoard() {
 
           <article className="data-rights__readout">
             <p className="data-rights__readout-eyebrow">
-              {activeDoctrine.number} {activeDoctrine.label}
+              {activeDoctrine.number} {activeDoctrine.label}{' '}
+              <span className="sr-only">· enforcement {activeDoctrine.enforcement}</span>
             </p>
             <h3 className="data-rights__readout-title">{activeDoctrine.title}</h3>
             <p className="data-rights__readout-body">{activeDoctrine.summary}</p>
-            <p className="data-rights__readout-proof">{activeDoctrine.proof}</p>
+            <p className="data-rights__readout-proof">
+              {activeDoctrine.proof.required ? formatDoctrineProof(activeDoctrine.proof.fields) : 'Proof optional'}
+            </p>
+            <p className="data-rights__readout-evidence" data-evidence-required={activeDoctrine.evidence.required}>
+              {formatDoctrineEvidence(activeDoctrine.evidence)}
+            </p>
           </article>
         </div>
       </div>

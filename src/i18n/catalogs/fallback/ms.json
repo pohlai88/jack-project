@@ -870,416 +870,424 @@
     },
     "footerDocs": {
       "footer": {
-        "navigationAriaLabel": "Footer navigation",
+        "navigationAriaLabel": "Navigasi pengaki",
         "brand": {
-          "tagline": "Enterprise truth infrastructure",
-          "summary": "Canonical records, policy-bound execution, and audit-ready evidence for operational teams.",
-          "statusAriaLabel": "Enterprise posture",
+          "tagline": "Infrastruktur kebenaran perusahaan",
+          "summary": "Rekod kanonik, pelaksanaan terikat dasar dan bukti sedia audit untuk pasukan operasi.",
+          "statusAriaLabel": "Postur perusahaan",
           "status": {
-            "privacyRequests": "Privacy requests",
-            "securityReview": "Security review",
-            "compliancePacket": "Compliance packet"
+            "privacyRequests": "Permintaan privasi",
+            "securityReview": "Semakan keselamatan",
+            "compliancePacket": "Paket pematuhan"
           }
         },
         "groups": {
           "product": {
-            "title": "Product",
+            "title": "produk",
             "links": {
-              "documentation": "Documentation Access Record",
-              "demo": "Demo Engagement Docket",
-              "architectureReview": "Architecture Review Intake Memorandum"
+              "documentation": "Rekod Akses Dokumentasi",
+              "demo": "Doket Penglibatan Demo",
+              "architectureReview": "Memorandum Pengambilan Kajian Seni Bina"
             }
           },
           "governance": {
-            "title": "Governance",
+            "title": "Tadbir urus",
             "links": {
-              "securityContact": "Security Contact Protocol",
-              "compliancePacket": "Compliance Packet Request",
-              "dpaRequest": "Data Processing Addendum Request"
+              "securityContact": "Protokol Hubungan Keselamatan",
+              "compliancePacket": "Permintaan Paket Pematuhan",
+              "dpaRequest": "Permintaan Adendum Pemprosesan Data"
             }
           },
           "legal": {
-            "title": "Legal",
+            "title": "sah",
             "links": {
-              "privacyRequest": "Privacy Request Desk",
-              "termsDesk": "Terms and Contract Desk",
-              "investorRelations": "Investor Relations Legal Channel"
+              "privacyRequest": "Meja Permintaan Privasi",
+              "termsDesk": "Terma dan Meja Kontrak",
+              "investorRelations": "Saluran Undang-undang Perhubungan Pelabur"
             }
           }
         },
         "authorities": {
-          "ariaLabel": "Legal authority citations",
-          "kicker": "Jurisdictional Authority Register",
-          "lead": "Formal legal citation ledger governing privacy notice duties, data-subject rights, and enforcement posture."
+          "ariaLabel": "Petikan pihak berkuasa undang-undang",
+          "kicker": "Daftar Pihak Berkuasa Bidang Kuasa",
+          "lead": "Lejar petikan undang-undang rasmi yang mengawal kewajipan notis privasi, hak subjek data dan postur penguatkuasaan."
         },
         "legalLinks": {
-          "ariaLabel": "Legal links",
-          "generalCounsel": "Office of General Counsel",
-          "dataSubjectRights": "Data Subject Rights Desk",
-          "regulatoryEvidence": "Regulatory Evidence Office",
-          "disclosureDesk": "Coordinated Disclosure Desk"
+          "ariaLabel": "Pautan undang-undang",
+          "generalCounsel": "Pejabat Penasihat Am",
+          "dataSubjectRights": "Meja Hak Subjek Data",
+          "regulatoryEvidence": "Pejabat Bukti Kawal Selia",
+          "disclosureDesk": "Meja Pendedahan Terkoordinasi"
         }
       },
       "index": {
-        "kicker": "Footer Governance Hub",
-        "title": "Marketing Footer Legal Documents",
-        "description": "Central index of all individual footer legal, compliance, and authority documents. Each page is structured for counsel review and evidentiary traceability.",
-        "openDossier": "Open dossier"
+        "kicker": "Hab Tadbir Urus Footer",
+        "title": "Dokumen Undang-undang Pemasaran Footer",
+        "description": "Indeks pusat semua dokumen undang-undang, pematuhan dan kuasa pengaki individu. Setiap halaman disusun untuk semakan peguam dan kebolehkesanan bukti.",
+        "openDossier": "Buka dokumen"
       },
       "ui": {
-        "kicker": "Footer Legal Dossier",
-        "purpose": "Purpose",
-        "contact": "Contact",
-        "responseStandard": "Response Standard",
-        "authorities": "Authorities and References",
-        "returnToIndex": "Return to footer document index",
-        "openPrimaryDocumentation": "Open primary documentation",
-        "openDemoScheduling": "Open demo scheduling"
+        "kicker": "Dosi Undang-undang Footer",
+        "purpose": "Tujuan",
+        "contact": "Kenalan",
+        "responseStandard": "Standard Respons",
+        "authorities": "Pihak Berkuasa dan Rujukan",
+        "returnToIndex": "Kembali ke indeks dokumen pengaki",
+        "openPrimaryDocumentation": "Buka dokumentasi utama",
+        "openDemoScheduling": "Buka penjadualan demo"
       },
       "documentsBySlug": {
         "documentation": {
-          "title": "Documentation Access Record",
-          "subtitle": "Controlled entry point to product, architecture, and governance documentation.",
-          "purpose": "Provides the formal footer-linked documentation entry while preserving a traceable legal and governance context.",
+          "title": "Rekod Akses Dokumentasi",
+          "subtitle": "Titik masuk terkawal kepada dokumentasi produk, seni bina dan tadbir urus.",
+          "purpose": "Menyediakan entri dokumentasi berkait pengaki rasmi sambil mengekalkan konteks undang-undang dan tadbir urus yang boleh dikesan.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Documentation access is immediate; citation clarifications follow legal desk standards.",
+          "responseStandard": "Akses dokumentasi adalah serta-merta; penjelasan petikan mengikut piawaian meja undang-undang.",
           "sections": [
             {
-              "heading": "Document Scope",
+              "heading": "Skop Dokumen",
               "paragraphs": [
-                "This page routes readers to official product documentation and related governance references without ambiguity."
+                "Halaman ini mengarahkan pembaca ke dokumentasi produk rasmi dan rujukan tadbir urus berkaitan tanpa kesamaran."
               ]
             },
             {
-              "heading": "Operational Link",
-              "paragraphs": ["Authoritative documentation remains published at the main docs endpoint."],
-              "bullets": ["Primary docs endpoint: /docs"]
+              "heading": "Pautan Operasi",
+              "paragraphs": ["Dokumentasi berwibawa kekal diterbitkan di titik akhir dokumen utama."],
+              "bullets": ["Titik akhir dokumen utama: /docs"]
             }
           ]
         },
         "book-demo": {
-          "title": "Demo Engagement Docket",
-          "subtitle": "Formal intake channel for demonstration and technical qualification sessions.",
-          "purpose": "Provides a footer-governed pathway for scheduling a platform demonstration with traceable request intent.",
+          "title": "Doket Penglibatan Demo",
+          "subtitle": "Saluran pengambilan formal untuk sesi demonstrasi dan kelayakan teknikal.",
+          "purpose": "Menyediakan laluan yang dikawal pengaki untuk menjadualkan demonstrasi platform dengan niat permintaan yang boleh dikesan.",
           "contact": "architecture-review@afenda.io",
-          "responseStandard": "Demo intake acknowledgments and scheduling windows are issued by commercial operations.",
+          "responseStandard": "Pengiktirafan pengambilan demo dan tetingkap penjadualan dikeluarkan oleh operasi komersial.",
           "sections": [
             {
-              "heading": "Engagement Inputs",
+              "heading": "Input Penglibatan",
               "paragraphs": [
-                "Include operational objective, stakeholder roles, and priority workflows to structure the demonstration session."
+                "Sertakan objektif operasi, peranan pihak berkepentingan dan aliran kerja keutamaan untuk menstruktur sesi demonstrasi."
               ]
             },
             {
-              "heading": "Operational Link",
-              "paragraphs": ["The active scheduling workflow remains available through the demo endpoint."],
-              "bullets": ["Primary demo endpoint: /book-demo"]
+              "heading": "Pautan Operasi",
+              "paragraphs": ["Aliran kerja penjadualan aktif kekal tersedia melalui titik akhir demo."],
+              "bullets": ["Titik akhir tunjuk cara utama: /book-demo"]
             }
           ]
         },
         "architecture-review": {
-          "title": "Architecture Review Intake Memorandum",
-          "subtitle": "Technical governance intake for regulated processing environments.",
-          "purpose": "Establishes the submission protocol for architecture-risk review, control mapping, and evidentiary adequacy prior to deployment.",
+          "title": "Memorandum Pengambilan Kajian Seni Bina",
+          "subtitle": "Pengambilan tadbir urus teknikal untuk persekitaran pemprosesan terkawal.",
+          "purpose": "Menetapkan protokol penyerahan untuk semakan risiko seni bina, pemetaan kawalan dan kecukupan bukti sebelum penggunaan.",
           "contact": "architecture-review@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; substantive triage memorandum within 7 business days.",
+          "responseStandard": "Pengakuan dalam tempoh 2 hari bekerja; memorandum triage substantif dalam tempoh 7 hari perniagaan.",
           "sections": [
             {
-              "heading": "Required Submission Record",
+              "heading": "Rekod Penyerahan yang Diperlukan",
               "paragraphs": [
-                "Submit a system diagram, data-flow narrative, and decision log that identifies controller, processor, and sub-processor roles."
+                "Serahkan gambar rajah sistem, naratif aliran data dan log keputusan yang mengenal pasti peranan pengawal, pemproses dan subpemproses."
               ],
               "bullets": [
-                "Data classification table",
-                "Access-control model",
-                "Incident response attachment",
-                "Retention and deletion schedule"
+                "Jadual klasifikasi data",
+                "Model kawalan akses",
+                "Lampiran tindak balas insiden",
+                "Jadual pengekalan dan pemadaman"
               ]
             },
             {
-              "heading": "Review Output",
+              "heading": "Keluaran Semakan",
               "paragraphs": [
-                "Review outcomes include control sufficiency findings, remediation directives, and evidentiary gaps requiring closure before production approval."
+                "Hasil semakan termasuk penemuan kecukupan kawalan, arahan pemulihan, dan jurang pembuktian yang memerlukan penutupan sebelum kelulusan pengeluaran."
               ]
             }
           ]
         },
         "security-contact": {
-          "title": "Security Contact Protocol",
-          "subtitle": "Primary channel for security assessment and control assurance requests.",
-          "purpose": "Defines intake and handling rules for security questionnaires, control attestations, and trust-center requests.",
+          "title": "Protokol Hubungan Keselamatan",
+          "subtitle": "Saluran utama untuk penilaian keselamatan dan permintaan jaminan kawalan.",
+          "purpose": "Mentakrifkan peraturan pengambilan dan pengendalian untuk soal selidik keselamatan, pengesahan kawalan dan permintaan pusat amanah.",
           "contact": "security@afenda.io",
-          "responseStandard": "Acknowledgment within 1 business day; complete response package subject to scope and NDA status.",
+          "responseStandard": "Pengakuan dalam tempoh 1 hari perniagaan; pakej respons lengkap tertakluk kepada skop dan status NDA.",
           "sections": [
             {
-              "heading": "Submission Scope",
+              "heading": "Skop Penyerahan",
               "paragraphs": [
-                "Requests must identify control family, intended regulatory use, and evidence period to ensure accurate retrieval of records."
+                "Permintaan mesti mengenal pasti keluarga kawalan, penggunaan peraturan yang dimaksudkan, dan tempoh bukti untuk memastikan pengambilan rekod yang tepat."
               ]
             },
             {
-              "heading": "Disclosure Basis",
+              "heading": "Asas Pendedahan",
               "paragraphs": [
-                "Evidence is released under least-disclosure principle and contractual confidentiality obligations."
+                "Bukti dikeluarkan di bawah prinsip pendedahan paling sedikit dan kewajipan kerahsiaan kontrak."
               ]
             }
           ]
         },
         "compliance-packet": {
-          "title": "Compliance Packet Request",
-          "subtitle": "Formal request channel for regulatory and audit evidence packs.",
-          "purpose": "Provides standardized packet assembly for due diligence, audit preparation, and procurement governance.",
+          "title": "Permintaan Paket Pematuhan",
+          "subtitle": "Saluran permintaan rasmi untuk pek bukti kawal selia dan audit.",
+          "purpose": "Menyediakan pemasangan paket standard untuk usaha wajar, penyediaan audit dan tadbir urus perolehan.",
           "contact": "compliance@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; packet assembly timeline communicated after scope validation.",
+          "responseStandard": "Pengakuan dalam tempoh 2 hari bekerja; garis masa pemasangan paket dikomunikasikan selepas pengesahan skop.",
           "sections": [
             {
-              "heading": "Packet Components",
+              "heading": "Komponen Paket",
               "paragraphs": [
-                "Compliance packets may include policy indices, control matrices, subprocessors, and incident reporting posture statements."
+                "Paket pematuhan mungkin termasuk indeks dasar, matriks kawalan, subpemproses dan pernyataan postur pelaporan insiden."
               ]
             },
             {
-              "heading": "Verification Controls",
-              "paragraphs": [
-                "Requests are subject to requester identity verification and legitimate purpose assessment."
-              ]
+              "heading": "Kawalan Pengesahan",
+              "paragraphs": ["Permintaan tertakluk kepada pengesahan identiti peminta dan penilaian tujuan yang sah."]
             }
           ]
         },
         "dpa-request": {
-          "title": "Data Processing Addendum Request",
-          "subtitle": "Contractual pathway for controller-processor terms and transfer safeguards.",
-          "purpose": "Initiates DPA negotiation and execution with jurisdictional annexes and transfer mechanism schedules.",
+          "title": "Permintaan Adendum Pemprosesan Data",
+          "subtitle": "Laluan kontrak untuk syarat pengawal-pemproses dan perlindungan pemindahan.",
+          "purpose": "Memulakan rundingan dan pelaksanaan DPA dengan lampiran bidang kuasa dan jadual mekanisme pemindahan.",
           "contact": "privacy@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; redline review sequence confirmed after template intake.",
+          "responseStandard": "Pengakuan dalam tempoh 2 hari bekerja; jujukan semakan garis merah disahkan selepas pengambilan templat.",
           "sections": [
             {
-              "heading": "Contracting Requirements",
+              "heading": "Keperluan Kontrak",
               "paragraphs": [
-                "Provide legal entity details, role allocation, subprocessors constraints, and required transfer mechanism clauses."
+                "Menyediakan butiran entiti undang-undang, peruntukan peranan, kekangan subpemproses dan klausa mekanisme pemindahan yang diperlukan."
               ]
             },
             {
-              "heading": "Cross-Border Safeguards",
+              "heading": "Perlindungan Merentas Sempadan",
               "paragraphs": [
-                "Transfer clauses must identify destination jurisdictions, legal basis, and supplementary measures where applicable."
+                "Klausa pemindahan mesti mengenal pasti bidang kuasa destinasi, asas undang-undang, dan langkah tambahan jika berkenaan."
               ]
             }
           ]
         },
         "privacy-request": {
-          "title": "Privacy Request Desk",
-          "subtitle": "Unified intake channel for privacy notices, policy interpretation, and data handling questions.",
-          "purpose": "Records and routes privacy governance requests to legal and operational reviewers under documented intake controls.",
+          "title": "Meja Permintaan Privasi",
+          "subtitle": "Saluran pengambilan bersatu untuk notis privasi, tafsiran dasar dan soalan pengendalian data.",
+          "purpose": "Merekod dan mengarahkan permintaan tadbir urus privasi kepada penyemak undang-undang dan operasi di bawah kawalan pengambilan yang didokumenkan.",
           "contact": "privacy@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; response schedule set after issue classification.",
+          "responseStandard": "Pengakuan dalam tempoh 2 hari bekerja; jadual respons yang ditetapkan selepas klasifikasi isu.",
           "sections": [
             {
-              "heading": "Request Classes",
+              "heading": "Minta Kelas",
               "paragraphs": [
-                "Includes notice interpretation, lawful-basis clarification, retention policy inquiries, and transparency obligations."
+                "Termasuk tafsiran notis, penjelasan berdasarkan undang-undang, pertanyaan dasar pengekalan dan kewajipan ketelusan."
               ]
             },
             {
-              "heading": "File Integrity",
-              "paragraphs": ["All requests are logged with timestamped references to preserve audit traceability."]
+              "heading": "Integriti Fail",
+              "paragraphs": [
+                "Semua permintaan direkodkan dengan rujukan bercap masa untuk mengekalkan kebolehkesanan audit."
+              ]
             }
           ]
         },
         "terms-request": {
-          "title": "Terms and Contract Desk",
-          "subtitle": "Formal channel for terms review, contract clarifications, and legal language requests.",
-          "purpose": "Centralizes legal drafting and interpretation requests related to contractual terms governing service usage.",
+          "title": "Terma dan Meja Kontrak",
+          "subtitle": "Saluran rasmi untuk semakan terma, penjelasan kontrak dan permintaan bahasa undang-undang.",
+          "purpose": "Memusatkan penggubalan undang-undang dan permintaan tafsiran yang berkaitan dengan syarat kontrak yang mengawal penggunaan perkhidmatan.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; legal analysis turnaround by complexity class.",
+          "responseStandard": "Pengakuan dalam tempoh 2 hari bekerja; analisis undang-undang pemulihan mengikut kelas kerumitan.",
           "sections": [
             {
-              "heading": "Drafting Inputs",
+              "heading": "Merangka Input",
               "paragraphs": [
-                "Identify clause references, redline intent, and governing-law requirements in each submission."
+                "Kenal pasti rujukan klausa, niat garis merah, dan keperluan undang-undang yang mentadbir dalam setiap penyerahan."
               ]
             },
             {
-              "heading": "Version Control",
-              "paragraphs": ["Issued drafts preserve revision history to maintain negotiation traceability."]
+              "heading": "Kawalan Versi",
+              "paragraphs": [
+                "Draf yang dikeluarkan mengekalkan sejarah semakan untuk mengekalkan kebolehkesanan rundingan."
+              ]
             }
           ]
         },
         "investor-relations": {
-          "title": "Investor Relations Legal Channel",
-          "subtitle": "Governance disclosures and legal response stream for investor diligence.",
-          "purpose": "Provides controlled access to governance statements and legally reviewable representations for financing diligence.",
+          "title": "Saluran Undang-undang Perhubungan Pelabur",
+          "subtitle": "Pendedahan tadbir urus dan aliran tindak balas undang-undang untuk ketekunan pelabur.",
+          "purpose": "Menyediakan akses terkawal kepada penyata tadbir urus dan representasi yang boleh disemak secara sah untuk ketekunan pembiayaan.",
           "contact": "investors@example.com",
-          "responseStandard": "Acknowledgment within 3 business days; disclosure pack subject to eligibility and confidentiality screening.",
+          "responseStandard": "Pengakuan dalam tempoh 3 hari bekerja; pek pendedahan tertakluk kepada saringan kelayakan dan kerahsiaan.",
           "sections": [
             {
-              "heading": "Disclosure Preconditions",
+              "heading": "Prasyarat Pendedahan",
               "paragraphs": [
-                "Requests must provide fund identity, diligence purpose, and executed confidentiality terms."
+                "Permintaan mesti memberikan identiti dana, tujuan ketekunan dan syarat kerahsiaan yang dilaksanakan."
               ]
             },
             {
-              "heading": "Disclosure Scope",
+              "heading": "Skop Pendedahan",
               "paragraphs": [
-                "Responses exclude privileged material and unpublished strategic matters unless expressly authorized."
+                "Respons tidak termasuk bahan istimewa dan perkara strategik yang tidak diterbitkan melainkan dibenarkan secara nyata."
               ]
             }
           ]
         },
         "legal-desk": {
-          "title": "Office of General Counsel",
-          "subtitle": "Primary legal operations desk for statutory interpretation and governance directives.",
-          "purpose": "Handles legal citations, interpretation requests, and jurisdictional applicability analyses for published statements.",
+          "title": "Pejabat Penasihat Am",
+          "subtitle": "Meja operasi undang-undang utama untuk tafsiran berkanun dan arahan tadbir urus.",
+          "purpose": "Mengendalikan petikan undang-undang, permintaan tafsiran dan analisis kebolehgunaan bidang kuasa untuk kenyataan yang diterbitkan.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; legal memorandum issuance based on scope complexity.",
+          "responseStandard": "Pengakuan dalam tempoh 2 hari bekerja; pengeluaran memorandum undang-undang berdasarkan kerumitan skop.",
           "sections": [
             {
-              "heading": "Legal Citation Handling",
-              "paragraphs": ["Citation requests are answered with law/section precision and source traceability."]
+              "heading": "Pengendalian Petikan Undang-undang",
+              "paragraphs": [
+                "Permintaan petikan dijawab dengan ketepatan undang-undang/bahagian dan kebolehkesanan sumber."
+              ]
             },
             {
-              "heading": "Publication Governance",
-              "paragraphs": ["External legal statements are reviewed for statutory accuracy before release."]
+              "heading": "Tadbir Urus Penerbitan",
+              "paragraphs": ["Penyata undang-undang luaran disemak untuk ketepatan berkanun sebelum dikeluarkan."]
             }
           ]
         },
         "data-subject-rights": {
-          "title": "Data Subject Rights Desk",
-          "subtitle": "Operational intake for access, correction, deletion, restriction, portability, and objection rights.",
-          "purpose": "Registers and executes verified rights requests under documented identity and authority controls.",
+          "title": "Meja Hak Subjek Data",
+          "subtitle": "Pengambilan operasi untuk akses, pembetulan, pemadaman, sekatan, mudah alih dan hak bantahan.",
+          "purpose": "Mendaftar dan melaksanakan permintaan hak yang disahkan di bawah kawalan identiti dan kuasa yang didokumenkan.",
           "contact": "privacy@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; statutory response timelines applied by governing jurisdiction.",
+          "responseStandard": "Pengakuan dalam tempoh 2 hari bekerja; garis masa respons berkanun yang digunakan oleh bidang kuasa yang mentadbir.",
           "sections": [
             {
-              "heading": "Identity Verification",
+              "heading": "Pengesahan Identiti",
               "paragraphs": [
-                "Rights fulfillment requires identity verification proportionate to the sensitivity of requested actions."
+                "Pemenuhan hak memerlukan pengesahan identiti berkadar dengan sensitiviti tindakan yang diminta."
               ]
             },
             {
-              "heading": "Execution Record",
-              "paragraphs": ["Each request receives a dated execution log, legal basis record, and completion status."]
+              "heading": "Rekod Perlaksanaan",
+              "paragraphs": [
+                "Setiap permintaan menerima log pelaksanaan bertarikh, rekod asas undang-undang dan status penyiapan."
+              ]
             }
           ],
           "citations": [
             {
-              "label": "GDPR Arts. 15-21",
+              "label": "Seni GDPR. 15-21",
               "href": "https://gdpr-info.eu/chapter-3/",
-              "note": "EU data-subject rights framework."
+              "note": "Rangka kerja hak subjek data EU."
             },
             {
-              "label": "Cal. Civ. Code §§ 1798.105, 1798.106, 1798.110",
+              "label": "Cal. Siv. Kod §§ 1798.105, 1798.106, 1798.110",
               "href": "https://oag.ca.gov/privacy/ccpa",
-              "note": "California deletion, correction, and know rights."
+              "note": "Pemadaman, pembetulan, dan mengetahui hak California."
             },
             {
               "label": "UU PDP Pasal 5-15",
               "href": "https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022",
-              "note": "Indonesia rights of personal data subjects."
+              "note": "Hak Indonesia terhadap subjek data peribadi."
             }
           ]
         },
         "regulatory-evidence": {
-          "title": "Regulatory Evidence Office",
-          "subtitle": "Evidence issuance desk for supervisory, procurement, and audit reviewers.",
-          "purpose": "Produces evidentiary files that map controls and operations to statutory and contractual obligations.",
+          "title": "Pejabat Bukti Kawal Selia",
+          "subtitle": "Meja pengeluaran bukti untuk penyemak penyeliaan, perolehan dan audit.",
+          "purpose": "Menghasilkan fail keterangan yang memetakan kawalan dan operasi kepada kewajipan berkanun dan kontrak.",
           "contact": "compliance@afenda.io",
-          "responseStandard": "Acknowledgment within 2 business days; evidentiary package target date issued after scope confirmation.",
+          "responseStandard": "Pengakuan dalam tempoh 2 hari bekerja; tarikh sasaran pakej bukti dikeluarkan selepas pengesahan skop.",
           "sections": [
             {
-              "heading": "Evidence Standards",
-              "paragraphs": ["Evidence files are timestamped, source-linked, and prepared for independent review."]
+              "heading": "Piawaian Bukti",
+              "paragraphs": ["Fail bukti dicap masa, dipautkan sumber dan disediakan untuk semakan bebas."]
             },
             {
-              "heading": "Admissibility Posture",
-              "paragraphs": ["Records are structured for verification, with clear provenance and issuance authority."]
+              "heading": "Postur Kebolehterimaan",
+              "paragraphs": ["Rekod distrukturkan untuk pengesahan, dengan sumber yang jelas dan kuasa pengeluaran."]
             }
           ]
         },
         "responsible-disclosure": {
-          "title": "Coordinated Disclosure Desk",
-          "subtitle": "Responsible vulnerability reporting channel with controlled remediation workflow.",
-          "purpose": "Receives, verifies, and triages vulnerability disclosures under coordinated disclosure norms.",
+          "title": "Meja Pendedahan Terkoordinasi",
+          "subtitle": "Saluran pelaporan kerentanan yang bertanggungjawab dengan aliran kerja pemulihan terkawal.",
+          "purpose": "Menerima, mengesahkan dan mencuba pendedahan kerentanan di bawah norma pendedahan yang diselaraskan.",
           "contact": "security@afenda.io",
-          "responseStandard": "Acknowledgment within 1 business day; severity triage and remediation track opened after validation.",
+          "responseStandard": "Pengakuan dalam tempoh 1 hari perniagaan; triage keterukan dan trek pemulihan dibuka selepas pengesahan.",
           "sections": [
             {
-              "heading": "Minimum Report Contents",
+              "heading": "Kandungan Laporan Minimum",
               "paragraphs": [
-                "Include impacted asset, reproduction details, proof-of-concept boundary, and safe disclosure contact."
+                "Sertakan aset terjejas, butiran pengeluaran semula, sempadan bukti konsep dan hubungan pendedahan yang selamat."
               ]
             },
             {
-              "heading": "Good-Faith Handling",
-              "paragraphs": ["Good-faith reports are handled under coordinated remediation and disclosure sequencing."]
+              "heading": "Pengendalian Beriman Baik",
+              "paragraphs": [
+                "Laporan yang jujur ​​dikendalikan di bawah penyelarasan pemulihan dan penjujukan pendedahan."
+              ]
             }
           ]
         },
         "authority-eu-gdpr": {
-          "title": "EU Authority Note — GDPR",
-          "subtitle": "Primary EU statutory references used in footer legal statements.",
-          "purpose": "Identifies operative GDPR provisions governing transparency, lawful basis, rights, and complaints.",
+          "title": "Nota Pihak Berkuasa EU — GDPR",
+          "subtitle": "Rujukan berkanun EU utama yang digunakan dalam pernyataan undang-undang pengaki.",
+          "purpose": "Mengenal pasti peruntukan GDPR yang beroperasi yang mengawal ketelusan, asas yang sah, hak dan aduan.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Citation clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Penjelasan petikan dikendalikan melalui aliran kerja Pejabat Penasihat Am.",
           "sections": [
             {
-              "heading": "Operative Provisions",
+              "heading": "Peruntukan Operasi",
               "paragraphs": [
-                "The footer references Arts. 12-14, Art. 6(1), Arts. 15-21, and Art. 77 as baseline obligations and rights instruments."
+                "Pengaki merujuk kepada Seni. 12-14, Seni. 6(1), Seni. 15-21, dan Art. 77 sebagai obligasi asas dan instrumen hak."
               ]
             }
           ],
           "citations": [
             {
-              "label": "Art. 6 GDPR",
+              "label": "Seni. 6 GDPR",
               "href": "https://gdpr-info.eu/art-6-gdpr/",
-              "note": "Lawfulness of processing."
+              "note": "Kesahihan pemprosesan."
             },
             {
-              "label": "Chapter III GDPR",
+              "label": "Bab III GDPR",
               "href": "https://gdpr-info.eu/chapter-3/",
-              "note": "Rights of the data subject."
+              "note": "Hak subjek data."
             },
             {
-              "label": "Art. 77 GDPR",
+              "label": "Seni. 77 GDPR",
               "href": "https://gdpr-info.eu/art-77-gdpr/",
-              "note": "Right to lodge a complaint."
+              "note": "Hak untuk membuat aduan."
             }
           ]
         },
         "authority-us-ccpa-cpra": {
-          "title": "US Authority Note — CCPA/CPRA",
-          "subtitle": "California statutory citations used in footer legal statements.",
-          "purpose": "Catalogs California provisions for notice, rights execution, and anti-discrimination duties.",
+          "title": "Nota Pihak Berkuasa AS — CCPA/CPRA",
+          "subtitle": "Petikan berkanun California yang digunakan dalam penyata undang-undang pengaki.",
+          "purpose": "Catalogs California peruntukan untuk notis, pelaksanaan hak, dan tugas anti-diskriminasi.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Citation clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Penjelasan petikan dikendalikan melalui aliran kerja Pejabat Penasihat Am.",
           "sections": [
             {
-              "heading": "Operative Provisions",
+              "heading": "Peruntukan Operasi",
               "paragraphs": [
-                "The footer references §§ 1798.100, 1798.130, 1798.105, 1798.106, 1798.120, 1798.135, and 1798.125."
+                "Rujukan pengaki §§ 1798.100, 1798.130, 1798.105, 1798.106, 1798.120, 1798.135, dan 1798.125."
               ]
             }
           ],
           "citations": [
             {
-              "label": "California AG — CCPA Portal",
+              "label": "California AG — Portal CCPA",
               "href": "https://oag.ca.gov/privacy/ccpa",
-              "note": "Primary public statutory guidance and enforcement context."
+              "note": "Bimbingan berkanun awam utama dan konteks penguatkuasaan."
             }
           ]
         },
         "authority-id-pdp": {
-          "title": "Indonesia Authority Note — UU No. 27/2022",
-          "subtitle": "Indonesian personal data protection citations used in footer legal statements.",
-          "purpose": "Catalogs rights, controller obligations, and sanction provisions under Indonesia PDP law.",
+          "title": "Nota Pihak Berkuasa Indonesia — UU No. 27/2022",
+          "subtitle": "Petikan perlindungan data peribadi Indonesia yang digunakan dalam pernyataan undang-undang pengaki.",
+          "purpose": "Hak katalog, kewajipan pengawal, dan peruntukan sekatan di bawah undang-undang PDP Indonesia.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Citation clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Penjelasan petikan dikendalikan melalui aliran kerja Pejabat Penasihat Am.",
           "sections": [
             {
-              "heading": "Operative Provisions",
+              "heading": "Peruntukan Operasi",
               "paragraphs": [
-                "The footer references Pasal 5-15, Pasal 20-50, Pasal 57, and Pasal 67-73 as the governing rights and enforcement anchors."
+                "Pengaki merujuk Pasal 5-15, Pasal 20-50, Pasal 57, dan Pasal 67-73 sebagai hak yang mengatur dan sauh penguatkuasaan."
               ]
             }
           ],
@@ -1287,102 +1295,102 @@
             {
               "label": "UU No. 27 Tahun 2022 (BPK)",
               "href": "https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022",
-              "note": "Authoritative statute publication entry."
+              "note": "Entri penerbitan statut berwibawa."
             }
           ]
         },
         "open-source-docket": {
-          "title": "Open-Source Legal Docket",
-          "subtitle": "Research ledger of public legal-policy repositories referenced by the footer.",
-          "purpose": "Documents source provenance for legal drafting patterns and citation architecture used in public footer statements.",
+          "title": "Doket Undang-undang Sumber Terbuka",
+          "subtitle": "Lejar penyelidikan repositori dasar undang-undang awam yang dirujuk oleh pengaki.",
+          "purpose": "Dokumen sumber asal untuk corak penggubalan undang-undang dan seni bina petikan yang digunakan dalam pernyataan pengaki awam.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Penjelasan asal sumber dikendalikan melalui aliran kerja Pejabat Penasihat Am.",
           "sections": [
             {
-              "heading": "Docket Scope",
+              "heading": "Skop Doket",
               "paragraphs": [
-                "The docket is a research aid and does not override controlling law, regulation, or contract terms."
+                "Doket ialah bantuan penyelidikan dan tidak mengatasi undang-undang kawalan, peraturan atau syarat kontrak."
               ]
             }
           ],
           "citations": [
             {
-              "label": "VSBS CCPA/CPRA Notice Framework",
+              "label": "Rangka Kerja Notis CCPA/CPRA VSBS",
               "href": "https://github.com/divyamohan1993/vsbs/blob/main/docs/compliance/ccpa-cpra.md",
-              "note": "Notice-at-collection and rights matrix pattern."
+              "note": "Notis-pada-pengumpulan dan corak matriks hak."
             },
             {
-              "label": "Giant Swarm Privacy Policy",
+              "label": "Dasar Privasi Giant Swarm",
               "href": "https://github.com/giantswarm/legal/blob/master/privacypolicy.md",
-              "note": "Rights sectioning and article reference style."
+              "note": "Pembahagian hak dan gaya rujukan artikel."
             },
             {
-              "label": "UU 27/2022 Text Mirror",
+              "label": "UU 27/2022 Teks Cermin",
               "href": "https://github.com/mashanz/peraturan-perundang-undangan/blob/main/hierarchy/03-uu-perppu/uu-27-2022.md",
-              "note": "Pasal-level structure and sanction mapping."
+              "note": "Struktur peringkat Pasal dan pemetaan sekatan."
             },
             {
-              "label": "Simple Analytics Compliance FAQ",
+              "label": "Soalan Lazim Pematuhan Analitis Mudah",
               "href": "https://github.com/simpleanalytics/docs/blob/main/_docs/36_legal/04_compliance-faq.md",
-              "note": "Public compliance statement framing."
+              "note": "Pembingkaian kenyataan pematuhan awam."
             }
           ]
         },
         "source-vsbs-ccpa-cpra": {
-          "title": "Source Dossier — VSBS CCPA/CPRA Notice Framework",
-          "subtitle": "Public source record for California notice-at-collection and rights matrix drafting patterns.",
-          "purpose": "Captures provenance and drafting utility of the VSBS CCPA/CPRA source used to shape footer legal statement structure.",
+          "title": "Dosi Sumber — Rangka Kerja Notis CCPA/CPRA VSBS",
+          "subtitle": "Rekod sumber awam untuk notis-pada-kutipan dan corak penggubalan matriks hak California.",
+          "purpose": "Menangkap asal dan utiliti penggubalan sumber VSBS CCPA/CPRA yang digunakan untuk membentuk struktur pernyataan undang-undang pengaki.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Penjelasan asal sumber dikendalikan melalui aliran kerja Pejabat Penasihat Am.",
           "sections": [
             {
-              "heading": "Document Utility",
+              "heading": "Utiliti Dokumen",
               "paragraphs": [
-                "Used as an open-source pattern reference for rights tables, notice-at-collection wording, and response timeline presentation."
+                "Digunakan sebagai rujukan corak sumber terbuka untuk jadual hak, kata-kata notis-pada-koleksi dan pembentangan garis masa respons."
               ]
             }
           ],
           "citations": [
             {
-              "label": "VSBS — CCPA + CPRA Notice",
+              "label": "VSBS — Notis CCPA + CPRA",
               "href": "https://github.com/divyamohan1993/vsbs/blob/main/docs/compliance/ccpa-cpra.md",
-              "note": "Primary public source used for California rights and notice framing."
+              "note": "Sumber awam utama yang digunakan untuk hak California dan pembingkaian notis."
             }
           ]
         },
         "source-giant-swarm-privacy": {
-          "title": "Source Dossier — Giant Swarm Privacy Policy",
-          "subtitle": "Public source record for article-mapped GDPR rights disclosure structure.",
-          "purpose": "Captures provenance and drafting utility of the Giant Swarm privacy policy structure used for rights indexing.",
+          "title": "Sumber Dossier — Dasar Privasi Giant Swarm",
+          "subtitle": "Rekod sumber awam untuk struktur pendedahan hak GDPR yang dipetakan artikel.",
+          "purpose": "Menangkap asal dan utiliti penggubalan struktur dasar privasi Giant Swarm yang digunakan untuk pengindeksan hak.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Penjelasan asal sumber dikendalikan melalui aliran kerja Pejabat Penasihat Am.",
           "sections": [
             {
-              "heading": "Document Utility",
+              "heading": "Utiliti Dokumen",
               "paragraphs": [
-                "Used as a structural reference for explicit, article-level rights mapping in public-facing privacy statements."
+                "Digunakan sebagai rujukan struktur untuk pemetaan hak peringkat artikel yang jelas dalam kenyataan privasi yang dihadapi oleh orang ramai."
               ]
             }
           ],
           "citations": [
             {
-              "label": "Giant Swarm — Privacy Policy",
+              "label": "Giant Swarm — Dasar Privasi",
               "href": "https://github.com/giantswarm/legal/blob/master/privacypolicy.md",
-              "note": "Primary public source used for GDPR rights section architecture."
+              "note": "Sumber awam utama yang digunakan untuk seni bina bahagian hak GDPR."
             }
           ]
         },
         "source-indonesia-uu-27-2022": {
-          "title": "Source Dossier — Indonesia UU 27/2022 Text Mirror",
-          "subtitle": "Public source record for Pasal-level legal text and sanctions mapping.",
-          "purpose": "Captures provenance and drafting utility of the machine-readable Indonesian PDP law source.",
+          "title": "Sumber Dossier — Indonesia UU 27/2022 Text Mirror",
+          "subtitle": "Rekod sumber awam untuk teks undang-undang peringkat Pasal dan pemetaan sekatan.",
+          "purpose": "Menangkap asal dan utiliti penggubalan sumber undang-undang PDP Indonesia yang boleh dibaca mesin.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Penjelasan asal sumber dikendalikan melalui aliran kerja Pejabat Penasihat Am.",
           "sections": [
             {
-              "heading": "Document Utility",
+              "heading": "Utiliti Dokumen",
               "paragraphs": [
-                "Used to verify Pasal references, rights scope language, and sanctions mapping in the footer authority note."
+                "Digunakan untuk mengesahkan rujukan Pasal, bahasa skop hak dan pemetaan sekatan dalam nota kuasa pengaki."
               ]
             }
           ],
@@ -1390,29 +1398,29 @@
             {
               "label": "Peraturan Perundang-Undangan — UU No. 27 Tahun 2022",
               "href": "https://github.com/mashanz/peraturan-perundang-undangan/blob/main/hierarchy/03-uu-perppu/uu-27-2022.md",
-              "note": "Primary public source used for Indonesian statute structure and article mapping."
+              "note": "Sumber awam utama digunakan untuk struktur statut Indonesia dan pemetaan artikel."
             }
           ]
         },
         "source-simple-analytics-faq": {
-          "title": "Source Dossier — Simple Analytics Compliance FAQ",
-          "subtitle": "Public source record for concise recital/article compliance statement style.",
-          "purpose": "Captures provenance and drafting utility of concise compliance-language presentation patterns.",
+          "title": "Sumber Dossier — Soalan Lazim Pematuhan Analitis Mudah",
+          "subtitle": "Rekod sumber awam untuk gaya pernyataan pematuhan bacaan/artikel ringkas.",
+          "purpose": "Menangkap asal dan kegunaan penggubalan corak persembahan bahasa pematuhan ringkas.",
           "contact": "legal@afenda.io",
-          "responseStandard": "Source provenance clarifications handled through Office of General Counsel workflow.",
+          "responseStandard": "Penjelasan asal sumber dikendalikan melalui aliran kerja Pejabat Penasihat Am.",
           "sections": [
             {
-              "heading": "Document Utility",
+              "heading": "Utiliti Dokumen",
               "paragraphs": [
-                "Used as a style reference for concise, citation-led compliance summaries in public legal surfaces."
+                "Digunakan sebagai rujukan gaya untuk ringkasan pematuhan yang diterajui petikan pada permukaan undang-undang awam."
               ]
             }
           ],
           "citations": [
             {
-              "label": "Simple Analytics — Compliance FAQ",
+              "label": "Analitis Mudah — Soalan Lazim Pematuhan",
               "href": "https://github.com/simpleanalytics/docs/blob/main/_docs/36_legal/04_compliance-faq.md",
-              "note": "Primary public source used for compact compliance wording patterns."
+              "note": "Sumber awam utama yang digunakan untuk pola kata pematuhan padat."
             }
           ]
         }

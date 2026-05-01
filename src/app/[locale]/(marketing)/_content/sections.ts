@@ -1,17 +1,46 @@
 /** English copy for the marketing landing page (no i18n). */
 
+export const hero = {
+  title: 'Business truth infrastructure for governed operators.',
+  lead: 'Afenda turns fragmented operational signals into canonical records with identity, policy, evidence, and audit state attached before decisions move.',
+  actions: {
+    primary: { label: 'Enter Afenda', href: '/login' },
+    secondary: { label: 'View evidence', href: '#evidence' },
+  },
+} as const;
+
+export const metadata = {
+  title: 'Afenda — Business Truth Infrastructure',
+  description:
+    'Afenda resolves business truth from operational signals: canonical records, 7W1H evidence, tenant-scoped policy, governed execution, and audit-ready enterprise state.',
+  openGraphDescription: 'The business truth infrastructure for governed enterprise operations.',
+  keywords: [
+    'business truth infrastructure',
+    'canonical operational records',
+    '7W1H audit trail',
+    'tenant-scoped governance',
+    'policy-bound execution',
+    'procurement evidence automation',
+    'audit-ready operations',
+    'governed enterprise data',
+  ],
+} as const;
+
 export const thesis = {
   kicker: 'Act I — Declaration',
-  headlineLines: ['Afenda is not where business data goes.', 'Afenda is where business truth is resolved.'] as const,
+  headlineLines: [
+    'Afenda is not another place where business data goes.',
+    'Afenda is where operational truth becomes defensible.',
+  ] as const,
   pullQuotes: [
-    '01 Software — tenant-scoped execution surfaces',
-    '02 Privacy — purpose-bound access and redaction',
-    '03 Trust — evidence at action time, audit-ready records',
+    '01 Authority — every action has actor, scope, and purpose',
+    '02 Evidence — source, policy, and lineage travel with the record',
+    '03 Control — decisions resolve before they reach finance, audit, or customers',
   ] as const,
   panels: [
-    { title: 'Fragmented facts', caption: 'Systems disagree; spreadsheets win.' },
-    { title: 'Connected signals', caption: 'Events wire; lineage becomes visible.' },
-    { title: 'Governed truth', caption: 'Policy decides; the canonical record resolves.' },
+    { title: 'Fragmented facts', caption: 'Systems disagree, exceptions hide, and teams reconcile by memory.' },
+    { title: 'Governed signals', caption: 'Events enter with source reliability, authority, and operating context.' },
+    { title: 'Defensible truth', caption: 'Policy resolves the canonical state and preserves the evidence chain.' },
   ] as const,
 };
 
@@ -21,8 +50,8 @@ export const thesis = {
  */
 export const ontology = {
   kicker: 'Act II — Business model of truth',
-  title: 'If you cannot draw your business as one ontology, you are operating on opinion.',
-  lead: 'Objects, links, and automations — not screens. Every card carries Properties · Functions · Actions · Automations in Afenda doctrine.',
+  title: 'Model the business once. Let every workflow inherit the same truth.',
+  lead: 'Afenda treats tenants, customers, suppliers, items, contracts, invoices, payments, shipments, and audit events as governed objects — each with properties, functions, actions, and automations.',
   bandLabels: ['Properties', 'Functions', 'Actions', 'Automations'] as const,
   objects: [
     {
@@ -92,8 +121,8 @@ export const ontology = {
 };
 
 export const procurement = {
-  title: 'Procurement closes when evidence matches.',
-  lead: 'PO, receipt, invoice, supplier risk, contract terms, and payment state resolve in one governed flow.',
+  title: 'Procurement closes when evidence, obligation, and payment agree.',
+  lead: 'Purchase orders, receipts, service entry, invoices, supplier risk, contract terms, accruals, and payment release resolve in one governed flow before spend becomes official.',
   columns: [
     { name: 'Contract lifecycle', bullets: ['Authoring', 'Obligations', 'Renewals', 'Deviation alerts'] },
     { name: 'Category & sourcing', bullets: ['Spend classes', 'RFx', 'Award', 'Policy gates'] },
@@ -101,12 +130,12 @@ export const procurement = {
     { name: 'Supplier relations', bullets: ['Scorecards', 'Incidents', 'Corrective actions', 'SLA proof'] },
     { name: 'AP', bullets: ['Invoice intake', 'Match tolerances', 'Dispute', 'Settlement evidence'] },
   ] as const,
-  spineNote: 'The spine these capabilities ride on — see Architecture explorer.',
+  spineNote: 'The spine these capabilities ride on is shared by finance, operations, audit, and supplier governance.',
 };
 
 export const operations = {
-  title: 'How a signal becomes truth.',
-  lead: 'A business event is bound to actor, policy, evidence, and state before it becomes a canonical record.',
+  title: 'How operational movement becomes a record the business can defend.',
+  lead: 'A signal is normalized, bound to actor and tenant, evaluated against policy, connected to evidence, then committed as canonical state only when the chain is explainable.',
   tabs: ['Procurement', 'Operations', 'Logistics', 'Finance'] as const,
   inputs: ['SAP', 'Oracle NetSuite', 'Infor', 'Workday', 'Rippling'],
   modules: [
@@ -126,8 +155,8 @@ export const operations = {
 
 export const architecture = {
   kicker: 'Act III — Platform proof',
-  title: "Why it can't be faked.",
-  lead: 'The same resolved record carries policy, evidence, authority, and lineage through the platform stack.',
+  title: 'The architecture makes truth durable, not decorative.',
+  lead: 'The same resolved record carries ontology, policy, evidence, authority, lineage, and release posture through every app, workflow, SDK, automation, and agent surface.',
   decks: [
     'Ontology language & toolchain',
     'Ontology engine',
@@ -138,19 +167,19 @@ export const architecture = {
 };
 
 export const security = {
-  title: 'Purpose-bound access to business truth.',
-  lead: 'Purpose, redaction, retention, lineage, role-vs-purpose, evidence of access — precise controls, not vague “secure your data”.',
+  title: 'Purpose-bound access for records that matter.',
+  lead: 'Tenant scope, role, purpose, redaction, retention, lineage, and evidence of access are explicit controls. Afenda avoids vague security claims and makes control posture reviewable.',
 };
 
 export const evidence = {
-  title: 'Trust is a property of the record.',
-  lead: 'Hash, signatures, timestamp, lineage chain — the audit file after the event. Quieter than the hero; no second climax.',
+  title: 'Trust is carried by the record, not appended after the fact.',
+  lead: 'Hashes, signatures, timestamps, source lineage, policy outcomes, exception reasons, and release authority remain attached so audit, finance, and operators inspect the same chain.',
 };
 
 export const modular = {
   kicker: 'Act IV — Extensibility',
-  title: 'Build on the spine. Do not rebuild the spine.',
-  lead: 'SDK, API, container, federation, custom functions, actions — static surface; playground lives in the explorer.',
+  title: 'Build on the spine. Do not rebuild governance in every tool.',
+  lead: 'SDKs, APIs, containers, federation, custom functions, and workflow actions extend the same truth layer instead of creating new islands of approval, exception, and audit logic.',
   codeSample: `import { afenda } from "@afenda/sdk";
 
 const record = await afenda.resolve({
@@ -163,20 +192,12 @@ const record = await afenda.resolve({
 
 export const verdict = {
   kicker: 'Act V — Close',
-  line: 'If your business cannot explain who changed what, why it was allowed, and which record became official, it is not governed.',
-  strip: ['Risk posture', 'Decision chain', 'Audit state', 'Capital efficiency'] as const,
+  line: 'If your business cannot explain who changed what, why it was allowed, and which record became official, it is not governed — it is merely reported.',
+  strip: ['Risk posture', 'Decision chain', 'Audit state', 'Working capital'] as const,
   ctaPrimary: {
     label: 'Request an architecture review',
     href: 'mailto:architecture-review@afenda.io?subject=Architecture%20review%20request',
   },
   ctaSecondary: { label: 'Open dossier', href: '#evidence' },
-};
-
-export const footer = {
-  note: '© Afenda — business truth infrastructure.',
-  links: [
-    { label: 'Investor relations', href: 'mailto:investors@example.com' },
-    { label: 'Docs', href: '/docs' },
-    { label: 'Book a demo', href: '/book-demo' },
-  ] as const,
+  note: 'Not a demo. A control architecture review.',
 };

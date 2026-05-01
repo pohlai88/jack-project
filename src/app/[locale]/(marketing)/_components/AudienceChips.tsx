@@ -1,8 +1,13 @@
-import { AUDIENCE_LABEL, type AudienceId, SECTION_AUDIENCE_MAP } from '../_content/audiences';
+import {
+  AUDIENCE_LABEL,
+  type AudienceId,
+  type MarketingSectionId,
+  SECTION_AUDIENCE_MAP,
+} from '../_content/marketing-audience.contract';
 
 type Props = {
   /** Section id key in SECTION_AUDIENCE_MAP, OR a literal audience list. */
-  sectionId?: keyof typeof SECTION_AUDIENCE_MAP;
+  sectionId?: MarketingSectionId;
   audiences?: readonly AudienceId[];
 };
 

@@ -54,7 +54,14 @@ export function MarketingNav() {
   return (
     <header className="marketing-nav" data-collapsed={isCollapsed ? 'true' : 'false'}>
       <div className="marketing-nav__inner" aria-hidden={isCollapsed ? 'true' : undefined}>
-        <AppLogo href="/" placement="nav" size="xl" allowTenantLogo={false} className="marketing-nav__brand" />
+        <AppLogo
+          href="/"
+          placement="nav"
+          surface="dark"
+          size="xl"
+          allowTenantLogo={false}
+          className="marketing-nav__brand"
+        />
 
         <nav className="marketing-nav__links" aria-label="Afenda marketing sections">
           {sectionLinks.map((link) => (

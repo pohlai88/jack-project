@@ -120,7 +120,12 @@ function hasUsableCatalogValue(value) {
  * @param {unknown} input
  */
 export function alignLocaleCatalogToCanonicalShape(canonical, input) {
-  if (canonical !== null && typeof canonical === 'object' && !Array.isArray(canonical)) {
+  if (Array.isArray(canonical)) {
+    const inArr = Array.isArray(input) ? input : [];
+    return canonical.map((item, index) => alignLocaleCatalogToCanonicalShape(item, inArr[index]));
+  }
+
+  if (canonical !== null && typeof canonical === 'object') {
     const inObj = input && typeof input === 'object' && !Array.isArray(input) ? input : {};
     return Object.fromEntries(
       Object.keys(canonical).map((key) => [key, alignLocaleCatalogToCanonicalShape(canonical[key], inObj[key])]),
@@ -128,9 +133,6 @@ export function alignLocaleCatalogToCanonicalShape(canonical, input) {
   }
 
   if (hasUsableCatalogValue(input) && (typeof input !== 'object' || input === null)) {
-    if (Array.isArray(input)) {
-      return canonical;
-    }
     return input;
   }
 
